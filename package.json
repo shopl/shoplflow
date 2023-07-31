@@ -20,5 +20,8 @@
     "packages/*",
     "docs",
     "templates/*"
-  ]
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.26.2"
+  }
 }
