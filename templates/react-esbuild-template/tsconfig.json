@@ -1,0 +1,3 @@
+{
+  "extends": "@shoplflow/tsconfig/tsconfig.base.json"
+}
