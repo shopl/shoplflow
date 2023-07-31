@@ -19,7 +19,7 @@
   "packageManager": "yarn@3.6.1",
   "workspaces": [
     "packages/*",
-    "docs",
+    "docs2",
     "templates/*"
   ],
   "dependencies": {

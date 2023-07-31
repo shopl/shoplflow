@@ -1,0 +1,53 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "docs",
+  "author": "velo",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mdx-js/react": "^2.3.0",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-emotion": "^8.11.0",
+    "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-manifest": "^5.11.0",
+    "gatsby-plugin-mdx": "^5.11.0",
+    "gatsby-plugin-sharp": "^5.11.0",
+    "gatsby-plugin-sitemap": "^6.11.0",
+    "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-transformer-sharp": "^5.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-interactions": "^7.1.1",
+    "@storybook/addon-links": "^7.1.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.1.1",
+    "@storybook/builder-vite": "^7.1.1",
+    "@storybook/react": "^7.1.1",
+    "@storybook/react-vite": "^7.1.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "storybook": "^7.1.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7"
+  }
+}
