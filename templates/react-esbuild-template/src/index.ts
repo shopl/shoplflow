@@ -1,5 +1,8 @@
 export type TestFunc = () => void;
 
 export const testFunc: TestFunc = () => {
-  return 1;
+
+    return 1;
 };
+
+
