@@ -1,5 +1,9 @@
 module.exports = {
   root: true,
-  // This tells ESLint to load the config from the package `eslint-config-custom`
-  extends: ["shoplflow"],
+  plugins: ["@shoplflow"],
+  extends: [
+    "plugin:@shoplflow/base",
+    "plugin:@shoplflow/react",
+    "plugin:@shoplflow/typescript",
+  ],
 };
