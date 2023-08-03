@@ -67,6 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@turbo/gen", "npm:1.10.12"],\
             ["@typescript-eslint/eslint-plugin", "virtual:d8f74f8b185b1a1cdf6eddb00e01298071f8f71144067f0e6aa3787c133da2b210b1635cb420dd4bd63fdc4541d8e067437071f461558cc0b5188c65d70c9d42#npm:6.2.1"],\
             ["@typescript-eslint/parser", "virtual:d8f74f8b185b1a1cdf6eddb00e01298071f8f71144067f0e6aa3787c133da2b210b1635cb420dd4bd63fdc4541d8e067437071f461558cc0b5188c65d70c9d42#npm:6.2.1"],\
+            ["esbuild", "npm:0.18.17"],\
             ["eslint", "npm:8.46.0"],\
             ["eslint-config-prettier", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:8.9.0"],\
             ["eslint-import-resolver-typescript", "virtual:d8f74f8b185b1a1cdf6eddb00e01298071f8f71144067f0e6aa3787c133da2b210b1635cb420dd4bd63fdc4541d8e067437071f461558cc0b5188c65d70c9d42#npm:3.5.5"],\
@@ -5967,6 +5968,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@shoplflow/eslint-plugin", "workspace:packages/eslint-plugin"],\
             ["@typescript-eslint/eslint-plugin", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:6.2.1"],\
             ["@typescript-eslint/parser", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:6.2.1"],\
+            ["esbuild", "npm:0.18.17"],\
             ["eslint", "npm:8.46.0"],\
             ["eslint-config-prettier", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:8.9.0"],\
             ["eslint-import-resolver-typescript", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:3.5.5"],\
@@ -25461,6 +25463,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@turbo/gen", "npm:1.10.12"],\
             ["@typescript-eslint/eslint-plugin", "virtual:d8f74f8b185b1a1cdf6eddb00e01298071f8f71144067f0e6aa3787c133da2b210b1635cb420dd4bd63fdc4541d8e067437071f461558cc0b5188c65d70c9d42#npm:6.2.1"],\
             ["@typescript-eslint/parser", "virtual:d8f74f8b185b1a1cdf6eddb00e01298071f8f71144067f0e6aa3787c133da2b210b1635cb420dd4bd63fdc4541d8e067437071f461558cc0b5188c65d70c9d42#npm:6.2.1"],\
+            ["esbuild", "npm:0.18.17"],\
             ["eslint", "npm:8.46.0"],\
             ["eslint-config-prettier", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:8.9.0"],\
             ["eslint-import-resolver-typescript", "virtual:d8f74f8b185b1a1cdf6eddb00e01298071f8f71144067f0e6aa3787c133da2b210b1635cb420dd4bd63fdc4541d8e067437071f461558cc0b5188c65d70c9d42#npm:3.5.5"],\
