@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./.eslintrc..eslintrc.base.js', 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
+  extends: ['./.eslintrc.base.js', 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
   plugins: ['react'],
   settings: {
     react: {

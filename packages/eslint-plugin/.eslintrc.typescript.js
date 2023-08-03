@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./.eslintrc..eslintrc.base.js', 'plugin:@typescript-eslint/recommended'],
+  extends: ['./.eslintrc.base.js', 'plugin:@typescript-eslint/recommended'],
   plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-non-null-assertion': 'off', // TypeScript의 non-null assertion (값이 null이거나 undefined가 아님을 단언하는 ! 연산자)을 사용하는 것을 금지합니다.

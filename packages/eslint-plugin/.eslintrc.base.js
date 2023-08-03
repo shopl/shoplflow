@@ -28,6 +28,7 @@ module.exports = {
       },
     },
   },
+  ignorePatterns: ['.eslintrc.js', 'public', 'node_modules', '.cache', '.vscode'],
   rules: {
     'prettier/prettier': [
       'error',
