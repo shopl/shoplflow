@@ -3939,22 +3939,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@shoplflow/eslint-config@workspace:packages/eslint-config":
-  version: 0.0.0-use.local
-  resolution: "@shoplflow/eslint-config@workspace:packages/eslint-config"
-  dependencies:
-    "@typescript-eslint/eslint-plugin": ^6.2.0
-    "@typescript-eslint/parser": ^6.2.0
-    eslint: ^8.46.0
-    eslint-config-prettier: ^8.9.0
-    eslint-plugin-import: ^2.28.0
-    eslint-plugin-prettier: ^5.0.0
-    eslint-plugin-react: ^7.33.1
-    eslint-plugin-react-hooks: ^4.6.0
-    eslint-plugin-unused-imports: ^3.0.0
-  languageName: unknown
-  linkType: soft
-
 "@shoplflow/eslint-plugin@workspace:^, @shoplflow/eslint-plugin@workspace:packages/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@shoplflow/eslint-plugin@workspace:packages/eslint-plugin"
@@ -5899,7 +5883,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^6.2.0, @typescript-eslint/eslint-plugin@npm:^6.2.1":
+"@typescript-eslint/eslint-plugin@npm:^6.2.1":
   version: 6.2.1
   resolution: "@typescript-eslint/eslint-plugin@npm:6.2.1"
   dependencies:
@@ -5942,7 +5926,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^6.2.0, @typescript-eslint/parser@npm:^6.2.1":
+"@typescript-eslint/parser@npm:^6.2.1":
   version: 6.2.1
   resolution: "@typescript-eslint/parser@npm:6.2.1"
   dependencies:
