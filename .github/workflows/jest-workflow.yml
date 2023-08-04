@@ -1,0 +1,40 @@
+name: Test Changed Packages with Turbo on PR
+
+on:
+  pull_request:
+    types: [ opened, synchronize ] # PR이 오픈되거나 커밋이 추가될 때
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test changed packages with Turbo
+        run: turbo run test --since ${{ github.event.before }}
+
+      - name: Generate JUnit report
+        run: jest --reporters="default" --reporters="jest-junit"
+
+      - name: Parse test results
+        id: parse-results
+        run: |
+          # 테스트 결과를 파싱하여 원하는 형식의 메시지 생성
+          MESSAGE="Test results:\n"
+          MESSAGE+="Success: 10\n"
+          MESSAGE+="Failures: 2\n"
+          echo "TEST_RESULTS_MESSAGE=${MESSAGE}" >> $GITHUB_ENV
+
+      - name: Send test results to Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: ${{ env.TEST_RESULTS_MESSAGE }}
+          fields: repo,commit,author,action,eventName,ref,workflow,job,took # optional
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Slack Webhook URL

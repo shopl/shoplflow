@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "esnext",
     "types": [
       "node",
       "jest"
@@ -17,12 +17,16 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "noFallthroughCasesInSwitch": true,
-    "outDir": "./dist",
+    "outDir": "./dist"
   },
-  "typeAcquisition": { "include": ["jest"] },
+  "typeAcquisition": {
+    "include": [
+      "jest"
+    ]
+  },
   "include": [
-    "scripts/*",
-    "src/*",
+    "scripts/**",
+    "src/**",
     "**/*.test.ts",
     "jest.config.cjs",
     "babel.config.json"
