@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/eslint-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "shoplflow eslint plugin",
   "license": "MIT",
   "main": "./dist/index.js",
