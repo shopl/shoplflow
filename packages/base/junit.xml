@@ -1,57 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="3" errors="0" time="0.89">
-  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2023-08-04T00:14:05" time="0.636" tests="1">
-    <testcase classname="Button should be defined" name="Button should be defined" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="separateTokens" errors="0" failures="3" skipped="0" timestamp="2023-08-04T00:14:06" time="0.188" tests="3">
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="0.768">
+  <testsuite name="separateTokens" errors="0" failures="0" skipped="0" timestamp="2023-08-04T06:33:24" time="0.244" tests="3">
     <testcase classname="separateTokens 생성된 토큰의 일부 값을 확인합니다." name="separateTokens 생성된 토큰의 일부 값을 확인합니다." time="0.001">
-      <failure>TypeError: Cannot read properties of undefined (reading &apos;spacing04&apos;)
-    at Object.&lt;anonymous&gt; (/Users/junhyeok/hada/shoplflow/packages/base/scripts/__tests__/seperate_tokens.test.ts:14:37)
-    at Promise.then.completed (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/utils.js:300:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/utils.js:233:10)
-    at _callCircusTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:315:40)
-    at _runTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:251:3)
-    at _runTestsForDescribeBlock (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:125:9)
-    at _runTestsForDescribeBlock (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:120:9)
-    at run (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:70:3)
-    at runAndTransformResultsToJestFormat (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
-    at jestAdapter (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
-    at runTestInternal (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-runner-npm-29.6.2-74dddde534-46bd506a08.zip/node_modules/jest-runner/build/runTest.js:367:16)
-    at runTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-runner-npm-29.6.2-74dddde534-46bd506a08.zip/node_modules/jest-runner/build/runTest.js:444:34)</failure>
     </testcase>
     <testcase classname="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." time="0">
-      <failure>TypeError: Cannot read properties of undefined (reading &apos;colorTokens&apos;)
-    at Object.&lt;anonymous&gt; (/Users/junhyeok/hada/shoplflow/packages/base/scripts/__tests__/seperate_tokens.test.ts:20:61)
-    at Promise.then.completed (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/utils.js:300:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/utils.js:233:10)
-    at _callCircusTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:315:40)
-    at _runTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:251:3)
-    at _runTestsForDescribeBlock (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:125:9)
-    at _runTestsForDescribeBlock (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:120:9)
-    at run (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:70:3)
-    at runAndTransformResultsToJestFormat (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
-    at jestAdapter (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
-    at runTestInternal (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-runner-npm-29.6.2-74dddde534-46bd506a08.zip/node_modules/jest-runner/build/runTest.js:367:16)
-    at runTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-runner-npm-29.6.2-74dddde534-46bd506a08.zip/node_modules/jest-runner/build/runTest.js:444:34)</failure>
     </testcase>
-    <testcase classname="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." time="0">
-      <failure>TypeError: Cannot read properties of undefined (reading &apos;typographyTokens&apos;)
-    at Object.&lt;anonymous&gt; (/Users/junhyeok/hada/shoplflow/packages/base/scripts/__tests__/seperate_tokens.test.ts:27:66)
-    at Promise.then.completed (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/utils.js:300:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/utils.js:233:10)
-    at _callCircusTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:315:40)
-    at _runTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:251:3)
-    at _runTestsForDescribeBlock (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:125:9)
-    at _runTestsForDescribeBlock (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:120:9)
-    at run (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/run.js:70:3)
-    at runAndTransformResultsToJestFormat (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
-    at jestAdapter (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-circus-npm-29.6.2-675d768a16-4f5a96a68c.zip/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
-    at runTestInternal (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-runner-npm-29.6.2-74dddde534-46bd506a08.zip/node_modules/jest-runner/build/runTest.js:367:16)
-    at runTest (/Users/junhyeok/hada/shoplflow/.yarn/cache/jest-runner-npm-29.6.2-74dddde534-46bd506a08.zip/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    <testcase classname="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." time="0.004">
+    </testcase>
+  </testsuite>
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2023-08-04T06:33:25" time="0.463" tests="1">
+    <testcase classname="Button should be defined" name="Button should be defined" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>

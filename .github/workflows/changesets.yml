@@ -26,11 +26,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Dependencies
-        run: yarn
-      # 빌드 및 테스트를 위해서 의존성을 설치한다.
       - name: Install dependencies
-        run: yarn install --frozen-lockfile --ignore-engines
+        run: yarn install
         env:
           CI: true
 
@@ -45,15 +42,16 @@ jobs:
 
       # 패키지를 빌드한다.
       - name: Build packages
-        run: yarn build
+        run: yarn build --since ${{ github.event.before }}
 
       # Changesets에서 제공하는 Action을 사용할 수 있다.
       # NPM에 배포, Git 태그 생성 등의 작업을 수행한다.
       - name: Create release Pull Request or publish to NPM
-        id: changesets
         uses: changesets/action@v1
         with:
-          publish: changeset publish
+          version: yarn changeset version
+          createGithubReleases: true
+          publish: yarn changeset publish
           commit: "ci(changesets): version packages"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
