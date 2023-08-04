@@ -1749,6 +1749,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@changesets/changelog-github@npm:^0.4.8":
+  version: 0.4.8
+  resolution: "@changesets/changelog-github@npm:0.4.8"
+  dependencies:
+    "@changesets/get-github-info": ^0.5.2
+    "@changesets/types": ^5.2.1
+    dotenv: ^8.1.0
+  checksum: 8a357cc08757e0eeca267ee05141f68bef936582abef8b78a5d30d99f5a86e41b7d3debba70992b73b2f57b0fc6201ec1cc3c65116930167ee3197b427b865c5
+  languageName: node
+  linkType: hard
+
 "@changesets/cli@npm:^2.26.2":
   version: 2.26.2
   resolution: "@changesets/cli@npm:2.26.2"
@@ -1826,6 +1837,16 @@ __metadata:
     fs-extra: ^7.0.1
     semver: ^7.5.3
   checksum: d2cbbc5041063b939899502d1b264a0d9edb655acefd7f6197883229156bb7cfd1ace642ae4a1f7f7b432f2c51429f5dc9851ff5a9ed47f1c0159916e66627a9
+  languageName: node
+  linkType: hard
+
+"@changesets/get-github-info@npm:^0.5.2":
+  version: 0.5.2
+  resolution: "@changesets/get-github-info@npm:0.5.2"
+  dependencies:
+    dataloader: ^1.4.0
+    node-fetch: ^2.5.0
+  checksum: 067e07eeaecdbedbd1c715513c4aa6206a941bd1d3af292d067792808c6fa6644caad2b35fba614a44892559c031c234df8028f8d2abd4cb2682d48080ef5df3
   languageName: node
   linkType: hard
 
@@ -2832,7 +2853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/globals@npm:^29.5.0, @jest/globals@npm:^29.6.1, @jest/globals@npm:^29.6.2":
+"@jest/globals@npm:^29.5.0, @jest/globals@npm:^29.6.2":
   version: 29.6.2
   resolution: "@jest/globals@npm:29.6.2"
   dependencies:
@@ -3959,7 +3980,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@shoplflow/tsconfig@*, @shoplflow/tsconfig@workspace:packages/tsconfig":
+"@shoplflow/tsconfig@workspace:packages/tsconfig":
   version: 0.0.0-use.local
   resolution: "@shoplflow/tsconfig@workspace:packages/tsconfig"
   languageName: unknown
@@ -8862,6 +8883,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dataloader@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "dataloader@npm:1.4.0"
+  checksum: e2c93d43afde68980efc0cd9ff48e9851116e27a9687f863e02b56d46f7e7868cc762cd6dcbaf4197e1ca850a03651510c165c2ae24b8e9843fd894002ad0e20
+  languageName: node
+  linkType: hard
+
 "date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
@@ -9455,7 +9483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^8.6.0":
+"dotenv@npm:^8.1.0, dotenv@npm:^8.6.0":
   version: 8.6.0
   resolution: "dotenv@npm:8.6.0"
   checksum: 38e902c80b0666ab59e9310a3d24ed237029a7ce34d976796349765ac96b8d769f6df19090f1f471b77a25ca391971efde8a1ea63bb83111bd8bec8e5cc9b2cd
@@ -16620,7 +16648,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.0.0, node-fetch@npm:^2.6.11, node-fetch@npm:^2.6.12":
+"node-fetch@npm:^2.0.0, node-fetch@npm:^2.5.0, node-fetch@npm:^2.6.11, node-fetch@npm:^2.6.12":
   version: 2.6.12
   resolution: "node-fetch@npm:2.6.12"
   dependencies:
@@ -18613,33 +18641,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-esbuild-template@workspace:templates/react-esbuild-template":
-  version: 0.0.0-use.local
-  resolution: "react-esbuild-template@workspace:templates/react-esbuild-template"
-  dependencies:
-    "@babel/core": ^7.22.5
-    "@babel/preset-env": ^7.22.5
-    "@babel/preset-typescript": ^7.22.5
-    "@jest/globals": ^29.5.0
-    "@shoplflow/tsconfig": "*"
-    "@types/jest": ^29.5.2
-    "@types/react": ^18.0.37
-    "@types/react-dom": ^18.0.11
-    esbuild: ^0.18.11
-    esbuild-plugin-d.ts: ^1.1.0
-    eslint: ^8.44.0
-    jest: ^29.5.0
-    jest-junit: ^16.0.0
-    jest-pnp-resolver: ^1.2.3
-    ts-jest: ^29.1.0
-    ts-node: ^10.9.1
-  peerDependencies:
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    typescript: ^5.0.2
-  languageName: unknown
-  linkType: soft
-
 "react-inspector@npm:^6.0.0":
   version: 6.0.2
   resolution: "react-inspector@npm:6.0.2"
@@ -19719,6 +19720,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "shoplflow@workspace:."
   dependencies:
+    "@changesets/changelog-github": ^0.4.8
     "@changesets/cli": ^2.26.2
     "@shoplflow/eslint-plugin": "workspace:^"
     "@turbo/gen": ^1.9.7
@@ -21056,28 +21058,6 @@ __metadata:
   checksum: 93ed8f7878b6d5ed3c08d99b740010eede6bccfe64bce61c5a4da06a2c17d6ddbb80a8c49c2d15251de7594a4f93ffa21dd10e7be75ef66a4dc9951b4a94e2af
   languageName: node
   linkType: hard
-
-"ts-esbuild@workspace:templates/ts-esbuild-template":
-  version: 0.0.0-use.local
-  resolution: "ts-esbuild@workspace:templates/ts-esbuild-template"
-  dependencies:
-    "@babel/core": ^7.22.5
-    "@babel/preset-env": ^7.22.5
-    "@babel/preset-typescript": ^7.22.5
-    "@jest/globals": ^29.6.1
-    "@types/jest": ^29.5.2
-    esbuild: ^0.18.11
-    esbuild-plugin-d.ts: ^1.1.0
-    eslint: ^8.44.0
-    jest: ^29.5.0
-    jest-junit: ^16.0.0
-    jest-pnp-resolver: ^1.2.3
-    ts-jest: ^29.1.0
-    ts-node: ^10.9.1
-  peerDependencies:
-    typescript: ^5.0.2
-  languageName: unknown
-  linkType: soft
 
 "ts-interface-checker@npm:^0.1.9":
   version: 0.1.13
