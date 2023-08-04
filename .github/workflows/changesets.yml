@@ -3,10 +3,10 @@ name: Changesets Workflow
 # .changeset, packages 디렉토리의 변경사항들이 main 브렌치에 push될때 이벤트를 실행한다.
 on:
   push:
-    #    paths:
-    #      - ".changeset/**"
-    #      - "packages/**"
-    #      - "docs/**"
+    paths:
+      - ".changeset/**"
+      - "packages/**"
+      - "docs/**"
     branches:
       - main
 
@@ -50,6 +50,7 @@ jobs:
         uses: changesets/action@v1
         with:
           version: yarn changeset version
+          createGithubReleases: true
           publish: yarn changeset publish
           commit: "ci(changesets): version packages"
         env:
