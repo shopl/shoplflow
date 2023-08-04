@@ -47,9 +47,9 @@ jobs:
       # Changesets에서 제공하는 Action을 사용할 수 있다.
       # NPM에 배포, Git 태그 생성 등의 작업을 수행한다.
       - name: Create release Pull Request or publish to NPM
-        id: changesets
-        uses: changesets/action@v1
+      - uses: changesets/action@v1
         with:
+          version: yarn changeset version
           publish: changeset publish
           commit: "ci(changesets): version packages"
         env:
