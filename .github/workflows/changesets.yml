@@ -3,12 +3,12 @@ name: Changesets Workflow
 # .changeset, packages 디렉토리의 변경사항들이 main 브렌치에 push될때 이벤트를 실행한다.
 on:
   push:
-    #    paths:
-    #      - ".changeset/**"
-    #      - "packages/**"
-    #      - "docs/**"
-    branches:
-      - main
+  #    paths:
+  #      - ".changeset/**"
+  #      - "packages/**"
+  #      - "docs/**"
+#    branches:
+#      - main
 
 jobs:
   release:
@@ -42,7 +42,7 @@ jobs:
 
       # 패키지를 빌드한다.
       - name: Build packages
-        run: yarn build
+        run: turbo run build --since ${{ github.event.before }}
 
       # Changesets에서 제공하는 Action을 사용할 수 있다.
       # NPM에 배포, Git 태그 생성 등의 작업을 수행한다.
