@@ -1,19 +1,30 @@
-let colorTokens = {};
-let spacingTokens = {};
-let borderRadiusTokens = {};
-let fontWeightTokens = {};
+type TokenValue = {
+    type: string;
+    value: any;
+};
+type ShoplflowTokens = { shoplflow?: Tokens; shopl?: Tokens; hada?: Tokens };
 
-let typographyTokenKeys = [];
+type Tokens = Record<string, TokenValue>;
 
+let colorTokens: Record<string, string> = {};
+let spacingTokens: Record<string, string> = {};
+let borderRadiusTokens: Record<string, string> = {};
+let fontWeightTokens: Record<string, string> = {};
 
-let shoplTokens = {colorTokens: {}, typographyTokens: ''};
-let hadaTokens = {colorTokens: {}, typographyTokens: ''};
+let typographyTokenKeys: string[] = [];
 
+interface ShoplTokens {
+    colorTokens: { [key: string]: string };
+    typographyTokens: string;
+}
 
-function processTypographyTokens(tokens) {
+let shoplTokens: ShoplTokens = {colorTokens: {}, typographyTokens: ''};
+let hadaTokens: ShoplTokens = {colorTokens: {}, typographyTokens: ''};
+
+function processTypographyTokens(tokens: Tokens): string {
     let typographyTokens = '';
-    console.log(tokens)
-    Object.keys(tokens).forEach(key => {
+    console.log(tokens);
+    Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'typography') {
             typographyTokenKeys.push(key);
@@ -28,8 +39,8 @@ function processTypographyTokens(tokens) {
     return typographyTokens;
 }
 
-function processColorTokens(tokens, colorTokens = {}) {
-    Object.keys(tokens).forEach(key => {
+function processColorTokens(tokens: Tokens, colorTokens: { [key: string]: string } = {}): { [key: string]: string } {
+    Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'color') {
             colorTokens[key] = value.value;
@@ -40,8 +51,8 @@ function processColorTokens(tokens, colorTokens = {}) {
     return colorTokens;
 }
 
-function processSpacingTokens(tokens) {
-    Object.keys(tokens).forEach(key => {
+function processSpacingTokens(tokens: Tokens): { [key: string]: string } {
+    Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'spacing') {
             spacingTokens[key] = value.value + 'px';
@@ -50,8 +61,8 @@ function processSpacingTokens(tokens) {
     return spacingTokens;
 }
 
-function processRadiusTokens(tokens) {
-    Object.keys(tokens).forEach(key => {
+function processRadiusTokens(tokens: Tokens): { [key: string]: string } {
+    Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'borderRadius') {
             borderRadiusTokens[key] = value.value + 'px';
@@ -60,8 +71,8 @@ function processRadiusTokens(tokens) {
     return borderRadiusTokens;
 }
 
-function processFontWeightTokens(tokens) {
-    Object.keys(tokens).forEach(key => {
+function processFontWeightTokens(tokens: Tokens): { [key: string]: string } {
+    Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
 
         if (value.type === 'fontWeights') {
@@ -71,10 +82,9 @@ function processFontWeightTokens(tokens) {
     return fontWeightTokens;
 }
 
-
-export function separateTokens(tokens) {
+export function separateTokens(tokens: ShoplflowTokens) {
     const token = tokens.shoplflow;
-
+    if (!token) return;
 
     if (tokens.shopl) {
         shoplTokens.typographyTokens = processTypographyTokens(tokens.shopl);
@@ -85,7 +95,7 @@ export function separateTokens(tokens) {
         hadaTokens.typographyTokens = processTypographyTokens(tokens.hada);
         hadaTokens.colorTokens = processColorTokens(tokens.hada);
     }
-    if (token.fontWeight) {
+    if (token?.fontWeight) {
         processFontWeightTokens(token.fontWeight);
     }
     hadaTokens.colorTokens = {...processColorTokens(token), ...hadaTokens.colorTokens};
@@ -96,7 +106,6 @@ export function separateTokens(tokens) {
 
     typographyTokenKeys = [...new Set(typographyTokenKeys)];
 
-
     return {
         hadaTokens,
         shoplTokens,
@@ -104,8 +113,6 @@ export function separateTokens(tokens) {
         spacingTokens,
         colorTokens,
         borderRadiusTokens,
-        fontWeightTokens
+        fontWeightTokens,
     };
 }
-
-

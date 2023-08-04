@@ -6,7 +6,7 @@
     "lint": "eslint src --ext ts,tsx --fix",
     "test": "jest",
     "build": "node build.cjs",
-    "build:tokens": "node scripts/generate-tokens.js",
+    "build:tokens": "node scripts/generate-tokens.ts",
     "develop": "yarn build --watch"
   },
   "main": "dist/index.esm.js",

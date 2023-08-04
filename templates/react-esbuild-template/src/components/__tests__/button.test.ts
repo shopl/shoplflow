@@ -1,7 +1,7 @@
-import { describe, expect, test } from '@jest/globals';
+import {describe, expect, test} from '@jest/globals';
 
 describe('Button', () => {
-  test('should be defined', () => {
-    expect(true).toBeTruthy();
-  });
+    test('should be defined', () => {
+        expect(true).toBeTruthy();
+    });
 });
