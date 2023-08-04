@@ -50,7 +50,7 @@ jobs:
         uses: changesets/action@v1
         with:
           version: yarn changeset version
-          publish: changeset publish
+          publish: yarn changeset publish
           commit: "ci(changesets): version packages"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
