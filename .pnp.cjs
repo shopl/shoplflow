@@ -58,6 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@changesets/changelog-github", "npm:0.4.8"],\
             ["@changesets/cli", "npm:2.26.2"],\
             ["@shoplflow/eslint-plugin", "workspace:packages/eslint-plugin"],\
             ["@turbo/gen", "npm:1.10.12"],\
@@ -3320,6 +3321,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@changesets/changelog-github", [\
+        ["npm:0.4.8", {\
+          "packageLocation": "./.yarn/cache/@changesets-changelog-github-npm-0.4.8-cc18274ceb-8a357cc087.zip/node_modules/@changesets/changelog-github/",\
+          "packageDependencies": [\
+            ["@changesets/changelog-github", "npm:0.4.8"],\
+            ["@changesets/get-github-info", "npm:0.5.2"],\
+            ["@changesets/types", "npm:5.2.1"],\
+            ["dotenv", "npm:8.6.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@changesets/cli", [\
         ["npm:2.26.2", {\
           "packageLocation": "./.yarn/cache/@changesets-cli-npm-2.26.2-79f958fdbd-fc7b5bf319.zip/node_modules/@changesets/cli/",\
@@ -3398,6 +3411,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["chalk", "npm:2.4.2"],\
             ["fs-extra", "npm:7.0.1"],\
             ["semver", "npm:7.5.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@changesets/get-github-info", [\
+        ["npm:0.5.2", {\
+          "packageLocation": "./.yarn/cache/@changesets-get-github-info-npm-0.5.2-7f1c5b2a67-067e07eeae.zip/node_modules/@changesets/get-github-info/",\
+          "packageDependencies": [\
+            ["@changesets/get-github-info", "npm:0.5.2"],\
+            ["dataloader", "npm:1.4.0"],\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7147,7 +7171,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:10.3.3"],\
             ["handlebars", "npm:4.7.7"],\
             ["lazy-universal-dotenv", "npm:4.0.0"],\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"],\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"],\
             ["picomatch", "npm:2.3.1"],\
             ["pkg-dir", "npm:5.0.0"],\
             ["pretty-hrtime", "npm:1.0.3"],\
@@ -7843,7 +7867,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@turist/fetch", "virtual:bde4e473a77ffd936cbf74b47eb91a6a9a1a145a30f4c6a4064ea16ee3d76293197fd4e9a65e6c49383543fc4c1694e74dadd01b029f46ce0fc5a8227fefc18c#npm:7.2.0"],\
             ["@types/node-fetch", "npm:2.6.4"],\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"]\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"]\
           ],\
           "packagePeers": [\
             "node-fetch"\
@@ -12178,7 +12202,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cross-fetch-npm-3.1.8-71c3c05709-78f993fa09.zip/node_modules/cross-fetch/",\
           "packageDependencies": [\
             ["cross-fetch", "npm:3.1.8"],\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"]\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -12560,6 +12584,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/data-uri-to-buffer-npm-5.0.1-a40e5ac026-10958f89c0.zip/node_modules/data-uri-to-buffer/",\
           "packageDependencies": [\
             ["data-uri-to-buffer", "npm:5.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dataloader", [\
+        ["npm:1.4.0", {\
+          "packageLocation": "./.yarn/cache/dataloader-npm-1.4.0-ba03bd2183-e2c93d43af.zip/node_modules/dataloader/",\
+          "packageDependencies": [\
+            ["dataloader", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16144,7 +16177,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mitt", "npm:1.2.0"],\
             ["moment", "npm:2.29.4"],\
             ["multer", "npm:1.4.5-lts.1"],\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"],\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"],\
             ["node-html-parser", "npm:5.4.2"],\
             ["normalize-path", "npm:3.0.0"],\
             ["null-loader", "virtual:0a67cd349cc34885fa26c9c6f6a1425d7cc91603f22eba856c404ded5cda75fb313b1dbbd163a5f9bf3eeb3a4bc206f98ee28f37bdc8c16421da7f035c9e4313#npm:4.0.1"],\
@@ -16234,7 +16267,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-valid-path", "npm:0.1.1"],\
             ["joi", "npm:17.9.2"],\
             ["lodash", "npm:4.17.21"],\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"],\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"],\
             ["opentracing", "npm:0.14.7"],\
             ["pretty-error", "npm:2.1.2"],\
             ["progress", "npm:2.0.3"],\
@@ -16864,7 +16897,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["git-up", "npm:7.0.0"],\
             ["is-docker", "npm:2.2.1"],\
             ["lodash", "npm:4.17.21"],\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"]\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -21921,10 +21954,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12", {\
-          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-d2f810ec58/0/cache/node-fetch-npm-2.6.12-48619ce9d6-3bc1655203.zip/node_modules/node-fetch/",\
+        ["virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12", {\
+          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-d8612cd82b/0/cache/node-fetch-npm-2.6.12-48619ce9d6-3bc1655203.zip/node_modules/node-fetch/",\
           "packageDependencies": [\
-            ["node-fetch", "virtual:4098a08c61726faf4605da82b611528f417bc8d3b121a3f221eaea140f0904b2a1e01063ece455a04577960937d7f935e4d40de9f90d4c18f9abb7ff681277e5#npm:2.6.12"],\
+            ["node-fetch", "virtual:7f1c5b2a67fc16666aa31fba83ea7856ecb0e95595b13dccc7cae5cd164022bdf1a0a32cb6af01f93f4862b7b4f8dc76c7d04aff1bc0947186d7a6048d58d336#npm:2.6.12"],\
             ["@types/encoding", null],\
             ["encoding", null],\
             ["whatwg-url", "npm:5.0.0"]\
@@ -25763,6 +25796,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["shoplflow", "workspace:."],\
+            ["@changesets/changelog-github", "npm:0.4.8"],\
             ["@changesets/cli", "npm:2.26.2"],\
             ["@shoplflow/eslint-plugin", "workspace:packages/eslint-plugin"],\
             ["@turbo/gen", "npm:1.10.12"],\
