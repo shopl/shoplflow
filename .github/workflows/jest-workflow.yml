@@ -45,8 +45,8 @@ jobs:
           
           echo "TESTED_PACKAGES=${TESTED_PACKAGES::-2}" >> $GITHUB_ENV
           echo "TEST_RESULTS_TABLE=${TABLE_HEADER}${TABLE_CONTENT}" >> $GITHUB_ENV
-        
 
+      - name: Slack에 알림을 보내고 있어요.
         uses: 8398a7/action-slack@v3
         with:
           status: custom
@@ -67,13 +67,8 @@ jobs:
                   },
                   {
                     type: "button",
-                    text: "Storybook 확인하기",
-                    url: "${{ steps.chromatic_build.outputs.storybookUrl }}"
-                  },
-                  {
-                    type: "button",
-                    text: "빌드 확인하기",
-                    url: "${{ steps.chromatic_build.outputs.buildUrl }}"
+                    text: "테스트 커버리지 확인하기",
+                    url: "https://codecov.io/gh/${{ github.repository }}/tree/${{ github.ref }}"
                   }
                 ]
               }]
