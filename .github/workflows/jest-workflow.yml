@@ -1,8 +1,10 @@
 name: Test Changed Packages with Turbo on PR
 
 on:
-  pull_request:
-    types: [ opened, synchronize ] # PR이 오픈되거나 커밋이 추가될 때
+  push:
+
+#  pull_request:
+#    types: [ opened, synchronize ] # PR이 오픈되거나 커밋이 추가될 때
 
 jobs:
   test:
