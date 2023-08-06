@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Test changed packages with Turbo
         run: turbo run test --since ${{ github.event.before }}
