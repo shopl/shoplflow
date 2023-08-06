@@ -17,34 +17,16 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Test changed packages with Turbo
-        run: yarn turbo run test
-      # --since ${{ github.event.before }}
-      #      - name: Generate JUnit report
-      #        run: jest --reporters="default" --reporters="jest-junit"
+      - name: Test changed packages with Turbo and save results
+        run: yarn turbo run test | tee test-results.txt
 
       - name: Parse test results
         id: parse-results
         run: |
-          MESSAGE_LIST="Test results:\n"
+          MESSAGE=$(grep -E 'PASS|Test Suites|Tests|Snapshots|Time|Ran all test suites|Tasks|Cached' test-results.txt)
+          echo "TEST_RESULTS_MESSAGE=${MESSAGE}" >> $GITHUB_ENV
 
-          # 모든 junit.xml 파일을 찾기
-          for file in $(find . -name 'junit.xml'); do
-            # 파일명에서 패키지 이름 추출 (예: packages/my-package/junit.xml)
-            PACKAGE_NAME=$(dirname "$file")
-
-            # XML 파일을 파싱하여 테스트 결과 가져오기 (이 부분은 실제 파싱 로직에 따라 다를 수 있습니다.)
-            SUCCESS_COUNT=$(cat "$file" | grep '<testsuite' | awk 'BEGIN { FS=" " } ; { print $2 }')
-            FAILURE_COUNT=$(cat "$file" | grep '<testsuite' | awk 'BEGIN { FS=" " } ; { print $3 }')
-
-            # 리스트 형식의 메시지 생성
-            MESSAGE_LIST+="- $PACKAGE_NAME: Success: $SUCCESS_COUNT, Failures: $FAILURE_COUNT\n"
-          done
-
-          echo "TEST_RESULTS_LIST=${MESSAGE_LIST}" >> $GITHUB_ENV
-
-
-      - name: Slack에 알림을 보내고 있어요.
+      - name: Send test results to Slack
         uses: 8398a7/action-slack@v3
         with:
           status: custom
@@ -52,11 +34,9 @@ jobs:
           custom_payload: |
             {
               attachments: [{
-                title: ":white_check_mark: 테스트가 완료되었습니다 - ${{ env.TESTED_PACKAGES }}",
+                title: ":white_check_mark: 테스트가 완료되었습니다",
                 color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: `
-                        ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}\n\n${{ env.TEST_RESULTS_TABLE }}
-                        `,
+                text: "${{ env.TEST_RESULTS_MESSAGE }}",
                 actions: [
                   {
                     type: "button",
@@ -64,10 +44,9 @@ jobs:
                     url: "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                   },
                   {
-                      type: "button",
-                      text: "PR 확인하기",
-                      url: "${{ github.event.pull_request.html_url }}"
-                  }
+                    type: "button",
+                    text: "PR 확인하기",
+                    url: "${{ github.event.pull_request.html_url }}"
                 ]
               }]
             }
