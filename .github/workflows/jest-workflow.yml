@@ -26,7 +26,7 @@ jobs:
           while IFS= read -r line; do
             echo "TEST_RESULTS_MESSAGE_${RANDOM}=${line}" >> $GITHUB_ENV
           done < <(grep -E 'PASS|Test Suites|Tests|Snapshots|Time|Ran all test suites|Tasks|Cached' test-results.txt)
-     
+
 
       - name: Send test results to Slack
         uses: 8398a7/action-slack@v3
@@ -49,6 +49,7 @@ jobs:
                     type: "button",
                     text: "PR 확인하기",
                     url: "${{ github.event.pull_request.html_url }}"
+                  }
                 ]
               }]
             }
