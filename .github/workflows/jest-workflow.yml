@@ -26,29 +26,55 @@ jobs:
       - name: Parse test results
         id: parse-results
         run: |
-          MESSAGE="Test results:\n"
+          TABLE_HEADER="| Package | Success | Failures |\n| --- | --- | --- |\n"
+          TABLE_CONTENT=""
 
           # 모든 junit.xml 파일을 찾기
           for file in $(find . -name 'junit.xml'); do
             # 파일명에서 패키지 이름 추출 (예: packages/my-package/junit.xml)
             PACKAGE_NAME=$(dirname "$file")
+            TESTED_PACKAGES+="$PACKAGE_NAME, "
 
             # XML 파일을 파싱하여 테스트 결과 가져오기 (이 부분은 실제 파싱 로직에 따라 다를 수 있습니다.)
             SUCCESS_COUNT=$(cat "$file" | grep '<testsuite' | awk 'BEGIN { FS=" " } ; { print $2 }')
             FAILURE_COUNT=$(cat "$file" | grep '<testsuite' | awk 'BEGIN { FS=" " } ; { print $3 }')
 
-            # 메시지 생성
-            MESSAGE+="$PACKAGE_NAME - Success: $SUCCESS_COUNT, Failures: $FAILURE_COUNT\n"
+            # 테이블 내용 생성
+            TABLE_CONTENT+="| $PACKAGE_NAME | $SUCCESS_COUNT | $FAILURE_COUNT |\n"
           done
+          
+          echo "TESTED_PACKAGES=${TESTED_PACKAGES::-2}" >> $GITHUB_ENV
+          echo "TEST_RESULTS_TABLE=${TABLE_HEADER}${TABLE_CONTENT}" >> $GITHUB_ENV
+        
 
-          echo "TEST_RESULTS_MESSAGE=${MESSAGE}" >> $GITHUB_ENV
-
-
-      - name: Send test results to Slack
         uses: 8398a7/action-slack@v3
         with:
-          status: ${{ job.status }}
-          text: ${{ env.TEST_RESULTS_MESSAGE }}
-          fields: repo,commit,author,action,eventName,ref,workflow,job,took # optional
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # Slack Webhook URL
+          status: custom
+          fields: workflow,job,commit,repo,ref,author,took
+          custom_payload: |
+            {
+              attachments: [{
+                title: ":white_check_mark: 테스트가 완료되었습니다 - ${{ env.TESTED_PACKAGES }}",
+                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+                text: `
+                        ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}\n\n${{ env.TEST_RESULTS_TABLE }}
+                        `,
+                actions: [
+                  {
+                    type: "button",
+                    text: "테스트 결과 확인하기",
+                    url: "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                  },
+                  {
+                    type: "button",
+                    text: "Storybook 확인하기",
+                    url: "${{ steps.chromatic_build.outputs.storybookUrl }}"
+                  },
+                  {
+                    type: "button",
+                    text: "빌드 확인하기",
+                    url: "${{ steps.chromatic_build.outputs.buildUrl }}"
+                  }
+                ]
+              }]
+            }
