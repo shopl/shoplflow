@@ -18,8 +18,8 @@ jobs:
         run: yarn install
 
       - name: Test changed packages with Turbo
-        run: yarn turbo run test --since ${{ github.event.before }}
-
+        run: yarn turbo run test
+      # --since ${{ github.event.before }}
       - name: Generate JUnit report
         run: jest --reporters="default" --reporters="jest-junit"
 
