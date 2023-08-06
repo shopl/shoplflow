@@ -20,8 +20,8 @@ jobs:
       - name: Test changed packages with Turbo
         run: yarn turbo run test
       # --since ${{ github.event.before }}
-      - name: Generate JUnit report
-        run: jest --reporters="default" --reporters="jest-junit"
+      #      - name: Generate JUnit report
+      #        run: jest --reporters="default" --reporters="jest-junit"
 
       - name: Parse test results
         id: parse-results
