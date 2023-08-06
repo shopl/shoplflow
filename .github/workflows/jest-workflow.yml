@@ -23,9 +23,9 @@ jobs:
       - name: Parse test results
         id: parse-results
         run: |
-          while IFS= read -r line; do
-            echo "TEST_RESULTS_MESSAGE_${RANDOM}=${line}" >> $GITHUB_ENV
-          done < <(grep -E 'PASS|Test Suites|Tests|Snapshots|Time|Ran all test suites|Tasks|Cached' test-results.txt)
+          MESSAGE=$(grep -E 'PASS|Test Suites|Tests|Snapshots|Time|Ran all test suites|Tasks|Cached' test-results.txt | tr '\n' ' ')
+          echo "TEST_RESULTS_MESSAGE=${MESSAGE}" >> $GITHUB_ENV
+      
 
 
       - name: Send test results to Slack
@@ -48,7 +48,7 @@ jobs:
                   {
                     type: "button",
                     text: "PR 확인하기",
-                    url: "${{ github.event.pull_request.html_url }}"
+                    url: "${{ github.event.pull_request.url }}"
                   }
                 ]
               }]
