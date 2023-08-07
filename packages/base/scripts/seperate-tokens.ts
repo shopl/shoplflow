@@ -18,19 +18,19 @@ interface ShoplTokens {
   typographyTokens: string;
 }
 
-const shoplTokens: ShoplTokens = { colorTokens: {}, typographyTokens: "" };
-const hadaTokens: ShoplTokens = { colorTokens: {}, typographyTokens: "" };
+const shoplTokens: ShoplTokens = { colorTokens: {}, typographyTokens: '' };
+const hadaTokens: ShoplTokens = { colorTokens: {}, typographyTokens: '' };
 
 function processTypographyTokens(tokens: Tokens): string {
-  let typographyTokens = "";
+  let typographyTokens = '';
   console.log(tokens);
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
-    if (value.type === "typography") {
+    if (value.type === 'typography') {
       typographyTokenKeys.push(key);
       const { fontFamily, fontWeight, lineHeight, fontSize } = value.value;
       typographyTokens += `const ${key} = css\`
-  font-weight: ${fontWeight.replace("{", "${")};
+  font-weight: ${fontWeight.replace('{', '${')};
   line-height: ${lineHeight};
   font-size: ${fontSize}px;
 \`;\n`;
@@ -39,15 +39,12 @@ function processTypographyTokens(tokens: Tokens): string {
   return typographyTokens;
 }
 
-function processColorTokens(
-  tokens: Tokens,
-  colorTokens: { [key: string]: string } = {},
-): { [key: string]: string } {
+function processColorTokens(tokens: Tokens, colorTokens: { [key: string]: string } = {}): { [key: string]: string } {
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
-    if (value.type === "color") {
+    if (value.type === 'color') {
       colorTokens[key] = value.value;
-    } else if (typeof value === "object") {
+    } else if (typeof value === 'object') {
       processColorTokens(value, colorTokens); // 재귀 호출
     }
   });
@@ -57,8 +54,8 @@ function processColorTokens(
 function processSpacingTokens(tokens: Tokens): { [key: string]: string } {
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
-    if (value.type === "spacing") {
-      spacingTokens[key] = value.value + "px";
+    if (value.type === 'spacing') {
+      spacingTokens[key] = value.value + 'px';
     }
   });
   return spacingTokens;
@@ -67,10 +64,11 @@ function processSpacingTokens(tokens: Tokens): { [key: string]: string } {
 function processRadiusTokens(tokens: Tokens): { [key: string]: string } {
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
-    if (value.type === "borderRadius") {
-      borderRadiusTokens[key] = value.value + "px";
+    if (value.type === 'borderRadius') {
+      borderRadiusTokens[key] = value.value + 'px';
     }
   });
+
   return borderRadiusTokens;
 }
 
@@ -78,7 +76,7 @@ function processFontWeightTokens(tokens: Tokens): { [key: string]: string } {
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
 
-    if (value.type === "fontWeights") {
+    if (value.type === 'fontWeights') {
       fontWeightTokens[key] = value.value;
     }
   });
