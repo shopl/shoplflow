@@ -7,7 +7,6 @@ on:
     types:
       - opened
       - synchronize
-
 jobs:
   prepare-matrix:
     runs-on: ubuntu-latest
@@ -26,14 +25,14 @@ jobs:
 
       - name: Set matrix for next job
         id: set-matrix
-        run: echo "::set-output name=matrix::${{ steps.detect-paths.outputs.paths }}"
+        run: echo "::set-output name=matrix::$paths"
 
   test-report:
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        path: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
+        path: ${{fromJson(needs.prepare-matrix.outputs.paths)}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
