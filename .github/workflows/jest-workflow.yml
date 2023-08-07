@@ -27,7 +27,6 @@ jobs:
                 sort | \
                 uniq)
           echo "Changed directories: $dirs"
-          echo "fromJson($dirs)"
           echo "::set-output name=changed_dirs::$dirs"
 
 
@@ -36,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dir: ${{fromJson(needs.detect-changes.outputs.changed_dirs)}}
+        dir: ${{needs.detect-changes.outputs.changed_dirs}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
