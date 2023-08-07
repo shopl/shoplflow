@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: 패키지만 테스트하고 있어요.
+      - name: 변경된 패키지만 테스트하고 있어요.
         run: yarn turbo run test --since=origin/main
 
       - name: Test Report
@@ -32,7 +32,12 @@ jobs:
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Slack에 알림을 보내고 있어요.
+      - name: Set Test Status
+        id: set_status
+        run: |
+          echo "::set-output name=status::${{ job.status }}"
+
+      - name: Slack Notification
         uses: 8398a7/action-slack@v3
         with:
           status: custom
@@ -40,8 +45,8 @@ jobs:
           custom_payload: |
             {
               attachments: [{
-                title: "${{ job.status }}' === 'success' ? '테스트가 완료되었어요.' : '테스트가 실패했어요.'",
-                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+                title: "${{ steps.set_status.outputs.status }}' === 'success' ? '테스트가 완료되었어요.' : '테스트가 실패했어요.'",
+                color: '${{ steps.set_status.outputs.status }}' === 'success' ? 'good' : '${{ steps.set_status.outputs.status }}' === 'failure' ? 'danger' : 'warning',
                 text: `
                 ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
                 `,
@@ -49,7 +54,7 @@ jobs:
                   {
                     type: "button",
                     text: "Test Report 확인하기",
-                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}/jobs/${{ github.job_id }}"
+                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
                   },
                   {
                     type: "button",
