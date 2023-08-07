@@ -4,8 +4,11 @@ on:
   pull_request:
 
 jobs:
-  test:
+  jest-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: [ base, util, hook, lint, shopl-ui, hada-ui ]  # 패키지 이름 목록
 
     steps:
       - name: Checkout code
@@ -17,13 +20,12 @@ jobs:
       - name: Test changed packages with Turbo and save results
         run: yarn turbo run test:report
 
-      # 테스트 결과를 담은 xml 파일을 레포트로 변환합니다.
-      - name: Test Report
+      - name: Test Report for ${{ matrix.package }}
         uses: dorny/test-reporter@v1
-        if: success() || failure()    # run this step even if previous step failed
+        if: success() || failure()
         with:
-          name: test-results
-          path: junit.xml
+          name: test-results-${{ matrix.package }}
+          path: packages/${{ matrix.package }}/junit.xml
           fail-on-error: 'false'
-          reporter: jest-junit        # Format of test results
+          reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
