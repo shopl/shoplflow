@@ -9,9 +9,6 @@ on:
 jobs:
   jest-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package: [ base, util, hook, lint, shopl-ui, hada-ui ]  # 패키지 이름 목록
 
     steps:
       - name: Checkout code
@@ -20,15 +17,15 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Test changed packages with Turbo and save results
-        run: yarn turbo run test:report
+      - name: Run tests for changed packages with Turbo
+        run: yarn turbo run test --since=origin/main
 
-      - name: Test Report for ${{ matrix.package }}
+      - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: test-results-${{ matrix.package }}
-          path: packages/${{ matrix.package }}/junit.xml
+          name: test-results
+          path: '**/junit.xml'  # Assuming each package generates a junit.xml in its directory
           fail-on-error: 'false'
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
