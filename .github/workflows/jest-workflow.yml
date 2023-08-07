@@ -9,30 +9,41 @@ on:
       - synchronize
 
 jobs:
-  jest-test:
+  prepare-matrix:
     runs-on: ubuntu-latest
-
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Fetch all history
 
-      - name: Fetch origin/main branch
-        run: git fetch origin main:main
+      - name: Detect packages with junit.xml
+        id: detect-packages
+        run: |
+          packages=$(find . -name 'junit.xml' -exec dirname {} \; | sed 's|.*/||' | jq -R -s -c 'split("\n")[:-1]')
+          echo "Detected packages: $packages"
+          echo "::set-output name=packages::$packages"
 
-      - name: Install dependencies
-        run: yarn install
+      - name: Set matrix for next job
+        id: set-matrix
+        run: echo "::set-output name=matrix::${{ steps.detect-packages.outputs.packages }}"
 
-      - name: Turbo로 변경된 패키지만 테스트합니다.
-        run: yarn turbo run test --since=origin/main
+  test-report:
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Test Report
+      - name: Test Report for ${{ matrix.package }}
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: test-results
-          path: '**/junit.xml'  # Assuming each package generates a junit.xml in its directory
+          name: test-results-${{ matrix.package }}
+          path: */${ { matrix.package } }/junit.xml
           fail-on-error: 'false'
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
