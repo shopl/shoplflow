@@ -2,57 +2,31 @@ name: Test Changed Packages with Turbo on PR
 
 on:
   pull_request:
-
     branches:
-      - main
+      - feature/*
     types:
       - opened
       - synchronize
+
 jobs:
-  detect-changes:
+  jest-test:
     runs-on: ubuntu-latest
-    outputs:
-      changed_dirs: ${{ steps.changed_dirs.outputs.changed_dirs }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # 이 값을 0으로 설정하여 저장소의 모든 커밋을 가져옵니다
 
-      - name: Get list of changed directories within packages
-        id: changed_dirs
-        run: |
-          dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | \
-                grep '^packages/.*$' | \  # packages 경로에 해당하는 파일만 필터링
-                grep '^docs/.*$' | \  # packages 경로에 해당하는 파일만
-                sed -E 's@(.*)/@\1@' | \
-                sort | \
-                uniq)
-          echo "Changed directories: $dirs"
-          echo "::set-output name=changed_dirs::$dirs"
-
-
-  test:
-    needs: detect-changes
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dir: ${{needs.detect-changes.outputs.changed_dirs}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run tests in changed directory
-        run: |
-          cd ${{ matrix.dir }}
-          yarn test
+      - name: Install dependencies
+        run: yarn install
 
-      - name: Test Report for ${{ matrix.dir }}
+      - name: Turbo로 변경된 패키지만 테스트하고 있어요.
+        run: yarn turbo run test --since=origin/main
+
+      - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: test-results-${{ matrix.dir }}
-          path: ${{ matrix.dir }}/junit.xml
+          path: '**/junit.xml'
           fail-on-error: 'false'
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
