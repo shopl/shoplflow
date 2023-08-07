@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        path: ${{fromJson(needs.prepare-matrix.outputs.paths)}}
+        path: ${{ needs.prepare-matrix.outputs.paths }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
