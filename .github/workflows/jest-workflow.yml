@@ -19,16 +19,10 @@ jobs:
       - name: Detect junit.xml paths
         id: detect-paths
         run: |
-          paths=$(find . -name 'junit.xml' | jq -R -s -c 'split("\n")[:-1]')
-          if [[ -z "$paths" ]]; then
-            paths="[]"
-          fi
-          echo "Detected paths: $paths"
-          echo "::set-output name=paths::$paths"
-
-      - name: Set matrix for next job
-        id: set-matrix
-        run: echo "::set-output name=matrix::$paths"
+          paths=$(find . -name 'junit.xml' -printf '\"%p\",\n' | sed '$s/,$//')
+          matrix="{\"path\": [$paths]}"
+          echo "Matrix: $matrix"
+          echo "::set-output name=matrix::$matrix"
 
   test-report:
     needs: prepare-matrix
