@@ -2,6 +2,7 @@ name: Test Changed Packages with Turbo on PR
 
 on:
   pull_request:
+
     branches:
       - main
     types:
@@ -18,11 +19,12 @@ jobs:
         with:
           fetch-depth: 0  # 이 값을 0으로 설정하여 저장소의 모든 커밋을 가져옵니다
 
-      - name: Get list of changed directories
+      - name: Get list of changed directories within packages
         id: changed_dirs
         run: |
           dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | \
-                grep '/.*$' | \
+                grep '^packages/.*$' | \  # packages 경로에 해당하는 파일만 필터링
+                grep '^docs/.*$' | \  # packages 경로에 해당하는 파일만
                 sed -E 's@(.*)/@\1@' | \
                 sort | \
                 uniq)
