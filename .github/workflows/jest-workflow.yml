@@ -2,8 +2,6 @@ name: Test Changed Packages with Turbo on PR
 
 on:
   pull_request:
-    branches:
-      - feature/*
     types:
       - opened
       - synchronize
