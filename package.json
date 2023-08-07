@@ -6,7 +6,9 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "changeset": "changeset"
+    "changeset": "changeset",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "version": "0.0.1",
   "devDependencies": {
