@@ -37,6 +37,21 @@ jobs:
         run: |
           echo "::set-output name=status::${{ job.status }}"
 
+
+      - name: Set Test Status and Color
+        id: set_status_and_color
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+          echo "::set-output name=status_text::테스트가 완료되었어요."
+          echo "::set-output name=color::good"
+          elif [ "${{ job.status }}" == "failure" ]; then
+          echo "::set-output name=status_text::테스트가 실패했어요."
+          echo "::set-output name=color::danger"
+          else
+          echo "::set-output name=status_text::테스트 상태를 확인하세요."
+          echo "::set-output name=color::warning"
+          fi
+
       - name: Slack Notification
         uses: 8398a7/action-slack@v3
         with:
@@ -45,8 +60,9 @@ jobs:
           custom_payload: |
             {
               attachments: [{
-                title: "${{ steps.set_status.outputs.status }}' === 'success' ? '테스트가 완료되었어요.' : '테스트가 실패했어요.'",
-                color: '${{ steps.set_status.outputs.status }}' === 'success' ? 'good' : '${{ steps.set_status.outputs.status }}' === 'failure' ? 'danger' : 'warning',
+              title: "${{ steps.set_status_and_color.outputs.status_text }}",
+              color: "${{ steps.set_status_and_color.outputs.color }}",
+              text: `
                 text: `
                 ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
                 `,

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="0.703">
-  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2023-08-07T05:06:24" time="0.595" tests="1">
-    <testcase classname="Button should be defined" name="Button should be defined" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="separateTokens" errors="0" failures="0" skipped="0" timestamp="2023-08-07T05:06:25" time="0.052" tests="3">
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="0.773">
+  <testsuite name="separateTokens" errors="0" failures="0" skipped="0" timestamp="2023-08-07T05:07:47" time="0.747" tests="3">
     <testcase classname="separateTokens 생성된 토큰의 일부 값을 확인합니다." name="separateTokens 생성된 토큰의 일부 값을 확인합니다." time="0.001">
     </testcase>
-    <testcase classname="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." time="0.001">
+    <testcase classname="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." time="0">
     </testcase>
-    <testcase classname="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." time="0.003">
+    <testcase classname="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 타이포그래피 토큰 키가 일치하는지 확인합니다." time="0.005">
     </testcase>
   </testsuite>
 </testsuites>

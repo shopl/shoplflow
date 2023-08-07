@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint src --ext ts,tsx --fix",
-    "test": "jest --changesSince=feature/base_token-generator",
+    "test": "jest --onlyChanged",
     "test:report": "jest --ci --reporters=default --reporters=jest-junit",
     "build": "node build.cjs",
     "build:tokens": "node scripts/generate-tokens.ts",

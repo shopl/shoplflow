@@ -23,12 +23,12 @@ const hadaTokens: ShoplTokens = { colorTokens: {}, typographyTokens: '' };
 
 function processTypographyTokens(tokens: Tokens): string {
   let typographyTokens = '';
-  console.log(tokens);
+
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
     if (value.type === 'typography') {
       typographyTokenKeys.push(key);
-      const { fontFamily, fontWeight, lineHeight, fontSize } = value.value;
+      const { fontWeight, lineHeight, fontSize } = value.value;
       typographyTokens += `const ${key} = css\`
   font-weight: ${fontWeight.replace('{', '${')};
   line-height: ${lineHeight};
