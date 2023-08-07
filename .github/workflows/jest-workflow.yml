@@ -63,7 +63,6 @@ jobs:
               title: "${{ steps.set_status_and_color.outputs.status_text }}",
               color: "${{ steps.set_status_and_color.outputs.color }}",
               text: `
-                text: `
                 ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
                 `,
                 actions: [
