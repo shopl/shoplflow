@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run tests for changed packages with Turbo
+      - name: Turbo로 변경된 패키지만 테스트합니다.
         run: yarn turbo run test --since=origin/main
 
       - name: Test Report
