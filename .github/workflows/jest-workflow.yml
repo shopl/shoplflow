@@ -20,6 +20,9 @@ jobs:
         id: detect-paths
         run: |
           paths=$(find . -name 'junit.xml' | jq -R -s -c 'split("\n")[:-1]')
+          if [[ -z "$paths" ]]; then
+            paths="[]"
+          fi
           echo "Detected paths: $paths"
           echo "::set-output name=paths::$paths"
 
@@ -31,8 +34,7 @@ jobs:
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        path: ${{ needs.prepare-matrix.outputs.paths }}
+      matrix: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
