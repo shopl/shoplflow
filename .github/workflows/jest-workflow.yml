@@ -8,37 +8,46 @@ on:
       - opened
       - synchronize
 jobs:
-  prepare-matrix:
+  detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      changed_dirs: ${{ steps.get-changed-dirs.outputs.changed_dirs }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Detect junit.xml paths
-        id: detect-paths
+      - name: Get list of changed directories
+        id: get-changed-dirs
         run: |
-          paths=$(find . -name 'junit.xml' -printf '\"%p\",\n' | sed '$s/,$//')
-          matrix="{\"path\": [$paths]}"
-          echo "Matrix: $matrix"
-          echo "::set-output name=matrix::$matrix"
+          dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | \
+                 grep '/.*$' | \
+                 sed -E 's@(.*)/@\1@' | \
+                 sort | \
+                 uniq)
+          echo "Changed directories: $dirs"
+          echo "::set-output name=changed_dirs::$dirs"
 
-  test-report:
-    needs: prepare-matrix
+  test:
+    needs: detect-changes
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
+      matrix:
+        dir: ${{fromJson(needs.detect-changes.outputs.changed_dirs)}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Test Report for ${{ matrix.path }}
+      - name: Run tests in changed directory
+        run: |
+          cd ${{ matrix.dir }}
+          yarn test
+
+      - name: Test Report for ${{ matrix.dir }}
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: test-results-${{ matrix.path }}
-          path: ${{ matrix.path }}
+          name: test-results-${{ matrix.dir }}
+          path: ${{ matrix.dir }}/junit.xml
           fail-on-error: 'false'
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
