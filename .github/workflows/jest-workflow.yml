@@ -2,6 +2,8 @@ name: Test Changed Packages with Turbo on PR
 
 on:
   pull_request:
+    branches:
+      - feature/**
     types:
       - opened
       - synchronize
@@ -13,6 +15,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Fetch all history
+
+      - name: Fetch origin/main branch
+        run: git fetch origin main:main
 
       - name: Install dependencies
         run: yarn install
