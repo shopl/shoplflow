@@ -11,23 +11,24 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      changed_dirs: ${{ steps.get-changed-dirs.outputs.changed_dirs }}
+      changed_dirs: ${{ steps.changed_dirs.outputs.changed_dirs }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # 이 값을 0으로 설정하여 저장소의 모든 커밋을 가져옵니다.
+          fetch-depth: 0  # 이 값을 0으로 설정하여 저장소의 모든 커밋을 가져옵니다
 
       - name: Get list of changed directories
-        id: get-changed-dirs
+        id: changed_dirs
         run: |
           dirs=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | \
-                 grep '/.*$' | \
-                 sed -E 's@(.*)/@\1@' | \
-                 sort | \
-                 uniq)
+                grep '/.*$' | \
+                sed -E 's@(.*)/@\1@' | \
+                sort | \
+                uniq)
           echo "Changed directories: $dirs"
           echo "::set-output name=changed_dirs::$dirs"
+
 
   test:
     needs: detect-changes
