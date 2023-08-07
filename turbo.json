@@ -19,11 +19,13 @@
       ]
     },
     "test": {
+      "cache": true,
       "dependsOn": [
         "^test"
       ]
     },
     "test:report": {
+      "cache": true,
       "dependsOn": [
         "^test:report"
       ]
