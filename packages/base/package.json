@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "lint": "eslint src --ext ts,tsx --fix",
+    "lint": "eslint $(git diff --name-only --diff-filter=d $BASE..$HEAD | grep  -E \"(.ts$|.tsx$)\") --max-warnings=0",
     "test": "jest",
     "build": "node build.cjs",
     "develop": "yarn build --watch"

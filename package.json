@@ -27,9 +27,16 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "lint-staged": "13.2.3",
     "prettier": "^3.0.0",
     "turbo": "^1.10.12",
     "typescript": "^5.1.6"
+  },
+  "lint-staged": {
+      "*.{js,ts,tsx}": [
+        "eslint --fix",
+        "git add"
+      ]
   },
   "packageManager": "yarn@3.6.1",
   "dependencies": {
