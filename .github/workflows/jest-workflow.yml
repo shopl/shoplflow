@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Turbo로 변경된 패키지만 테스트하고 있어요.
+      - name: 패키지만 테스트하고 있어요.
         run: yarn turbo run test --since=origin/main
 
       - name: Test Report
@@ -59,3 +59,6 @@ jobs:
                 ]
               }]
             }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
