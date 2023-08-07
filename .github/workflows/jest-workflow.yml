@@ -16,9 +16,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install dependencies
-        run: yarn install
-
       - name: 변경된 패키지만 테스트하고 있어요.
         run: yarn turbo run test --since=origin/main
 
