@@ -27,6 +27,7 @@ jobs:
                 sort | \
                 uniq)
           echo "Changed directories: $dirs"
+          echo "fromJson($dirs)"
           echo "::set-output name=changed_dirs::$dirs"
 
 
