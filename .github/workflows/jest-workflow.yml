@@ -1,10 +1,7 @@
 name: Test Changed Packages with Turbo on PR
 
 on:
-  push:
-
-#  pull_request:
-#    types: [ opened, synchronize ] # PR이 오픈되거나 커밋이 추가될 때
+  pull_request:
 
 jobs:
   test:
@@ -18,40 +15,19 @@ jobs:
         run: yarn install
 
       - name: Test changed packages with Turbo and save results
-        run: yarn turbo run test | tee test-results.txt
+        run: yarn turbo run test
 
-      - name: Parse test results
-        id: parse-results
-        run: |
-          MESSAGE=$(grep -E 'PASS|Test Suites|Tests|Snapshots|Time|Ran all test suites|Tasks|Cached' test-results.txt | tr '\n' ' ')
-          echo "TEST_RESULTS_MESSAGE=${MESSAGE}" >> $GITHUB_ENV
-      
+      # 테스트 수행과 그 테스트 결과를 xml파일로 생성합니다.
+      - name: Run tests
+        run: yarn test:report
 
-
-      - name: Send test results to Slack
-        uses: 8398a7/action-slack@v3
+      # 테스트 결과를 담은 xml 파일을 레포트로 변환합니다.
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
         with:
-          status: custom
-          fields: workflow,job,commit,repo,ref,author,took
-          custom_payload: |
-            {
-              attachments: [{
-                title: ":white_check_mark: 테스트가 완료되었습니다",
-                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: "${{ env.TEST_RESULTS_MESSAGE }}",
-                actions: [
-                  {
-                    type: "button",
-                    text: "테스트 결과 확인하기",
-                    url: "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-                  },
-                  {
-                    type: "button",
-                    text: "PR 확인하기",
-                    url: "${{ github.event.pull_request.url }}"
-                  }
-                ]
-              }]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          name: test-results
+          path: junit.xml
+          fail-on-error: 'false'
+          reporter: jest-junit        # Format of test results
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="0.883">
-  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2023-08-06T23:16:07" time="0.685" tests="1">
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="0.794">
+  <testsuite name="Button" errors="0" failures="0" skipped="0" timestamp="2023-08-07T00:22:50" time="0.664" tests="1">
     <testcase classname="Button should be defined" name="Button should be defined" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="separateTokens" errors="0" failures="0" skipped="0" timestamp="2023-08-06T23:16:08" time="0.134" tests="3">
+  <testsuite name="separateTokens" errors="0" failures="0" skipped="0" timestamp="2023-08-07T00:22:51" time="0.057" tests="3">
     <testcase classname="separateTokens 생성된 토큰의 일부 값을 확인합니다." name="separateTokens 생성된 토큰의 일부 값을 확인합니다." time="0.001">
     </testcase>
     <testcase classname="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." name="separateTokens 하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다." time="0">

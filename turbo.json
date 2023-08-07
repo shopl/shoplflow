@@ -23,6 +23,11 @@
         "^test"
       ]
     },
+    "test:report": {
+      "dependsOn": [
+        "^test:report"
+      ]
+    },
     "dev": {
       "cache": false,
       "persistent": true

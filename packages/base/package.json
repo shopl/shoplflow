@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "eslint src --ext ts,tsx --fix",
     "test": "jest",
+    "test:report": "jest --ci --reporters=default --reporters=jest-junit",
     "build": "node build.cjs",
     "build:tokens": "node scripts/generate-tokens.ts",
     "develop": "yarn build --watch"
