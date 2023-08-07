@@ -12150,7 +12150,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js", [\
         ["npm:3.32.0", {\
-          "packageLocation": "./.yarn/unplugged/core-js-npm-3.32.0-ccedf4fd04/node_modules/core-js/",\
+          "packageLocation": "./.yarn/cache/core-js-npm-3.32.0-ccedf4fd04-5292139502.zip/node_modules/core-js/",\
           "packageDependencies": [\
             ["core-js", "npm:3.32.0"]\
           ],\
@@ -12177,7 +12177,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js-pure", [\
         ["npm:3.32.0", {\
-          "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.32.0-2ab9c5a73e/node_modules/core-js-pure/",\
+          "packageLocation": "./.yarn/cache/core-js-pure-npm-3.32.0-2ab9c5a73e-57b1ae97e6.zip/node_modules/core-js-pure/",\
           "packageDependencies": [\
             ["core-js-pure", "npm:3.32.0"]\
           ],\
@@ -13787,7 +13787,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["es5-ext", [\
         ["npm:0.10.62", {\
-          "packageLocation": "./.yarn/unplugged/es5-ext-npm-0.10.62-f20aca46cb/node_modules/es5-ext/",\
+          "packageLocation": "./.yarn/cache/es5-ext-npm-0.10.62-f20aca46cb-25f42f6068.zip/node_modules/es5-ext/",\
           "packageDependencies": [\
             ["es5-ext", "npm:0.10.62"],\
             ["es6-iterator", "npm:2.0.3"],\
@@ -13853,7 +13853,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["esbuild", [\
         ["npm:0.14.54", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.14.54-b3dcd8a41e/node_modules/esbuild/",\
+          "packageLocation": "./.yarn/cache/esbuild-npm-0.14.54-b3dcd8a41e-49e360b118.zip/node_modules/esbuild/",\
           "packageDependencies": [\
             ["esbuild", "npm:0.14.54"],\
             ["@esbuild/linux-loong64", "npm:0.14.54"],\
@@ -13881,7 +13881,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }],\
         ["npm:0.18.17", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.18.17-384f2c63dc/node_modules/esbuild/",\
+          "packageLocation": "./.yarn/cache/esbuild-npm-0.18.17-384f2c63dc-c6e1ffa776.zip/node_modules/esbuild/",\
           "packageDependencies": [\
             ["esbuild", "npm:0.18.17"],\
             ["@esbuild/android-arm", "npm:0.18.17"],\
@@ -16172,14 +16172,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["gatsby", [\
         ["npm:5.11.0", {\
-          "packageLocation": "./.yarn/unplugged/gatsby-virtual-0a67cd349c/node_modules/gatsby/",\
+          "packageLocation": "./.yarn/cache/gatsby-npm-5.11.0-fd30e7af87-54f199190e.zip/node_modules/gatsby/",\
           "packageDependencies": [\
             ["gatsby", "npm:5.11.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
         ["virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:5.11.0", {\
-          "packageLocation": "./.yarn/unplugged/gatsby-virtual-0a67cd349c/node_modules/gatsby/",\
+          "packageLocation": "./.yarn/__virtual__/gatsby-virtual-0a67cd349c/0/cache/gatsby-npm-5.11.0-fd30e7af87-54f199190e.zip/node_modules/gatsby/",\
           "packageDependencies": [\
             ["gatsby", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:5.11.0"],\
             ["@babel/code-frame", "npm:7.22.5"],\
@@ -16363,7 +16363,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["gatsby-cli", [\
         ["npm:5.11.0", {\
-          "packageLocation": "./.yarn/unplugged/gatsby-cli-npm-5.11.0-4c9c712914/node_modules/gatsby-cli/",\
+          "packageLocation": "./.yarn/cache/gatsby-cli-npm-5.11.0-4c9c712914-ef6c85f09a.zip/node_modules/gatsby-cli/",\
           "packageDependencies": [\
             ["gatsby-cli", "npm:5.11.0"],\
             ["@babel/code-frame", "npm:7.22.5"],\
@@ -17009,7 +17009,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["gatsby-telemetry", [\
         ["npm:4.11.0", {\
-          "packageLocation": "./.yarn/unplugged/gatsby-telemetry-npm-4.11.0-bde4e473a7/node_modules/gatsby-telemetry/",\
+          "packageLocation": "./.yarn/cache/gatsby-telemetry-npm-4.11.0-bde4e473a7-dc18686d0f.zip/node_modules/gatsby-telemetry/",\
           "packageDependencies": [\
             ["gatsby-telemetry", "npm:4.11.0"],\
             ["@babel/code-frame", "npm:7.22.5"],\
@@ -27877,7 +27877,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["turbo", [\
         ["npm:1.10.12", {\
-          "packageLocation": "./.yarn/unplugged/turbo-npm-1.10.12-482ca53854/node_modules/turbo/",\
+          "packageLocation": "./.yarn/cache/turbo-npm-1.10.12-482ca53854-266b70404e.zip/node_modules/turbo/",\
           "packageDependencies": [\
             ["turbo", "npm:1.10.12"],\
             ["turbo-darwin-64", "npm:1.10.12"],\
