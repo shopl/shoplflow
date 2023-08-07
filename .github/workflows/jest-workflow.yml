@@ -31,3 +31,31 @@ jobs:
           fail-on-error: 'false'
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Slack에 알림을 보내고 있어요.
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: workflow,job,commit,repo,ref,author,took
+          custom_payload: |
+            {
+              attachments: [{
+                title: "${{ job.status }}' === 'success' ? '테스트가 완료되었어요.' : '테스트가 실패했어요.'",
+                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+                text: `
+                ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
+                `,
+                actions: [
+                  {
+                    type: "button",
+                    text: "Test Report 확인하기",
+                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}/jobs/${{ github.job_id }}"
+                  },
+                  {
+                    type: "button",
+                    text: "PR 확인하기",
+                    url: "${{ github.event.pull_request.html_url }}"
+                  }
+                ]
+              }]
+            }
