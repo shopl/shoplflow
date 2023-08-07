@@ -17,33 +17,33 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Detect packages with junit.xml
-        id: detect-packages
+      - name: Detect junit.xml paths
+        id: detect-paths
         run: |
-          packages=$(find . -name 'junit.xml' -exec dirname {} \; | sed 's|.*/||' | jq -R -s -c 'split("\n")[:-1]')
-          echo "Detected packages: $packages"
-          echo "::set-output name=packages::$packages"
+          paths=$(find . -name 'junit.xml' | jq -R -s -c 'split("\n")[:-1]')
+          echo "Detected paths: $paths"
+          echo "::set-output name=paths::$paths"
 
       - name: Set matrix for next job
         id: set-matrix
-        run: echo "::set-output name=matrix::${{ steps.detect-packages.outputs.packages }}"
+        run: echo "::set-output name=matrix::${{ steps.detect-paths.outputs.paths }}"
 
   test-report:
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        package: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
+        path: ${{fromJson(needs.prepare-matrix.outputs.matrix)}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Test Report for ${{ matrix.package }}
+      - name: Test Report for ${{ matrix.path }}
         uses: dorny/test-reporter@v1
         if: success() || failure()
         with:
-          name: test-results-${{ matrix.package }}
-          path: */${ { matrix.package } }/junit.xml
+          name: test-results-${{ matrix.path }}
+          path: ${{ matrix.path }}
           fail-on-error: 'false'
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
