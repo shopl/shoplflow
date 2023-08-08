@@ -1,4 +1,4 @@
-exports const shoplColors = {
+export const shoplColors = {
   coolgray300: '#8092aa',
   coolgray200: '#cdd6e4',
   coolgray100: '#dce3ee',
@@ -42,9 +42,9 @@ exports const shoplColors = {
   hada150: '#c1e7dd',
   hada100: '#d9f4ed',
   background: '#f6f6f6',
-  primary100: '{shopl.shopl100}',
-  primary150: '{shopl.shopl150}',
-  primary200: '{shopl.shopl200}',
-  primary300: '{shopl.shopl300}',
-  primary400: '{shopl.shopl400}',
+  primary100: 'shoplColors.shopl100',
+  primary150: 'shoplColors.shopl150',
+  primary200: 'shoplColors.shopl200',
+  primary300: 'shoplColors.shopl300',
+  primary400: 'shoplColors.shopl400',
 };

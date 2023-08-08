@@ -8,7 +8,7 @@ const {typographyTokenKeys, hadaTokens, shoplTokens, fontWeightTokens, borderRad
     separateTokens(tokens);
 
 function mappingTokenObject(obj, tokens) {
-    let result = `exports const ${tokens} = {\n`;
+    let result = `export const ${tokens} = {\n`;
     for (const [key, value] of Object.entries(obj)) {
         if (typeof value === 'object') {
             result += `${key}: ${JSON.stringify(value, null, 2).replace(/"/g, '')} = ${JSON.stringify(value, null, 2).replace(
@@ -25,9 +25,9 @@ function mappingTokenObject(obj, tokens) {
 
 function mappingTypographyString(obj) {
     let result = '';
-    result += 'const css = require(\'@emotion/react\');\n\n' + "const fontWeight = require('./fontWeights'); \n\n";
+    result += "import { css } from '@emotion/react';\n\n" + "import { fontWeight } from './fontWeights'; \n\n";
     result += obj;
-    result += `exports.typographies = {\n`;
+    result += `export const typographies = {\n`;
     typographyTokenKeys.forEach((key) => {
         result += `  ${key},\n`;
     });
@@ -37,13 +37,13 @@ function mappingTypographyString(obj) {
 }
 
 async function generateIndex() {
-    const index = `exports.borderRadius = require('./borderRadius');
-exports.fontWeights = require('./fontWeights');
-exports.hadaColors = require('./hadaColors');
-exports.hadaTypographies = require('./hadaTypographies');
-exports.shoplColors = require('./shoplColors');
-exports.shoplTypographies = require('./shoplTypographies');
-exports.spacings = require('./spacings');
+    const index = `export { borderRadius } from'./borderRadius';
+export { fontWeights } from'./fontWeights';
+export { hadaColors } from'./hadaColors';
+export { hadaTypographies } from'./hadaTypographies';
+export { shoplColors } from'./shoplColors';
+export { shoplTypographies } from'./shoplTypographies';
+export { spacings } from'./spacings';
 
     `;
     await fs.writeFileSync(rootPath + '/src/styles/tokens/index.ts', index);

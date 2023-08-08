@@ -26,17 +26,16 @@ function processTypographyTokens(tokens) {
     return typographyTokens;
 }
 
-function processColorTokens(tokens, colorTokens = {}) {
-
+function processColorTokens(tokens, colorTokens = {}, prefix = '') {
     Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'color') {
-            colorTokens[key] = value.value
+            // Replace '{hada.hada150}' with 'hadaColors.hada150' and '{shopl.shopl400}' with 'shoplColors.shopl400'
+            colorTokens[key] = value.value.replace(/\{(\w+)\.(\w+)\}/g, `${prefix}Colors.$2`);
         } else if (typeof value === 'object') {
-            processColorTokens(value, colorTokens); // 재귀 호출
+            processColorTokens(value, colorTokens, key); // 재귀 호출
         }
     });
-    console.log(colorTokens);
     return colorTokens;
 }
 
@@ -81,12 +80,12 @@ function separateTokens(tokens) {
     if (tokens.shopl) {
         console.log(tokens.shopl);
         shoplTokens.typographyTokens = processTypographyTokens(tokens.shopl);
-        shoplTokens.colorTokens = processColorTokens(tokens.shopl);
+        shoplTokens.colorTokens = processColorTokens(tokens.shopl, {}, 'shopl');
     }
 
     if (tokens.hada) {
         hadaTokens.typographyTokens = processTypographyTokens(tokens.hada);
-        hadaTokens.colorTokens = processColorTokens(tokens.hada);
+        hadaTokens.colorTokens = processColorTokens(tokens.hada, {}, 'hada');
     }
     if (token?.fontWeight) {
         processFontWeightTokens(token.fontWeight);
