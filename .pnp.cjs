@@ -26,10 +26,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@shoplflow/eslint-plugin",\
         "reference": "workspace:packages/eslint-plugin"\
-      },\
-      {\
-        "name": "@shoplflow/tsconfig",\
-        "reference": "workspace:packages/tsconfig"\
       }\
     ],\
     "enableTopLevelFallback": true,\
@@ -37,7 +33,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["@shoplflow/base", ["workspace:packages/base"]],\
       ["@shoplflow/eslint-plugin", ["workspace:packages/eslint-plugin"]],\
-      ["@shoplflow/tsconfig", ["workspace:packages/tsconfig"]],\
       ["docs", ["workspace:docs"]],\
       ["shoplflow", ["workspace:."]]\
     ],\
@@ -6252,15 +6247,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-refresh", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:0.3.5"],\
             ["eslint-plugin-unused-imports", "virtual:e693c3425e465052e4d97eaec6964caf79ea1404397ba57aa3c4e78af0b0f5961c4dba09f4b1c219015eca397f0948e9c57409374e00f731be55ef58d7a463b2#npm:3.0.0"],\
             ["prettier", "npm:3.0.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }]\
-      ]],\
-      ["@shoplflow/tsconfig", [\
-        ["workspace:packages/tsconfig", {\
-          "packageLocation": "./packages/tsconfig/",\
-          "packageDependencies": [\
-            ["@shoplflow/tsconfig", "workspace:packages/tsconfig"]\
           ],\
           "linkType": "SOFT"\
         }]\
