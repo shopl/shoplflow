@@ -1,4 +1,4 @@
-export const spacings = {
+exports const spacings = {
   spacing04: '4px',
   spacing06: '6px',
   spacing08: '8px',

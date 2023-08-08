@@ -7,8 +7,8 @@
     "test": "jest --onlyChanged",
     "test:report": "jest --ci --reporters=default --reporters=jest-junit",
     "build": "node build.js",
-    "change:js": "tsc scripts/generate-tokens.ts && tsc scripts/generate-tokens.js",
-    "build:tokens": "node scripts/generate-tokens.js",
+    "change:js": "tsc scripts/generate-tokens.cjs && tsc scripts/generate-tokens.cjs",
+    "build:tokens": "node scripts/generate-tokens.cjs",
     "develop": "yarn build --watch"
   },
   "main": "dist/index.cjs",

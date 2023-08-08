@@ -2,7 +2,7 @@ import { $Values } from '../utils/$values';
 import { borderRadius } from './tokens/borderRadius';
 import { fontWeights } from './tokens/fontWeights';
 import { spacings } from './tokens/spacings';
-import { hadaTypographies } from './tokens/hada-typographies';
+import { hadaTypographies } from './tokens/hadaTypographies';
 import { hadaColors } from './tokens/hada-colors';
 
 export type BorderRadiusToken = $Values<typeof borderRadius>;
