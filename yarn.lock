@@ -3980,12 +3980,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@shoplflow/tsconfig@workspace:packages/tsconfig":
-  version: 0.0.0-use.local
-  resolution: "@shoplflow/tsconfig@workspace:packages/tsconfig"
-  languageName: unknown
-  linkType: soft
-
 "@sideway/address@npm:^4.1.3":
   version: 4.1.4
   resolution: "@sideway/address@npm:4.1.4"
