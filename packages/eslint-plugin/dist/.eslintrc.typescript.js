@@ -1,3 +1,5 @@
+"use strict";
+
 // .eslintrc.typescript.js
 module.exports = {
   extends: ["./.eslintrc.base.js", "plugin:@typescript-eslint/recommended"],

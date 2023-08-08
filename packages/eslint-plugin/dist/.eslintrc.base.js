@@ -1,3 +1,5 @@
+"use strict";
+
 // .eslintrc.base.js
 module.exports = {
   env: {
