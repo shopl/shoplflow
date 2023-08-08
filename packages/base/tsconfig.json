@@ -11,20 +11,26 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": ".",
     "noFallthroughCasesInSwitch": true,
-    "outDir": "./dist"
+    "jsxImportSource": "@emotion/react",
+    "outDir": "./dist",
+    "jsx": "react"
   },
   "typeAcquisition": {
     "include": [
       "jest"
     ]
   },
+  "exclude": [
+    "*.json"
+  ],
   "include": [
+    "src/emotion.d.ts",
     "scripts/*",
     "src/*",
     "**/*.test.ts",

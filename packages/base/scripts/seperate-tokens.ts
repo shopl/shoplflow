@@ -43,7 +43,7 @@ function processColorTokens(tokens: Tokens, colorTokens: { [key: string]: string
   Object.keys(tokens).forEach((key) => {
     const value = tokens[key];
     if (value.type === 'color') {
-      colorTokens[key] = value.value;
+      colorTokens[key] = value.value.replace('{', '${');
     } else if (typeof value === 'object') {
       processColorTokens(value, colorTokens); // 재귀 호출
     }

@@ -77,6 +77,7 @@ var require_eslintrc_base = __commonJS({
         // getter 함수가 항상 값을 반환하도록 경고합니다.
         "prefer-const": "error",
         // 가능한 한 const를 사용하도록 권장합니다.
+        "import/no-unresolved": "off",
         curly: ["error", "all"],
         // 모든 제어문에 중괄호를 사용하도록 강제합니다.
         eqeqeq: ["error", "always", { null: "ignore" }],
@@ -116,8 +117,10 @@ var require_eslintrc_react = __commonJS({
         // React 컴포넌트에 displayName이 정의되어 있지 않으면 경고를 발생시킵니다.
         "react-hooks/exhaustive-deps": "error",
         // React Hook의 의존성 배열에 누락된 의존성이 있으면 에러를 발생시킵니다.
-        "react-hooks/rules-of-hooks": "error"
+        "react-hooks/rules-of-hooks": "error",
         // React Hook을 잘못 사용하는 것을 금지합니다.
+        "react/jsx-uses-react": "off"
+        // React를 사용하지 않는 코드를 경고합니다.
       }
     };
   }

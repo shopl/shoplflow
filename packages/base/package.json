@@ -6,17 +6,19 @@
     "lint": "eslint src --ext ts,tsx --fix",
     "test": "jest --onlyChanged",
     "test:report": "jest --ci --reporters=default --reporters=jest-junit",
-    "build": "node build.cjs",
-    "build:tokens": "node scripts/generate-tokens.ts",
+    "build": "node build.js",
+    "change:js": "tsc scripts/generate-tokens.ts && tsc scripts/generate-tokens.js",
+    "build:tokens": "node scripts/generate-tokens.js",
     "develop": "yarn build --watch"
   },
-  "main": "dist/index.esm.js",
-  "module": "dist/index.cjs.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "peerDependencies": {
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.0.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
@@ -28,6 +30,7 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "esbuild": "^0.18.11",
+    "esbuild-plugin-babel": "0.2.3",
     "esbuild-plugin-d.ts": "^1.1.0",
     "eslint": "^8.44.0",
     "jest": "^29.6.2",

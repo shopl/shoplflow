@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { fontWeights as fontWeight } from './fontWeights'; 
+import { fontWeights as fontWeight } from './fontWeights';
 
 const heading1_700 = css`
   font-weight: ${fontWeight.bold};
@@ -97,7 +97,7 @@ const caption_400 = css`
   line-height: 16;
   font-size: 12px;
 `;
-export const typographies = {
+export const shoplTypograhpies = {
   heading1_700,
   heading1_400,
   heading2_700,

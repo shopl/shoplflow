@@ -1,6 +1,3 @@
-export type TestFunc = () => void;
-
-export const testFunc: TestFunc = () => {
-  const a = 1;
-  return a;
-};
+export { ShoplflowProvider } from './providers';
+export * from './styles';
+export const test111 = 'test111';

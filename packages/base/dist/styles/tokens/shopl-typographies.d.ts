@@ -1,0 +1,21 @@
+export declare const shoplTypograhpies: {
+    heading1_700: any;
+    heading1_400: any;
+    heading2_700: any;
+    heading2_400: any;
+    heading3_700: any;
+    heading3_400: any;
+    title1_700: any;
+    title1_400: any;
+    title2_700: any;
+    title2_500: any;
+    title2_400: any;
+    body1_700: any;
+    body1_500: any;
+    body1_400: any;
+    body2_700: any;
+    body2_500: any;
+    body2_400: any;
+    body3_400: any;
+    caption_400: any;
+};

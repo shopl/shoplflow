@@ -70,6 +70,7 @@ module.exports = {
     // getter 함수가 항상 값을 반환하도록 경고합니다.
     "prefer-const": "error",
     // 가능한 한 const를 사용하도록 권장합니다.
+    "import/no-unresolved": "off",
     curly: ["error", "all"],
     // 모든 제어문에 중괄호를 사용하도록 강제합니다.
     eqeqeq: ["error", "always", { null: "ignore" }],
