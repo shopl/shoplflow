@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const esbuild = require('esbuild');
 const { dtsPlugin } = require('esbuild-plugin-d.ts');
 

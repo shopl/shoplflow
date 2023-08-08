@@ -3960,6 +3960,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@shoplflow/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@shoplflow/core@workspace:packages/core"
+  dependencies:
+    "@babel/core": ^7.22.5
+    "@babel/preset-env": ^7.22.5
+    "@babel/preset-typescript": ^7.22.5
+    "@jest/globals": ^29.5.0
+    "@types/jest": ^29.5.2
+    "@types/react": ^18.0.37
+    "@types/react-dom": ^18.0.11
+    esbuild: ^0.18.11
+    esbuild-plugin-d.ts: ^1.1.0
+    eslint: ^8.44.0
+    jest: ^29.5.0
+    jest-junit: ^16.0.0
+    jest-pnp-resolver: ^1.2.3
+    ts-jest: ^29.1.0
+    ts-node: ^10.9.1
+  peerDependencies:
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.0.2
+  languageName: unknown
+  linkType: soft
+
 "@shoplflow/eslint-plugin@workspace:^, @shoplflow/eslint-plugin@workspace:packages/eslint-plugin":
   version: 0.0.0-use.local
   resolution: "@shoplflow/eslint-plugin@workspace:packages/eslint-plugin"

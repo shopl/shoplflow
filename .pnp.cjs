@@ -24,6 +24,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/base"\
       },\
       {\
+        "name": "@shoplflow/core",\
+        "reference": "workspace:packages/core"\
+      },\
+      {\
         "name": "@shoplflow/eslint-plugin",\
         "reference": "workspace:packages/eslint-plugin"\
       }\
@@ -32,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@shoplflow/base", ["workspace:packages/base"]],\
+      ["@shoplflow/core", ["workspace:packages/core"]],\
       ["@shoplflow/eslint-plugin", ["workspace:packages/eslint-plugin"]],\
       ["docs", ["workspace:docs"]],\
       ["shoplflow", ["workspace:."]]\
@@ -6210,6 +6215,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/base/",\
           "packageDependencies": [\
             ["@shoplflow/base", "workspace:packages/base"],\
+            ["@babel/core", "npm:7.22.9"],\
+            ["@babel/preset-env", "virtual:b5c687992219ea5fcf6940aec18ed11b04275aa9809f0142750ecb346991b80cc85b64ba0d8d324af2d3e92e587be20855eb07336b48cee8c7a265bd0fac1d10#npm:7.22.9"],\
+            ["@babel/preset-typescript", "virtual:b32e399c7f7236986f55d9927b893ced903f67d5c344a94327d637aefd1ba744d450996769bfbde47b6aa10197b55dc91722da047ef3a8fedf74ea9362ddfcd3#npm:7.22.5"],\
+            ["@jest/globals", "npm:29.6.2"],\
+            ["@types/jest", "npm:29.5.3"],\
+            ["@types/react", "npm:18.2.17"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["esbuild", "npm:0.18.17"],\
+            ["esbuild-plugin-d.ts", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:1.1.0"],\
+            ["eslint", "npm:8.46.0"],\
+            ["jest", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:29.6.2"],\
+            ["jest-junit", "npm:16.0.0"],\
+            ["jest-pnp-resolver", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:1.2.3"],\
+            ["ts-jest", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:29.1.1"],\
+            ["ts-node", "virtual:466cb893b5a02073b786af4dcfadaa66023dd0f3d69e724537f25471b9fb6f035d733c287513bc4c97d55462e94a86872f63b32adc80d169d02e47d99e4c0d33#npm:10.9.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@shoplflow/core", [\
+        ["workspace:packages/core", {\
+          "packageLocation": "./packages/core/",\
+          "packageDependencies": [\
+            ["@shoplflow/core", "workspace:packages/core"],\
             ["@babel/core", "npm:7.22.9"],\
             ["@babel/preset-env", "virtual:b5c687992219ea5fcf6940aec18ed11b04275aa9809f0142750ecb346991b80cc85b64ba0d8d324af2d3e92e587be20855eb07336b48cee8c7a265bd0fac1d10#npm:7.22.9"],\
             ["@babel/preset-typescript", "virtual:b32e399c7f7236986f55d9927b893ced903f67d5c344a94327d637aefd1ba744d450996769bfbde47b6aa10197b55dc91722da047ef3a8fedf74ea9362ddfcd3#npm:7.22.5"],\
