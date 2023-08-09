@@ -1,0 +1,53 @@
+name: Token Update Workflow
+
+on:
+  pull_request:
+    types: [ labeled, synchronize, reopened ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check for specific label
+        run: |
+          label_name="token-update"
+          pr_labels=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.labels[].name')
+          if echo "$pr_labels" | grep -q "$label_name"; then
+            echo "Label found! Running the workflow..."
+          else
+            echo "Label not found. Skipping the workflow."
+            exit 0
+          fi
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18' # 프로젝트에 맞는 Node.js 버전을 지정합니다.
+
+      - name: Build tokens
+        run: yarn workspace @shoplflow/base build:tokens
+
+      - name: Get PR creator's name and email
+        run: |
+          pr_user_login=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.user.login')
+          pr_user_info=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/users/$pr_user_login)
+          pr_user_name=$(echo "$pr_user_info" | jq -r '.name')
+          pr_user_email=$(echo "$pr_user_info" | jq -r '.email')
+          echo "PR_USER_NAME=$pr_user_name" >> $GITHUB_ENV
+          echo "PR_USER_EMAIL=$pr_user_email" >> $GITHUB_ENV
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "${{ env.PR_USER_NAME }}" # PR을 생성한 사용자의 이름을 사용합니다.
+          git config user.email "${{ env.PR_USER_EMAIL }}" # PR을 생성한 사용자의 이메일을 사용합니다.
+          git add .
+          git commit -m "Update tokens via GitHub Actions"
+          git push
