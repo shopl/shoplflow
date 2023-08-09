@@ -36,11 +36,8 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - name: Check for specific path update
-        id: path_check
         run: |
-          git fetch origin ${{ github.event.pull_request.base.ref }}:${{ github.event.pull_request.base.ref }}
-          git fetch origin ${{ github.head_ref }}:${{ github.head_ref }}
-          git diff --name-only ${{ github.event.pull_request.base.ref }}..${{ github.head_ref }} -- 'packages/base/src/styles/' > /dev/null
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- 'packages/base/src/styles/' > /dev/null
           if [ $? -eq 0 ]; then
             echo "PATH_UPDATED=true" >> $GITHUB_ENV
             echo "Path updated! Running the workflow..."
