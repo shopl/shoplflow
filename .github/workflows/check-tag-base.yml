@@ -16,8 +16,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           node-version-file: ".nvmrc"
           ref: ${{ github.head_ref }} # PR의 소스 브랜치를 체크아웃합니다.
+
 
 
       - name: Check for specific label
