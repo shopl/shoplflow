@@ -2,13 +2,13 @@ name: Token Update Workflow
 
 on:
   pull_request:
+    branches:
+      - main
     paths:
-      - packages/base/src/styles/*.json
+      - 'packages/base/src/styles/tokens.json'
     types:
-      - labeled
-      - synchronize
-      - reopened
       - opened
+      - synchronize
 
 jobs:
   build:
