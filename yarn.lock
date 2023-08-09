@@ -3956,8 +3956,8 @@ __metadata:
     ts-node: ^10.9.1
     typescript: ^5.0.2
   peerDependencies:
-    "@emotion/react": "*"
-    "@emotion/styled": "*"
+    "@emotion/react": ^11.11.1
+    "@emotion/styled": ^11.11.1
     react: ^18.2.0
     react-dom: ^18.2.0
   languageName: unknown

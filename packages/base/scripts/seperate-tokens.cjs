@@ -26,17 +26,39 @@ function processTypographyTokens(tokens) {
     return typographyTokens;
 }
 
-function processColorTokens(tokens, colorTokens = {}, prefix = '') {
+function processColorTokens(tokens, colorTokens = {}) {
     Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'color') {
-            // Replace '{hada.hada150}' with 'hadaColors.hada150' and '{shopl.shopl400}' with 'shoplColors.shopl400'
-            colorTokens[key] = value.value.replace(/\{(\w+)\.(\w+)\}/g, `${prefix}Colors.$2`);
+            colorTokens[key] = value.value;
         } else if (typeof value === 'object') {
             processColorTokens(value, colorTokens, key); // 재귀 호출
         }
     });
-    return colorTokens;
+
+    // Hada or Shopl 토큰을 받는 function 리턴
+    return (hadaOrShoplTokens) => {
+        const PrimaryText = 'primary';
+
+        const primaryKeysObject = Object.keys(hadaOrShoplTokens)
+            .filter((key) => hadaOrShoplTokens[key].type === 'color')
+            .reduce((acc, cur) => {
+                const nowToken = hadaOrShoplTokens[cur];
+
+                if (nowToken.value.startsWith('{')) {
+                    const [first, second] = nowToken.value.replace(/^\{|\}$/g, '').split('.');
+                    const key = second.replace(first, '');
+                    return {...acc, [`${PrimaryText}${key}`]: colorTokens[second]};
+                } else {
+                    return {...acc, [cur]: nowToken.value};
+                }
+            }, {});
+
+        return {
+            ...colorTokens,
+            ...primaryKeysObject,
+        };
+    };
 }
 
 function processSpacingTokens(tokens) {
@@ -78,24 +100,24 @@ function separateTokens(tokens) {
     }
 
     if (tokens.shopl) {
-        console.log(tokens.shopl);
+        // console.log(tokens.shopl);
         shoplTokens.typographyTokens = processTypographyTokens(tokens.shopl);
-        shoplTokens.colorTokens = processColorTokens(tokens.shopl, {}, 'shopl');
+        // shoplTokens.colorTokens = processColorTokens(tokens.shopl, {}, 'shopl');
     }
 
     if (tokens.hada) {
         hadaTokens.typographyTokens = processTypographyTokens(tokens.hada);
-        hadaTokens.colorTokens = processColorTokens(tokens.hada, {}, 'hada');
+        // hadaTokens.colorTokens = processColorTokens(tokens.hada, {}, 'hada');
     }
     if (token?.fontWeight) {
         processFontWeightTokens(token.fontWeight);
     }
     hadaTokens.colorTokens = {
-        ...processColorTokens(token),
+        ...processColorTokens(token, {})(tokens.hada),
         ...hadaTokens.colorTokens,
     };
     shoplTokens.colorTokens = {
-        ...processColorTokens(token),
+        ...processColorTokens(token, {})(tokens.shopl),
         ...shoplTokens.colorTokens,
     };
 
