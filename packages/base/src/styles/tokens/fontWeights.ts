@@ -1,3 +1,5 @@
+// Generate by scripts/generate-tokens.js 
+
 export const fontWeights = {
   regular: '400',
   medium: '500',

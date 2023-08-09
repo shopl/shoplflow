@@ -1,9 +1,9 @@
-import { $Values } from '../utils/$values';
-import { borderRadius } from './tokens/borderRadius';
-import { fontWeights } from './tokens/fontWeights';
-import { spacings } from './tokens/spacings';
-import { hadaTypographies } from './tokens/hadaTypographies';
-import { hadaColors } from './tokens/hada-colors';
+import { $Values } from "../utils/$values";
+import { borderRadius } from "./tokens/borderRadius";
+import { fontWeights } from "./tokens/fontWeights";
+import { spacings } from "./tokens/spacings";
+import { hadaTypographies } from "./tokens/hadaTypographies";
+import { hadaColors } from "./tokens/hadaColors";
 
 export type BorderRadiusToken = $Values<typeof borderRadius>;
 export type ColorToken = $Values<typeof hadaColors>;

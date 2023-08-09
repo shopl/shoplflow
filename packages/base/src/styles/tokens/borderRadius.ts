@@ -1,3 +1,5 @@
+// Generate by scripts/generate-tokens.js 
+
 export const borderRadius = {
   borderRadius04: '4px',
   borderRadius06: '6px',

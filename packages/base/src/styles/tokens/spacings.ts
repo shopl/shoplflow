@@ -1,3 +1,5 @@
+// Generate by scripts/generate-tokens.js 
+
 export const spacings = {
   spacing04: '4px',
   spacing06: '6px',

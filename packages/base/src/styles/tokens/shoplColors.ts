@@ -1,3 +1,5 @@
+// Generate by scripts/generate-tokens.js 
+
 export const shoplColors = {
   coolgray300: '#8092aa',
   coolgray200: '#cdd6e4',
@@ -42,9 +44,9 @@ export const shoplColors = {
   hada150: '#c1e7dd',
   hada100: '#d9f4ed',
   background: '#f6f6f6',
-  primary100: 'shoplColors.shopl100',
-  primary150: 'shoplColors.shopl150',
-  primary200: 'shoplColors.shopl200',
-  primary300: 'shoplColors.shopl300',
-  primary400: 'shoplColors.shopl400',
+  primary100: shoplColors.shopl100,
+  primary150: shoplColors.shopl150,
+  primary200: shoplColors.shopl200,
+  primary300: shoplColors.shopl300,
+  primary400: shoplColors.shopl400,
 };

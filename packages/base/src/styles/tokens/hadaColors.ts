@@ -1,3 +1,5 @@
+// Generate by scripts/generate-tokens.js 
+
 export const hadaColors = {
   coolgray300: '#8092aa',
   coolgray200: '#cdd6e4',
@@ -42,9 +44,9 @@ export const hadaColors = {
   hada150: '#c1e7dd',
   hada100: '#d9f4ed',
   background: '#f7f9fd',
-  primary100: 'hadaColors.hada100',
-  primary150: 'hadaColors.hada150',
-  primary200: 'hadaColors.hada200',
-  primary300: 'hadaColors.hada300',
-  primary400: 'hadaColors.hada400',
+  primary100: hadaColors.hada100,
+  primary150: hadaColors.hada150,
+  primary200: hadaColors.hada200,
+  primary300: hadaColors.hada300,
+  primary400: hadaColors.hada400,
 };
