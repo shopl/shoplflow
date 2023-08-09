@@ -1,7 +1,7 @@
 // Generate by scripts/generate-tokens.js
 /* eslint-disable */
 export const hadaColors = {
-  coolgray300: '#8092aa',
+  coolgray300: '#8092aa00',
   coolgray200: '#cdd6e4',
   coolgray100: '#dce3ee',
   coolgray50: '#f1f4f6',
