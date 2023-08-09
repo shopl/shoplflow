@@ -13,6 +13,7 @@ coverage
 out/
 build
 dist
+!.yarn/unplugged/**
 
 # misc
 .DS_Store
