@@ -2,6 +2,8 @@ name: Token Update Workflow
 
 on:
   pull_request:
+    paths:
+      - 'packages/base/styles/tokens.json'
     types:
       - labeled
       - synchronize
