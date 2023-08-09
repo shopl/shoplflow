@@ -34,14 +34,16 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - name: Check for specific path update
+        id: path_check
         run: |
           git fetch origin ${{ github.event.pull_request.base.ref }}
-          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep 'packages/base/src/styles/'
+          git diff --name-only ${{ github.event.pull_request.base.sha }}..${{ github.sha }} -- 'packages/base/src/styles/' > /dev/null
           if [ $? -eq 0 ]; then
-            echo "Path updated! Running the workflow..."
+          echo "PATH_UPDATED=true" >> $GITHUB_ENV
+          echo "Path updated! Running the workflow..."
           else
-            echo "Path not updated. Skipping the workflow."
-            exit 0
+          echo "PATH_UPDATED=false" >> $GITHUB_ENV
+          echo "Path not updated. Skipping the workflow."
           fi
 
       - name: Setup Node.js
