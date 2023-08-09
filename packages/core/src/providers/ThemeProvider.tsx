@@ -1,11 +1,27 @@
 import React, { createContext } from 'react';
 
-export type Context = {};
+export type ShoplOrHada = 'shopl' | 'hada';
 
-export const ThemeContext = createContext<Context>({});
+export type Context = {
+  domain: ShoplOrHada;
+} | null;
 
-const ThemeProvider = () => {
-  return <ThemeContext.Provider value={{}}>ThemeProvider</ThemeContext.Provider>;
+export const ThemeContext = createContext<Context>(null);
+
+export type ShoplOrHadaProviderProps = {
+  domain: ShoplOrHada;
 };
 
-export default ThemeProvider;
+const ShoplOrHadaProvider = ({ domain }: ShoplOrHadaProviderProps) => {
+  return (
+    <ThemeContext.Provider
+      value={{
+        domain,
+      }}
+    >
+      ThemeProvider
+    </ThemeContext.Provider>
+  );
+};
+
+export default ShoplOrHadaProvider;
