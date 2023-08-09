@@ -3,7 +3,7 @@ name: Token Update Workflow
 on:
   pull_request:
     paths:
-      - packages/base/src/styles
+      - packages/base/src/styles/*.json
     types:
       - labeled
       - synchronize
