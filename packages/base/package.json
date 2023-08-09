@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "jest --onlyChanged",
     "build": "node build.cjs",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "develop": "yarn build --watch",

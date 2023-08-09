@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: 변경된 패키지만 테스트하고 있어요.
-        run: yarn turbo run test --since=origin/main
+        run: yarn turbo run test
 
       - name: Test Report
         uses: dorny/test-reporter@v1
