@@ -68,7 +68,7 @@ jobs:
 
       - name: Commit and push changes or leave a comment
         run: |
-          git checkout -b "${{github.head_ref}}"
+          git checkout ${{github.head_ref}}
           git config user.name "${{ env.PR_USER_NAME }}" # PR을 생성한 사용자의 이름을 사용합니다.
           git config user.email "${{ env.PR_USER_EMAIL }}" # PR을 생성한 사용자의 이메일을 사용합니다.
           git add .
