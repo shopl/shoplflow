@@ -15,7 +15,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "baseUrl": ".",
     "noFallthroughCasesInSwitch": true,
     "jsxImportSource": "@emotion/react",
@@ -28,10 +28,10 @@
     ]
   },
   "include": [
-    "src/emotion.d.ts",
-//    "scripts/*",
-//    "jest.config.cjs",
-//    "babel.config.json"
+    "src/emotion.d.ts"
+    //    "scripts/*",
+    //    "jest.config.cjs",
+    //    "babel.config.json"
   ],
   "exclude": [
     "src/styles/tokens/shoplColors.ts",

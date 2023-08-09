@@ -13,8 +13,8 @@
   "module": "dist/index.cjs.js",
   "types": "dist/index.d.ts",
   "peerDependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.1",
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -22,6 +22,8 @@
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@jest/globals": "^29.5.0",
     "@types/jest": "^29.5.2",
     "@types/node": "20.4.9",
