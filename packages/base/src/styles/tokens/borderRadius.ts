@@ -1,5 +1,5 @@
-// Generate by scripts/generate-tokens.js 
-
+// Generate by scripts/generate-tokens.js
+/* eslint-disable */
 export const borderRadius = {
   borderRadius04: '4px',
   borderRadius06: '6px',

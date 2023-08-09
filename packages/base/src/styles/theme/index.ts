@@ -1,10 +1,10 @@
-import { shoplColors } from '../tokens/shopl-colors';
+import { shoplColors } from '../tokens/shoplColors';
 import { hadaTypographies } from '../tokens/hadaTypographies';
 import { borderRadius } from '../tokens/borderRadius';
 import { fontWeights } from '../tokens/fontWeights';
 import { spacings } from '../tokens/spacings';
-import { hadaColors } from '../tokens/hada-colors';
-import { shoplTypograhpies } from '../tokens/shoplTypographies';
+import { hadaColors } from '../tokens/hadaColors';
+import { shoplTypographies } from '../tokens/shoplTypographies';
 
 export const hadaTheme = {
   borderRadius,
@@ -18,6 +18,6 @@ export const shoplTheme = {
   borderRadius,
   fontWeights,
   colors: shoplColors,
-  typographies: shoplTypograhpies,
+  typographies: shoplTypographies,
   spacings,
 };

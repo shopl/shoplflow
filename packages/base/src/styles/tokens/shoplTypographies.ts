@@ -1,5 +1,5 @@
-// Generate by scripts/generate-tokens.js 
-
+// Generate by scripts/generate-tokens.js
+/* eslint-disable */
 import { css } from '@emotion/react';
 
 import { fontWeights as fontWeight } from './fontWeights'; 

@@ -1,3 +1,5 @@
-export { ShoplflowProvider } from './providers';
-export * from './styles';
-export const test111 = 'test111';
+export type TestFunc = () => void;
+
+export const testFunc: TestFunc = () => {
+  return 3;
+};

@@ -1,40 +1,42 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "types": [
-      "node",
-      "jest"
+//    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "target": "esnext",
+        "types": [
+            "node",
+            "jest"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "baseUrl": ".",
+        "noFallthroughCasesInSwitch": true,
+        "jsxImportSource": "@emotion/react",
+        "outDir": "./dist",
+        "jsx": "react"
+    },
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    },
+    "exclude": [
+        "**/tokens/*.ts",
+        "*.json"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "baseUrl": ".",
-    "noFallthroughCasesInSwitch": true,
-    "jsxImportSource": "@emotion/react",
-    "outDir": "./dist",
-    "jsx": "react"
-  },
-  "typeAcquisition": {
     "include": [
-      "jest"
+        "src/emotion.d.ts",
+        "scripts/*",
+        "src/*",
+        "**/*.test.ts",
+        "jest.config.cjs",
+        "babel.config.json"
     ]
-  },
-  "exclude": [
-    "*.json"
-  ],
-  "include": [
-    "src/emotion.d.ts",
-    "scripts/*",
-    "src/*",
-    "**/*.test.ts",
-    "jest.config.cjs",
-    "babel.config.json"
-  ]
 }

@@ -1,5 +1,5 @@
-// Generate by scripts/generate-tokens.js 
-
+// Generate by scripts/generate-tokens.js
+/* eslint-disable */
 export { borderRadius } from "./borderRadius";
 export { fontWeights } from "./fontWeights";
 export { hadaColors } from "./hadaColors";

@@ -1,5 +1,5 @@
-// Generate by scripts/generate-tokens.js 
-
+// Generate by scripts/generate-tokens.js
+/* eslint-disable */
 export const spacings = {
   spacing04: '4px',
   spacing06: '6px',

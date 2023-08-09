@@ -7,7 +7,8 @@ const rootPath = process.cwd();
 const {typographyTokenKeys, hadaTokens, shoplTokens, fontWeightTokens, borderRadiusTokens, spacingTokens} =
     separateTokens(tokens);
 
-const PREFIX = '// Generate by scripts/generate-tokens.js \n\n';
+const PREFIX = '// Generate by scripts/generate-tokens.js\n' +
+    '/\* eslint-disable */\n';
 
 
 function mappingTokenObject(obj, tokens) {
