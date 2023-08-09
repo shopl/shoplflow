@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - packages/base/src/styles/**
+      - packages/**
     types:
       - opened
       - synchronize
