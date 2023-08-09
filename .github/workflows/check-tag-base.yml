@@ -2,8 +2,6 @@ name: Token Update Workflow
 
 on:
   pull_request:
-    paths:
-      - './packages/base/**/token.json'
     branches:
       - main
     types:
@@ -35,6 +33,17 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
+      - name: Check for specific path update
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep 'packages/base/src/styles/'
+          if [ $? -eq 0 ]; then
+            echo "Path updated! Running the workflow..."
+          else
+            echo "Path not updated. Skipping the workflow."
+            exit 0
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -54,10 +63,19 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
-      - name: Commit and push changes
+
+      - name: Commit and push changes or leave a comment
         run: |
           git config user.name "${{ env.PR_USER_NAME }}" # PR을 생성한 사용자의 이름을 사용합니다.
           git config user.email "${{ env.PR_USER_EMAIL }}" # PR을 생성한 사용자의 이메일을 사용합니다.
           git add .
-          git commit -m "Update tokens via GitHub Actions"
-          git push
+          git commit -m "Update tokens via GitHub Actions" || (echo "No changes to commit" && exit 1)
+          if [ $? -eq 0 ]; then
+            git push
+          else
+            comment="코드 변경사항이 없어요.🥲 토큰 업데이트를 다시 한번 확인해주세요."
+            comment_url=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.comments_url')
+            curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" -X POST -d "{\"body\": \"$comment\"}" $comment_url
+          fi
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
