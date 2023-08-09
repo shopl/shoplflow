@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "lint": "eslint src --ext ts,tsx --fix",
     "test": "jest",
     "build": "node build.cjs",
     "develop": "yarn build --watch"
