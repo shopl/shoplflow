@@ -54,6 +54,10 @@ jobs:
       - name: Build tokens
         run: yarn workspace @shoplflow/base build:tokens
 
+      - name: Checkout to PR branch
+        run: |
+          git checkout ${{github.head_ref}}
+
       - name: Get PR creator's name and email
         run: |
           pr_user_login=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.user.login')
