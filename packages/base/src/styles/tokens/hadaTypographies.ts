@@ -94,6 +94,11 @@ const body3_400 = css`
   line-height: 18;
   font-size: 13px;
 `;
+const body3_500 = css`
+  font-weight: ${fontWeight.medium};
+  line-height: 18;
+  font-size: 13px;
+`;
 const caption_400 = css`
   font-weight: ${fontWeight.regular};
   line-height: 16;
@@ -118,5 +123,6 @@ export const hadaTypographies = {
   body2_500,
   body2_400,
   body3_400,
+  body3_500,
   caption_400,
 };
