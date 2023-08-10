@@ -3,21 +3,10 @@
   "version": "0.0.4",
   "description": "shoplflow eslint plugin",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "scripts": {
-    "build": "node build.js"
-  },
-  "exports": {
-    ".": {
-      "source": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    },
-    "./package.json": "./package.json"
-  },
+  "main": "./index.js",
   "files": [
     "index.js",
-    "dist"
+    "package.json"
   ],
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.2.1",
@@ -35,8 +24,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "esbuild": "0.18.17"
   }
 }

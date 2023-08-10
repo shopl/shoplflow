@@ -1,4 +1,5 @@
 import '@emotion/react';
+import React from 'react';
 import { hadaTheme } from './styles';
 
 type ShoplflowTheme = typeof hadaTheme;
@@ -8,8 +9,5 @@ declare module '@emotion/react' {
 }
 
 declare module '*.svg' {
-  import React = require('react');
   export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
 }
