@@ -6278,6 +6278,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.2.17"],\
             ["@types/react-dom", "npm:18.2.7"],\
             ["esbuild", "npm:0.18.17"],\
+            ["esbuild-plugin-babel", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:0.2.3"],\
             ["esbuild-plugin-d.ts", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:1.1.0"],\
             ["eslint", "npm:8.46.0"],\
             ["jest", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:29.6.2"],\
@@ -14016,6 +14017,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/esbuild-plugin-alias-npm-0.2.1-8906d98875-afe2d2c8b5.zip/node_modules/esbuild-plugin-alias/",\
           "packageDependencies": [\
             ["esbuild-plugin-alias", "npm:0.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["esbuild-plugin-babel", [\
+        ["npm:0.2.3", {\
+          "packageLocation": "./.yarn/cache/esbuild-plugin-babel-npm-0.2.3-f554e8ea33-776a6589a2.zip/node_modules/esbuild-plugin-babel/",\
+          "packageDependencies": [\
+            ["esbuild-plugin-babel", "npm:0.2.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:0.2.3", {\
+          "packageLocation": "./.yarn/__virtual__/esbuild-plugin-babel-virtual-d66b6ab13a/0/cache/esbuild-plugin-babel-npm-0.2.3-f554e8ea33-776a6589a2.zip/node_modules/esbuild-plugin-babel/",\
+          "packageDependencies": [\
+            ["esbuild-plugin-babel", "virtual:2e424d7540a6dee9c30ef3a08b4bf800eb7728a6d5975a7bea5e96372b551b0cf7e1775b48913156ffbd360fcd719e294c4eaa3cd8ba7bb53fee8a104bcc4850#npm:0.2.3"],\
+            ["@babel/core", "npm:7.22.9"],\
+            ["@types/babel__core", null]\
+          ],\
+          "packagePeers": [\
+            "@babel/core",\
+            "@types/babel__core"\
           ],\
           "linkType": "HARD"\
         }]\

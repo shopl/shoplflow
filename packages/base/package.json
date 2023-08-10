@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "jest --onlyChanged",
-    "build": "node build.cjs",
+    "build": "node build.js",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "develop": "yarn build --watch",
     "type-check": "tsc --noEmit"
@@ -30,6 +30,7 @@
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "esbuild": "^0.18.11",
+    "esbuild-plugin-babel": "0.2.3",
     "esbuild-plugin-d.ts": "^1.1.0",
     "eslint": "^8.44.0",
     "jest": "^29.5.0",
