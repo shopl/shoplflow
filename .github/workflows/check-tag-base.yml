@@ -17,10 +17,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
           node-version-file: ".nvmrc"
-      #          ref: ${{ github.head_ref }} # PR의 소스 브랜치를 체크아웃합니다.
-
-
 
       - name: Check for specific label
         run: |
@@ -35,30 +36,41 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
-      - name: Check for specific path update
+      - name: Check for specific path update (first PR)
+        if: github.event.action == 'opened' && env.LABEL_FOUND == 'true'
+
         run: |
-          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- 'packages/base/src/styles/' > /dev/null
+          git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD -- 'packages/base/src/styles/' > /dev/null
           if [ $? -eq 0 ]; then
             echo "PATH_UPDATED=true" >> $GITHUB_ENV
-            echo "Path updated! Running the workflow..."
           else
             echo "PATH_UPDATED=false" >> $GITHUB_ENV
-            echo "Path not updated. Skipping the workflow."
           fi
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18' # 프로젝트에 맞는 Node.js 버전을 지정합니다.
+      - name: Check for specific path update (subsequent commits)
+        if: github.event.action != 'opened' && env.LABEL_FOUND == 'true'
+        run: |
+          git diff --name-only HEAD~1 HEAD -- 'packages/base/src/styles/' > /dev/null
+          if [ $? -eq 0 ]; then
+            echo "PATH_UPDATED=true" >> $GITHUB_ENV
+          else
+            echo "PATH_UPDATED=false" >> $GITHUB_ENV
+          fi
+
+
 
       - name: Build tokens
+        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
         run: yarn workspace @shoplflow/base build:tokens
 
       - name: Checkout to PR branch
+        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
+
         run: |
           git checkout ${{github.head_ref}}
 
       - name: Get PR creator's name and email
+        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
         run: |
           pr_user_login=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.user.login')
           pr_user_info=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/users/$pr_user_login)
@@ -71,6 +83,7 @@ jobs:
 
 
       - name: Commit and push changes or leave a comment
+        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
         run: |
           git checkout ${{github.head_ref}}
           git config user.name "${{ env.PR_USER_NAME }}" # PR을 생성한 사용자의 이름을 사용합니다.
