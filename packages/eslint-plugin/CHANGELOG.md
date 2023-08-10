@@ -1,5 +1,11 @@
 # @shoplflow/eslint-plugin
 
+## 0.0.5
+
+### Patch Changes
+
+- [#20](https://github.com/shopl/shoplflow/pull/20) [`9d3ffac`](https://github.com/shopl/shoplflow/commit/9d3ffac11395ce69ec7410240aecf70e8401a1a6) Thanks [@velo-kim](https://github.com/velo-kim)! - esbuild 번들러 삭제
+
 ## 0.0.4
 
 ### Patch Changes
