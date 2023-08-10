@@ -1,20 +1,28 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "scripts": {
     "test": "jest --onlyChanged",
-    "build": "node build.cjs",
     "build:tokens": "node scripts/generate-tokens.cjs",
-    "develop": "yarn build --watch",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "build": "tsup --format esm,cjs --dts --external react",
+    "develop": "tsup --format esm,cjs --watch --dts --external react"
   },
-  "main": "dist/index.esm.js",
-  "module": "dist/index.cjs.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@emotion/react": "*",
-    "@emotion/styled": "*",
+    "@emotion/styled": "*"
+  },
+  "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -22,21 +30,21 @@
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
+    "@emotion/css": "11.11.2",
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
     "@jest/globals": "^29.5.0",
     "@types/jest": "^29.5.2",
     "@types/node": "20.4.9",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
-    "esbuild": "^0.18.11",
-    "esbuild-plugin-d.ts": "^1.1.0",
     "eslint": "^8.44.0",
     "jest": "^29.5.0",
     "jest-junit": "^16.0.0",
     "jest-pnp-resolver": "^1.2.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
+    "tsup": "7.2.0",
     "typescript": "^5.0.2"
   }
 }
