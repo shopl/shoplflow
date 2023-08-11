@@ -19,9 +19,14 @@ jobs:
       - name: 변경된 패키지만 테스트하고 있어요.
         run: yarn turbo run test
 
+
+      - name: Check if junit.xml exists
+        id: checkfile
+        run: echo "FILE_EXISTS=$(if find '**/junit.xml' -mindepth 1 -print -quit | grep -q .; then echo 'true'; else echo 'false'; fi)" >> $GITHUB_ENV
+
       - name: Test Report
+        if: env.FILE_EXISTS == 'true' && (success() || failure())
         uses: dorny/test-reporter@v1
-        if: success() || failure()
         with:
           name: Test Report
           path: '**/junit.xml'
