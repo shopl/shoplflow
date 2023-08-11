@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.0.5
+
+### Patch Changes
+
+- [#27](https://github.com/shopl/shoplflow/pull/27) [`a9168eb`](https://github.com/shopl/shoplflow/commit/a9168eb25b1b897e2c258b8e1c5d281c87ab25c3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - jest 삭제
+
 ## 0.0.4
 
 ### Patch Changes
