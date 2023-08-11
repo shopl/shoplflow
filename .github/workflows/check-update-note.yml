@@ -16,6 +16,7 @@ jobs:
 
       - name: Check changesets
         run: |
+          ls -al
           if [[ "${{ github.head_ref }}" == changeset-release/* ]]; then
             echo "Branch name contains changeset-release/, passing the check."
             exit 0
