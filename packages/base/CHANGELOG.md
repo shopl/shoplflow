@@ -4,6 +4,13 @@
 
 ### Patch Changes
 
+- [#23](https://github.com/shopl/shoplflow/pull/23) [`030d733`](https://github.com/shopl/shoplflow/commit/030d7336dcae2b560e08784efcaf665027dd4f2f) Thanks [@velo-kim](https://github.com/velo-kim)! - - base -> tsup.config.js 업데이트
+  - eslint -> typescript rule 추가
+
+## 0.0.4
+
+### Patch Changes
+
 - [#18](https://github.com/shopl/shoplflow/pull/18) [`d213f5e`](https://github.com/shopl/shoplflow/commit/d213f5e86e6265e25be9099e58db0f60abaa177a) Thanks [@bong9boy](https://github.com/bong9boy)! - 토큰 업데이트
   borderRadius02 추가됨
 
