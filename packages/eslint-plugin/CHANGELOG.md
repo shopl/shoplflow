@@ -1,5 +1,12 @@
 # @shoplflow/eslint-plugin
 
+## 0.0.6
+
+### Patch Changes
+
+- [#23](https://github.com/shopl/shoplflow/pull/23) [`030d733`](https://github.com/shopl/shoplflow/commit/030d7336dcae2b560e08784efcaf665027dd4f2f) Thanks [@velo-kim](https://github.com/velo-kim)! - - base -> tsup.config.js 업데이트
+  - eslint -> typescript rule 추가
+
 ## 0.0.5
 
 ### Patch Changes
