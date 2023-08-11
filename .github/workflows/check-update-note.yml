@@ -1,9 +1,9 @@
 name: Check Changesets Update Note
 
-
 on:
   pull_request:
     types: [opened, synchronize]
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -13,20 +13,26 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Check for specific label
+        run: |
+          label_name="pass-check"
+          pr_labels=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/${{ github.event.pull_request.number }} | jq -r '.labels[].name')
+          if echo "$pr_labels" | grep -q "$label_name"; then
+            echo "LABEL_FOUND=true" >> $GITHUB_ENV
+          else
+            echo "LABEL_FOUND=false" >> $GITHUB_ENV
+          fi
 
       - name: Check changesets
+        if: env.LABEL_FOUND == 'false'
         run: |
-          ls -al
-          if [[ "${{ github.head_ref }}" == changeset-release/* ]]; then
+          if [[ "${{ github.head_ref }}" == *changeset-release/* ]]; then
             echo "Branch name contains changeset-release/, passing the check."
             exit 0
           fi
-          
+
           if [[ ! $(find .changeset -name '*.md' ! -name 'README.md') ]]; then
             echo "No MD files other than README.md found in .changesets folder, failing the check."
             exit 1
           fi
-      
-          
-          
           echo "Check passed."
