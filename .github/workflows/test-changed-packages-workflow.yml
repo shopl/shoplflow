@@ -1,4 +1,4 @@
-name: Test Build
+name: Test Changed Packages with Turbo on PR
 
 on:
   pull_request:
@@ -13,26 +13,44 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-      - name: 패키지를 빌드하고 있어요.
-        run: yarn turbo build
+      - name: 변경된 패키지만 테스트하고 있어요.
+        run: yarn turbo run test
+
+
+      - name: Check if junit.xml exists
+        id: checkfile
+        run: echo "FILE_EXISTS=$(if find '**/junit.xml' -mindepth 1 -print -quit | grep -q .; then echo 'true'; else echo 'false'; fi)" >> $GITHUB_ENV
+
+      - name: Test Report
+        if: env.FILE_EXISTS == 'true' && (success() || failure())
+        uses: dorny/test-reporter@v1
+        with:
+          name: Test Report
+          path: '**/junit.xml'
+          fail-on-error: 'false'
+          reporter: jest-junit
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set Test Status
         id: set_status
         run: |
           echo "::set-output name=status::${{ job.status }}"
 
+
       - name: Set Test Status and Color
         id: set_status_and_color
         run: |
           if [ "${{ job.status }}" == "success" ]; then
-          echo "::set-output name=status_text::빌드 테스트가 완료되었어요."
+          echo "::set-output name=status_text::Jest 테스트가 완료되었어요."
           echo "::set-output name=color::good"
           elif [ "${{ job.status }}" == "failure" ]; then
-          echo "::set-output name=status_text::빌드 테스트가 실패했어요."
+          echo "::set-output name=status_text::Jest 테스트가 실패했어요."
           echo "::set-output name=color::danger"
           else
-          echo "::set-output name=status_text::빌드 테스트 상태를 확인하세요."
+          echo "::set-output name=status_text::Jest 테스트 상태를 확인하세요."
           echo "::set-output name=color::warning"
           fi
 
@@ -52,7 +70,7 @@ jobs:
                 actions: [
                   {
                     type: "button",
-                    text: "빌드 액션 확인하기",
+                    text: "Jest Test Report 확인하기",
                     url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
                   },
                   {
@@ -65,3 +83,4 @@ jobs:
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
