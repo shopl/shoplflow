@@ -13,8 +13,23 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Check for specific label
+        run: |
+          label_name="pass-check"
+          pr_labels=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.labels[].name')
+          if echo "$pr_labels" | grep -q "$label_name"; then
+            echo "Label found! Running the workflow..."
+            echo "CHECK_LABEL=true" >> $GITHUB_ENV
+          else
+            echo "Label not found. Skipping the workflow."
+            echo "CHECK_LABEL=false" >> $GITHUB_ENV
+            exit 0
+          fi
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - name: Check changesets
+        if: !env.CHECK_LABEL == 'true'
         run: |
           ls -al
           if [[ "${{ github.head_ref }}" == changeset-release/* ]]; then
@@ -26,7 +41,4 @@ jobs:
             echo "No MD files other than README.md found in .changesets folder, failing the check."
             exit 1
           fi
-      
-          
-          
           echo "Check passed."
