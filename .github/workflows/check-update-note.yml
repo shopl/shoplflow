@@ -22,14 +22,11 @@ jobs:
             exit 0
           fi
           
-          if [[ ! -f .changeset/*.md ]]; then
-            echo "No MD files found in .changesets folder, failing the check."
+          if [[ ! $(find .changeset -name '*.md' ! -name 'README.md') ]]; then
+            echo "No MD files other than README.md found in .changesets folder, failing the check."
             exit 1
           fi
       
-          if [[ -f .changeset/README.md ]]; then
-          echo "README.md found in .changesets folder, failing the check."
-          exit 1
-          fi
+          
           
           echo "Check passed."
