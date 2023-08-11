@@ -1,0 +1,26 @@
+name: Check Changesets Update Note
+
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check changesets
+        run: |
+          if [[ "${{ github.head_ref }}" == changeset-release/* ]]; then
+            echo "Branch name contains changeset-release/, passing the check."
+            exit 0
+          fi
+          
+          if [[ ! -f .changesets/*.md || -f .changesets/README.md ]]; then
+            echo "No MD files found in .changesets folder or README.md found, failing the check."
+            exit 1
+          fi
+          
+          echo "Check passed."
