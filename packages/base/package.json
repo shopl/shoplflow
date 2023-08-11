@@ -6,8 +6,8 @@
     "test": "jest --onlyChanged",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "type-check": "tsc --noEmit",
-    "build": "tsup --format esm,cjs --dts --external react",
-    "develop": "tsup --format esm,cjs --watch --dts --external react"
+    "build": "tsup --external react",
+    "develop": "tsup --watch  --external react"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
