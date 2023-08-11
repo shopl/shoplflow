@@ -4,7 +4,6 @@
     "target": "esnext",
     "types": [
       "node",
-      "jest",
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -22,16 +21,8 @@
     "outDir": "./dist",
     "jsx": "react-jsx"
   },
-  "typeAcquisition": {
-    "include": [
-      "jest"
-    ]
-  },
   "include": [
     "src/emotion.d.ts"
-    //    "scripts/*",
-    //    "jest.config.cjs",
-    //    "babel.config.json"
   ],
   "exclude": [
     "src/styles/tokens/shoplColors.ts",
