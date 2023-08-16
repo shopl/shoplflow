@@ -9,11 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          node-version-file: ".nvmrc"
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
           cache: "yarn"
-          ref: ${{ github.head_ref }}
 
       - name: Check for specific label
         run: |

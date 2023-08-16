@@ -12,11 +12,15 @@ jobs:
 
     steps:
       - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          node-version-file: ".nvmrc"
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
           cache: "yarn"
-          fetch-depth: 0
 
       - name: 변경된 패키지만 테스트하고 있어요.
         run: yarn turbo run test
