@@ -31,7 +31,6 @@
     "lint-staged": "13.2.3",
     "prettier": "^3.0.0",
     "turbo": "^1.10.12",
-    "turbowatch": "2.29.4",
     "typescript": "^5.1.6"
   },
   "lint-staged": {
