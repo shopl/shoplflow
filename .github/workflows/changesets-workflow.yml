@@ -22,15 +22,16 @@ jobs:
           fetch-depth: 0
           node-version-file: ".nvmrc"
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
-        env:
-          CI: true
+          cache-dependency-path: "pnpm-lock.yaml"
 
       # 배포를 위해 .npmrc 파일을 생성하고 인증 토큰을 추가한다.
       - name: Configure npm

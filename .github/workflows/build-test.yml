@@ -14,18 +14,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
           node-version-file: ".nvmrc"
 
-
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+          run_install: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
+          cache-dependency-path: "pnpm-lock.yaml"
 
       - name: 패키지를 빌드하고 있어요.
         run: pnpm turbo build
