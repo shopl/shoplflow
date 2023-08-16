@@ -6097,7 +6097,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.2.17"],\
             ["@types/react-dom", "npm:18.2.7"],\
             ["eslint", "npm:8.46.0"],\
-            ["lodash", "npm:4.17.21"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:18.2.0"],\
             ["ts-node", "virtual:a7921663e57bdedb9cae41e30318087dc275a7d0ddd71ae539223f3d00ed5de417cb21718a119585c0b85da19d507957a8061528e81ea501c5b84e7ddc0b3e17#npm:10.9.1"],\

@@ -9,7 +9,7 @@ function defaultIndexTemplate(filePaths) {
   const exportEntries = [];
 
   filePaths.forEach((filePath) => {
-    const basename = path.basename(filePath, path.extname(filePath));
+    const basename = path.basename(filePath.path, path.extname(filePath.path));
 
     const exportName = basename;
     importEntries.push(`import ${exportName} from './${basename}'`);
