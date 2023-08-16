@@ -12653,7 +12653,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-transformer-sharp", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:5.11.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:18.2.0"],\
-            ["sharp", "npm:0.32.5"],\
             ["storybook", "npm:7.1.1"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"],\
             ["vite", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:4.4.7"]\
@@ -24517,22 +24516,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/unplugged/sharp-npm-0.32.4-5e8bfafca7/node_modules/sharp/",\
           "packageDependencies": [\
             ["sharp", "npm:0.32.4"],\
-            ["color", "npm:4.2.3"],\
-            ["detect-libc", "npm:2.0.2"],\
-            ["node-addon-api", "npm:6.1.0"],\
-            ["node-gyp", "npm:9.4.0"],\
-            ["prebuild-install", "npm:7.1.1"],\
-            ["semver", "npm:7.5.4"],\
-            ["simple-get", "npm:4.0.1"],\
-            ["tar-fs", "npm:3.0.4"],\
-            ["tunnel-agent", "npm:0.6.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:0.32.5", {\
-          "packageLocation": "./.yarn/unplugged/sharp-npm-0.32.5-f82a9875e0/node_modules/sharp/",\
-          "packageDependencies": [\
-            ["sharp", "npm:0.32.5"],\
             ["color", "npm:4.2.3"],\
             ["detect-libc", "npm:2.0.2"],\
             ["node-addon-api", "npm:6.1.0"],\
