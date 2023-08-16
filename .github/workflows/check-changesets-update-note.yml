@@ -3,6 +3,8 @@ name: Check Changesets Update Note
 on:
   pull_request:
     types: [opened, synchronize]
+    paths:
+      - '/**'
 
 jobs:
   check:

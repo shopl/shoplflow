@@ -6,7 +6,7 @@ on:
     paths:
       - ".changeset/**"
       - "packages/**"
-      - "island/**"
+      - "docs/**"
     branches:
       - main
 

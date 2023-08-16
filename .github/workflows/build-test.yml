@@ -5,9 +5,11 @@ on:
     types:
       - opened
       - synchronize
+    paths:
+      - '/**'
 
 jobs:
-  jest-test:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
