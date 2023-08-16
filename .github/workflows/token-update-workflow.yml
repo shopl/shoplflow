@@ -19,6 +19,12 @@ jobs:
           fetch-depth: 0
           node-version-file: ".nvmrc"
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+          run_install: true
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
