@@ -27,10 +27,6 @@
       "dependsOn": [
         "^type-check"
       ]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
     }
   }
 }

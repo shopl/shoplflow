@@ -37,6 +37,7 @@
     "react-dom": "^18",
     "ts-node": "^10.9.1",
     "tsup": "7.2.0",
+    "turbowatch": "2.29.4",
     "typescript": "^5.0.2"
   }
 }
