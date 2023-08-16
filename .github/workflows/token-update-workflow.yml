@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: "yarn"
+          cache: "pnpm"
 
       - name: Check for specific label
         run: |
@@ -62,7 +62,7 @@ jobs:
 
       - name: Build tokens
         if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
-        run: yarn workspace @shoplflow/base build:tokens
+        run: pnpm workspace @shoplflow/base build:tokens
 
       - name: Checkout to PR branch
         if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'

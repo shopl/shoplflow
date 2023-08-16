@@ -25,10 +25,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: "yarn"
+          cache: "pnpm"
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
         env:
           CI: true
 
@@ -43,16 +43,16 @@ jobs:
 
       # 패키지를 빌드한다.
       - name: Build packages
-        run: yarn build --since ${{ github.event.before }}
+        run: pnpm build --since ${{ github.event.before }}
 
       # Changesets에서 제공하는 Action을 사용할 수 있다.
       # NPM에 배포, Git 태그 생성 등의 작업을 수행한다.
       - name: Create release Pull Request or publish to NPM
         uses: changesets/action@v1
         with:
-          version: yarn changeset version
+          version: pnpm changeset version
           createGithubReleases: true
-          publish: yarn changeset publish
+          publish: pnpm changeset publish
           commit: "ci(changesets): version packages"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

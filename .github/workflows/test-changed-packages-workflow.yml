@@ -20,10 +20,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: "yarn"
+          cache: "pnpm"
 
       - name: 변경된 패키지만 테스트하고 있어요.
-        run: yarn turbo run test
+        run: pnpm turbo run test
 
 
       - name: Check if junit.xml exists
