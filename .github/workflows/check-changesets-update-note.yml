@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: "pnpm"
-          cache-dependency-path: "pnpm-lock.yaml"
 
       - name: Check for specific label
         run: |
