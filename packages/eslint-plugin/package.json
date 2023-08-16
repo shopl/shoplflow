@@ -1,11 +1,12 @@
 {
   "name": "@shoplflow/eslint-plugin",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "shoplflow eslint plugin",
   "license": "MIT",
   "main": "./index.js",
   "files": [
     "index.js",
+    ".eslint.*.js",
     "package.json"
   ],
   "dependencies": {
