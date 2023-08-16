@@ -5,8 +5,7 @@
   "license": "MIT",
   "main": "./index.js",
   "files": [
-    "index.js",
-    ".eslint.*.js",
+    "*.js",
     "package.json"
   ],
   "dependencies": {
