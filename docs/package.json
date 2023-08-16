@@ -8,11 +8,9 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "next start",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -20,19 +18,13 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mdx-js/react": "^2.3.0",
     "@shoplflow/base": "workspace:*",
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-emotion": "^8.11.0",
-    "gatsby-plugin-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-mdx": "^5.11.0",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-plugin-sitemap": "^6.11.0",
-    "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-transformer-sharp": "^5.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "islandjs": "^0.7.6",
+    "next": "13.4.16",
+    "nextra": "2.11.0",
+    "nextra-theme-docs": "2.11.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.1.1",
@@ -49,7 +41,6 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "pnp-webpack-plugin": "1.7.0",
     "storybook": "^7.1.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.7"
