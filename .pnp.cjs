@@ -16065,7 +16065,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-core-utils", "npm:4.11.0"],\
             ["gatsby-plugin-utils", "virtual:b729c8be18457a4fd81a4a597259cec0615a24ac99d1381481dbe750fc57fd72e1073115a3ae4c18560897c3ebc44f5db7aed64af681d8a61a1a6228f2cb2ebe#npm:4.11.0"],\
             ["semver", "npm:7.5.4"],\
-            ["sharp", "npm:0.32.4"]\
+            ["sharp", "npm:0.32.5"]\
           ],\
           "packagePeers": [\
             "@types/gatsby",\
@@ -16190,7 +16190,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.21"],\
             ["probe-image-size", "npm:7.2.3"],\
             ["semver", "npm:7.5.4"],\
-            ["sharp", "npm:0.32.4"]\
+            ["sharp", "npm:0.32.5"]\
           ],\
           "packagePeers": [\
             "@types/gatsby",\
@@ -16390,7 +16390,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/gatsby-sharp-npm-1.11.0-b78b8ba1b6-966ad18913.zip/node_modules/gatsby-sharp/",\
           "packageDependencies": [\
             ["gatsby-sharp", "npm:1.11.0"],\
-            ["sharp", "npm:0.32.4"]\
+            ["sharp", "npm:0.32.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16514,7 +16514,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-utils", "virtual:b729c8be18457a4fd81a4a597259cec0615a24ac99d1381481dbe750fc57fd72e1073115a3ae4c18560897c3ebc44f5db7aed64af681d8a61a1a6228f2cb2ebe#npm:4.11.0"],\
             ["probe-image-size", "npm:7.2.3"],\
             ["semver", "npm:7.5.4"],\
-            ["sharp", "npm:0.32.4"]\
+            ["sharp", "npm:0.32.5"]\
           ],\
           "packagePeers": [\
             "@types/gatsby-plugin-sharp",\
@@ -25458,22 +25458,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["sharp", [\
-        ["npm:0.32.4", {\
-          "packageLocation": "./.yarn/unplugged/sharp-npm-0.32.4-5e8bfafca7/node_modules/sharp/",\
-          "packageDependencies": [\
-            ["sharp", "npm:0.32.4"],\
-            ["color", "npm:4.2.3"],\
-            ["detect-libc", "npm:2.0.2"],\
-            ["node-addon-api", "npm:6.1.0"],\
-            ["node-gyp", "npm:9.4.0"],\
-            ["prebuild-install", "npm:7.1.1"],\
-            ["semver", "npm:7.5.4"],\
-            ["simple-get", "npm:4.0.1"],\
-            ["tar-fs", "npm:3.0.4"],\
-            ["tunnel-agent", "npm:0.6.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:0.32.5", {\
           "packageLocation": "./.yarn/unplugged/sharp-npm-0.32.5-f82a9875e0/node_modules/sharp/",\
           "packageDependencies": [\
