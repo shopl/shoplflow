@@ -14,9 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: --check-files
-        run: yarn install --check-cache
-
       - name: 패키지를 빌드하고 있어요.
         run: yarn turbo build
 
