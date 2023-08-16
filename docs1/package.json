@@ -1,0 +1,41 @@
+{
+  "name": "my-gatsby-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "my-gatsby-site",
+  "author": "Jason-Jeong-Dev",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "my-gatsby-site/node_modules/.bin/gatsby develop",
+    "start": "my-gatsby-site/node_modules/.bin/gatsby develop",
+    "build": "my-gatsby-site/node_modules/.bin/gatsby build",
+    "serve": "my-gatsby-site/node_modules/.bin/gatsby serve",
+    "clean": "my-gatsby-site/node_modules/.bin/gatsby clean",
+    "typecheck": "my-gatsby-site/node_modules/.bin/tsc --noEmit"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mdx-js/react": "^2.3.0",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-emotion": "^8.11.0",
+    "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-manifest": "^5.11.0",
+    "gatsby-plugin-mdx": "^5.11.0",
+    "gatsby-plugin-sharp": "^5.11.0",
+    "gatsby-plugin-sitemap": "^6.11.0",
+    "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-transformer-remark": "^6.11.0",
+    "gatsby-transformer-sharp": "^5.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "typescript": "^5.1.6"
+  }
+}
