@@ -8,12 +8,12 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "my-gatsby-site/node_modules/.bin/gatsby develop",
-    "start": "my-gatsby-site/node_modules/.bin/gatsby develop",
-    "build": "my-gatsby-site/node_modules/.bin/gatsby build",
-    "serve": "my-gatsby-site/node_modules/.bin/gatsby serve",
-    "clean": "my-gatsby-site/node_modules/.bin/gatsby clean",
-    "typecheck": "my-gatsby-site/node_modules/.bin/tsc --noEmit"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
