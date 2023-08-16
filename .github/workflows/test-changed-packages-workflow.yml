@@ -16,6 +16,7 @@ jobs:
         with:
           fetch-depth: 0
           node-version-file: ".nvmrc"
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.2
         with:
