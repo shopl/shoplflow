@@ -16,7 +16,6 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-          node-version-file: ".nvmrc"
 
       - name: pnpm을 설정하고 있어요.
         uses: pnpm/action-setup@v2.2.2
@@ -29,6 +28,7 @@ jobs:
         with:
           cache: "pnpm"
           cache-dependency-path: "pnpm-lock.yaml"
+          node-version-file: ".nvmrc"
 
       - name: 패키지를 빌드하고 있어요.
         run: pnpm turbo build
