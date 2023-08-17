@@ -1,5 +1,19 @@
 # @shoplflow/eslint-plugin
 
+## 0.0.8
+
+### Patch Changes
+
+- [#35](https://github.com/shopl/shoplflow/pull/35) [`50d6dd1`](https://github.com/shopl/shoplflow/commit/50d6dd13f8294c9309402830e87fc8441868e36f) Thanks [@velo-kim](https://github.com/velo-kim)! - eslint: package.json 업데이트
+
+- [#35](https://github.com/shopl/shoplflow/pull/35) [`50d6dd1`](https://github.com/shopl/shoplflow/commit/50d6dd13f8294c9309402830e87fc8441868e36f) Thanks [@velo-kim](https://github.com/velo-kim)! - eslint package.json > files 필드 변경
+
+## 0.0.7
+
+### Patch Changes
+
+- [#30](https://github.com/shopl/shoplflow/pull/30) [`9646803`](https://github.com/shopl/shoplflow/commit/9646803299ff9d460bbe313e0bdd476a74a3c11a) Thanks [@velo-kim](https://github.com/velo-kim)! - eslint package.json > files 필드 변경
+
 ## 0.0.6
 
 ### Patch Changes

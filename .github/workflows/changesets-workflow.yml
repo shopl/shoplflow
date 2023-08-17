@@ -20,17 +20,18 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          node-version-file: ".nvmrc"
+
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: "yarn"
-
-      - name: Install dependencies
-        run: yarn install
-        env:
-          CI: true
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       # 배포를 위해 .npmrc 파일을 생성하고 인증 토큰을 추가한다.
       - name: Configure npm
@@ -43,16 +44,16 @@ jobs:
 
       # 패키지를 빌드한다.
       - name: Build packages
-        run: yarn build --since ${{ github.event.before }}
+        run: pnpm build --since ${{ github.event.before }}
 
       # Changesets에서 제공하는 Action을 사용할 수 있다.
       # NPM에 배포, Git 태그 생성 등의 작업을 수행한다.
       - name: Create release Pull Request or publish to NPM
         uses: changesets/action@v1
         with:
-          version: yarn changeset version
+          version: pnpm changeset version
           createGithubReleases: true
-          publish: yarn changeset publish
+          publish: pnpm changeset publish
           commit: "ci(changesets): version packages"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

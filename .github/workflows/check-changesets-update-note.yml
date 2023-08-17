@@ -2,7 +2,9 @@ name: Check Changesets Update Note
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types:
+      - opened
+      - synchronize
 
 jobs:
   check:
@@ -13,12 +15,18 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
-          node-version-file: ".nvmrc"
+
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: "yarn"
+          cache: "pnpm"
+          node-version-file: ".nvmrc"
 
       - name: Check for specific label
         run: |
