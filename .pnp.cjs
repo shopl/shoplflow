@@ -11602,6 +11602,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["docs", "workspace:docs"],\
             ["@emotion/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:11.11.1"],\
             ["@emotion/styled", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:11.11.0"],\
+            ["@next/swc-linux-arm-gnueabihf", "npm:13.1.5"],\
+            ["@next/swc-linux-arm64-gnu", "npm:13.1.5"],\
+            ["@next/swc-linux-arm64-musl", "npm:13.1.5"],\
             ["@next/swc-linux-x64-gnu", "npm:13.1.5"],\
             ["@next/swc-linux-x64-musl", "npm:13.1.5"],\
             ["@shoplflow/base", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/base"],\

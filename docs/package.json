@@ -18,6 +18,11 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@next/swc-linux-arm-gnueabihf": "13.1.5",
+    "@next/swc-linux-arm64-gnu": "13.1.5",
+    "@next/swc-linux-arm64-musl": "13.1.5",
+    "@next/swc-linux-x64-gnu": "13.1.5",
+    "@next/swc-linux-x64-musl": "13.1.5",
     "@shoplflow/base": "workspace:*",
     "islandjs": "^0.7.6",
     "next": "13.1.5",
@@ -27,8 +32,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@next/swc-linux-x64-gnu": "13.1.5",
-    "@next/swc-linux-x64-musl": "13.1.5",
     "@storybook/addon-essentials": "^7.1.1",
     "@storybook/addon-interactions": "^7.1.1",
     "@storybook/addon-links": "^7.1.1",

@@ -3005,6 +3005,7 @@ __metadata:
 "@next/swc-linux-arm-gnueabihf@npm:13.1.5":
   version: 13.1.5
   resolution: "@next/swc-linux-arm-gnueabihf@npm:13.1.5"
+  checksum: 9aca643e90b9962857fe615ecc98a8c9e3a0af4e99847abb8f668112444c1b207a4a26f2635a4e10083626fa1e07ebbf1f86bbdc11ac40c49cfe725ba2327950
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
@@ -3012,6 +3013,7 @@ __metadata:
 "@next/swc-linux-arm64-gnu@npm:13.1.5":
   version: 13.1.5
   resolution: "@next/swc-linux-arm64-gnu@npm:13.1.5"
+  checksum: 444a6c86dc628ad434976e38e814179d5d80a706adb6033601d3db1c090b22e959ee61bbe17cd92924ddc9610ea424ffff48601679559fcecd40209b1dc5ca35
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
@@ -3019,6 +3021,7 @@ __metadata:
 "@next/swc-linux-arm64-musl@npm:13.1.5":
   version: 13.1.5
   resolution: "@next/swc-linux-arm64-musl@npm:13.1.5"
+  checksum: 3b4c8344b77225a23e5b3faf4d6b147693a1511af6575cfd40d133fe13389ed7cd7c06d5e9330de29c7abbc2f8ef76e842c699fa8dc2c53f8883b30bc1f3e3fd
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
@@ -8423,6 +8426,9 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
+    "@next/swc-linux-arm-gnueabihf": 13.1.5
+    "@next/swc-linux-arm64-gnu": 13.1.5
+    "@next/swc-linux-arm64-musl": 13.1.5
     "@next/swc-linux-x64-gnu": 13.1.5
     "@next/swc-linux-x64-musl": 13.1.5
     "@shoplflow/base": "workspace:*"
