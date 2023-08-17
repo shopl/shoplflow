@@ -49,7 +49,6 @@
   "workspaces": [
     "packages/*",
     "docs",
-    "docs1",
     "templates/*"
   ]
 }
