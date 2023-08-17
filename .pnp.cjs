@@ -10537,7 +10537,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["core-js-pure", [\
         ["npm:3.32.0", {\
-          "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.32.0-2ab9c5a73e/node_modules/core-js-pure/",\
+          "packageLocation": "./.yarn/cache/core-js-pure-npm-3.32.0-2ab9c5a73e-57b1ae97e6.zip/node_modules/core-js-pure/",\
           "packageDependencies": [\
             ["core-js-pure", "npm:3.32.0"]\
           ],\
@@ -11989,7 +11989,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["esbuild", [\
         ["npm:0.15.18", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.15.18-61e07796c8/node_modules/esbuild/",\
+          "packageLocation": "./.yarn/cache/esbuild-npm-0.15.18-61e07796c8-ec12682b2c.zip/node_modules/esbuild/",\
           "packageDependencies": [\
             ["esbuild", "npm:0.15.18"],\
             ["@esbuild/android-arm", "npm:0.15.18"],\
@@ -12018,7 +12018,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }],\
         ["npm:0.15.5", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.15.5-6c9ff6861c/node_modules/esbuild/",\
+          "packageLocation": "./.yarn/cache/esbuild-npm-0.15.5-6c9ff6861c-fc7f5df654.zip/node_modules/esbuild/",\
           "packageDependencies": [\
             ["esbuild", "npm:0.15.5"],\
             ["@esbuild/linux-loong64", "npm:0.15.5"],\
@@ -12046,7 +12046,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }],\
         ["npm:0.18.17", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.18.17-384f2c63dc/node_modules/esbuild/",\
+          "packageLocation": "./.yarn/cache/esbuild-npm-0.18.17-384f2c63dc-c6e1ffa776.zip/node_modules/esbuild/",\
           "packageDependencies": [\
             ["esbuild", "npm:0.18.17"],\
             ["@esbuild/android-arm", "npm:0.18.17"],\
@@ -12075,7 +12075,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }],\
         ["npm:0.18.20", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.18.20-004a76d281/node_modules/esbuild/",\
+          "packageLocation": "./.yarn/cache/esbuild-npm-0.18.20-004a76d281-5d253614e5.zip/node_modules/esbuild/",\
           "packageDependencies": [\
             ["esbuild", "npm:0.18.20"],\
             ["@esbuild/android-arm", "npm:0.18.20"],\
@@ -14419,7 +14419,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/hast", "npm:2.3.5"],\
             ["hast-util-from-parse5", "npm:7.1.2"],\
             ["parse5", "npm:7.1.2"],\
-            ["vfile", "npm:5.3.7"]\
+            ["vfile", "npm:5.3.7"],\
+            ["vfile-message", "npm:3.1.4"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -22377,7 +22378,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],\
       ["turbo", [\
         ["npm:1.10.12", {\
-          "packageLocation": "./.yarn/unplugged/turbo-npm-1.10.12-482ca53854/node_modules/turbo/",\
+          "packageLocation": "./.yarn/cache/turbo-npm-1.10.12-482ca53854-266b70404e.zip/node_modules/turbo/",\
           "packageDependencies": [\
             ["turbo", "npm:1.10.12"],\
             ["turbo-darwin-64", "npm:1.10.12"],\
