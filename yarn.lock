@@ -8445,6 +8445,7 @@ __metadata:
     "@types/node": ^20.3.3
     "@types/react": ^18.2.14
     "@types/react-dom": ^18.2.6
+    eslint: 8.47.0
     islandjs: ^0.7.6
     next: 13.1.5
     nextra: 2.11.0
@@ -9644,7 +9645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.44.0, eslint@npm:^8.46.0":
+"eslint@npm:8.47.0, eslint@npm:^8.44.0, eslint@npm:^8.46.0":
   version: 8.47.0
   resolution: "eslint@npm:8.47.0"
   dependencies:
