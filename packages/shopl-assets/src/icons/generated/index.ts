@@ -9,41 +9,22 @@ import IcAdd from './IcAdd';
 import IcAlbumXlarge from './IcAlbumXlarge';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
 import IcAlert from './IcAlert';
-import IcAnnualMedium from './IcAnnualMedium';
-import IcApprovalMedium from './IcApprovalMedium';
-import IcArticleMedium from './IcArticleMedium';
 import IcAsc from './IcAsc';
 import IcAttachment from './IcAttachment';
-import IcAttendanceMedium from './IcAttendanceMedium';
-import IcBackMedium from './IcBackMedium';
-import IcBellMedium from './IcBellMedium';
-import IcBmMedium from './IcBmMedium';
-import IcBoardMedium from './IcBoardMedium';
 import IcBoardProfileXlarge from './IcBoardProfileXlarge';
-import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
-import IcBookmarkMedium from './IcBookmarkMedium';
-import IcByEmployeeMedium from './IcByEmployeeMedium';
-import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
 import IcCategory from './IcCategory';
 import IcChannel from './IcChannel';
-import IcChatActivityMedium from './IcChatActivityMedium';
-import IcChattingMedium from './IcChattingMedium';
-import IcChattingSolidMedium from './IcChattingSolidMedium';
 import IcCheckXlarge from './IcCheckXlarge';
 import IcCheckXsmall from './IcCheckXsmall';
 import IcCheck from './IcCheck';
 import IcClose from './IcClose';
-import IcCloudMedium from './IcCloudMedium';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcCopy from './IcCopy';
-import IcDeadline from './IcDeadline';
 import IcDelete from './IcDelete';
 import IcDesc from './IcDesc';
-import IcDisplayMedium from './IcDisplayMedium';
 import IcDownArrowSolidXsmall from './IcDownArrowSolidXsmall';
 import IcDownArrowXsmall from './IcDownArrowXsmall';
 import IcDownArrow from './IcDownArrow';
-import IcDownloadMedium from './IcDownloadMedium';
 import IcDownload from './IcDownload';
 import IcDraftsave from './IcDraftsave';
 import IcDrag from './IcDrag';
@@ -51,18 +32,12 @@ import IcDrawer from './IcDrawer';
 import IcEditXsmall from './IcEditXsmall';
 import IcEdit from './IcEdit';
 import IcEmailXlarge from './IcEmailXlarge';
-import IcEmojiMedium from './IcEmojiMedium';
-import IcEmojiPlusMedium from './IcEmojiPlusMedium';
 import IcEndPage from './IcEndPage';
 import IcExclamationXlarge from './IcExclamationXlarge';
-import IcExitFullScreenMedium from './IcExitFullScreenMedium';
-import IcExpected from './IcExpected';
-import IcExpenseMedium from './IcExpenseMedium';
 import IcFeedView from './IcFeedView';
 import IcFilter from './IcFilter';
 import IcFilterdeleteXsmall from './IcFilterdeleteXsmall';
 import IcFirstPage from './IcFirstPage';
-import IcFullScreenMedium from './IcFullScreenMedium';
 import IcFullscreen from './IcFullscreen';
 import IcGps from './IcGps';
 import IcGrade1 from './IcGrade1';
@@ -77,33 +52,9 @@ import IcGrade51 from './IcGrade51';
 import IcGrade52 from './IcGrade52';
 import IcGrade5 from './IcGrade5';
 import IcGradeBadge from './IcGradeBadge';
-import IcGradientAttendance from './IcGradientAttendance';
-import IcGradientBoard from './IcGradientBoard';
-import IcGradientDisplay from './IcGradientDisplay';
-import IcGradientGps from './IcGradientGps';
-import IcGradientInventory from './IcGradientInventory';
-import IcGradientJp from './IcGradientJp';
-import IcGradientMobile from './IcGradientMobile';
-import IcGradientNotice from './IcGradientNotice';
-import IcGradientOvertime from './IcGradientOvertime';
-import IcGradientPrice from './IcGradientPrice';
-import IcGradientReport from './IcGradientReport';
-import IcGradientSales from './IcGradientSales';
-import IcGradientSchedule from './IcGradientSchedule';
-import IcGradientStaff from './IcGradientStaff';
-import IcGradientTarget from './IcGradientTarget';
-import IcGradientTodo from './IcGradientTodo';
-import IcGradientWifi from './IcGradientWifi';
-import IcGradientWorkplace from './IcGradientWorkplace';
 import IcGraph from './IcGraph';
-import IcGroupMedium from './IcGroupMedium';
-import IcGroupSolidMedium from './IcGroupSolidMedium';
-import IcHelpCenterMedium from './IcHelpCenterMedium';
-import IcHelpMedium from './IcHelpMedium';
 import IcHelp from './IcHelp';
-import IcHideMedium from './IcHideMedium';
 import IcHistory from './IcHistory';
-import IcHomeMedium from './IcHomeMedium';
 import IcImport from './IcImport';
 import IcInfoAlbum from './IcInfoAlbum';
 import IcInfoApp from './IcInfoApp';
@@ -134,15 +85,10 @@ import IcInfoVisit from './IcInfoVisit';
 import IcInfoWorking from './IcInfoWorking';
 import IcInfoWorkplace from './IcInfoWorkplace';
 import IcInfo from './IcInfo';
-import IcInventoryMedium from './IcInventoryMedium';
 import IcInvitation from './IcInvitation';
 import IcInviteBefore from './IcInviteBefore';
 import IcInviteCompleted from './IcInviteCompleted';
 import IcIssue from './IcIssue';
-import IcJpMedium from './IcJpMedium';
-import IcLanguageMedium from './IcLanguageMedium';
-import IcLeaveMedium from './IcLeaveMedium';
-import IcLeave from './IcLeave';
 import IcLeftArrowXsmall from './IcLeftArrowXsmall';
 import IcLeftArrow from './IcLeftArrow';
 import IcLink from './IcLink';
@@ -150,45 +96,27 @@ import IcListEdit from './IcListEdit';
 import IcListMove from './IcListMove';
 import IcListview from './IcListview';
 import IcMap from './IcMap';
-import IcMemberMedium from './IcMemberMedium';
 import IcMemo from './IcMemo';
-import IcMinusMedium from './IcMinusMedium';
 import IcMore from './IcMore';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
 import IcNoGrade from './IcNoGrade';
 import IcNormal from './IcNormal';
-import IcNoticeMedium from './IcNoticeMedium';
-import IcNoticeSolidMedium from './IcNoticeSolidMedium';
 import IcNotice from './IcNotice';
-import IcOvertimeMedium from './IcOvertimeMedium';
 import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
-import IcPaymentMedium from './IcPaymentMedium';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
-import IcPlusMedium from './IcPlusMedium';
-import IcPopup from './IcPopup';
 import IcPreview from './IcPreview';
-import IcPriceMedium from './IcPriceMedium';
-import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
-import IcRatioMedium from './IcRatioMedium';
-import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
-import IcReportMedium from './IcReportMedium';
-import IcResendPushMedium from './IcResendPushMedium';
 import IcResendPush from './IcResendPush';
 import IcReturn from './IcReturn';
 import IcRightArrowXsmall from './IcRightArrowXsmall';
 import IcRightArrow from './IcRightArrow';
-import IcSalesMedium from './IcSalesMedium';
-import IcScheduleMedium from './IcScheduleMedium';
 import IcSearch from './IcSearch';
-import IcSettingMedium from './IcSettingMedium';
 import IcSetting from './IcSetting';
 import IcShortcutXsmall from './IcShortcutXsmall';
-import IcShowMedium from './IcShowMedium';
 import IcSolved from './IcSolved';
 import IcSortingAtoz from './IcSortingAtoz';
 import IcSortingEarly from './IcSortingEarly';
@@ -196,43 +124,17 @@ import IcSortingLate from './IcSortingLate';
 import IcSortingZtoa from './IcSortingZtoa';
 import IcStar from './IcStar';
 import IcSummeryView from './IcSummeryView';
-import IcSympathyMedium from './IcSympathyMedium';
 import IcTack from './IcTack';
 import IcTag from './IcTag';
-import IcTargetMedium from './IcTargetMedium';
-import IcTodoMedium from './IcTodoMedium';
-import IcToggleMedium from './IcToggleMedium';
 import IcTrash from './IcTrash';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
-import IcWaitingMedium from './IcWaitingMedium';
 import IcWifi from './IcWifi';
 import IcWindowed from './IcWindowed';
 import IcWorkStatus from './IcWorkStatus';
-import IcWorkplaceMedium from './IcWorkplaceMedium';
-import IcZoomInMedium from './IcZoomInMedium';
-import IcZoomOutMedium from './IcZoomOutMedium';
-import ImgSettingAttendance from './ImgSettingAttendance';
-import ImgSettingBoard from './ImgSettingBoard';
-import ImgSettingChat from './ImgSettingChat';
-import ImgSettingDisplay from './ImgSettingDisplay';
-import ImgSettingExpenses from './ImgSettingExpenses';
-import ImgSettingInventory from './ImgSettingInventory';
-import ImgSettingJp from './ImgSettingJp';
-import ImgSettingNs from './ImgSettingNs';
-import ImgSettingPrice from './ImgSettingPrice';
-import ImgSettingReport from './ImgSettingReport';
-import ImgSettingSales from './ImgSettingSales';
-import ImgSettingSchedule from './ImgSettingSchedule';
-import ImgSettingTarget from './ImgSettingTarget';
-import ImgSettingTodo from './ImgSettingTodo';
-import UpgradeBasic from './UpgradeBasic';
-import UpgradeEnterprise from './UpgradeEnterprise';
-import UpgradePro from './UpgradePro';
-import UpgradeStandard from './UpgradeStandard';
 
 const icons = {
   'badge-admin-large': BadgeAdminLarge,
@@ -246,41 +148,22 @@ const icons = {
   'album-xlarge': IcAlbumXlarge,
   'alert-popup-xlarge': IcAlertPopupXlarge,
   alert: IcAlert,
-  'annual-medium': IcAnnualMedium,
-  'approval-medium': IcApprovalMedium,
-  'article-medium': IcArticleMedium,
   asc: IcAsc,
   attachment: IcAttachment,
-  'attendance-medium': IcAttendanceMedium,
-  'back-medium': IcBackMedium,
-  'bell-medium': IcBellMedium,
-  'bm-medium': IcBmMedium,
-  'board-medium': IcBoardMedium,
   'board-profile-xlarge': IcBoardProfileXlarge,
-  'bookmark-filled-medium': IcBookmarkFilledMedium,
-  'bookmark-medium': IcBookmarkMedium,
-  'by-employee-medium': IcByEmployeeMedium,
-  'by-place-of-work-medium': IcByPlaceOfWorkMedium,
   category: IcCategory,
   channel: IcChannel,
-  'chat-activity-medium': IcChatActivityMedium,
-  'chatting-medium': IcChattingMedium,
-  'chatting-solid-medium': IcChattingSolidMedium,
   'check-xlarge': IcCheckXlarge,
   'check-xsmall': IcCheckXsmall,
   check: IcCheck,
   close: IcClose,
-  'cloud-medium': IcCloudMedium,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
   copy: IcCopy,
-  deadline: IcDeadline,
   delete: IcDelete,
   desc: IcDesc,
-  'display-medium': IcDisplayMedium,
   'down-arrow-solid-xsmall': IcDownArrowSolidXsmall,
   'down-arrow-xsmall': IcDownArrowXsmall,
   'down-arrow': IcDownArrow,
-  'download-medium': IcDownloadMedium,
   download: IcDownload,
   draftsave: IcDraftsave,
   drag: IcDrag,
@@ -288,18 +171,12 @@ const icons = {
   'edit-xsmall': IcEditXsmall,
   edit: IcEdit,
   'email-xlarge': IcEmailXlarge,
-  'emoji-medium': IcEmojiMedium,
-  'emoji-plus-medium': IcEmojiPlusMedium,
   'end-page': IcEndPage,
   'exclamation-xlarge': IcExclamationXlarge,
-  'exit-full-screen-medium': IcExitFullScreenMedium,
-  expected: IcExpected,
-  'expense-medium': IcExpenseMedium,
   'feed-view': IcFeedView,
   filter: IcFilter,
   'filterdelete-xsmall': IcFilterdeleteXsmall,
   'first-page': IcFirstPage,
-  'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
   gps: IcGps,
   'grade-1': IcGrade1,
@@ -314,33 +191,9 @@ const icons = {
   'grade-52': IcGrade52,
   'grade-5': IcGrade5,
   'grade-badge': IcGradeBadge,
-  'gradient-attendance': IcGradientAttendance,
-  'gradient-board': IcGradientBoard,
-  'gradient-display': IcGradientDisplay,
-  'gradient-gps': IcGradientGps,
-  'gradient-inventory': IcGradientInventory,
-  'gradient-jp': IcGradientJp,
-  'gradient-mobile': IcGradientMobile,
-  'gradient-notice': IcGradientNotice,
-  'gradient-overtime': IcGradientOvertime,
-  'gradient-price': IcGradientPrice,
-  'gradient-report': IcGradientReport,
-  'gradient-sales': IcGradientSales,
-  'gradient-schedule': IcGradientSchedule,
-  'gradient-staff': IcGradientStaff,
-  'gradient-target': IcGradientTarget,
-  'gradient-todo': IcGradientTodo,
-  'gradient-wifi': IcGradientWifi,
-  'gradient-workplace': IcGradientWorkplace,
   graph: IcGraph,
-  'group-medium': IcGroupMedium,
-  'group-solid-medium': IcGroupSolidMedium,
-  'help-center-medium': IcHelpCenterMedium,
-  'help-medium': IcHelpMedium,
   help: IcHelp,
-  'hide-medium': IcHideMedium,
   history: IcHistory,
-  'home-medium': IcHomeMedium,
   import: IcImport,
   'info-album': IcInfoAlbum,
   'info-app': IcInfoApp,
@@ -371,15 +224,10 @@ const icons = {
   'info-working': IcInfoWorking,
   'info-workplace': IcInfoWorkplace,
   info: IcInfo,
-  'inventory-medium': IcInventoryMedium,
   invitation: IcInvitation,
   'invite-before': IcInviteBefore,
   'invite-completed': IcInviteCompleted,
   issue: IcIssue,
-  'jp-medium': IcJpMedium,
-  'language-medium': IcLanguageMedium,
-  'leave-medium': IcLeaveMedium,
-  leave: IcLeave,
   'left-arrow-xsmall': IcLeftArrowXsmall,
   'left-arrow': IcLeftArrow,
   link: IcLink,
@@ -387,45 +235,27 @@ const icons = {
   'list-move': IcListMove,
   listview: IcListview,
   map: IcMap,
-  'member-medium': IcMemberMedium,
   memo: IcMemo,
-  'minus-medium': IcMinusMedium,
   more: IcMore,
   move: IcMove,
   'movie-01': IcMovie01,
   'no-grade': IcNoGrade,
   normal: IcNormal,
-  'notice-medium': IcNoticeMedium,
-  'notice-solid-medium': IcNoticeSolidMedium,
   notice: IcNotice,
-  'overtime-medium': IcOvertimeMedium,
   'password-error-xlarge': IcPasswordErrorXlarge,
-  'payment-medium': IcPaymentMedium,
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
-  'plus-medium': IcPlusMedium,
-  popup: IcPopup,
   preview: IcPreview,
-  'price-medium': IcPriceMedium,
-  proceeding: IcProceeding,
   push: IcPush,
-  'ratio-medium': IcRatioMedium,
-  'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
-  'report-medium': IcReportMedium,
-  'resend-push-medium': IcResendPushMedium,
   'resend-push': IcResendPush,
   return: IcReturn,
   'right-arrow-xsmall': IcRightArrowXsmall,
   'right-arrow': IcRightArrow,
-  'sales-medium': IcSalesMedium,
-  'schedule-medium': IcScheduleMedium,
   search: IcSearch,
-  'setting-medium': IcSettingMedium,
   setting: IcSetting,
   'shortcut-xsmall': IcShortcutXsmall,
-  'show-medium': IcShowMedium,
   solved: IcSolved,
   'sorting-atoz': IcSortingAtoz,
   'sorting-early': IcSortingEarly,
@@ -433,43 +263,17 @@ const icons = {
   'sorting-ztoa': IcSortingZtoa,
   star: IcStar,
   'summery-view': IcSummeryView,
-  'sympathy-medium': IcSympathyMedium,
   tack: IcTack,
   tag: IcTag,
-  'target-medium': IcTargetMedium,
-  'todo-medium': IcTodoMedium,
-  'toggle-medium': IcToggleMedium,
   trash: IcTrash,
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
   'view-off': IcViewOff,
   'view-on': IcViewOn,
-  'waiting-medium': IcWaitingMedium,
   wifi: IcWifi,
   windowed: IcWindowed,
   'work-status': IcWorkStatus,
-  'workplace-medium': IcWorkplaceMedium,
-  'zoom-in-medium': IcZoomInMedium,
-  'zoom-out-medium': IcZoomOutMedium,
-  'img-setting-attendance': ImgSettingAttendance,
-  'img-setting-board': ImgSettingBoard,
-  'img-setting-chat': ImgSettingChat,
-  'img-setting-display': ImgSettingDisplay,
-  'img-setting-expenses': ImgSettingExpenses,
-  'img-setting-inventory': ImgSettingInventory,
-  'img-setting-jp': ImgSettingJp,
-  'img-setting-ns': ImgSettingNs,
-  'img-setting-price': ImgSettingPrice,
-  'img-setting-report': ImgSettingReport,
-  'img-setting-sales': ImgSettingSales,
-  'img-setting-schedule': ImgSettingSchedule,
-  'img-setting-target': ImgSettingTarget,
-  'img-setting-todo': ImgSettingTodo,
-  'upgrade-basic': UpgradeBasic,
-  'upgrade-enterprise': UpgradeEnterprise,
-  'upgrade-pro': UpgradePro,
-  'upgrade-standard': UpgradeStandard,
 };
 
 export type IconNames = keyof typeof icons;
@@ -481,235 +285,137 @@ export {
   BtnChatLarge as BtnChatLargeIcon,
   BtnEditLarge as BtnEditLargeIcon,
   BtnWhatsappLarge as BtnWhatsappLargeIcon,
-  IcAddXsmall as AddXsmallIcon,
-  IcAdd as AddIcon,
-  IcAlbumXlarge as AlbumXlargeIcon,
-  IcAlertPopupXlarge as AlertPopupXlargeIcon,
-  IcAlert as AlertIcon,
-  IcAnnualMedium as AnnualMediumIcon,
-  IcApprovalMedium as ApprovalMediumIcon,
-  IcArticleMedium as ArticleMediumIcon,
-  IcAsc as AscIcon,
-  IcAttachment as AttachmentIcon,
-  IcAttendanceMedium as AttendanceMediumIcon,
-  IcBackMedium as BackMediumIcon,
-  IcBellMedium as BellMediumIcon,
-  IcBmMedium as BmMediumIcon,
-  IcBoardMedium as BoardMediumIcon,
-  IcBoardProfileXlarge as BoardProfileXlargeIcon,
-  IcBookmarkFilledMedium as BookmarkFilledMediumIcon,
-  IcBookmarkMedium as BookmarkMediumIcon,
-  IcByEmployeeMedium as ByEmployeeMediumIcon,
-  IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
-  IcCategory as CategoryIcon,
-  IcChannel as ChannelIcon,
-  IcChatActivityMedium as ChatActivityMediumIcon,
-  IcChattingMedium as ChattingMediumIcon,
-  IcChattingSolidMedium as ChattingSolidMediumIcon,
-  IcCheckXlarge as CheckXlargeIcon,
-  IcCheckXsmall as CheckXsmallIcon,
-  IcCheck as CheckIcon,
-  IcClose as CloseIcon,
-  IcCloudMedium as CloudMediumIcon,
-  IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
-  IcCopy as CopyIcon,
-  IcDeadline as DeadlineIcon,
-  IcDelete as DeleteIcon,
-  IcDesc as DescIcon,
-  IcDisplayMedium as DisplayMediumIcon,
-  IcDownArrowSolidXsmall as DownArrowSolidXsmallIcon,
-  IcDownArrowXsmall as DownArrowXsmallIcon,
-  IcDownArrow as DownArrowIcon,
-  IcDownloadMedium as DownloadMediumIcon,
-  IcDownload as DownloadIcon,
-  IcDraftsave as DraftsaveIcon,
-  IcDrag as DragIcon,
-  IcDrawer as DrawerIcon,
-  IcEditXsmall as EditXsmallIcon,
-  IcEdit as EditIcon,
-  IcEmailXlarge as EmailXlargeIcon,
-  IcEmojiMedium as EmojiMediumIcon,
-  IcEmojiPlusMedium as EmojiPlusMediumIcon,
-  IcEndPage as EndPageIcon,
-  IcExclamationXlarge as ExclamationXlargeIcon,
-  IcExitFullScreenMedium as ExitFullScreenMediumIcon,
-  IcExpected as ExpectedIcon,
-  IcExpenseMedium as ExpenseMediumIcon,
-  IcFeedView as FeedViewIcon,
-  IcFilter as FilterIcon,
-  IcFilterdeleteXsmall as FilterdeleteXsmallIcon,
-  IcFirstPage as FirstPageIcon,
-  IcFullScreenMedium as FullScreenMediumIcon,
-  IcFullscreen as FullscreenIcon,
-  IcGps as GpsIcon,
-  IcGrade1 as Grade1Icon,
-  IcGrade2 as Grade2Icon,
-  IcGrade31 as Grade31Icon,
-  IcGrade32 as Grade32Icon,
-  IcGrade3 as Grade3Icon,
-  IcGrade41 as Grade41Icon,
-  IcGrade42 as Grade42Icon,
-  IcGrade4 as Grade4Icon,
-  IcGrade51 as Grade51Icon,
-  IcGrade52 as Grade52Icon,
-  IcGrade5 as Grade5Icon,
-  IcGradeBadge as GradeBadgeIcon,
-  IcGradientAttendance as GradientAttendanceIcon,
-  IcGradientBoard as GradientBoardIcon,
-  IcGradientDisplay as GradientDisplayIcon,
-  IcGradientGps as GradientGpsIcon,
-  IcGradientInventory as GradientInventoryIcon,
-  IcGradientJp as GradientJpIcon,
-  IcGradientMobile as GradientMobileIcon,
-  IcGradientNotice as GradientNoticeIcon,
-  IcGradientOvertime as GradientOvertimeIcon,
-  IcGradientPrice as GradientPriceIcon,
-  IcGradientReport as GradientReportIcon,
-  IcGradientSales as GradientSalesIcon,
-  IcGradientSchedule as GradientScheduleIcon,
-  IcGradientStaff as GradientStaffIcon,
-  IcGradientTarget as GradientTargetIcon,
-  IcGradientTodo as GradientTodoIcon,
-  IcGradientWifi as GradientWifiIcon,
-  IcGradientWorkplace as GradientWorkplaceIcon,
-  IcGraph as GraphIcon,
-  IcGroupMedium as GroupMediumIcon,
-  IcGroupSolidMedium as GroupSolidMediumIcon,
-  IcHelpCenterMedium as HelpCenterMediumIcon,
-  IcHelpMedium as HelpMediumIcon,
-  IcHelp as HelpIcon,
-  IcHideMedium as HideMediumIcon,
-  IcHistory as HistoryIcon,
-  IcHomeMedium as HomeMediumIcon,
-  IcImport as ImportIcon,
-  IcInfoAlbum as InfoAlbumIcon,
-  IcInfoApp as InfoAppIcon,
-  IcInfoBreaktime as InfoBreaktimeIcon,
-  IcInfoCity as InfoCityIcon,
-  IcInfoDate as InfoDateIcon,
-  IcInfoDaysoff as InfoDaysoffIcon,
-  IcInfoDistributor as InfoDistributorIcon,
-  IcInfoDocs as InfoDocsIcon,
-  IcInfoEmail as InfoEmailIcon,
-  IcInfoEmployee as InfoEmployeeIcon,
-  IcInfoEmployeeno as InfoEmployeenoIcon,
-  IcInfoGrade as InfoGradeIcon,
-  IcInfoGroup as InfoGroupIcon,
-  IcInfoLeader as InfoLeaderIcon,
-  IcInfoLogin as InfoLoginIcon,
-  IcInfoPhoneCheck as InfoPhoneCheckIcon,
-  IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
-  IcInfoPhone as InfoPhoneIcon,
-  IcInfoPosition as InfoPositionIcon,
-  IcInfoProperties as InfoPropertiesIcon,
-  IcInfoPunch as InfoPunchIcon,
-  IcInfoRadius as InfoRadiusIcon,
-  IcInfoRegion as InfoRegionIcon,
-  IcInfoStarBadge as InfoStarBadgeIcon,
-  IcInfoState as InfoStateIcon,
-  IcInfoVisit as InfoVisitIcon,
-  IcInfoWorking as InfoWorkingIcon,
-  IcInfoWorkplace as InfoWorkplaceIcon,
-  IcInfo as InfoIcon,
-  IcInventoryMedium as InventoryMediumIcon,
-  IcInvitation as InvitationIcon,
-  IcInviteBefore as InviteBeforeIcon,
-  IcInviteCompleted as InviteCompletedIcon,
-  IcIssue as IssueIcon,
-  IcJpMedium as JpMediumIcon,
-  IcLanguageMedium as LanguageMediumIcon,
-  IcLeaveMedium as LeaveMediumIcon,
-  IcLeave as LeaveIcon,
-  IcLeftArrowXsmall as LeftArrowXsmallIcon,
-  IcLeftArrow as LeftArrowIcon,
-  IcLink as LinkIcon,
-  IcListEdit as ListEditIcon,
-  IcListMove as ListMoveIcon,
-  IcListview as ListviewIcon,
-  IcMap as MapIcon,
-  IcMemberMedium as MemberMediumIcon,
-  IcMemo as MemoIcon,
-  IcMinusMedium as MinusMediumIcon,
-  IcMore as MoreIcon,
-  IcMove as MoveIcon,
-  IcMovie01 as Movie01Icon,
-  IcNoGrade as NoGradeIcon,
-  IcNormal as NormalIcon,
-  IcNoticeMedium as NoticeMediumIcon,
-  IcNoticeSolidMedium as NoticeSolidMediumIcon,
-  IcNotice as NoticeIcon,
-  IcOvertimeMedium as OvertimeMediumIcon,
-  IcPasswordErrorXlarge as PasswordErrorXlargeIcon,
-  IcPaymentMedium as PaymentMediumIcon,
-  IcPin as PinIcon,
-  IcPlayXlarge as PlayXlargeIcon,
-  IcPlusMedium as PlusMediumIcon,
-  IcPopup as PopupIcon,
-  IcPreview as PreviewIcon,
-  IcPriceMedium as PriceMediumIcon,
-  IcProceeding as ProceedingIcon,
-  IcPush as PushIcon,
-  IcRatioMedium as RatioMediumIcon,
-  IcReceiverMedium as ReceiverMediumIcon,
-  IcRefresh as RefreshIcon,
-  IcRepeat as RepeatIcon,
-  IcReportMedium as ReportMediumIcon,
-  IcResendPushMedium as ResendPushMediumIcon,
-  IcResendPush as ResendPushIcon,
-  IcReturn as ReturnIcon,
-  IcRightArrowXsmall as RightArrowXsmallIcon,
-  IcRightArrow as RightArrowIcon,
-  IcSalesMedium as SalesMediumIcon,
-  IcScheduleMedium as ScheduleMediumIcon,
-  IcSearch as SearchIcon,
-  IcSettingMedium as SettingMediumIcon,
-  IcSetting as SettingIcon,
-  IcShortcutXsmall as ShortcutXsmallIcon,
-  IcShowMedium as ShowMediumIcon,
-  IcSolved as SolvedIcon,
-  IcSortingAtoz as SortingAtozIcon,
-  IcSortingEarly as SortingEarlyIcon,
-  IcSortingLate as SortingLateIcon,
-  IcSortingZtoa as SortingZtoaIcon,
-  IcStar as StarIcon,
-  IcSummeryView as SummeryViewIcon,
-  IcSympathyMedium as SympathyMediumIcon,
-  IcTack as TackIcon,
-  IcTag as TagIcon,
-  IcTargetMedium as TargetMediumIcon,
-  IcTodoMedium as TodoMediumIcon,
-  IcToggleMedium as ToggleMediumIcon,
-  IcTrash as TrashIcon,
-  IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
-  IcUpArrowXsmall as UpArrowXsmallIcon,
-  IcUpArrow as UpArrowIcon,
-  IcViewOff as ViewOffIcon,
-  IcViewOn as ViewOnIcon,
-  IcWaitingMedium as WaitingMediumIcon,
-  IcWifi as WifiIcon,
-  IcWindowed as WindowedIcon,
-  IcWorkStatus as WorkStatusIcon,
-  IcWorkplaceMedium as WorkplaceMediumIcon,
-  IcZoomInMedium as ZoomInMediumIcon,
-  IcZoomOutMedium as ZoomOutMediumIcon,
-  ImgSettingAttendance as ImgSettingAttendanceIcon,
-  ImgSettingBoard as ImgSettingBoardIcon,
-  ImgSettingChat as ImgSettingChatIcon,
-  ImgSettingDisplay as ImgSettingDisplayIcon,
-  ImgSettingExpenses as ImgSettingExpensesIcon,
-  ImgSettingInventory as ImgSettingInventoryIcon,
-  ImgSettingJp as ImgSettingJpIcon,
-  ImgSettingNs as ImgSettingNsIcon,
-  ImgSettingPrice as ImgSettingPriceIcon,
-  ImgSettingReport as ImgSettingReportIcon,
-  ImgSettingSales as ImgSettingSalesIcon,
-  ImgSettingSchedule as ImgSettingScheduleIcon,
-  ImgSettingTarget as ImgSettingTargetIcon,
-  ImgSettingTodo as ImgSettingTodoIcon,
-  UpgradeBasic as UpgradeBasicIcon,
-  UpgradeEnterprise as UpgradeEnterpriseIcon,
-  UpgradePro as UpgradeProIcon,
-  UpgradeStandard as UpgradeStandardIcon,
+  IcAddXsmall as IcAddXsmallIcon,
+  IcAdd as IcAddIcon,
+  IcAlbumXlarge as IcAlbumXlargeIcon,
+  IcAlertPopupXlarge as IcAlertPopupXlargeIcon,
+  IcAlert as IcAlertIcon,
+  IcAsc as IcAscIcon,
+  IcAttachment as IcAttachmentIcon,
+  IcBoardProfileXlarge as IcBoardProfileXlargeIcon,
+  IcCategory as IcCategoryIcon,
+  IcChannel as IcChannelIcon,
+  IcCheckXlarge as IcCheckXlargeIcon,
+  IcCheckXsmall as IcCheckXsmallIcon,
+  IcCheck as IcCheckIcon,
+  IcClose as IcCloseIcon,
+  IcConfirmPopupXlarge as IcConfirmPopupXlargeIcon,
+  IcCopy as IcCopyIcon,
+  IcDelete as IcDeleteIcon,
+  IcDesc as IcDescIcon,
+  IcDownArrowSolidXsmall as IcDownArrowSolidXsmallIcon,
+  IcDownArrowXsmall as IcDownArrowXsmallIcon,
+  IcDownArrow as IcDownArrowIcon,
+  IcDownload as IcDownloadIcon,
+  IcDraftsave as IcDraftsaveIcon,
+  IcDrag as IcDragIcon,
+  IcDrawer as IcDrawerIcon,
+  IcEditXsmall as IcEditXsmallIcon,
+  IcEdit as IcEditIcon,
+  IcEmailXlarge as IcEmailXlargeIcon,
+  IcEndPage as IcEndPageIcon,
+  IcExclamationXlarge as IcExclamationXlargeIcon,
+  IcFeedView as IcFeedViewIcon,
+  IcFilter as IcFilterIcon,
+  IcFilterdeleteXsmall as IcFilterdeleteXsmallIcon,
+  IcFirstPage as IcFirstPageIcon,
+  IcFullscreen as IcFullscreenIcon,
+  IcGps as IcGpsIcon,
+  IcGrade1 as IcGrade1Icon,
+  IcGrade2 as IcGrade2Icon,
+  IcGrade31 as IcGrade31Icon,
+  IcGrade32 as IcGrade32Icon,
+  IcGrade3 as IcGrade3Icon,
+  IcGrade41 as IcGrade41Icon,
+  IcGrade42 as IcGrade42Icon,
+  IcGrade4 as IcGrade4Icon,
+  IcGrade51 as IcGrade51Icon,
+  IcGrade52 as IcGrade52Icon,
+  IcGrade5 as IcGrade5Icon,
+  IcGradeBadge as IcGradeBadgeIcon,
+  IcGraph as IcGraphIcon,
+  IcHelp as IcHelpIcon,
+  IcHistory as IcHistoryIcon,
+  IcImport as IcImportIcon,
+  IcInfoAlbum as IcInfoAlbumIcon,
+  IcInfoApp as IcInfoAppIcon,
+  IcInfoBreaktime as IcInfoBreaktimeIcon,
+  IcInfoCity as IcInfoCityIcon,
+  IcInfoDate as IcInfoDateIcon,
+  IcInfoDaysoff as IcInfoDaysoffIcon,
+  IcInfoDistributor as IcInfoDistributorIcon,
+  IcInfoDocs as IcInfoDocsIcon,
+  IcInfoEmail as IcInfoEmailIcon,
+  IcInfoEmployee as IcInfoEmployeeIcon,
+  IcInfoEmployeeno as IcInfoEmployeenoIcon,
+  IcInfoGrade as IcInfoGradeIcon,
+  IcInfoGroup as IcInfoGroupIcon,
+  IcInfoLeader as IcInfoLeaderIcon,
+  IcInfoLogin as IcInfoLoginIcon,
+  IcInfoPhoneCheck as IcInfoPhoneCheckIcon,
+  IcInfoPhoneNoCheck as IcInfoPhoneNoCheckIcon,
+  IcInfoPhone as IcInfoPhoneIcon,
+  IcInfoPosition as IcInfoPositionIcon,
+  IcInfoProperties as IcInfoPropertiesIcon,
+  IcInfoPunch as IcInfoPunchIcon,
+  IcInfoRadius as IcInfoRadiusIcon,
+  IcInfoRegion as IcInfoRegionIcon,
+  IcInfoStarBadge as IcInfoStarBadgeIcon,
+  IcInfoState as IcInfoStateIcon,
+  IcInfoVisit as IcInfoVisitIcon,
+  IcInfoWorking as IcInfoWorkingIcon,
+  IcInfoWorkplace as IcInfoWorkplaceIcon,
+  IcInfo as IcInfoIcon,
+  IcInvitation as IcInvitationIcon,
+  IcInviteBefore as IcInviteBeforeIcon,
+  IcInviteCompleted as IcInviteCompletedIcon,
+  IcIssue as IcIssueIcon,
+  IcLeftArrowXsmall as IcLeftArrowXsmallIcon,
+  IcLeftArrow as IcLeftArrowIcon,
+  IcLink as IcLinkIcon,
+  IcListEdit as IcListEditIcon,
+  IcListMove as IcListMoveIcon,
+  IcListview as IcListviewIcon,
+  IcMap as IcMapIcon,
+  IcMemo as IcMemoIcon,
+  IcMore as IcMoreIcon,
+  IcMove as IcMoveIcon,
+  IcMovie01 as IcMovie01Icon,
+  IcNoGrade as IcNoGradeIcon,
+  IcNormal as IcNormalIcon,
+  IcNotice as IcNoticeIcon,
+  IcPasswordErrorXlarge as IcPasswordErrorXlargeIcon,
+  IcPin as IcPinIcon,
+  IcPlayXlarge as IcPlayXlargeIcon,
+  IcPreview as IcPreviewIcon,
+  IcPush as IcPushIcon,
+  IcRefresh as IcRefreshIcon,
+  IcRepeat as IcRepeatIcon,
+  IcResendPush as IcResendPushIcon,
+  IcReturn as IcReturnIcon,
+  IcRightArrowXsmall as IcRightArrowXsmallIcon,
+  IcRightArrow as IcRightArrowIcon,
+  IcSearch as IcSearchIcon,
+  IcSetting as IcSettingIcon,
+  IcShortcutXsmall as IcShortcutXsmallIcon,
+  IcSolved as IcSolvedIcon,
+  IcSortingAtoz as IcSortingAtozIcon,
+  IcSortingEarly as IcSortingEarlyIcon,
+  IcSortingLate as IcSortingLateIcon,
+  IcSortingZtoa as IcSortingZtoaIcon,
+  IcStar as IcStarIcon,
+  IcSummeryView as IcSummeryViewIcon,
+  IcTack as IcTackIcon,
+  IcTag as IcTagIcon,
+  IcTrash as IcTrashIcon,
+  IcUpArrowSolidXsmall as IcUpArrowSolidXsmallIcon,
+  IcUpArrowXsmall as IcUpArrowXsmallIcon,
+  IcUpArrow as IcUpArrowIcon,
+  IcViewOff as IcViewOffIcon,
+  IcViewOn as IcViewOnIcon,
+  IcWifi as IcWifiIcon,
+  IcWindowed as IcWindowedIcon,
+  IcWorkStatus as IcWorkStatusIcon,
 };
 
 export default icons;

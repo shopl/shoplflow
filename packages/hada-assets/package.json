@@ -4,6 +4,8 @@
   "scripts": {
     "build:icons": "scripts/build-icons.sh",
     "lint:icons": "eslint --fix ./src/icons/generated/*.{ts,tsx}",
+    "build:illustrations": "scripts/build-illustrations.sh",
+    "lint:illustrations": "eslint --fix ./src/illustrations/generated/*.{ts,tsx}",
     "type-check": "tsc --noEmit",
     "build": "tsup",
     "develop": "tsup --watch"
