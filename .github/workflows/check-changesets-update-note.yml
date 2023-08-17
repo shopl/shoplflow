@@ -5,7 +5,8 @@ on:
     types:
       - opened
       - synchronize
-
+      - labeled
+      - unlabeled
 jobs:
   check:
     runs-on: ubuntu-latest
