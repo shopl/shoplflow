@@ -7,4 +7,7 @@ const withNextra = require('nextra')({
 // If you have other Next.js configurations, you can pass them as the parameter:
 module.exports = withNextra({
   swcMinify: false, // it should be false by default
+  experimental: {
+    forceSwcTransforms: true,
+  },
 });
