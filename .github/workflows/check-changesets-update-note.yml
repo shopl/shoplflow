@@ -10,25 +10,25 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: 코드를 체크아웃하고 있어요.
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
 
-      - name: Setup pnpm
+      - name: pnpm을 설정하고 있어요.
         uses: pnpm/action-setup@v2.2.2
         with:
           version: 8.6.12
 
-      - name: Setup Node.js
+      - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
           cache: "pnpm"
           node-version-file: ".nvmrc"
 
-      - name: Check for specific label
+      - name: pass-check 라벨을 확인하고 있어요.
         run: |
           label_name="pass-check"
           pr_labels=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/${{ github.event.pull_request.number }} | jq -r '.labels[].name')
@@ -38,7 +38,7 @@ jobs:
             echo "LABEL_FOUND=false" >> $GITHUB_ENV
           fi
 
-      - name: Check changesets
+      - name: changeset-release 브랜치인지 확인하고 있어요.
         if: env.LABEL_FOUND == 'false'
         run: |
           if [[ "${{ github.head_ref }}" == *changeset-release/* ]]; then
