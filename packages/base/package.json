@@ -6,7 +6,7 @@
     "build:tokens": "node scripts/generate-tokens.cjs",
     "type-check": "tsc --noEmit",
     "build": "tsup",
-    "develop": "tsup --watch"
+    "dev": "tsup --watch"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",

@@ -7,15 +7,31 @@ on:
       - synchronize
 
 jobs:
-  jest-test:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 코드를 체크아웃하고 있어요.
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          node-version-file: ".nvmrc"
+
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+          cache-dependency-path: "pnpm-lock.yaml"
 
       - name: 패키지를 빌드하고 있어요.
-        run: yarn turbo build
+        run: pnpm turbo build
 
       - name: Set Test Status
         id: set_status

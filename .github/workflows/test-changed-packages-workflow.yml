@@ -16,8 +16,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+          node-version-file: ".nvmrc"
+          cache-dependency-path: "pnpm-lock.yaml"
+
       - name: 변경된 패키지만 테스트하고 있어요.
-        run: yarn turbo run test
+        run: pnpm turbo run test
 
 
       - name: Check if junit.xml exists
