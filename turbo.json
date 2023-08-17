@@ -8,6 +8,7 @@
       "dependsOn": [
         "^build"
       ],
+      "cache": false,
       "outputs": [
         ".next/**",
         "!.next/cache/**"
@@ -29,6 +30,9 @@
       ]
     },
     "dev": {
+      "dependsOn": [
+        "^dev"
+      ],
       "cache": false,
       "persistent": true
     }

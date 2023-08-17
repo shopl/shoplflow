@@ -18,10 +18,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.2
         with:
+          version: 8.6.12
+          run_install: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
           node-version-file: ".nvmrc"
+          cache-dependency-path: "pnpm-lock.yaml"
 
       - name: Check for specific label
         run: |
@@ -61,7 +69,7 @@ jobs:
 
       - name: Build tokens
         if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
-        run: yarn workspace @shoplflow/base build:tokens
+        run: pnpm workspace @shoplflow/base build:tokens
 
       - name: Checkout to PR branch
         if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
