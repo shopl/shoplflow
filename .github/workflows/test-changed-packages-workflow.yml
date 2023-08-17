@@ -11,18 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 코드를 체크아웃하고 있어요.
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm
+      - name: pnpm을 설정하고 있어요.
         uses: pnpm/action-setup@v2.2.2
         with:
           version: 8.6.12
           run_install: true
 
-      - name: Setup Node.js
+      - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
           cache: "pnpm"
@@ -33,11 +33,11 @@ jobs:
         run: pnpm turbo run test
 
 
-      - name: Check if junit.xml exists
+      - name: 테스트 결과(junit.xml) 파일이 존재하는지 확인하고 있어요.
         id: checkfile
         run: echo "FILE_EXISTS=$(if find '**/junit.xml' -mindepth 1 -print -quit | grep -q .; then echo 'true'; else echo 'false'; fi)" >> $GITHUB_ENV
 
-      - name: Test Report
+      - name: 테스트 Report를 생성하고 있어요.
         if: env.FILE_EXISTS == 'true' && (success() || failure())
         uses: dorny/test-reporter@v1
         with:
@@ -47,13 +47,13 @@ jobs:
           reporter: jest-junit
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set Test Status
+      - name: 테스트 Status를 확인하고 있어요.
         id: set_status
         run: |
           echo "::set-output name=status::${{ job.status }}"
 
 
-      - name: Set Test Status and Color
+      - name: 테스트 Status와 Color를 설정하고 있어요.
         id: set_status_and_color
         run: |
           if [ "${{ job.status }}" == "success" ]; then
@@ -67,7 +67,7 @@ jobs:
           echo "::set-output name=color::warning"
           fi
 
-      - name: Slack Notification
+      - name: Slack에 알림을 보내고 있어요.
         uses: 8398a7/action-slack@v3
         with:
           status: custom
