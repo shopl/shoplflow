@@ -4004,34 +4004,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shoplflow/assets@workspace:packages/assets":
-  version: 0.0.0-use.local
-  resolution: "@shoplflow/assets@workspace:packages/assets"
-  dependencies:
-    "@babel/core": ^7.22.5
-    "@babel/preset-env": ^7.22.5
-    "@babel/preset-typescript": ^7.22.5
-    "@emotion/react": ^11
-    "@emotion/styled": ^11
-    "@svgr/cli": 8.1.0
-    "@types/node": 20.4.9
-    "@types/react": ^18.0.37
-    "@types/react-dom": ^18.0.11
-    eslint: ^8.44.0
-    lodash: 4.17.21
-    react: ^18
-    react-dom: ^18
-    ts-node: ^10.9.1
-    tsup: 7.2.0
-    typescript: ^5.0.2
-  peerDependencies:
-    "@emotion/react": "*"
-    "@emotion/styled": "*"
-    react: "*"
-    react-dom: "*"
-  languageName: unknown
-  linkType: soft
-
 "@shoplflow/base@workspace:packages/base":
   version: 0.0.0-use.local
   resolution: "@shoplflow/base@workspace:packages/base"
@@ -4074,6 +4046,62 @@ __metadata:
     eslint-plugin-react-refresh: ^0.3.4
     eslint-plugin-unused-imports: ^3.0.0
     prettier: ^3.0.0
+  languageName: unknown
+  linkType: soft
+
+"@shoplflow/hada-assets@workspace:packages/hada-assets":
+  version: 0.0.0-use.local
+  resolution: "@shoplflow/hada-assets@workspace:packages/hada-assets"
+  dependencies:
+    "@babel/core": ^7.22.5
+    "@babel/preset-env": ^7.22.5
+    "@babel/preset-typescript": ^7.22.5
+    "@emotion/react": ^11
+    "@emotion/styled": ^11
+    "@svgr/cli": 8.1.0
+    "@types/node": 20.4.9
+    "@types/react": ^18.0.37
+    "@types/react-dom": ^18.0.11
+    eslint: ^8.44.0
+    lodash: 4.17.21
+    react: ^18
+    react-dom: ^18
+    ts-node: ^10.9.1
+    tsup: 7.2.0
+    typescript: ^5.0.2
+  peerDependencies:
+    "@emotion/react": "*"
+    "@emotion/styled": "*"
+    react: "*"
+    react-dom: "*"
+  languageName: unknown
+  linkType: soft
+
+"@shoplflow/shopl-assets@workspace:packages/shopl-assets":
+  version: 0.0.0-use.local
+  resolution: "@shoplflow/shopl-assets@workspace:packages/shopl-assets"
+  dependencies:
+    "@babel/core": ^7.22.5
+    "@babel/preset-env": ^7.22.5
+    "@babel/preset-typescript": ^7.22.5
+    "@emotion/react": ^11
+    "@emotion/styled": ^11
+    "@svgr/cli": 8.1.0
+    "@types/node": 20.4.9
+    "@types/react": ^18.0.37
+    "@types/react-dom": ^18.0.11
+    eslint: ^8.44.0
+    lodash: 4.17.21
+    react: ^18
+    react-dom: ^18
+    ts-node: ^10.9.1
+    tsup: 7.2.0
+    typescript: ^5.0.2
+  peerDependencies:
+    "@emotion/react": "*"
+    "@emotion/styled": "*"
+    react: "*"
+    react-dom: "*"
   languageName: unknown
   linkType: soft
 
