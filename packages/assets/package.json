@@ -4,6 +4,8 @@
   "scripts": {
     "build:shopl-icons": "scripts/build-shopl-icons.sh",
     "lint:shopl-icons": "eslint --fix ./src/icons/generated/shopl-icons/*.{ts,tsx}",
+    "build:hada-icons": "scripts/build-shopl-icons.sh",
+    "lint:hada-icons": "eslint --fix ./src/icons/generated/shopl-icons/*.{ts,tsx}",
     "type-check": "tsc --noEmit",
     "build": "tsup",
     "develop": "tsup --watch"
