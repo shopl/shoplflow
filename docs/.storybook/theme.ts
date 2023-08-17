@@ -10,7 +10,6 @@ export default create({
   // UI
   appBg: hadaTheme.colors.neutral100,
   appBorderRadius: 4,
-  sideBarBg: hadaTheme.colors.hada200,
   appBorderColor: 'transparent',
 
   // Text colors

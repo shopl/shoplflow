@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta
+  title="Readme/Directory Structure"
+  parameters={{
+    viewMode: 'docs',
+  }}
+/>
+
+# Component: Directory Structure
+
+`ui-kit`의 컴포넌트들이 구성된 directory 구조를 설명하는 문서에요.
+
+## Overall
+
+- 📌 `src/components` 아래에 모든 컴포넌트가 위치해요.
+- 📌 각 컴포넌트는 `directory`를 가지고 있어요.
+
+```
+src/components/
+├── Button/
+├── Icon/
+├── Tag/
+├── Chip/
+│   ...
+├── Inputs/
+    ├── Select/
+    ├── TextArea/
+    ├── TextField/
+```
+
+## import Rules
+
+- 📌 `src/components/**/index.ts` -> 각 컴포넌트의 루트 export 파일입니다.
+- `index.ts`에서는 외부에 노출하고 싶은 값만 export 해주세요.
+
+#### 컴포넌트의 directory 밖에서는 import 시 `index.ts`에서 export 하는 값에만 접근해야 합니다.
+
+✅ **DO**: `index.ts`에서 export 한 값에만 접근해주세요.
+
+```tsx
+import { ButtonProps } from 'Components/Button';
+```
+
+🚫 **DO NOT**: `index.ts`에서 export 한 값에만 접근하지 마세요.
+
+```tsx
+import { ButtonProps } from 'Components/Button/Button.types';
+```
+
+#### 컴포넌트의 directory 내부에서는 이 파일에서 import 하지 마세요.
+
+✅ **DO**: Directory 내부에서 접근 시, 개별 파일에서 import 해주세요.
+
+```tsx
+import { ButtonProps } from './Button.types';
+```
+
+🚫 **DO NOT**: 컴포넌트의 directory 내부에서는 index 파일에서 import 하지 마세요.
+
+```tsx
+import { ButtonProps } from '.';
+```
+
+#### 사용하지 않는 컴포넌트나 코드의 경우 `deprecated` 처리를 하여 사용자에게 알려주세요.
+
+```ts
+/**
+ * @deprecated
+ */
+const DeprecatedComponent = () => {
+  return <SomeComponent />;
+};
+```
+
+## Component Structure Rule
+
+```
+src/components/Button/
+├── Button.stories.tsx
+├── Button.styled.ts
+├── Button.tsx
+├── Button.types.ts
+└── index.ts
+```
+
+- 📌 `{ComponentName}.tsx` : 리액트 컴포넌트 소스를 포함하는 파일이에요.
+- 이 파일의 export로 컴포넌트를 지정해요. (e.g. `Button`)
+
+- 📌 `{ComponentName}.types.ts` : 컴포넌트에 필요한 타입들을 정의하는 파일이에요.
+- 이 파일의 export로 컴포넌트의 타입들을 지정해요. (e.g. `ButtonProps`)
+
+- 📌 `{ComponentName}.styled.ts` : `emotion`을 사용하여 스타일링한 컴포넌트 소스를 포함하는 파일이에요.
+- 📌 `{ComponentName}.stories.tsx` : Storybook을 위한 story 작성 파일이에요.

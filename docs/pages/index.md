@@ -10,3 +10,4 @@ Welcome to Nextra! This is a basic docs template. You can use it as a starting p
 
 The documentation is available at [https://nextra.site](https://nextra.site).
 
+
