@@ -3026,14 +3026,7 @@ __metadata:
 "@next/swc-linux-x64-gnu@npm:13.1.5":
   version: 13.1.5
   resolution: "@next/swc-linux-x64-gnu@npm:13.1.5"
-  conditions: os=linux & cpu=x64 & libc=glibc
-  languageName: node
-  linkType: hard
-
-"@next/swc-linux-x64-gnu@npm:^13.4.2":
-  version: 13.4.16
-  resolution: "@next/swc-linux-x64-gnu@npm:13.4.16"
-  checksum: c64df602c74bfa583821783f7a817e9fb47d64d8d794aead15f35ca58fd5fbfd2b0cd7de595930a4ba54e4911fe02b57f515a85f69cbe97fe38122aa92043a1b
+  checksum: 3c66bc42a517303108bcd4ece56f641aa5941bbd17d4415ea5a7cd30451084df70de46a1afd88cb3e9f1916f7ee8ed632cf98125d73a98ed15dcd04ce22bbd3d
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
@@ -3041,6 +3034,7 @@ __metadata:
 "@next/swc-linux-x64-musl@npm:13.1.5":
   version: 13.1.5
   resolution: "@next/swc-linux-x64-musl@npm:13.1.5"
+  checksum: 1cb4c2d03984c225113662b9e0e68d48d5ca4c39391e7c6054b55fcd8f83cf41db75f2530159ab49447c5f67a385c6d8c42339efa4b81d9943d401f1a064a31d
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
@@ -8429,7 +8423,8 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
-    "@next/swc-linux-x64-gnu": ^13.4.2
+    "@next/swc-linux-x64-gnu": 13.1.5
+    "@next/swc-linux-x64-musl": 13.1.5
     "@shoplflow/base": "workspace:*"
     "@storybook/addon-essentials": ^7.1.1
     "@storybook/addon-interactions": ^7.1.1

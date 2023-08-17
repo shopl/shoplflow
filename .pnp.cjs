@@ -4559,13 +4559,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/swc-linux-x64-gnu", "npm:13.1.5"]\
           ],\
           "linkType": "HARD"\
-        }],\
-        ["npm:13.4.16", {\
-          "packageLocation": "./.yarn/unplugged/@next-swc-linux-x64-gnu-npm-13.4.16-34aa4612f2/node_modules/@next/swc-linux-x64-gnu/",\
-          "packageDependencies": [\
-            ["@next/swc-linux-x64-gnu", "npm:13.4.16"]\
-          ],\
-          "linkType": "HARD"\
         }]\
       ]],\
       ["@next/swc-linux-x64-musl", [\
@@ -11609,7 +11602,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["docs", "workspace:docs"],\
             ["@emotion/react", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:11.11.1"],\
             ["@emotion/styled", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:11.11.0"],\
-            ["@next/swc-linux-x64-gnu", "npm:13.4.16"],\
+            ["@next/swc-linux-x64-gnu", "npm:13.1.5"],\
+            ["@next/swc-linux-x64-musl", "npm:13.1.5"],\
             ["@shoplflow/base", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#workspace:packages/base"],\
             ["@storybook/addon-essentials", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:7.3.1"],\
             ["@storybook/addon-interactions", "virtual:b5b5dfb1662b30d0d5b62f084f8b8fddd0eee56dd8737572197395ab6309e644fa76525392b1d0250ce3c07c5eeeb90901439953af682fc76f8ab38f71b8b09d#npm:7.3.1"],\
