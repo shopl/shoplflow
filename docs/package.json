@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.11.0",
     "@shoplflow/base": "workspace:*",
     "islandjs": "^0.7.6",
-    "next": "canary",
+    "next": "^12.1.5",
     "nextra": "2.11.0",
     "nextra-theme-docs": "2.11.0",
     "react": "18.2.0",
