@@ -22,7 +22,8 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/emotion.d.ts"
+    "src/emotion.d.ts",
+    "src/**/*"
   ],
   "exclude": [
     "src/styles/tokens/shoplColors.ts",
