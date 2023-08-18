@@ -1,8 +1,8 @@
 {
-  "name": "docs",
+  "name": "test-docs",
   "version": "1.0.0",
-  "private": true,
-  "description": "docs",
+  "description": "",
+  "main": "index.js",
   "author": "velo",
   "scripts": {
     "start": "next start",
@@ -12,6 +12,7 @@
     "build:storybook": "storybook build",
     "typecheck": "tsc --noEmit"
   },
+  "license": "ISC",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -42,7 +43,6 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "eslint": "^8.47.0",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.7"
+    "typescript": "^5.1.6"
   }
 }

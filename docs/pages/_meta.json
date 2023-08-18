@@ -1,5 +1,16 @@
 {
-  "index": "My Homepage",
-  "contact": "Contact Us",
-  "about": "About Us"
+  "Intro.stories": "Intro",
+  "BuildandDeploy.stories": {
+    "title": "Build and Deploy",
+    "display": "hidden"
+  },
+  "Directory.stories": {
+    "title": "Directory Structure"
+  },
+  "Stories.stories": {
+    "title": "Stories Structure"
+  },
+  "changeLog.stories": {
+    "title": "Change Log"
+  }
 }
