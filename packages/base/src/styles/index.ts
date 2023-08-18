@@ -1,10 +1,10 @@
 export type {
-  TypographyToken,
   BorderRadiusToken,
   ColorToken,
-  SpacingToken,
   FontWeightsToken,
   ShoplflowTheme,
+  SpacingToken,
+  TypographyToken,
 } from './types';
 
 export * from './theme';

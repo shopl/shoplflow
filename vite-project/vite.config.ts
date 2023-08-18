@@ -1,6 +1,5 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,6 +10,5 @@ export default defineConfig({
       },
       jsxImportSource: '@emotion/react',
     }),
-    cssInjectedByJsPlugin(),
   ],
 });
