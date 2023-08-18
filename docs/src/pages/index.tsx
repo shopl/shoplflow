@@ -1,5 +1,5 @@
-import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
+import * as React from 'react';
 
 const pageStyles = {
   color: '#232129',
@@ -96,21 +96,21 @@ const links = [
     text: 'Tutorial',
     url: 'https://www.gatsbyjs.com/docs/tutorial/getting-started/',
     description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
+      'A great place to get started if youre new to web development. Designed to guide you through setting up your first Gatsby site.',
     color: '#E95800',
   },
   {
     text: 'How to Guides',
     url: 'https://www.gatsbyjs.com/docs/how-to/',
     description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
+      'Practical step-by-step guides to help you achieve a specific goal. Most useful when youre trying to get something done.',
     color: '#1099A8',
   },
   {
     text: 'Reference Guides',
     url: 'https://www.gatsbyjs.com/docs/reference/',
     description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
+      'Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsbys APIs.',
     color: '#BC027F',
   },
   {
