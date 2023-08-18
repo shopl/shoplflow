@@ -1,0 +1,56 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs'
+
+
+<Meta
+    title="Readme/Intro"
+    parameters={{
+        viewMode: 'docs',
+    }}
+/>
+
+
+# Shoplflow
+
+하다, 샤플의 디자인 시스템 라이브러리입니다.
+
+
+## 프로젝트 세팅 방법
+
+- @emotion의 타입추론을 위해 사용할 프로젝트 `src/` 경로에 `emotion.d.ts` 파일을 생성한 후 하단의 코드를 넣어주세요.
+
+```ts
+import '@emotion/react';
+import { ThemeType } from '@hada/ui-kit';
+
+declare module '@emotion/react' {
+  export interface Theme extends ThemeType {}
+}
+```
+
+- Theme을 적용하기 위해 App.tsx나 index.tsx에 아래 코드를 추가해주세요.
+
+```tsx
+import {HdsProvider} from '@hada/ui-kit';
+const App = () => {
+  return (
+    <HdsProvider>
+        <YourComponent/>
+    </HdsProvider>
+  );
+};
+```
+
+- normalizeCss를 적용하려면 HdsProvider에 `normalizeCss` prop을 추가해주세요.
+
+```tsx
+import {HdsProvider} from '@hada/ui-kit';
+const App = () => {
+  return (
+    <HdsProvider normalizeCss>
+        <YourComponent/>
+    </HdsProvider>
+  );
+};
+```
+
+
