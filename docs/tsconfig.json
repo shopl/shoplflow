@@ -1,6 +1,12 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+
     "incremental": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -9,7 +15,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".storybook/**/*.(ts|tsx)",
   ],
   "exclude": [
     "node_modules"
