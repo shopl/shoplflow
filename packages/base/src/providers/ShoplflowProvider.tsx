@@ -9,6 +9,7 @@ export interface ShoplflowProviderProps {
 
 const ShoplflowProvider = ({ children, domain = 'HADA' }: ShoplflowProviderProps) => {
   const theme = domain === 'HADA' ? hadaTheme : shoplTheme;
+
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 

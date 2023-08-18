@@ -33,8 +33,8 @@ export const decorator: Decorator = (Story, context) => {
   return (
     <>
       <ShoplflowProvider domain={domain}>
-        <Story />
         <ThemeButton onClick={handleToggleTheme}>{domain}</ThemeButton>
+        <Story />
       </ShoplflowProvider>
     </>
   )
