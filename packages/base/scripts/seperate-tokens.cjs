@@ -22,7 +22,7 @@ function processTypographyTokens(tokens, domain) {
             const mappingFontWeight = fontWeight.replace(/{|}/g, '').split('.').map(part => toKebabCase(part)).join('-');
             typographyTokens += `  .${key} {
     font-weight: var(--${mappingFontWeight});
-    line-height: ${lineHeight};
+    line-height: ${lineHeight}px;
     font-size: ${fontSize}px;
   }\n`;
         }

@@ -71,102 +71,102 @@
   --primary400: #05a77b;
   .heading1_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 38;
+    line-height: 38px;
     font-size: 32px;
   }
   .heading1_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 38;
+    line-height: 38px;
     font-size: 32px;
   }
   .heading2_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 28;
+    line-height: 28px;
     font-size: 24px;
   }
   .heading2_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 28;
+    line-height: 28px;
     font-size: 24px;
   }
   .heading3_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 26;
+    line-height: 26px;
     font-size: 22px;
   }
   .heading3_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 26;
+    line-height: 26px;
     font-size: 22px;
   }
   .title1_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 24;
+    line-height: 24px;
     font-size: 20px;
   }
   .title1_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 24;
+    line-height: 24px;
     font-size: 20px;
   }
   .title2_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 22;
+    line-height: 22px;
     font-size: 18px;
   }
   .title2_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 22;
+    line-height: 22px;
     font-size: 18px;
   }
   .title2_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 22;
+    line-height: 22px;
     font-size: 18px;
   }
   .body1_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 22;
+    line-height: 22px;
     font-size: 16px;
   }
   .body1_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 22;
+    line-height: 22px;
     font-size: 16px;
   }
   .body1_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 22;
+    line-height: 22px;
     font-size: 16px;
   }
   .body2_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 18;
+    line-height: 18px;
     font-size: 14px;
   }
   .body2_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 18;
+    line-height: 18px;
     font-size: 14px;
   }
   .body2_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 18;
+    line-height: 18px;
     font-size: 14px;
   }
   .body3_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 18;
+    line-height: 18px;
     font-size: 13px;
   }
   .body3_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 18;
+    line-height: 18px;
     font-size: 13px;
   }
   .caption_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 16;
+    line-height: 16px;
     font-size: 12px;
   }
 }
@@ -221,102 +221,102 @@
   --primary400: #2d89e4;
   .heading1_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 34;
+    line-height: 34px;
     font-size: 28px;
   }
   .heading1_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 34;
+    line-height: 34px;
     font-size: 28px;
   }
   .heading2_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 28;
+    line-height: 28px;
     font-size: 24px;
   }
   .heading2_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 28;
+    line-height: 28px;
     font-size: 24px;
   }
   .heading3_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 24;
+    line-height: 24px;
     font-size: 20px;
   }
   .heading3_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 24;
+    line-height: 24px;
     font-size: 20px;
   }
   .title1_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 22;
+    line-height: 22px;
     font-size: 18px;
   }
   .title1_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 22;
+    line-height: 22px;
     font-size: 18px;
   }
   .title2_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 20;
+    line-height: 20px;
     font-size: 16px;
   }
   .title2_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 20;
+    line-height: 20px;
     font-size: 16px;
   }
   .title2_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 20;
+    line-height: 20px;
     font-size: 16px;
   }
   .body1_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 18;
+    line-height: 18px;
     font-size: 14px;
   }
   .body1_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 18;
+    line-height: 18px;
     font-size: 14px;
   }
   .body1_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 18;
+    line-height: 18px;
     font-size: 14px;
   }
   .body2_700 {
     font-weight: var(--font-weight-bold);
-    line-height: 16;
+    line-height: 16px;
     font-size: 13px;
   }
   .body2_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 16;
+    line-height: 16px;
     font-size: 13px;
   }
   .body2_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 16;
+    line-height: 16px;
     font-size: 13px;
   }
   .body3_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 16;
+    line-height: 16px;
     font-size: 12px;
   }
   .body3_500 {
     font-weight: var(--font-weight-medium);
-    line-height: 16;
+    line-height: 16px;
     font-size: 12px;
   }
   .caption_400 {
     font-weight: var(--font-weight-regular);
-    line-height: 16;
+    line-height: 16px;
     font-size: 12px;
   }
 }
