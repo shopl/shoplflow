@@ -19,7 +19,7 @@
     "./styles": "./dist/index.css",
     "./package.json": "./package.json"
   },
-  "main": "src/index.ts",
+  "main": "dist/index.cjs",
   "files": [
     "dist",
     "styles"

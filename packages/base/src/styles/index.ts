@@ -1,4 +1,4 @@
-import type * as tokens from './tokens';
+import * as tokens from './tokens';
 import './global.css';
 type ShoplflowTokens = keyof typeof tokens;
 

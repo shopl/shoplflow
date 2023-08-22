@@ -7,11 +7,9 @@ export default {
 } as Meta;
 
 export const Playground: StoryFn<typeof Button> = () => {
-  // const theme = useTheme();
-  // console.log('theme in storybook ::::: ', theme);
-
   return (
     <div>
+      <span className={'heading1_700'}>button</span>
       <Button />
     </div>
   );
