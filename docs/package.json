@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "author": "velo",
@@ -10,6 +10,7 @@
     "dev:storybook": "storybook dev -p 6006",
     "build:next": "next build",
     "build:storybook": "storybook build",
+    "storybook-docs": "storybook dev --docs",
     "build": "pnpm run build:next && pnpm run build:storybook",
     "typecheck": "tsc --noEmit"
   },
@@ -22,20 +23,20 @@
     "next": "^13.4.16",
     "nextra": "^2.11.0",
     "nextra-theme-docs": "^2.11.0",
-    "storybook": "^7.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "storybook": "^7.3.1"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
     "@storybook/addon-docs": "^7.3.1",
     "@storybook/addon-essentials": "^7.3.1",
     "@storybook/addon-interactions": "^7.3.1",
     "@storybook/addon-links": "^7.3.1",
     "@storybook/addon-mdx-gfm": "^7.3.1",
-    "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/addons": "^7.3.1",
     "@storybook/blocks": "^7.3.1",
-    "@storybook/nextjs": "^7.3.1",
     "@storybook/react": "^7.3.1",
     "@storybook/react-vite": "^7.3.1",
     "@storybook/testing-library": "^0.2.0",
@@ -43,7 +44,9 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.47.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.5"
   }
 }

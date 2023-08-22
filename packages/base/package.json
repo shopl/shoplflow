@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "build:tokens": "node scripts/generate-tokens.cjs",
@@ -8,11 +8,21 @@
     "build": "tsup",
     "dev": "tsup --watch"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/index.css",
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.cjs",
   "files": [
-    "/dist"
+    "dist",
+    "styles"
   ],
   "publishConfig": {
     "access": "public"
