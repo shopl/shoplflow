@@ -8,14 +8,21 @@
     "build": "tsup",
     "dev": "tsup --watch"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/index.css",
+    "./package.json": "./package.json"
   },
+  "main": "src/index.ts",
   "files": [
-    "/dist"
+    "dist",
+    "styles"
   ],
   "publishConfig": {
     "access": "public"

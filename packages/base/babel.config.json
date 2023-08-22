@@ -8,6 +8,7 @@
         }
       }
     ],
+    "@emotion/babel-plugin",
     "@babel/typescript",
     "@babel/preset-typescript"
   ]

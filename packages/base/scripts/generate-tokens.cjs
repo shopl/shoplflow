@@ -1,96 +1,82 @@
 const fs = require('fs');
 const tokens = require('../src/styles/tokens.json');
-const {separateTokens} = require('./seperate-tokens.cjs');
+const { separateTokens } = require('./seperate-tokens.cjs');
 
 const rootPath = process.cwd();
 
-const {typographyTokenKeys, hadaTokens, shoplTokens, fontWeightTokens, borderRadiusTokens, spacingTokens} =
+const { typographyTokenKeys, hadaTokens, shoplTokens, fontWeightTokens, borderRadiusTokens, spacingTokens } =
     separateTokens(tokens);
 
-const PREFIX = '// Generate by scripts/generate-tokens.js\n' +
-    '/\* eslint-disable */\n';
-
+const PREFIX = '/* Generate by scripts/generate-tokens.js */\n' +
+    '/* eslint-disable */\n';
 
 function mappingTokenObject(obj, tokens) {
-    let result = PREFIX;
-    result += `export const ${tokens} = {\n`;
+    let result = '';
     for (const [key, value] of Object.entries(obj)) {
-        if (typeof value === 'object') {
-            result += `${key}: ${JSON.stringify(value, null, 2).replace(/"/g, '')} = ${JSON.stringify(value, null, 2).replace(
-                /"/g,
-                '',
-            )};\n`;
-        } else if (value.includes('.')) {
-            result += `  ${key}: ${value},\n`;
-        } else {
-            result += `  ${key}: '${value}',\n`;
-        }
+        result += `  --${key}: ${value};\n`;
     }
-    result += '};\n';
     return result;
 }
 
-function mappingTypographyString(obj, prefix = 'typographies') {
-    let result = PREFIX;
-    result += "import { css } from '@emotion/react';\n\n" + "import { fontWeights as fontWeight } from './fontWeights'; \n\n";
-    result += obj;
-    result += `export const ${prefix}Typographies = {\n`;
-    typographyTokenKeys.forEach((key) => {
-        result += `  ${key},\n`;
+
+function convertToKebabCase(str) {
+    return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+}
+
+function toCamelCase(str) {
+    return str.replace(/-([a-z])/g, function (g) {
+        return g[1].toUpperCase();
     });
-    result += '};\n';
+}
 
+function mappingTsTokenObject(obj, tokens) {
+    let result = '';
+    for (const [key, value] of Object.entries(obj)) {
+        const tokenName = `${tokens}-${key}`;
+        result += `export const ${toCamelCase(key)} = 'var(--${tokenName})';\n`;
+    }
     return result;
 }
 
-async function generateIndex() {
-    let index = PREFIX;
-    index += `export { borderRadius } from "./borderRadius";
-export { fontWeights } from "./fontWeights";
-export { hadaColors } from "./hadaColors";
-export { hadaTypographies } from "./hadaTypographies";
-export { shoplColors } from "./shoplColors";
-export { shoplTypographies } from "./shoplTypographies";
-export { spacings } from "./spacings";
+async function generateTsTokens() {
+    let tsContent = PREFIX;
+    tsContent += mappingTsTokenObject(fontWeightTokens, '');
+    tsContent += mappingTsTokenObject(borderRadiusTokens, '');
+    tsContent += mappingTsTokenObject(shoplTokens.colorTokens, '');
+    tsContent += mappingTsTokenObject(spacingTokens, '');
 
-    `;
-    await fs.writeFileSync(rootPath + '/src/styles/tokens/index.ts', index);
+    fs.writeFileSync(rootPath + '/src/styles/tokens.ts', tsContent);
 }
 
-async function generateTokens() {
-    Promise.all([
-        fs.writeFileSync(
-            rootPath + '/src/styles/tokens/shoplTypographies.ts',
-            mappingTypographyString(shoplTokens.typographyTokens, 'shopl'),
-        ),
-        fs.writeFileSync(
-            rootPath + '/src/styles/tokens/hadaTypographies.ts',
-            mappingTypographyString(hadaTokens.typographyTokens, 'hada'),
-        ),
-        fs.writeFileSync(
-            rootPath + '/src/styles/tokens/fontWeights.ts',
-            mappingTokenObject(fontWeightTokens, 'fontWeights'),
-        ),
-        fs.writeFileSync(
-            rootPath + '/src/styles/tokens/borderRadius.ts',
-            mappingTokenObject(borderRadiusTokens, 'borderRadius'),
-        ),
-        fs.writeFileSync(
-            rootPath + '/src/styles/tokens/hadaColors.ts',
-            mappingTokenObject(hadaTokens.colorTokens, 'hadaColors'),
-        ),
-        fs.writeFileSync(
-            rootPath + '/src/styles/tokens/shoplColors.ts',
-            mappingTokenObject(shoplTokens.colorTokens, 'shoplColors'),
-        ),
-        fs.writeFileSync(rootPath + '/src/styles/tokens/spacings.ts', mappingTokenObject(spacingTokens, 'spacings')),
-    ]);
+async function generateCssTokens() {
+    let cssContent = PREFIX;
+    cssContent += ':root[data-shoplflow] {\n';
+    cssContent += mappingTokenObject(fontWeightTokens, '');
+    cssContent += mappingTokenObject(borderRadiusTokens, '');
+    cssContent += mappingTokenObject(spacingTokens, 'spacings');
+    cssContent += '}\n';
+    cssContent += ':root[data-shoplflow][data-shoplflow=hada] {\n';
+    cssContent += mappingTokenObject(hadaTokens.colorTokens, '');
+    cssContent += hadaTokens.typographyTokens
+    cssContent += '}\n';
+    cssContent += ':root[data-shoplflow][data-shoplflow=shopl] {\n';
+    cssContent += mappingTokenObject(shoplTokens.colorTokens, '');
+    cssContent += shoplTokens.typographyTokens
+    cssContent += '}\n';
+
+    fs.writeFileSync(rootPath + '/src/styles/global.css', cssContent);
 }
+
+
+
 
 try {
-    Promise.all([generateTokens(), generateIndex()]);
+    generateTsTokens();
+    generateCssTokens();
 } catch (e) {
     console.log(e);
 } finally {
-    console.log('🚀 Tokens have been successfully converted to JavaScript! 🚀');
+    console.log('🚀 Tokens have been successfully converted to a single CSS file! 🚀');
 }
+
+// 나머지 함수들은 이전과 동일하게 유지됩니다.

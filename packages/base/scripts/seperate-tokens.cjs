@@ -8,7 +8,10 @@ let typographyTokenKeys = [];
 const shoplTokens = {colorTokens: {}, typographyTokens: ''};
 const hadaTokens = {colorTokens: {}, typographyTokens: ''};
 
-function processTypographyTokens(tokens) {
+function toKebabCase(str) {
+    return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+}
+function processTypographyTokens(tokens, domain) {
     let typographyTokens = '';
 
     Object.keys(tokens).forEach((key) => {
@@ -16,11 +19,12 @@ function processTypographyTokens(tokens) {
         if (value.type === 'typography') {
             typographyTokenKeys.push(key);
             const {fontWeight, lineHeight, fontSize} = value.value;
-            typographyTokens += `const ${key} = css\`
-  font-weight: ${fontWeight.replace('{', '${')};
-  line-height: ${lineHeight};
-  font-size: ${fontSize}px;
-\`;\n`;
+            const mappingFontWeight = fontWeight.replace(/{|}/g, '').split('.').map(part => toKebabCase(part)).join('-');
+            typographyTokens += `  .${key} {
+    font-weight: var(--${mappingFontWeight});
+    line-height: ${lineHeight};
+    font-size: ${fontSize}px;
+  }\n`;
         }
     });
     return typographyTokens;
@@ -75,7 +79,7 @@ function processRadiusTokens(tokens) {
     Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
         if (value.type === 'borderRadius') {
-            borderRadiusTokens[key] = value.value + 'px';
+            borderRadiusTokens[toKebabCase(key)] = value.value + 'px';
         }
     });
 
@@ -87,11 +91,12 @@ function processFontWeightTokens(tokens) {
         const value = tokens[key];
 
         if (value.type === 'fontWeights') {
-            fontWeightTokens[key] = value.value;
+            fontWeightTokens['font-weight-' + key] = value.value;
         }
     });
     return fontWeightTokens;
 }
+
 
 function separateTokens(tokens) {
     const token = tokens.shoplflow;
@@ -101,12 +106,12 @@ function separateTokens(tokens) {
 
     if (tokens.shopl) {
         // console.log(tokens.shopl);
-        shoplTokens.typographyTokens = processTypographyTokens(tokens.shopl);
+        shoplTokens.typographyTokens = processTypographyTokens(tokens.shopl, 'shopl');
         // shoplTokens.colorTokens = processColorTokens(tokens.shopl, {}, 'shopl');
     }
 
     if (tokens.hada) {
-        hadaTokens.typographyTokens = processTypographyTokens(tokens.hada);
+        hadaTokens.typographyTokens = processTypographyTokens(tokens.hada, 'hada');
         // hadaTokens.colorTokens = processColorTokens(tokens.hada, {}, 'hada');
     }
     if (token?.fontWeight) {

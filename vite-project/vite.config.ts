@@ -5,10 +5,16 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [
     react({
-      babel: {
-        plugins: [['@emotion/babel-plugin', { sourceMap: true }]],
-      },
+      include: ['@shoplflow/base', '**/*.(tsx|ts|d.ts)'],
       jsxImportSource: '@emotion/react',
+      babel: {
+        plugins: ['@emotion/babel-plugin'],
+      },
     }),
   ],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 });

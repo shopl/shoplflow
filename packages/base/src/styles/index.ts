@@ -1,10 +1,5 @@
-export type {
-  BorderRadiusToken,
-  ColorToken,
-  FontWeightsToken,
-  ShoplflowTheme,
-  SpacingToken,
-  TypographyToken,
-} from './types';
+import type * as tokens from './tokens';
+import './global.css';
+type ShoplflowTokens = keyof typeof tokens;
 
-export * from './theme';
+export { tokens, ShoplflowTokens };
