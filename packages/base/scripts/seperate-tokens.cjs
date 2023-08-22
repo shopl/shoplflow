@@ -103,16 +103,11 @@ function separateTokens(tokens) {
     if (!token) {
         return;
     }
-
     if (tokens.shopl) {
-        // console.log(tokens.shopl);
         shoplTokens.typographyTokens = processTypographyTokens(tokens.shopl, 'shopl');
-        // shoplTokens.colorTokens = processColorTokens(tokens.shopl, {}, 'shopl');
     }
-
     if (tokens.hada) {
         hadaTokens.typographyTokens = processTypographyTokens(tokens.hada, 'hada');
-        // hadaTokens.colorTokens = processColorTokens(tokens.hada, {}, 'hada');
     }
     if (token?.fontWeight) {
         processFontWeightTokens(token.fontWeight);

@@ -32,7 +32,7 @@ function toCamelCase(str) {
 function mappingTsTokenObject(obj, tokens) {
     let result = '';
     for (const [key, value] of Object.entries(obj)) {
-        const tokenName = `${tokens}-${key}`;
+        const tokenName = `${key}`;
         result += `export const ${toCamelCase(key)} = 'var(--${tokenName})';\n`;
     }
     return result;
