@@ -5,7 +5,7 @@
   "update-features": {
     "title": "Update Features"
   },
-  "build-assets": {
-    "title": "Build Assets"
+  "add-assets": {
+    "title": "Add Assets"
   }
 }

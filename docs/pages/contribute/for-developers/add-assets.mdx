@@ -1,0 +1,45 @@
+import {Steps, Tab, Tabs} from "nextra/components";
+
+# asset 추가하기
+
+<Tabs items={['Icon', 'Illustration']}>
+    <Tab>
+        <Steps>
+            ### 아이콘 추가하기
+
+            추가할 일러스트를 Figma에서 다운 받아주세요.
+
+            각 도메인에 맞는 폴더에 추가해주세요. (ex. `/shopl-assets/icons/assets`)
+
+            ### 아이콘 생성하기
+
+            `yarn workspace @shoplflow/shopl-assets build:illust`
+
+            ## 3. commit&push 진행하기
+
+            변경사항을 업데이트 해주세요.
+        </Steps>
+    </Tab>
+    <Tab>
+        <Steps>
+            ### 일러스트 추가하기
+
+            추가할 일러스트를 Figma에서 다운 받아주세요.
+
+            각 도메인에 맞는 폴더에 추가해주세요. (ex. `/shopl-assets/illustrations/assets`)
+
+            ### 일러스트 생성하기
+
+            `yarn workspace @shoplflow/shopl-assets build:illust`
+
+            ## 3. commit&push 진행하기
+
+            변경사항을 업데이트 해주세요.
+        </Steps>
+    </Tab>
+</Tabs>
+
+
+
+
+

@@ -8,7 +8,7 @@ export interface ShoplflowProviderProps {
   children: React.ReactNode;
 }
 
-const ShoplflowProvider = ({ children, domain = 'HADA' }: ShoplflowProviderProps) => {
+const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProps) => {
   useDomain({
     domain,
   });

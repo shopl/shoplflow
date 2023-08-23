@@ -5,10 +5,10 @@
   "figma-plugin-setting": {
     "title": "Figma Plugin Setting"
   },
-  "pull-shoplflow": {
-    "title": "Pull Shoplflow"
-  },
   "push-shoplflow": {
     "title": "Push Shoplflow"
+  },
+  "pull-shoplflow": {
+    "title": "Pull Shoplflow"
   }
 }

@@ -8,7 +8,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/shopl/shoplflow/tree/main/docs',
   footer: {
-    text: `© ${new Date().getFullYear()} Shopl@Compony Inc.`,
+    text: `© ${new Date().getFullYear()} Shopl&Compony Inc.`,
   },
 };
 
