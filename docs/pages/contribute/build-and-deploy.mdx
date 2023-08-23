@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/addon-docs';
+import {Callout} from "nextra/components";
 
 <Meta
     title="Readme/Build and Deploy"
@@ -9,19 +10,19 @@ import { Meta } from '@storybook/addon-docs';
 
 # Usage: Build and Deploy
 
-패키지를 사용하는 방법을 설명하는 문서에요.
+패키지를 빌드하고 배포하는 방법을 알아봅시다.
 
 ## Build
 
-📌 이 라이브러리는 `Rollup`을 사용하여 빌드됩니다. `yarn workspace @hada/ui-kit build`을 실행하여 빌드를 시작해주세요.
-
-📌 만약 아이콘이 추가된 경우 `yarn workspace @hada/ui-kit build:icons`를 실행하여 아이콘을 빌드한 후 `yarn workspace @hada/ui-kit build`를 실행해주세요.
+이 라이브러리는 `esbuild`를 기반으로 하는 `tsup`을 사용하여 빌드됩니다. `pnpm build`을 실행하면 전체 프로젝트가 빌드돼요.
 
 ## Deploy
 
 Github Action을 기반으로 Storybook을 자동배포해요.
 
-> 수동 배포 로직도 추가할 예정이에요.
+<Callout>
+ 수동 배포 로직도 추가할 예정이에요.
+</Callout>
 
 ## Release
 
@@ -30,10 +31,6 @@ Github Action을 기반으로 Storybook을 자동배포해요.
 📌 신규 기능이 추가되었다면 `yarn workspace @hada/ui-kit release:minor`를 실행해요.
 
 📌 버그 수정이나 기능 개선이라면 `yarn workspace @hada/ui-kit release:patch`를 실행해요.
-
-📌 디자인 시스템의 버전 Prefix는 `HDS/v`입니다. (예: `HDS/v1.0.0`)
-
-📌 버전이 태깅된 후 `feature/ui-kit-theme`branch에 merge되면 자동으로 Storybook이 배포돼요.
 
 
 ```shell

@@ -1,0 +1,76 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs'
+import {Callout, Steps, Tab, Tabs} from "nextra/components";
+
+
+<Meta
+    title="Readme/Intro"
+    parameters={{
+        viewMode: 'docs',
+    }}
+/>
+
+
+# Shoplflow 디자인 시스템
+
+<Callout type={'info'}>
+    이 패키지는 `@emotion/react`의 theme에 의존하고 있지 않습니다. 프로젝트 스택을 자유롭게 선택해주세요!
+</Callout>
+
+## 시작하기
+
+<Steps>
+    ### @shoplflow/base 설치하기
+
+    <Tabs items={['pnpm', 'npm', 'yarn']}>
+        <Tab>
+            ```bash
+            pnpm add @shoplflow/base
+            ```
+        </Tab>
+        <Tab>
+            ```bash
+            npm install @shoplflow/base
+            ```
+        </Tab>
+        <Tab>
+            ```bash
+            yarn add @shoplflow/base
+            ```
+        </Tab>
+    </Tabs>
+    ### Shoplflow 스타일 토큰 적용하기
+
+    - Theme을 적용하기 위해 프로젝트 루트에 아래 코드를 넣어주세요.
+
+    ```tsx
+    import {ShoplflowProvider} from '@shoplflow/base';
+    const App = () => {
+    return (
+        <ShoplflowProvider domain={'SHOPL'}>
+            <YourComponent/>
+        </ShoplflowProvider>
+        );
+    };
+    ```
+    - 도메인 별로 분기처리가 가능합니다. 도메인을 지정하지 않으면 기본 도메인으로 적용됩니다.
+
+    ```tsx
+    import {ShoplflowProvider} from '@shoplflow/base';
+    const App = () => {
+    return (
+        <ShoplflowProvider domain={'HADA'}>
+            <YourComponent/>
+        </ShoplflowProvider>
+        );
+    };
+    ```
+
+</Steps>
+
+
+
+
+
+
+
+

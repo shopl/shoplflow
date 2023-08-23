@@ -1,0 +1,14 @@
+{
+  "build-and-deploy": {
+    "title": "Build and Deploy"
+  },
+  "directory": {
+    "title": "Directory Structure"
+  },
+  "stories": {
+    "title": "Stories Structure"
+  },
+  "change-log": {
+    "title": "Change Log"
+  }
+}

@@ -1,16 +1,5 @@
 {
-  "Intro.stories": "Intro",
-  "BuildandDeploy.stories": {
-    "title": "Build and Deploy",
-    "display": "hidden"
-  },
-  "D oeigin mainirectory.stories": {
-    "title": "Directory Structure"
-  },
-  "Stories.stories": {
-    "title": "Stories Structure"
-  },
-  "changeLog.stories": {
-    "title": "Change Log"
-  }
+  "index": "shoplflow",
+  "docs": "Documentation",
+  "contribute": "Contribute"
 }
