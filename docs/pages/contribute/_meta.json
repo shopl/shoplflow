@@ -1,0 +1,15 @@
+{
+  "-- Read me": {
+    "type": "separator",
+    "title": "Read me"
+  },
+  "index": {
+    "title": "Documentation"
+  },
+  "for-developers": {
+    "title": "For Developers"
+  },
+  "for-designers": {
+    "title": "For Designers"
+  }
+}

@@ -1,29 +1,29 @@
 import { create } from '@storybook/theming';
-import { hadaTheme } from '@shoplflow/base';
+import { tokens } from '@shoplflow/base'
 
 
 export default create({
   base: 'light',
-  colorPrimary: hadaTheme.colors.hada400,
-  colorSecondary: hadaTheme.colors.hada300,
-
-  // UI
-  appBg: hadaTheme.colors.neutral100,
-  appBorderRadius: 4,
-  appBorderColor: 'transparent',
-
-  // Text colors
-  textColor: hadaTheme.colors.neutral700,
-  textInverseColor: hadaTheme.colors.neutral0,
-
-  // Toolbar default and active colors
-  barTextColor: hadaTheme.colors.neutral600,
-  barSelectedColor: hadaTheme.colors.hada400,
-
-  inputBorder: hadaTheme.colors.neutral600,
-  inputBorderRadius: 16,
-
-  // Form colors
-  inputTextColor: hadaTheme.colors.neutral700,
-  brandTitle: 'HDS',
+  // colorPrimary: 'var(--primary400)',
+  // colorSecondary: 'var(--primary300)',
+  // //
+  // // // UI
+  // appBg: 'var(--neutral100)',
+  // appBorderRadius: 10,
+  // appBorderColor: 'transparent',
+  // //
+  // // // Text colors
+  // textColor: 'var(--neutral700)',
+  // textInverseColor: 'var(--neutral0)',
+  // //
+  // // // Toolbar default and active colors
+  // barTextColor: 'var(--neutral600)',
+  // barSelectedColor: 'var(--primary400)',
+  //
+  // inputBorder: 'var(--neutral600)',
+  // inputBorderRadius: 16,
+  //
+  // // Form colors
+  // inputTextColor: 'var(--neutral700)',
+  brandTitle: 'Shoplflow',
 });

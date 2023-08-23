@@ -1,0 +1,39 @@
+import {Callout, Steps} from "nextra/components";
+
+# 깃허브 토큰 생성하기
+
+<Steps>
+
+    ### 1. 오른쪽 상단 프로필을 누르고 Settings로 들어가주세요.
+    ![step1](/generate-token/step1_settings.png)
+
+    ### 2. 좌측 메뉴 중 Developer settings로 들어가주세요.
+
+    ![step2](/generate-token/step2_developer_settings.png)
+
+    ### 3. 좌측 메뉴 중 Personal access tokens로 들어가주세요.
+
+    오른쪽 상단의 Generate new token을 누르고 Classic을 선택해주세요.
+
+    ![step3](/generate-token/step3_personal_access_tokens.png)
+
+    ### 4. 토큰 권한을 설정해줍니다.
+
+    - Note: `FIGMA_SYNC_TOKEN`
+    - Expiration: `No Expiration`
+    - Select Scopes: `repo`
+
+    ![step4](/generate-token/step4_token_scope.png)
+
+    ### 5. 토큰을 생성하고 복사해주세요.
+
+    하단의 Generate Token을 누르면 토큰이 생성됩니다. 생성된 토큰을 복사해주세요.
+
+    <Callout type={'error'}>
+        토큰에는 레포 접근 권한이 있기 때문에 누구에게도 공유하지 말아주세요.
+    </Callout>
+
+    ![step5](/generate-token/step5_copy_token.png)
+
+</Steps>
+

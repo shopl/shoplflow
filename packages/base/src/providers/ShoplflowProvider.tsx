@@ -1,15 +1,18 @@
-import { ThemeProvider } from '@emotion/react';
 import React from 'react';
-import { hadaTheme, shoplTheme } from '../styles';
+
+import { useDomain } from '../hooks/useDomain';
+import type { DomainType } from '../types/Domain';
 
 export interface ShoplflowProviderProps {
-  domain?: 'HADA' | 'SHOPL';
+  domain?: DomainType;
   children: React.ReactNode;
 }
 
-const ShoplflowProvider = ({ children, domain = 'HADA' }: ShoplflowProviderProps) => {
-  const theme = domain === 'HADA' ? hadaTheme : shoplTheme;
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProps) => {
+  useDomain({
+    domain,
+  });
+  return <>{children}</>;
 };
 
 export default ShoplflowProvider;

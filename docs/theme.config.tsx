@@ -4,14 +4,11 @@ import type { DocsThemeConfig } from 'nextra-theme-docs';
 const config: DocsThemeConfig = {
   logo: <span>Shoplflow</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/shopl/shoplflow',
   },
-  chat: {
-    link: 'https://discord.com',
-  },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/shopl/shoplflow/tree/main/docs',
   footer: {
-    text: 'Nextra Docs Template',
+    text: `© ${new Date().getFullYear()} Shopl&Compony Inc.`,
   },
 };
 
