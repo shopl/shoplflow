@@ -1,9 +1,5 @@
 {
-  "get-started": {
+  "index": {
     "title": "Get Started"
-  },
-  "change-log": {
-    "title": "Change Log",
-    "display": "hidden"
   }
 }
