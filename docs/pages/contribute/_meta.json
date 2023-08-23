@@ -1,14 +1,15 @@
 {
-  "build-and-deploy": {
-    "title": "Build and Deploy"
+  "-- Read me": {
+    "type": "separator",
+    "title": "Read me"
   },
-  "directory": {
-    "title": "Directory Structure"
+  "index": {
+    "title": "Documentation"
   },
-  "stories": {
-    "title": "Stories Structure"
+  "for-developers": {
+    "title": "For Developers"
   },
-  "change-log": {
-    "title": "Change Log"
+  "for-designers": {
+    "title": "For Designers"
   }
 }

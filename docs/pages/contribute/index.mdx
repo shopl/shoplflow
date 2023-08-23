@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs';
+import {Callout} from "nextra/components";
+
+<Meta
+  title="Readme/Stories"
+  parameters={{
+    viewMode: 'docs',
+  }}
+/>
+
+# Contributing: Docs
+
+> 공식문서를 작성하는 방법에 대해 설명하는 문서에요.
+
+해당 문서는 `@shoplflow/base` 라이브러리의 공식문서이므로 새로운 컴포넌트를 작성하거나, 수정하는 경우 그에 맞게 최신 스펙으로 업데이트 되어야 해요.
+
+## Readme
+
+<Callout>
+    @shoplflow/base를 사용하는 사람들은 스토리북을 통해 다음과 같은 요구사항을 해결할 수 있어야 해요.
+</Callout>
+
+**📌 해당 컴포넌트의 외형과 예시 variant, 소스코드에서의 사용 예시를 확인할 수 있어야 해요.**
+
+**📌 컴포넌트의 props interface에 대한 documentation을 확인할 수 있어야 해요.**
+
+프로젝트를 열어 `\*\*.types.ts` 파일을 확인하는 일이 없어야하며, 컴포넌트에 주입할 수 있는 모든 props를 나열해야 해요.
+
+각 prop의 이름, 타입, 설명을 제시하고, `enum`인 경우 어떤 값이 들어갈 수 있는지 나열해야 해요.
+
+[//]: # (**📌 컴포넌트의 prop을 조작할 수 있는 interactive canvas를 활용할 수 있어야 해요.**)
+
+[//]: # ()
+[//]: # (props interface에 대한 설명에 더해, 스토리북을 사용하는 사람이 직접 조작해볼 수 있도록 환경을 제공해야 해요.)
+
+[//]: # ()
+[//]: # (스토리북의 controls add-on을 활용하여 컴포넌트의 스토리를 사용해볼 수 있어야 해요.)

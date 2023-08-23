@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/addon-docs';
+import {FileTree} from "nextra/components";
 
 <Meta
   title="Readme/Directory Structure"
@@ -7,14 +8,14 @@ import { Meta } from '@storybook/addon-docs';
   }}
 />
 
-# Component: Directory Structure
+# Directory Structure
 
-`ui-kit`의 컴포넌트들이 구성된 directory 구조를 설명하는 문서에요.
+`shoplflow`의 컴포넌트들이 구성된 `@shoplflow/base`의 directory 구조를 설명하는 문서에요.
 
 ## Overall
 
 - 📌 `src/components` 아래에 모든 컴포넌트가 위치해요.
-- 📌 각 컴포넌트는 `directory`를 가지고 있어요.
+- 📌 각 컴포넌트는 모두 `directory`를 기반으로 구성되어요.
 
 ```
 src/components/
@@ -34,9 +35,9 @@ src/components/
 - 📌 `src/components/**/index.ts` -> 각 컴포넌트의 루트 export 파일입니다.
 - `index.ts`에서는 외부에 노출하고 싶은 값만 export 해주세요.
 
-#### 컴포넌트의 directory 밖에서는 import 시 `index.ts`에서 export 하는 값에만 접근해야 합니다.
+#### `index.ts`에서 export 한 값에만 접근해주세요.
 
-✅ **DO**: `index.ts`에서 export 한 값에만 접근해주세요.
+✅ **DO**: 컴포넌트의 directory 밖에서는 import 시 `index.ts`에서 export 하는 값에만 접근해야 합니다.
 
 ```tsx
 import { ButtonProps } from 'Components/Button';
@@ -48,9 +49,9 @@ import { ButtonProps } from 'Components/Button';
 import { ButtonProps } from 'Components/Button/Button.types';
 ```
 
-#### 컴포넌트의 directory 내부에서는 이 파일에서 import 하지 마세요.
+#### Directory 내부에서 접근 시, 개별 파일에서 import 해주세요.
 
-✅ **DO**: Directory 내부에서 접근 시, 개별 파일에서 import 해주세요.
+✅ **DO**: 컴포넌트의 directory 내부에서는 이 파일에서 import 하지 마세요.
 
 ```tsx
 import { ButtonProps } from './Button.types';
@@ -62,7 +63,9 @@ import { ButtonProps } from './Button.types';
 import { ButtonProps } from '.';
 ```
 
-#### 사용하지 않는 컴포넌트나 코드의 경우 `deprecated` 처리를 하여 사용자에게 알려주세요.
+#### 사용하지 않는 코드는 `deprecated` 처리해주세요.
+
+사용하지 않는 컴포넌트나 코드의 경우 `deprecated` 처리를 하여 사용자에게 알려주세요.
 
 ```ts
 /**
@@ -75,14 +78,18 @@ const DeprecatedComponent = () => {
 
 ## Component Structure Rule
 
-```
-src/components/Button/
-├── Button.stories.tsx
-├── Button.styled.ts
-├── Button.tsx
-├── Button.types.ts
-└── index.ts
-```
+<FileTree>
+    <FileTree.Folder name="components" defaultOpen>
+        <FileTree.Folder name="Button" defaultOpen>
+            <FileTree.File name="Button.test.tsx" />
+            <FileTree.File name="Button.styled.ts" />
+            <FileTree.File name="Button.tsx" />
+            <FileTree.File name="Button.types.ts" />
+            <FileTree.File name="index.ts" />
+        </FileTree.Folder>
+    </FileTree.Folder>
+</FileTree>
+
 
 - 📌 `{ComponentName}.tsx` : 리액트 컴포넌트 소스를 포함하는 파일이에요.
 - 이 파일의 export로 컴포넌트를 지정해요. (e.g. `Button`)
@@ -91,4 +98,4 @@ src/components/Button/
 - 이 파일의 export로 컴포넌트의 타입들을 지정해요. (e.g. `ButtonProps`)
 
 - 📌 `{ComponentName}.styled.ts` : `emotion`을 사용하여 스타일링한 컴포넌트 소스를 포함하는 파일이에요.
-- 📌 `{ComponentName}.stories.tsx` : Storybook을 위한 story 작성 파일이에요.
+- 📌 `{ComponentName}.test.tsx` : test 작성을 위한 test 작성 파일이에요.
