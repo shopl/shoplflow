@@ -1,0 +1,91 @@
+import {Card, Cards} from "nextra/components";
+import Link from "next/link";
+import {ArrowRightIcon, GitHubIcon} from "nextra/icons";
+import styles from './index.module.css'
+
+
+
+
+
+
+<div className="home-content">
+    <div className="content-container">
+        <h1 className="headline">Shoplflow <br className='sm:block hidden'/>Design System for Shopl</h1>
+        <p className="subtitle">
+            쉽고 간편하게 스타일을 적용해보세요.
+        </p>
+        <p className="subtitle">
+            <Link className={styles.cta} href="/base">Get started <span>→</span></Link>
+        </p>
+        <Cards>
+            <Card
+                icon={<ArrowRightIcon />}
+                title="@shoplflow/base"
+                href="/base"
+            />
+            <Card
+                icon={<ArrowRightIcon />}
+                title="@shoplflow/hooks"
+                href="/hooks"
+            />
+            <Card
+                icon={<ArrowRightIcon />}
+                title="@shoplflow/assets"
+                href="/assets"
+            />
+            <Card
+                icon={<GitHubIcon />}
+                title="Github"
+                href="/docs/guide/organize-files"
+            />
+        </Cards>
+    </div>
+    <style jsx>{`
+    .content-container {
+      display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      max-width: 90rem;
+      padding-left: max(env(safe-area-inset-left),1.5rem);
+      padding-right: max(env(safe-area-inset-right),1.5rem);
+      margin: 0 auto;
+    }
+    .features-container {
+      margin: 8rem 0 0;
+      padding: 4rem 0;
+      background-color: #f3f4f6;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .features-container .content-container {
+      margin-top: -8rem;
+    }
+    :global(.dark) .features-container {
+      background-color: #000;
+      border-bottom: 1px solid rgb(38,38,38);
+    }
+    .headline {
+      display: inline-flex;
+      font-size: 3.125rem;
+      font-size: min(4.375rem, max(8vw, 2.5rem));
+      font-weight: 700;
+      font-feature-settings: initial;
+      letter-spacing: -.12rem;
+      margin-left: -0.2rem;
+      margin-top: 3.4rem;
+      line-height: 1.1;
+      background-image: linear-gradient(146deg,#000,#757a7d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      font-size: min(1.3rem, max(3.5vw, 1.2rem));
+      font-feature-settings: initial;
+      line-height: 1.6;
+    }
+`}</style>
+
+</div>
+
+

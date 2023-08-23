@@ -1,0 +1,14 @@
+{
+  "generate-token": {
+    "title": "Generate github Token"
+  },
+  "figma-plugin-setting": {
+    "title": "Figma Plugin Setting"
+  },
+  "push-shoplflow": {
+    "title": "Push Shoplflow"
+  },
+  "pull-shoplflow": {
+    "title": "Pull Shoplflow"
+  }
+}

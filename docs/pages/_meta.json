@@ -1,16 +1,21 @@
 {
-  "Intro.stories": "Intro",
-  "BuildandDeploy.stories": {
-    "title": "Build and Deploy",
+  "index": {
+    "title": "Shoplflow",
+    "type": "page",
     "display": "hidden"
   },
-  "Directory.stories": {
-    "title": "Directory Structure"
+  "contribute": {
+    "title": "Contribute",
+    "type": "page",
+    "display": "hidden"
   },
-  "Stories.stories": {
-    "title": "Stories Structure"
+  "base": {
+    "type": "page"
   },
-  "changeLog.stories": {
-    "title": "Change Log"
+  "hooks": {
+    "type": "page"
+  },
+  "assets": {
+    "type": "page"
   }
 }

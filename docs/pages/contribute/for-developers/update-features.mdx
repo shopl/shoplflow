@@ -1,0 +1,80 @@
+import { Meta } from '@storybook/addon-docs';
+import {Callout, Steps} from "nextra/components";
+
+<Meta
+    title="Readme/Build and Deploy"
+    parameters={{
+        viewMode: 'docs',
+    }}
+/>
+
+# Update Features
+
+패키지를 빌드하고 배포하는 방법을 알아봅시다.
+
+## 신규 기능(컴포넌트) 추가하기
+
+<Steps>
+    ### feature branch 생성
+
+    신규 기능에 대한 브랜치를 생성해주세요.
+
+    ```bash
+    >  git checkout -b feature/your-feature-name
+    ```
+    ### changeset 생성
+
+    <Callout type={'default'}>
+        만약 패키지 관련된 기능이 아닌 개발 환경에 대한 기능이라면 이 과정은 생략해주세요.
+    </Callout>
+
+    ```bash
+    pnpm changeset
+    ```
+
+    changeset을 생성하면 `changeset` 폴더에 `random-name-of-feature.md` 파일이 생성돼요.
+
+    생성을 확인했다면 커밋, 푸시해주세요.
+
+    ### PR 생성
+
+    <Callout type={'default'}>
+        만약 패키지 관련된 기능이 아닌 개발 환경에 대한 기능이라면 label을 `pass-check`으로 설정해주세요.
+        (changesets 포함 여부 CI 체크를 생략해요.)
+    </Callout>
+
+    #### PR의 제목은 아래 형식으로 작성해주세요.
+
+    - feature: your-feature-name
+    - fix: your-fix-name
+    - chore: your-chore-name
+
+    PR을 생성하면 자동으로 CI가 실행돼요.
+
+    CI가 성공하면 maintainer가 리뷰를 진행해요.
+
+    ### Release
+
+    <Callout>
+        수동 배포 로직도 추가할 예정이에요.
+    </Callout>
+
+    릴리즈 과정은 github action을 통해 자동으로 진행돼요. 개발자는 `step2`만 확인해주세요.
+
+    1. PR이 머지되면 changesets가 자동으로 변경사항을 확인하고 changesets를 통해 버전을 업데이트해요.
+
+    2. 버전 업데이트에 관한 PR(Version Packages)이 생성되면 maintainer가 리뷰를 진행해요.
+
+    3. 변경사항이 맞다면 버전 업데이트에 관한 PR을 maintainer가 머지해요.
+
+    4. 버전 업데이트에 관한 PR이 머지되면 자동으로 npm에 배포되고 github releases가 생성돼요.
+</Steps>
+
+
+
+
+
+
+
+
+
