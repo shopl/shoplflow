@@ -14,6 +14,7 @@
     "post-checkout": "pnpm run refresh:node_modules",
     "postinstall": "husky install"
   },
+  "license": "Apache-2.0",
   "version": "0.0.1",
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",

@@ -2,6 +2,7 @@
   "name": "@shoplflow/base",
   "version": "0.1.1",
   "type": "module",
+  "license": "Apache-2.0",
   "scripts": {
     "build:tokens": "node scripts/generate-tokens.cjs",
     "type-check": "tsc --noEmit",
