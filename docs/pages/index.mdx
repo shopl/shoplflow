@@ -4,10 +4,6 @@ import {ArrowRightIcon, GitHubIcon} from "nextra/icons";
 import styles from './index.module.css'
 
 
-
-
-
-
 <div className="home-content">
     <div className="content-container">
         <h1 className="headline">Shoplflow <br className='sm:block hidden'/>Design System for Shopl</h1>
@@ -63,6 +59,9 @@ import styles from './index.module.css'
       background-color: #000;
       border-bottom: 1px solid rgb(38,38,38);
     }
+    :global(.dark) .headline {
+      background-image: linear-gradient(146deg,#fff, var(--primary400));
+    }
     .headline {
       display: inline-flex;
       font-size: 3.125rem;
@@ -73,7 +72,7 @@ import styles from './index.module.css'
       margin-left: -0.2rem;
       margin-top: 3.4rem;
       line-height: 1.1;
-      background-image: linear-gradient(146deg,#000,#757a7d);
+      background-image: linear-gradient(146deg, #cdd4d8, var(--primary400));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
