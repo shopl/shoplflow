@@ -1,5 +1,11 @@
 # docs
 
+## 0.1.1
+
+### Patch Changes
+
+- [#48](https://github.com/shopl/shoplflow/pull/48) [`2da7572`](https://github.com/shopl/shoplflow/commit/2da757242cf92eef9e1cdf92fef7dcf9297b9fc9) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 문서 스타일 수정, 타이포 수정
+
 ## 0.1.0
 
 ### Minor Changes
