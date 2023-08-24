@@ -1,0 +1,10 @@
+import '@shoplflow/base/styles'
+import {ShoplflowProvider} from "@shoplflow/base";
+
+export default function App({ Component, pageProps }) {
+    return (
+        <ShoplflowProvider>
+            <Component {...pageProps} />
+        </ShoplflowProvider>
+    )
+}
