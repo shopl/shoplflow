@@ -31,19 +31,23 @@ function toCamelCase(str) {
 
 function mappingTsTokenObject(obj, tokens) {
     let result = '';
+    let exportName = `export const ${tokens} = {\n`;
     for (const [key, value] of Object.entries(obj)) {
         const tokenName = `${key}`;
-        result += `export const ${toCamelCase(key)} = 'var(--${tokenName})';\n`;
+        result += `const ${toCamelCase(key)} = 'var(--${tokenName})';\n`;
+        exportName += ` ${toCamelCase(key)},\n`;
     }
+    exportName += '};\n';
+    result += exportName;
     return result;
 }
 
 async function generateTsTokens() {
     let tsContent = PREFIX;
-    tsContent += mappingTsTokenObject(fontWeightTokens, '');
-    tsContent += mappingTsTokenObject(borderRadiusTokens, '');
-    tsContent += mappingTsTokenObject(shoplTokens.colorTokens, '');
-    tsContent += mappingTsTokenObject(spacingTokens, '');
+    tsContent += mappingTsTokenObject(fontWeightTokens, 'fontWeightTokens');
+    tsContent += mappingTsTokenObject(borderRadiusTokens, 'borderRadiusTokens');
+    tsContent += mappingTsTokenObject(shoplTokens.colorTokens, 'colorTokens');
+    tsContent += mappingTsTokenObject(spacingTokens, 'spacingTokens');
 
     fs.writeFileSync(rootPath + '/src/styles/tokens.ts', tsContent);
 }
