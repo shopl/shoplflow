@@ -12,7 +12,7 @@
     "build:storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",
     "build": "pnpm run build:next && pnpm run build:storybook",
-    "typecheck": "tsc --noEmit"
+    "type-check": "tsc --noEmit"
   },
   "license": "ISC",
   "dependencies": {
