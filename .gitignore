@@ -40,3 +40,4 @@ yarn-error.log*
 .vercel
 storybook-static
 junit.xml
+.pnpm-store

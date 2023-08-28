@@ -42,13 +42,25 @@ function mappingTsTokenObject(obj, tokens) {
     return result;
 }
 
+function generateTypographyTokens() {
+    let result = '';
+    let exportName = `export const typographyTokens = {\n`;
+    typographyTokenKeys.forEach((key) => {
+        result += `const ${key} = '.${key}';\n`
+         exportName += ` ${key},\n`;
+    });
+    exportName += '};\n';
+    result += exportName;
+    return result;
+}
+
 async function generateTsTokens() {
     let tsContent = PREFIX;
     tsContent += mappingTsTokenObject(fontWeightTokens, 'fontWeightTokens');
     tsContent += mappingTsTokenObject(borderRadiusTokens, 'borderRadiusTokens');
     tsContent += mappingTsTokenObject(shoplTokens.colorTokens, 'colorTokens');
     tsContent += mappingTsTokenObject(spacingTokens, 'spacingTokens');
-
+    tsContent += generateTypographyTokens()
     fs.writeFileSync(rootPath + '/src/styles/tokens.ts', tsContent);
 }
 

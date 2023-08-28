@@ -1,3 +1,4 @@
+// @ts-ignore
 module.exports = {
   stories: ["../pages/*.stories.@(js|jsx|ts|tsx)"],
   addons: [

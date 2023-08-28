@@ -140,3 +140,45 @@ export const spacingTokens = {
  spacing32,
  spacing40,
 };
+const heading1_700 = '.heading1_700';
+const heading1_400 = '.heading1_400';
+const heading2_700 = '.heading2_700';
+const heading2_400 = '.heading2_400';
+const heading3_700 = '.heading3_700';
+const heading3_400 = '.heading3_400';
+const title1_700 = '.title1_700';
+const title1_400 = '.title1_400';
+const title2_700 = '.title2_700';
+const title2_500 = '.title2_500';
+const title2_400 = '.title2_400';
+const body1_700 = '.body1_700';
+const body1_500 = '.body1_500';
+const body1_400 = '.body1_400';
+const body2_700 = '.body2_700';
+const body2_500 = '.body2_500';
+const body2_400 = '.body2_400';
+const body3_400 = '.body3_400';
+const body3_500 = '.body3_500';
+const caption_400 = '.caption_400';
+export const typographyTokens = {
+ heading1_700,
+ heading1_400,
+ heading2_700,
+ heading2_400,
+ heading3_700,
+ heading3_400,
+ title1_700,
+ title1_400,
+ title2_700,
+ title2_500,
+ title2_400,
+ body1_700,
+ body1_500,
+ body1_400,
+ body2_700,
+ body2_500,
+ body2_400,
+ body3_400,
+ body3_500,
+ caption_400,
+};
