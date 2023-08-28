@@ -1,8 +1,8 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { Stack, MotionStack } from './Stack';
-import type { StackProps } from './Stack.types';
 import { Box } from '../../styles/Box';
+import { MotionStack, Stack } from './Stack';
+import type { StackProps } from './Stack.types';
 
 export default {
   title: 'COMPONENTS/Stack',
@@ -37,10 +37,12 @@ export const Vertical: StoryFn<StackProps> = (args) => (
 );
 
 export const Motion: StoryFn<StackProps> = (args) => (
-  <MotionStack {...args} width={'fit-content'}>
-    <Box background={'primary100'} />
-    <Box background={'primary100'} />
-    <Box background={'primary100'} />
-    <Box background={'primary100'} />
-  </MotionStack>
+  <>
+    <MotionStack {...args} width={'fit-content'}>
+      <Box background={'primary100'} />
+      <Box background={'primary100'} />
+      <Box background={'primary100'} />
+      <Box background={'primary100'} />
+    </MotionStack>
+  </>
 );

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import type { MotionStackComponentType, StackComponentType, StackGenericProps, StackProps } from './Stack.types';
 
 import { StyledStack } from './Stack.styled';
-import type { StringElementType } from 'src/utils/type/ComponentProps';
+import type { StringElementType } from '../../utils/type/ComponentProps';
 
 /**
  *

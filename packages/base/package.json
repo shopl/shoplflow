@@ -63,14 +63,14 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@types/node": "20.4.9",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "eslint": "^8.44.0",
-    "framer-motion": "^10.16.1",
-    "react": "^18",
-    "react-dom": "^18",
+    "framer-motion": "^9.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "ts-node": "^10.9.1",
     "tsup": "7.2.0",
-    "typescript": "^5.0.2"
+    "typescript": "^4.9.2"
   }
 }
