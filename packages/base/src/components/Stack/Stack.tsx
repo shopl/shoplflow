@@ -6,13 +6,18 @@ import { motion } from 'framer-motion';
 import type { MotionStackComponentType, StackComponentType, StackGenericProps, StackProps } from './Stack.types';
 
 import { StyledStack } from './Stack.styled';
-import type { StringElementType } from '../../utils/type';
+import type { StringElementType } from 'src/utils/type/ComponentProps';
 
+/**
+ *
+ * @param {StackProps} stackOption
+ * @return {StackComponentType}
+ */
 const createStackComponent = (stackOption?: StackProps): StackComponentType =>
   forwardRef(function Stack<T extends StringElementType>(
     {
       as = 'div',
-      gap = stackOption?.gap ?? 16,
+      spacing = stackOption?.spacing ?? 'spacing08',
       direction = stackOption?.direction ?? 'column',
       align = stackOption?.align ?? 'flex-start',
       justify = stackOption?.justify ?? 'flex-start',
@@ -20,6 +25,7 @@ const createStackComponent = (stackOption?: StackProps): StackComponentType =>
       height = stackOption?.height ?? 'initial',
       flexWrap = stackOption?.flexWrap ?? 'initial',
       flex = stackOption?.flex ?? 'initial',
+      radius = stackOption?.radius,
       background = stackOption?.background,
       ...rest
     }: StackGenericProps<T>,
@@ -28,7 +34,7 @@ const createStackComponent = (stackOption?: StackProps): StackComponentType =>
     return (
       <StyledStack
         as={as}
-        gap={gap}
+        spacing={spacing}
         ref={ref}
         direction={direction}
         align={align}
@@ -38,6 +44,7 @@ const createStackComponent = (stackOption?: StackProps): StackComponentType =>
         flexWrap={flexWrap}
         flex={flex}
         background={background}
+        radius={radius}
         {...rest}
       >
         {rest.children}

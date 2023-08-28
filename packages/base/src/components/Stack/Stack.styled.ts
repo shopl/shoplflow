@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import type { StackOptionProps } from './Stack.types';
+import { borderRadiusTokens, colorTokens, spacingTokens } from '../../styles';
 
 export const StyledStack = styled.div<StackOptionProps>`
   display: flex;
@@ -9,9 +10,10 @@ export const StyledStack = styled.div<StackOptionProps>`
   flex-direction: ${({ direction }) => direction};
   align-items: ${({ align }) => align};
   justify-content: ${({ justify }) => justify};
-  gap: ${({ gap }) => gap && gap};
+  gap: ${({ spacing }) => spacing && spacingTokens[spacing]};
   flex-wrap: ${({ flexWrap }) => flexWrap};
   flex: ${({ flex }) => flex};
-  background: ${({ theme, background }) => (background ? theme.colors[background] : 'transparent')};
+  background: ${({ background }) => (background ? colorTokens[background] : 'transparent')};
+  border-radius: ${({ radius }) => radius && borderRadiusTokens[radius]};
   animation: 0.2s all ease-in-out;
 `;

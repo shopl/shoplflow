@@ -4,6 +4,9 @@
   "scripts": {
     "build": "turbo run build",
     "lint": "turbo run lint",
+    "dev:docs": "turbo run dev:docs",
+    "dev:storybook": "turbo run dev:storybook",
+    "dev:stories": "turbo run dev:stories",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clear:node_modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",

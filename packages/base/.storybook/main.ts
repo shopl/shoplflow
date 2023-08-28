@@ -1,5 +1,8 @@
 module.exports = {
-  stories: ["../pages/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [{
+    directory: '../',
+    files: '**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
+  }],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-actions',
@@ -24,22 +27,6 @@ module.exports = {
   ],
   features: {
     buildStoriesJson: true,
-  },
-  refs: (config, { configType }) => {
-    if (configType === 'DEVELOPMENT') {
-      return {
-        base: {
-          title: 'Composed React Storybook running in development mode',
-          url: 'http://localhost:6007',
-        },
-      };
-    }
-    return {
-      base: {
-        title: 'Composed React Storybook running in production',
-        url: 'https://your-production-react-storybook-url',
-      },
-    };
   },
   framework: {
     name: "@storybook/react-vite",

@@ -1,58 +1,64 @@
-import { ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
 import Stack from "./Stack";
+import * as StackStories from './Stack.stories';
+
+
+<Meta of={StackStories} />
 
 # Stack & MotionStack
 
-Stack 컴포넌트는 자식 컴포넌트들을 Wrapping할 때 사용해요. Container나 Box처럼 사용할 수 있어요
+Stack 컴포넌트는 자식 컴포넌트의 레이아웃 영역을 감싸는 용도로 사용해요.
 
 `display:flex`속성을 기반으로 작성되었으며, `direction`속성을 통해 자식 컴포넌트들의 정렬 방향을 설정할 수 있어요.
 
-`Stack.Horizontal`과 `Stack.Vertical`을 통해 각각 수평 정렬과 수직 정렬이 기본값인 Stack을 사용할 수 있어요.
-
 `as` 키워드로 HTML 태그를 변경할 수 있어요. (기본값: `div`)
 
-`framer-motion`을 사용한 `MotionStack`도 제공해요. 사용방법은 `framer-motion`의 컴포넌트와 동일해요.
-`animate`와 `initial`속성을 통해 애니메이션을 적용할 수 있어요.
+`framer-motion`을 사용한 `MotionStack`도 제공해요. 사용방법은 `framer-motion`의 컴포넌트와 동일해요. `animate`와 `initial`속성을 통해 애니메이션을 적용할 수 있어요.
+
+`Stack.Horizontal`과 `Stack.Vertical`을 통해 각각 수평 정렬과 수직 정렬이 기본값인 Stack을 사용할 수 있어요.
+
+<Canvas of={StackStories.Primary} />
+
+## Usage
+
+```ts {6} filename="Stack"
+
+import { Stack } from '@shoplflow/base';
 
 
-```tsx
 const Exmaple = () => {
+
     return(
         <Stack direction="horizontal" as={'section'}>
-            <Button>Button</Button>
-            <Button>Button</Button>
-            <Button>Button</Button>
+            <Box background='primary400' />
+            <Box background='primary400' />
+            <Box background='primary400' />
         </Stack>
     )
 }
 ```
 
-<Story id="components-stack--playground" />
 
 
 
-```tsx
-//MotionStack
+
+
+
+```ts {6} filename="MotionStack"
+import { MotionStack } from '@shoplflow/base';
+
 const Exmaple = () => {
+
     return(
         <MotionStack direction="horizontal">
-            <Button>Button</Button>
-            <Button>Button</Button>
-            <Button>Button</Button>
+            <Box background='primary400' />
+            <Box background='primary400' />
+            <Box background='primary400' />
         </MotionStack>
     )
 }
 ```
 
 
-<Story id="components-stack--motion-playground" />
-
-
-
-
-
-## Props
-
-> ref타입은 as 태그에 따라 변화합니다.
-
 <ArgsTable of={Stack} />
+

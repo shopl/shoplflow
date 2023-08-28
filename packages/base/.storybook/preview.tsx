@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 
 import type { Decorator, Preview } from "@storybook/react";
 import { useState } from "react";
-import {ShoplflowProvider} from "@shoplflow/base";
+import {ShoplflowProvider} from "../src";
+import '../src/styles/global.css'
 
 
 

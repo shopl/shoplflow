@@ -1,7 +1,7 @@
 import type { ComponentPropsWithRef, CSSProperties, ReactNode } from 'react';
 
 import type { CustomDomComponent } from 'framer-motion';
-import type { ColorTokens } from '../../styles';
+import type { BorderRadiusTokens, ColorTokens, SpacingTokens } from '../../styles';
 import type {
   ChildrenProps,
   HTMLPropsWithOutRef,
@@ -36,15 +36,33 @@ export interface StackOptionProps {
    * (값: row, column)
    */
   direction?: CSSProperties['flexDirection'];
-  /** 요소들 사이의 간격
-   * @default 24
+  /**
+   * 요소들 사이의 간격
    */
-  gap?: number;
-
+  spacing?: SpacingTokens;
+  /**
+   * flex-wrap 설정
+   */
   flexWrap?: CSSProperties['flexWrap'];
 
+  /**
+   * width 설정
+   */
   width?: CSSProperties['width'];
+  /**
+   * height 설정
+   */
   height?: CSSProperties['height'];
+  /**
+   * flex 설정
+   */
   flex?: CSSProperties['flex'];
+  /**
+   * background 설정
+   */
   background?: ColorTokens;
+  /**
+   * border-radius 설정
+   */
+  radius?: BorderRadiusTokens;
 }
