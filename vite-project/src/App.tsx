@@ -10,6 +10,7 @@ function App() {
   const SomeText = styled.div`
     color: var(--primary400);
   `;
+
   return (
     <>
       <div>

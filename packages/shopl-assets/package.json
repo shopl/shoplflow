@@ -1,6 +1,7 @@
 {
   "name": "@shoplflow/shopl-assets",
   "version": "0.0.0",
+  "license": "Apache-2.0",
   "scripts": {
     "build:icons": "scripts/build-icons.sh",
     "lint:icons": "eslint --fix ./src/icons/generated/*.{ts,tsx}",
@@ -41,6 +42,6 @@
     "react-dom": "^18",
     "ts-node": "^10.9.1",
     "tsup": "7.2.0",
-    "typescript": "^5.0.2"
+    "typescript": "^4.9.0"
   }
 }

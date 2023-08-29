@@ -9,6 +9,7 @@ on:
       - "docs/**"
     branches:
       - main
+    workflow_dispatch:
 
 jobs:
   release:
@@ -49,7 +50,6 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm changeset version
-          createGithubReleases: true
           publish: pnpm changeset publish
           commit: "ci(changesets): version packages"
         env:

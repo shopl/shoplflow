@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import { ShoplflowProvider } from '@shoplflow/base';
+
 import type { Decorator, Preview } from "@storybook/react";
 import { useState } from "react";
-import '@shoplflow/base/styles';
+import {ShoplflowProvider} from "@shoplflow/base";
+
 
 
 const ThemeButton  = styled.button`

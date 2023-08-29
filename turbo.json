@@ -32,6 +32,18 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "dev:stories": {
+      "persistent": true,
+      "cache": false
+    },
+    "dev:storybook": {
+      "persistent": true,
+      "cache": false
+    },
+    "dev:docs": {
+      "persistent": true,
+      "cache": false
     }
   }
 }
