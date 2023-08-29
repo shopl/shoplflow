@@ -1,5 +1,16 @@
 # docs
 
+## 0.2.0
+
+### Minor Changes
+
+- [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - base storybook 링크
+
+### Patch Changes
+
+- Updated dependencies [[`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a), [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a), [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a), [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a)]:
+  - @shoplflow/base@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes
