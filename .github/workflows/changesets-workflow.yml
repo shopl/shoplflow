@@ -9,6 +9,7 @@ on:
       - "docs/**"
     branches:
       - main
+    workflow_dispatch:
 
 jobs:
   release:
@@ -48,9 +49,8 @@ jobs:
       - name: PR을 생성하거나 NPM에 배포하고 있어요.
         uses: changesets/action@v1
         with:
-          version: pnpm changeset version
-          createGithubReleases: true
-          publish: pnpm changeset publish
+          version: pnpm run version
+          publish: pnpm run release
           commit: "ci(changesets): version packages"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

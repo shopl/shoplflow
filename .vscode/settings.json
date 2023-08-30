@@ -29,5 +29,5 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.preferences.importModuleSpecifier": "project-relative",
   "typescript.preferences.quoteStyle": "single",
-  "typescript.tsdk": ".yarn/sdks/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
