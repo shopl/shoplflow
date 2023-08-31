@@ -30,17 +30,17 @@
     },
     "lint": {
       "dependsOn": [
-        "^lint"
+        "lint"
       ]
     },
     "test": {
       "dependsOn": [
-        "^test"
+        "test"
       ]
     },
     "type-check": {
       "dependsOn": [
-        "^type-check"
+        "type-check"
       ]
     },
     "dev": {
