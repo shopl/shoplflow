@@ -54,32 +54,32 @@ jobs:
           echo "::set-output name=color::warning"
           fi
 
-      - name: Slack에 알림을 보내고 있어요.
-        uses: 8398a7/action-slack@v3
-        with:
-          status: custom
-          fields: workflow,job,commit,repo,ref,author,took
-          custom_payload: |
-            {
-              attachments: [{
-              title: "${{ steps.set_status_and_color.outputs.status_text }}",
-              color: "${{ steps.set_status_and_color.outputs.color }}",
-              text: `
-                ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
-                `,
-                actions: [
-                  {
-                    type: "button",
-                    text: "빌드 액션 확인하기",
-                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
-                  },
-                  {
-                    type: "button",
-                    text: "PR 확인하기",
-                    url: "${{ github.event.pull_request.html_url }}"
-                  }
-                ]
-              }]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#      - name: Slack에 알림을 보내고 있어요.
+#        uses: 8398a7/action-slack@v3
+#        with:
+#          status: custom
+#          fields: workflow,job,commit,repo,ref,author,took
+#          custom_payload: |
+#            {
+#              attachments: [{
+#              title: "${{ steps.set_status_and_color.outputs.status_text }}",
+#              color: "${{ steps.set_status_and_color.outputs.color }}",
+#              text: `
+#                ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
+#                `,
+#                actions: [
+#                  {
+#                    type: "button",
+#                    text: "빌드 액션 확인하기",
+#                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
+#                  },
+#                  {
+#                    type: "button",
+#                    text: "PR 확인하기",
+#                    url: "${{ github.event.pull_request.html_url }}"
+#                  }
+#                ]
+#              }]
+#            }
+#        env:
+#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
