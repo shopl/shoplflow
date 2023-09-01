@@ -21,6 +21,7 @@
     },
     "build:docs": {
       "dependsOn": [
+        "^build",
         "build:package"
       ]
     },
