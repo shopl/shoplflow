@@ -15,7 +15,8 @@
     },
     "build:package": {
       "outputs": [
-        "dist/**"
+        "dist/**",
+        "!.next/cache/**"
       ]
     },
     "build:docs": {
@@ -26,6 +27,10 @@
     "build:storybook": {
       "dependsOn": [
         "build:package"
+      ],
+      "outputs": [
+        "dist/**",
+        "storybook-static/**"
       ]
     },
     "lint": {
