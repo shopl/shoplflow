@@ -7,7 +7,7 @@
     "build": {
       "dependsOn": [
         "^build"
-      ],
+      ]
     },
     "build:package": {
       "outputs": [
