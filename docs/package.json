@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "author": "velo",
+  "private": true,
   "scripts": {
     "start": "next start",
     "dev:next": "next dev",
