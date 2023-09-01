@@ -1,5 +1,15 @@
 # @shoplflow/eslint-plugin
 
+## 0.1.0
+
+### Minor Changes
+
+- [#60](https://github.com/shopl/shoplflow/pull/60) [`8ebcdc1`](https://github.com/shopl/shoplflow/commit/8ebcdc1307ace2eadc69eaf8b2965da17415835a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - console rule 변경
+
+- [#60](https://github.com/shopl/shoplflow/pull/60) [`8ebcdc1`](https://github.com/shopl/shoplflow/commit/8ebcdc1307ace2eadc69eaf8b2965da17415835a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - quates 룰 변경
+
+- [#60](https://github.com/shopl/shoplflow/pull/60) [`8ebcdc1`](https://github.com/shopl/shoplflow/commit/8ebcdc1307ace2eadc69eaf8b2965da17415835a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - prettier, eslint 충돌 해결
+
 ## 0.0.9
 
 ### Patch Changes
