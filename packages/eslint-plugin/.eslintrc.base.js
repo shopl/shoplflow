@@ -20,6 +20,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'eslint-config-prettier',
   ],
   settings: {
     'import/resolver': {
@@ -42,7 +43,7 @@ module.exports = {
         htmlWhitespaceSensitivity: 'css',
         insertPragma: false,
         jsxBracketSameLine: false,
-        jsxSingleQuote: false,
+        jsxSingleQuote: true,
         quoteProps: 'as-needed',
         requirePragma: false,
         trailingComma: 'all',
@@ -51,7 +52,12 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    'no-console': 'error', // console 사용시 에러
+    'no-console': [
+      'error',
+      {
+        allow: ['warn', 'error', 'info', 'debug'],
+      },
+    ], // console.log를 사용할 수 없도록 합니다. (warn, error, info, debug는 허용합니다.)
     'no-undef': 'error', // 정의되지 않은 변수를 사용하는 것을 금지합니다.
     'no-async-promise-executor': 'error', // Promise executor 내부에 async 함수를 사용하는 것을 경고합니다.
     'no-extra-boolean-cast': 'error', // 불필요한 boolean 형변환을 금지합니다.
@@ -63,6 +69,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     curly: ['error', 'all'], // 모든 제어문에 중괄호를 사용하도록 강제합니다.
     eqeqeq: ['error', 'always', { null: 'ignore' }], // 항상 일치 연산자 (=== 및 !==)를 사용하도록 강제합니다. null과 비교할 때는 이 규칙을 무시합니다.
-    quotes: [2, 'single', { allowTemplateLiterals: true }], // 문자열에 싱글 쿼트를 사용하도록 강제합니다. 템플릿 리터럴은 예외로 허용합니다.
+    quotes: [2, 'single', { allowTemplateLiterals: true, avoidEscape: true }], // 문자열에 싱글 쿼트를 사용하도록 강제합니다. 템플릿 리터럴은 예외로 허용합니다.
   },
 };
