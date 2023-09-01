@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.2.1
+
+### Patch Changes
+
+- [#57](https://github.com/shopl/shoplflow/pull/57) [`9250c9d`](https://github.com/shopl/shoplflow/commit/9250c9d897bc113711e7b88b537d53b4c2101b22) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - color palette 추가
+
 ## 0.2.0
 
 ### Minor Changes
