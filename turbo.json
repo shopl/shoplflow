@@ -7,11 +7,16 @@
     "build": {
       "dependsOn": [
         "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
       ]
     },
     "build:package": {
       "outputs": [
-        "dist/**"
+        "dist/**",
+        "!.next/cache/**"
       ]
     },
     "build:docs": {
