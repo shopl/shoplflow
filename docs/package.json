@@ -8,10 +8,10 @@
     "start": "next start",
     "dev:next": "next dev",
     "dev:storybook": "storybook dev -p 6006",
-    "build:next": "next build",
+    "build:docs": "next build",
     "build:storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",
-    "build": "pnpm run build:next && pnpm run build:storybook",
+    "build": "pnpm run build:docs && pnpm run build:storybook",
     "type-check": "tsc --noEmit"
   },
   "license": "Apache-2.0",

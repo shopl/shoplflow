@@ -38,6 +38,7 @@ yarn-error.log*
 
 # vercel
 .vercel
-storybook-static
+**/storybook-static
 junit.xml
 .pnpm-store
+docs/tsconfig.tsbuildinfo
