@@ -8,26 +8,33 @@
       "dependsOn": [
         "^build"
       ],
-      "cache": false,
       "outputs": [
         ".next/**",
         "!.next/cache/**"
       ]
     },
-    "lint": {
-      "dependsOn": [
-        "^lint"
+    "build:package": {
+      "outputs": [
+        "dist/**"
       ]
+    },
+    "build:docs": {
+      "dependsOn": [
+        "build:package"
+      ]
+    },
+    "build:storybook": {
+      "dependsOn": [
+        "build:package"
+      ]
+    },
+    "lint": {
+
     },
     "test": {
-      "dependsOn": [
-        "^test"
-      ]
+
     },
     "type-check": {
-      "dependsOn": [
-        "^type-check"
-      ]
     },
     "dev": {
       "cache": false,

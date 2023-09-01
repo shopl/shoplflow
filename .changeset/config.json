@@ -9,6 +9,5 @@
   "commit": false,
   "access": "public",
   "baseBranch": "main",
-  "updateInternalDependencies": "patch",
-  "privatePackages": { "version": true, "tag": false }
+  "updateInternalDependencies": "patch"
 }

@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:docs": "turbo run build:docs",
+    "build:storybook": "turbo run build:storybook",
     "lint": "turbo run lint",
     "dev:docs": "turbo run dev:docs",
     "dev:storybook": "turbo run dev:storybook",

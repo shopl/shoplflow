@@ -38,7 +38,7 @@ module.exports = {
     return {
       base: {
         title: 'Composed React Storybook running in production',
-        url: 'https://your-production-react-storybook-url',
+        url: 'https://shoplflow-base.vercel.app',
       },
     };
   },
