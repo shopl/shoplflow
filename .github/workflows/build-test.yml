@@ -11,6 +11,9 @@ on:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       - name: 코드를 체크아웃하고 있어요.
