@@ -41,7 +41,6 @@
 
     },
     "type-check": {
-      "cache": false
     },
     "dev": {
       "cache": false,
