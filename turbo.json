@@ -7,7 +7,7 @@
     "build": {
       "dependsOn": [
         "^build"
-      ]
+      ],
     },
     "build:package": {
       "outputs": [
@@ -22,6 +22,10 @@
     "build:storybook": {
       "dependsOn": [
         "build:package"
+      ],
+      "outputs": [
+        "dist/**",
+        "storybook-static/**"
       ]
     },
     "lint": {
