@@ -8,8 +8,10 @@
     "build:illustrations": "scripts/build-illustrations.sh",
     "lint:illustrations": "eslint --fix ./src/illustrations/generated/*.{ts,tsx}",
     "type-check": "tsc --noEmit || true",
+    "develop": "tsup --watch",
+    "prebuild": "pnpm run build:assets",
     "build": "tsup",
-    "develop": "tsup --watch"
+    "build:assets": "yarn build:icons && yarn build:illustrations"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
