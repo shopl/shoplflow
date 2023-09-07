@@ -19,6 +19,7 @@
   --spacing30: 30px;
   --spacing32: 32px;
   --spacing40: 40px;
+  --dropShadow: 0px 8px 16px 0px rgba(0,0,0,0.12);
 }
 :root[data-shoplflow][data-shoplflow=hada] {
   --coolgray300: #8092aa;

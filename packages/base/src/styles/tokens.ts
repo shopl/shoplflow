@@ -140,6 +140,10 @@ export const spacingTokens = {
  spacing32,
  spacing40,
 };
+const dropShadow = 'var(--dropShadow)';
+export const boxShadowTokens = {
+ dropShadow,
+};
 const heading1_700 = '.heading1_700';
 const heading1_400 = '.heading1_400';
 const heading2_700 = '.heading2_700';
