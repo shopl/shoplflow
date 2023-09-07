@@ -9,28 +9,29 @@ function App() {
 
   const SomeText = styled.div`
     color: var(--primary400);
+    box-shadow: var(--dropShadow);
   `;
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer noopener">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <a href='https://vitejs.dev' target='_blank' rel='noreferrer noopener'>
+          <img src={viteLogo} className='logo' alt='Vite logo' />
         </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer noopener">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href='https://react.dev' target='_blank' rel='noreferrer noopener'>
+          <img src={reactLogo} className='logo react' alt='React logo' />
         </a>
       </div>
       <SomeText>Some Text</SomeText>
       <h1 className={'heading1_700'}>Vite + React</h1>
 
-      <div className="card">
+      <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
     </>
   );
 }
