@@ -98,18 +98,6 @@ function processFontWeightTokens(tokens) {
     return fontWeightTokens;
 }
 
-// "dropShadow": {
-//       "value": {
-//         "x": "0",
-//         "y": "8",
-//         "blur": "16",
-//         "spread": "0",
-//         "color": "rgba(0,0,0,0.12)",
-//         "type": "dropShadow"
-//       },
-//       "type": "boxShadow"
-//     },
-
 function processBoxShadowTokens(tokens) {
     Object.keys(tokens).forEach((key) => {
         const value = tokens[key];
