@@ -10,6 +10,9 @@ on:
 jobs:
   jest-test:
     runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       - name: 코드를 체크아웃하고 있어요.
@@ -54,47 +57,47 @@ jobs:
           echo "::set-output name=status::${{ job.status }}"
 
 
-      - name: 테스트 Status와 Color를 설정하고 있어요.
-        id: set_status_and_color
-        run: |
-          if [ "${{ job.status }}" == "success" ]; then
-          echo "::set-output name=status_text::Jest 테스트가 완료되었어요."
-          echo "::set-output name=color::good"
-          elif [ "${{ job.status }}" == "failure" ]; then
-          echo "::set-output name=status_text::Jest 테스트가 실패했어요."
-          echo "::set-output name=color::danger"
-          else
-          echo "::set-output name=status_text::Jest 테스트 상태를 확인하세요."
-          echo "::set-output name=color::warning"
-          fi
-
-      - name: Slack에 알림을 보내고 있어요.
-        uses: 8398a7/action-slack@v3
-        with:
-          status: custom
-          fields: workflow,job,commit,repo,ref,author,took
-          custom_payload: |
-            {
-              attachments: [{
-              title: "${{ steps.set_status_and_color.outputs.status_text }}",
-              color: "${{ steps.set_status_and_color.outputs.color }}",
-              text: `
-                ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
-                `,
-                actions: [
-                  {
-                    type: "button",
-                    text: "Jest Test Report 확인하기",
-                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
-                  },
-                  {
-                    type: "button",
-                    text: "PR 확인하기",
-                    url: "${{ github.event.pull_request.html_url }}"
-                  }
-                ]
-              }]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#      - name: 테스트 Status와 Color를 설정하고 있어요.
+#        id: set_status_and_color
+#        run: |
+#          if [ "${{ job.status }}" == "success" ]; then
+#          echo "::set-output name=status_text::Jest 테스트가 완료되었어요."
+#          echo "::set-output name=color::good"
+#          elif [ "${{ job.status }}" == "failure" ]; then
+#          echo "::set-output name=status_text::Jest 테스트가 실패했어요."
+#          echo "::set-output name=color::danger"
+#          else
+#          echo "::set-output name=status_text::Jest 테스트 상태를 확인하세요."
+#          echo "::set-output name=color::warning"
+#          fi
+#
+#      - name: Slack에 알림을 보내고 있어요.
+#        uses: 8398a7/action-slack@v3
+#        with:
+#          status: custom
+#          fields: workflow,job,commit,repo,ref,author,took
+#          custom_payload: |
+#            {
+#              attachments: [{
+#              title: "${{ steps.set_status_and_color.outputs.status_text }}",
+#              color: "${{ steps.set_status_and_color.outputs.color }}",
+#              text: `
+#                ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
+#                `,
+#                actions: [
+#                  {
+#                    type: "button",
+#                    text: "Jest Test Report 확인하기",
+#                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
+#                  },
+#                  {
+#                    type: "button",
+#                    text: "PR 확인하기",
+#                    url: "${{ github.event.pull_request.html_url }}"
+#                  }
+#                ]
+#              }]
+#            }
+#        env:
+#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 

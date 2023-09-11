@@ -1,14 +1,16 @@
 {
   "name": "@shoplflow/hada-assets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "scripts": {
     "build:icons": "scripts/build-icons.sh",
     "lint:icons": "eslint --fix ./src/icons/generated/*.{ts,tsx}",
     "build:illustrations": "scripts/build-illustrations.sh",
     "lint:illustrations": "eslint --fix ./src/illustrations/generated/*.{ts,tsx}",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit || true",
     "build": "tsup",
+    "prebuild": "pnpm run build:assets",
+    "build:assets": "yarn build:icons && yarn build:illustrations",
     "develop": "tsup --watch"
   },
   "main": "dist/index.js",

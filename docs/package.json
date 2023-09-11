@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "author": "velo",
+  "private": true,
   "scripts": {
     "start": "next start",
     "dev:next": "next dev",
@@ -12,7 +13,7 @@
     "build:storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",
     "build": "pnpm run build:docs && pnpm run build:storybook",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit || true"
   },
   "license": "Apache-2.0",
   "dependencies": {

@@ -4,7 +4,7 @@ const { separateTokens } = require('./seperate-tokens.cjs');
 
 const rootPath = process.cwd();
 
-const { typographyTokenKeys, hadaTokens, shoplTokens, fontWeightTokens, borderRadiusTokens, spacingTokens } =
+const { typographyTokenKeys, hadaTokens, shoplTokens, fontWeightTokens, borderRadiusTokens, spacingTokens, boxShadowTokens } =
     separateTokens(tokens);
 
 const PREFIX = '/* Generate by scripts/generate-tokens.js */\n' +
@@ -60,6 +60,7 @@ async function generateTsTokens() {
     tsContent += mappingTsTokenObject(borderRadiusTokens, 'borderRadiusTokens');
     tsContent += mappingTsTokenObject(shoplTokens.colorTokens, 'colorTokens');
     tsContent += mappingTsTokenObject(spacingTokens, 'spacingTokens');
+    tsContent += mappingTsTokenObject(boxShadowTokens, 'boxShadowTokens');
     tsContent += generateTypographyTokens()
     fs.writeFileSync(rootPath + '/src/styles/tokens.ts', tsContent);
 }
@@ -70,6 +71,7 @@ async function generateCssTokens() {
     cssContent += mappingTokenObject(fontWeightTokens, '');
     cssContent += mappingTokenObject(borderRadiusTokens, '');
     cssContent += mappingTokenObject(spacingTokens, 'spacings');
+    cssContent += mappingTokenObject(boxShadowTokens, 'boxShadows');
     cssContent += '}\n';
     cssContent += ':root[data-shoplflow][data-shoplflow=hada] {\n';
     cssContent += mappingTokenObject(hadaTokens.colorTokens, '');

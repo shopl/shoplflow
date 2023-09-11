@@ -1,5 +1,17 @@
 # @shoplflow/base
 
+## 0.3.0
+
+### Minor Changes
+
+- [#65](https://github.com/shopl/shoplflow/pull/65) [`4fb80fd`](https://github.com/shopl/shoplflow/commit/4fb80fd8513dcac5db2a2ed66580bd120a3edd3f) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - add box-shadow generate code
+
+## 0.2.1
+
+### Patch Changes
+
+- [#57](https://github.com/shopl/shoplflow/pull/57) [`9250c9d`](https://github.com/shopl/shoplflow/commit/9250c9d897bc113711e7b88b537d53b4c2101b22) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - color palette 추가
+
 ## 0.2.0
 
 ### Minor Changes

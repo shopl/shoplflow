@@ -10,7 +10,7 @@ const typeMapper = {
   },
   icon: {
     replace: 'ic-',
-    exportnameReplace: 'IC',
+    exportnameReplace: 'Ic',
     replaceTo: 'Icon',
   },
 };

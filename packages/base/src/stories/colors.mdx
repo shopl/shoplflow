@@ -1,0 +1,79 @@
+import {colorTokens} from "../styles/tokens";
+import '../styles/global.css';
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import {ShoplflowProvider} from "../providers/index";
+import {extractColors} from "../utils/extractColors";
+
+
+
+<Meta title="Colors" />
+
+# Colors
+
+
+
+<ShoplflowProvider>
+    <ColorPalette>
+
+        <ColorItem
+            title="colors.primary"
+            subtitle="Primary"
+            colors={{ ...extractColors(colorTokens, 'primary') }}
+        />
+        <ColorItem
+            title="colors.hada"
+            subtitle="brand Color"
+            colors={{ ...extractColors(colorTokens, 'hada') }}
+        />
+        <ColorItem
+            title="colors.shopl"
+            subtitle="brand Color"
+            colors={{ ...extractColors(colorTokens, 'shopl') }}
+        />
+        <ColorItem
+            title="colors.coolgray"
+            subtitle="coolgray"
+            colors={{ ...extractColors(colorTokens, 'coolgray') }}
+        />
+        <ColorItem
+            title="colors.navy"
+            subtitle="navy"
+            colors={{ ...extractColors(colorTokens, 'navy') }}
+        />
+        <ColorItem
+            title="colors.neutral"
+            subtitle="neutral"
+            colors={{ ...extractColors(colorTokens, 'neutral') }}
+        />
+        <ColorItem
+            title="colors.red"
+            subtitle="red"
+            colors={{ ...extractColors(colorTokens, 'red') }}
+        />
+        <ColorItem
+            title="colors.ocean"
+            subtitle="ocean"
+            colors={{ ...extractColors(colorTokens, 'ocean') }}
+        />
+        <ColorItem
+            title="colors.purple"
+            subtitle="purple"
+            colors={{ ...extractColors(colorTokens, 'purple') }}
+        />
+        <ColorItem
+            title="colors.yellow"
+            subtitle="yellow"
+            colors={{ ...extractColors(colorTokens, 'yellow') }}
+        />
+        <ColorItem
+            title="colors.green"
+            subtitle="green"
+            colors={{ ...extractColors(colorTokens, 'green') }}
+        />
+        <ColorItem
+            title="colors.background"
+            subtitle="background"
+            colors={{ ...extractColors(colorTokens, 'background') }}
+        />
+    </ColorPalette>
+</ShoplflowProvider>

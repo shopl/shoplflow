@@ -1,6 +1,7 @@
 const colorTokens = {};
 let spacingTokens = {};
 let borderRadiusTokens = {};
+let boxShadowTokens = {};
 const fontWeightTokens = {};
 
 let typographyTokenKeys = [];
@@ -97,6 +98,18 @@ function processFontWeightTokens(tokens) {
     return fontWeightTokens;
 }
 
+function processBoxShadowTokens(tokens) {
+    Object.keys(tokens).forEach((key) => {
+        const value = tokens[key];
+
+        if (value.type === 'boxShadow') {
+            console.log(value);
+            boxShadowTokens[value.value.type] = `${value.value.x}px ${value.value.y}px ${value.value.blur}px ${value.value.spread}px ${value.value.color}`;
+        }
+    });
+    return boxShadowTokens;
+}
+
 
 function separateTokens(tokens) {
     const token = tokens.shoplflow;
@@ -123,6 +136,7 @@ function separateTokens(tokens) {
 
     spacingTokens = processSpacingTokens(token);
     borderRadiusTokens = processRadiusTokens(token);
+    boxShadowTokens = processBoxShadowTokens(token);
 
     typographyTokenKeys = [...new Set(typographyTokenKeys)];
 
@@ -132,6 +146,7 @@ function separateTokens(tokens) {
         typographyTokenKeys,
         spacingTokens,
         colorTokens,
+        boxShadowTokens,
         borderRadiusTokens,
         fontWeightTokens,
     };

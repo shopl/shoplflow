@@ -37,8 +37,7 @@ jobs:
       - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
-          cache: "pnpm"
-          node-version-file: ".nvmrc"
+          cache: pnpm
 
       - name: pass-check 라벨을 확인하고 있어요.
         run: |
