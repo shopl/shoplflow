@@ -1,0 +1,31 @@
+import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
+import Text from './Text';
+import * as TextStories from "./Text.stories";
+
+<Meta of={TextStories} />
+
+# Text
+
+디자인 시스템에서 사용하는 텍스트 컴포넌트에요.
+
+기본적으로 하단에 보이는 스타일을 사용하며 예외적으로 스타일을 적용해야할 경우 `Typography`속성 대신 `fontWeight` `fontSize` 속성을 이용해주세요.
+
+> as 속성을 이용해 HTML 태그를 변경할 수 있어요. (기본값: span)
+
+## Overview
+
+<Canvas of={TextStories.AllTexts} />
+
+## Usage
+
+```tsx
+import { Text, Typography } from '@hada/ui-kit';
+
+const Example = () => {
+  return <Text typograghy={'heading1_700'}>텍스트</Text>;
+};
+```
+
+## Props
+
+<ArgsTable of={Text} />
