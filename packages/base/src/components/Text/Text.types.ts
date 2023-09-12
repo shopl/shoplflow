@@ -1,11 +1,9 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, HTMLAttributes } from 'react';
 
 import type { ColorTokens, TypographyTokens } from '../../styles';
 import type { ChildrenProps, RenderConfigProps } from '../../utils/type/ComponentProps';
 
-export interface TextOptionProps extends RenderConfigProps {
-  className?: string;
-
+export interface TextOptionProps {
   /**
    * 타이포그레피를 설정합니다.
    */
@@ -25,4 +23,8 @@ export interface TextOptionProps extends RenderConfigProps {
   wordBreak?: CSSProperties['wordBreak'];
 }
 
-export interface TextProps extends TextOptionProps, ChildrenProps {}
+export interface TextProps
+  extends TextOptionProps,
+    ChildrenProps,
+    RenderConfigProps,
+    Omit<HTMLAttributes<HTMLSpanElement>, 'color'> {}
