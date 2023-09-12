@@ -26,7 +26,7 @@ export const AllTexts: StoryFn<TextProps> = (args) => {
           <Text typography={allTypographyKeys[index]} {...args}>
             {args.children}
           </Text>
-          <Text typography={'caption_400'}>{args.typography}</Text>
+          <Text typography={'caption_400'}>{args.typography ?? allTypographyKeys[index]}</Text>
         </Stack.Vertical>
       ))}
     </Stack.Vertical>
