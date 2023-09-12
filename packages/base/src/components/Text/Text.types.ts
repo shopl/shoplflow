@@ -13,7 +13,7 @@ export interface TextOptionProps {
   /**
    * 텍스트를 몇 줄까지 보여줄지를 설정합니다.
    */
-  maxLines?: number;
+  lineClamp?: number;
   whiteSpace?: CSSProperties['whiteSpace'];
   display?: CSSProperties['display'];
   textAlign?: CSSProperties['textAlign'];

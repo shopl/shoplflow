@@ -7,6 +7,7 @@ import { colorTokens } from '../../styles';
 const setEllipsis = (maxLines: number) => {
   return css`
     display: -webkit-box;
+    line-clamp: ${maxLines};
     -webkit-line-clamp: ${maxLines};
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -18,7 +19,7 @@ export const StyledText = styled.span<TextOptionProps>`
   display: ${({ display }) => display && display};
   align-items: center;
   color: ${({ color }) => color && colorTokens[color]};
-  ${({ maxLines }) => maxLines && setEllipsis(maxLines)};
+  ${({ lineClamp }) => lineClamp && setEllipsis(lineClamp)};
   text-align: ${({ textAlign }) => textAlign && textAlign};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
   ${({ textDecorations }) =>
