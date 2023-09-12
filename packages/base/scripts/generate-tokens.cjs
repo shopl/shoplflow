@@ -67,6 +67,9 @@ async function generateTsTokens() {
 
 async function generateCssTokens() {
     let cssContent = PREFIX;
+    cssContent += '*{\n';
+    cssContent += '  box-sizing: border-box;\n';
+    cssContent += '}\n';
     cssContent += ':root[data-shoplflow] {\n';
     cssContent += mappingTokenObject(fontWeightTokens, '');
     cssContent += mappingTokenObject(borderRadiusTokens, '');

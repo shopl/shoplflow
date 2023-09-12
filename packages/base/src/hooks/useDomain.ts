@@ -15,9 +15,6 @@ export const useDomain = ({ domain = 'SHOPL' }: UseDomainProps) => {
   }, [domain]);
 
   useEffect(() => {
-    if (!domainType) {
-      throw new Error('domainType is undefined');
-    }
     document.documentElement.dataset.shoplflow = domainType;
     if (domainType === 'SHOPL') {
       document.documentElement.dataset.shoplflow = 'shopl';

@@ -4,6 +4,7 @@ import type { Decorator, Preview } from "@storybook/react";
 import { useState } from "react";
 import {ShoplflowProvider} from "../src";
 import '../src/styles/global.css'
+import './index.css';
 
 
 
