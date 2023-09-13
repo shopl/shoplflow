@@ -66,6 +66,7 @@ export const BodyContainer = styled.div<{
 }>`
   display: flex;
   width: 100%;
+  overflow: hidden;
   flex-direction: column;
   padding: ${({ isIncludeHeader }) => getModalBodyPadding(isIncludeHeader)};
 `;
@@ -76,6 +77,7 @@ export const BodyContainerInner = styled.div`
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 `;
 
 export const FooterContainer = styled.div`
