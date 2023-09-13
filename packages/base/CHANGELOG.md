@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.4.0
+
+### Minor Changes
+
+- [#67](https://github.com/shopl/shoplflow/pull/67) [`1b71edb`](https://github.com/shopl/shoplflow/commit/1b71edb92de264ae6150fbb189f55787cb44cc84) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - add Text Component
+
 ## 0.3.0
 
 ### Minor Changes
