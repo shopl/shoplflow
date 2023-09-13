@@ -44,11 +44,17 @@ export const Container = styled.div<ModalContainerProps>`
   background: var(--neutral0);
   box-shadow: var(--dropShadow);
   overflow: hidden;
+  flex-grow: 1;
+  height: max-content;
+  height: ${({ height }) => height}px;
+  max-height: 1200px;
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
 `;
 
 export const HeaderContainer = styled.div`
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px 12px 24px;
@@ -59,13 +65,23 @@ export const BodyContainer = styled.div<{
   isIncludeHeader: boolean;
 }>`
   display: flex;
+  width: 100%;
   flex-direction: column;
   padding: ${({ isIncludeHeader }) => getModalBodyPadding(isIncludeHeader)};
+`;
+
+export const BodyContainerInner = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 `;
 
 export const FooterContainer = styled.div`
   display: flex;
   width: 100%;
+
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;

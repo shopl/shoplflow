@@ -19,7 +19,12 @@ export interface ModalContainerProps extends ModalContainerOptionProps, SizeVari
   children?: React.ReactNode | React.ReactNode[];
 }
 
-export interface ModalContainerOptionProps {}
+export interface ModalContainerOptionProps {
+  /**
+   * 모달의 높이를 설정합니다.
+   */
+  height: number;
+}
 
 // Modal Header
 export interface ModalHeaderProps extends ModalHeaderOptionProps, ChildrenProps {}
@@ -34,6 +39,7 @@ export interface ModalHeaderType extends React.FC<ModalHeaderProps> {
 export interface ModalBodyProps extends ModalBodyOptionProps, ChildrenProps {}
 export interface ModalBodyOptionProps {
   isIncludeHeader?: boolean;
+  height?: number;
 }
 export const MODAL_BODY_KEY = Symbol('MODAL_BODY');
 export interface ModalBodyType extends React.FC<ModalBodyProps> {

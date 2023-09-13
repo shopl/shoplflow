@@ -81,5 +81,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "dependencies": {
+    "react-custom-scrollbars-2": "^4.5.0"
   }
 }

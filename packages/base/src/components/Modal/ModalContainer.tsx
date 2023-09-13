@@ -21,6 +21,7 @@ const ModalContainer = ({ children, ...rest }: ModalContainerProps) => {
     if (isIncludeHeader) {
       return React.cloneElement(child, {
         isIncludeHeader: isIncludeHeader.current,
+        height: rest.height,
       } as React.HTMLAttributes<HTMLElement> & ModalBodyProps);
     }
     return child;
