@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { DomainType } from '../types/Domain';
 
 type UseDarkModeProps = {
-  domain?: DomainType;
+  domain: DomainType;
 };
 
 export function useDomain({ domain = 'SHOPL' }: UseDarkModeProps) {
@@ -13,6 +13,7 @@ export function useDomain({ domain = 'SHOPL' }: UseDarkModeProps) {
       setDomainType(domain);
     }
   }, [domain]);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // const domain = localStorage.getItem('domain');
@@ -24,6 +25,7 @@ export function useDomain({ domain = 'SHOPL' }: UseDarkModeProps) {
     if (!domainType) {
       return;
     }
+
     document.documentElement.dataset.shoplflow = domainType;
     if (domainType === 'SHOPL') {
       document.documentElement.dataset.shoplflow = 'shopl';
@@ -33,5 +35,4 @@ export function useDomain({ domain = 'SHOPL' }: UseDarkModeProps) {
       // localStorage.setItem('domain', domainType);
     }
   }, [domainType]);
-  return null;
 }
