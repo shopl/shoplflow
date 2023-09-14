@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
 import type { ModalContainerProps } from './Modal.types';
+import { css } from '@emotion/react';
+import { borderRadiusTokens, colorTokens } from '../../styles';
+import { boxShadowTokens } from '../../styles/tokens';
 
 const MODAL_SIZE_XXS = 400;
 const MODAL_SIZE_XS = 500;
@@ -30,19 +33,25 @@ const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
   }
 };
 
-const getModalBodyPadding = (isIncludeHeader: boolean) => {
+const getModalBodyTopBottomPadding = (isIncludeHeader: boolean) => {
   if (isIncludeHeader) {
-    return '16px 24px 24px 24px';
+    return css`
+      padding-top: 16px;
+      padding-bottom: 24px;
+    `;
   }
-  return '24px';
+  return css`
+    padding-top: 24px;
+    padding-bottom: 24px;
+  `;
 };
 
 export const Container = styled.div<ModalContainerProps>`
   display: flex;
   flex-direction: column;
-  border-radius: var(--border-radius08);
-  background: var(--neutral0);
-  box-shadow: var(--dropShadow);
+  border-radius: ${borderRadiusTokens.borderRadius08};
+  background: ${colorTokens.neutral0};
+  box-shadow: ${boxShadowTokens.dropShadow};
   overflow: hidden;
   flex-grow: 1;
   height: max-content;
@@ -63,30 +72,39 @@ export const HeaderContainer = styled.div`
 
 export const BodyContainer = styled.div<{
   isIncludeHeader: boolean;
+  height: string | number;
 }>`
   display: flex;
   width: 100%;
   overflow: hidden;
   flex-direction: column;
-  padding: ${({ isIncludeHeader }) => getModalBodyPadding(isIncludeHeader)};
+  background: ${colorTokens.neutral0};
+  min-height: ${({ height }) => height}px;
+  flex: 1;
+  ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}
 `;
 
-export const BodyContainerInner = styled.div`
+export const ModalBodyContent = styled.div<{
+  isIncludeHeader: boolean;
+  sizeVar: ModalContainerProps['sizeVar'];
+}>`
   display: flex;
-  width: 100%;
   flex-direction: column;
   height: 100%;
+  width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
   box-sizing: border-box;
-  overflow: hidden;
+  padding: 0 24px;
+  background: ${colorTokens.neutral0};
 `;
 
 export const FooterContainer = styled.div`
   display: flex;
   width: 100%;
-
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   padding: 16px 24px;
   gap: 12px;
+  background: ${colorTokens.neutral0};
 `;

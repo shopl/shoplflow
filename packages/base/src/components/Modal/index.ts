@@ -9,3 +9,5 @@ export const Modal = {
   Body: ModalBody,
   Footer: ModalFooter,
 };
+
+export * from './Modal.types';

@@ -1,8 +1,8 @@
 import React from 'react';
 import { FooterContainer } from './Modal.styled';
-import type { ModalFooterProps } from './Modal.types';
+import type { ModalFooterProps, ModalFooterType } from './Modal.types';
 
-const ModalFooter = ({ children }: ModalFooterProps) => {
+const ModalFooter: ModalFooterType = ({ children }: ModalFooterProps) => {
   return <FooterContainer>{children}</FooterContainer>;
 };
 

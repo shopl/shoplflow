@@ -1,8 +1,28 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import styled from '@emotion/styled';
+import { Modal, useHandleModal } from '@shoplflow/base';
+
+const TestModal = () => {
+  const { addModal, removeModal } = useHandleModal();
+  return (
+    <Modal.Container
+      outsideClick={() =>
+        removeModal({
+          deps: 1,
+        })
+      }
+    >
+      <Modal.Header>Header</Modal.Header>
+      <Modal.Body>
+        <button onClick={() => addModal(<TestModal />)}>addModal</button>
+      </Modal.Body>
+      <Modal.Footer>Footer</Modal.Footer>
+    </Modal.Container>
+  );
+};
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,6 +31,8 @@ function App() {
     color: var(--primary400);
     box-shadow: var(--dropShadow);
   `;
+
+  const { addModal } = useHandleModal();
 
   return (
     <>
@@ -27,6 +49,7 @@ function App() {
 
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        <button onClick={() => addModal(<TestModal />)}>addModal</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

@@ -23,8 +23,16 @@ export const Primary: StoryFn<ModalContainerProps> = (args) => (
       <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
     </Modal.Body>
     <Modal.Footer>
-      <Text typography={'body1_400'}>버튼이 들어가는데 버튼을 아직 안만들었어요.</Text>
+      <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
     </Modal.Footer>
+  </Modal.Container>
+);
+
+export const Body: StoryFn<ModalContainerProps> = (args) => (
+  <Modal.Container {...args}>
+    <Modal.Body>
+      <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
+    </Modal.Body>
   </Modal.Container>
 );
 
@@ -45,7 +53,7 @@ export const BodyFooter: StoryFn<ModalContainerProps> = (args) => (
       <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
     </Modal.Body>
     <Modal.Footer>
-      <Text typography={'body1_400'}>버튼이 들어가는데 버튼을 아직 안만들었어요.</Text>
+      <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
     </Modal.Footer>
   </Modal.Container>
 );
