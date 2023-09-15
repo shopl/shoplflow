@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.5.0
+
+### Minor Changes
+
+- [#71](https://github.com/shopl/shoplflow/pull/71) [`c6dbc67`](https://github.com/shopl/shoplflow/commit/c6dbc67e5699b00ff1f7265083f4b8be710627bb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal compoent 추가
+
+### Patch Changes
+
+- [#71](https://github.com/shopl/shoplflow/pull/71) [`c6dbc67`](https://github.com/shopl/shoplflow/commit/c6dbc67e5699b00ff1f7265083f4b8be710627bb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - bundler 변경
+
 ## 0.4.0
 
 ### Minor Changes
