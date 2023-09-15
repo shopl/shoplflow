@@ -22,7 +22,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles": "./dist/index.css",
+    "./styles": "./dist/global.css",
     "./package.json": "./package.json"
   },
   "main": "dist/index.cjs",
