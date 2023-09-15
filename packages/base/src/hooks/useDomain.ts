@@ -15,13 +15,9 @@ export const useDomain = ({ domain = 'SHOPL' }: UseDomainProps) => {
   }, [domain]);
 
   useEffect(() => {
-    document.documentElement.dataset.shoplflow = domainType;
-    if (domainType === 'SHOPL') {
-      document.documentElement.dataset.shoplflow = 'shopl';
+    if (!domainType) {
+      return;
     }
-    if (domainType === 'HADA') {
-      document.documentElement.dataset.shoplflow = 'hada';
-    }
+    document.documentElement.dataset.shoplflow = domainType?.toLowerCase();
   }, [domainType]);
-  return null;
 };
