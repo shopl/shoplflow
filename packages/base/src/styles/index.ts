@@ -1,5 +1,11 @@
-import type { boxShadowTokens } from './tokens';
-import { colorTokens, spacingTokens, fontWeightTokens, borderRadiusTokens, typographyTokens } from './tokens';
+import {
+  borderRadiusTokens,
+  boxShadowTokens,
+  colorTokens,
+  fontWeightTokens,
+  spacingTokens,
+  typographyTokens,
+} from './tokens';
 
 import './global.css';
 
@@ -11,4 +17,4 @@ type FontWeightTokens = keyof typeof fontWeightTokens;
 type TypographyTokens = keyof typeof typographyTokens;
 
 export type { ColorTokens, SpacingTokens, BorderRadiusTokens, FontWeightTokens, TypographyTokens, BoxShadowTokens };
-export { colorTokens, spacingTokens, fontWeightTokens, borderRadiusTokens, typographyTokens };
+export { colorTokens, spacingTokens, fontWeightTokens, borderRadiusTokens, typographyTokens, boxShadowTokens };
