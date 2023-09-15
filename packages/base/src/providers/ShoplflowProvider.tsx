@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useDomain } from '../hooks/useDomain';
 import type { DomainType } from '../types/Domain';
+import ModalPortal from '../portal/ModalPortal';
 
 export interface ShoplflowProviderProps {
   domain?: DomainType;
@@ -12,7 +13,13 @@ const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProp
   useDomain({
     domain,
   });
-  return <>{children}</>;
+
+  return (
+    <>
+      <ModalPortal />
+      {children}
+    </>
+  );
 };
 
 export default ShoplflowProvider;

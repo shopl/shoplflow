@@ -1,5 +1,8 @@
 /* Generate by scripts/generate-tokens.js */
 /* eslint-disable */
+*{
+  box-sizing: border-box;
+}
 :root[data-shoplflow] {
   --font-weight-regular: 400;
   --font-weight-medium: 500;

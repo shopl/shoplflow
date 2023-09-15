@@ -5,6 +5,7 @@ import { useState } from "react";
 import {ShoplflowProvider} from "../src";
 import './index.css';
 import '../src/styles/global.css'
+import './index.css';
 
 
 

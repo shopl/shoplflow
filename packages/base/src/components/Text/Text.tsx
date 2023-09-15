@@ -9,7 +9,7 @@ const Text = forwardRef(
   (
     {
       children,
-      typography = 'title1_700',
+      typography = 'body1_400',
       whiteSpace,
       color = 'neutral700',
       display = 'inline-block',
