@@ -3,6 +3,10 @@ import type { CSSProperties, HTMLAttributes } from 'react';
 import type { ColorTokens, TypographyTokens } from '../../styles';
 import type { ChildrenProps, RenderConfigProps } from '../../utils/type/ComponentProps';
 
+export type ButtonSize = 's' | 'm';
+
+export type ButtonType = 'primary' | 'secondary' | 'solid' | 'ghost';
+
 export interface TextOptionProps {
   /**
    * 타이포그레피를 설정합니다.
