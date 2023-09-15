@@ -6,6 +6,10 @@
 node_modules
 .cache
 
+# IDE
+.vscode
+.idea
+
 # testing
 coverage
 
