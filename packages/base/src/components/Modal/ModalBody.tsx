@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { BodyContainer, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps, ModalBodyType } from './Modal.types';
 import { MODAL_BODY_KEY } from './Modal.types';
@@ -8,32 +8,52 @@ import { useResizeObserver } from '../../hooks';
 const ModalBody: ModalBodyType = ({
   children,
   isIncludeHeader = false,
+  isIncludeFooter = false,
   sizeVar,
   height: modalContainerHeight,
 }: ModalBodyProps) => {
-  const { height: windowHeight } = useResizeObserver(document.body);
+  const { height: windowHeight } = useResizeObserver(document.body, {
+    trackHeight: true,
+  });
 
   const headerHeight = 64;
   const footerHeight = 64;
-  const gap = headerHeight + footerHeight;
-  const topBottomGap = 64;
+
+  const topBottomMargin = 64;
+  const getHeaderFooterHeight = useCallback(() => {
+    let result = 0;
+    if (isIncludeHeader) {
+      result += headerHeight;
+    }
+    if (isIncludeFooter) {
+      result += footerHeight;
+    }
+    return result;
+  }, [isIncludeFooter, isIncludeHeader]);
+
+  const headerFooterHeight = useMemo(() => getHeaderFooterHeight(), [getHeaderFooterHeight]);
 
   const setAutoHeightMin = () => {
     if (modalContainerHeight) {
-      return modalContainerHeight - gap;
+      return modalContainerHeight - headerFooterHeight;
     } else {
       return '100%';
     }
   };
 
+  const heightUnderMaxHeight = windowHeight - topBottomMargin - headerFooterHeight;
+
+  const heightOverMaxHeight = 1200 - topBottomMargin - headerFooterHeight;
+
   return (
     <BodyContainer isIncludeHeader={isIncludeHeader} height={setAutoHeightMin()}>
       <Scrollbars
         id={`scrollbar`}
-        universal
-        autoHeight
+        // autoHeight
+        autoHeight={!modalContainerHeight}
         autoHeightMin={setAutoHeightMin()}
-        autoHeightMax={windowHeight - topBottomGap}
+        // autoHeightMax={'100%'}
+        autoHeightMax={windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight}
         autoHide
         autoHideTimeout={1000}
         autoHideDuration={200}

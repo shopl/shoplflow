@@ -54,7 +54,7 @@ export const Container = styled.div<ModalContainerProps>`
   box-shadow: ${boxShadowTokens.dropShadow};
   overflow: hidden;
   flex-grow: 1;
-  height: max-content;
+  height: initial;
   height: ${({ height }) => height}px;
   max-height: 1200px;
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
@@ -76,10 +76,11 @@ export const BodyContainer = styled.div<{
 }>`
   display: flex;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   flex-direction: column;
   background: ${colorTokens.neutral0};
-  min-height: ${({ height }) => height}px;
+  min-height: ${({ height }) => height};
   flex: 1;
   ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}
 `;
@@ -90,11 +91,11 @@ export const ModalBodyContent = styled.div<{
 }>`
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  width: 100%;
   max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
   box-sizing: border-box;
   padding: 0 24px;
+  overflow: hidden;
   background: ${colorTokens.neutral0};
 `;
 

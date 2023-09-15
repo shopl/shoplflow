@@ -24,6 +24,10 @@ export interface ModalContainerOptionProps {
    * 모달의 높이를 설정합니다.
    */
   height?: number;
+  /**
+   * 모달의 외부를 클릭했을 때 실행되는 함수입니다.
+   * @param args
+   */
   outsideClick?: (args?: any) => void;
 }
 
@@ -40,6 +44,7 @@ export interface ModalHeaderType extends React.FC<ModalHeaderProps> {
 export interface ModalBodyProps extends ModalBodyOptionProps, ChildrenProps {}
 export interface ModalBodyOptionProps {
   isIncludeHeader?: boolean;
+  isIncludeFooter?: boolean;
   height?: number;
   sizeVar?: ModalSizeType;
 }
@@ -51,7 +56,7 @@ export interface ModalBodyType extends React.FC<ModalBodyProps> {
 // Modal Footer
 export interface ModalFooterProps extends ModalFooterOptionProps, ChildrenProps {}
 export interface ModalFooterOptionProps {}
-export const MODAL_FOOTER = Symbol('MODAL_FOOTER');
+export const MODAL_FOOTER_KEY = Symbol('MODAL_FOOTER');
 export interface ModalFooterType extends React.FC<ModalBodyProps> {
-  [MODAL_FOOTER]?: boolean;
+  [MODAL_FOOTER_KEY]?: boolean;
 }

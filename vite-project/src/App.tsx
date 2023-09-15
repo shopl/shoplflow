@@ -6,7 +6,8 @@ import styled from '@emotion/styled';
 import { Modal, useHandleModal } from '@shoplflow/base';
 
 const TestModal = () => {
-  const { addModal, removeModal } = useHandleModal();
+  const { removeModal } = useHandleModal();
+  const array = new Array(200).fill(0);
   return (
     <Modal.Container
       outsideClick={() =>
@@ -17,7 +18,10 @@ const TestModal = () => {
     >
       <Modal.Header>Header</Modal.Header>
       <Modal.Body>
-        <button onClick={() => addModal(<TestModal />)}>addModal</button>
+        {array.map((_, index) => (
+          <div key={index}>test</div>
+        ))}
+        {/*<button onClick={() => addModal(<TestModal />)}>addModal</button>*/}
       </Modal.Body>
       <Modal.Footer>Footer</Modal.Footer>
     </Modal.Container>
