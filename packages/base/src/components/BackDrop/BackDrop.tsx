@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container } from './BackDrop.styled';
 import type { BackDropProps } from './BackDrop.types';
 import { fadeInOut } from '../../animation/fadeInOut';
+import { BackDropStyled } from './BackDrop.styled';
 
 const BackDrop = ({ children }: BackDropProps) => {
   return (
-    <Container variants={fadeInOut} initial={'initial'} animate={'animate'} exit={'exit'}>
+    <BackDropStyled variants={fadeInOut} initial={'initial'} animate={'animate'} exit={'exit'}>
       {children}
-    </Container>
+    </BackDropStyled>
   );
 };
 
