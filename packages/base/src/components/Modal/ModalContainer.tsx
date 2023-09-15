@@ -46,7 +46,6 @@ const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContain
       sizeVar: rest.sizeVar,
       height: rest.height,
     } as React.HTMLAttributes<HTMLElement> & ModalBodyProps);
-    return child;
   });
 
   return (
