@@ -22,12 +22,12 @@
     "build:docs": {
       "dependsOn": [
         "^build",
-        "build:package"
+        "^build:package"
       ]
     },
     "build:storybook": {
       "dependsOn": [
-        "build:package"
+        "^build:package"
       ],
       "outputs": [
         "dist/**",
