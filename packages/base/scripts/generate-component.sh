@@ -55,12 +55,10 @@ export default {
   component: ${prefix},
 } as Meta;
 
-export const Template: StoryFn<${prefix}Props> = (args) => {
+export const Playground: StoryFn<${prefix}Props> = (args) => {
   return (
     <Stack>
-      <Stack>
-        <${prefix} {...args} />
-      </Stack>
+      <${prefix} {...args} />
     </Stack>
   );
 };
@@ -77,7 +75,7 @@ import * as ${prefix}Stories from './${prefix}.stories';
 
 $prefix 컴포넌트 설명을 적어주세요.
 
-<Canvas of={${prefix}Stories.Primary} />
+<Canvas of={${prefix}Stories.Playground} />
 
 
 ## ArgsTable
