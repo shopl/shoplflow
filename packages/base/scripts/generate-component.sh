@@ -67,7 +67,7 @@ export const Template: StoryFn<${prefix}Props> = (args) => {
 
 " >> ${prefix}.stories.tsx
 
-echo "import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
+echo "import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
 import ${prefix} from './${prefix}';
 import * as ${prefix}Stories from './${prefix}.stories';
 
@@ -77,12 +77,12 @@ import * as ${prefix}Stories from './${prefix}.stories';
 
 $prefix 컴포넌트 설명을 적어주세요.
 
-<Canvas of={StackStories.Primary} />
+<Canvas of={${prefix}Stories.Primary} />
 
 
 ## ArgsTable
 
-<ArgsTable of={Stack} />
+<ArgsTable of={${prefix}} />
 
 ## Usage
 
