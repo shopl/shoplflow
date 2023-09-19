@@ -85,6 +85,7 @@
     ]
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "framer-motion": "^9.1.7",
     "react-custom-scrollbars-2": "^4.5.0",
     "zustand": "^4.4.1"
