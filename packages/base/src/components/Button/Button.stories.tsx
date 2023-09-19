@@ -5,18 +5,21 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 
 import { Text } from '../Text';
+import Button from './Button';
 
 import type { TextProps } from './Button.types';
 import type { TypographyTokens } from '../../styles';
 import { typographyTokens } from '../../styles';
 
-export default {
+const meta: Meta = {
   title: 'COMPONENTS/Button',
-  component: Text,
-} as Meta;
+  component: Button,
+};
 
-const allTypographyValues = Array.from(Object.values(typographyTokens));
-const allTypographyKeys = Array.from(Object.keys(typographyTokens)) as TypographyTokens[];
+export default meta;
+
+const allTypographyValues = Object.values(typographyTokens);
+const allTypographyKeys = Object.keys(typographyTokens) as TypographyTokens[];
 
 export const AllTexts: StoryFn<TextProps> = (args) => {
   return (

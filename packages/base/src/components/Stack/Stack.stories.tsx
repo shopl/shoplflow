@@ -4,10 +4,12 @@ import { Box } from '../../styles/Box';
 import { MotionStack, Stack } from './Stack';
 import type { StackProps } from './Stack.types';
 
-export default {
+const meta: Meta = {
   title: 'COMPONENTS/Stack',
   component: Stack,
-} as Meta;
+};
+
+export default meta;
 
 const TEST_ID = 'stack';
 
