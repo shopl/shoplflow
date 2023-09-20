@@ -15,7 +15,7 @@ export const getLineTypographyBySizeVar = (sizeVar: ChipProps['sizeVar']): Typog
   }
 };
 
-const solidStyle = ({ isSelected, color, background }: ChipProps) => css`
+const solidStyle = ({ isSelected, color, background, radius }: ChipProps) => css`
   padding: 7px 12px;
   gap: 4px;
   background: ${colorTokens.neutral150};
@@ -26,6 +26,11 @@ const solidStyle = ({ isSelected, color, background }: ChipProps) => css`
   &:hover {
     background: ${colorTokens.neutral200};
   }
+
+  ${radius &&
+  css`
+    border-radius: ${borderRadiusTokens.borderRadius06};
+  `};
   ${isSelected &&
   css`
     background: ${colorTokens[background ?? 'neutral600']};
