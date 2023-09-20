@@ -47,6 +47,7 @@ export const StyledChip = styled.li<ChipProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
   user-select: none;
   ${(props) => props.styleVar === 'SOLID' && solidStyle(props)};
   cursor: pointer;

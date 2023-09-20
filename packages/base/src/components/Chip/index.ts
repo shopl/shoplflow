@@ -1,3 +1,3 @@
-export * from './ChipToggle/ChipToggle';
+export { default as ChipToggle } from './ChipToggle/ChipToggle';
 export * from './Chip.types';
 export * from './Chip.styled';
