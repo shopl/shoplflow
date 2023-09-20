@@ -26,18 +26,37 @@ jobs:
         with:
           fetch-depth: 0
 
-
-      - name: pnpm을 설정하고 있어요.
-        uses: pnpm/action-setup@v2.2.2
+      - name: 코드를 체크아웃하고 있어요.
+        uses: actions/checkout@v2
         with:
-          version: 8.6.12
-          run_install: true
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
-      - name: 노드를 설정하고 있어요.
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-          cache: "pnpm"
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
 
       - name: NPM 토큰을 설정하고 있어요.
         run: |
