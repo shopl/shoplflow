@@ -1,36 +1,41 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import type { ChipProps, ChipStyleVariantType } from './Chip.types';
-import { borderRadiusTokens, colorTokens, typographyTokens } from '../../styles';
+import type { ChipProps } from './Chip.types';
+import type { TypographyTokens } from '../../styles';
+import { borderRadiusTokens, colorTokens } from '../../styles';
 
-export const getTypographyDefault = (styleVar: ChipStyleVariantType) => {
-  switch (styleVar) {
-    case 'PILL':
-      return typographyTokens.body1_400;
-    case 'RECTANGLE':
-      return typographyTokens.body1_400;
-    case 'LINE':
-      return typographyTokens.body3_400;
+export const getLineTypographyBySizeVar = (sizeVar: ChipProps['sizeVar']): TypographyTokens => {
+  switch (sizeVar) {
+    case 'XS':
+      return 'body3_400';
+    case 'S':
+      return 'body2_400';
+    default:
+      return 'body2_400';
   }
 };
 
-const pillStyle = css`
+const solidStyle = ({ isSelected, color, background }: ChipProps) => css`
   padding: 7px 12px;
   gap: 4px;
-  color: ${colorTokens.neutral400};
   background: ${colorTokens.neutral150};
   border-radius: ${borderRadiusTokens.borderRadius16};
-`;
-const rectangleStyle = css`
-  padding: 7px 12px;
-  gap: 4px;
-  background: ${colorTokens.neutral150};
-  border-radius: ${borderRadiusTokens.borderRadius06};
-`;
-const lineStyle = css`
-  gap: 4px;
-  padding: 8px 12px;
-  color: ${colorTokens.neutral700};
+  & > span {
+    color: ${colorTokens.neutral400};
+  }
+  &:hover {
+    background: ${colorTokens.neutral200};
+  }
+  ${isSelected &&
+  css`
+    background: ${colorTokens[background ?? 'neutral600']};
+    & > span {
+      color: ${colorTokens[color ?? 'neutral0']};
+    }
+    &:hover {
+      background: ${colorTokens.neutral700};
+    }
+  `};
 `;
 
 export const StyledChip = styled.li<ChipProps>`
@@ -38,8 +43,6 @@ export const StyledChip = styled.li<ChipProps>`
   align-items: center;
   justify-content: center;
   user-select: none;
-  ${({ styleVar }) => styleVar === 'PILL' && pillStyle};
-  ${({ styleVar }) => styleVar === 'RECTANGLE' && rectangleStyle};
-  ${({ styleVar }) => styleVar === 'LINE' && lineStyle};
+  ${(props) => props.styleVar === 'SOLID' && solidStyle(props)};
   cursor: pointer;
 `;

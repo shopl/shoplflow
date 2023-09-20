@@ -1,0 +1,31 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import ChipToggle from './ChipToggle';
+import * as ChipStories from './ChipToggle.stories';
+
+<Meta of={ChipStories} />
+
+# ChipToggle
+
+ChipToggle 컴포넌트는 Chip모양의 Toggle입니다.
+
+`default`, `hover` 상태의 커스텀은 불가능하며 `selected` 상태일 때의 `color`와 `background`를 변경할 수 있습니다.
+
+<Canvas of={ChipStories.Playground} />
+
+
+## ArgsTable
+
+<ArgsTable of={ChipToggle} />
+
+## Usage
+
+```
+import ChipToggle from './ChipToggle';
+
+<ChipToggle
+  text="ChipToggle"
+  selected={true}
+  onClick={() => {}}
+/>
+```
+
