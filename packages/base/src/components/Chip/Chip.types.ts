@@ -1,6 +1,5 @@
 import type { $Values } from '../../utils/type/$values';
 import type {
-  BackgroundColorProps,
   ColorTokenProps,
   SizeVariantProps,
   StyleVariantProps,
@@ -29,7 +28,6 @@ export interface ChipProps
     SelectedProps,
     DefaultSelectedProps,
     ColorTokenProps,
-    BackgroundColorProps,
     StyleVariantProps<ChipStyleVariantType>,
     SizeVariantProps<ChipSizeVariantType>,
     LeftAndRightElementProps,

@@ -8,9 +8,9 @@ import { useOnToggle } from '../../../hooks/useOnToggle';
 
 const ChipToggle = ({
   text,
-  background,
   isSelected,
   defaultSelected,
+  color = 'neutral600',
   styleVar = ChipStyleVariants.SOLID,
   sizeVar,
   leftSource,
@@ -28,9 +28,9 @@ const ChipToggle = ({
   return (
     <StyledChip
       {...rest}
+      color={color}
       isSelected={isToggled}
       styleVar={styleVar}
-      background={background}
       sizeVar={sizeVar}
       onClick={handleClick}
     >

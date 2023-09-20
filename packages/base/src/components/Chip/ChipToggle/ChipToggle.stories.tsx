@@ -21,3 +21,17 @@ export const Playground: StoryFn<ChipProps> = (args) => {
     </Stack>
   );
 };
+export const List: StoryFn<ChipProps> = (args) => {
+  return (
+    <Stack>
+      <Stack.Horizontal>
+        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} text={'샤플플로우'} />
+      </Stack.Horizontal>
+    </Stack>
+  );
+};
