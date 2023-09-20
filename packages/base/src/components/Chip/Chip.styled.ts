@@ -19,7 +19,7 @@ const solidStyle = ({ isSelected, color, radius }: ChipProps) => css`
   padding: 7px 12px;
   gap: 4px;
   background: ${colorTokens.neutral150};
-  border-radius: ${borderRadiusTokens.borderRadius16};
+  border-radius: ${borderRadiusTokens.borderRadius06};
   & > span {
     color: ${colorTokens.neutral400};
   }
@@ -29,7 +29,7 @@ const solidStyle = ({ isSelected, color, radius }: ChipProps) => css`
 
   ${radius &&
   css`
-    border-radius: ${borderRadiusTokens.borderRadius06};
+    border-radius: ${borderRadiusTokens.borderRadius16};
   `};
   ${isSelected &&
   css`

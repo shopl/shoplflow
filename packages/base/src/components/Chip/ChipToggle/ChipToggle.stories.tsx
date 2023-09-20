@@ -16,22 +16,35 @@ export const Playground: StoryFn<ChipProps> = (args) => {
   return (
     <Stack>
       <Stack>
-        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} />
       </Stack>
     </Stack>
   );
 };
+
+Playground.args = {
+  text: '샤플플로우',
+  defaultSelected: false,
+  radius: false,
+};
+
 export const List: StoryFn<ChipProps> = (args) => {
   return (
     <Stack>
       <Stack.Horizontal>
-        <ChipToggle {...args} text={'샤플플로우'} />
-        <ChipToggle {...args} text={'샤플플로우'} />
-        <ChipToggle {...args} text={'샤플플로우'} />
-        <ChipToggle {...args} text={'샤플플로우'} />
-        <ChipToggle {...args} text={'샤플플로우'} />
-        <ChipToggle {...args} text={'샤플플로우'} />
+        <ChipToggle {...args} />
+        <ChipToggle {...args} />
+        <ChipToggle {...args} />
+        <ChipToggle {...args} />
+        <ChipToggle {...args} />
+        <ChipToggle {...args} />
       </Stack.Horizontal>
     </Stack>
   );
+};
+
+List.args = {
+  text: '샤플플로우',
+  defaultSelected: false,
+  radius: false,
 };
