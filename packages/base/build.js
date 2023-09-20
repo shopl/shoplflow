@@ -36,6 +36,7 @@ const buildConfig = {
   metafile: true,
   write: true,
   logLevel: 'debug',
+  tsconfig: '../../tsconfig.esbuild.json',
   external: externals(),
   plugins: [dtsPlugin(), babel()],
 };
