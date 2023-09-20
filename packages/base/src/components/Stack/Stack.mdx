@@ -19,46 +19,17 @@ Stack 컴포넌트는 자식 컴포넌트의 레이아웃 영역을 감싸는 �
 
 <Canvas of={StackStories.Primary} />
 
-## Usage
-
-```ts {6} filename="Stack"
-
-import { Stack } from '@shoplflow/base';
-
-
-const Exmaple = () => {
-
-    return(
-        <Stack direction="horizontal" as={'section'}>
-            <Box background='primary400' />
-            <Box background='primary400' />
-            <Box background='primary400' />
-        </Stack>
-    )
-}
-```
-
-
-
-
-
-
-
-```ts {6} filename="MotionStack"
-import { MotionStack } from '@shoplflow/base';
-
-const Exmaple = () => {
-
-    return(
-        <MotionStack direction="horizontal">
-            <Box background='primary400' />
-            <Box background='primary400' />
-            <Box background='primary400' />
-        </MotionStack>
-    )
-}
-```
-
+## ArgsTable
 
 <ArgsTable of={Stack} />
+
+## Usage
+
+<Canvas of={StackStories.Horizontal} sourceState={"shown"}  />
+
+<Canvas of={StackStories.Vertical} sourceState={"shown"}  />
+
+<Canvas of={StackStories.Motion} sourceState={"shown"}  />
+
+
 

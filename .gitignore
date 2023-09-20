@@ -5,6 +5,11 @@
 .pnp.js
 node_modules
 .cache
+.turbo
+
+# IDE
+.vscode
+.idea
 
 # testing
 coverage
