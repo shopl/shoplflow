@@ -22,7 +22,6 @@ const TestModal = () => {
         {array.map((_, index) => (
           <ChipToggle text={'Toggle' + index} key={index} />
         ))}
-        {/*<button onClick={() => addModal(<TestModal />)}>addModal</button>*/}
       </Modal.Body>
       <Modal.Footer>Footer</Modal.Footer>
     </Modal.Container>

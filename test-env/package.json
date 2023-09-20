@@ -1,5 +1,5 @@
 {
-  "name": "vite-project",
+  "name": "test-env",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,18 +7,6 @@
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
-  },
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./src/styles": "./src/styles/global.css",
-    "./package.json": "./package.json"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
