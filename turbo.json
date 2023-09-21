@@ -19,8 +19,15 @@
         "!.next/cache/**"
       ]
     },
+    "build:mdx": {
+      "outputs": [
+        "dist/**",
+        "!.next/cache/**"
+      ]
+    },
     "build:docs": {
       "dependsOn": [
+        "^build:mdx",
         "^build",
         "^build:package"
       ]

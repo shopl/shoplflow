@@ -32,7 +32,8 @@ const buildConfig = {
   treeShaking: true,
   bundle: true,
   minify: true,
-  splitting: false,
+  minifySyntax: true,
+  minifyIdentifiers: true,
   metafile: true,
   write: true,
   logLevel: 'debug',
@@ -57,11 +58,6 @@ const cjsConfig = {
   outExtension: { '.js': '.cjs' },
 };
 
-const cssConfig = {
-  entryPoints: ['src/styles/global.css'],
-  outdir: 'dist',
-};
-
 if (process.argv.includes('--watch')) {
   esbuild
     .context(esmConfig)
@@ -78,5 +74,4 @@ if (process.argv.includes('--watch')) {
 } else {
   esbuild.build(esmConfig).catch(() => process.exit(1));
   esbuild.build(cjsConfig).catch(() => process.exit(1));
-  esbuild.build(cssConfig).catch(() => process.exit(1));
 }

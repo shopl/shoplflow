@@ -17,5 +17,8 @@
   },
   "assets": {
     "type": "page"
+  },
+  "utils": {
+    "type": "page"
   }
 }

@@ -1,5 +1,6 @@
 /**
  * throttle
+ *
  * @param {Function} fn
  * @param {number} wait
  * @return {(this:any) => void}
