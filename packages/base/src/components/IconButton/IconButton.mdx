@@ -1,0 +1,29 @@
+import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
+import IconButton from './IconButton';
+import * as TextStories from "./IconButton.stories";
+
+<Meta of={TextStories} />
+
+# IconButton
+
+디자인 시스템에서 사용하는 텍스트 컴포넌트에요.
+
+> as 속성을 이용해 HTML 태그를 변경할 수 있어요. (기본값: span)
+
+## Overview
+
+<Canvas of={TextStories.AllTexts} />
+
+## Usage
+
+```tsx
+import { IconButton, Typography } from '@hada/ui-kit';
+
+const Example = () => {
+  return <IconButton typograghy={'heading1_700'}>텍스트</IconButton>;
+};
+```
+
+## Props
+
+<ArgsTable of={Text} />

@@ -7,7 +7,7 @@ import { Stack } from '../Stack';
 import { Text } from '../Text';
 import Button from './Button';
 
-import type { TextProps } from './Button.types';
+import type { ButtonProps } from './Button.types';
 import type { TypographyTokens } from '../../styles';
 import { typographyTokens } from '../../styles';
 
@@ -21,7 +21,7 @@ export default meta;
 const allTypographyValues = Object.values(typographyTokens);
 const allTypographyKeys = Object.keys(typographyTokens) as TypographyTokens[];
 
-export const AllTexts: StoryFn<TextProps> = (args) => {
+export const AllTexts: StoryFn<ButtonProps> = (args) => {
   return (
     <Stack.Vertical>
       {allTypographyValues.map((typo, index) => (

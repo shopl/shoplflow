@@ -1,26 +1,26 @@
 import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
-import Text from './Text';
-import * as TextStories from "./Text.stories";
+import Button from './Button';
+import * as ButtonStories from "./Button.stories";
 
-<Meta of={TextStories} />
+<Meta of={ButtonStories} />
 
-# Text
+# Button
 
-디자인 시스템에서 사용하는 텍스트 컴포넌트에요.
+디자인 시스템에서 사용하는  버튼 컴포넌트에요.
 
-> as 속성을 이용해 HTML 태그를 변경할 수 있어요. (기본값: span)
+> as 속성을 이용해 HTML 태그를 변경할 수 있어요. (기본값: button)
 
 ## Overview
 
-<Canvas of={TextStories.AllTexts} />
+<Canvas of={ButtonStories.AllTexts} />
 
 ## Usage
 
 ```tsx
-import { Text, Typography } from '@hada/ui-kit';
+import { Button, Typography } from '@hada/ui-kit';
 
 const Example = () => {
-  return <Text typograghy={'heading1_700'}>텍스트</Text>;
+  return <Button typograghy={'heading1_700'}>텍스트</Button>;
 };
 ```
 

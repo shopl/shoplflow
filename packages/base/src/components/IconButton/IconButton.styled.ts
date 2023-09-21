@@ -1,3 +1,3 @@
 import styled from '@emotion/styled';
 
-export const StyledIconButton = styled.button``;
+export const StyledButton = styled.button``;

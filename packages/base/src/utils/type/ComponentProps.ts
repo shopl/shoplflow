@@ -4,7 +4,9 @@ import type { ColorTokens } from '../../styles';
 
 export type StringElementType = ElementType & string;
 
-export type HTMLPropsWithOutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
+export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
+
+export type PolymorphicRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>['ref'];
 
 export type RenderConfigProps = {
   /**
