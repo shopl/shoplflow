@@ -43,7 +43,7 @@ const solidStyle = ({ isSelected, color, radius }: ChipProps) => css`
   `};
 `;
 
-export const StyledChip = styled.li<ChipProps>`
+export const StyledChip = styled.button<ChipProps>`
   display: flex;
   align-items: center;
   justify-content: center;

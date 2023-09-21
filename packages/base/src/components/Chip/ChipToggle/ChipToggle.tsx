@@ -20,7 +20,7 @@ const ChipToggle = ({
 }: ChipProps) => {
   const [isToggled, handleToggle] = useOnToggle(isSelected, defaultSelected);
 
-  const handleClick = (e: MouseEvent<HTMLLIElement>) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     handleToggle();
     onClick && onClick(e);
   };

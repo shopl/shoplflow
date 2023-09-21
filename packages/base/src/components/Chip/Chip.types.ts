@@ -33,5 +33,5 @@ export interface ChipProps
     LeftAndRightElementProps,
     RadiusBooleanProps,
     TextProps,
-    Omit<HTMLAttributes<HTMLLIElement>, 'color'> {}
+    Omit<HTMLAttributes<HTMLButtonElement>, 'color'> {}
 export interface ChipOptionProps {}
