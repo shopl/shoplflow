@@ -4,9 +4,10 @@
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
-    "build:tokens": "node scripts/generate-tokens.cjs",
     "type-check": "tsc --noEmit || true",
+    "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "node build.js",
+    "build:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
     "dev:stories": "storybook dev -p 6007",
