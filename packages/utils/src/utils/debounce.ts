@@ -1,3 +1,6 @@
+/**
+ * Debounce 함수입니다.
+ */
 export const debounce = (func: Function, ms: number) => {
   let timeoutId: ReturnType<typeof setTimeout>;
   return function (this: unknown, ...args: unknown[]) {

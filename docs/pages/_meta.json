@@ -12,9 +12,6 @@
   "base": {
     "type": "page"
   },
-  "hooks": {
-    "type": "page"
-  },
   "assets": {
     "type": "page"
   },

@@ -11,6 +11,7 @@
     "dev:storybook": "storybook dev -p 6006",
     "build:docs": "next build",
     "build:mdx": "node scripts/generateDocs.mjs",
+    "dev": "node --watch scripts/generateDocs.mjs",
     "build:storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",
     "build": "pnpm run build:docs && pnpm run build:storybook",

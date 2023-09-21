@@ -10,7 +10,7 @@ import { useCallback, useEffect, useRef } from 'react';
  * 외부에서 생성한 ref를 사용할 경우 initialRef를 통해 ref를 전달해야 합니다.
  * `outSideClick` handler를 특정 컴포넌트에 의존시키기 위해 사용합니다.
  *
- * # Usage
+ * ## Usage
  *
  * ```tsx
  * import {useParentElementClick} from "@shoplflow/utils"
