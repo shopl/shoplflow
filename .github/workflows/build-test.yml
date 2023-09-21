@@ -22,16 +22,16 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
-      - name: Install Node.js
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 8.6.12
+          run_install: false
+
+      - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: 7
-          run_install: false
 
       - name: Get pnpm store directory
         shell: bash
@@ -45,10 +45,12 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
         run: pnpm install
 
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
+
 
       - name: 패키지를 빌드하고 있어요.
         run: pnpm turbo build
