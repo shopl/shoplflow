@@ -1,0 +1,14 @@
+{
+  "debounce": {
+    "title": "debounce"
+  },
+  "extractColors": {
+    "title": "extractColors"
+  },
+  "noop": {
+    "title": "noop"
+  },
+  "throttle": {
+    "title": "throttle"
+  }
+}

@@ -1,3 +1,4 @@
+// SHOPLFLOW_DOCS_IGNORE
 import ModalContainer from './ModalContainer';
 import ModalFooter from './ModalFooter';
 import ModalBody from './ModalBody';
