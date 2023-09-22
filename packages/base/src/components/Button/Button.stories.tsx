@@ -1,41 +1,57 @@
-import React from 'react';
-
-import type { Meta, StoryFn } from '@storybook/react';
-
-import { Stack } from '../Stack';
-
-import { Text } from '../Text';
+import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
+import { buttonSizeVar } from './Button.types';
 
-import type { ButtonProps } from './Button.types';
-import type { TypographyTokens } from '../../styles';
-import { typographyTokens } from '../../styles';
-
-const meta: Meta = {
+const meta: Meta<typeof Button> = {
   title: 'COMPONENTS/Button',
   component: Button,
+  argTypes: {
+    // buttonType: {
+    //   options: buttonTypes,
+    //   control: { type: 'radio' },
+    // },
+    sizeVar: {
+      options: buttonSizeVar,
+      control: { type: 'radio' },
+    },
+  },
 };
 
 export default meta;
+type Story = StoryObj<typeof Button>;
 
-const allTypographyValues = Object.values(typographyTokens);
-const allTypographyKeys = Object.keys(typographyTokens) as TypographyTokens[];
-
-export const AllTexts: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack.Vertical>
-      {allTypographyValues.map((typo, index) => (
-        <Stack.Vertical key={index}>
-          <Text typography={allTypographyKeys[index]} {...args}>
-            {args.children}
-          </Text>
-          <Text typography={'caption_400'}>{args.typography ?? allTypographyKeys[index]}</Text>
-        </Stack.Vertical>
-      ))}
-    </Stack.Vertical>
-  );
+export const Primary: Story = {
+  args: {
+    styleVar: 'primary',
+    sizeVar: 'm',
+    children: '버튼',
+    disabled: false,
+  },
 };
 
-AllTexts.args = {
-  children: 'The quick brown fox jumps over the lazy dog',
+export const Secondary: Story = {
+  args: {
+    styleVar: 'secondary',
+    sizeVar: 'm',
+    children: '버튼',
+    disabled: false,
+  },
+};
+
+export const Solid: Story = {
+  args: {
+    styleVar: 'solid',
+    sizeVar: 'm',
+    children: '버튼',
+    disabled: false,
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    styleVar: 'ghost',
+    sizeVar: 'm',
+    children: '버튼',
+    disabled: false,
+  },
 };
