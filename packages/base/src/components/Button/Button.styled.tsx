@@ -26,8 +26,8 @@ export const StyledButton = styled.button<ButtonOptionProps>`
     }};
   opacity: ${({ disabled }) => Boolean(disabled) && '0.5'};
   padding: 0px ${spacingTokens.spacing12};
-  min-width: ${({ sizeVar: buttonSize }) => {
-    switch (buttonSize) {
+  min-width: ${({ sizeVar }) => {
+    switch (sizeVar) {
       case 'm':
         return '72px';
       case 's':
@@ -36,8 +36,8 @@ export const StyledButton = styled.button<ButtonOptionProps>`
         return '72px';
     }
   }};
-  min-height: ${({ sizeVar: buttonSize }) => {
-    switch (buttonSize) {
+  min-height: ${({ sizeVar }) => {
+    switch (sizeVar) {
       case 'm':
         return '40px';
       case 's':
@@ -46,8 +46,8 @@ export const StyledButton = styled.button<ButtonOptionProps>`
         return '40px';
     }
   }};
-  background-color: ${({ styleVar: buttonType }) => {
-    switch (buttonType) {
+  background-color: ${({ styleVar }) => {
+    switch (styleVar) {
       case 'primary':
         return colorTokens['primary300'];
       case 'secondary':
@@ -63,11 +63,11 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   border-radius: ${borderRadiusTokens['borderRadius12']};
 
   &:hover {
-    background-color: ${({ styleVar: buttonType, disabled }) => {
+    background-color: ${({ styleVar, disabled }) => {
       if (disabled) {
         return;
       }
-      switch (buttonType) {
+      switch (styleVar) {
         case 'primary':
           return colorTokens['primary400'];
         case 'secondary':
@@ -84,6 +84,7 @@ export const StyledButton = styled.button<ButtonOptionProps>`
 
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
+  /* MARK :::: 속성 자체 여부를 사용하려면 하단의 문법으로 사용하세요! */
   /* ${({ disabled }) => {
     if (!disabled) {
       return;

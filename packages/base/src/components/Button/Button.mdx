@@ -1,6 +1,6 @@
-import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
 import Button from './Button';
 import * as ButtonStories from "./Button.stories";
+import {ArgsTable, ArgTypes, Canvas, Meta} from '@storybook/blocks';
 
 <Meta of={ButtonStories} />
 
@@ -17,10 +17,10 @@ import * as ButtonStories from "./Button.stories";
 import { Button } from '@shoplflow/base';
 
 const Example = () => {
-  return <Button buttonType='primary' buttonSize='m'>원하는 내용을 입력하세요</Button>;
+  return <Button styleVar='primary' buttonSize='m'>원하는 내용을 입력하세요</Button>;
 };
 ```
 
 ## Props
 
-<ArgsTable of={Button} />
+<ArgTypes of={ButtonStories} />

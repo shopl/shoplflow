@@ -7,9 +7,9 @@ export type ButtonSizeVar = 's' | 'm';
 
 export const buttonSizeVar: ButtonSizeVar[] = ['s', 'm'];
 
-export type ButtonStyleVar = 'primary' | 'secondary' | 'solid' | 'ghost' | 'floating';
+export type ButtonStyleVar = 'primary' | 'secondary' | 'solid' | 'ghost';
 
-export const buttonStyleVar: ButtonStyleVar[] = ['primary', 'secondary', 'solid', 'ghost', 'floating'];
+export const buttonStyleVar: ButtonStyleVar[] = ['primary', 'secondary', 'solid', 'ghost'];
 
 export type ButtonOptionProps<T extends React.ElementType = 'button'> = Omit<
   ComponentPropsWithoutRef<T>,

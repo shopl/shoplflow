@@ -1,5 +1,4 @@
 import { create } from '@storybook/theming';
-import { tokens } from '@shoplflow/base'
 
 
 export default create({
