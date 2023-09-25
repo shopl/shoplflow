@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import type { ChipProps } from './Chip.types';
-import type { TypographyTokens } from '../../styles';
-import { borderRadiusTokens, colorTokens } from '../../styles';
+import type { ChipToggleProps } from './ChipToggle.types';
+import type { TypographyTokens } from '../../../styles';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
 
-export const getLineTypographyBySizeVar = (sizeVar: ChipProps['sizeVar']): TypographyTokens => {
+export const getLineTypographyBySizeVar = (sizeVar: ChipToggleProps['sizeVar']): TypographyTokens => {
   switch (sizeVar) {
     case 'XS':
       return 'body3_400';
@@ -15,7 +15,7 @@ export const getLineTypographyBySizeVar = (sizeVar: ChipProps['sizeVar']): Typog
   }
 };
 
-const solidStyle = ({ isSelected, color, radius }: ChipProps) => css`
+const solidStyle = ({ isSelected, color, radius }: ChipToggleProps) => css`
   padding: 7px 12px;
   gap: 4px;
   background: ${colorTokens.neutral150};
@@ -43,7 +43,7 @@ const solidStyle = ({ isSelected, color, radius }: ChipProps) => css`
   `};
 `;
 
-export const StyledChip = styled.button<ChipProps>`
+export const StyledChip = styled.button<ChipToggleProps>`
   display: flex;
   align-items: center;
   justify-content: center;

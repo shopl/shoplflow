@@ -3,7 +3,7 @@ import React from 'react';
 import type { StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
 
-import type { ChipProps } from '../Chip.types';
+import type { ChipToggleProps } from './ChipToggle.types';
 import ChipToggle from './ChipToggle';
 
 export default {
@@ -12,7 +12,7 @@ export default {
   argTypes: { onClick: { action: 'clicked' } },
 };
 
-export const Playground: StoryFn<ChipProps> = (args) => {
+export const Playground: StoryFn<ChipToggleProps> = (args) => {
   return (
     <Stack>
       <Stack>
@@ -28,7 +28,7 @@ Playground.args = {
   radius: false,
 };
 
-export const List: StoryFn<ChipProps> = (args) => {
+export const List: StoryFn<ChipToggleProps> = (args) => {
   return (
     <Stack>
       <Stack.Horizontal>

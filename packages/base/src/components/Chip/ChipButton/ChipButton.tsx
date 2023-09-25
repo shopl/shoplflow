@@ -1,27 +1,10 @@
 import React from 'react';
-import { getLineTypographyBySizeVar, StyledChip } from '../Chip.styled';
-import type { ChipProps } from '../Chip.types';
-import { ChipStyleVariants } from '../Chip.types';
-import { Text } from '../../Text';
 
-const ChipButton = ({
-  text,
-  color = 'neutral600',
-  styleVar = ChipStyleVariants.SOLID,
-  sizeVar,
-  leftSource,
-  rightSource,
-  ...rest
-}: ChipProps) => {
-  return (
-    <StyledChip {...rest} styleVar={styleVar} sizeVar={sizeVar}>
-      {leftSource}
-      <Text typography={getLineTypographyBySizeVar(sizeVar)} color={color}>
-        {text}
-      </Text>
-      {rightSource}
-    </StyledChip>
-  );
+import { StyledChipButton } from './ChipButton.styled';
+import type { ChipButtonProps } from './ChipButton.types';
+
+const ChipButton = ({ ...rest }: ChipButtonProps) => {
+  return <StyledChipButton {...rest}>aa</StyledChipButton>;
 };
 
 export default ChipButton;
