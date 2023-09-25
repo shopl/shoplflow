@@ -6,6 +6,7 @@
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build": "node build.js",
+    "build:package": "node build.js",
     "dev": "node build.js --watch"
   },
   "main": "dist/index.cjs",

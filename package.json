@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "build:docs": "turbo run build:docs",
+    "build:package": "turbo run build:package",
     "build:storybook": "turbo run build:storybook",
     "lint": "turbo run lint",
     "dev:docs": "turbo run dev:docs",
