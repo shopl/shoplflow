@@ -41,6 +41,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
+    "@shoplflow/utils": "workspace:^",
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
