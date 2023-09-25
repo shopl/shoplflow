@@ -1,4 +1,3 @@
-import type React from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 /**
@@ -59,12 +58,8 @@ import { useCallback, useEffect, useRef } from 'react';
  * };
  * ```
  */
-export const useParentElementClick = <T extends HTMLElement>(
-  onClickOutside: (target: EventTarget | null) => void,
-  initialRef?: React.RefObject<T>,
-) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const ref = initialRef ?? useRef<T>(null);
+export const useParentElementClick = <T extends HTMLElement>(onClickOutside: (target: EventTarget | null) => void) => {
+  const ref = useRef<T>(null);
 
   const handleClick = useCallback(
     (e: Event) => {
@@ -89,7 +84,5 @@ export const useParentElementClick = <T extends HTMLElement>(
     };
   }, [ref, handleClick]);
 
-  return {
-    ref,
-  };
+  return ref;
 };

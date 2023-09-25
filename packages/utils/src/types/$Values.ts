@@ -16,4 +16,4 @@
  * type ColorKeys: $Values<typeof Color>;
  * ```
  */
-export type Values<T extends object> = T[keyof T];
+export type $Values<T extends object> = T[keyof T];
