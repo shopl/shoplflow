@@ -13,12 +13,14 @@ const borderRadius06 = 'var(--border-radius06)';
 const borderRadius08 = 'var(--border-radius08)';
 const borderRadius12 = 'var(--border-radius12)';
 const borderRadius16 = 'var(--border-radius16)';
+const borderRadius20 = 'var(--border-radius20)';
 export const borderRadiusTokens = {
  borderRadius04,
  borderRadius06,
  borderRadius08,
  borderRadius12,
  borderRadius16,
+ borderRadius20,
 };
 const coolgray300 = 'var(--coolgray300)';
 const coolgray200 = 'var(--coolgray200)';
@@ -144,8 +146,6 @@ const dropShadow = 'var(--dropShadow)';
 export const boxShadowTokens = {
  dropShadow,
 };
-
-
 const heading1_700 = '.heading1_700';
 const heading1_400 = '.heading1_400';
 const heading2_700 = '.heading2_700';

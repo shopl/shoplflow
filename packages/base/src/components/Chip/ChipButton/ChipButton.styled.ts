@@ -1,16 +1,57 @@
 import styled from '@emotion/styled';
-import type { ChipToggleProps } from '../ChipToggle/ChipToggle.types';
 import type { TypographyTokens } from '../../../styles';
+import type { ChipButtonProps } from './ChipButton.types';
+import { css } from '@emotion/react';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
+import { getNextColor } from '../../../utils/getNextColor';
 
-export const getLineTypographyBySizeVar = (sizeVar: ChipToggleProps['sizeVar']): TypographyTokens => {
+export const getLineTypographyBySizeVar = (sizeVar: ChipButtonProps['sizeVar']): TypographyTokens => {
   switch (sizeVar) {
     case 'XS':
-      return 'body3_400';
+      return 'caption_400';
     case 'S':
-      return 'body2_400';
+      return 'body3_400';
     default:
-      return 'body2_400';
+      return 'body3_400';
   }
 };
 
-export const StyledChipButton = styled.button``;
+const lineStyle = ({ color }: ChipButtonProps) => css`
+  background: ${colorTokens.neutral0};
+  border: 1px solid ${colorTokens[color!]};
+  border-radius: ${borderRadiusTokens.borderRadius20};
+  &:hover {
+    border: 1px solid ${colorTokens[getNextColor(color!, 2)]};
+  }
+  & > span {
+    color: ${colorTokens[getNextColor(color!, 4)]};
+  }
+`;
+
+const getStyleBySizeVar = (sizeVar: ChipButtonProps['sizeVar']) => {
+  switch (sizeVar) {
+    case 'XS':
+      return css`
+        padding: 4px 8px;
+      `;
+    case 'S':
+      return css`
+        padding: 7px 12px;
+      `;
+    default:
+      return css`
+        padding: 7px 12px;
+      `;
+  }
+};
+export const StyledChipButton = styled.button<ChipButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: fit-content;
+  gap: 4px;
+  cursor: pointer;
+  ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
+  ${(props) => props.styleVar === 'LINE' && lineStyle(props)};
+`;

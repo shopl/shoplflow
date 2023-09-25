@@ -18,3 +18,8 @@ export const Playground: StoryFn<ChipButtonProps> = (args) => {
     </Stack>
   );
 };
+Playground.args = {
+  text: '샤플플로우',
+  styleVar: 'LINE',
+  sizeVar: 'S',
+};

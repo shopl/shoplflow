@@ -16,7 +16,9 @@ export const getNextColor = (color: ColorTokens, step = 1): ColorTokens => {
 
   const nextColorNumber = Number(colorNumber) + 100 * step;
   const nextColorToken = `${colorName}${nextColorNumber}`;
-  const colorKeysOfColorName = Object.keys(colorTokens).filter((colorToken) => colorToken.includes(colorName));
+  const colorKeysOfColorName = Object.keys(colorTokens)
+    .filter((colorToken) => colorToken.includes(colorName))
+    .sort((a, b) => Number(a.replace(/[a-z]|_/g, '')) - Number(b.replace(/[a-z]|_/g, '')));
   const colorTokenKeys = Object.keys(colorTokens);
   const findColorToken = colorTokenKeys.find((colorToken) => colorToken === nextColorToken) as ColorTokens | undefined;
   const lastColorToken = colorKeysOfColorName[colorKeysOfColorName.length - 1] as ColorTokens;
