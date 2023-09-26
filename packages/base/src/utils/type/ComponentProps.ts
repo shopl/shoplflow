@@ -97,6 +97,7 @@ export interface TextProps {
 export interface ColorTokenProps {
   /**
    * 텍스트 혹은 아이콘의 색상을 설정합니다.
+   * styleVar이 있는 경우 메인색상을 설정합니다.
    */
   color?: ColorTokens;
 }
