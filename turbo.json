@@ -6,6 +6,7 @@
   "pipeline": {
     "build": {
       "dependsOn": [
+        "^build:package",
         "^build"
       ],
       "outputs": [
