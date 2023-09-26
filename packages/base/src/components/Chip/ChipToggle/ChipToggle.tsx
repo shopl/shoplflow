@@ -7,6 +7,7 @@ import { useOnToggle } from '../../../hooks/useOnToggle';
 import type { ChipToggleProps } from './ChipToggle.types';
 import { ChipToggleStyleVariants } from './ChipToggle.types';
 import { getLineTypographyBySizeVar, StyledChip } from './ChipToggle.styled';
+import { noop } from '@shoplflow/utils';
 
 const ChipToggle = ({
   text,
@@ -17,14 +18,15 @@ const ChipToggle = ({
   sizeVar,
   leftSource,
   rightSource,
-  onClick,
+  onClick = noop,
+  disabled = false,
   ...rest
 }: ChipToggleProps) => {
   const [isToggled, handleToggle] = useOnToggle(isSelected, defaultSelected);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    handleToggle();
-    onClick && onClick(e);
+    !disabled && handleToggle();
+    !disabled && onClick && onClick(e);
   };
 
   return (
@@ -35,6 +37,7 @@ const ChipToggle = ({
       styleVar={styleVar}
       sizeVar={sizeVar}
       onClick={handleClick}
+      disabled={disabled}
     >
       {leftSource}
       <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>

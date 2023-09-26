@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import type { ChipToggleProps } from './ChipToggle.types';
 import type { TypographyTokens } from '../../../styles';
 import { borderRadiusTokens, colorTokens } from '../../../styles';
+import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
 export const getLineTypographyBySizeVar = (sizeVar: ChipToggleProps['sizeVar']): TypographyTokens => {
   switch (sizeVar) {
@@ -50,6 +51,7 @@ export const StyledChip = styled.button<ChipToggleProps>`
   border: none;
   width: fit-content;
   user-select: none;
-  ${(props) => props.styleVar === 'SOLID' && solidStyle(props)};
   cursor: pointer;
+  ${(props) => props.styleVar === 'SOLID' && solidStyle(props)};
+  ${({ disabled }) => getDisabledStyle(disabled)};
 `;

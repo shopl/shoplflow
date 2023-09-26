@@ -20,6 +20,7 @@ export const Playground: StoryFn<ChipButtonProps> = (args) => {
 };
 Playground.args = {
   text: '샤플플로우',
+  disabled: false,
   styleVar: 'LINE',
   sizeVar: 'S',
 };

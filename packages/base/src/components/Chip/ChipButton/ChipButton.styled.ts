@@ -4,6 +4,7 @@ import type { ChipButtonProps } from './ChipButton.types';
 import { css } from '@emotion/react';
 import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { getNextColor } from '../../../utils/getNextColor';
+import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
 export const getLineTypographyBySizeVar = (sizeVar: ChipButtonProps['sizeVar']): TypographyTokens => {
   switch (sizeVar) {
@@ -52,6 +53,8 @@ export const StyledChipButton = styled.button<ChipButtonProps>`
   width: fit-content;
   gap: 4px;
   cursor: pointer;
+  background: ${({ background }) => background && colorTokens[background]};
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
   ${(props) => props.styleVar === 'LINE' && lineStyle(props)};
+  ${({ disabled }) => getDisabledStyle(disabled)};
 `;

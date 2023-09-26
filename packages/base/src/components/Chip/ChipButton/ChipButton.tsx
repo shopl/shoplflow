@@ -5,22 +5,23 @@ import { getLineTypographyBySizeVar, StyledChipButton } from './ChipButton.style
 import type { ChipButtonProps } from './ChipButton.types';
 import { Text } from '../../Text';
 import { noop } from '@shoplflow/utils';
+import { ChipButtonSizeVariants, ChipButtonStyleVariants } from './ChipButton.types';
 
 const ChipButton = ({
-  styleVar = 'LINE',
+  styleVar = ChipButtonStyleVariants.LINE,
   color = 'neutral200',
-  sizeVar = 'S',
+  sizeVar = ChipButtonSizeVariants.S,
   text,
   onClick = noop,
   disabled = false,
   ...rest
 }: ChipButtonProps) => {
   const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
-    disabled && onClick(e);
+    !disabled && onClick(e);
   };
 
   return (
-    <StyledChipButton styleVar={styleVar} color={color} {...rest} onClick={handleOnClick}>
+    <StyledChipButton styleVar={styleVar} color={color} {...rest} onClick={handleOnClick} disabled={disabled}>
       <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>
     </StyledChipButton>
   );

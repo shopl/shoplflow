@@ -8,17 +8,18 @@ import type {
   SelectedProps,
   RadiusBooleanProps,
   DefaultSelectedProps,
+  DisableProps,
 } from '../../../utils/type/ComponentProps';
 import type { HTMLAttributes } from 'react';
 
-export enum ChipToggleStyleVariants {
-  SOLID = 'SOLID',
-}
+export const ChipToggleStyleVariants = {
+  SOLID: 'SOLID',
+} as const;
 
-export enum ChipToggleSizeVariants {
-  S = 'S',
-  XS = 'XS',
-}
+export const ChipToggleSizeVariants = {
+  S: 'S',
+  XS: 'XS',
+} as const;
 
 export type ChipToggleStyleVariantType = $Values<typeof ChipToggleStyleVariants>;
 export type ChipToggleSizeVariantType = $Values<typeof ChipToggleSizeVariants>;
@@ -33,5 +34,6 @@ export interface ChipToggleProps
     LeftAndRightElementProps,
     RadiusBooleanProps,
     TextProps,
+    DisableProps,
     Omit<HTMLAttributes<HTMLButtonElement>, 'color'> {}
 export interface ChipToggleOptionProps {}

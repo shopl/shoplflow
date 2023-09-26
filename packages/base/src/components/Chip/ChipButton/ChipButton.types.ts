@@ -5,6 +5,7 @@ import type {
   StyleVariantProps,
   TextProps,
   DisableProps,
+  BackgroundColorProps,
 } from '../../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 import type { HTMLAttributes } from 'react';
@@ -28,5 +29,6 @@ export interface ChipButtonProps
     LeftAndRightElementProps,
     SizeVariantProps<ChipButtonSizeVariantType>,
     StyleVariantProps<ChipButtonStyleVariantType>,
-    ColorTokenProps {}
+    ColorTokenProps,
+    BackgroundColorProps {}
 export interface ChipButtonOptionProps {}
