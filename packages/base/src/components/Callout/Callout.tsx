@@ -5,10 +5,9 @@ import { Text } from '../Text';
 import type { CalloutProps } from './Callout.types';
 import type { IconSourceProps } from '../../utils/type/ComponentProps';
 
-const Callout = ({ children, styleVar = 'INFORMATION', leftSource, ...rest }: CalloutProps) => {
+const Callout = ({ children, styleVar = 'INFORMATION', ...rest }: CalloutProps) => {
   return (
     <StyledCallout {...rest} styleVar={styleVar}>
-      {leftSource}
       {children}
     </StyledCallout>
   );

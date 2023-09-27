@@ -30,7 +30,7 @@ Playground.args = {
 };
 export const Alert: StoryFn<CalloutProps> = (args) => {
   return (
-    <Stack width={'400px'}>
+    <Stack width={'500px'}>
       <Callout {...args}>
         <Callout.Icon iconSource={AlertIcon} />
         <Callout.Text>삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.</Callout.Text>

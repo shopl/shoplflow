@@ -15,6 +15,7 @@ const informationStyle = css`
 const alertStyle = css`
   background: ${colorTokens.red100};
   & > span {
+    align-self: center;
     color: ${colorTokens.red300};
   }
   & > svg > path {
@@ -24,9 +25,8 @@ const alertStyle = css`
 
 export const StyledCallout = styled.div<CalloutProps>`
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: flex-start;
+  align-items: start;
   padding: 6px 8px;
   gap: 4px;
   border-radius: ${borderRadiusTokens.borderRadius08};
@@ -35,6 +35,10 @@ export const StyledCallout = styled.div<CalloutProps>`
 `;
 
 export const StyledCalloutIcon = styled.svg`
+  display: flex;
   min-height: 20px;
   min-width: 20px;
+`;
+export const TextWrapper = styled.div`
+  padding: 2px 0;
 `;
