@@ -107,5 +107,6 @@ export const FooterContainer = styled.div`
   justify-content: flex-end;
   padding: 16px 24px;
   gap: 12px;
+  border-top: 1px solid ${colorTokens.neutral300};
   background: ${colorTokens.neutral0};
 `;
