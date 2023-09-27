@@ -1,13 +1,13 @@
 import type { HTMLAttributes } from 'react';
 import type { ColorTokens } from '../../styles';
 
-export interface ToggleSwitchProps extends ToggleSwitchOptionProps, Omit<HTMLAttributes<HTMLInputElement>, 'onClick'> {}
+export interface ToggleSwitchProps extends ToggleSwitchOptionProps, Omit<HTMLAttributes<HTMLInputElement>, 'onChange'> {}
 
 export interface ToggleSwitchOptionProps {
   /*
    * 요소 클릭시 실행되는 함수
    * */
-  onClick?: () => void;
+  onChange?: () => void;
   /*
    * 요소 활성화(checked) 여부
    * */

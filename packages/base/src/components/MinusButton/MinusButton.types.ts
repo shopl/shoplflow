@@ -3,7 +3,7 @@ import type { ColorTokens } from '../../styles';
 
 export interface MinusBoxProps
   extends MinusBoxOptionProps,
-    Omit<HTMLAttributes<HTMLInputElement>, 'onClick' | 'color'> {}
+    Omit<HTMLAttributes<HTMLButtonElement>, 'onClick' | 'color'> {}
 
 export interface MinusBoxOptionProps {
   /**
@@ -14,8 +14,4 @@ export interface MinusBoxOptionProps {
    * 요소의 배경색
    */
   color?: ColorTokens;
-  /**
-   * hover 상태의 요소 ㄴ배경색
-   */
-  hoverColor?: ColorTokens;
 }

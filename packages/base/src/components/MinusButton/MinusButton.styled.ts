@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import type { ColorTokens } from '../../styles';
 import { borderRadiusTokens, colorTokens } from '../../styles';
+import { getNextColor } from '../../utils/getNextColor';
 
 export const Container = styled.div`
   width: 32px;
@@ -8,14 +9,14 @@ export const Container = styled.div`
   padding: 7px;
 `;
 
-export const IconWrapper = styled.button<{ color: ColorTokens; hoverColor: ColorTokens }>`
+export const IconButton = styled.button<{ color: ColorTokens }>`
   display: flex;
   width: 16px;
   height: 16px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: ${borderRadiusTokens['borderRadius04']};
+  border-radius: ${borderRadiusTokens.borderRadius04};
   border: none;
   background: ${({ color }) => colorTokens[color]};
   cursor: pointer;
@@ -24,11 +25,6 @@ export const IconWrapper = styled.button<{ color: ColorTokens; hoverColor: Color
     background 0.1s ease;
 
   &:hover {
-    background: ${({ hoverColor }) => colorTokens[hoverColor]};
+    background: ${({ color }) => colorTokens[getNextColor(color!, 1)]};
   }
-`;
-
-export const Input = styled.input`
-  display: none;
-  position: absolute;
 `;

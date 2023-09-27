@@ -1,24 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, SwitchContainer } from './ToggleSwitch.styled';
 import type { ToggleSwitchProps } from './ToggleSwitch.types';
 
 const ToggleSwitch = ({
-  onClick,
+  onChange,
   isActive = false,
   isDisabled = false,
-  activeColor = 'shopl300',
+  activeColor = 'primary300',
   ...rest
 }: ToggleSwitchProps) => {
   const [active, setActive] = useState<boolean>(isActive);
+
+  useEffect(()=> {
+    setActive(isActive)
+  }, [isActive]);
+
   return (
     <SwitchContainer isDisabled={isDisabled}>
       <Switch
         type='checkbox'
         checked={active}
         disabled={isDisabled}
-        onChange={() => {
-          setActive((prev) => !prev);
-          onClick && onClick();
+        onChange={(e) => {
+          setActive(e.target.checked);
+          onChange && onChange();
         }}
         activeColor={activeColor}
         {...rest}

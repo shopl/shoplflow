@@ -12,7 +12,7 @@ export const SwitchContainer = styled.div<{ isDisabled: boolean }>`
   opacity: ${({ isDisabled }) => isDisabled && 0.3};
 
   &:hover {
-    background: ${({ isDisabled }) => !isDisabled && 'rgba(51, 51, 51, 0.05)'};
+    background: ${({ isDisabled }) => !isDisabled && colorTokens.neutral400_5};
   }
 `;
 
@@ -27,7 +27,7 @@ export const Switch = styled.input<{ activeColor: ColorTokens }>`
   position: relative;
   display: flex;
   align-items: center;
-  background: ${colorTokens['neutral350']};
+  background: ${colorTokens.neutral350};
   padding: 2px;
   margin: 0;
 
@@ -39,7 +39,7 @@ export const Switch = styled.input<{ activeColor: ColorTokens }>`
     position: absolute;
     width: 14px;
     height: 14px;
-    background: ${colorTokens['neutral0']};
+    background: ${colorTokens.neutral0};
     border-radius: 50%;
     transition: left 0.2s ease-in-out;
   }
@@ -56,7 +56,7 @@ export const Switch = styled.input<{ activeColor: ColorTokens }>`
       display: block;
       width: 14px;
       height: 14px;
-      background: ${colorTokens['neutral0']};
+      background: ${colorTokens.neutral0};
       border-radius: 50%;
     }
   }
