@@ -6,6 +6,7 @@
   "pipeline": {
     "build": {
       "dependsOn": [
+        "^build:package",
         "^build"
       ],
       "outputs": [
@@ -26,6 +27,7 @@
       ]
     },
     "build:docs": {
+      "cache": false,
       "dependsOn": [
         "^build:mdx",
         "^build",

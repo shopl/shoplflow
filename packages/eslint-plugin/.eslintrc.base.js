@@ -66,6 +66,7 @@ module.exports = {
     'no-unused-vars': 'error', // 사용하지 않는 변수를 금지합니다.
     'getter-return': 'warn', // getter 함수가 항상 값을 반환하도록 경고합니다.
     'prefer-const': 'error', // 가능한 한 const를 사용하도록 권장합니다.
+    'unused-imports/no-unused-imports': 'error', // 사용하지 않는 import 코드를 금지합니다.
     'import/no-unresolved': 'off',
     curly: ['error', 'all'], // 모든 제어문에 중괄호를 사용하도록 강제합니다.
     eqeqeq: ['error', 'always', { null: 'ignore' }], // 항상 일치 연산자 (=== 및 !==)를 사용하도록 강제합니다. null과 비교할 때는 이 규칙을 무시합니다.
