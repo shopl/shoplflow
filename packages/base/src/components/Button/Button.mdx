@@ -1,6 +1,6 @@
 import Button from './Button';
 import * as ButtonStories from "./Button.stories";
-import {ArgsTable, ArgTypes, Canvas, Meta} from '@storybook/blocks';
+import { Canvas, Meta, Controls} from '@storybook/blocks';
 
 <Meta of={ButtonStories} />
 
@@ -22,5 +22,4 @@ const Example = () => {
 ```
 
 ## Props
-
-<ArgTypes of={ButtonStories} />
+<Controls of={ButtonStories.Primary} />
