@@ -23,7 +23,7 @@ importers:
         version: link:packages/eslint-plugin
       '@turbo/gen':
         specifier: ^1.9.7
-        version: 1.10.12(@types/node@20.4.9)(typescript@4.9.3)
+        version: 1.10.12(@types/node@20.8.2)(typescript@4.9.3)
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.2.1
         version: 6.2.1(@typescript-eslint/parser@6.2.1)(eslint@8.46.0)(typescript@4.9.3)
@@ -205,6 +205,12 @@ importers:
 
   packages/base:
     dependencies:
+      '@shoplflow/hada-assets':
+        specifier: workspace:^
+        version: link:../hada-assets
+      '@shoplflow/shopl-assets':
+        specifier: workspace:^
+        version: link:../shopl-assets
       '@shoplflow/utils':
         specifier: workspace:^
         version: link:../utils
@@ -560,7 +566,7 @@ importers:
         version: 4.9.3
       vite:
         specifier: ^4.4.5
-        version: 4.4.5(@types/node@20.4.9)
+        version: 4.4.5(@types/node@20.8.2)
 
 packages:
 
@@ -8051,7 +8057,7 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@turbo/gen@1.10.12(@types/node@20.4.9)(typescript@4.9.3):
+  /@turbo/gen@1.10.12(@types/node@20.8.2)(typescript@4.9.3):
     resolution: {integrity: sha512-noop5+3MBFsgPQ7O2vQpS6YYiah+ZrOioa4cDDpZceUVsKVXvUHFmC2nEVyKSJZhO/8SLvbDE/esB/MGw5b2tw==}
     hasBin: true
     dependencies:
@@ -8063,7 +8069,7 @@ packages:
       node-plop: 0.26.3
       proxy-agent: 6.3.0
       semver: 7.5.4
-      ts-node: 10.9.1(@types/node@20.4.9)(typescript@4.9.3)
+      ts-node: 10.9.1(@types/node@20.8.2)(typescript@4.9.3)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.0
     transitivePeerDependencies:
@@ -8855,7 +8861,7 @@ packages:
       vite: ^4
     dependencies:
       '@swc/core': 1.3.78
-      vite: 4.4.5(@types/node@20.4.9)
+      vite: 4.4.5(@types/node@20.8.2)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -8902,7 +8908,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.19)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.19)
       react-refresh: 0.14.0
-      vite: 4.4.5(@types/node@20.4.9)
+      vite: 4.4.5(@types/node@20.8.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13378,7 +13384,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 20.4.9
+      '@types/node': 20.8.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -15314,7 +15320,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      ts-node: 10.9.1(@types/node@20.8.2)(typescript@4.9.5)
+      ts-node: 10.9.1(@types/node@20.4.9)(typescript@4.9.5)
       yaml: 1.10.2
     dev: true
 
@@ -17168,6 +17174,37 @@ packages:
       yn: 3.1.1
     dev: true
 
+  /ts-node@10.9.1(@types/node@20.8.2)(typescript@4.9.3):
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.8.2
+      acorn: 8.10.0
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 4.9.3
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+
   /ts-node@10.9.1(@types/node@20.8.2)(typescript@4.9.5):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
@@ -17902,7 +17939,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@4.4.5(@types/node@20.4.9):
+  /vite@4.4.5(@types/node@20.8.2):
     resolution: {integrity: sha512-4m5kEtAWHYr0O1Fu7rZp64CfO1PsRGZlD3TAB32UmQlpd7qg15VF7ROqGN5CyqN7HFuwr7ICNM2+fDWRqFEKaA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -17930,7 +17967,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.4.9
+      '@types/node': 20.8.2
       esbuild: 0.18.17
       postcss: 8.4.29
       rollup: 3.29.1

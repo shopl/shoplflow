@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "baseUrl": ".",
+    "declaration": true,
     "noFallthroughCasesInSwitch": true,
     "jsxImportSource": "@emotion/react",
     "outDir": "./dist",

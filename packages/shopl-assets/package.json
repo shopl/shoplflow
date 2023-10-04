@@ -11,14 +11,23 @@
     "develop": "tsup --watch",
     "prebuild": "pnpm run build:assets",
     "build": "tsup",
-    "build:assets": "yarn build:icons && yarn build:illustrations"
+    "build:assets": "pnpm run build:icons && pnpm run build:illustrations"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./styles": "./dist/global.css",
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
     "access": "public"
   },
