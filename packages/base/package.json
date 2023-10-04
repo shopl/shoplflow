@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
@@ -55,7 +55,6 @@
     "@storybook/addon-links": "^7.4.1",
     "@storybook/addon-mdx-gfm": "^7.4.1",
     "@storybook/addon-measure": "^7.4.1",
-    "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/addon-outline": "^7.4.1",
     "@storybook/addon-toolbars": "^7.4.1",
     "@storybook/addon-viewport": "^7.4.1",
@@ -85,6 +84,8 @@
     ]
   },
   "dependencies": {
+    "@shoplflow/utils": "workspace:^",
+    "classnames": "^2.3.2",
     "framer-motion": "^9.1.7",
     "react-custom-scrollbars-2": "^4.5.0",
     "zustand": "^4.4.1"
