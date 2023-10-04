@@ -17,7 +17,6 @@ export const SwitchContainer = styled.div<{ isDisabled: boolean }>`
 `;
 
 export const Switch = styled.input<{ activeColor: ColorTokens }>`
-  // inActive
   appearance: none;
   border: none;
   border-radius: 12px;
@@ -31,7 +30,7 @@ export const Switch = styled.input<{ activeColor: ColorTokens }>`
   padding: 2px;
   margin: 0;
 
-  // inActive slider
+  // slider
   &:before {
     content: '';
     left: 2px;
@@ -44,20 +43,11 @@ export const Switch = styled.input<{ activeColor: ColorTokens }>`
     transition: left 0.2s ease-in-out;
   }
 
-  // active
+  // selected
   &:checked {
     background: ${({ activeColor }) => colorTokens[activeColor]};
-
-    // active slider
     &:before {
-      content: '';
       left: 12px;
-      position: absolute;
-      display: block;
-      width: 14px;
-      height: 14px;
-      background: ${colorTokens.neutral0};
-      border-radius: 50%;
     }
   }
 

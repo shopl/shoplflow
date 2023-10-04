@@ -1,7 +1,9 @@
 import type { HTMLAttributes } from 'react';
 import type { ColorTokens } from '../../styles';
 
-export interface ToggleSwitchProps extends ToggleSwitchOptionProps, Omit<HTMLAttributes<HTMLInputElement>, 'onChange'> {}
+export interface ToggleSwitchProps
+  extends ToggleSwitchOptionProps,
+    Omit<HTMLAttributes<HTMLInputElement>, 'onChange'> {}
 
 export interface ToggleSwitchOptionProps {
   /*
@@ -11,7 +13,11 @@ export interface ToggleSwitchOptionProps {
   /*
    * 요소 활성화(checked) 여부
    * */
-  isActive?: boolean;
+  isSelected?: boolean;
+  /*
+   * 요소의 초기 선택 여부
+   * */
+  defaultSelected?: boolean;
   /*
    * 요소의 비활성화 여부
    * */
