@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.6.0
+
+### Minor Changes
+
+- [#79](https://github.com/shopl/shoplflow/pull/79) [`54598a3`](https://github.com/shopl/shoplflow/commit/54598a371a2fe6916dcbfb9841301259cdeaface) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ChipButton 추가&문서화
+
+  disabled 스타일 유틸함수 추가
+
+- [#79](https://github.com/shopl/shoplflow/pull/79) [`54598a3`](https://github.com/shopl/shoplflow/commit/54598a371a2fe6916dcbfb9841301259cdeaface) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ChipToggle 컴포넌트 추가
+
 ## 0.5.0
 
 ### Minor Changes

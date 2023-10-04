@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 import { Box } from '../../styles/Box';
 import { Modal } from './index';
 import type { ModalContainerProps } from './Modal.types';
@@ -11,7 +11,7 @@ import { useHandleModal } from '../../hooks';
 export default {
   title: 'COMPONENTS/Modal',
   component: ModalContainer,
-} as Meta;
+};
 
 const mockBoxs = new Array(20).fill(<Box background={'primary100'} width={'100%'} />);
 

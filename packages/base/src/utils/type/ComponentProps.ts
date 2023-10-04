@@ -1,12 +1,57 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactElement, ReactNode } from 'react';
 import type React from 'react';
-import type { ColorTokens } from '../../styles';
+import type { BorderRadiusTokens, ColorTokens } from '../../styles';
 
+/**
+ * HTML 태그에 대한 타입
+ */
 export type StringElementType = ElementType & string;
 
 export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
 
 export type PolymorphicRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>['ref'];
+
+// ------------------------------ Boolean Props ------------------------------
+
+export interface DisableProps {
+  /**
+   * 비활성화 여부를 설정합니다.
+   */
+  disabled?: boolean;
+}
+export interface SelectedProps {
+  /**
+   * 선택 여부를 설정합니다.
+   */
+  isSelected?: boolean;
+}
+export interface DefaultSelectedProps {
+  /**
+   * 기본 선택 여부를 설정합니다.
+   *
+   * SelectedProps보다 우선적으로 적용됩니다.
+   */
+  defaultSelected?: boolean;
+}
+
+/**
+ * RadiusBooleanProps는 RadiusProps와 함께 사용할 수 없습니다.
+ */
+export interface RadiusBooleanProps {
+  /**
+   * Radius를 토글할 수 있는 옵션입니다.
+   */
+  radius?: boolean;
+}
+
+// ------------------------------ System Props ------------------------------
+
+export interface RadiusProps {
+  /**
+   * Radius를 설정합니다.
+   */
+  radius?: BorderRadiusTokens;
+}
 
 export type RenderConfigProps = {
   /**
@@ -18,6 +63,7 @@ export type RenderConfigProps = {
    */
   as?: StringElementType;
 };
+
 export interface SizeVariantProps<Size> {
   /**
    * 컴포넌트의 크기를 설정합니다.
@@ -39,16 +85,17 @@ export interface ChildrenProps<Children = React.ReactNode> {
   children?: Children;
 }
 
-export interface DisableProps {
+export interface TextProps {
   /**
-   * 비활성화 여부를 설정합니다.
+   * 텍스트를 설정합니다.
    */
-  disabled?: boolean;
+  text?: string;
 }
 
 export interface ColorTokenProps {
   /**
    * 텍스트 혹은 아이콘의 색상을 설정합니다.
+   * styleVar이 있는 경우 메인색상을 설정합니다.
    */
   color?: ColorTokens;
 }
