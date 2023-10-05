@@ -14,13 +14,14 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clear:node_modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
     "refresh:node_modules": "pnpm run clear:node_modules && pnpm i",
+    "refresh:pnpm": "rm -rf .pnpm-store && refresh:node_modules",
     "changeset": "changeset",
     "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish",
     "type-check": "turbo run type-check",
     "prepare": "husky install",
     "post-checkout": "pnpm run refresh:node_modules",
-    "postinstall": "husky install"
+    "postinstall": "husky install && pnpm config set store-dir .pnpm-store"
   },
   "license": "Apache-2.0",
   "version": "0.0.1",

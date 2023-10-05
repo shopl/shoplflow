@@ -5,7 +5,6 @@ import { useState } from "react";
 import {ShoplflowProvider} from "../src";
 import './index.css';
 import '../src/styles/global.css'
-import './index.css';
 
 
 
@@ -31,7 +30,7 @@ const preview: Preview = {
 
 
 export const decorator: Decorator = (Story, context) => {
-  const [domain, setDomain] = useState<'HADA'|'SHOPL'>('HADA');
+  const [domain, setDomain] = useState<'HADA'|'SHOPL'>('SHOPL');
   const handleToggleTheme = () => {
     setDomain(domain === 'HADA' ? 'SHOPL' : 'HADA')
   }

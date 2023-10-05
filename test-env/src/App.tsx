@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
+
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import styled from '@emotion/styled';
-import { Modal, useHandleModal } from '@shoplflow/base';
+import { Modal, useHandleModal, ChipToggle } from '@shoplflow/base';
 
 const TestModal = () => {
   const { removeModal } = useHandleModal();
@@ -19,9 +20,8 @@ const TestModal = () => {
       <Modal.Header>Header</Modal.Header>
       <Modal.Body>
         {array.map((_, index) => (
-          <div key={index}>test</div>
+          <ChipToggle text={'Toggle' + index} key={index} />
         ))}
-        {/*<button onClick={() => addModal(<TestModal />)}>addModal</button>*/}
       </Modal.Body>
       <Modal.Footer>Footer</Modal.Footer>
     </Modal.Container>
