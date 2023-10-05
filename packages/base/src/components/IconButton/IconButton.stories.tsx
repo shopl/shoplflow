@@ -1,39 +1,47 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 import IconButton from './IconButton';
 import { colorTokens } from '../../styles';
-import { iconButtonSizeVar } from './IconButton.types';
+import type { IconButtonProps } from './IconButton.types';
+import { iconButtonSizeVar, iconButtonStyleVar } from './IconButton.types';
 
-const meta: Meta<typeof IconButton> = {
+export default {
   title: 'COMPONENTS/IconButton',
   component: IconButton,
   argTypes: {
+    styleVar: {
+      options: iconButtonStyleVar,
+      control: { type: 'select' },
+      description: '아이콘 버튼 스타일 타입',
+      defaultValue: 'primary',
+    },
     sizeVar: {
       options: iconButtonSizeVar,
       control: { type: 'radio' },
-      description: '버튼 사이즈',
-      defaultValue: 'm',
+      description: '아이콘 버튼 사이즈',
+      defaultValue: 'M',
     },
   },
 };
 
-export default meta;
-type Story = StoryObj<typeof IconButton>;
-
-export const Solid: Story = {
-  args: {
-    styleVar: 'solid',
-    sizeVar: 'm',
-    children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
-    disabled: false,
-  },
+export const Solid: StoryFn<IconButtonProps> = (args) => {
+  return <IconButton {...args} />;
 };
 
-export const Ghost: Story = {
-  args: {
-    styleVar: 'ghost',
-    sizeVar: 'm',
-    children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
-    disabled: false,
-  },
+Solid.args = {
+  styleVar: 'solid',
+  sizeVar: 'M',
+  children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
+  disabled: false,
+};
+
+export const Ghost: StoryFn<IconButtonProps> = (args) => {
+  return <IconButton {...args} />;
+};
+
+Ghost.args = {
+  styleVar: 'ghost',
+  sizeVar: 'M',
+  children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
+  disabled: false,
 };
