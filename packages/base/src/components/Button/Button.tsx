@@ -5,7 +5,7 @@ import type { ButtonComponent, ButtonProps } from './Button.types';
 
 const Button: ButtonComponent = forwardRef(
   <T extends React.ElementType = 'button'>(
-    { styleVar, sizeVar = 'm', style, color, as, children, leftChildren, rightChildren, ...rest }: ButtonProps<T>,
+    { styleVar, sizeVar = 'M', style, color, as, children, leftSource, rightSource, ...rest }: ButtonProps<T>,
     ref: React.ComponentPropsWithRef<T>['ref'],
   ) => {
     return (
@@ -19,14 +19,14 @@ const Button: ButtonComponent = forwardRef(
         color={color}
         {...rest}
       >
-        {leftChildren}
+        {leftSource}
         <Text
           color={styleVar === 'primary' ? 'neutral0' : 'neutral700'}
-          typography={sizeVar === 'm' ? 'body1_400' : 'body2_400'}
+          typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
         >
           {children}
         </Text>
-        {rightChildren}
+        {rightSource}
       </StyledButton>
     );
   },

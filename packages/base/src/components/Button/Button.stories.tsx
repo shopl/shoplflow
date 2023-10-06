@@ -1,14 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 import Button from './Button';
+import type { ButtonProps } from './Button.types';
 import { buttonSizeVar, buttonStyleVar } from './Button.types';
 
-const meta: Meta<typeof Button> = {
+export default {
   title: 'COMPONENTS/Button',
   component: Button,
   argTypes: {
-    buttonType: {
+    styleVar: {
       options: buttonStyleVar,
-      control: { type: 'radio' },
+      control: { type: 'select' },
       description: '버튼 타입',
       defaultValue: 'primary',
     },
@@ -16,46 +17,51 @@ const meta: Meta<typeof Button> = {
       options: buttonSizeVar,
       control: { type: 'radio' },
       description: '버튼 사이즈',
-      defaultValue: 'm',
+      defaultValue: 'M',
     },
   },
 };
 
-export default meta;
-type Story = StoryObj<typeof Button>;
-
-export const Primary: Story = {
-  args: {
-    styleVar: 'primary',
-    sizeVar: 'm',
-    children: '버튼',
-    disabled: false,
-  },
+export const Primary: StoryFn<ButtonProps> = (args) => {
+  return <Button {...args} />;
 };
 
-export const Secondary: Story = {
-  args: {
-    styleVar: 'secondary',
-    sizeVar: 'm',
-    children: '버튼',
-    disabled: false,
-  },
+Primary.args = {
+  styleVar: 'primary',
+  sizeVar: 'M',
+  children: '버튼',
+  disabled: true,
 };
 
-export const Solid: Story = {
-  args: {
-    styleVar: 'solid',
-    sizeVar: 'm',
-    children: '버튼',
-    disabled: false,
-  },
+export const Secondary: StoryFn<ButtonProps> = (args) => {
+  return <Button {...args} />;
 };
 
-export const Ghost: Story = {
-  args: {
-    styleVar: 'ghost',
-    sizeVar: 'm',
-    children: '버튼',
-    disabled: false,
-  },
+Secondary.args = {
+  styleVar: 'secondary',
+  sizeVar: 'M',
+  children: '버튼',
+  disabled: false,
+};
+
+export const Solid: StoryFn<ButtonProps> = (args) => {
+  return <Button {...args} />;
+};
+
+Solid.args = {
+  styleVar: 'solid',
+  sizeVar: 'M',
+  children: '버튼',
+  disabled: false,
+};
+
+export const Ghost: StoryFn<ButtonProps> = (args) => {
+  return <Button {...args} />;
+};
+
+Ghost.args = {
+  styleVar: 'ghost',
+  sizeVar: 'M',
+  children: '버튼',
+  disabled: false,
 };

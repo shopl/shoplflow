@@ -1,9 +1,9 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import type { PolymorphicComponentProps } from 'src/types/PolymorphicComponentProps';
 
-export type IconButtonSizeVar = 's' | 'm';
+export type IconButtonSizeVar = 'S' | 'M';
 
-export const iconButtonSizeVar: IconButtonSizeVar[] = ['s', 'm'];
+export const iconButtonSizeVar: IconButtonSizeVar[] = ['S', 'M'];
 
 export type IconButtonStyleVar = 'solid' | 'ghost';
 
