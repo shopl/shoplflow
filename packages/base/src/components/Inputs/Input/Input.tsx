@@ -50,6 +50,7 @@ const Input = forwardRef(
             id={uniqueId}
             value={value}
             ref={ref}
+            maxLength={maxLength}
             disabled={disabled}
             {...rest}
           />

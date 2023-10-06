@@ -1,0 +1,62 @@
+import { ArgsTable, Canvas, Story } from '@storybook/addon-docs'; import TextArea from "./TextArea";
+
+# TextArea
+
+html의 `textarea`와 동일하게 사용할 수 있어요.
+
+`maxLength` prop를 사용하여 최대 글자 수를 제한할 수 있으며 input 우측 하단에 현재 글자 수 및 최대 글자 수가 표시돼요.
+
+`height` prop를 사용하여 textarea의 높이를 조절할 수 있어요.
+
+> resize: none 속성이 적용되어있지만 추후에 변경될 수 있어요.
+
+## Overview
+
+
+<Story id="components-inputs-textarea--playground" />
+
+<Story id="components-inputs-textarea--maxlength" />
+
+<Story id="components-inputs-textarea--disabled" />
+
+
+
+
+## Usage
+
+```tsx
+import { TextArea } from '@hada/ui-kit';
+
+
+const App = () => {
+    return (
+      <TextArea />
+    )
+}
+```
+
+```tsx
+// with maxLength
+import { TextArea } from '@hada/ui-kit';
+
+
+const App = () => {
+    return (
+        <TextArea maxLength={30} />
+    )
+}
+```
+```tsx
+// Disabled
+import { TextArea } from '@hada/ui-kit';
+
+
+const App = () => {
+    return (
+        <TextArea maxLength={30} disabled />
+    )
+}
+```
+
+
+<ArgsTable of={TextArea} />
