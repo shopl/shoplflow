@@ -22,7 +22,7 @@ dist
 !.yarn/unplugged/**
 .yarn/install-state.gz
 
-**/src/**/generated/**/*.tsx
+**/src/**/generated/**/*
 
 # misc
 .DS_Store
