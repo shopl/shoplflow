@@ -7,4 +7,4 @@ export default {
   component: MinusButton,
 };
 
-export const Default: StoryFn<MinusBoxProps> = (args) => <MinusButton {...args} />;
+export const Playground: StoryFn<MinusBoxProps> = (args) => <MinusButton {...args} />;

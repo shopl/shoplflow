@@ -7,4 +7,4 @@ export default {
   component: Toggle,
 };
 
-export const Default: StoryFn<ToggleSwitchProps> = (args) => <Toggle {...args} />;
+export const Playground: StoryFn<ToggleSwitchProps> = (args) => <Toggle {...args} />;

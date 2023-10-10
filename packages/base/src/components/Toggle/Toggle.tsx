@@ -6,7 +6,7 @@ import { useOnToggle } from '../../hooks/useOnToggle';
 const Toggle = ({
   onChange,
   isSelected,
-  isDisabled = false,
+  disabled = false,
   activeColor = 'primary300',
   defaultSelected = false,
   ...rest
@@ -14,11 +14,11 @@ const Toggle = ({
   const [isToggled, handleToggle] = useOnToggle(isSelected, defaultSelected);
 
   return (
-    <SwitchContainer isDisabled={isDisabled}>
+    <SwitchContainer isDisabled={disabled}>
       <Switch
         type='checkbox'
         checked={isToggled}
-        disabled={isDisabled}
+        disabled={disabled}
         onChange={() => {
           handleToggle();
           onChange && onChange();
