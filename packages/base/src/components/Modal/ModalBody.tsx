@@ -1,11 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
 import { BodyContainer, ModalBodyContent } from './Modal.styled';
-import type { ModalBodyProps, ModalBodyType } from './Modal.types';
-import { MODAL_BODY_KEY } from './Modal.types';
+import type { ModalBodyProps } from './Modal.types';
 import Scrollbars from 'react-custom-scrollbars-2';
 import { useResizeObserver } from '../../hooks';
 
-const ModalBody: ModalBodyType = ({
+const ModalBody = ({
   children,
   isIncludeHeader = false,
   isIncludeFooter = false,
@@ -73,7 +72,5 @@ const ModalBody: ModalBodyType = ({
     </BodyContainer>
   );
 };
-
-ModalBody[MODAL_BODY_KEY] = true;
 
 export default ModalBody;
