@@ -15,6 +15,10 @@ const ModalBody: ModalBodyType = ({
   const { height: windowHeight } = useResizeObserver(document.body, {
     trackHeight: true,
   });
+  console.debug('windowHeight', windowHeight);
+  console.debug('isIncludeFooter', isIncludeFooter);
+  console.debug('isIncludeHeader', isIncludeHeader);
+  console.debug('sizeVar', sizeVar);
 
   const headerHeight = 64;
   const footerHeight = 64;

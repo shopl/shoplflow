@@ -10,6 +10,8 @@ import { noop } from '../../utils/noop';
 const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
   const ref = React.useRef<HTMLDivElement>(null);
   useOutsideClick<HTMLDivElement>(outsideClick, ref);
+  console.debug('ModalContainer', rest);
+  console.debug('children', children);
 
   const childrenArray = React.Children.toArray(children) as ReactNode[];
 

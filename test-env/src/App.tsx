@@ -7,16 +7,9 @@ import styled from '@emotion/styled';
 import { Modal, useHandleModal, ChipToggle } from '@shoplflow/base';
 
 const TestModal = () => {
-  const { removeModal } = useHandleModal();
   const array = new Array(200).fill(0);
   return (
-    <Modal.Container
-      outsideClick={() =>
-        removeModal({
-          deps: 1,
-        })
-      }
-    >
+    <Modal.Container>
       <Modal.Header>Header</Modal.Header>
       <Modal.Body>
         {array.map((_, index) => (
