@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import React, { Children } from 'react';
+import React from 'react';
 
 import { Container } from './Modal.styled';
 import type { ModalBodyProps, ModalContainerProps } from './Modal.types';
@@ -35,7 +35,7 @@ const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContain
     }
   });
 
-  const addPropInChildren = Children.map(childrenArray, (child: ReactNode) => {
+  const addPropInChildren = React.Children.map(childrenArray, (child: ReactNode) => {
     if (!React.isValidElement(child)) {
       return child;
     }

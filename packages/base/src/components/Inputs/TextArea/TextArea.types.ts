@@ -1,4 +1,5 @@
 import type React from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 export interface TextAreaOptionProps {
   name?: string;
@@ -7,6 +8,11 @@ export interface TextAreaOptionProps {
    * maxLength를 설정해요.
    */
   maxLength?: number;
+
+  /**
+   * 현재 텍스트의 길이W
+   */
+  nowLength?: number;
 
   /**
    * 에러여부를 설정해요.
@@ -27,8 +33,8 @@ export interface TextAreaOptionProps {
    * 비활성화 상태를 설정해요.
    */
   disabled?: boolean;
+
+  wrapperStyle?: React.CSSProperties;
 }
 
-export interface TextAreaProps extends React.HTMLAttributes<HTMLTextAreaElement>, TextAreaOptionProps {
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-}
+export type TextAreaProps = ComponentPropsWithoutRef<'textarea'> & TextAreaOptionProps;

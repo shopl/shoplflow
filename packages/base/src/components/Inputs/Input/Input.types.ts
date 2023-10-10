@@ -1,17 +1,16 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 export type InputOptionProps = {
-  nowLength?: number;
+  nowLength: number;
   maxLength?: number;
   wrapperStyle?: React.CSSProperties;
   errorText?: string;
-  canDelete?: boolean;
+  onDelete: (...args: any[]) => void;
+  confirmController?: {
+    hasBackground: boolean;
+    onConfirm: (...args: any[]) => void;
+    icon: ReactNode;
+  };
 };
 
 export type InputProps = ComponentPropsWithoutRef<'input'> & InputOptionProps;
-
-export type InputComponent = (
-  props: InputProps & {
-    ref?: React.ComponentPropsWithRef<'input'>['ref'];
-  },
-) => React.ReactElement;

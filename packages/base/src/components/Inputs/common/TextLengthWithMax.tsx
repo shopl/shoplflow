@@ -3,9 +3,9 @@ import { Wrapper } from './TextLengthWithMax.styled';
 import { spacingTokens } from '../../../styles';
 import type { TextLengthWithMaxProps } from './TextLengthWithMax.types';
 
-const TextLengthWithMax = ({ nowLength, maxLength }: TextLengthWithMaxProps) => {
+const TextLengthWithMax = ({ nowLength, maxLength, wrapperStyle }: TextLengthWithMaxProps) => {
   return (
-    <Wrapper style={{ paddingLeft: spacingTokens.spacing08 }}>
+    <Wrapper style={{ paddingLeft: spacingTokens.spacing08, ...(wrapperStyle || {}) }}>
       <Text typography='caption_400' color='neutral400'>
         {nowLength}
       </Text>
