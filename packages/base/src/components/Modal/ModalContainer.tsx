@@ -3,11 +3,11 @@ import React, { Children } from 'react';
 
 import { Container } from './Modal.styled';
 import type { ModalBodyProps, ModalContainerProps } from './Modal.types';
-import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY } from './Modal.types';
+import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY, ModalSize } from './Modal.types';
 import useOutsideClick from '../../hooks/useOutsideClick';
 import { noop } from '../../utils/noop';
 
-const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
+const ModalContainer = ({ children, outsideClick = noop, sizeVar = ModalSize.M, ...rest }: ModalContainerProps) => {
   const ref = React.useRef<HTMLDivElement>(null);
   useOutsideClick<HTMLDivElement>(outsideClick, ref);
   console.debug('ModalContainer', rest);
@@ -45,13 +45,13 @@ const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContain
     return React.cloneElement(child, {
       isIncludeHeader: Boolean(findHeader),
       isIncludeFooter: Boolean(findFooter),
-      sizeVar: rest.sizeVar,
+      sizeVar: sizeVar,
       height: rest.height,
     } as React.HTMLAttributes<HTMLElement> & ModalBodyProps);
   });
 
   return (
-    <Container ref={ref} {...rest}>
+    <Container ref={ref} sizeVar={sizeVar} {...rest}>
       {addPropInChildren}
     </Container>
   );
