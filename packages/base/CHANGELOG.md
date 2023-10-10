@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.7.0
+
+### Minor Changes
+
+- [#69](https://github.com/shopl/shoplflow/pull/69) [`577adc9`](https://github.com/shopl/shoplflow/commit/577adc98a316bede622cdc6135c81ac0974056d5) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - add Minus button and Toggle
+
+### Patch Changes
+
+- [#84](https://github.com/shopl/shoplflow/pull/84) [`6191c0f`](https://github.com/shopl/shoplflow/commit/6191c0f0b382eb04446454bc46de570a1e98dadf) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal test
+
 ## 0.6.0
 
 ### Minor Changes
