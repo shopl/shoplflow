@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.7.1
+
+### Patch Changes
+
+- [#85](https://github.com/shopl/shoplflow/pull/85) [`3c619d4`](https://github.com/shopl/shoplflow/commit/3c619d48a3ecfb98b41eb0c0c5ff740772f079d4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal test
+
 ## 0.7.0
 
 ### Minor Changes
