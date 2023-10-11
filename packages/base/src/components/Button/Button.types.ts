@@ -17,9 +17,9 @@ export const buttonSizeVar = {
 
 export type ButtonSizeVar = $Values<typeof buttonSizeVar>;
 
-export type ButtonStyleVar = 'primary' | 'secondary' | 'solid' | 'ghost';
+export type ButtonStyleVar = 'PRIMARY' | 'SECONDARY' | 'SOLID' | 'GHOST';
 
-export const buttonStyleVar: ButtonStyleVar[] = ['primary', 'secondary', 'solid', 'ghost'];
+export const buttonStyleVar: ButtonStyleVar[] = ['PRIMARY', 'SECONDARY', 'SOLID', 'GHOST'];
 
 // MARK : interface는 객체 구조를 가지기 때문에, 컴파일 시점에 객체 구조가 명확하게 설정되어 있어야 합니다. 따라서 동적 타입을 명시할 때는 타입을 선언하고, 정적 타입을 선언할 때는 interface를 사용합니다.
 export type ButtonOptionProps<T extends React.ElementType = 'button'> = Omit<

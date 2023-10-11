@@ -21,7 +21,7 @@ const Button: ButtonComponent = forwardRef(
       >
         {leftSource}
         <Text
-          color={styleVar === 'primary' ? 'neutral0' : 'neutral700'}
+          color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
           typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
         >
           {children}
