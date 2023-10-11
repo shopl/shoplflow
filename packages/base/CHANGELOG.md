@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.7.2
+
+### Patch Changes
+
+- [#87](https://github.com/shopl/shoplflow/pull/87) [`667d24c`](https://github.com/shopl/shoplflow/commit/667d24c62cb58fbf0bc36b4c2ab9530bcd5cef93) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal remove console
+
+- [#88](https://github.com/shopl/shoplflow/pull/88) [`77aa7b4`](https://github.com/shopl/shoplflow/commit/77aa7b40b7608fc56c94514926702226af4c949b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - base build config fix
+
+- [#87](https://github.com/shopl/shoplflow/pull/87) [`667d24c`](https://github.com/shopl/shoplflow/commit/667d24c62cb58fbf0bc36b4c2ab9530bcd5cef93) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal test
+
 ## 0.7.1
 
 ### Patch Changes
