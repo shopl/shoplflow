@@ -5,9 +5,9 @@ export type IconButtonSizeVar = 'S' | 'M';
 
 export const iconButtonSizeVar: IconButtonSizeVar[] = ['S', 'M'];
 
-export type IconButtonStyleVar = 'solid' | 'ghost';
+export type IconButtonStyleVar = 'SOLID' | 'GHOST';
 
-export const iconButtonStyleVar: IconButtonStyleVar[] = ['solid', 'ghost'];
+export const iconButtonStyleVar: IconButtonStyleVar[] = ['SOLID', 'GHOST'];
 
 export type IconButtonOptionProps<T extends React.ElementType = 'button'> = Omit<
   ComponentPropsWithoutRef<T>,

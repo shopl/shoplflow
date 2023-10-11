@@ -6,42 +6,42 @@ import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
 
 const getStyleByStyleVar = (styleVar?: ButtonStyleVar, disabled?: boolean) => {
   switch (styleVar) {
-    case 'primary':
+    case 'PRIMARY':
       return css`
-        border: 1px solid ${colorTokens['primary400']};
-        background-color: ${colorTokens['primary300']};
+        border: 1px solid ${colorTokens.primary400};
+        background-color: ${colorTokens.primary300};
         :hover {
-          background-color: ${!disabled && colorTokens['primary400']};
+          background-color: ${!disabled && colorTokens.primary400};
         }
       `;
-    case 'secondary':
+    case 'SECONDARY':
       return css`
-        border: 1px solid ${colorTokens['neutral350']};
-        background-color: ${colorTokens['neutral0']};
+        border: 1px solid ${colorTokens.neutral350};
+        background-color: ${colorTokens.neutral0};
         :hover {
-          background-color: ${!disabled && colorTokens['neutral100']};
+          background-color: ${!disabled && colorTokens.neutral100};
         }
       `;
-    case 'solid':
+    case 'SOLID':
       return css`
-        border: 1px solid ${colorTokens['coolgray100']};
-        background-color: ${colorTokens['coolgray50']};
+        border: 1px solid ${colorTokens.coolgray100};
+        background-color: ${colorTokens.coolgray50};
         :hover {
-          background-color: ${!disabled && colorTokens['coolgray100']};
+          background-color: ${!disabled && colorTokens.coolgray100};
         }
       `;
-    case 'ghost':
+    case 'GHOST':
       return css`
         border: 1px solid transparent;
         background-color: transparent;
         :hover {
-          background-color: ${!disabled && colorTokens['neutral400_5']};
+          background-color: ${!disabled && colorTokens.neutral400_5};
         }
       `;
     default:
       return css`
-        border: 1px solid ${colorTokens['primary400']};
-        background-color: ${colorTokens['primary300']};
+        border: 1px solid ${colorTokens.primary400};
+        background-color: ${colorTokens.primary300};
       `;
   }
 };
@@ -74,7 +74,7 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   gap: ${spacingTokens.spacing04};
   border-radius: ${borderRadiusTokens.borderRadius06};
   padding: 0px ${spacingTokens.spacing12};
-  border-radius: ${borderRadiusTokens['borderRadius12']};
+  border-radius: ${borderRadiusTokens.borderRadius12};
   ${({ styleVar, disabled }) => getStyleByStyleVar(styleVar, disabled)};
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};

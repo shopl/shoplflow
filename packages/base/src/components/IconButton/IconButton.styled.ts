@@ -26,12 +26,23 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
 
 const getHoverBackgroundFromStyleVar = (styleVar?: IconButtonStyleVar) => {
   switch (styleVar) {
-    case 'solid':
+    case 'SOLID':
       return colorTokens.neutral100;
-    case 'ghost':
+    case 'GHOST':
       return colorTokens.neutral400_5;
     default:
       return colorTokens.neutral100;
+  }
+};
+
+const getBorderByStyleVar = (styleVar?: IconButtonStyleVar) => {
+  if (!styleVar) {
+    return;
+  }
+  if (styleVar === 'SOLID') {
+    return css`
+      border: 1px solid ${colorTokens.neutral200};
+    `;
   }
 };
 
@@ -46,13 +57,13 @@ export const StyledIconButton = styled.button<IconButtonOptionProps>`
     if (!styleVar) {
       return;
     }
-    if (styleVar === 'solid') {
+    if (styleVar === 'SOLID') {
       return css`
         border: 1px solid ${colorTokens.neutral200};
       `;
     }
   }};
-
+  ${({ styleVar }) => getBorderByStyleVar(styleVar)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 

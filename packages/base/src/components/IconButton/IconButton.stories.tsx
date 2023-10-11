@@ -13,7 +13,7 @@ export default {
       options: iconButtonStyleVar,
       control: { type: 'select' },
       description: '아이콘 버튼 스타일 타입',
-      defaultValue: 'primary',
+      defaultValue: 'PRIMARY',
     },
     sizeVar: {
       options: iconButtonSizeVar,
@@ -29,7 +29,7 @@ export const Solid: StoryFn<IconButtonProps> = (args) => {
 };
 
 Solid.args = {
-  styleVar: 'solid',
+  styleVar: 'SOLID',
   sizeVar: 'M',
   children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
   disabled: false,
@@ -40,7 +40,7 @@ export const Ghost: StoryFn<IconButtonProps> = (args) => {
 };
 
 Ghost.args = {
-  styleVar: 'ghost',
+  styleVar: 'GHOST',
   sizeVar: 'M',
   children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
   disabled: false,

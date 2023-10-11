@@ -27,7 +27,7 @@ export const Primary: StoryFn<ButtonProps> = (args) => {
 };
 
 Primary.args = {
-  styleVar: 'primary',
+  styleVar: 'PRIMARY',
   sizeVar: 'M',
   children: '버튼',
   disabled: true,
@@ -38,7 +38,7 @@ export const Secondary: StoryFn<ButtonProps> = (args) => {
 };
 
 Secondary.args = {
-  styleVar: 'secondary',
+  styleVar: 'SECONDARY',
   sizeVar: 'M',
   children: '버튼',
   disabled: false,
@@ -49,7 +49,7 @@ export const Solid: StoryFn<ButtonProps> = (args) => {
 };
 
 Solid.args = {
-  styleVar: 'solid',
+  styleVar: 'SOLID',
   sizeVar: 'M',
   children: '버튼',
   disabled: false,
@@ -60,7 +60,7 @@ export const Ghost: StoryFn<ButtonProps> = (args) => {
 };
 
 Ghost.args = {
-  styleVar: 'ghost',
+  styleVar: 'GHOST',
   sizeVar: 'M',
   children: '버튼',
   disabled: false,
