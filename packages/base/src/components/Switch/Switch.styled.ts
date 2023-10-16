@@ -16,7 +16,7 @@ export const SwitchContainer = styled.div<{ isDisabled: boolean }>`
   }
 `;
 
-export const Switch = styled.input<{ activeColor: ColorTokens }>`
+export const StyledSwitch = styled.input<{ activeColor: ColorTokens }>`
   appearance: none;
   border: none;
   border-radius: 12px;

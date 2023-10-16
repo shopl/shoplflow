@@ -2,14 +2,14 @@ import type { HTMLAttributes } from 'react';
 import type { ColorTokens } from '../../styles';
 import type { DefaultSelectedProps, DisableProps, SelectedProps } from '../../utils/type/ComponentProps';
 
-export interface ToggleSwitchProps
-  extends ToggleSwitchOptionProps,
+export interface SwitchProps
+  extends SwitchOptionProps,
     DisableProps,
     SelectedProps,
     DefaultSelectedProps,
     Omit<HTMLAttributes<HTMLInputElement>, 'onChange'> {}
 
-export interface ToggleSwitchOptionProps {
+export interface SwitchOptionProps {
   /*
    * 요소 클릭시 실행되는 함수
    * */
