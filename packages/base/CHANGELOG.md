@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.7.0
+
+### Minor Changes
+
+- [#69](https://github.com/shopl/shoplflow/pull/69) [`577adc9`](https://github.com/shopl/shoplflow/commit/577adc98a316bede622cdc6135c81ac0974056d5) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - add Minus button and Toggle
+
+- [#90](https://github.com/shopl/shoplflow/pull/90) [`961952b`](https://github.com/shopl/shoplflow/commit/961952b76f90d9112d246307a7502af92ead53ff) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Modal, Backdrop style 수정 및 Switch 컴포넌트명 변경
+
 ## 0.6.0
 
 ### Minor Changes
