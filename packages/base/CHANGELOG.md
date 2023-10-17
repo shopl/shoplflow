@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.9.0
+
+### Minor Changes
+
+- [#92](https://github.com/shopl/shoplflow/pull/92) [`4c2d1ce`](https://github.com/shopl/shoplflow/commit/4c2d1ceb90b5cb248a954ef6be4f895cf34e86f8) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Modal,Backdrop,Text 수정 및 Switch 컴포넌트명 변경
+
 ## 0.7.0
 
 ### Minor Changes
