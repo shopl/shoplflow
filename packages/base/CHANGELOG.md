@@ -1,20 +1,10 @@
 # @shoplflow/base
 
-## 0.7.2
+## 0.9.0
 
-### Patch Changes
+### Minor Changes
 
-- [#87](https://github.com/shopl/shoplflow/pull/87) [`667d24c`](https://github.com/shopl/shoplflow/commit/667d24c62cb58fbf0bc36b4c2ab9530bcd5cef93) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal remove console
-
-- [#88](https://github.com/shopl/shoplflow/pull/88) [`77aa7b4`](https://github.com/shopl/shoplflow/commit/77aa7b40b7608fc56c94514926702226af4c949b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - base build config fix
-
-- [#87](https://github.com/shopl/shoplflow/pull/87) [`667d24c`](https://github.com/shopl/shoplflow/commit/667d24c62cb58fbf0bc36b4c2ab9530bcd5cef93) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal test
-
-## 0.7.1
-
-### Patch Changes
-
-- [#85](https://github.com/shopl/shoplflow/pull/85) [`3c619d4`](https://github.com/shopl/shoplflow/commit/3c619d48a3ecfb98b41eb0c0c5ff740772f079d4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal test
+- [#92](https://github.com/shopl/shoplflow/pull/92) [`4c2d1ce`](https://github.com/shopl/shoplflow/commit/4c2d1ceb90b5cb248a954ef6be4f895cf34e86f8) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Modal,Backdrop,Text 수정 및 Switch 컴포넌트명 변경
 
 ## 0.7.0
 
@@ -22,9 +12,7 @@
 
 - [#69](https://github.com/shopl/shoplflow/pull/69) [`577adc9`](https://github.com/shopl/shoplflow/commit/577adc98a316bede622cdc6135c81ac0974056d5) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - add Minus button and Toggle
 
-### Patch Changes
-
-- [#84](https://github.com/shopl/shoplflow/pull/84) [`6191c0f`](https://github.com/shopl/shoplflow/commit/6191c0f0b382eb04446454bc46de570a1e98dadf) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal test
+- [#90](https://github.com/shopl/shoplflow/pull/90) [`961952b`](https://github.com/shopl/shoplflow/commit/961952b76f90d9112d246307a7502af92ead53ff) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Modal, Backdrop style 수정 및 Switch 컴포넌트명 변경
 
 ## 0.6.0
 

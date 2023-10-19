@@ -23,33 +23,30 @@ const externals = () => {
 const buildConfig = {
   entryPoints: ['src/index.ts'],
   outdir: 'dist',
-  treeShaking: false,
+  treeShaking: true,
   bundle: true,
-  minify: false,
-  splitting: false,
-  metafile: true,
-  write: true,
   logLevel: 'debug',
   tsconfig: '../../tsconfig.esbuild.json',
-  external: externals(),
+  external: [...externals(), 'zustand'],
   plugins: [dtsPlugin(), babel()],
 };
 
 const esmConfig = {
   ...buildConfig,
   platform: 'node', // for ESM
+  target: ['node18', 'node16'],
   format: 'esm',
   splitting: true,
   outExtension: { '.js': '.mjs' },
 };
 
-const cjsConfig = {
-  ...buildConfig,
-  platform: 'node', // for CJS
-  format: 'cjs',
-
-  outExtension: { '.js': '.cjs' },
-};
+// const cjsConfig = {
+//   ...buildConfig,
+//   platform: 'node', // for CJS
+//   target: ['node18', 'node16'],
+//   format: 'cjs',
+//   outExtension: { '.js': '.cjs' },
+// };
 
 const cssConfig = {
   entryPoints: ['src/styles/global.css'],
@@ -63,14 +60,14 @@ if (process.argv.includes('--watch')) {
       context.watch();
     })
     .catch(() => process.exit(1));
-  esbuild
-    .context(cjsConfig)
-    .then((context) => {
-      context.watch();
-    })
-    .catch(() => process.exit(1));
+  // esbuild
+  //   .context(cjsConfig)
+  //   .then((context) => {
+  //     context.watch();
+  //   })
+  //   .catch(() => process.exit(1));
 } else {
   esbuild.build(esmConfig).catch(() => process.exit(1));
-  esbuild.build(cjsConfig).catch(() => process.exit(1));
+  // esbuild.build(cjsConfig).catch(() => process.exit(1));
   esbuild.build(cssConfig).catch(() => process.exit(1));
 }

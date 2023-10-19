@@ -1,21 +1,21 @@
 import React from 'react';
-import { Switch, SwitchContainer } from './Toggle.styled';
-import type { ToggleSwitchProps } from './Toggle.types';
+import { StyledSwitch, SwitchContainer } from './Switch.styled';
+import type { SwitchProps } from './Switch.types';
 import { useOnToggle } from '../../hooks/useOnToggle';
 
-const Toggle = ({
+const Switch = ({
   onChange,
   isSelected,
   disabled = false,
   activeColor = 'primary300',
   defaultSelected = false,
   ...rest
-}: ToggleSwitchProps) => {
+}: SwitchProps) => {
   const [isToggled, handleToggle] = useOnToggle(isSelected, defaultSelected);
 
   return (
     <SwitchContainer isDisabled={disabled}>
-      <Switch
+      <StyledSwitch
         type='checkbox'
         checked={isToggled}
         disabled={disabled}
@@ -29,4 +29,4 @@ const Toggle = ({
     </SwitchContainer>
   );
 };
-export default Toggle;
+export default Switch;
