@@ -1,21 +1,14 @@
-import * as React from "react";
-import type { SVGProps } from "react";
-import { createIcon } from "../../utils";
+import * as React from 'react';
+import type { SVGProps } from 'react';
+import { createIcon } from '../../utils';
 function SvgIcDesc(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1em"
-      height="1em"
-      fill="none"
-      viewBox="0 0 20 20"
-      {...props}
-    >
+    <svg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' fill='none' viewBox='0 0 20 20' {...props}>
       <path
-        fill="#333"
-        fillRule="evenodd"
-        d="M4.5 3.5A.5.5 0 0 1 5 3h1a.5.5 0 0 1 .5.5v9.833h1a.5.5 0 0 1 .4.8l-2 2.667a.5.5 0 0 1-.8 0l-2-2.667a.5.5 0 0 1 .4-.8h1V3.5Zm9 13.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.5Zm1-4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h4.5ZM10 9a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 10 7h5.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H10Zm6.5-4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h6.5Z"
-        clipRule="evenodd"
+        fill='#333'
+        fillRule='evenodd'
+        d='M4.5 3.5A.5.5 0 0 1 5 3h1a.5.5 0 0 1 .5.5v9.833h1a.5.5 0 0 1 .4.8l-2 2.667a.5.5 0 0 1-.8 0l-2-2.667a.5.5 0 0 1 .4-.8h1V3.5Zm9 13.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3.5Zm1-4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h4.5ZM10 9a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 10 7h5.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H10Zm6.5-4a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H10a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h6.5Z'
+        clipRule='evenodd'
       />
     </svg>
   );
