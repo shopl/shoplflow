@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 
 export const BackDropStyled = styled(motion.div)`
   display: flex;
@@ -8,7 +8,7 @@ export const BackDropStyled = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 20000;
   width: 100%;
   height: 100%;
   background: rgba(51, 51, 51, 0.6);

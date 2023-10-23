@@ -22,6 +22,7 @@ import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
 import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
+import IcCamera from './IcCamera';
 import IcCategory from './IcCategory';
 import IcChannel from './IcChannel';
 import IcChatActivityMedium from './IcChatActivityMedium';
@@ -242,6 +243,7 @@ const icons = {
   'bookmark-medium': IcBookmarkMedium,
   'by-employee-medium': IcByEmployeeMedium,
   'by-place-of-work-medium': IcByPlaceOfWorkMedium,
+  camera: IcCamera,
   category: IcCategory,
   channel: IcChannel,
   'chat-activity-medium': IcChatActivityMedium,
@@ -465,6 +467,7 @@ export {
   IcBookmarkMedium as BookmarkMediumIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
   IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
+  IcCamera as CameraIcon,
   IcCategory as CategoryIcon,
   IcChannel as ChannelIcon,
   IcChatActivityMedium as ChatActivityMediumIcon,

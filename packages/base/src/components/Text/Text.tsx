@@ -14,7 +14,7 @@ const Text = forwardRef(
       whiteSpace,
       color = 'neutral700',
       display = 'inline-block',
-      textAlign = 'inherit',
+      textAlign = 'start',
       className,
       as,
       ...rest
