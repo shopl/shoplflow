@@ -6,26 +6,27 @@
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:tokens": "node scripts/generate-tokens.cjs",
-    "build:package": "node build.js",
+    "build:package": "tsup",
     "build:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
     "dev:stories": "storybook dev -p 6007",
-    "dev": "node build.js --watch",
+    "dev": "tsup --watch",
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
-    "./styles": "./dist/global.css",
+    "./styles": "./dist/styles/global.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.mjs",
+  "main": "dist/index.js",
   "files": [
     "dist",
     "styles"
@@ -44,8 +45,10 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
     "@emotion/babel-plugin": "^11.11.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "11.10.8",
+    "@emotion/styled": "11.10.8",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-backgrounds": "^7.4.1",
     "@storybook/addon-controls": "^7.4.1",
@@ -65,18 +68,21 @@
     "@storybook/testing-library": "^0.2.0",
     "@storybook/theming": "^7.4.1",
     "@types/node": "20.4.9",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "esbuild": "0.18.17",
     "esbuild-plugin-babel": "^0.2.3",
     "esbuild-plugin-d.ts": "^1.1.0",
     "eslint": "^8.49.0",
     "eslint-plugin-storybook": "^0.6.13",
+    "framer-motion": "^10.12.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.4.1",
     "ts-node": "^10.9.1",
-    "typescript": "^4.6.3"
+    "tslib": "^2.6.2",
+    "tsup": "7.2.0",
+    "typescript": "4.7.4"
   },
   "eslintConfig": {
     "extends": [
@@ -86,7 +92,7 @@
   "dependencies": {
     "@shoplflow/utils": "workspace:^",
     "classnames": "^2.3.2",
-    "framer-motion": "^9.1.7",
+    "framer-motion": "10.12.6",
     "react-custom-scrollbars-2": "^4.5.0",
     "zustand": "^4.4.1"
   }

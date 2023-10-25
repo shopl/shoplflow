@@ -7,11 +7,31 @@ import styled from '@emotion/styled';
 import { Modal, useHandleModal, ChipToggle } from '@shoplflow/base';
 
 const TestModal = () => {
+  const { removeModal, addModal } = useHandleModal();
   const array = new Array(200).fill(0);
   return (
     <Modal.Container>
       <Modal.Header>Header</Modal.Header>
       <Modal.Body>
+        <button
+          onClick={() =>
+            removeModal({
+              deps: 0,
+            })
+          }
+        >
+          remove deps
+        </button>
+        <button
+          onClick={() =>
+            removeModal({
+              id: 'TestModal',
+            })
+          }
+        >
+          remove id
+        </button>
+        <button onClick={() => addModal(<TestModal />)}>add</button>
         {array.map((_, index) => (
           <ChipToggle text={'Toggle' + index} key={index} />
         ))}
@@ -46,7 +66,7 @@ function App() {
 
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <button onClick={() => addModal(<TestModal />)}>addModal</button>
+        <button onClick={() => addModal(<TestModal />, 'TestModal')}>addModal</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
