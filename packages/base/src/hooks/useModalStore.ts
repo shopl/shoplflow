@@ -65,7 +65,7 @@ export const useModalStore = create<UseModalStore>((set) => ({
     }
 
     if (isIncludeDeps) {
-      if (deps === 0) {
+      if (deps === 0 || deps === undefined) {
         return;
       }
       set((state) => {
