@@ -1,4 +1,4 @@
 // SHOPLFLOW_DOCS_IGNORE
 export * from './hooks';
-export * from './type';
+export * from './types';
 export * from './utils';

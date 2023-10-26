@@ -4,12 +4,11 @@ import React from 'react';
 import { Container } from './Modal.styled';
 import type { ModalBodyProps, ModalContainerProps } from './Modal.types';
 import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY } from './Modal.types';
-import useOutsideClick from '../../hooks/useOutsideClick';
-import { noop } from '../../utils/noop';
+
+import { useParentElementClick, noop } from '@shoplflow/utils';
 
 const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-  useOutsideClick<HTMLDivElement>(outsideClick, ref);
+  const ref = useParentElementClick<HTMLDivElement>(outsideClick);
 
   const childrenArray = React.Children.toArray(children) as ReactNode[];
 

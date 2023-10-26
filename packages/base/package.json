@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
@@ -41,6 +41,7 @@
     "react-dom": "*"
   },
   "devDependencies": {
+    "@shoplflow/utils": "workspace:^",
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",

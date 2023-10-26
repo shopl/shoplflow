@@ -4,7 +4,3 @@ export * from './useDomain';
 export * from './useHandleModal';
 export * from './useModalValue';
 export * from './useModalStore';
-
-// 유틸
-export * from './useOutsideClick';
-export * from './useResizeObserver';

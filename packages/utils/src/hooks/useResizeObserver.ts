@@ -7,6 +7,7 @@ type ResizeOptions = {
 
 /**
  * `ResizeObserver`를 사용하여 인자로 받은 HTML요소의 크기를 감지하는 hook입니다.
+ *
  * trackWidth, trackHeight 옵션을 통해 감지할 값을 설정할 수 있습니다.
  *
  * trackHeight 옵션을 사용하지 않을 경우 `height`와 `width`는 0으로 고정됩니다.
@@ -21,7 +22,7 @@ type ResizeOptions = {
  * ```
  */
 export const useResizeObserver = <T extends HTMLElement>(
-  element: T,
+  element: T | null,
   options: ResizeOptions = { trackWidth: true, trackHeight: true },
 ) => {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -48,7 +49,9 @@ export const useResizeObserver = <T extends HTMLElement>(
       });
     });
 
-    resizeObserver.observe(element);
+    if (element) {
+      resizeObserver.observe(element);
+    }
 
     return () => {
       resizeObserver.disconnect();
