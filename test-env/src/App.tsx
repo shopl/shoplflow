@@ -4,7 +4,7 @@ import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import styled from '@emotion/styled';
-import { Modal, useHandleModal, ChipToggle } from '@shoplflow/base';
+import { Modal, useHandleModal, ChipToggle, Stack } from '@shoplflow/base';
 
 const TestModal = () => {
   const { removeModal, addModal } = useHandleModal();
@@ -52,15 +52,15 @@ function App() {
   const { addModal } = useHandleModal();
 
   return (
-    <>
-      <div>
-        <a href='https://vitejs.dev' target='_blank' rel='noreferrer noopener'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noreferrer noopener'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
+    <Stack>
+      <Stack>adasd</Stack>
+      <a href='https://vitejs.dev' target='_blank' rel='noreferrer noopener'>
+        <img src={viteLogo} className='logo' alt='Vite logo' />
+      </a>
+      <a href='https://react.dev' target='_blank' rel='noreferrer noopener'>
+        <img src={reactLogo} className='logo react' alt='React logo' />
+      </a>
+
       <SomeText>Some Text</SomeText>
       <h1 className={'heading1_700'}>Vite + React</h1>
 
@@ -72,7 +72,7 @@ function App() {
         </p>
       </div>
       <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-    </>
+    </Stack>
   );
 }
 
