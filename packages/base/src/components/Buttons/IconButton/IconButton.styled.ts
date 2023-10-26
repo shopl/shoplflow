@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import type { IconButtonOptionProps, IconButtonSizeVar, IconButtonStyleVar } from './IconButton.types';
-import { colorTokens } from '../../styles';
+import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
-import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
+import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
 const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
   switch (sizeVar) {

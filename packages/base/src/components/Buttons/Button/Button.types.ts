@@ -8,7 +8,7 @@ import type {
   StyleVariantProps,
 } from 'src/utils/type/ComponentProps';
 
-import type { TypographyTokens } from '../../styles';
+import type { TypographyTokens } from '../../../styles';
 
 export const buttonSizeVar = {
   S: 'S',

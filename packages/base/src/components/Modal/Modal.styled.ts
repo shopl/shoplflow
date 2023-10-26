@@ -81,6 +81,7 @@ export const BodyContainer = styled.div<{
   overflow: hidden;
   flex-direction: column;
   background: ${colorTokens.neutral0};
+  min-height: 112px;
   min-height: ${({ height }) => height};
   flex: 1;
   ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}

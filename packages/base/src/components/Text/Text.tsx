@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import type { TextProps } from './Text.types';
 
 import { StyledText } from './Text.styled';
-import type { StringElementType } from 'src/utils/type/ComponentProps';
+import type { StringElementType } from '../../utils/type/ComponentProps';
 
 const Text = forwardRef(
   (
