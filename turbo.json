@@ -14,12 +14,6 @@
         "!.next/cache/**"
       ]
     },
-    "build:package": {
-      "outputs": [
-        "dist/**",
-        "!.next/cache/**"
-      ]
-    },
     "build:mdx": {
       "outputs": [
         "dist/**",
@@ -34,8 +28,18 @@
         "^build:package"
       ]
     },
+    "build:package": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "!.next/cache/**"
+      ]
+    },
     "build:storybook": {
       "dependsOn": [
+        "^build",
         "^build:package"
       ],
       "outputs": [
