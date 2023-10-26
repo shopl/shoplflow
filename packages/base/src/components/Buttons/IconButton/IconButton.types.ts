@@ -1,15 +1,22 @@
-import type { ComponentPropsWithoutRef } from 'react';
-import type { PolymorphicComponentProps } from 'src/types/PolymorphicComponentProps';
+import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, ReactElement } from 'react';
+import type { PolymorphicComponentProps } from '../../../types/PolymorphicComponentProps';
+import type { $Values } from '@shoplflow/utils';
 
-export type IconButtonSizeVar = 'S' | 'M';
+export const iconButtonSizeVar = {
+  S: 'S',
+  M: 'M',
+};
 
-export const iconButtonSizeVar: IconButtonSizeVar[] = ['S', 'M'];
+export type IconButtonSizeVar = $Values<typeof iconButtonSizeVar>;
 
-export type IconButtonStyleVar = 'SOLID' | 'GHOST';
+export const iconButtonStyleVar = {
+  SOLID: 'SOLID',
+  GHOST: 'GHOST',
+};
 
-export const iconButtonStyleVar: IconButtonStyleVar[] = ['SOLID', 'GHOST'];
+export type IconButtonStyleVar = $Values<typeof iconButtonStyleVar>;
 
-export type IconButtonOptionProps<T extends React.ElementType = 'button'> = Omit<
+export type IconButtonOptionProps<T extends ElementType = 'button'> = Omit<
   ComponentPropsWithoutRef<T>,
   'color' | 'disabled'
 > & {
@@ -18,13 +25,10 @@ export type IconButtonOptionProps<T extends React.ElementType = 'button'> = Omit
   disabled?: boolean;
 };
 
-export type IconButtonProps<T extends React.ElementType = 'button'> = PolymorphicComponentProps<
-  T,
-  IconButtonOptionProps
->;
+export type IconButtonProps<T extends ElementType = 'button'> = PolymorphicComponentProps<T, IconButtonOptionProps>;
 
-export type IconButtonComponent = <T extends React.ElementType = 'button'>(
+export type IconButtonComponent = <T extends ElementType = 'button'>(
   props: IconButtonProps<T> & {
-    ref?: React.ComponentPropsWithRef<T>['ref'];
+    ref?: ComponentPropsWithRef<T>['ref'];
   },
-) => React.ReactElement | null;
+) => ReactElement | null;

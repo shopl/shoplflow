@@ -1,12 +1,12 @@
 import type { $Values } from '@shoplflow/utils';
-import type { ComponentPropsWithoutRef } from 'react';
-import type { PolymorphicComponentProps } from 'src/types/PolymorphicComponentProps';
+import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, ReactElement } from 'react';
+import type { PolymorphicComponentProps } from '../../../types/PolymorphicComponentProps';
 import type {
   DisableProps,
   LeftAndRightNodeProps,
   SizeVariantProps,
   StyleVariantProps,
-} from 'src/utils/type/ComponentProps';
+} from '../../../utils/type/ComponentProps';
 
 import type { TypographyTokens } from '../../../styles';
 
@@ -17,12 +17,17 @@ export const buttonSizeVar = {
 
 export type ButtonSizeVar = $Values<typeof buttonSizeVar>;
 
-export type ButtonStyleVar = 'PRIMARY' | 'SECONDARY' | 'SOLID' | 'GHOST';
+export const buttonStyleVar = {
+  PRIMARY: 'PRIMARY',
+  SECONDARY: 'SECONDARY',
+  SOLID: 'SOLID',
+  GHOST: 'GHOST',
+} as const;
 
-export const buttonStyleVar: ButtonStyleVar[] = ['PRIMARY', 'SECONDARY', 'SOLID', 'GHOST'];
+export type ButtonStyleVar = $Values<typeof buttonStyleVar>;
 
 // MARK : interface는 객체 구조를 가지기 때문에, 컴파일 시점에 객체 구조가 명확하게 설정되어 있어야 합니다. 따라서 동적 타입을 명시할 때는 타입을 선언하고, 정적 타입을 선언할 때는 interface를 사용합니다.
-export type ButtonOptionProps<T extends React.ElementType = 'button'> = Omit<
+export type ButtonOptionProps<T extends ElementType = 'button'> = Omit<
   ComponentPropsWithoutRef<T>,
   'color' | 'disabled'
 > &
@@ -32,11 +37,11 @@ export type ButtonOptionProps<T extends React.ElementType = 'button'> = Omit<
     typography?: TypographyTokens;
   };
 
-export type ButtonProps<T extends React.ElementType = 'button'> = PolymorphicComponentProps<T, ButtonOptionProps> &
+export type ButtonProps<T extends ElementType = 'button'> = PolymorphicComponentProps<T, ButtonOptionProps> &
   LeftAndRightNodeProps;
 
-export type ButtonComponent = <T extends React.ElementType = 'button'>(
+export type ButtonComponent = <T extends ElementType = 'button'>(
   props: ButtonProps<T> & {
-    ref?: React.ComponentPropsWithRef<T>['ref'];
+    ref?: ComponentPropsWithRef<T>['ref'];
   },
-) => React.ReactElement | null;
+) => ReactElement | null;
