@@ -7,11 +7,9 @@ import type { BorderRadiusTokens, ColorTokens } from '../../styles';
  */
 export type StringElementType = ElementType & string;
 
-/**
- * Ref를 제외한 HTMLProps를 반환합니다.
- * Generic으로 HTML 태그를 받습니다.
- */
-export type HTMLPropsWithOutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
+export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
+
+export type PolymorphicRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>['ref'];
 
 // ------------------------------ Boolean Props ------------------------------
 

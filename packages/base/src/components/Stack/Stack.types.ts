@@ -4,21 +4,21 @@ import type { CustomDomComponent } from 'framer-motion';
 import type { BorderRadiusTokens, ColorTokens, SpacingTokens } from '../../styles';
 import type {
   ChildrenProps,
-  HTMLPropsWithOutRef,
+  HTMLPropsWithoutRef,
   RenderConfigProps,
   StringElementType,
 } from '../../utils/type/ComponentProps';
 
 export type StackGenericProps<T extends StringElementType = 'div'> = RenderConfigProps &
   StackProps &
-  HTMLPropsWithOutRef<T>;
+  HTMLPropsWithoutRef<T>;
 
 export type StackComponentType = <T extends StringElementType = 'div'>(
   props: StackGenericProps<T> & Pick<ComponentPropsWithRef<T>, 'ref'>,
 ) => ReactElement | null;
 
 export type MotionStackComponentType<T extends StringElementType = 'div'> = CustomDomComponent<
-  RenderConfigProps & HTMLPropsWithOutRef<T> & StackProps
+  RenderConfigProps & HTMLPropsWithoutRef<T> & StackProps
 >;
 
 export interface StackProps extends StackOptionProps, ChildrenProps {}

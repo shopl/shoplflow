@@ -21,3 +21,7 @@ export const useDomain = ({ domain = 'SHOPL' }: UseDomainProps) => {
     document.documentElement.dataset.shoplflow = domainType?.toLowerCase();
   }, [domainType]);
 };
+
+export const getDomain = () => {
+  return document.documentElement.dataset.shoplflow as Lowercase<DomainType>;
+};

@@ -4,5 +4,12 @@
   ],
   "hints": {
     "typescript-config/strict": "off"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 113",
+    "not edge <= 114",
+    "not firefox <= 113"
+  ]
 }

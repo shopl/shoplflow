@@ -14,7 +14,7 @@ import type { StringElementType } from '../../utils/type/ComponentProps';
  * @return {StackComponentType}
  */
 const createStackComponent = (stackOption?: StackProps): StackComponentType =>
-  forwardRef(function Stack<T extends StringElementType>(
+  forwardRef(function Stack(
     {
       as = 'div',
       spacing = stackOption?.spacing ?? 'spacing08',
@@ -28,8 +28,8 @@ const createStackComponent = (stackOption?: StackProps): StackComponentType =>
       radius = stackOption?.radius,
       background = stackOption?.background,
       ...rest
-    }: StackGenericProps<T>,
-    ref: ComponentPropsWithRef<T>['ref'],
+    }: StackGenericProps,
+    ref: ComponentPropsWithRef<StringElementType>['ref'],
   ) {
     return (
       <StyledStack
