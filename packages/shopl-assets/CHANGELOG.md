@@ -1,5 +1,13 @@
 # @shoplflow/shopl-assets
 
+## 0.2.0
+
+### Minor Changes
+
+- [#90](https://github.com/shopl/shoplflow/pull/90) [`961952b`](https://github.com/shopl/shoplflow/commit/961952b76f90d9112d246307a7502af92ead53ff) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - camera icon 추가
+
+- [#90](https://github.com/shopl/shoplflow/pull/90) [`961952b`](https://github.com/shopl/shoplflow/commit/961952b76f90d9112d246307a7502af92ead53ff) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - camera icon 추가
+
 ## 0.1.0
 
 ### Minor Changes

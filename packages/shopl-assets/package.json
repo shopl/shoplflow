@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/shopl-assets",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "Apache-2.0",
   "scripts": {
     "build:icons": "scripts/build-icons.sh",
@@ -11,7 +11,7 @@
     "develop": "tsup --watch",
     "prebuild": "pnpm run build:assets",
     "build": "tsup",
-    "build:assets": "yarn build:icons && yarn build:illustrations"
+    "build:assets": "pnpm build:icons && pnpm build:illustrations"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",

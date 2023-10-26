@@ -68,6 +68,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   padding: 12px 16px 12px 24px;
   gap: 10px;
+  header: 64px;
 `;
 
 export const BodyContainer = styled.div<{

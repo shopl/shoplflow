@@ -15,7 +15,7 @@ export default {
   component: Text,
 } as Meta;
 
-const allTypographyValues = Array.from(Object.values(typographyTokens));
+const allTypographyValues = Object.values(typographyTokens);
 const allTypographyKeys = Object.keys(typographyTokens) as TypographyTokens[];
 
 export const AllTexts: StoryFn<TextProps> = (args) => {

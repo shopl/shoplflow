@@ -3,7 +3,7 @@ import { BodyContainer, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps, ModalBodyType } from './Modal.types';
 import { MODAL_BODY_KEY } from './Modal.types';
 import Scrollbars from 'react-custom-scrollbars-2';
-import { useResizeObserver } from '../../hooks';
+import { useResizeObserver } from '@shoplflow/utils';
 
 const ModalBody: ModalBodyType = ({
   children,

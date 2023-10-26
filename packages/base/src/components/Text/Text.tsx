@@ -1,9 +1,10 @@
-import type { Ref } from 'react';
-import React, { forwardRef } from 'react';
+import type { ComponentPropsWithRef } from 'react';
+import { forwardRef } from 'react';
 
 import type { TextProps } from './Text.types';
 
 import { StyledText } from './Text.styled';
+import type { StringElementType } from 'src/utils/type/ComponentProps';
 
 const Text = forwardRef(
   (
@@ -13,11 +14,12 @@ const Text = forwardRef(
       whiteSpace,
       color = 'neutral700',
       display = 'inline-block',
-      textAlign = 'inherit',
+      textAlign = 'start',
       className,
+      as,
       ...rest
     }: TextProps,
-    ref: Ref<HTMLElement>,
+    ref: ComponentPropsWithRef<StringElementType>['ref'],
   ) => {
     return (
       <StyledText
@@ -27,6 +29,7 @@ const Text = forwardRef(
         color={color}
         display={display}
         textAlign={textAlign}
+        as={as}
         {...rest}
       >
         {children}
