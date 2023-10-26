@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import type { ReactNode } from 'react';
-import { isNullOrUndefined } from '../utils/isNullOrUndefined';
+import { isNullOrUndefined } from '@shoplflow/utils';
 
 export type ModalStateType = {
   component: ReactNode;
