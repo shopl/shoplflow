@@ -1,14 +1,16 @@
-import type React from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 /**
  * <Callout type={'info'}>
- * 부모 요소의 outsideClick 이벤트를 감지하는 hook
+ * props로 받은 Element를 기준으로 부모 요소에 클릭이벤트를 등록합니다.
  * </Callout>
  *
- * return되는 ref를 컴포넌트에 적용하거나 외부에서 생성한 ref를 기준으로 부모 요소를 클릭하는 경우 outsideClick 함수를 실행합니다.
- * 외부에서 생성한 ref를 사용할 경우 initialRef를 통해 ref를 전달해야 합니다.
- * `outSideClick` handler를 특정 컴포넌트에 의존시키기 위해 사용합니다.
+ * ## Description
+ * `useParentElementClick`은 부모 요소에 클릭이벤트를 등록합니다.
+ *
+ * 첫번째 인자로 `onClickOutside`를 받으며, 두번째 인자로 `initialRef`를 받습니다.
+ *
+ * `onClickOutside`는 클릭이벤트가 발생했을 때 실행되는 함수이며, `initialRef`는 클릭이벤트를 등록할 요소의 자식 요소를 받습니다.
  *
  * ## Usage
  *
@@ -44,7 +46,7 @@ import { useCallback, useEffect, useRef } from 'react';
  * ```tsx
  * const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
  *   const ref = React.useRef<HTMLDivElement>(null);
- *   useOutsideClick<HTMLDivElement>(outsideClick, ref);
+ *   useParentElementClick<HTMLDivElement>(outsideClick, ref);
  *
  *   // ...생략
  *
@@ -56,12 +58,8 @@ import { useCallback, useEffect, useRef } from 'react';
  * };
  * ```
  */
-export const useParentElementClick = <T extends HTMLElement>(
-  onClickOutside: (target: EventTarget | null) => void,
-  initialRef?: React.RefObject<T>,
-) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const ref = initialRef ?? useRef<T>(null);
+export const useParentElementClick = <T extends HTMLElement>(onClickOutside: (target: EventTarget | null) => void) => {
+  const ref = useRef<T>(null);
 
   const handleClick = useCallback(
     (e: Event) => {
@@ -86,7 +84,5 @@ export const useParentElementClick = <T extends HTMLElement>(
     };
   }, [ref, handleClick]);
 
-  return {
-    ref,
-  };
+  return ref;
 };

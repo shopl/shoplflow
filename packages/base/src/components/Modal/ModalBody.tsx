@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { BodyContainer, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps } from './Modal.types';
 import Scrollbars from 'react-custom-scrollbars-2';
-import { useResizeObserver } from '../../hooks';
+import { useResizeObserver } from '@shoplflow/utils';
 
 const ModalBody = ({
   children,

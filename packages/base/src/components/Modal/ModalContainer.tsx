@@ -3,15 +3,12 @@ import React, { Children } from 'react';
 
 import { Container } from './Modal.styled';
 import type { ModalBodyProps, ModalContainerProps } from './Modal.types';
-import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY, ModalSize } from './Modal.types';
-import useOutsideClick from '../../hooks/useOutsideClick';
-import { noop } from '../../utils/noop';
+import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY } from './Modal.types';
 
-const ModalContainer = ({ children, outsideClick = noop, sizeVar = ModalSize.M, ...rest }: ModalContainerProps) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-  useOutsideClick<HTMLDivElement>(outsideClick, ref);
-  console.debug('ModalContainer', rest);
-  console.debug('children', children);
+import { useParentElementClick, noop } from '@shoplflow/utils';
+
+const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
+  const ref = useParentElementClick<HTMLDivElement>(outsideClick);
 
   const childrenArray = React.Children.toArray(children) as ReactNode[];
 
@@ -45,13 +42,13 @@ const ModalContainer = ({ children, outsideClick = noop, sizeVar = ModalSize.M, 
     return React.cloneElement(child, {
       isIncludeHeader: Boolean(findHeader),
       isIncludeFooter: Boolean(findFooter),
-      sizeVar: sizeVar,
+      sizeVar: rest.sizeVar,
       height: rest.height,
     } as React.HTMLAttributes<HTMLElement> & ModalBodyProps);
   });
 
   return (
-    <Container ref={ref} sizeVar={sizeVar} {...rest}>
+    <Container ref={ref} {...rest}>
       {addPropInChildren}
     </Container>
   );

@@ -1,0 +1,15 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ],
+    "@emotion/babel-plugin",
+    "@babel/typescript",
+    "@babel/preset-typescript"
+  ]
+}
