@@ -498,7 +498,7 @@ importers:
         specifier: ^7.22.15
         version: 7.23.2(@babel/core@7.23.2)
       '@types/node':
-        specifier: ^20.6.5
+        specifier: ^20.8.2
         version: 20.8.9
       '@types/react':
         specifier: ^18.2.22

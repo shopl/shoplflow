@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.2.0
+
+### Minor Changes
+
+- [#81](https://github.com/shopl/shoplflow/pull/81) [`cec25c3`](https://github.com/shopl/shoplflow/commit/cec25c32cacc926415aea7f3bb3adc96afdb01ec) Thanks [@velo-kim](https://github.com/velo-kim)! - button component
+
 ## 0.1.0
 
 ### Minor Changes

@@ -3,6 +3,7 @@
     "target": "esnext",
     "types": [
       "node",
+      "react",
     ],
     "allowJs": true,
     "skipLibCheck": true,

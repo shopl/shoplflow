@@ -22,7 +22,7 @@ type ResizeOptions = {
  * ```
  */
 export const useResizeObserver = <T extends HTMLElement>(
-  element: T,
+  element: T | null,
   options: ResizeOptions = { trackWidth: true, trackHeight: true },
 ) => {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -49,7 +49,9 @@ export const useResizeObserver = <T extends HTMLElement>(
       });
     });
 
-    resizeObserver.observe(element);
+    if (element) {
+      resizeObserver.observe(element);
+    }
 
     return () => {
       resizeObserver.disconnect();
