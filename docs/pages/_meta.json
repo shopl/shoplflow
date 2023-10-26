@@ -12,10 +12,10 @@
   "base": {
     "type": "page"
   },
-  "assets": {
+  "utils": {
     "type": "page"
   },
-  "utils": {
+  "assets": {
     "type": "page"
   }
 }
