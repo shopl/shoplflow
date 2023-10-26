@@ -8,6 +8,11 @@ import TextLengthWithMax from '../common/TextLengthWithMax';
 import { Text } from '../../../components/Text';
 import { spacingTokens } from '../../../styles';
 
+// type InputHandle = {
+//   value: ComponentPropsWithoutRef<'input'>['value'];
+//   onChange: ComponentPropsWithoutRef<'input'>['onChange'];
+// };
+
 const Input = forwardRef(
   (
     {
@@ -29,6 +34,7 @@ const Input = forwardRef(
   ) => {
     const [focused, setFocused] = useState(false);
     const uniqueId = useId();
+    // const [value, setValue] = useState('');
 
     return (
       <WrapperWithError>
@@ -66,7 +72,7 @@ const Input = forwardRef(
           {Boolean(nowLength) && (
             <IconButton
               sizeVar='S'
-              styleVar='ghost'
+              styleVar='GHOST'
               onClick={() => {
                 onDelete();
               }}
@@ -79,7 +85,7 @@ const Input = forwardRef(
               <HasBackgroundBtnWrapper>{confirmController.icon}</HasBackgroundBtnWrapper>
             ) : (
               <div>
-                <IconButton sizeVar='S' styleVar='solid'></IconButton>
+                <IconButton sizeVar='S' styleVar='SOLID'></IconButton>
               </div>
             ))}
         </Wrapper>

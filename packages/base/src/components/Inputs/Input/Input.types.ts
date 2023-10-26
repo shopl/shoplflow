@@ -13,4 +13,8 @@ export type InputOptionProps = {
   };
 };
 
-export type InputProps = ComponentPropsWithoutRef<'input'> & InputOptionProps;
+export type InputProps = Omit<ComponentPropsWithoutRef<'input'>, 'width' | 'height'> &
+  InputOptionProps & {
+    width?: string;
+    height?: string;
+  };

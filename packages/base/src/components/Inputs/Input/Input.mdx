@@ -1,0 +1,39 @@
+import Input from './Input'
+import * as InputStories from './Input.stories'
+import { Canvas, Meta, Controls, ArgsTable} from '@storybook/blocks';
+
+<Meta of={InputStories} />
+
+# Input
+디자인 시스템에서 사용하는 인풋 컴포넌트에요.
+
+
+## Overview
+
+<Canvas of={InputStories.Default} />
+
+## ArgsTable
+
+<ArgsTable of={Input} />
+
+## Usage
+
+```tsx
+import { Input } from "@shoplflow/base";
+
+const Example = () => {
+
+    const [value, setValue] = useState('')
+    const nowLength = value?.length ?? 0;
+
+    return (
+        <Input 
+            onDelete={() => {
+                setValue('')
+            }}
+            nowLength={nowLength}   
+        />
+    )
+}
+```
+
