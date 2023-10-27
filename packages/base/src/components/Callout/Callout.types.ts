@@ -1,4 +1,4 @@
-import type { $Values } from '../../utils/type/$values';
+import type { $Values } from '@shoplflow/utils';
 import type { ChildrenProps, StyleVariantProps } from '../../utils/type/ComponentProps';
 
 export const CalloutTypes = {
