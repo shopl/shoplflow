@@ -236,6 +236,12 @@ importers:
       '@emotion/styled':
         specifier: ^11.11.0
         version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.21)(react@18.2.0)
+      '@shoplflow/hada-assets':
+        specifier: workspace:^
+        version: link:../hada-assets
+      '@shoplflow/shopl-assets':
+        specifier: workspace:^
+        version: link:../shopl-assets
       '@storybook/addon-actions':
         specifier: ^7.4.1
         version: 7.4.1(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)

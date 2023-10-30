@@ -11,9 +11,9 @@
     "develop": "tsup --watch",
     "prebuild": "pnpm run build:assets",
     "build": "tsup",
-    "build:assets": "yarn build:icons && yarn build:illustrations"
+    "build:assets": "pnpm build:icons && pnpm build:illustrations"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [

@@ -1,5 +1,6 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactElement, ReactNode } from 'react';
 import type React from 'react';
+import type { IconSource } from '@shoplflow/shopl-assets';
 import type { BorderRadiusTokens, ColorTokens } from '../../styles';
 
 /**
@@ -117,7 +118,7 @@ export interface IconSourceProps {
   /**
    * Icon을 설정합니다.
    */
-  iconSource?: HTMLOrSVGElement;
+  iconSource?: IconSource;
 }
 
 export interface LeftNodeProps {
