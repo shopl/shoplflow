@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.11.0
+
+### Minor Changes
+
+- [#82](https://github.com/shopl/shoplflow/pull/82) [`426d2b0`](https://github.com/shopl/shoplflow/commit/426d2b04ee4c7a42c688ac0cd9b04d0a45b2facc) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Callout 컴포넌트 추가
+
 ## 0.10.0
 
 ### Minor Changes
