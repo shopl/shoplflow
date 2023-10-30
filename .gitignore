@@ -22,6 +22,8 @@ dist
 !.yarn/unplugged/**
 .yarn/install-state.gz
 
+**/src/**/generated/**/*
+
 # misc
 .DS_Store
 *.pem

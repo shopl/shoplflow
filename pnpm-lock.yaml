@@ -245,6 +245,12 @@ importers:
       '@rollup/plugin-node-resolve':
         specifier: ^15.2.3
         version: 15.2.3
+      '@shoplflow/hada-assets':
+        specifier: workspace:^
+        version: link:../hada-assets
+      '@shoplflow/shopl-assets':
+        specifier: workspace:^
+        version: link:../shopl-assets
       '@storybook/addon-actions':
         specifier: ^7.4.1
         version: 7.5.1(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0)(react@18.2.0)
