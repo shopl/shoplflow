@@ -15,13 +15,13 @@
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./styles": "./dist/styles/global.css",
     "./package.json": "./package.json"
