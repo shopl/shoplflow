@@ -13,7 +13,7 @@
     "build": "tsup",
     "build:assets": "pnpm build:icons && pnpm build:illustrations"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
