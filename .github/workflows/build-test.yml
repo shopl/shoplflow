@@ -26,22 +26,12 @@ jobs:
         uses: pnpm/action-setup@v2.2.2
         with:
           version: 8.6.12
-          run_install: false
+          run_install: true
 
       - name: 노드를 설정하고 있어요.
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Install dependencies
-        run: |
-          pnpm store prune
-          pnpm install
 
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
