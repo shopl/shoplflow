@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.11.1
+
+### Patch Changes
+
+- [#95](https://github.com/shopl/shoplflow/pull/95) [`610d25c`](https://github.com/shopl/shoplflow/commit/610d25c6dc89de6076f7d4b95b0d4e2c4a648394) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - - modal removeModal 함수의 인자에 id가 들어올 경우 정상적으로 동작하지 않는 버그 수정
+  - framer-motion과 emotion 사이의 타입이 맞지 않는 버그 수정
+  - 번들러 tsup으로 변경
+  - 폴더 정리
+- Updated dependencies [[`610d25c`](https://github.com/shopl/shoplflow/commit/610d25c6dc89de6076f7d4b95b0d4e2c4a648394)]:
+  - @shoplflow/utils@0.3.0
+
 ## 0.11.0
 
 ### Minor Changes

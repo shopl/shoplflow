@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.3.0
+
+### Minor Changes
+
+- [#95](https://github.com/shopl/shoplflow/pull/95) [`610d25c`](https://github.com/shopl/shoplflow/commit/610d25c6dc89de6076f7d4b95b0d4e2c4a648394) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - isNullOrUndefined 추가
+
 ## 0.2.0
 
 ### Minor Changes
