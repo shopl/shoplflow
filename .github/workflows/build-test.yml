@@ -39,14 +39,15 @@ jobs:
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm store prune
+          pnpm install
 
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
 
       - name: 패키지를 빌드하고 있어요.
         run: |
-          pnpm cache clean
           pnpm turbo build
         env:
           CI: false

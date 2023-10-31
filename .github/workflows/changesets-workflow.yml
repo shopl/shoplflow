@@ -43,7 +43,9 @@ jobs:
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm store prune
+          pnpm install
 
       - name: NPM 토큰을 설정하고 있어요.
         run: |
@@ -58,7 +60,6 @@ jobs:
 
       - name: 패키지를 빌드하고 있어요.
         run: |
-          pnpm cache clean
           pnpm build --since ${{ github.event.before }}
         env:
           CI: false
