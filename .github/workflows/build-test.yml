@@ -45,7 +45,11 @@ jobs:
 
 
       - name: 패키지를 빌드하고 있어요.
-        run: pnpm turbo build
+        run: |
+          pnpm cache clean
+          pnpm turbo build
+        env:
+          CI: false
 
       - name: 테스트 Status를 확인하고 있어요.
         id: set_status

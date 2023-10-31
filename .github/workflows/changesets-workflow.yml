@@ -57,7 +57,11 @@ jobs:
 
 
       - name: 패키지를 빌드하고 있어요.
-        run: pnpm build --since ${{ github.event.before }}
+        run: |
+          pnpm cache clean
+          pnpm build --since ${{ github.event.before }}
+        env:
+          CI: false
 
       - name: PR을 생성하거나 NPM에 배포하고 있어요.
         uses: changesets/action@v1
