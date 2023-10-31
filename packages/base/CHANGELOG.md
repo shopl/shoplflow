@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.11.2
+
+### Patch Changes
+
+- [#98](https://github.com/shopl/shoplflow/pull/98) [`7d2e1c0`](https://github.com/shopl/shoplflow/commit/7d2e1c0282180a3698660d6c9d56c724aa53269f) Thanks [@bong9boy](https://github.com/bong9boy)! - caption_700 추가
+
 ## 0.11.1
 
 ### Patch Changes
