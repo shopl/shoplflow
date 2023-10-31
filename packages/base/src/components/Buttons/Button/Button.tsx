@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Text } from '../Text';
+import { Text } from '../../Text';
 import { StyledButton } from './Button.styled';
 import type { ButtonComponent, ButtonProps } from './Button.types';
 

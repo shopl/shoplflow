@@ -3,7 +3,7 @@ import MinusButton from './MinusButton';
 import type { MinusBoxProps } from './MinusButton.types';
 
 export default {
-  title: 'COMPONENTS/MinusButton',
+  title: 'COMPONENTS/ControlButtons/MinusButton',
   component: MinusButton,
 };
 

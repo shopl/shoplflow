@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import type { ButtonOptionProps, ButtonSizeVar, ButtonStyleVar } from './Button.types';
-import { borderRadiusTokens, spacingTokens, colorTokens } from '../../styles';
+import { borderRadiusTokens, spacingTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
-import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
+import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
 const getStyleByStyleVar = (styleVar?: ButtonStyleVar, disabled?: boolean) => {
   switch (styleVar) {

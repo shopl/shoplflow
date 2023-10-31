@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import type { ColorTokens } from '../../styles';
-import { borderRadiusTokens, colorTokens } from '../../styles';
-import { getNextColor } from '../../utils/getNextColor';
+import type { ColorTokens } from '../../../styles';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
+import { getNextColor } from '../../../utils/getNextColor';
 
 export const Container = styled.div`
   width: 32px;

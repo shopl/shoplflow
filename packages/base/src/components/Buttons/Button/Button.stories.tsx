@@ -4,7 +4,7 @@ import type { ButtonProps } from './Button.types';
 import { buttonSizeVar, buttonStyleVar } from './Button.types';
 
 export default {
-  title: 'COMPONENTS/Button',
+  title: 'COMPONENTS/Buttons/Button',
   component: Button,
   argTypes: {
     styleVar: {

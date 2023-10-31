@@ -1,5 +1,5 @@
 import type { MouseEvent, HTMLAttributes } from 'react';
-import type { ColorTokens } from '../../styles';
+import type { ColorTokens } from '../../../styles';
 
 export interface MinusBoxProps
   extends MinusBoxOptionProps,

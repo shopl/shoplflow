@@ -1,12 +1,12 @@
 import React from 'react';
 import type { StoryFn } from '@storybook/react';
 import IconButton from './IconButton';
-import { colorTokens } from '../../styles';
+import { colorTokens } from '../../../styles';
 import type { IconButtonProps } from './IconButton.types';
 import { iconButtonSizeVar, iconButtonStyleVar } from './IconButton.types';
 
 export default {
-  title: 'COMPONENTS/IconButton',
+  title: 'COMPONENTS/Buttons/IconButton',
   component: IconButton,
   argTypes: {
     styleVar: {

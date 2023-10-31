@@ -17,7 +17,7 @@ const createStackComponent = (stackOption?: StackProps): StackComponentType =>
   forwardRef(function Stack(
     {
       as = 'div',
-      spacing = stackOption?.spacing ?? 'spacing08',
+      spacing = stackOption?.spacing,
       direction = stackOption?.direction ?? 'column',
       align = stackOption?.align ?? 'flex-start',
       justify = stackOption?.justify ?? 'flex-start',

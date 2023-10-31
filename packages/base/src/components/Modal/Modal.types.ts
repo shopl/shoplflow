@@ -47,11 +47,6 @@ export interface ModalBodyOptionProps {
   height?: number;
   sizeVar?: ModalSizeType;
 }
-export const MODAL_BODY_KEY = Symbol('MODAL_BODY');
-export interface ModalBodyType extends React.FC<ModalBodyProps> {
-  [MODAL_BODY_KEY]?: boolean;
-}
-
 // Modal Footer
 export interface ModalFooterProps extends ModalFooterOptionProps, ChildrenProps {}
 export interface ModalFooterOptionProps {}
