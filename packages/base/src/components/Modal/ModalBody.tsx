@@ -1,15 +1,15 @@
 import React, { useCallback, useMemo } from 'react';
-import { BodyContainer, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps } from './Modal.types';
-import Scrollbars from 'react-custom-scrollbars-2';
+import { BodyContainer, ModalBodyContent } from './Modal.styled';
 import { useResizeObserver } from '@shoplflow/utils';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 const ModalBody = ({
   children,
   isIncludeHeader = false,
   isIncludeFooter = false,
-  sizeVar,
   height: modalContainerHeight,
+  sizeVar,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useResizeObserver(document.body, {
     trackHeight: true,
@@ -45,27 +45,29 @@ const ModalBody = ({
   const heightOverMaxHeight = 1200 - topBottomMargin - headerFooterHeight;
 
   return (
-    <BodyContainer isIncludeHeader={isIncludeHeader} height={setAutoHeightMin()}>
-      <Scrollbars
-        id={`scrollbar`}
-        // autoHeight
-        autoHeight={!modalContainerHeight}
-        autoHeightMin={setAutoHeightMin()}
-        // autoHeightMax={'100%'}
-        autoHeightMax={windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight}
-        autoHide
-        autoHideTimeout={1000}
-        autoHideDuration={200}
-        style={{
-          height: '100%',
-          overflow: 'hidden',
-        }}
-      >
-        <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar}>
-          {children}
-        </ModalBodyContent>
-      </Scrollbars>
-    </BodyContainer>
+    <>
+      <BodyContainer isIncludeHeader={isIncludeHeader} height={setAutoHeightMin()}>
+        <Scrollbars
+          id={`scrollbar`}
+          // autoHeight
+          autoHeight={!modalContainerHeight}
+          autoHeightMin={setAutoHeightMin()}
+          // autoHeightMax={'100%'}
+          autoHeightMax={windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight}
+          autoHide
+          autoHideTimeout={1000}
+          autoHideDuration={200}
+          style={{
+            height: '100%',
+            overflow: 'hidden',
+          }}
+        >
+          <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar}>
+            {children}
+          </ModalBodyContent>
+        </Scrollbars>
+      </BodyContainer>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 // SHOPLFLOW_DOCS_IGNORE
-import {
+export {
   borderRadiusTokens,
   boxShadowTokens,
   colorTokens,
@@ -8,12 +8,11 @@ import {
   typographyTokens,
 } from './tokens';
 
-type ColorTokens = keyof typeof colorTokens;
-type SpacingTokens = keyof typeof spacingTokens;
-type BorderRadiusTokens = keyof typeof borderRadiusTokens;
-type BoxShadowTokens = keyof typeof boxShadowTokens;
-type FontWeightTokens = keyof typeof fontWeightTokens;
-type TypographyTokens = keyof typeof typographyTokens;
-
-export type { ColorTokens, SpacingTokens, BorderRadiusTokens, FontWeightTokens, TypographyTokens, BoxShadowTokens };
-export { colorTokens, spacingTokens, fontWeightTokens, borderRadiusTokens, typographyTokens, boxShadowTokens };
+export type {
+  ColorTokens,
+  SpacingTokens,
+  BorderRadiusTokens,
+  FontWeightTokens,
+  TypographyTokens,
+  BoxShadowTokens,
+} from './tokens';

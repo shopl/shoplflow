@@ -1,6 +1,10 @@
 {
   "name": "shoplflow",
   "private": true,
+  "author": {
+    "name": "Jason.Jeong",
+    "email": "jason.jeong@shoplworks.com"
+  },
   "scripts": {
     "build": "turbo run build",
     "build:docs": "turbo run build:docs",

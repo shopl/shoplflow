@@ -8,6 +8,8 @@ export const fontWeightTokens = {
  fontWeightMedium,
  fontWeightBold,
 };
+export type FontWeightTokens = keyof typeof fontWeightTokens;
+
 const borderRadius04 = 'var(--border-radius04)';
 const borderRadius06 = 'var(--border-radius06)';
 const borderRadius08 = 'var(--border-radius08)';
@@ -22,6 +24,8 @@ export const borderRadiusTokens = {
  borderRadius16,
  borderRadius20,
 };
+export type BorderRadiusTokens = keyof typeof borderRadiusTokens;
+
 const coolgray300 = 'var(--coolgray300)';
 const coolgray200 = 'var(--coolgray200)';
 const coolgray100 = 'var(--coolgray100)';
@@ -120,6 +124,8 @@ export const colorTokens = {
  primary300,
  primary400,
 };
+export type ColorTokens = keyof typeof colorTokens;
+
 const spacing04 = 'var(--spacing04)';
 const spacing06 = 'var(--spacing06)';
 const spacing08 = 'var(--spacing08)';
@@ -142,10 +148,14 @@ export const spacingTokens = {
  spacing32,
  spacing40,
 };
+export type SpacingTokens = keyof typeof spacingTokens;
+
 const dropShadow = 'var(--dropShadow)';
 export const boxShadowTokens = {
  dropShadow,
 };
+export type BoxShadowTokens = keyof typeof boxShadowTokens;
+
 const heading1_700 = '.heading1_700';
 const heading1_400 = '.heading1_400';
 const heading2_700 = '.heading2_700';
@@ -165,6 +175,7 @@ const body2_500 = '.body2_500';
 const body2_400 = '.body2_400';
 const body3_400 = '.body3_400';
 const body3_500 = '.body3_500';
+const caption_700 = '.caption_700';
 const caption_400 = '.caption_400';
 export const typographyTokens = {
  heading1_700,
@@ -186,5 +197,8 @@ export const typographyTokens = {
  body2_400,
  body3_400,
  body3_500,
+ caption_700,
  caption_400,
 };
+export type TypographyTokens = keyof typeof typographyTokens;
+

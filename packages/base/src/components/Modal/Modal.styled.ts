@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import type { ModalContainerProps } from './Modal.types';
 import { css } from '@emotion/react';
-import { borderRadiusTokens, colorTokens } from '../../styles';
-import { boxShadowTokens } from '../../styles/tokens';
+import { borderRadiusTokens, colorTokens, boxShadowTokens } from '../../styles';
 
 const MODAL_SIZE_XXS = 400;
 const MODAL_SIZE_XS = 500;

@@ -1,12 +1,15 @@
 {
   "name": "@shoplflow/base",
   "version": "0.11.2",
-  "type": "module",
   "license": "Apache-2.0",
+  "author": {
+    "name": "Jason.Jeong",
+    "email": "jason.jeong@shoplworks.com"
+  },
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:tokens": "node scripts/generate-tokens.cjs",
-    "build:package": "tsup",
+    "build:package": "rm -rf dist/ && tsup",
     "build:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
@@ -15,21 +18,49 @@
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
-  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts"
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
     "./styles": "./dist/styles/global.css",
+    "./reset": "./dist/styles/reset.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
+  "import": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "styles"
+    "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "exports": {
+      ".": {
+        "require": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "import": {
+          "types": "./dist/index.d.mts",
+          "default": "./dist/index.mjs"
+        }
+      },
+      "./styles": "./dist/styles/global.css",
+      "./package.json": "./package.json"
+    },
+    "import": "./dist/index.mjs",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
   },
   "peerDependencies": {
     "@emotion/react": "*",
@@ -38,7 +69,6 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@shoplflow/utils": "workspace:^",
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
@@ -49,6 +79,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
+    "@shoplflow/utils": "workspace:^",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-backgrounds": "^7.4.1",
     "@storybook/addon-controls": "^7.4.1",
@@ -86,6 +117,7 @@
     ]
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.0.5",
     "@shoplflow/utils": "workspace:^",
     "classnames": "^2.3.2",
     "framer-motion": "10.12.6",

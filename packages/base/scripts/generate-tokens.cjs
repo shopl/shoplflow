@@ -29,6 +29,10 @@ function toCamelCase(str) {
     });
 }
 
+function capitalize(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+}
+
 function mappingTsTokenObject(obj, tokens) {
     let result = '';
     let exportName = `export const ${tokens} = {\n`;
@@ -38,6 +42,7 @@ function mappingTsTokenObject(obj, tokens) {
         exportName += ` ${toCamelCase(key)},\n`;
     }
     exportName += '};\n';
+    exportName += `export type ${capitalize(tokens)} = keyof typeof ${tokens};\n\n`;
     result += exportName;
     return result;
 }
@@ -50,6 +55,7 @@ function generateTypographyTokens() {
          exportName += ` ${key},\n`;
     });
     exportName += '};\n';
+    exportName += `export type ${capitalize('typographyTokens')} = keyof typeof typographyTokens;\n\n`;
     result += exportName;
     return result;
 }

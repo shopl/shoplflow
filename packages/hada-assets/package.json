@@ -2,6 +2,10 @@
   "name": "@shoplflow/hada-assets",
   "version": "0.0.2",
   "license": "Apache-2.0",
+  "author": {
+    "name": "Velo.kim",
+    "email": "velo.kim@shoplworks.com"
+  },
   "scripts": {
     "build:icons": "scripts/build-icons.sh",
     "lint:icons": "eslint --fix ./src/icons/generated/*.{ts,tsx}",
@@ -13,29 +17,49 @@
     "build:assets": "pnpm build:icons && pnpm build:illustrations",
     "develop": "tsup --watch"
   },
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
     },
-    "./styles": "./dist/styles/global.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
+  "import": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "exports": {
+      ".": {
+        "require": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "import": {
+          "types": "./dist/index.d.mts",
+          "default": "./dist/index.mjs"
+        }
+      },
+      "./styles": "./dist/styles/global.css",
+      "./package.json": "./package.json"
+    },
+    "import": "./dist/index.mjs",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
   },
   "peerDependencies": {
-    "@emotion/react": "*",
-    "@emotion/styled": "*",
-    "react": "*",
-    "react-dom": "*"
+    "react": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
