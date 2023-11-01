@@ -63,6 +63,8 @@ jobs:
 
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
+      - name: 에셋 패키지를 빌드하고 있어요.
+        run: pnpm turbo build:assets
 
       - name: 패키지를 빌드하고 있어요.
         run: pnpm build --since ${{ github.event.before }}
