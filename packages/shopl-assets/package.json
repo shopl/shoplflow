@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit || true",
     "develop": "tsup --watch",
     "prebuild": "pnpm run build:assets",
-    "build": "tsup",
+    "build": "rm -rf dist/ && tsup",
     "build:assets": "pnpm build:icons && pnpm build:illustrations"
   },
   "main": "dist/index.mjs",
