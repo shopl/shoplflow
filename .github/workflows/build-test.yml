@@ -51,12 +51,8 @@ jobs:
 
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
-
-      - name: 에셋 패키지를 빌드하고 있어요.
-        run: pnpm turbo build:assets
-
       - name: 전체패키지를 빌드하고 있어요.
-        run: pnpm turbo build
+        run: pnpm build
 
       - name: 테스트 Status를 확인하고 있어요.
         id: set_status
