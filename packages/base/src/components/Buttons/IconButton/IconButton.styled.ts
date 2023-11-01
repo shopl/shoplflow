@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import type { IconButtonOptionProps, IconButtonSizeVar, IconButtonStyleVar } from './IconButton.types';
-import { colorTokens } from '../../../styles';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
@@ -49,7 +49,7 @@ const getBorderByStyleVar = (styleVar?: IconButtonStyleVar) => {
 export const StyledIconButton = styled.button<IconButtonOptionProps>`
   display: flex;
   flex-shrink: 0;
-
+  border-radius: ${borderRadiusTokens.borderRadius06};
   justify-content: center;
   align-items: center;
   background-color: ${colorTokens.neutral0};
