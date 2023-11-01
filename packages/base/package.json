@@ -6,7 +6,7 @@
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:tokens": "node scripts/generate-tokens.cjs",
-    "build:package": "tsup",
+    "build:package": "rm -rf dist/ && tsup",
     "build:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
