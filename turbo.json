@@ -6,6 +6,7 @@
   "pipeline": {
     "build": {
       "dependsOn": [
+        "^build:assets",
         "^build:package",
         "^build"
       ],
@@ -26,6 +27,13 @@
         "^build:mdx",
         "^build",
         "^build:package"
+      ]
+    },
+    "build:assets": {
+      "cache": false,
+      "outputs": [
+        "dist/**",
+        "!.next/cache/**"
       ]
     },
     "build:package": {

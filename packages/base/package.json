@@ -15,21 +15,27 @@
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
     "./styles": "./dist/styles/global.css",
+    "./reset": "./dist/styles/reset.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
+  "import": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "styles"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

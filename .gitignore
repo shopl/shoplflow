@@ -49,3 +49,4 @@ yarn-error.log*
 junit.xml
 .pnpm-store
 docs/tsconfig.tsbuildinfo
+**/generated/**/*.tsx
