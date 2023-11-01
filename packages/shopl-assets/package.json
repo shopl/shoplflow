@@ -13,16 +13,18 @@
     "build": "rm -rf dist/ && tsup",
     "build:assets": "pnpm build:icons && pnpm build:illustrations"
   },
-  "main": "dist/index.mjs",
+  "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+  ".": {
+    "import": {
+      "default": "./dist/index.mjs",
+      "types": "./dist/index.d.mts"
     },
-    "./package.json": "./package.json"
+    "require": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
     "/dist"

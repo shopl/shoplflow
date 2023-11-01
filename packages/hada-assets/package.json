@@ -13,18 +13,23 @@
     "build:assets": "pnpm build:icons && pnpm build:illustrations",
     "develop": "tsup --watch"
   },
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "require": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
     },
     "./styles": "./dist/styles/global.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
   "files": [
     "/dist"
   ],
