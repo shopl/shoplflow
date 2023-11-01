@@ -66,7 +66,7 @@ export const StyledIconButton = styled.button<IconButtonOptionProps>`
   ${({ styleVar }) => getBorderByStyleVar(styleVar)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
-
+  cursor: pointer;
   &:hover {
     background-color: ${({ styleVar, disabled }) => {
       if (disabled) {
