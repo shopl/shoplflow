@@ -9,8 +9,6 @@
     "lint:illustrations": "eslint --fix ./src/illustrations/generated/*.{ts,tsx}",
     "type-check": "tsc --noEmit || true",
     "build": "tsup",
-    "prebuild": "pnpm run build:assets",
-    "build:assets": "pnpm build:icons && pnpm build:illustrations",
     "develop": "tsup --watch"
   },
   "main": "dist/index.js",
