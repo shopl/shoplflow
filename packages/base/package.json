@@ -117,7 +117,6 @@
     ]
   },
   "dependencies": {
-    "@radix-ui/react-scroll-area": "^1.0.5",
     "@shoplflow/utils": "workspace:^",
     "classnames": "^2.3.2",
     "framer-motion": "10.12.6",
