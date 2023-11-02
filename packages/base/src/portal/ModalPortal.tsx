@@ -19,7 +19,6 @@ export const SpaceMarginWrapper = styled(motion.div)`
 
 const ModalPortal = () => {
   const modal = useModalStore((state) => state.modal);
-
   return (
     <>
       {createPortal(

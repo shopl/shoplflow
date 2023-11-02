@@ -19,5 +19,3 @@ export function createIcon(source: EnabledIconSource): IconSource {
   source[ICON_SYMBOL] = true;
   return source as IconSource;
 }
-
-export default createIcon;

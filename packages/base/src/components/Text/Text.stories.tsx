@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 
 import { Stack } from '../Stack';
 
@@ -13,7 +13,7 @@ import { typographyTokens } from '../../styles';
 export default {
   title: 'COMPONENTS/Text',
   component: Text,
-} as Meta;
+};
 
 const allTypographyValues = Object.values(typographyTokens);
 const allTypographyKeys = Object.keys(typographyTokens) as TypographyTokens[];

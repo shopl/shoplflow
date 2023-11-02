@@ -5,12 +5,14 @@
     "build": "turbo run build",
     "build:docs": "turbo run build:docs",
     "build:package": "turbo run build:package",
+    "build:assets": "turbo run build:assets",
     "build:storybook": "turbo run build:storybook",
     "lint": "turbo run lint",
     "dev:docs": "turbo run dev:docs",
     "dev:storybook": "turbo run dev:storybook",
     "dev:stories": "turbo run dev:stories",
     "dev": "turbo run dev",
+    "type-check": "turbo run type-check",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clear:node_modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
     "refresh:node_modules": "pnpm run clear:node_modules && pnpm i",
@@ -18,7 +20,6 @@
     "changeset": "changeset",
     "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish",
-    "type-check": "turbo run type-check",
     "prepare": "husky install",
     "post-checkout": "pnpm run refresh:node_modules",
     "postinstall": "husky install && pnpm config set store-dir .pnpm-store"
@@ -55,9 +56,5 @@
     "@changesets/cli": "^2.26.2",
     "husky": "8.0.3"
   },
-  "workspaces": [
-    "packages/*",
-    "docs",
-    "templates/*"
-  ]
+  "packageManager": "pnpm@8.9.2"
 }

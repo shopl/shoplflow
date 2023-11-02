@@ -4,19 +4,16 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 });
 
-module.exports = withNextra({
-  reactStrictMode: true,
-
-  webpack(config) {
-    const allowedSvgRegex = /icons\/.+\.svg$/;
-
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test('.svg'));
-    fileLoaderRule.exclude = allowedSvgRegex;
-
-    config.module.rules.push({
-      test: allowedSvgRegex,
-      use: ['@svgr/webpack'],
-    });
-    return config;
-  },
-});
+module.exports = {
+  output: '.next',
+  ...withNextra({
+    reactStrictMode: true,
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      });
+      return config;
+    },
+  }),
+};

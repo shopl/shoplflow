@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { ReactNode } from 'react';
+import { isNullOrUndefined } from '@shoplflow/utils';
 
 export type ModalStateType = {
   component: ReactNode;
@@ -29,15 +30,15 @@ export const useModalStore = create<UseModalStore>((set) => ({
       ],
     })),
   removeModal: (props) => {
-    const { id, deps = 1 } = props || {
+    const { id, deps } = props || {
       id: undefined,
-      deps: 0,
+      deps: undefined,
     };
 
-    const isIncludeAllProps = Boolean(id && String(deps));
+    const isIncludeAllProps = Boolean(id && deps);
     const isIncludeId = Boolean(id);
-    const isNotIncludeAllProps = !id && !deps;
-    const isIncludeDeps = Boolean(String(deps)) && !id;
+    const isNotIncludeAllProps = !id && Boolean(isNullOrUndefined(deps));
+    const isIncludeDeps = Boolean(Boolean(!isNullOrUndefined(deps)) && !id);
 
     if (isIncludeAllProps) {
       throw new Error('id와 deps는 동시에 사용할 수 없습니다.');
@@ -64,8 +65,11 @@ export const useModalStore = create<UseModalStore>((set) => ({
     }
 
     if (isIncludeDeps) {
+      if (deps === 0 || deps === undefined) {
+        return;
+      }
       set((state) => {
-        const removeDeps = state.modal.slice(0, -deps + 1);
+        const removeDeps = state.modal.slice(0, -deps);
         return {
           modal: [...removeDeps],
         };

@@ -5,6 +5,9 @@
   "extractColors": {
     "title": "extractColors"
   },
+  "isNullOrUndefined": {
+    "title": "isNullOrUndefined"
+  },
   "noop": {
     "title": "noop"
   },

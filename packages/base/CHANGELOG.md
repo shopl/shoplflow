@@ -1,5 +1,43 @@
 # @shoplflow/base
 
+## 0.11.3
+
+### Patch Changes
+
+- [#101](https://github.com/shopl/shoplflow/pull/101) [`6be63d6`](https://github.com/shopl/shoplflow/commit/6be63d6d708e70b11ccd5ac1bca8aa22aba28034) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - package.json의 export 수정
+  - base 패키지의 export가 잘못 지정 되어 있는 부분을 수정했습니다.
+  - package.json 의 빌드 스크립트를 정리했습니다.
+  - 스토리 수정
+    - minusButton story가 잘못 설정되어있는 부분을 수정했습니다.
+    - iconButton에 radius가 누락된 부분을 수정했습니다.
+  - 개발 환경 수정
+    - turbo.json의 빌드 순서를 재지정했습니다.
+    - 생성된 에셋 파일과 문서 파일을 gitignore로 지정했습니다.
+    - turbo.json 의 docs script를 수정했습니다.
+
+## 0.11.2
+
+### Patch Changes
+
+- [#98](https://github.com/shopl/shoplflow/pull/98) [`7d2e1c0`](https://github.com/shopl/shoplflow/commit/7d2e1c0282180a3698660d6c9d56c724aa53269f) Thanks [@bong9boy](https://github.com/bong9boy)! - caption_700 추가
+
+## 0.11.1
+
+### Patch Changes
+
+- [#95](https://github.com/shopl/shoplflow/pull/95) [`610d25c`](https://github.com/shopl/shoplflow/commit/610d25c6dc89de6076f7d4b95b0d4e2c4a648394) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - - modal removeModal 함수의 인자에 id가 들어올 경우 정상적으로 동작하지 않는 버그 수정
+  - framer-motion과 emotion 사이의 타입이 맞지 않는 버그 수정
+  - 번들러 tsup으로 변경
+  - 폴더 정리
+- Updated dependencies [[`610d25c`](https://github.com/shopl/shoplflow/commit/610d25c6dc89de6076f7d4b95b0d4e2c4a648394)]:
+  - @shoplflow/utils@0.3.0
+
+## 0.11.0
+
+### Minor Changes
+
+- [#82](https://github.com/shopl/shoplflow/pull/82) [`426d2b0`](https://github.com/shopl/shoplflow/commit/426d2b04ee4c7a42c688ac0cd9b04d0a45b2facc) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Callout 컴포넌트 추가
+
 ## 0.10.0
 
 ### Minor Changes
