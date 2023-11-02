@@ -45,9 +45,15 @@ yarn-error.log*
 .vercel
 **/storybook-static
 junit.xml
+
+# pnpm-store가 꼬이는 경우가 있어 제외
 .pnpm-store
 docs/tsconfig.tsbuildinfo
+
+# 생성되는 에셋 이미지 제외
 **/generated/**/*.tsx
+
+# 생성되는 파일 제외
 docs/pages/**/*.mdx
 !docs/pages/contribute/**/*.mdx
 !docs/pages/_app.mdx
