@@ -67,7 +67,6 @@ const getStyleBySizeVar = (sizeVar?: ButtonSizeVar) => {
 };
 
 export const StyledButton = styled.button<ButtonOptionProps>`
-  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +74,7 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   border-radius: ${borderRadiusTokens.borderRadius06};
   padding: 0px ${spacingTokens.spacing12};
   border-radius: ${borderRadiusTokens.borderRadius12};
+  cursor: pointer;
   ${({ styleVar, disabled }) => getStyleByStyleVar(styleVar, disabled)};
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};

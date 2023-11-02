@@ -42,13 +42,13 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+#      - uses: actions/cache@v3
+#        name: Setup pnpm cache
+#        with:
+#          path: ${{ env.STORE_PATH }}
+#          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
@@ -63,9 +63,8 @@ jobs:
 
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
-
       - name: 패키지를 빌드하고 있어요.
-        run: pnpm build --since ${{ github.event.before }}
+        run: pnpm build
 
       - name: PR을 생성하거나 NPM에 배포하고 있어요.
         uses: changesets/action@v1

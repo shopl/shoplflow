@@ -4,14 +4,16 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 });
 
-module.exports = withNextra({
-  reactStrictMode: true,
-
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-    return config;
-  },
-});
+module.exports = {
+  output: '.next',
+  ...withNextra({
+    reactStrictMode: true,
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      });
+      return config;
+    },
+  }),
+};

@@ -5,7 +5,6 @@
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit || true",
-    "build": "node build.js",
     "build:package": "node build.js",
     "dev": "node build.js --watch"
   },

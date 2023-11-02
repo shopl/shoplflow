@@ -8,23 +8,26 @@
     "build:illustrations": "scripts/build-illustrations.sh",
     "lint:illustrations": "eslint --fix ./src/illustrations/generated/*.{ts,tsx}",
     "type-check": "tsc --noEmit || true",
-    "build": "tsup",
-    "prebuild": "pnpm run build:assets",
-    "build:assets": "pnpm build:icons && pnpm build:illustrations",
+    "build:package": "rm -rf dist/ && tsup",
     "develop": "tsup --watch"
   },
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      },
+      "require": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
     },
     "./styles": "./dist/styles/global.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
   "files": [
     "/dist"
   ],

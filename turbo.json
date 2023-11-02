@@ -4,57 +4,62 @@
     "**/.env.*local"
   ],
   "pipeline": {
-    "build": {
+    "build:illustrations": {
+      "cache": false
+    },
+    "build:icons": {
+      "cache": false
+    },
+    "build:assets": {
       "dependsOn": [
-        "^build:package",
-        "^build"
+        "build:illustrations",
+        "build:icons"
       ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ]
-    },
-    "build:mdx": {
-      "outputs": [
-        "dist/**",
-        "!.next/cache/**"
-      ]
-    },
-    "build:docs": {
       "cache": false,
-      "dependsOn": [
-        "^build:mdx",
-        "^build",
-        "^build:package"
+      "outputs": [
+        "dist/**"
       ]
+    },
+    "build:mdx": {},
+    "build:docs": {
+      "dependsOn": [
+        "^build:docs",
+        "build:mdx",
+        "build:assets",
+        "build:package"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
     },
     "build:package": {
+      "cache": false,
       "dependsOn": [
-        "^build"
+        "^build:package",
+        "build:illustrations",
+        "build:icons",
+        "build:assets"
       ],
       "outputs": [
-        "dist/**",
-        "!.next/cache/**"
+        "dist/**"
       ]
     },
     "build:storybook": {
       "dependsOn": [
-        "^build",
-        "^build:package"
+        "build:package"
       ],
       "outputs": [
-        "dist/**",
         "storybook-static/**"
       ]
     },
-    "lint": {
-
+    "build": {
+      "dependsOn": [
+        "^build",
+        "build:package"
+      ],
+      "outputs": ["dist/**", "storybook-static/**", ".next"]
     },
-    "test": {
-
-    },
-    "type-check": {
-    },
+    "lint": {},
+    "test": {},
+    "type-check": {},
     "dev": {
       "cache": false,
       "persistent": true

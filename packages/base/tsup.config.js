@@ -1,11 +1,11 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/*.{ts,tsx,js,jsx}', 'src/styles/global.css'],
+  entry: ['src/index.ts', 'src/styles/global.css', 'src/styles/reset.css'],
   splitting: true,
   sourcemap: true,
+  treeshake: 'safest',
   clean: true,
-  treeshake: true,
   format: ['esm', 'cjs'],
   dts: true,
   external: ['react'],

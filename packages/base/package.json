@@ -6,7 +6,7 @@
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:tokens": "node scripts/generate-tokens.cjs",
-    "build:package": "tsup",
+    "build:package": "rm -rf dist/ && tsup",
     "build:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
@@ -15,21 +15,27 @@
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
     "./styles": "./dist/styles/global.css",
+    "./reset": "./dist/styles/reset.css",
     "./package.json": "./package.json"
   },
-  "main": "dist/index.js",
+  "import": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist",
-    "styles"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
@@ -41,7 +47,6 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@shoplflow/utils": "workspace:^",
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
@@ -50,8 +55,6 @@
     "@emotion/styled": "11.10.8",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@shoplflow/hada-assets": "workspace:^",
-    "@shoplflow/shopl-assets": "workspace:^",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-backgrounds": "^7.4.1",
     "@storybook/addon-controls": "^7.4.1",
@@ -89,6 +92,8 @@
     ]
   },
   "dependencies": {
+    "@shoplflow/hada-assets": "workspace:^",
+    "@shoplflow/shopl-assets": "workspace:^",
     "@shoplflow/utils": "workspace:^",
     "classnames": "^2.3.2",
     "framer-motion": "10.12.6",
