@@ -31,6 +31,7 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "build:package": {
+      "cache": false,
       "dependsOn": [
         "^build:package",
         "build:illustrations",
@@ -54,10 +55,7 @@
         "^build",
         "build:package"
       ],
-      "outputs": [
-        "dist/**",
-        "!.next/cache/**"
-      ]
+      "outputs": ["dist/**", "storybook-static/**", ".next"]
     },
     "//#lint": {},
     "test": {},
