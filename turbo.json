@@ -57,22 +57,22 @@
       ],
       "outputs": ["dist/**", "storybook-static/**", ".next"]
     },
-    "//#lint": {},
+    "lint": {},
     "test": {},
     "type-check": {},
-    "//#dev": {
+    "dev": {
       "cache": false,
       "persistent": true
     },
-    "//#dev:stories": {
+    "dev:stories": {
       "persistent": true,
       "cache": false
     },
-    "//#dev:storybook": {
+    "dev:storybook": {
       "persistent": true,
       "cache": false
     },
-    "//#dev:docs": {
+    "dev:docs": {
       "persistent": true,
       "cache": false
     }
