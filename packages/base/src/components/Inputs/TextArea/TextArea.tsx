@@ -3,7 +3,7 @@ import React, { forwardRef, useId, useState } from 'react';
 import type { TextAreaProps } from './TextArea.types';
 
 import { StyledTextarea, Wrapper } from './TextArea.styled';
-import TextLengthWithMax from '../common/TextLengthWithMax';
+import TextCounter from '../common/TextCounter';
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (
@@ -49,7 +49,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           {...rest}
         />
         {maxLength && (
-          <TextLengthWithMax
+          <TextCounter
             nowLength={nowLength ?? 0}
             maxLength={maxLength}
             wrapperStyle={{ width: '100%', justifyContent: 'flex-end' }}

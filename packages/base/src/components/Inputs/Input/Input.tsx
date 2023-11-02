@@ -1,100 +1,83 @@
-import type { ForwardedRef } from 'react';
-import { forwardRef, useId, useState } from 'react';
-import { WrapperWithError, Wrapper, StyledInput, HasBackgroundBtnWrapper } from './Input.styled';
+import type { FocusEvent, ChangeEvent, ForwardedRef } from 'react';
+import { useEffect, forwardRef, useId, useState } from 'react';
+import { InputWrapper, StyledInput } from './Input.styled';
+
+import TextCounter from '../common/TextCounter';
 import type { InputProps } from './Input.types';
-import { DeleteIcon } from '@shoplflow/shopl-assets';
-import { IconButton } from '../../IconButton';
-import TextLengthWithMax from '../common/TextLengthWithMax';
-import { Text } from '../../../components/Text';
-import { spacingTokens } from '../../../styles';
+import { typographyTokens } from '../../../styles';
+import { Stack } from '../../Stack';
 
-// type InputHandle = {
-//   value: ComponentPropsWithoutRef<'input'>['value'];
-//   onChange: ComponentPropsWithoutRef<'input'>['onChange'];
-// };
-
-const Input = forwardRef(
+const Input = forwardRef<ForwardedRef<HTMLInputElement>, InputProps>(
   (
     {
-      wrapperStyle,
       placeholder = 'placeholder',
-      value,
       onFocus,
       onBlur,
-      errorText,
+      onChange,
+      defaultValue,
+      value,
       disabled,
-      onDelete,
-      nowLength,
+      type = 'text',
       maxLength,
-      name,
-      confirmController,
+      className,
+      rightSource,
       ...rest
-    }: InputProps,
-    ref: ForwardedRef<HTMLInputElement>,
+    },
+    ref,
   ) => {
-    const [focused, setFocused] = useState(false);
+    const [text, setText] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
     const uniqueId = useId();
-    // const [value, setValue] = useState('');
+
+    const handleOnFocus = (event: FocusEvent<HTMLInputElement>) => {
+      onFocus && onFocus(event);
+      setIsFocused(true);
+    };
+    const handleOnBlur = (event: FocusEvent<HTMLInputElement>) => {
+      onBlur && onBlur(event);
+      setIsFocused(false);
+    };
+    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+      onChange && onChange(event);
+      setText(event.target.value);
+    };
+
+    const convertToString = (value: string | number | readonly string[]) => {
+      if (typeof value !== 'number') {
+        return typeof value === 'string' ? value : value.join('');
+      }
+      return String(value);
+    };
+
+    useEffect(() => {
+      defaultValue && setText(convertToString(defaultValue));
+    }, [defaultValue]);
+
+    useEffect(() => {
+      value && setText(convertToString(value));
+    }, [value]);
 
     return (
-      <WrapperWithError>
-        <Wrapper
-          style={wrapperStyle}
-          htmlFor={uniqueId}
-          focused={focused}
-          isError={Boolean(errorText)}
+      <InputWrapper htmlFor={uniqueId} focused={isFocused} disabled={disabled}>
+        <StyledInput
+          className={`${typographyTokens.body1_400} ${className}`}
+          placeholder={placeholder}
+          onFocus={handleOnFocus}
+          onBlur={handleOnBlur}
+          onChange={handleOnChange}
+          maxLength={maxLength}
           disabled={disabled}
-          isEmpty={!nowLength}
-          withRightBackgroundBtn={confirmController?.hasBackground}
-        >
-          <StyledInput
-            className='body1_400'
-            placeholder={placeholder}
-            onFocus={(event) => {
-              onFocus?.(event);
-              setFocused(true);
-            }}
-            type='text'
-            onBlur={(event) => {
-              onBlur?.(event);
-              setFocused(false);
-            }}
-            id={uniqueId}
-            value={value}
-            ref={ref}
-            name={name}
-            maxLength={maxLength}
-            disabled={disabled}
-            {...rest}
-          />
-          {maxLength && !confirmController && <TextLengthWithMax nowLength={nowLength ?? 0} maxLength={maxLength} />}
-
-          {Boolean(nowLength) && (
-            <IconButton
-              sizeVar='S'
-              styleVar='GHOST'
-              onClick={() => {
-                onDelete();
-              }}
-            >
-              <DeleteIcon width={20} height={20} />
-            </IconButton>
-          )}
-          {Boolean(confirmController) &&
-            (confirmController?.hasBackground ? (
-              <HasBackgroundBtnWrapper>{confirmController.icon}</HasBackgroundBtnWrapper>
-            ) : (
-              <div>
-                <IconButton sizeVar='S' styleVar='SOLID'></IconButton>
-              </div>
-            ))}
-        </Wrapper>
-        {Boolean(errorText) && (
-          <Text style={{ paddingLeft: spacingTokens.spacing08 }} typography='caption_400' color='red300'>
-            {errorText}
-          </Text>
-        )}
-      </WrapperWithError>
+          value={text}
+          type={type}
+          id={uniqueId}
+          ref={ref}
+          {...rest}
+        />
+        <Stack.Horizontal>
+          {maxLength && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
+          {Boolean(String(text).length > 0) && <>{rightSource}</>}
+        </Stack.Horizontal>
+      </InputWrapper>
     );
   },
 );
