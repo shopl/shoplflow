@@ -8,7 +8,7 @@
     "build:illustrations": "scripts/build-illustrations.sh",
     "lint:illustrations": "eslint --fix ./src/illustrations/generated/*.{ts,tsx}",
     "type-check": "tsc --noEmit || true",
-    "build": "tsup",
+    "build:package": "rm -rf dist/ && tsup",
     "develop": "tsup --watch"
   },
   "main": "dist/index.js",

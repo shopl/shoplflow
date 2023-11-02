@@ -33,6 +33,7 @@
     },
     "build:package": {
       "dependsOn": [
+        "^build:package",
         "build:illustrations",
         "build:icons",
         "build:assets"
@@ -43,8 +44,7 @@
     },
     "build:storybook": {
       "dependsOn": [
-        "^build",
-        "^build:package"
+        "build:package"
       ],
       "outputs": [
         "storybook-static/**"
@@ -52,29 +52,30 @@
     },
     "build": {
       "dependsOn": [
-        "^build"
+        "^build",
+        "build:package"
       ],
       "outputs": [
         "dist/**",
         "!.next/cache/**"
       ]
     },
-    "lint": {},
+    "//#lint": {},
     "test": {},
     "type-check": {},
-    "dev": {
+    "//#dev": {
       "cache": false,
       "persistent": true
     },
-    "dev:stories": {
+    "//#dev:stories": {
       "persistent": true,
       "cache": false
     },
-    "dev:storybook": {
+    "//#dev:storybook": {
       "persistent": true,
       "cache": false
     },
-    "dev:docs": {
+    "//#dev:docs": {
       "persistent": true,
       "cache": false
     }
