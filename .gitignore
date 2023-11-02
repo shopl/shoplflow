@@ -48,3 +48,8 @@ junit.xml
 .pnpm-store
 docs/tsconfig.tsbuildinfo
 **/generated/**/*.tsx
+docs/pages/**/*.mdx
+!docs/pages/contribute/**/*.mdx
+!docs/pages/_app.mdx
+!docs/pages/_document.mdx
+!docs/pages/index.mdx
