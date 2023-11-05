@@ -21,7 +21,14 @@ const ChipButton = ({
   };
 
   return (
-    <StyledChipButton styleVar={styleVar} color={color} {...rest} onClick={handleOnClick} disabled={disabled}>
+    <StyledChipButton
+      styleVar={styleVar}
+      color={color}
+      {...rest}
+      onClick={handleOnClick}
+      disabled={disabled}
+      data-shoplflow={'chip-button'}
+    >
       <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>
     </StyledChipButton>
   );

@@ -7,7 +7,7 @@ import type { IconSourceProps } from '../../utils/type/ComponentProps';
 
 const Callout = ({ children, styleVar = 'INFORMATION', ...rest }: CalloutProps) => {
   return (
-    <StyledCallout {...rest} styleVar={styleVar}>
+    <StyledCallout {...rest} styleVar={styleVar} data-shoplflow={'callout'}>
       {children}
     </StyledCallout>
   );

@@ -3,35 +3,75 @@ import { useRef, useState } from 'react';
 
 import Input from './Input';
 import type { InputProps } from './Input.types';
+import { Stack } from '../../Stack';
+import { Button } from '../../Buttons';
 
 export default {
   title: 'COMPONENTS/Inputs/Input',
   component: Input,
 };
 
-export const Default: StoryFn<InputProps> = (args) => {
+export const Playground: StoryFn<InputProps> = (args) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <Stack width={'500px'}>
+      <Input maxLength={50} ref={inputRef} {...args} />
+    </Stack>
+  );
+};
+
+Playground.args = {
+  placeholder: 'input 예제에요.',
+  disabled: false,
+  onDelete: () => {
+    return;
+  },
+};
+export const Password: StoryFn<InputProps> = (args) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <Stack width={'500px'}>
+      <Input maxLength={50} ref={inputRef} {...args} />
+    </Stack>
+  );
+};
+
+Password.args = {
+  type: 'password',
+  placeholder: '타입이 password인 경우에요.',
+  disabled: false,
+  onDelete: () => {
+    return;
+  },
+};
+export const CheckValue: StoryFn<InputProps> = (args) => {
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <Input
-      value={value}
-      onChange={(event) => {
-        setValue(event.target.value);
-      }}
-      maxLength={50}
-      ref={inputRef}
-      {...args}
-      nowLength={value.length}
-      onDelete={() => {
-        setValue('');
-        inputRef.current?.focus();
-      }}
-    />
+    <Stack width={'600px'} spacing={'spacing12'}>
+      <Stack.Horizontal width={'100%'} spacing={'spacing12'}>
+        <Input maxLength={50} ref={inputRef} {...args} />
+        <Button
+          styleVar={'PRIMARY'}
+          onClick={() => {
+            setValue(inputRef.current?.value || '');
+          }}
+        >
+          get value
+        </Button>
+      </Stack.Horizontal>
+      <Stack.Horizontal>
+        <div>{value}</div>
+      </Stack.Horizontal>
+    </Stack>
   );
 };
 
-Default.args = {
+CheckValue.args = {
+  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있어요.',
   disabled: false,
   onDelete: () => {
     return;
@@ -39,48 +79,15 @@ Default.args = {
 };
 
 export const Error: StoryFn<InputProps> = (args) => {
-  const [value] = useState('에러 케이스');
-
-  return <Input value={value} {...args} nowLength={value.length} />;
-};
-
-Error.args = {
-  disabled: true,
-  errorText: '에러가 발생 했습니다.',
-};
-
-export const WithIconButton: StoryFn<InputProps> = (args) => {
-  const [value, setValue] = useState('');
-  const inputRef = useRef<HTMLInputElement>(null);
-
   return (
-    <Input
-      value={value}
-      onChange={(event) => {
-        setValue(event.target.value);
-      }}
-      maxLength={50}
-      ref={inputRef}
-      {...args}
-      nowLength={value.length}
-      onDelete={() => {
-        setValue('');
-        inputRef.current?.focus();
-      }}
-    />
+    <Stack width={'500px'}>
+      <Input maxLength={50} {...args} />
+    </Stack>
   );
 };
 
-WithIconButton.args = {
+Error.args = {
   disabled: false,
-  onDelete: () => {
-    return;
-  },
-  confirmController: {
-    hasBackground: true,
-    onConfirm: () => {
-      return;
-    },
-    icon: <div style={{ backgroundColor: 'yellow', width: '20px', height: '20px' }} />,
-  },
+  isError: true,
+  placeholder: '에러 상태에요.',
 };

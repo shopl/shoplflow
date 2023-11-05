@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import type { ButtonOptionProps, ButtonSizeVar, ButtonStyleVar } from './Button.types';
-import { borderRadiusTokens, spacingTokens, colorTokens } from '../../../styles';
+import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
@@ -70,10 +70,9 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${spacingTokens.spacing04};
-  border-radius: ${borderRadiusTokens.borderRadius06};
-  padding: 0px ${spacingTokens.spacing12};
-  border-radius: ${borderRadiusTokens.borderRadius12};
+  gap: 4px;
+  padding: 0 12px;
+  border-radius: 6px;
   cursor: pointer;
   ${({ styleVar, disabled }) => getStyleByStyleVar(styleVar, disabled)};
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};

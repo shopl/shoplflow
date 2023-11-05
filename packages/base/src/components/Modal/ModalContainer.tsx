@@ -48,7 +48,7 @@ const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContain
   });
 
   return (
-    <Container ref={ref} {...rest}>
+    <Container ref={ref} {...rest} data-shoplflow={'modal'}>
       {addPropInChildren}
     </Container>
   );

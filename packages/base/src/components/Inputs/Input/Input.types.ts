@@ -10,5 +10,5 @@ export interface InputProps
 export type InputOptionProps = {
   maxLength?: number;
   isError?: boolean;
-  onDelete: (...args: any[]) => void;
+  onDelete?: () => void;
 };

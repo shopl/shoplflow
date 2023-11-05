@@ -92,8 +92,6 @@
     ]
   },
   "dependencies": {
-    "@shoplflow/hada-assets": "workspace:^",
-    "@shoplflow/shopl-assets": "workspace:^",
     "@shoplflow/utils": "workspace:^",
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",

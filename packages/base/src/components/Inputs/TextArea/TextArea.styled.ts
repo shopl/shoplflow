@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
-import { spacingTokens, colorTokens, borderRadiusTokens } from '../../../styles';
+import { spacingTokens, colorTokens } from '../../../styles';
+import type { Status } from '../Input/Input.styled';
 
 const getBorderColorByStatus = ({ selected, isError }: { selected?: boolean; isError?: boolean }) => {
   if (isError) {
@@ -13,22 +14,17 @@ const getBorderColorByStatus = ({ selected, isError }: { selected?: boolean; isE
   return colorTokens.neutral300;
 };
 
-export const Wrapper = styled.label<{ selected: boolean; isError?: boolean; disabled?: boolean }>`
+export const TextAreaWrapper = styled.label<Status>`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: ${spacingTokens.spacing04};
   padding: ${spacingTokens.spacing08} ${spacingTokens.spacing12};
-  border: 1px solid ${({ selected, isError }) => getBorderColorByStatus({ selected, isError })};
-  width: 376px;
-  border-radius: ${borderRadiusTokens.borderRadius06};
+  box-shadow: 0 0 0 1px ${(props) => getBorderColorByStatus(props)};
+  border-radius: 6px;
   background-color: ${colorTokens.neutral0};
-  cursor: pointer;
+  cursor: text;
   ${({ disabled }) => getDisabledStyle(disabled)};
-  &:hover {
-    border-color: ${({ selected, isError, disabled }) =>
-      !selected && !isError && !disabled && `${colorTokens.neutral700}`};
-  }
 `;
 
 export const StyledTextarea = styled.textarea<{ minHeight?: number }>`

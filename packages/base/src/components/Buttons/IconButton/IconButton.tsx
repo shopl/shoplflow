@@ -9,7 +9,15 @@ const IconButton: IconButtonComponent = forwardRef(
     ref: ComponentPropsWithRef<T>['ref'],
   ) => {
     return (
-      <StyledIconButton styleVar={styleVar} sizeVar={sizeVar} disabled={disabled} as={as} ref={ref} {...rest}>
+      <StyledIconButton
+        styleVar={styleVar}
+        sizeVar={sizeVar}
+        disabled={disabled}
+        as={as}
+        ref={ref}
+        {...rest}
+        data-shoplflow={'icon-button'}
+      >
         {children}
       </StyledIconButton>
     );
