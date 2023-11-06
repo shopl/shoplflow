@@ -27,7 +27,7 @@ const ChipButton = ({
       {...rest}
       onClick={handleOnClick}
       disabled={disabled}
-      data-shoplflow={'chip-button'}
+      data-shoplflow={'ChipButton'}
     >
       <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>
     </StyledChipButton>

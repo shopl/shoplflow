@@ -23,7 +23,7 @@ import { Styled${prefix} } from './${prefix}.styled';
 
 const $prefix = () => {
     return (
-        <Styled${prefix}>
+        <Styled${prefix} data-shoplflow={'${prefix}'}>
           $prefix
         </Styled${prefix}>
     );

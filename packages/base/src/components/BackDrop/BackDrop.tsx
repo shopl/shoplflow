@@ -10,7 +10,7 @@ const BackDrop = ({ children }: BackDropProps) => {
       initial={'initial'}
       animate={'animate'}
       exit={'exit'}
-      data-shoplflow={'backdrop'}
+      data-shoplflow={'BackDrop'}
     >
       {children}
     </BackDropStyled>

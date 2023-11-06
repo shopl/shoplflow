@@ -16,7 +16,7 @@ const IconButton: IconButtonComponent = forwardRef(
         as={as}
         ref={ref}
         {...rest}
-        data-shoplflow={'icon-button'}
+        data-shoplflow={'IconButton'}
       >
         {children}
       </StyledIconButton>

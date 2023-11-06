@@ -28,7 +28,7 @@ const Button: ButtonComponent = forwardRef(
         ref={ref}
         color={color}
         {...rest}
-        data-shoplflow={'button'}
+        data-shoplflow={'Button'}
       >
         {leftSource}
         <Text

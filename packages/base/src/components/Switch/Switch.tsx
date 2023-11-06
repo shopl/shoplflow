@@ -28,7 +28,7 @@ const Switch = ({
         onChange={handleOnChange}
         activeColor={activeColor}
         {...rest}
-        data-shoplflow={'switch'}
+        data-shoplflow={'Switch'}
       />
     </SwitchContainer>
   );

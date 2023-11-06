@@ -38,7 +38,7 @@ const ChipToggle = ({
       sizeVar={sizeVar}
       onClick={handleClick}
       disabled={disabled}
-      data-shoplflow={'chip-toggle'}
+      data-shoplflow={'ChipToggle'}
     >
       {leftSource}
       <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>

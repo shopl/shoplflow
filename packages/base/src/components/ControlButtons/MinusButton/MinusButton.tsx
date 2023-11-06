@@ -4,7 +4,7 @@ import type { MinusBoxProps } from './MinusButton.types';
 
 const MinusButton = forwardRef<HTMLButtonElement, MinusBoxProps>(({ onClick, color = 'neutral300', ...rest }, ref) => {
   return (
-    <StyledMinusBox.Container data-shoplflow={'minus-button'}>
+    <StyledMinusBox.Container data-shoplflow={'minusButton'}>
       <StyledMinusBox.IconButton color={color} onClick={onClick} ref={ref} {...rest}>
         <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path

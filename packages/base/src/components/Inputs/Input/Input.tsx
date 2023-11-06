@@ -1,5 +1,5 @@
 import type { FocusEvent, ChangeEvent, HTMLInputTypeAttribute, MouseEvent } from 'react';
-import React, { useEffect, forwardRef, useId, useState } from 'react';
+import React, { useCallback, useEffect, forwardRef, useId, useState } from 'react';
 import { InputWrapper, RightElementWrapper, StyledInput } from './Input.styled';
 
 import TextCounter from '../common/TextCounter';
@@ -37,6 +37,23 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputRef = React.useRef<HTMLInputElement>(null);
     const refs = useMergeRefs(ref, inputRef);
 
+    const convertToString = useCallback((value: string | number | readonly string[]) => {
+      if (typeof value !== 'number') {
+        return typeof value === 'string' ? value : value.join('');
+      }
+      return String(value);
+    }, []);
+
+    const sliceText = useCallback(
+      (value: string) => {
+        if (maxLength && value.length > maxLength) {
+          return value.slice(0, maxLength);
+        }
+        return value;
+      },
+      [maxLength],
+    );
+
     const handleOnMouseEnter = (e: MouseEvent<HTMLLabelElement>) => {
       onMouseEnter && onMouseEnter(e);
       setIsHovered(true);
@@ -56,7 +73,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
       onChange && onChange(event);
-      setText(event.target.value);
+      const slicedText = sliceText(event.target.value);
+      setText(slicedText);
     };
 
     const handleOnDelete = () => {
@@ -65,13 +83,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         setText('');
         inputRef.current.value = '';
       }
-    };
-
-    const convertToString = (value: string | number | readonly string[]) => {
-      if (typeof value !== 'number') {
-        return typeof value === 'string' ? value : value.join('');
-      }
-      return String(value);
     };
 
     const handleTogglePasswordType = () => {
@@ -85,22 +96,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     useEffect(() => {
       if (defaultValue) {
         const convertString = convertToString(defaultValue);
-        if (maxLength && convertString.length > maxLength) {
-          setText(convertString);
-        }
-        setText(convertString);
+        const slicedText = sliceText(convertString);
+        setText(slicedText);
       }
-    }, [defaultValue, maxLength]);
+    }, [convertToString, defaultValue, maxLength, sliceText]);
 
     useEffect(() => {
       if (value) {
         const convertString = convertToString(value);
-        if (maxLength && convertString.length > maxLength) {
-          setText(convertString);
-        }
-        setText(convertToString(value));
+        const slicedText = sliceText(convertString);
+        setText(slicedText);
       }
-    }, [maxLength, value]);
+    }, [convertToString, maxLength, sliceText, value]);
 
     useEffect(() => {
       setType(initialType);
