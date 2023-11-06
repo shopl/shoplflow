@@ -10,9 +10,7 @@ export interface ShoplflowProviderProps {
 }
 
 const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProps) => {
-  useDomain({
-    domain,
-  });
+  useDomain(domain);
 
   return (
     <>

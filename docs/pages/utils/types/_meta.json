@@ -1,5 +1,5 @@
 {
-  "$values": {
-    "title": "$values"
+  "$Values": {
+    "title": "$Values"
   }
 }

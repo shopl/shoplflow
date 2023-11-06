@@ -1,7 +1,9 @@
+import Subtract from './Subtract';
 import IcAdd from './IcAdd';
 import IcAdmin from './IcAdmin';
 import IcAlbum from './IcAlbum';
 import IcAlert from './IcAlert';
+import IcBell from './IcBell';
 import IcCalendar from './IcCalendar';
 import IcCamera from './IcCamera';
 import IcCancel from './IcCancel';
@@ -30,6 +32,7 @@ import IcGradeBadge from './IcGradeBadge';
 import IcHelpCenter from './IcHelpCenter';
 import IcHelp from './IcHelp';
 import IcHome from './IcHome';
+import IcInfoMedium from './IcInfoMedium';
 import IcInfo from './IcInfo';
 import IcIssue from './IcIssue';
 import IcIssues from './IcIssues';
@@ -42,6 +45,10 @@ import IcMemo from './IcMemo';
 import IcMenu from './IcMenu';
 import IcMobileview from './IcMobileview';
 import IcMore from './IcMore';
+import IcNewBell from './IcNewBell';
+import IcNewIssue from './IcNewIssue';
+import IcNewReport from './IcNewReport';
+import IcNewTab from './IcNewTab';
 import IcNext from './IcNext';
 import IcNoticeLine from './IcNoticeLine';
 import IcNotice from './IcNotice';
@@ -51,6 +58,9 @@ import IcPhone from './IcPhone';
 import IcPlace from './IcPlace';
 import IcQrcode from './IcQrcode';
 import IcRadio from './IcRadio';
+import IcReadChecklist from './IcReadChecklist';
+import IcReadIssue from './IcReadIssue';
+import IcReadReport from './IcReadReport';
 import IcRefresh from './IcRefresh';
 import IcRemove from './IcRemove';
 import IcRightArrow from './IcRightArrow';
@@ -76,10 +86,12 @@ import IcWorker from './IcWorker';
 import IcYesno from './IcYesno';
 
 const icons = {
+  subtract: Subtract,
   add: IcAdd,
   admin: IcAdmin,
   album: IcAlbum,
   alert: IcAlert,
+  bell: IcBell,
   calendar: IcCalendar,
   camera: IcCamera,
   cancel: IcCancel,
@@ -108,6 +120,7 @@ const icons = {
   'help-center': IcHelpCenter,
   help: IcHelp,
   home: IcHome,
+  'info-medium': IcInfoMedium,
   info: IcInfo,
   issue: IcIssue,
   issues: IcIssues,
@@ -120,6 +133,10 @@ const icons = {
   menu: IcMenu,
   mobileview: IcMobileview,
   more: IcMore,
+  'new-bell': IcNewBell,
+  'new-issue': IcNewIssue,
+  'new-report': IcNewReport,
+  'new-tab': IcNewTab,
   next: IcNext,
   'notice-line': IcNoticeLine,
   notice: IcNotice,
@@ -129,6 +146,9 @@ const icons = {
   place: IcPlace,
   qrcode: IcQrcode,
   radio: IcRadio,
+  'read-checklist': IcReadChecklist,
+  'read-issue': IcReadIssue,
+  'read-report': IcReadReport,
   refresh: IcRefresh,
   remove: IcRemove,
   'right-arrow': IcRightArrow,
@@ -157,10 +177,12 @@ const icons = {
 export type IconNames = keyof typeof icons;
 
 export {
+  Subtract as SubtractIcon,
   IcAdd as AddIcon,
   IcAdmin as AdminIcon,
   IcAlbum as AlbumIcon,
   IcAlert as AlertIcon,
+  IcBell as BellIcon,
   IcCalendar as CalendarIcon,
   IcCamera as CameraIcon,
   IcCancel as CancelIcon,
@@ -189,6 +211,7 @@ export {
   IcHelpCenter as HelpCenterIcon,
   IcHelp as HelpIcon,
   IcHome as HomeIcon,
+  IcInfoMedium as InfoMediumIcon,
   IcInfo as InfoIcon,
   IcIssue as IssueIcon,
   IcIssues as IssuesIcon,
@@ -201,6 +224,10 @@ export {
   IcMenu as MenuIcon,
   IcMobileview as MobileviewIcon,
   IcMore as MoreIcon,
+  IcNewBell as NewBellIcon,
+  IcNewIssue as NewIssueIcon,
+  IcNewReport as NewReportIcon,
+  IcNewTab as NewTabIcon,
   IcNext as NextIcon,
   IcNoticeLine as NoticeLineIcon,
   IcNotice as NoticeIcon,
@@ -210,6 +237,9 @@ export {
   IcPlace as PlaceIcon,
   IcQrcode as QrcodeIcon,
   IcRadio as RadioIcon,
+  IcReadChecklist as ReadChecklistIcon,
+  IcReadIssue as ReadIssueIcon,
+  IcReadReport as ReadReportIcon,
   IcRefresh as RefreshIcon,
   IcRemove as RemoveIcon,
   IcRightArrow as RightArrowIcon,

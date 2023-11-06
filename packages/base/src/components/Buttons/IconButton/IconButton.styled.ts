@@ -9,40 +9,50 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
     case 'M':
       return css`
         width: 40px;
+        min-width: 40px;
         height: 40px;
+        min-height: 40px;
       `;
     case 'S':
       return css`
         width: 32px;
+        min-width: 32px;
         height: 32px;
+        min-height: 32px;
       `;
     default:
       return css`
         width: 40px;
+        min-width: 40px;
         height: 40px;
+        min-height: 40px;
       `;
   }
 };
 
-const getHoverBackgroundFromStyleVar = (styleVar?: IconButtonStyleVar) => {
+const getStyleByStyleVar = (styleVar?: IconButtonStyleVar) => {
   switch (styleVar) {
     case 'SOLID':
-      return colorTokens.neutral100;
+      return css`
+        border: 1px solid ${colorTokens.neutral200};
+        &:hover {
+          background-color: ${colorTokens.neutral100};
+        }
+      `;
     case 'GHOST':
-      return colorTokens.neutral400_5;
+      return css`
+        border: 1px solid transparent;
+        &:hover {
+          background-color: ${colorTokens.neutral400_5};
+        }
+      `;
     default:
-      return colorTokens.neutral100;
-  }
-};
-
-const getBorderByStyleVar = (styleVar?: IconButtonStyleVar) => {
-  if (!styleVar) {
-    return;
-  }
-  if (styleVar === 'SOLID') {
-    return css`
-      border: 1px solid ${colorTokens.neutral200};
-    `;
+      return css`
+        border: 1px solid ${colorTokens.neutral200};
+        &:hover {
+          background-color: ${colorTokens.neutral100};
+        }
+      `;
   }
 };
 
@@ -53,26 +63,12 @@ export const StyledIconButton = styled.button<IconButtonOptionProps>`
   justify-content: center;
   align-items: center;
   background-color: ${colorTokens.neutral0};
-  ${({ styleVar }) => {
-    if (!styleVar) {
-      return;
-    }
-    if (styleVar === 'SOLID') {
-      return css`
-        border: 1px solid ${colorTokens.neutral200};
-      `;
-    }
-  }};
-  ${({ styleVar }) => getBorderByStyleVar(styleVar)};
+  cursor: pointer;
+  ${({ styleVar }) => getStyleByStyleVar(styleVar)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
-  cursor: pointer;
-  &:hover {
-    background-color: ${({ styleVar, disabled }) => {
-      if (disabled) {
-        return;
-      }
-      return getHoverBackgroundFromStyleVar(styleVar);
-    }};
+  & > svg {
+    width: 20px;
+    height: 20px;
   }
 `;

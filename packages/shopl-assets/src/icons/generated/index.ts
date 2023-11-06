@@ -1,5 +1,6 @@
 import IcAddXsmall from './IcAddXsmall';
 import IcAdd from './IcAdd';
+import IcAdminLarge from './IcAdminLarge';
 import IcAlbumXlarge from './IcAlbumXlarge';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
 import IcAlert from './IcAlert';
@@ -106,6 +107,7 @@ import IcHideMedium from './IcHideMedium';
 import IcHistory from './IcHistory';
 import IcHomeMedium from './IcHomeMedium';
 import IcImport from './IcImport';
+import IcInfo1 from './IcInfo1';
 import IcInfoAlbum from './IcInfoAlbum';
 import IcInfoApp from './IcInfoApp';
 import IcInfoBreaktime from './IcInfoBreaktime';
@@ -142,6 +144,8 @@ import IcInviteCompleted from './IcInviteCompleted';
 import IcIssue from './IcIssue';
 import IcJpMedium from './IcJpMedium';
 import IcLanguageMedium from './IcLanguageMedium';
+import IcLeaderAppovalLarge from './IcLeaderAppovalLarge';
+import IcLeaderLarge from './IcLeaderLarge';
 import IcLeaveMedium from './IcLeaveMedium';
 import IcLeave from './IcLeave';
 import IcLeftArrowXsmall from './IcLeftArrowXsmall';
@@ -150,10 +154,12 @@ import IcLink from './IcLink';
 import IcListEdit from './IcListEdit';
 import IcListMove from './IcListMove';
 import IcListview from './IcListview';
+import IcLocation from './IcLocation';
 import IcMap from './IcMap';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemo from './IcMemo';
 import IcMinusMedium from './IcMinusMedium';
+import IcMinus from './IcMinus';
 import IcMore from './IcMore';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
@@ -165,6 +171,7 @@ import IcNotice from './IcNotice';
 import IcOvertimeMedium from './IcOvertimeMedium';
 import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
 import IcPaymentMedium from './IcPaymentMedium';
+import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
 import IcPlusMedium from './IcPlusMedium';
@@ -221,6 +228,7 @@ import IcZoomOutMedium from './IcZoomOutMedium';
 const icons = {
   'add-xsmall': IcAddXsmall,
   add: IcAdd,
+  'admin-large': IcAdminLarge,
   'album-xlarge': IcAlbumXlarge,
   'alert-popup-xlarge': IcAlertPopupXlarge,
   alert: IcAlert,
@@ -327,6 +335,7 @@ const icons = {
   history: IcHistory,
   'home-medium': IcHomeMedium,
   import: IcImport,
+  'info-1': IcInfo1,
   'info-album': IcInfoAlbum,
   'info-app': IcInfoApp,
   'info-breaktime': IcInfoBreaktime,
@@ -363,6 +372,8 @@ const icons = {
   issue: IcIssue,
   'jp-medium': IcJpMedium,
   'language-medium': IcLanguageMedium,
+  'leader-appoval-large': IcLeaderAppovalLarge,
+  'leader-large': IcLeaderLarge,
   'leave-medium': IcLeaveMedium,
   leave: IcLeave,
   'left-arrow-xsmall': IcLeftArrowXsmall,
@@ -371,10 +382,12 @@ const icons = {
   'list-edit': IcListEdit,
   'list-move': IcListMove,
   listview: IcListview,
+  location: IcLocation,
   map: IcMap,
   'member-medium': IcMemberMedium,
   memo: IcMemo,
   'minus-medium': IcMinusMedium,
+  minus: IcMinus,
   more: IcMore,
   move: IcMove,
   'movie-01': IcMovie01,
@@ -386,6 +399,7 @@ const icons = {
   'overtime-medium': IcOvertimeMedium,
   'password-error-xlarge': IcPasswordErrorXlarge,
   'payment-medium': IcPaymentMedium,
+  'pin-xlarge': IcPinXlarge,
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
   'plus-medium': IcPlusMedium,
@@ -445,6 +459,7 @@ export type IconNames = keyof typeof icons;
 export {
   IcAddXsmall as AddXsmallIcon,
   IcAdd as AddIcon,
+  IcAdminLarge as AdminLargeIcon,
   IcAlbumXlarge as AlbumXlargeIcon,
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
   IcAlert as AlertIcon,
@@ -551,6 +566,7 @@ export {
   IcHistory as HistoryIcon,
   IcHomeMedium as HomeMediumIcon,
   IcImport as ImportIcon,
+  IcInfo1 as Info1Icon,
   IcInfoAlbum as InfoAlbumIcon,
   IcInfoApp as InfoAppIcon,
   IcInfoBreaktime as InfoBreaktimeIcon,
@@ -587,6 +603,8 @@ export {
   IcIssue as IssueIcon,
   IcJpMedium as JpMediumIcon,
   IcLanguageMedium as LanguageMediumIcon,
+  IcLeaderAppovalLarge as LeaderAppovalLargeIcon,
+  IcLeaderLarge as LeaderLargeIcon,
   IcLeaveMedium as LeaveMediumIcon,
   IcLeave as LeaveIcon,
   IcLeftArrowXsmall as LeftArrowXsmallIcon,
@@ -595,10 +613,12 @@ export {
   IcListEdit as ListEditIcon,
   IcListMove as ListMoveIcon,
   IcListview as ListviewIcon,
+  IcLocation as LocationIcon,
   IcMap as MapIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemo as MemoIcon,
   IcMinusMedium as MinusMediumIcon,
+  IcMinus as MinusIcon,
   IcMore as MoreIcon,
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
@@ -610,6 +630,7 @@ export {
   IcOvertimeMedium as OvertimeMediumIcon,
   IcPasswordErrorXlarge as PasswordErrorXlargeIcon,
   IcPaymentMedium as PaymentMediumIcon,
+  IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
   IcPlusMedium as PlusMediumIcon,

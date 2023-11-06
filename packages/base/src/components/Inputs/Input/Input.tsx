@@ -6,8 +6,9 @@ import TextCounter from '../common/TextCounter';
 import type { InputProps } from './Input.types';
 import { typographyTokens } from '../../../styles';
 import { IconButton } from '../../Buttons';
-import { Assets } from '../../../styles/IconAssets';
+import { assetFunction, Assets } from '../../../styles/IconAssets';
 import { useMergeRefs } from '../../../hooks/useMergeRef';
+import { Icon } from '../../Icon';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -146,7 +147,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
           {initialType === 'password' && (
             <IconButton sizeVar={'S'} onClick={handleTogglePasswordType}>
-              <Assets iconName={type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon'} />
+              <Icon
+                color={'neutral600'}
+                iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
+              />
             </IconButton>
           )}
         </RightElementWrapper>

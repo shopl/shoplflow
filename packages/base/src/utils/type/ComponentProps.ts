@@ -1,6 +1,8 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactElement, ReactNode } from 'react';
 import type React from 'react';
-import type { IconSource } from '@shoplflow/shopl-assets';
+import type { IconSource as ShoplIconSource } from '@shoplflow/shopl-assets';
+import type { IconSource as HadaIconSource } from '@shoplflow/hada-assets';
+
 import type { BorderRadiusTokens, ColorTokens } from '../../styles';
 
 /**
@@ -118,7 +120,7 @@ export interface IconSourceProps {
   /**
    * Icon을 설정합니다.
    */
-  iconSource?: IconSource;
+  iconSource?: ShoplIconSource | HadaIconSource;
 }
 
 export interface LeftNodeProps {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 import type { Decorator, Preview } from '@storybook/react';
@@ -6,12 +6,23 @@ import { Button, ShoplflowProvider } from '../src';
 import './index.css';
 import '../src/styles/global.css';
 import '../src/styles/reset.css';
+import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
 
 
 const ThemeButton  = styled.div`
   position: fixed;
   right: 10px;
   bottom: 10px
+`;
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 
@@ -29,32 +40,17 @@ const preview: Preview = {
 
 
 export const decorator: Decorator = (Story, context) => {
-  const [domain, setDomain] = useState<'HADA'|'SHOPL'| null>(null);
-
-  useEffect(() => {
-    const domain = localStorage.getItem('domain');
-    if (domain) {
-      setDomain(domain as 'HADA'|'SHOPL');
-    } else {
-      setDomain('HADA');
-    }
-  }, [])
-  useEffect(() => {
-    if (domain) {
-      localStorage.setItem('domain', domain);
-    }
-  }, [domain]);
-  const handleToggleTheme = () => {
-    setDomain(domain === 'HADA' ? 'SHOPL' : 'HADA')
-  }
+const domainContext = useStoryDomain();
 
   return (
-    <>
-      <ShoplflowProvider domain={domain}>
-        <ThemeButton><Button onClick={handleToggleTheme} sizeVar={'S'}>{domain}</Button></ThemeButton>
+    <StoryDomainContext.Provider value={domainContext}>
+      <ShoplflowProvider domain={domainContext.domain}>
+        <Container>
+        <ThemeButton><Button onClick={domainContext.handleToggleTheme} sizeVar={'S'}>{domainContext.domain}</Button></ThemeButton>
         <Story />
+        </Container>
       </ShoplflowProvider>
-    </>
+    </StoryDomainContext.Provider>
   )
 }
 

@@ -1,4 +1,5 @@
 import type { $Values } from '@shoplflow/utils';
+import type { ColorTokenProps, IconSourceProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 
 export const IconSizeVariants = {
   X_SMALL: 'X_SMALL',
@@ -8,7 +9,7 @@ export const IconSizeVariants = {
   X_LARGE: 'X_LARGE',
 } as const;
 
-export type IconSizeVariants = $Values<typeof IconSizeVariants>;
+export type IconSizeVariantsType = $Values<typeof IconSizeVariants>;
 
 export interface IconProps extends IconOptionProps {}
-export interface IconOptionProps {}
+export interface IconOptionProps extends SizeVariantProps<IconSizeVariantsType>, IconSourceProps, ColorTokenProps {}
