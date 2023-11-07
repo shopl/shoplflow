@@ -6,6 +6,7 @@ import ModalContainer from './ModalContainer';
 import React from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
+import { Button } from '../Buttons';
 import { useHandleModal } from '../../hooks';
 
 export default {
@@ -15,7 +16,7 @@ export default {
 
 const mockBoxs = new Array(20).fill(<Box background={'primary100'} width={'100%'} />);
 
-export const Primary: StoryFn<ModalContainerProps> = (args) => {
+const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
     <Modal.Container {...args} outsideClick={removeModal}>
@@ -31,6 +32,13 @@ export const Primary: StoryFn<ModalContainerProps> = (args) => {
     </Modal.Container>
   );
 };
+
+export const Playground: StoryFn<ModalContainerProps> = (args) => {
+  const { addModal } = useHandleModal();
+  return <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>open Modal</Button>;
+};
+
+export const Primary = PrimaryComponent.bind({});
 
 export const Body: StoryFn<ModalContainerProps> = (args) => (
   <Modal.Container {...args}>
@@ -61,8 +69,3 @@ export const BodyFooter: StoryFn<ModalContainerProps> = (args) => (
     </Modal.Footer>
   </Modal.Container>
 );
-
-export const Playground: StoryFn<ModalContainerProps> = (args) => {
-  const { addModal } = useHandleModal();
-  return <button onClick={() => addModal(<Primary {...args} />)}>open Modal</button>;
-};

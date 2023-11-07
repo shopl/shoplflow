@@ -15,7 +15,7 @@ export const Playground: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <Stack width={'500px'}>
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
       <Input maxLength={50} ref={inputRef} {...args} />
     </Stack>
   );
@@ -32,7 +32,7 @@ export const Password: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <Stack width={'500px'}>
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
       <Input maxLength={50} ref={inputRef} {...args} />
     </Stack>
   );

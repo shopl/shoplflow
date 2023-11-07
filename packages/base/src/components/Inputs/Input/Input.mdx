@@ -5,7 +5,12 @@ import { Canvas, Meta, Controls, ArgsTable} from '@storybook/blocks';
 <Meta of={InputStories} />
 
 # Input
-디자인 시스템에서 사용하는 인풋 컴포넌트에요.
+
+html의 `input`과 동일하게 사용할 수 있어요.
+
+최대 글자수가 지정될 경우에만 포커싱할 때 글자수 카운터가 표시돼요.
+
+만약 글자가 입력된 경우 우측에 X 버튼이 노출되며 클릭 시 입력된 글자가 모두 삭제돼요.
 
 
 ## Overview
@@ -19,21 +24,17 @@ import { Canvas, Meta, Controls, ArgsTable} from '@storybook/blocks';
 ## Usage
 
 ```tsx
-import { Input } from "@shoplflow/base";
+import { Stack, Input } from "@shoplflow/base";
 
 const Example = () => {
 
-    const [value, setValue] = useState('')
-    const nowLength = value?.length ?? 0;
+  const inputRef = useRef<HTMLInputElement>(null);
 
-    return (
-        <Input 
-            onDelete={() => {
-                setValue('')
-            }}
-            nowLength={nowLength}   
-        />
-    )
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <Input maxLength={50} ref={inputRef} />
+    </Stack>
+  );
 }
 ```
 

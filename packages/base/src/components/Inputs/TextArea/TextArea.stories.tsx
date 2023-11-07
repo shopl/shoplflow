@@ -2,26 +2,64 @@ import type { StoryFn } from '@storybook/react';
 
 import TextArea from './TextArea';
 import type { TextAreaProps } from './TextArea.types';
+import { Stack } from '../../Stack';
+import React, { useRef, useState } from 'react';
+import { Button } from '../../Buttons';
 
 export default {
   title: 'COMPONENTS/Inputs/TextArea',
   component: TextArea,
 };
 
-const PlaygroundComponent: StoryFn<TextAreaProps> = (args) => {
-  return <TextArea placeholder={'TextArea에요'} {...args} />;
+export const Playground: StoryFn<TextAreaProps> = (args) => {
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <TextArea placeholder={'TextArea에요'} {...args} />
+    </Stack>
+  );
 };
-export const Playground = PlaygroundComponent.bind({
-  height: 1000,
-});
-
-const MaxlengthComponent: StoryFn<TextAreaProps> = (args) => {
-  return <TextArea maxLength={10} placeholder={'TextArea에요'} {...args} />;
+Playground.args = {
+  maxLength: 999,
 };
 
-export const Maxlength = MaxlengthComponent.bind({});
-
-const DisabledComponent: StoryFn<TextAreaProps> = (args) => {
-  return <TextArea maxLength={999} placeholder={'TextArea에요'} disabled {...args} />;
+export const Error: StoryFn<TextAreaProps> = (args) => {
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <TextArea placeholder={'TextArea에요'} {...args} />
+    </Stack>
+  );
 };
-export const Disabled = DisabledComponent.bind({});
+
+Error.args = {
+  maxLength: 999,
+  isError: true,
+};
+
+export const CheckValue: StoryFn<TextAreaProps> = (args) => {
+  const [value, setValue] = useState('');
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+
+  return (
+    <Stack width={'600px'} spacing={'spacing12'}>
+      <Stack.Horizontal width={'100%'} spacing={'spacing12'}>
+        <TextArea ref={textAreaRef} placeholder={'TextArea에요'} {...args} />
+        <Button
+          styleVar={'PRIMARY'}
+          onClick={() => {
+            setValue(textAreaRef.current?.value || '');
+          }}
+        >
+          get value
+        </Button>
+      </Stack.Horizontal>
+      <Stack.Horizontal>
+        <div>{value}</div>
+      </Stack.Horizontal>
+    </Stack>
+  );
+};
+
+CheckValue.args = {
+  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있어요.',
+  disabled: false,
+};

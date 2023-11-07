@@ -1,4 +1,6 @@
-import { ArgsTable, Canvas, Story } from '@storybook/addon-docs'; import TextArea from "./TextArea";
+import * as TextAreaStories from './TextArea.stories'
+import { Canvas, Meta, Controls, ArgsTable} from '@storybook/blocks';
+import TextArea from "./TextArea";
 
 # TextArea
 
@@ -13,14 +15,11 @@ html의 `textarea`와 동일하게 사용할 수 있어요.
 ## Overview
 
 
-<Story id="components-inputs-textarea--playground" />
+<Canvas of={TextAreaStories.Playground} />
 
-<Story id="components-inputs-textarea--maxlength" />
+## ArgsTable
 
-<Story id="components-inputs-textarea--disabled" />
-
-
-
+<ArgsTable of={TextArea} />
 
 ## Usage
 
@@ -59,4 +58,4 @@ const App = () => {
 ```
 
 
-<ArgsTable of={TextArea} />
+

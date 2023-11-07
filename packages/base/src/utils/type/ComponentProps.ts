@@ -22,6 +22,14 @@ export interface DisableProps {
    */
   disabled?: boolean;
 }
+
+export interface ErrorProps {
+  /**
+   * 에러 여부를 설정합니다.
+   */
+  isError?: boolean;
+}
+
 export interface SelectedProps {
   /**
    * 선택 여부를 설정합니다.

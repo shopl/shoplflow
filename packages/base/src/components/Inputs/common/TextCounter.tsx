@@ -1,6 +1,19 @@
 import { Text } from '../../../components/Text';
-import { Wrapper } from './TextCounter.styled';
-import type { TextCounterProps } from './TextCounter.types';
+
+import styled from '@emotion/styled';
+
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px;
+`;
+
+export type TextCounterProps = {
+  maxLength: number;
+  currentLength: number;
+};
 
 const TextCounter = ({ currentLength, maxLength }: TextCounterProps) => {
   return (

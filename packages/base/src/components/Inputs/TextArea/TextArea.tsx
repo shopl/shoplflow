@@ -1,20 +1,20 @@
-import type { ChangeEvent, FocusEvent, MouseEvent } from 'react';
+import type { ChangeEvent, FocusEvent } from 'react';
 import React, { forwardRef, useEffect, useId, useState } from 'react';
 
 import type { TextAreaProps } from './TextArea.types';
 
-import { StyledTextarea, TextAreaWrapper } from './TextArea.styled';
+import { BottomElementWrapper, StyledTextarea } from './TextArea.styled';
 import TextCounter from '../common/TextCounter';
+import { InputWrapper } from '../common/input.styled';
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (
     {
       name,
-      onMouseEnter,
-      onMouseLeave,
       maxLength,
       placeholder,
       disabled = false,
+      isError = false,
       onChange,
       value,
       defaultValue,
@@ -29,25 +29,23 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleOnMouseEnter = (e: MouseEvent<HTMLLabelElement>) => {
-      onMouseEnter && onMouseEnter(e);
+    const handleOnMouseEnter = () => {
       setIsHovered(true);
     };
-    const handleOnMouseLeave = (e: MouseEvent<HTMLLabelElement>) => {
-      onMouseLeave && onMouseLeave(e);
+    const handleOnMouseLeave = () => {
       setIsHovered(false);
     };
 
-    const handleOnFocus = (event: FocusEvent<HTMLInputElement>) => {
+    const handleOnFocus = (event: FocusEvent<HTMLTextAreaElement>) => {
       onFocus && onFocus(event);
       setIsFocused(true);
     };
-    const handleOnBlur = (event: FocusEvent<HTMLInputElement>) => {
+    const handleOnBlur = (event: FocusEvent<HTMLTextAreaElement>) => {
       onBlur && onBlur(event);
 
       !isHovered && setIsFocused(false);
     };
-    const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleOnChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
       onChange && onChange(event);
       setText(event.target.value);
     };
@@ -82,11 +80,13 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     const uniqueId = useId();
 
     return (
-      <TextAreaWrapper
+      <InputWrapper
         htmlFor={uniqueId}
         focused={isFocused}
         disabled={disabled}
         isHovered={isHovered}
+        isError={isError}
+        direction={'column'}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         data-shoplflow={'text-area'}
@@ -106,8 +106,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           minHeight={minHeight}
           {...rest}
         />
-        {maxLength && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
-      </TextAreaWrapper>
+        <BottomElementWrapper>
+          {maxLength && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
+        </BottomElementWrapper>
+      </InputWrapper>
     );
   },
 );

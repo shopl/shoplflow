@@ -6,4 +6,6 @@ export * from './BackDrop';
 export * from './Switch';
 export * from './Chips';
 export * from './Buttons';
+export * from './Icon';
+export * from './Inputs';
 export * from './ControlButtons';

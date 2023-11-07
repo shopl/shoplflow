@@ -1,5 +1,5 @@
 import type { InputHTMLAttributes } from 'react';
-import type { DisableProps, RightElementProps } from '../../../utils/type/ComponentProps';
+import type { DisableProps, RightElementProps, ErrorProps } from '../../../utils/type/ComponentProps';
 
 export interface InputProps
   extends InputOptionProps,
@@ -7,8 +7,7 @@ export interface InputProps
     DisableProps,
     RightElementProps {}
 
-export type InputOptionProps = {
+export interface InputOptionProps extends ErrorProps {
   maxLength?: number;
-  isError?: boolean;
   onDelete?: () => void;
-};
+}

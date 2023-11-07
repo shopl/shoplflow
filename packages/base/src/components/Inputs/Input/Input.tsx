@@ -1,20 +1,19 @@
-import type { FocusEvent, ChangeEvent, HTMLInputTypeAttribute, MouseEvent } from 'react';
-import React, { useCallback, useEffect, forwardRef, useId, useState } from 'react';
-import { InputWrapper, RightElementWrapper, StyledInput } from './Input.styled';
+import type { ChangeEvent, FocusEvent, HTMLInputTypeAttribute } from 'react';
+import React, { forwardRef, useCallback, useEffect, useId, useState } from 'react';
+import { RightElementWrapper, StyledInput } from './Input.styled';
 
 import TextCounter from '../common/TextCounter';
 import type { InputProps } from './Input.types';
 import { typographyTokens } from '../../../styles';
 import { IconButton } from '../../Buttons';
-import { assetFunction, Assets } from '../../../styles/IconAssets';
+import { assetFunction } from '../../../styles/IconAssets';
 import { useMergeRefs } from '../../../hooks/useMergeRef';
 import { Icon } from '../../Icon';
+import { InputWrapper } from '../common/input.styled';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
-      onMouseEnter,
-      onMouseLeave,
       onFocus,
       onBlur,
       onChange,
@@ -55,12 +54,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       [maxLength],
     );
 
-    const handleOnMouseEnter = (e: MouseEvent<HTMLLabelElement>) => {
-      onMouseEnter && onMouseEnter(e);
+    const handleOnMouseEnter = () => {
       setIsHovered(true);
     };
-    const handleOnMouseLeave = (e: MouseEvent<HTMLLabelElement>) => {
-      onMouseLeave && onMouseLeave(e);
+    const handleOnMouseLeave = () => {
       setIsHovered(false);
     };
 
@@ -141,12 +138,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <RightElementWrapper>
           {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
           {isFocused && Boolean(String(text).length > 0) && (
-            <IconButton sizeVar={'S'} onClick={handleOnDelete}>
-              <Assets iconName={'DeleteIcon'} />
+            <IconButton sizeVar={'S'} onClick={handleOnDelete} styleVar={'GHOST'}>
+              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
             </IconButton>
           )}
           {initialType === 'password' && (
-            <IconButton sizeVar={'S'} onClick={handleTogglePasswordType}>
+            <IconButton sizeVar={'S'} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
               <Icon
                 color={'neutral600'}
                 iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
