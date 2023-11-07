@@ -10,7 +10,6 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "declaration": true,
     "isolatedModules": false,
     "baseUrl": ".",
     "declaration": true,
