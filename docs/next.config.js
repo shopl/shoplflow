@@ -6,6 +6,7 @@ const withNextra = require('nextra')({
 
 module.exports = {
   output: '.next',
+
   ...withNextra({
     reactStrictMode: true,
     webpack(config) {
@@ -16,4 +17,5 @@ module.exports = {
       return config;
     },
   }),
+  transpilePackages: ['@shoplflow/base', '@shoplflow/shopl-assets', '@shoplflow/hada-assets'],
 };

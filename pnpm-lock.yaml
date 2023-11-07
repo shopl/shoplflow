@@ -87,6 +87,12 @@ importers:
       '@shoplflow/base':
         specifier: workspace:^
         version: link:../packages/base
+      '@shoplflow/hada-assets':
+        specifier: workspace:^
+        version: link:../packages/hada-assets
+      '@shoplflow/shopl-assets':
+        specifier: workspace:^
+        version: link:../packages/shopl-assets
       framer-motion:
         specifier: ^10.16.1
         version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -193,9 +199,15 @@ importers:
       marksy:
         specifier: ^8.0.0
         version: 8.0.0
+      next-transpile-modules:
+        specifier: ^10.0.1
+        version: 10.0.1
       react-docgen-typescript:
         specifier: ^2.2.2
         version: 2.2.2(typescript@4.9.5)
+      ts-loader:
+        specifier: ^9.5.0
+        version: 9.5.0(typescript@4.9.5)(webpack@5.89.0)
       typescript:
         specifier: ^4.9.0
         version: 4.9.5
@@ -206,13 +218,13 @@ importers:
   packages/base:
     dependencies:
       '@shoplflow/hada-assets':
-        specifier: workspace:^
+        specifier: 0.0.2
         version: link:../hada-assets
       '@shoplflow/shopl-assets':
-        specifier: workspace:^
+        specifier: 0.2.0
         version: link:../shopl-assets
       '@shoplflow/utils':
-        specifier: workspace:^
+        specifier: 0.3.0
         version: link:../utils
       classnames:
         specifier: ^2.3.2
@@ -11200,6 +11212,12 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /next-transpile-modules@10.0.1:
+    resolution: {integrity: sha512-4VX/LCMofxIYAVV58UmD+kr8jQflpLWvas/BQ4Co0qWLWzVh06FoZkECkrX5eEZT6oJFqie6+kfbTA3EZCVtdQ==}
+    dependencies:
+      enhanced-resolve: 5.15.0
+    dev: true
+
   /next@13.5.6(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==}
     engines: {node: '>=16.14.0'}
@@ -12965,7 +12983,6 @@ packages:
   /source-map@0.7.4:
     resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
     engines: {node: '>= 8'}
-    dev: false
 
   /source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
@@ -13554,6 +13571,22 @@ packages:
 
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+    dev: true
+
+  /ts-loader@9.5.0(typescript@4.9.5)(webpack@5.89.0):
+    resolution: {integrity: sha512-LLlB/pkB4q9mW2yLdFMnK3dEHbrBjeZTYguaaIfusyojBgAGf5kF+O6KcWqiGzWqHk0LBsoolrp4VftEURhybg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      typescript: '*'
+      webpack: ^5.0.0
+    dependencies:
+      chalk: 4.1.2
+      enhanced-resolve: 5.15.0
+      micromatch: 4.0.5
+      semver: 7.5.4
+      source-map: 0.7.4
+      typescript: 4.9.5
+      webpack: 5.89.0(esbuild@0.18.17)
     dev: true
 
   /ts-node@10.9.1(@types/node@20.4.9)(typescript@4.7.4):

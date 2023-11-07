@@ -11,7 +11,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,
-    "declaration": true,
     "baseUrl": ".",
     "noFallthroughCasesInSwitch": true,
     "jsxImportSource": "@emotion/react",

@@ -4,9 +4,9 @@ import type { IconSource as ShoplIconSource } from '@shoplflow/shopl-assets';
 import type { IconSource as HadaIconSource } from '@shoplflow/hada-assets';
 
 import { useContext } from 'react';
-import { getDomain } from '../hooks';
 import type { DomainType } from '../types/Domain';
 import { StoryDomainContext } from '../../.storybook/useStoryDomain';
+import { getDomain } from '../hooks';
 
 export type ShoplIconKey = Exclude<keyof typeof ShoplAssets, 'isShoplIcon' | 'createIcon'>;
 export type HadaIconKey = Exclude<keyof typeof HadaAssets, 'isHadaIcon' | 'createIcon'>;
