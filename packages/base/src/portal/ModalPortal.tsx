@@ -1,9 +1,9 @@
-import React from 'react';
-import { useModalStore } from '../hooks';
+import React, { useContext } from 'react';
 import BackDrop from '../components/BackDrop/BackDrop';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import styled from '@emotion/styled';
+import { ModalContext } from '../hooks/ModalContext';
 
 export const SpaceMarginWrapper = styled(motion.div)`
   position: relative;
@@ -18,7 +18,7 @@ export const SpaceMarginWrapper = styled(motion.div)`
 `;
 
 const ModalPortal = () => {
-  const modal = useModalStore((state) => state.modal);
+  const modal = useContext(ModalContext);
   return (
     <>
       {createPortal(

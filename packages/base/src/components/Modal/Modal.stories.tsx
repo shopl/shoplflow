@@ -19,21 +19,19 @@ const mockBoxs = new Array(20).fill(<Box background={'primary100'} width={'100%'
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
-    <ComponentStage>
-      <Modal.Container {...args} outsideClick={removeModal} height={400}>
-        <Modal.Header>
-          <Text typography={'title1_700'}>모달 헤더 영역</Text>
-        </Modal.Header>
-        <Modal.Body>
-          <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
-        </Modal.Body>
-        <Modal.Footer>
-          <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
-          <Button styleVar={'SECONDARY'}>버튼</Button>
-          <Button>버튼</Button>
-        </Modal.Footer>
-      </Modal.Container>
-    </ComponentStage>
+    <Modal.Container {...args} outsideClick={removeModal} height={400}>
+      <Modal.Header>
+        <Text typography={'title1_700'}>모달 헤더 영역</Text>
+      </Modal.Header>
+      <Modal.Body>
+        <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
+      </Modal.Body>
+      <Modal.Footer>
+        <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
+        <Button styleVar={'SECONDARY'}>버튼</Button>
+        <Button>버튼</Button>
+      </Modal.Footer>
+    </Modal.Container>
   );
 };
 

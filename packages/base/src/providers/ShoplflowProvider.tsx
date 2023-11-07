@@ -3,6 +3,7 @@ import React from 'react';
 import { useDomain } from '../hooks/useDomain';
 import type { DomainType } from '../types/Domain';
 import ModalPortal from '../portal/ModalPortal';
+import ModalProvider from './ModalProvider';
 
 export interface ShoplflowProviderProps {
   domain?: DomainType;
@@ -13,10 +14,10 @@ const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProp
   useDomain(domain);
 
   return (
-    <>
+    <ModalProvider>
       <ModalPortal />
       {children}
-    </>
+    </ModalProvider>
   );
 };
 
