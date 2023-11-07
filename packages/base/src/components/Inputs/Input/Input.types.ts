@@ -9,5 +9,5 @@ export interface InputProps
 
 export interface InputOptionProps extends ErrorProps {
   maxLength?: number;
-  onDelete?: () => void;
+  onClear?: () => void;
 }

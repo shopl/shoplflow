@@ -10,6 +10,7 @@ import * as ShoplAssets from '@shoplflow/shopl-assets';
 import * as HadaAssets from '@shoplflow/hada-assets';
 import { Text } from '../Text';
 import { StoryDomainContext } from '../../../.storybook/useStoryDomain';
+import { IconStage } from '../../styles/Box';
 
 export default {
   title: 'COMPONENTS/Icon',
@@ -30,9 +31,10 @@ export const Playground: StoryFn<IconProps> = (args) => {
     <Stack.Horizontal width={'100%'} flexWrap={'wrap'} spacing={'spacing20'}>
       {(domain === 'SHOPL' ? shoplAssetList : hadaAssetList).map((asset) => (
         <Stack key={asset} align={'center'} spacing={'spacing08'} width={'100px'}>
-          <Stack background={'neutral100'} radius={'borderRadius06'}>
+          <IconStage>
             <Icon {...args} iconSource={Template(asset)} />
-          </Stack>
+          </IconStage>
+
           <Text typography={'caption_400'} wordBreak={'break-all'}>
             {asset}
           </Text>

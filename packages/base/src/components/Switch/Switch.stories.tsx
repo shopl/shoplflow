@@ -1,10 +1,18 @@
 import Switch from './Switch';
 import type { StoryFn } from '@storybook/react';
 import type { SwitchProps } from './Switch.types';
+import { ComponentStage } from '../../styles/Box';
+import { Stack } from '../Stack';
 
 export default {
   title: 'COMPONENTS/Switch',
   component: Switch,
 };
 
-export const Playground: StoryFn<SwitchProps> = (args) => <Switch {...args} />;
+export const Playground: StoryFn<SwitchProps> = (args) => (
+  <Stack width={'100px'} align={'center'}>
+    <ComponentStage>
+      <Switch {...args} />
+    </ComponentStage>
+  </Stack>
+);

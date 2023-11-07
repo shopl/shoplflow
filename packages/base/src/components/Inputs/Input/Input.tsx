@@ -17,7 +17,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       onFocus,
       onBlur,
       onChange,
-      onDelete,
+      onClear,
       defaultValue,
       value,
       isError,
@@ -75,8 +75,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       setText(slicedText);
     };
 
-    const handleOnDelete = () => {
-      onDelete && onDelete();
+    const handleOnClear = () => {
+      onClear && onClear();
       if (inputRef.current) {
         setText('');
         inputRef.current.value = '';
@@ -138,7 +138,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <RightElementWrapper>
           {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
           {isFocused && Boolean(String(text).length > 0) && (
-            <IconButton sizeVar={'S'} onClick={handleOnDelete} styleVar={'GHOST'}>
+            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
               <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
             </IconButton>
           )}

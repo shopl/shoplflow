@@ -2,6 +2,8 @@ import type { StoryFn } from '@storybook/react';
 import Button from './Button';
 import type { ButtonProps } from './Button.types';
 import { buttonSizeVar, buttonStyleVar } from './Button.types';
+import { ComponentStage } from '../../../styles/Box';
+import { Stack } from '../../Stack';
 
 export default {
   title: 'COMPONENTS/Buttons/Button',
@@ -24,7 +26,13 @@ export default {
 };
 
 export const Primary: StoryFn<ButtonProps> = (args) => {
-  return <Button {...args} />;
+  return (
+    <Stack width={'100px'}>
+      <ComponentStage>
+        <Button {...args} />
+      </ComponentStage>
+    </Stack>
+  );
 };
 
 Primary.args = {
@@ -35,7 +43,13 @@ Primary.args = {
 };
 
 export const Secondary: StoryFn<ButtonProps> = (args) => {
-  return <Button {...args} />;
+  return (
+    <Stack width={'100px'}>
+      <ComponentStage>
+        <Button {...args} />
+      </ComponentStage>
+    </Stack>
+  );
 };
 
 Secondary.args = {
@@ -46,7 +60,13 @@ Secondary.args = {
 };
 
 export const Solid: StoryFn<ButtonProps> = (args) => {
-  return <Button {...args} />;
+  return (
+    <Stack width={'100px'}>
+      <ComponentStage>
+        <Button {...args} />
+      </ComponentStage>
+    </Stack>
+  );
 };
 
 Solid.args = {
@@ -57,7 +77,13 @@ Solid.args = {
 };
 
 export const Ghost: StoryFn<ButtonProps> = (args) => {
-  return <Button {...args} />;
+  return (
+    <Stack width={'100px'}>
+      <ComponentStage>
+        <Button {...args} />
+      </ComponentStage>
+    </Stack>
+  );
 };
 
 Ghost.args = {

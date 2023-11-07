@@ -2,6 +2,7 @@ import ChipButton from './ChipButton';
 import { Stack } from '../../Stack';
 import type { StoryFn } from '@storybook/react';
 import type { ChipButtonProps } from './ChipButton.types';
+import { ComponentStage } from '../../../styles/Box';
 
 export default {
   title: 'COMPONENTS/Chips/ChipButton',
@@ -11,10 +12,10 @@ export default {
 
 export const Playground: StoryFn<ChipButtonProps> = (args) => {
   return (
-    <Stack>
-      <Stack>
+    <Stack width={'200px'}>
+      <ComponentStage>
         <ChipButton {...args} />
-      </Stack>
+      </ComponentStage>
     </Stack>
   );
 };

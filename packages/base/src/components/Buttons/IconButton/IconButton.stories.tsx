@@ -4,6 +4,8 @@ import IconButton from './IconButton';
 import { colorTokens } from '../../../styles';
 import type { IconButtonProps } from './IconButton.types';
 import { iconButtonSizeVar, iconButtonStyleVar } from './IconButton.types';
+import { ComponentStage } from '../../../styles/Box';
+import { Stack } from '../../Stack';
 
 export default {
   title: 'COMPONENTS/Buttons/IconButton',
@@ -26,7 +28,13 @@ export default {
 };
 
 export const Solid: StoryFn<IconButtonProps> = (args) => {
-  return <IconButton {...args} />;
+  return (
+    <Stack width={'100px'}>
+      <ComponentStage>
+        <IconButton {...args} />
+      </ComponentStage>
+    </Stack>
+  );
 };
 
 Solid.args = {
@@ -37,7 +45,13 @@ Solid.args = {
 };
 
 export const Ghost: StoryFn<IconButtonProps> = (args) => {
-  return <IconButton {...args} />;
+  return (
+    <Stack width={'100px'}>
+      <ComponentStage>
+        <IconButton {...args} />
+      </ComponentStage>
+    </Stack>
+  );
 };
 
 Ghost.args = {
