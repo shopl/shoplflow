@@ -19,6 +19,7 @@ export default {
       description: '버튼 사이즈',
       defaultValue: 'M',
     },
+    onClick: { action: 'clicked' },
   },
 };
 

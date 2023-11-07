@@ -41,7 +41,6 @@ export const InputWrapper = styled.label<
   box-shadow: 0 0 0 1px ${(props) => getBorderColorByStatus(props)};
   border-radius: 6px;
   background-color: ${colorTokens.neutral0};
-  cursor: text;
   overflow: hidden;
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;

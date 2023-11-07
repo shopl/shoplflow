@@ -21,6 +21,7 @@ export default {
       description: '아이콘 버튼 사이즈',
       defaultValue: 'M',
     },
+    onClick: { action: 'clicked' },
   },
 };
 
