@@ -1,12 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "baseUrl": ".",
+    "module": "commonjs",
     "allowJs": false,
     "skipLibCheck": true,
     "noImplicitAny": false,
@@ -15,7 +11,6 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "declaration": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
