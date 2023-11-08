@@ -4,7 +4,7 @@ module.exports = {
   extends: ['plugin:@shoplflow/base', 'plugin:@shoplflow/react', 'plugin:@shoplflow/typescript'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.eslint.json',
+    project: './tsconfig.json',
   },
   settings: {
     next: {
