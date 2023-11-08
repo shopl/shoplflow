@@ -32,15 +32,13 @@ export interface ErrorProps {
 
 export interface SelectedProps {
   /**
-   * 선택 여부를 설정합니다.
+   * 외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다.
    */
   isSelected?: boolean;
 }
 export interface DefaultSelectedProps {
   /**
-   * 기본 선택 여부를 설정합니다.
-   *
-   * SelectedProps보다 우선적으로 적용됩니다.
+   * 초기 선택 값을 설정합니다.
    */
   defaultSelected?: boolean;
 }

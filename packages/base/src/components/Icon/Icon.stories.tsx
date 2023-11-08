@@ -17,8 +17,12 @@ export default {
   component: Icon,
 } as Meta;
 
-const hadaAssetList = Object.keys(HadaAssets).filter((data) => !data.includes('create')) as IconNameType[];
-const shoplAssetList = Object.keys(ShoplAssets).filter((data) => !data.includes('create')) as IconNameType[];
+const assetFilter = (assets: Record<any, any>, type: 'Icon' | 'illust') => {
+  return Object.keys(assets)
+    .filter((data) => !data.includes('create'))
+    .filter((data) => !data.startsWith('is'))
+    .filter((data) => data.includes(type)) as IconNameType[];
+};
 
 const Template = (iconName: IconNameType) => {
   return useStoryAssetFunction(iconName);
@@ -29,7 +33,7 @@ export const Playground: StoryFn<IconProps> = (args) => {
 
   return (
     <Stack.Horizontal width={'100%'} flexWrap={'wrap'} spacing={'spacing20'}>
-      {(domain === 'SHOPL' ? shoplAssetList : hadaAssetList).map((asset) => (
+      {(domain === 'SHOPL' ? assetFilter(ShoplAssets, 'Icon') : assetFilter(HadaAssets, 'Icon')).map((asset) => (
         <Stack key={asset} align={'center'} spacing={'spacing08'} width={'100px'}>
           <IconStage>
             <Icon {...args} iconSource={Template(asset)} />
