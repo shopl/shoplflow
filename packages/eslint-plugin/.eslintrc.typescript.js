@@ -42,12 +42,14 @@ module.exports = {
         ],
       },
     ], //class나 interface에 대한 순서 지정
+    '@typescript-eslint/consistent-type-exports': 'error',
     // import 문에서 type-only import를 자동으로 분리합니다.
     '@typescript-eslint/consistent-type-imports': [
-      'warn',
+      'error',
       {
         prefer: 'type-imports',
       },
     ],
   },
 };
+
