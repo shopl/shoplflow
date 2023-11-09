@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "@shoplflow/extension",
   "version": "0.0.1",
-  "description": "chrome extension boilerplate",
+  "description": "샤플플로우 적용률 분석 플러그인",
   "permissions": [
     "storage"
   ],
@@ -24,7 +24,7 @@
         "src/pages/content/index.js"
       ],
       "css": [
-        "assets/css/contentStyle16994861542.chunk.css"
+        "assets/css/contentStyle16994921243.chunk.css"
       ]
     }
   ],
