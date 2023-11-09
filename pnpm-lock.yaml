@@ -214,12 +214,15 @@ importers:
 
   packages/base:
     dependencies:
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
       '@shoplflow/hada-assets':
         specifier: 0.0.2
         version: link:../hada-assets
       '@shoplflow/shopl-assets':
         specifier: 0.2.0
-        version: link:../shopl-assets
+        version: 0.2.0(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(react-dom@18.2.0)(react@18.2.0)
       '@shoplflow/utils':
         specifier: 0.3.0
         version: link:../utils
@@ -2189,7 +2192,6 @@ packages:
       '@types/react': 18.2.31
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
-    dev: true
 
   /@emotion/react@11.11.1(@types/react@18.2.31)(react@18.2.0):
     resolution: {integrity: sha512-5mlW1DquU5HaxjLkfkGN1GA/fvVGdyHURRiX/0FHl2cfIfRxSOfmxEH5YS43edp0OldZrZ+dkBKbngxcNCdZvA==}
@@ -2242,7 +2244,6 @@ packages:
       '@emotion/utils': 1.2.1
       '@types/react': 18.2.31
       react: 18.2.0
-    dev: true
 
   /@emotion/styled@11.11.0(@emotion/react@11.11.1)(@types/react@18.2.31)(react@18.2.0):
     resolution: {integrity: sha512-hM5Nnvu9P3midq5aaXj4I+lnSfNi7Pmd4EWk1fOZ3pxookaQTNew6bp4JaCBYM4HVFZF9g7UjJmsUmC2JlxOng==}
@@ -3622,6 +3623,20 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
+
+  /@shoplflow/shopl-assets@0.2.0(@emotion/react@11.10.8)(@emotion/styled@11.10.8)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-zUMyBDnDKW0dOEPWMZCWQO7HShwcim+vcboKPWb5ZkEPX7BrUeZQ5UWlWr57KeJGsOds3i6hhbXR8F/NJbM9Vg==}
+    peerDependencies:
+      '@emotion/react': '*'
+      '@emotion/styled': '*'
+      react: '*'
+      react-dom: '*'
+    dependencies:
+      '@emotion/react': 11.10.8(@types/react@18.2.31)(react@18.2.0)
+      '@emotion/styled': 11.10.8(@emotion/react@11.10.8)(@types/react@18.2.31)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
