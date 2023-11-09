@@ -38,6 +38,9 @@
       "./package.json": "./package.json"
     }
   },
+  "files": [
+    "/dist"
+  ],
   "peerDependencies": {
     "@emotion/react": "*",
     "@emotion/styled": "*",

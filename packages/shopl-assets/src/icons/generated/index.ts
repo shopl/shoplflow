@@ -180,6 +180,7 @@ import IcPreview from './IcPreview';
 import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
+import IcQrcode from './IcQrcode';
 import IcRatioMedium from './IcRatioMedium';
 import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
@@ -408,6 +409,7 @@ const icons = {
   'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
   push: IcPush,
+  qrcode: IcQrcode,
   'ratio-medium': IcRatioMedium,
   'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
@@ -639,6 +641,7 @@ export {
   IcPriceMedium as PriceMediumIcon,
   IcProceeding as ProceedingIcon,
   IcPush as PushIcon,
+  IcQrcode as QrcodeIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReceiverMedium as ReceiverMediumIcon,
   IcRefresh as RefreshIcon,
