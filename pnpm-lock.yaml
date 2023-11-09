@@ -215,13 +215,13 @@ importers:
   packages/base:
     dependencies:
       '@shoplflow/hada-assets':
-        specifier: 0.0.2
+        specifier: workspace:^
         version: link:../hada-assets
       '@shoplflow/shopl-assets':
-        specifier: 0.2.0
+        specifier: workspace:^
         version: link:../shopl-assets
       '@shoplflow/utils':
-        specifier: 0.3.0
+        specifier: workspace:^
         version: link:../utils
       classnames:
         specifier: ^2.3.2
@@ -11878,7 +11878,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      ts-node: 10.9.1(@types/node@20.4.9)(typescript@4.7.4)
+      ts-node: 10.9.1(@types/node@20.4.9)(typescript@4.9.5)
       yaml: 2.3.3
     dev: true
 

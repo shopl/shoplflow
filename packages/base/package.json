@@ -100,9 +100,9 @@
     ]
   },
   "dependencies": {
-    "@shoplflow/utils": "0.3.0",
-    "@shoplflow/hada-assets": "0.0.2",
-    "@shoplflow/shopl-assets": "0.2.0",
+    "@shoplflow/hada-assets": "workspace:^",
+    "@shoplflow/shopl-assets": "workspace:^",
+    "@shoplflow/utils": "workspace:^",
     "classnames": "^2.3.2",
     "framer-motion": "10.12.6",
     "react-custom-scrollbars-2": "^4.5.0"
