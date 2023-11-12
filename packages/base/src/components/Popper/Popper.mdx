@@ -6,7 +6,11 @@ import * as PopperStories from './Popper.stories';
 
 # Popper
 
-Popper 컴포넌트 설명을 적어주세요.
+특정 요소를 기준으로 pop up을 띄워주는 컴포넌트입니다.
+
+로직만 분기되어있으며 디자인은 포함되어 있지 않습니다.
+
+> [floating-ui](https://floating-ui.com)를 기반으로 작성되었습니다.
 
 <Canvas of={PopperStories.Playground} />
 
@@ -16,5 +20,20 @@ Popper 컴포넌트 설명을 적어주세요.
 <ArgsTable of={Popper} />
 
 ## Usage
+
+```
+import { Popper } from '@shoplflow/base';
+
+const App = () => {
+  return(
+    <Popper
+      isOpen={isOpen}
+      placement="bottom"
+    >
+      <div>Popper Content</div>
+    </Popper>
+  )
+}
+```
 
 

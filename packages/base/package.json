@@ -60,6 +60,7 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
     "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/is-prop-valid": "^1.2.1",
     "@emotion/react": "11.10.8",
     "@emotion/styled": "11.10.8",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -100,7 +101,9 @@
     ]
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
+    "@floating-ui/core": "^1.5.0",
+    "@floating-ui/react": "^0.26.2",
+    "@floating-ui/react-dom": "^2.0.3",
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
     "@shoplflow/utils": "workspace:^",

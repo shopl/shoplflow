@@ -8,6 +8,7 @@ import type { BorderRadiusTokens, ColorTokens } from '../../styles';
 /**
  * HTML 태그에 대한 타입
  */
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
 export type StringElementType = ElementType & string;
 
 export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;

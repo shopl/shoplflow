@@ -20,7 +20,7 @@
   },
   "include": [
     "src/emotion.d.ts",
-    "src/*"
+    "src/**/*"
   ],
   "exclude": [
     "src/styles/tokens/shoplColors.ts",
