@@ -1,7 +1,6 @@
 {
   "name": "@shoplflow/utils",
   "version": "0.3.0",
-  "type": "module",
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit || true",
