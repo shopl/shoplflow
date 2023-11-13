@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.12.0
+
+### Minor Changes
+
+- [#103](https://github.com/shopl/shoplflow/pull/103) [`2c8286e`](https://github.com/shopl/shoplflow/commit/2c8286eef69dec291d088c783072cc80d4d9ddee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 스토리 북의 페이지를 이동해도 도메인이 유지됩니다.
+
+- [#103](https://github.com/shopl/shoplflow/pull/103) [`2c8286e`](https://github.com/shopl/shoplflow/commit/2c8286eef69dec291d088c783072cc80d4d9ddee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input 컴포넌트 추가
+
+- [#103](https://github.com/shopl/shoplflow/pull/103) [`2c8286e`](https://github.com/shopl/shoplflow/commit/2c8286eef69dec291d088c783072cc80d4d9ddee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal 아키텍쳐 변경 zustand -> react context
+
 ## 0.11.4
 
 ### Patch Changes
