@@ -1,5 +1,14 @@
 # @shoplflow/base
 
+## 0.12.1
+
+### Patch Changes
+
+- [#107](https://github.com/shopl/shoplflow/pull/107) [`61228e5`](https://github.com/shopl/shoplflow/commit/61228e53d42a1077b46995edf9bc3f1b6036b518) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - package.json type 변경
+
+- Updated dependencies [[`61228e5`](https://github.com/shopl/shoplflow/commit/61228e53d42a1077b46995edf9bc3f1b6036b518)]:
+  - @shoplflow/utils@0.3.1
+
 ## 0.12.0
 
 ### Minor Changes
