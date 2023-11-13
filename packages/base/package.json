@@ -4,7 +4,7 @@
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
-    "type-check": "tsc --noEmit || true",
+    "type-check": "tsc --noEmit",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
     "build:component": "scripts/generate-component.sh",

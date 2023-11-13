@@ -82,7 +82,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <InputWrapper
         htmlFor={uniqueId}
-        focused={isFocused}
+        isFocused={isFocused}
         disabled={disabled}
         isHovered={isHovered}
         isError={isError}
