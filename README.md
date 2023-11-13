@@ -12,8 +12,6 @@ pnpm i
 [pnpm add](https://pnpm.io/ko/cli/add)
 
 ```bash
-
-```bash
 pnpm -w add <package-name> 
 ```
 
