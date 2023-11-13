@@ -18,7 +18,7 @@ const InputButton = ({
   disabled = false,
   rightSource,
   placeholder,
-  onDelete,
+  onClear,
   ...rest
 }: InputButtonProps) => {
   const [text, setText] = useState('');
@@ -37,9 +37,9 @@ const InputButton = ({
     }
   };
 
-  const handleOnDelete = () => {
+  const handleOnClear = () => {
     if (!disabled) {
-      onDelete && onDelete();
+      onClear && onClear();
       setText('');
     }
   };
@@ -89,7 +89,7 @@ const InputButton = ({
         )}
         <Stack.Horizontal align={'center'}>
           {value && (
-            <IconButton sizeVar={'S'} onClick={handleOnDelete} styleVar={'GHOST'} disabled={disabled}>
+            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
               <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
             </IconButton>
           )}

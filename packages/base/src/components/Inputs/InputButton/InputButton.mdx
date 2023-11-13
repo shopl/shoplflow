@@ -21,4 +21,19 @@ import * as InputButtonStories from './InputButton.stories';
 
 ## Usage
 
+```tsx
+import { InputButton } from '@shoplflow/base';
+
+const Example = () => {
+  const [value, setValue] = useState('');
+
+  return (
+    <InputButton
+      value={value}
+      onChange={setValue}
+      onClear={() => setValue('')}
+    />
+  );
+};
+```
 

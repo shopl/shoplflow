@@ -18,7 +18,7 @@ export interface InputButtonOptionProps
   /**
    * 값이 삭제될 때 실행할 함수입니다.
    */
-  onDelete?: () => void;
+  onClear?: () => void;
   /**
    * Input의 placeholder를 설정합니다.
    */
