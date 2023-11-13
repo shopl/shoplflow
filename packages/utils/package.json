@@ -4,8 +4,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit || true",
-    "build:package": "node build.js",
-    "dev": "node build.js --watch"
+    "build:package": "node build.mjs",
+    "dev": "node build.mjs --watch"
   },
   "exports": {
     ".": {
