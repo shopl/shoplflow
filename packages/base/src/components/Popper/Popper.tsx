@@ -13,9 +13,8 @@ const Popper = ({
   isOpen = false,
   placement,
   offset: initialOffset = 0,
-  autoPlacement: initialAutoPlacement = false,
+  autoPlacement: initialAutoPlacement,
   strategy = 'absolute',
-  alignment,
   middlewares,
   animation: initialAnimation,
 }: PopperProps) => {
@@ -28,8 +27,8 @@ const Popper = ({
       initialAutoPlacement &&
         autoPlacement({
           crossAxis: false,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          alignment: alignment,
+          allowedPlacements: ['bottom', 'top'],
+          ...initialAutoPlacement,
         }),
       ...(middlewares ?? []),
     ],
@@ -38,8 +37,10 @@ const Popper = ({
   const animation = initialAnimation ?? fadeInOut;
 
   return (
-    <StyledPopper data-shoplflow={'Popper'}>
-      <div ref={refs.setReference}>{trigger}</div>
+    <>
+      <StyledPopper ref={refs.setReference} data-shoplflow={'Popper'}>
+        {trigger}
+      </StyledPopper>
       <FloatingPortal>
         <AnimatePresence>
           {isOpen && (
@@ -55,7 +56,7 @@ const Popper = ({
           )}
         </AnimatePresence>
       </FloatingPortal>
-    </StyledPopper>
+    </>
   );
 };
 
