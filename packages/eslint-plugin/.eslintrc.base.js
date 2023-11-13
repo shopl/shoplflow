@@ -73,3 +73,4 @@ module.exports = {
     quotes: [2, 'single', { allowTemplateLiterals: true, avoidEscape: true }], // 문자열에 싱글 쿼트를 사용하도록 강제합니다. 템플릿 리터럴은 예외로 허용합니다.
   },
 };
+

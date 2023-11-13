@@ -5,7 +5,13 @@ import { BackDropStyled } from './BackDrop.styled';
 
 const BackDrop = ({ children }: BackDropProps) => {
   return (
-    <BackDropStyled variants={fadeInOut} initial={'initial'} animate={'animate'} exit={'exit'}>
+    <BackDropStyled
+      variants={fadeInOut}
+      initial={'initial'}
+      animate={'animate'}
+      exit={'exit'}
+      data-shoplflow={'BackDrop'}
+    >
       {children}
     </BackDropStyled>
   );

@@ -4,7 +4,7 @@
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
-    "type-check": "tsc --noEmit || true",
+    "type-check": "tsc --noEmit",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
     "build:component": "scripts/generate-component.sh",
@@ -15,31 +15,40 @@
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build"
   },
+  "main": "./src/index.ts",
   "exports": {
     ".": {
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      },
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
     },
-    "./styles": "./dist/styles/global.css",
-    "./reset": "./dist/styles/reset.css",
+    "./styles": "./src/styles/global.css",
+    "./reset": "./src/styles/reset.css",
     "./package.json": "./package.json"
   },
-  "import": "./dist/index.js",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "default": "./dist/index.mjs",
+          "types": "./dist/index.d.mts"
+        },
+        "require": {
+          "default": "./dist/index.js",
+          "types": "./dist/index.d.ts"
+        }
+      },
+      "./styles": "./dist/styles/global.css",
+      "./reset": "./dist/styles/reset.css",
+      "./package.json": "./package.json"
+    }
+  },
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "@emotion/react": "*",
     "@emotion/styled": "*",
@@ -76,7 +85,6 @@
     "@types/node": "20.4.9",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
-    "eslint": "^8.49.0",
     "eslint-plugin-storybook": "^0.6.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -97,7 +105,6 @@
     "@shoplflow/utils": "workspace:^",
     "classnames": "^2.3.2",
     "framer-motion": "10.12.6",
-    "react-custom-scrollbars-2": "^4.5.0",
-    "zustand": "^4.4.1"
+    "react-custom-scrollbars-2": "^4.5.0"
   }
 }

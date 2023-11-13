@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["./.eslintrc.js", "./**/*.ts", "./**/*.tsx", "./docs/**/*.(ts|tsx|mdx)"],
+  "exclude": ["**/dist/*", "**/node_modules/**", "**/.next/**", "**/storybook-static/**", ],
+}

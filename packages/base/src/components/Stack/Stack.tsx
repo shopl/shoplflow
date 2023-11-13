@@ -46,6 +46,7 @@ const createStackComponent = (stackOption?: StackProps): StackComponentType =>
         background={background}
         radius={radius}
         {...rest}
+        data-shoplflow={'Stack'}
       >
         {rest.children}
       </StyledStack>

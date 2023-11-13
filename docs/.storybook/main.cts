@@ -1,4 +1,4 @@
-// @ts-ignore
+
 module.exports = {
   stories: ["../pages/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -26,6 +26,7 @@ module.exports = {
   features: {
     buildStoriesJson: true,
   },
+  // @ts-ignore
   refs: (config, { configType }) => {
     if (configType === 'DEVELOPMENT') {
       return {

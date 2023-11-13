@@ -1,1 +1,2 @@
-export { IconType, IconSource, EnabledIconSource, isShoplIcon, createIcon } from './createIcon';
+export type { IconSource, EnabledIconSource } from './createIcon';
+export { isShoplIcon, createIcon } from './createIcon';

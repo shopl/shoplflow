@@ -3,6 +3,7 @@
     /* 기본 옵션
      * ------------------------------------------------------------------------------------------------------------------------------------------------ */
     // "incremental": true,                   /* 증분 컴파일 활성화 */
+    "baseUrl": ".",
     "target": "es5",
     /* ECMAScript 목표 버전 설정: 'ES3'(기본), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
     "module": "esnext",
@@ -18,9 +19,9 @@
     // "checkJs": true,                       /* .js 파일 오류 리포트 설정 */
     "jsx": "react-jsx",
     /* 생성될 JSX 코드 설정: 'preserve', 'react-native', or 'react'. */
-    // "declaration": true,                   /* '.d.ts' 파일 생성 설정 */
-    // "declarationMap": true,                /* 해당하는 각 '.d.ts'파일에 대한 소스 맵 생성 */
-    // "sourceMap": true,                     /* 소스맵 '.map' 파일 생성 설정 */
+     "declaration": true,                   /* '.d.ts' 파일 생성 설정 */
+     "declarationMap": true,                /* 해당하는 각 '.d.ts'파일에 대한 소스 맵 생성 */
+     "sourceMap": true,                     /* 소스맵 '.map' 파일 생성 설정 */
     // "outFile": "./",                       /* 복수 파일을 묶어 하나의 파일로 출력 설정 */
     // "outDir": "./dist",                    /* 출력될 디렉토리 설정 */
     // "rootDir": "./",                       /* 입력 파일들의 루트 디렉토리 설정. --outDir 옵션을 사용해 출력 디렉토리 설정이 가능 */
@@ -91,5 +92,6 @@
     /* 선언 파일 유형 검사 스킵 */
     "forceConsistentCasingInFileNames": true
     /* 동일한 파일에 대한 일관되지 않은 케이스 참조를 허용하지 않음 */
-  }
+
+  },
 }

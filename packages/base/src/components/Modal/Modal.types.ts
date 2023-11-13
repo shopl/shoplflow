@@ -1,14 +1,14 @@
 import type { ChildrenProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
-export enum ModalSize {
-  XXS = 'XXS',
-  XS = 'XS',
-  S = 'S',
-  M = 'M',
-  L = 'L',
-  XL = 'XL',
-  XXL = 'XXL',
-}
+export const ModalSize = {
+  XXS: 'XXS',
+  XS: 'XS',
+  S: 'S',
+  M: 'M',
+  L: 'L',
+  XL: 'XL',
+  XXL: 'XXL',
+} as const;
 
 export type ModalSizeType = $Values<typeof ModalSize>;
 
