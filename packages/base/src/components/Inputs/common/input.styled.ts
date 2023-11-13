@@ -9,8 +9,8 @@ export type Status = {
   disabled?: boolean;
 };
 
-const getBorderColorByStatus = ({ isFocused, isError, isHovered, isDisabled }: Status) => {
-  if (!isDisabled) {
+const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Status) => {
+  if (!disabled) {
     if (isError) {
       return colorTokens.red300;
     }
