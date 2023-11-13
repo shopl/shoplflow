@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { StyledInputButton } from './InputButton.styled';
 import { InputWrapper } from '../common/input.styled';
@@ -12,12 +13,16 @@ const InputButton = ({
   value,
   defaultValue,
   onChange,
+  onClick,
+  isSelected,
+  disabled = false,
   rightSource,
   placeholder,
   onDelete,
   ...rest
 }: InputButtonProps) => {
   const [text, setText] = useState('');
+  const [isHovered, setIsHovered] = useState(false);
 
   const convertToString = useCallback((value: string | number | readonly string[]) => {
     if (typeof value !== 'number') {
@@ -25,9 +30,24 @@ const InputButton = ({
     }
     return String(value);
   }, []);
+
+  const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    if (!disabled) {
+      onClick && onClick(e);
+    }
+  };
+
   const handleOnDelete = () => {
-    onDelete && onDelete();
-    setText('');
+    if (!disabled) {
+      onDelete && onDelete();
+      setText('');
+    }
+  };
+  const handleOnMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleOnMouseLeave = () => {
+    setIsHovered(false);
   };
 
   useEffect(() => {
@@ -49,8 +69,15 @@ const InputButton = ({
   }, [convertToString, onChange, value]);
 
   return (
-    <InputWrapper {...rest}>
-      <StyledInputButton data-shoplflow={'InputButton'}>
+    <InputWrapper
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}
+      data-shoplflow={'InputButton'}
+      isHovered={isHovered}
+      isFocused={isSelected}
+      disabled={disabled}
+    >
+      <StyledInputButton {...rest} onClick={handleOnClick} disabled={disabled}>
         {text && text.length > 0 ? (
           <Text typography={'body1_400'} color={'neutral700'}>
             {text}
@@ -62,7 +89,7 @@ const InputButton = ({
         )}
         <Stack.Horizontal align={'center'}>
           {value && (
-            <IconButton sizeVar={'S'} onClick={handleOnDelete} styleVar={'GHOST'}>
+            <IconButton sizeVar={'S'} onClick={handleOnDelete} styleVar={'GHOST'} disabled={disabled}>
               <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
             </IconButton>
           )}

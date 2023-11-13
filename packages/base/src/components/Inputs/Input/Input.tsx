@@ -114,7 +114,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <InputWrapper
         htmlFor={uniqueId}
-        focused={isFocused}
+        isFocused={isFocused}
         disabled={disabled}
         isError={isError}
         isHovered={isHovered}

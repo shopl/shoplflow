@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 export const StyledInputButton = styled.button`
   display: flex;
@@ -8,4 +9,9 @@ export const StyledInputButton = styled.button`
   width: 100%;
   padding: 4px 4px 4px 12px;
   cursor: pointer;
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+    `}
 `;

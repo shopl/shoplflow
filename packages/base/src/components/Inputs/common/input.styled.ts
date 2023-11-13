@@ -3,18 +3,18 @@ import { colorTokens } from '../../../styles';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
 export type Status = {
-  focused?: boolean;
+  isFocused?: boolean;
   isError?: boolean;
   isHovered?: boolean;
   disabled?: boolean;
 };
 
-const getBorderColorByStatus = ({ focused, isError, isHovered, disabled }: Status) => {
-  if (!disabled) {
+const getBorderColorByStatus = ({ isFocused, isError, isHovered, isDisabled }: Status) => {
+  if (!isDisabled) {
     if (isError) {
       return colorTokens.red300;
     }
-    if (focused) {
+    if (isFocused) {
       return colorTokens.primary300;
     }
     if (isHovered) {
