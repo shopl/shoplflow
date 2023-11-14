@@ -46,8 +46,10 @@ const domainContext = useStoryDomain();
     <StoryDomainContext.Provider value={domainContext}>
       <ShoplflowProvider domain={domainContext.domain}>
         <Container>
-        <ThemeButton><Button onClick={domainContext.handleToggleTheme} sizeVar={'S'}>{domainContext.domain}</Button></ThemeButton>
-        <Story />
+          <ThemeButton>
+            <Button onClick={domainContext.handleToggleTheme} sizeVar={'S'}>{domainContext.domain}</Button>
+          </ThemeButton>
+          <Story />
         </Container>
       </ShoplflowProvider>
     </StoryDomainContext.Provider>
