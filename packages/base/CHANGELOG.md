@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.12.2
+
+### Patch Changes
+
+- [#109](https://github.com/shopl/shoplflow/pull/109) [`ee6ea4b`](https://github.com/shopl/shoplflow/commit/ee6ea4b7dc1870fd88e764ca9e6cfe298cb76f46) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - iconButton sizeVar, styleVar 타입 추론이 안되는 이슈 수정
+
+- [#109](https://github.com/shopl/shoplflow/pull/109) [`ee6ea4b`](https://github.com/shopl/shoplflow/commit/ee6ea4b7dc1870fd88e764ca9e6cfe298cb76f46) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input 좌측 padding이 올바르게 적용되지 않는 문제 수정
+
 ## 0.12.1
 
 ### Patch Changes
