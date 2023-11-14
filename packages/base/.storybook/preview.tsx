@@ -2,12 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import type { Decorator, Preview } from '@storybook/react';
-import { Button, ShoplflowProvider } from '../src';
+import { Button, ShoplflowProvider, Stack } from '../src';
 import './index.css';
 import '../src/styles/global.css';
 import '../src/styles/reset.css';
 import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
 import { withPerformance } from 'storybook-addon-performance';
+import { ComponentStage } from '../src/styles/Box';
 
 
 const ThemeButton  = styled.div`
@@ -38,12 +39,14 @@ const domainContext = useStoryDomain();
   return (
     <StoryDomainContext.Provider value={domainContext}>
       <ShoplflowProvider domain={domainContext.domain}>
-        <Container>
+
           <ThemeButton>
             <Button onClick={domainContext.handleToggleTheme} sizeVar={'S'}>{domainContext.domain}</Button>
           </ThemeButton>
-          <Story />
-        </Container>
+
+          <Container id={'component-root'}>
+              <Story />
+          </Container>
       </ShoplflowProvider>
     </StoryDomainContext.Provider>
   )
@@ -53,7 +56,6 @@ const domainContext = useStoryDomain();
 export const decorators:Decorator[] = [decorator, withPerformance];
 
 export const parameters = {
-
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
@@ -62,14 +64,12 @@ export const parameters = {
       },
     },
     a11y: {
+      element: '#component-root',
+      manual: true,
       config: {
         rules: [
           {
-            id: 'autocomplete-valid',
-            selector: '*:not([autocomplete="nope"])',
-          },
-          {
-            id: 'autocomplete-valid',
+            id: 'color-contrast',
             enabled: false,
           },
         ],

@@ -27,7 +27,7 @@ export default {
 
 export const Primary: StoryFn<ButtonProps> = (args) => {
   return (
-    <Stack width={'100px'}>
+    <Stack width={'200px'}>
       <ComponentStage>
         <Button {...args} />
       </ComponentStage>
@@ -44,7 +44,7 @@ Primary.args = {
 
 export const Secondary: StoryFn<ButtonProps> = (args) => {
   return (
-    <Stack width={'100px'}>
+    <Stack width={'200px'}>
       <ComponentStage>
         <Button {...args} />
       </ComponentStage>
@@ -61,7 +61,7 @@ Secondary.args = {
 
 export const Solid: StoryFn<ButtonProps> = (args) => {
   return (
-    <Stack width={'100px'}>
+    <Stack width={'200px'}>
       <ComponentStage>
         <Button {...args} />
       </ComponentStage>
@@ -78,7 +78,7 @@ Solid.args = {
 
 export const Ghost: StoryFn<ButtonProps> = (args) => {
   return (
-    <Stack width={'100px'}>
+    <Stack width={'200px'}>
       <ComponentStage>
         <Button {...args} />
       </ComponentStage>
