@@ -7,6 +7,7 @@ import './index.css';
 import '../src/styles/global.css';
 import '../src/styles/reset.css';
 import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
+import { withPerformance } from 'storybook-addon-performance';
 
 
 const ThemeButton  = styled.div`
@@ -26,17 +27,9 @@ justify-content: center;
 `;
 
 
-const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
-  },
-};
+
+
+
 
 
 export const decorator: Decorator = (Story, context) => {
@@ -57,7 +50,30 @@ const domainContext = useStoryDomain();
 }
 
 
-export const decorators:Decorator[] = [decorator];
+export const decorators:Decorator[] = [decorator, withPerformance];
 
+export const parameters = {
 
-export default preview;
+    actions: { argTypesRegex: "^on[A-Z].*" },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
+    a11y: {
+      config: {
+        rules: [
+          {
+            id: 'autocomplete-valid',
+            selector: '*:not([autocomplete="nope"])',
+          },
+          {
+            id: 'autocomplete-valid',
+            enabled: false,
+          },
+        ],
+      },
+    },
+}
+
