@@ -59,6 +59,7 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
     "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/is-prop-valid": "^1.2.1",
     "@emotion/react": "11.10.8",
     "@emotion/styled": "11.10.8",
     "@rollup/plugin-commonjs": "^25.0.7",

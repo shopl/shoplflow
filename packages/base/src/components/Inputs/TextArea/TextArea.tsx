@@ -21,6 +21,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       onBlur,
       onFocus,
       minHeight = 100,
+      className,
       ...rest
     },
     ref,
@@ -92,7 +93,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         data-shoplflow={'text-area'}
       >
         <StyledTextarea
-          className='body1_400'
+          className={'body1_400' + (className ? ` ${className}` : '')}
           placeholder={placeholder}
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}

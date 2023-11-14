@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+
   plugins: ['@shoplflow', '@typescript-eslint/eslint-plugin', 'import', 'react', 'react-hooks', '@emotion'],
   extends: ['plugin:@shoplflow/base', 'plugin:@shoplflow/react', 'plugin:@shoplflow/typescript'],
   parser: '@typescript-eslint/parser',
@@ -19,11 +20,15 @@ module.exports = {
     next: {
       rootDir: ['apps/*/'],
     },
+    "react": {
+      "version": "detect"
+    }
   },
   rules: {
     "@typescript-eslint/no-redundant-type-constituents": "off",
     '@typescript-eslint/consistent-type-exports': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
+    "@typescript-eslint/no-unnecessary-type-arguments": "off",
   },
   ignorePatterns: ['.eslintrc.**'],
 };

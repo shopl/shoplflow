@@ -1,10 +1,8 @@
 import type { ChangeEvent, FocusEvent, HTMLInputTypeAttribute } from 'react';
 import React, { forwardRef, useCallback, useEffect, useId, useState } from 'react';
 import { RightElementWrapper, StyledInput } from './Input.styled';
-
 import TextCounter from '../common/TextCounter';
 import type { InputProps } from './Input.types';
-import { typographyTokens } from '../../../styles';
 import { IconButton } from '../../Buttons';
 import { assetFunction } from '../../../styles/IconAssets';
 import { useMergeRefs } from '../../../hooks/useMergeRef';
@@ -123,7 +121,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         data-shoplflow={'input'}
       >
         <StyledInput
-          className={`${typographyTokens.body1_400} ${className}`}
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}
           onChange={handleOnChange}
@@ -133,6 +130,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           type={type}
           id={uniqueId}
           ref={refs}
+          className={'body1_400' + (className ? ` ${className}` : '')}
           {...rest}
         />
         <RightElementWrapper>
