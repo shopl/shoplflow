@@ -8,7 +8,7 @@ import type { BorderRadiusTokens, ColorTokens } from '../../styles';
 /**
  * HTML 태그에 대한 타입
  */
-export type StringElementType = ElementType & string;
+export type StringElementType = ElementType;
 
 export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
 

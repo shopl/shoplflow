@@ -3,6 +3,7 @@ import { Box, ComponentStage } from '../../styles/Box';
 import { Modal } from './index';
 import type { ModalContainerProps } from './Modal.types';
 import ModalContainer from './ModalContainer';
+import type { ReactNode } from 'react';
 import React from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
@@ -14,7 +15,9 @@ export default {
   component: ModalContainer,
 };
 
-const mockBoxs = new Array(20).fill(<Box background={'primary100'} width={'100%'} />);
+const mockBoxs: ReactNode[] = new Array(10)
+  .fill(0)
+  .map((_, index) => <Box key={index} width={'100%'} height={'100px'} background={'primary300'} />);
 
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
@@ -40,7 +43,9 @@ export const Playground: StoryFn<ModalContainerProps> = (args) => {
   return <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>open Modal</Button>;
 };
 
-export const Primary = PrimaryComponent.bind({});
+export const Primary = () => {
+  return <PrimaryComponent />;
+};
 
 export const Body: StoryFn<ModalContainerProps> = (args) => (
   <Stack height={'500px'}>
