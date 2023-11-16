@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.12.6
+
+### Patch Changes
+
+- [#118](https://github.com/shopl/shoplflow/pull/118) [`ef1972a`](https://github.com/shopl/shoplflow/commit/ef1972adab13c6e88c662c91a48349b6a32675a0) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - token update
+
 ## 0.12.5
 
 ### Patch Changes
