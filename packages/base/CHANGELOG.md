@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.12.5
+
+### Patch Changes
+
+- [#115](https://github.com/shopl/shoplflow/pull/115) [`74715d9`](https://github.com/shopl/shoplflow/commit/74715d964e6b34f900deecb827a3ec25b118b0b1) Thanks [@bong9boy](https://github.com/bong9boy)! - font-weight regular 400->500, medium 500->600으로 변경
+
 ## 0.12.4
 
 ### Patch Changes
