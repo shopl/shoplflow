@@ -1,15 +1,9 @@
 name: Token Update Workflow
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
-    types:
-      - opened
-      - synchronize
-      - labeled
-      - unlabeled
-  workflow_dispatch:
+      - 'feature/token**'
 
 jobs:
   build:
@@ -56,21 +50,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: token-update 라벨이 있는지 확인하고 있어요.
-        run: |
-          label_name="token-update"
-          pr_labels=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.labels[].name')
-          if echo "$pr_labels" | grep -q "$label_name"; then
-            echo "Label found! Running the workflow..."
-          else
-            echo "Label not found. Skipping the workflow."
-            exit 0
-          fi
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-
       - name: 생성된 PR일 경우 main과 변경점을 비교하고 있어요. (first PR)
-        if: github.event.action == 'opened' && env.LABEL_FOUND == 'true'
+        if: github.event.action == 'opened'
 
         run: |
           git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD -- 'packages/base/src/styles/' > /dev/null
@@ -81,7 +62,6 @@ jobs:
           fi
 
       - name: 커밋이 업데이트 된 경우 이전 커밋과 변경점을 비교하고 있어요 (subsequent commits)
-        if: github.event.action != 'opened' && env.LABEL_FOUND == 'true'
         run: |
           git diff --name-only HEAD~1 HEAD -- 'packages/base/src/styles/' > /dev/null
           if [ $? -eq 0 ]; then
@@ -91,9 +71,8 @@ jobs:
           fi
 
 
-
       - name: 토큰을 생성하고 있어요
-        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
+        if: env.PATH_UPDATED == 'true'
         run: pnpm workspace @shoplflow/base build:tokens
 
       - name: Checkout to PR branch
@@ -103,7 +82,7 @@ jobs:
           git checkout ${{github.head_ref}}
 
       - name: PR 생성자의 이름과 이메일을 가져오고 있어요.
-        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
+        if: env.PATH_UPDATED == 'true'
         run: |
           pr_user_login=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.user.login')
           pr_user_info=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/users/$pr_user_login)
@@ -116,7 +95,7 @@ jobs:
 
 
       - name: 토큰을 커밋하고 있어요.
-        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
+        if: env.PATH_UPDATED == 'true'
         run: |
           git checkout ${{github.head_ref}}
           git config user.name "${{ env.PR_USER_NAME }}" # PR을 생성한 사용자의 이름을 사용합니다.
