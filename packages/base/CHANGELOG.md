@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.12.3
+
+### Patch Changes
+
+- Updated dependencies [[`668681a`](https://github.com/shopl/shoplflow/commit/668681afdc78faf45e9654df9f382b779726c964)]:
+  - @shoplflow/hada-assets@0.0.3
+  - @shoplflow/shopl-assets@0.3.1
+
 ## 0.12.2
 
 ### Patch Changes
