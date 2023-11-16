@@ -58,7 +58,7 @@ jobs:
 
       - name: 토큰을 생성하고 있어요
         if: env.PATH_UPDATED == 'true'
-        run: pnpm workspace @shoplflow/base build:tokens
+        run: pnpm --filter base build:tokens
 
       - name: Checkout to PR branch
         if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
