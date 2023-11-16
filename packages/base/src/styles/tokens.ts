@@ -165,6 +165,7 @@ const body2_500 = '.body2_500';
 const body2_400 = '.body2_400';
 const body3_400 = '.body3_400';
 const body3_500 = '.body3_500';
+const caption_700 = '.caption_700';
 const caption_400 = '.caption_400';
 export const typographyTokens = {
  heading1_700,
@@ -186,5 +187,6 @@ export const typographyTokens = {
  body2_400,
  body3_400,
  body3_500,
+ caption_700,
  caption_400,
 };
