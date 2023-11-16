@@ -10,8 +10,7 @@ export type IconSource = React.FunctionComponent<React.SVGProps<SVGSVGElement>> 
   [ICON_SYMBOL]: true;
 };
 
-export type IconType = IconSource;
-export function isShoplIcon(arg: EnabledIconSource): arg is IconType {
+export function isShoplIcon(arg: EnabledIconSource): arg is IconSource {
   return typeof arg === 'function' && arg[ICON_SYMBOL] === true;
 }
 

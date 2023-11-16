@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import type { DomainType } from '../types/Domain';
 
-type UseDomainProps = {
-  domain?: DomainType;
-};
+type UseDomainType = (domain?: DomainType) => [DomainType | undefined];
 
-export const useDomain = ({ domain = 'SHOPL' }: UseDomainProps) => {
+export const useDomain: UseDomainType = (domain = 'SHOPL') => {
   const [domainType, setDomainType] = useState<DomainType | undefined>(undefined);
 
   useEffect(() => {
@@ -20,6 +18,8 @@ export const useDomain = ({ domain = 'SHOPL' }: UseDomainProps) => {
     }
     document.documentElement.dataset.shoplflow = domainType?.toLowerCase();
   }, [domainType]);
+
+  return [domainType];
 };
 
 export const getDomain = () => {

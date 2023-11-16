@@ -1,12 +1,14 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactElement, ReactNode } from 'react';
 import type React from 'react';
-import type { IconSource } from '@shoplflow/shopl-assets';
+import type { IconSource as ShoplIconSource } from '@shoplflow/shopl-assets';
+import type { IconSource as HadaIconSource } from '@shoplflow/hada-assets';
+
 import type { BorderRadiusTokens, ColorTokens } from '../../styles';
 
 /**
  * HTML 태그에 대한 타입
  */
-export type StringElementType = ElementType & string;
+export type StringElementType = ElementType;
 
 export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
 
@@ -20,17 +22,23 @@ export interface DisableProps {
    */
   disabled?: boolean;
 }
+
+export interface ErrorProps {
+  /**
+   * 에러 여부를 설정합니다.
+   */
+  isError?: boolean;
+}
+
 export interface SelectedProps {
   /**
-   * 선택 여부를 설정합니다.
+   * 외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다.
    */
   isSelected?: boolean;
 }
 export interface DefaultSelectedProps {
   /**
-   * 기본 선택 여부를 설정합니다.
-   *
-   * SelectedProps보다 우선적으로 적용됩니다.
+   * 초기 선택 값을 설정합니다.
    */
   defaultSelected?: boolean;
 }
@@ -118,7 +126,7 @@ export interface IconSourceProps {
   /**
    * Icon을 설정합니다.
    */
-  iconSource?: IconSource;
+  iconSource?: ShoplIconSource | HadaIconSource;
 }
 
 export interface LeftNodeProps {

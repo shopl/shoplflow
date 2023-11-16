@@ -31,6 +31,7 @@ const Text = forwardRef(
         textAlign={textAlign}
         as={as}
         {...rest}
+        data-shoplflow={'Text'}
       >
         {children}
       </StyledText>

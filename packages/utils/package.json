@@ -1,29 +1,38 @@
 {
   "name": "@shoplflow/utils",
-  "version": "0.3.0",
-  "type": "module",
+  "version": "0.3.1",
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit || true",
-    "build:package": "node build.js",
-    "dev": "node build.js --watch"
+    "build:package": "node build.mjs",
+    "dev": "node build.mjs --watch"
   },
-  "main": "dist/index.cjs",
-  "types": "dist/index.d.ts",
-  "module": "dist/index.mjs",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "dist"
-  ],
+  "main": "./src/index.ts",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "default": "./dist/index.mjs",
+          "types": "./dist/index.d.mts"
+        },
+        "require": {
+          "default": "./dist/index.js",
+          "types": "./dist/index.d.ts"
+        }
+      },
+      "./package.json": "./package.json"
+    }
   },
   "peerDependencies": {
     "react": "*"
@@ -37,7 +46,6 @@
     "esbuild": "0.18.17",
     "esbuild-plugin-babel": "^0.2.3",
     "esbuild-plugin-d.ts": "^1.1.0",
-    "eslint": "^8.49.0",
     "react": "^18.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.6.3"

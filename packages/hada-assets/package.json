@@ -11,29 +11,36 @@
     "build:package": "rm -rf dist/ && tsup",
     "develop": "tsup --watch"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
-      },
-      "require": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      }
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
     },
-    "./styles": "./dist/styles/global.css",
     "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": {
+          "default": "./dist/index.mjs",
+          "types": "./dist/index.d.mts"
+        },
+        "require": {
+          "default": "./dist/index.js",
+          "types": "./dist/index.d.ts"
+        }
+      },
+      "./package.json": "./package.json"
+    }
   },
   "files": [
     "/dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "@emotion/react": "*",
     "@emotion/styled": "*",
@@ -50,7 +57,6 @@
     "@types/node": "20.4.9",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
-    "eslint": "^8.44.0",
     "lodash": "4.17.21",
     "react": "^18",
     "react-dom": "^18",

@@ -1,5 +1,39 @@
 # @shoplflow/base
 
+## 0.12.2
+
+### Patch Changes
+
+- [#109](https://github.com/shopl/shoplflow/pull/109) [`ee6ea4b`](https://github.com/shopl/shoplflow/commit/ee6ea4b7dc1870fd88e764ca9e6cfe298cb76f46) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - iconButton sizeVar, styleVar 타입 추론이 안되는 이슈 수정
+
+- [#109](https://github.com/shopl/shoplflow/pull/109) [`ee6ea4b`](https://github.com/shopl/shoplflow/commit/ee6ea4b7dc1870fd88e764ca9e6cfe298cb76f46) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input 좌측 padding이 올바르게 적용되지 않는 문제 수정
+
+## 0.12.1
+
+### Patch Changes
+
+- [#107](https://github.com/shopl/shoplflow/pull/107) [`61228e5`](https://github.com/shopl/shoplflow/commit/61228e53d42a1077b46995edf9bc3f1b6036b518) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - package.json type 변경
+
+- Updated dependencies [[`61228e5`](https://github.com/shopl/shoplflow/commit/61228e53d42a1077b46995edf9bc3f1b6036b518)]:
+  - @shoplflow/utils@0.3.1
+
+## 0.12.0
+
+### Minor Changes
+
+- [#103](https://github.com/shopl/shoplflow/pull/103) [`2c8286e`](https://github.com/shopl/shoplflow/commit/2c8286eef69dec291d088c783072cc80d4d9ddee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 스토리 북의 페이지를 이동해도 도메인이 유지됩니다.
+
+- [#103](https://github.com/shopl/shoplflow/pull/103) [`2c8286e`](https://github.com/shopl/shoplflow/commit/2c8286eef69dec291d088c783072cc80d4d9ddee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input 컴포넌트 추가
+
+- [#103](https://github.com/shopl/shoplflow/pull/103) [`2c8286e`](https://github.com/shopl/shoplflow/commit/2c8286eef69dec291d088c783072cc80d4d9ddee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal 아키텍쳐 변경 zustand -> react context
+
+## 0.11.4
+
+### Patch Changes
+
+- Updated dependencies [[`bf54dae`](https://github.com/shopl/shoplflow/commit/bf54dae166f7cb58f974fe58e3edf4d71eb08f11)]:
+  - @shoplflow/shopl-assets@0.3.0
+
 ## 0.11.3
 
 ### Patch Changes

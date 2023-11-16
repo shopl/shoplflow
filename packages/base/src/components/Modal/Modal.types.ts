@@ -1,14 +1,14 @@
 import type { ChildrenProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
-export enum ModalSize {
-  XXS = 'XXS',
-  XS = 'XS',
-  S = 'S',
-  M = 'M',
-  L = 'L',
-  XL = 'XL',
-  XXL = 'XXL',
-}
+export const ModalSize = {
+  XXS: 'XXS',
+  XS: 'XS',
+  S: 'S',
+  M: 'M',
+  L: 'L',
+  XL: 'XL',
+  XXL: 'XXL',
+} as const;
 
 export type ModalSizeType = $Values<typeof ModalSize>;
 
@@ -27,7 +27,7 @@ export interface ModalContainerOptionProps {
    * 모달의 외부를 클릭했을 때 실행되는 함수입니다.
    * @param args
    */
-  outsideClick?: (args?: any) => void;
+  outsideClick?: (...args: any[]) => void;
 }
 
 // Modal Header

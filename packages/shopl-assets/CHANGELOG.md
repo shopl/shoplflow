@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.3.0
+
+### Minor Changes
+
+- [#104](https://github.com/shopl/shoplflow/pull/104) [`bf54dae`](https://github.com/shopl/shoplflow/commit/bf54dae166f7cb58f974fe58e3edf4d71eb08f11) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - qrcode 아이콘 추가
+
 ## 0.2.0
 
 ### Minor Changes

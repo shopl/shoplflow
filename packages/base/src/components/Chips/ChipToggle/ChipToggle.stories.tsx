@@ -5,6 +5,7 @@ import { Stack } from '../../Stack';
 
 import type { ChipToggleProps } from './ChipToggle.types';
 import ChipToggle from './ChipToggle';
+import { ComponentStage } from '../../../styles/Box';
 
 export default {
   title: 'COMPONENTS/Chips/ChipToggle',
@@ -15,8 +16,10 @@ export default {
 export const Playground: StoryFn<ChipToggleProps> = (args) => {
   return (
     <Stack>
-      <Stack>
-        <ChipToggle {...args} />
+      <Stack width={'200px'}>
+        <ComponentStage>
+          <ChipToggle {...args} />
+        </ComponentStage>
       </Stack>
     </Stack>
   );
@@ -34,13 +37,15 @@ Playground.args = {
 export const List: StoryFn<ChipToggleProps> = (args) => {
   return (
     <Stack>
-      <Stack.Horizontal>
-        <ChipToggle {...args} />
-        <ChipToggle {...args} />
-        <ChipToggle {...args} />
-        <ChipToggle {...args} />
-        <ChipToggle {...args} />
-        <ChipToggle {...args} />
+      <Stack.Horizontal width={'300px'}>
+        <ComponentStage>
+          <ChipToggle {...args} />
+          <ChipToggle {...args} />
+          <ChipToggle {...args} />
+          <ChipToggle {...args} />
+          <ChipToggle {...args} />
+          <ChipToggle {...args} />
+        </ComponentStage>
       </Stack.Horizontal>
     </Stack>
   );

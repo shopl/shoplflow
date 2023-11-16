@@ -1,20 +1,16 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "baseUrl": ".",
+    "module": "commonjs",
     "allowJs": false,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "declaration": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -24,7 +20,7 @@
   },
   "include": [
     "src/emotion.d.ts",
-    "src/*"
+    "src"
   ],
   "exclude": [
     "src/styles/tokens/shoplColors.ts",
