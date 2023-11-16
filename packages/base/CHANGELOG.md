@@ -1,5 +1,19 @@
 # @shoplflow/base
 
+## 0.12.4
+
+### Patch Changes
+
+- [#113](https://github.com/shopl/shoplflow/pull/113) [`8ed72c2`](https://github.com/shopl/shoplflow/commit/8ed72c245fabc1ad4ad9cfe0872e67943c692d68) Thanks [@bong9boy](https://github.com/bong9boy)! - 400->font weight medium으로 일괄 변경
+
+## 0.12.3
+
+### Patch Changes
+
+- Updated dependencies [[`668681a`](https://github.com/shopl/shoplflow/commit/668681afdc78faf45e9654df9f382b779726c964)]:
+  - @shoplflow/hada-assets@0.0.3
+  - @shoplflow/shopl-assets@0.3.1
+
 ## 0.12.2
 
 ### Patch Changes
