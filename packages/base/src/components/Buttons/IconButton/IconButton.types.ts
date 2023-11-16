@@ -11,14 +11,14 @@ import type {
 export const iconButtonSizeVar = {
   S: 'S',
   M: 'M',
-};
+} as const;
 
 export type IconButtonSizeVar = $Values<typeof iconButtonSizeVar>;
 
 export const iconButtonStyleVar = {
   SOLID: 'SOLID',
   GHOST: 'GHOST',
-};
+} as const;
 
 export type IconButtonStyleVar = $Values<typeof iconButtonStyleVar>;
 

@@ -1,16 +1,16 @@
 import type { HTMLAttributes } from 'react';
-import type { DisableProps, RightElementProps } from '../../../utils/type/ComponentProps';
+import type { DisableProps, RightElementProps, SelectedProps } from '../../../utils/type/ComponentProps';
 
 export interface InputButtonProps extends InputButtonOptionProps {}
 export interface InputButtonOptionProps
   extends Omit<HTMLAttributes<HTMLButtonElement>, 'onChange'>,
     RightElementProps,
-    DisableProps {
+    DisableProps,
+    SelectedProps {
   /**
    * 초기값을 설정합니다.
    */
   defaultValue?: string | number | readonly string[];
-
   /**
    * Input의 value를 설정합니다.
    */
@@ -18,7 +18,7 @@ export interface InputButtonOptionProps
   /**
    * 값이 삭제될 때 실행할 함수입니다.
    */
-  onDelete?: () => void;
+  onClear?: () => void;
   /**
    * Input의 placeholder를 설정합니다.
    */

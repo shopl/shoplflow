@@ -1,10 +1,9 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.11.4",
-  "type": "module",
+  "version": "0.12.4",
   "license": "Apache-2.0",
   "scripts": {
-    "type-check": "tsc --noEmit || true",
+    "type-check": "tsc --noEmit",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
     "build:component": "scripts/generate-component.sh",
@@ -65,6 +64,7 @@
     "@emotion/styled": "11.10.8",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-actions": "^7.4.1",
     "@storybook/addon-backgrounds": "^7.4.1",
     "@storybook/addon-controls": "^7.4.1",
@@ -90,6 +90,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.4.1",
+    "storybook-addon-performance": "^0.17.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "tsup": "7.2.0",

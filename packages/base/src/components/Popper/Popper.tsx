@@ -17,6 +17,7 @@ const Popper = ({
   strategy = 'absolute',
   middlewares,
   animation: initialAnimation,
+  ...rest
 }: PopperProps) => {
   const { refs, floatingStyles } = useFloating({
     strategy,
@@ -24,12 +25,11 @@ const Popper = ({
     whileElementsMounted: autoUpdate,
     middleware: [
       offset(initialOffset),
-      initialAutoPlacement &&
-        autoPlacement({
-          crossAxis: false,
-          allowedPlacements: ['bottom', 'top'],
-          ...initialAutoPlacement,
-        }),
+
+      autoPlacement({
+        crossAxis: false,
+        ...initialAutoPlacement,
+      }),
       ...(middlewares ?? []),
     ],
   });
@@ -38,7 +38,7 @@ const Popper = ({
 
   return (
     <>
-      <StyledPopper ref={refs.setReference} data-shoplflow={'Popper'}>
+      <StyledPopper ref={refs.setReference} data-shoplflow={'Popper'} {...rest}>
         {trigger}
       </StyledPopper>
       <FloatingPortal>

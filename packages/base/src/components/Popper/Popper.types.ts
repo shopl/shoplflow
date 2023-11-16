@@ -5,8 +5,11 @@ import type { OffsetOptions } from '@floating-ui/core';
 
 export interface PopperProps extends PopperOptionProps {}
 export interface PopperOptionProps {
+  width?: string;
+  height?: string;
   /**
    * popper의 offset을 설정합니다.
+   *
    * Ref: https://floating-ui.com/docs/offset#offset
    */
   offset?: OffsetOptions;
@@ -17,11 +20,13 @@ export interface PopperOptionProps {
   /**
    * 화면 뷰에 따라 자동으로 위치를 조정할 수 있습니다.
    * floating ui의 autoPlacement 미들웨어를 사용합니다.
+   *
    * Ref: https://floating-ui.com/docs/autoplacement
    */
   autoPlacement?: AutoPlacementOptions;
   /**
    * popper의 위치를 지정할 수 있습니다.
+   *
    * Ref: https://floating-ui.com/docs/arrow#placement
    */
   placement?: Placement;
@@ -31,6 +36,7 @@ export interface PopperOptionProps {
   strategy?: 'absolute' | 'fixed';
   /**
    * floating ui의 middleware를 넣을 수 있습니다.
+   *
    * Ref: https://floating-ui.com/docs/useFloating#middleware
    */
   middlewares?: Array<Middleware | null | undefined | false>;

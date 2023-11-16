@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import Icon from './Icon';
 import type { IconProps } from './Icon.types';
@@ -15,9 +15,9 @@ import { IconStage } from '../../styles/Box';
 export default {
   title: 'COMPONENTS/Icon',
   component: Icon,
-} as Meta;
+};
 
-const assetFilter = (assets: Record<any, any>, type: 'Icon' | 'illust') => {
+const assetFilter = (assets: Record<string, unknown>, type: 'Icon' | 'illust') => {
   return Object.keys(assets)
     .filter((data) => !data.includes('create'))
     .filter((data) => !data.startsWith('is'))

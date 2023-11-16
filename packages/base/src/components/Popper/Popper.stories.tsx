@@ -39,7 +39,6 @@ export const Playground: StoryFn<PopperProps> = (args) => {
 
 Playground.args = {
   strategy: 'absolute',
-  autoPlacement: false,
   placement: 'bottom',
 };
 
@@ -50,7 +49,7 @@ export const AutoPlacement: StoryFn<PopperProps> = (args) => {
     setIsOpen((prev) => !prev);
   };
   return (
-    <Stack height={'400px'} width={'300px'} justify={'center'} align={'end'}>
+    <Stack height={'2000px'} width={'600px'} justify={'center'} align={'end'}>
       <ComponentStage>
         <Popper
           isOpen={isOpen}
@@ -70,6 +69,9 @@ export const AutoPlacement: StoryFn<PopperProps> = (args) => {
 AutoPlacement.args = {
   strategy: 'absolute',
   isOpen: false,
-  autoPlacement: true,
-  alignment: 'start',
+  offset: 10,
+  autoPlacement: {
+    autoAlignment: true,
+    allowedPlacements: ['top', 'bottom'],
+  },
 };

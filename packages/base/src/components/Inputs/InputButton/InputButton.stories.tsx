@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
 import InputButton from './InputButton';
 import type { InputButtonProps } from './InputButton.types';
@@ -14,7 +14,7 @@ export default {
   title: 'COMPONENTS/Inputs/InputButton',
   component: InputButton,
   argTypes: { onClick: { action: 'clicked' }, onChange: { action: 'changed' } },
-} as Meta;
+};
 
 export const Playground: StoryFn<InputButtonProps> = (args) => {
   const [value, setValue] = React.useState<string | undefined>(undefined);
