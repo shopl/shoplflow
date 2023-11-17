@@ -20,8 +20,9 @@ touch index.ts
 
 echo "import React from 'react';
 import { Styled${prefix} } from './${prefix}.styled';
+import type { ${prefix}Props } from './${prefix}.types';
 
-const $prefix = () => {
+const $prefix = ({ ...rest }: ${prefix}Props) => {
     return (
         <Styled${prefix} data-shoplflow={'${prefix}'}>
           $prefix
@@ -44,7 +45,7 @@ export interface ${prefix}OptionProps {
 
 echo "import React from 'react';
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import ${prefix} from './${prefix}';
 import type { ${prefix}Props } from './${prefix}.types';
@@ -53,7 +54,7 @@ import type { ${prefix}Props } from './${prefix}.types';
 export default {
   title: 'COMPONENTS/${prefix}',
   component: ${prefix},
-} as Meta;
+};
 
 export const Playground: StoryFn<${prefix}Props> = (args) => {
   return (

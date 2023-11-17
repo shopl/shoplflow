@@ -102,6 +102,9 @@
     ]
   },
   "dependencies": {
+    "@floating-ui/core": "^1.5.0",
+    "@floating-ui/react": "^0.26.2",
+    "@floating-ui/react-dom": "^2.0.3",
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
     "@shoplflow/utils": "workspace:^",

@@ -1,0 +1,42 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import Popper from './Popper';
+import * as PopperStories from './Popper.stories';
+
+<Meta of={PopperStories} />
+
+# Popper
+
+특정 요소를 기준으로 pop up을 띄워주는 컴포넌트입니다.
+
+로직만 분기되어있으며 디자인은 포함되어 있지 않습니다.
+
+Dropdown, Tooltip 등으로 활용할 수 있습니다.
+
+> [floating-ui](https://floating-ui.com)를 기반으로 작성되었습니다.
+
+<Canvas of={PopperStories.Playground} />
+
+
+## ArgsTable
+
+<ArgsTable of={Popper} />
+
+## Usage
+
+```
+import { Popper } from '@shoplflow/base';
+
+const App = () => {
+  return(
+    <Popper
+      isOpen={isOpen}
+      placement="bottom"
+      trigger={<div>Trigger</div>}
+    >
+      <div>Popper Content</div>
+    </Popper>
+  )
+}
+```
+
+
