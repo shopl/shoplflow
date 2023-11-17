@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.13.0
+
+### Minor Changes
+
+- [#120](https://github.com/shopl/shoplflow/pull/120) [`758d5a5`](https://github.com/shopl/shoplflow/commit/758d5a5709488bfdaf1130e7be8c5aeabffaf7bc) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - popper 컴포넌트 추가
+
 ## 0.12.6
 
 ### Patch Changes
