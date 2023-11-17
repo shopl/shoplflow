@@ -21,15 +21,15 @@ const Popper = ({
 }: PopperProps) => {
   const { refs, floatingStyles } = useFloating({
     strategy,
-    placement,
+    placement: placement,
     whileElementsMounted: autoUpdate,
     middleware: [
       offset(initialOffset),
-
-      autoPlacement({
-        crossAxis: false,
-        ...initialAutoPlacement,
-      }),
+      initialAutoPlacement &&
+        autoPlacement({
+          crossAxis: false,
+          ...initialAutoPlacement,
+        }),
       ...(middlewares ?? []),
     ],
   });
