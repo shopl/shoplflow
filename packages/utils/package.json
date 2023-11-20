@@ -5,7 +5,7 @@
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:package": "rm -rf dist/ && tsup",
-    "dev": "node build.mjs --watch"
+    "dev": "tsup --watch"
   },
   "main": "./src/index.ts",
   "exports": {

@@ -52,7 +52,7 @@ export function mergeRefs<T>(...refs: Array<ReactRef<T> | null | undefined>) {
  *  }
  *  ```
  *
- *  ```tsx PopperTrigger (shoplflow)
+ *  ```tsx Popper.tsx (shoplflow)
  *  export const PopperTrigger = forwardRef<HTMLDivElement, PopperTriggerProps>(
  *   ({ children, isOpen = false, ...rest }, ref) => {
  *     const { setReference, setIsOpen } = usePopper();
