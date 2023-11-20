@@ -26,6 +26,49 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVar) => {
   }
 };
 
+export const getDropdownStyleBySizeVar = (size: DropdownSizeVar) => {
+  switch (size) {
+    case 'M':
+      return css`
+        padding: 4px 4px 4px 12px;
+      `;
+    case 'S':
+      return css`
+        padding: 4px 4px 4px 8px;
+      `;
+    default:
+      return css`
+        padding: 4px 4px 4px 12px;
+      `;
+  }
+};
+
+export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVar) => {
+  switch (size) {
+    case 'S':
+      return css`
+        height: 24px;
+        width: 24px;
+        min-width: 24px;
+        min-height: 24px;
+      `;
+    case 'M':
+      return css`
+        height: 32px;
+        width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+      `;
+    default:
+      return css`
+        height: 32px;
+        width: 32px;
+        min-width: 32px;
+        min-height: 32px;
+      `;
+  }
+};
+
 export const StyledDropdown = styled.div`
   display: flex;
   width: fit-content;
@@ -48,21 +91,19 @@ export const StyledDropdownButton = styled.button<DropdownButtonProps>`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 4px 4px 4px 12px;
   gap: 8px;
   cursor: pointer;
+  ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
   ${({ disabled }) =>
     disabled &&
     css`
       cursor: not-allowed;
     `}
 `;
-export const DropdownButtonIcon = styled(motion.div)`
+export const DropdownButtonIcon = styled(motion.div)<DropdownButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
-  width: 32px;
-  min-width: 32px;
-  min-height: 32px;
+
+  ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
 `;
