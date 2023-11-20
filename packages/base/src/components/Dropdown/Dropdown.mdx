@@ -1,5 +1,6 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
 import Dropdown from './Dropdown';
+import {DropdownContent} from './Dropdown';
 import * as DropdownStories from './Dropdown.stories';
 
 <Meta of={DropdownStories} />
@@ -15,6 +16,21 @@ Dropdown 컴포넌트 설명을 적어주세요.
 
 <ArgsTable of={Dropdown} />
 
+<ArgsTable of={DropdownContent} />
+
 ## Usage
+
+```
+<Dropdown
+  isOpen={true}
+  trigger={
+    <InputButton
+      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
+      rightSource={<IconButton iconSource={RightArrowIcon} styleVar={'GHOST'} sizeVar={'S'} />}
+    />
+  }
+  content={<Dropdown.Content type={'FILL'}>Content</Dropdown.Content>}
+/>
+```
 
 

@@ -3,11 +3,12 @@ import type { DisableProps, RightElementProps, ErrorProps } from '../../../utils
 
 export interface InputProps
   extends InputOptionProps,
-    InputHTMLAttributes<HTMLInputElement>,
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'width'>,
     DisableProps,
     RightElementProps {}
 
 export interface InputOptionProps extends ErrorProps {
+  width?: string;
   maxLength?: number;
   onClear?: () => void;
 }

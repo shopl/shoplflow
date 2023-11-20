@@ -1,11 +1,11 @@
 import React from 'react';
 import type { StoryFn } from '@storybook/react';
 import IconButton from './IconButton';
-import { colorTokens } from '../../../styles';
 import type { IconButtonProps } from './IconButton.types';
 import { iconButtonSizeVar, iconButtonStyleVar } from './IconButton.types';
 import { ComponentStage } from '../../../styles/Box';
 import { Stack } from '../../Stack';
+import { ViewOffIcon } from '@shoplflow/shopl-assets';
 
 export default {
   title: 'COMPONENTS/Buttons/IconButton',
@@ -40,7 +40,7 @@ export const Solid: StoryFn<IconButtonProps> = (args) => {
 Solid.args = {
   styleVar: 'SOLID',
   sizeVar: 'M',
-  children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
+  iconSource: ViewOffIcon,
   disabled: false,
 };
 
@@ -48,7 +48,7 @@ export const Ghost: StoryFn<IconButtonProps> = (args) => {
   return (
     <Stack width={'100px'}>
       <ComponentStage>
-        <IconButton {...args} />
+        <IconButton {...args} iconSize={'S'} sizeVar={'M'} />
       </ComponentStage>
     </Stack>
   );
@@ -56,7 +56,7 @@ export const Ghost: StoryFn<IconButtonProps> = (args) => {
 
 Ghost.args = {
   styleVar: 'GHOST',
-  sizeVar: 'M',
-  children: <div style={{ backgroundColor: colorTokens.shopl100, width: '20px', height: '20px' }} />,
+  sizeVar: 'S',
+  iconSource: ViewOffIcon,
   disabled: false,
 };

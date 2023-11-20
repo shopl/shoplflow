@@ -7,6 +7,7 @@ export interface InputButtonOptionProps
     RightElementProps,
     DisableProps,
     SelectedProps {
+  width?: string;
   /**
    * 초기값을 설정합니다.
    */
