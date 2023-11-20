@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 export type ReactRef<T> = React.RefCallback<T> | React.MutableRefObject<T>;
 
-export function assignRef<T = any>(ref: ReactRef<T> | null | undefined, value: T) {
+export function assignRef<T = unknown>(ref: ReactRef<T> | null | undefined, value: T) {
   if (ref == null) {
     return;
   }
@@ -15,7 +15,7 @@ export function assignRef<T = any>(ref: ReactRef<T> | null | undefined, value: T
   try {
     ref.current = value;
   } catch (error) {
-    throw new Error(`Cannot assign value '${value}' to ref '${ref}'`);
+    throw new Error(`Cannot assign value '${String(value)}' to ref '${String(ref)}'`);
   }
 }
 
