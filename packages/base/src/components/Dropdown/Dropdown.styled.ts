@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { boxShadowTokens } from '../../styles';
-import type { DropdownButtonProps, DropdownContentProps, DropdownSizeVar } from './Dropdown.types';
+import type { DropdownButtonProps, DropdownContentProps, DropdownSizeVariantType } from './Dropdown.types';
 import { motion } from 'framer-motion';
 import { css } from '@emotion/react';
 
-export const getDropdownHeightBySizeVar = (size: DropdownSizeVar) => {
+export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
     case 'M':
       return '40px';
@@ -15,7 +15,7 @@ export const getDropdownHeightBySizeVar = (size: DropdownSizeVar) => {
   }
 };
 
-export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVar) => {
+export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
     case 'M':
       return 'body1_400';
@@ -26,7 +26,7 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVar) => {
   }
 };
 
-export const getDropdownStyleBySizeVar = (size: DropdownSizeVar) => {
+export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
     case 'M':
       return css`
@@ -43,7 +43,7 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVar) => {
   }
 };
 
-export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVar) => {
+export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
     case 'S':
       return css`

@@ -41,18 +41,18 @@ export interface DropdownContentProps extends ChildrenProps, HTMLAttributes<HTML
   width?: string;
 }
 
-const dropdownSizeVar = {
+const dropdownSizeVariants = {
   S: 'S',
   M: 'M',
 } as const;
 
-export type DropdownSizeVar = $Values<typeof dropdownSizeVar>;
+export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;
 
 export interface DropdownButtonProps
   extends HTMLAttributes<HTMLButtonElement>,
     DisableProps,
     LeftElementProps,
-    SizeVariantProps<DropdownSizeVar> {
+    SizeVariantProps<DropdownSizeVariantType> {
   /**
    * placeholder를 설정합니다.
    */
