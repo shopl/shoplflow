@@ -45,7 +45,9 @@
   ],
   "peerDependencies": {
     "react": "*",
-    "typescript": "*"
+    "@emotion/react": "*",
+    "@emotion/styled": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.22.19",
