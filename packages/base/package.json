@@ -44,10 +44,10 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "*",
-    "@emotion/react": "*",
-    "@emotion/styled": "*",
-    "react-dom": "*"
+    "react": "^18",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/core": "^7.22.19",
