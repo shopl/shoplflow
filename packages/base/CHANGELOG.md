@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.13.2
+
+### Patch Changes
+
+- [#124](https://github.com/shopl/shoplflow/pull/124) [`01811f7`](https://github.com/shopl/shoplflow/commit/01811f77d00d152429db198d1d8673023d486938) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - update base package.json type
+
 ## 0.13.1
 
 ### Patch Changes
