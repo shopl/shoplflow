@@ -107,6 +107,7 @@ import IcHideMedium from './IcHideMedium';
 import IcHistory from './IcHistory';
 import IcHomeMedium from './IcHomeMedium';
 import IcImport from './IcImport';
+import IcInactiveBell from './IcInactiveBell';
 import IcInfo1 from './IcInfo1';
 import IcInfoAlbum from './IcInfoAlbum';
 import IcInfoApp from './IcInfoApp';
@@ -336,6 +337,7 @@ const icons = {
   history: IcHistory,
   'home-medium': IcHomeMedium,
   import: IcImport,
+  'inactive-bell': IcInactiveBell,
   'info-1': IcInfo1,
   'info-album': IcInfoAlbum,
   'info-app': IcInfoApp,
@@ -568,6 +570,7 @@ export {
   IcHistory as HistoryIcon,
   IcHomeMedium as HomeMediumIcon,
   IcImport as ImportIcon,
+  IcInactiveBell as InactiveBellIcon,
   IcInfo1 as Info1Icon,
   IcInfoAlbum as InfoAlbumIcon,
   IcInfoApp as InfoAppIcon,

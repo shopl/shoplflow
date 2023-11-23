@@ -96,6 +96,9 @@ importers:
       '@shoplflow/shopl-assets':
         specifier: workspace:^
         version: link:../packages/shopl-assets
+      '@shoplflow/utils':
+        specifier: workspace:^
+        version: link:../packages/utils
       framer-motion:
         specifier: ^10.16.1
         version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -185,10 +188,10 @@ importers:
         specifier: ^20.3.3
         version: 20.4.9
       '@types/react':
-        specifier: ^18.2.14
+        specifier: ^18.2.31
         version: 18.2.31
       '@types/react-dom':
-        specifier: ^18.2.6
+        specifier: ^18.2.14
         version: 18.2.14
       babel-loader:
         specifier: ^8.3.0
@@ -232,9 +235,6 @@ importers:
       '@shoplflow/utils':
         specifier: workspace:^
         version: link:../utils
-      classnames:
-        specifier: ^2.3.2
-        version: 2.3.2
       framer-motion:
         specifier: 10.12.6
         version: 10.12.6(react-dom@18.2.0)(react@18.2.0)
@@ -335,6 +335,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.1
         version: 18.2.14
+      classnames:
+        specifier: ^2.3.2
+        version: 2.3.2
       eslint-plugin-storybook:
         specifier: ^0.6.13
         version: 0.6.15(eslint@8.52.0)(typescript@4.7.4)
@@ -6758,7 +6761,7 @@ packages:
 
   /classnames@2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
+    dev: true
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}

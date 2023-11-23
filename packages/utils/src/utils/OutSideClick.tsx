@@ -1,4 +1,3 @@
-import type { Ref } from 'react';
 import React, { useCallback, useEffect, useRef } from 'react';
 
 export interface Props {
@@ -8,7 +7,7 @@ export interface Props {
 }
 
 export const OutSideClick: React.FC<Props> = ({ children, outsideClick, trigger = true }) => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleClick = useCallback(
     (e: Event) => {
@@ -30,5 +29,5 @@ export const OutSideClick: React.FC<Props> = ({ children, outsideClick, trigger 
     };
   }, [handleClick, trigger]);
 
-  return <div ref={ref as Ref<HTMLDivElement>}>{children}</div>;
+  return <div ref={ref}>{children}</div>;
 };

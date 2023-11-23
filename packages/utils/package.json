@@ -2,6 +2,7 @@
   "name": "@shoplflow/utils",
   "version": "0.3.1",
   "license": "Apache-2.0",
+  "type": "module",
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:package": "rm -rf dist/ && tsup",
@@ -18,17 +19,17 @@
   "publishConfig": {
     "access": "public",
     "main": "dist/index.js",
-    "module": "dist/index.mjs",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "exports": {
       ".": {
         "import": {
-          "default": "./dist/index.mjs",
-          "types": "./dist/index.d.mts"
-        },
-        "require": {
           "default": "./dist/index.js",
           "types": "./dist/index.d.ts"
+        },
+        "require": {
+          "default": "./dist/index.cjs",
+          "types": "./dist/index.d.cts"
         }
       },
       "./package.json": "./package.json"
