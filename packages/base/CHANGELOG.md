@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.13.3
+
+### Patch Changes
+
+- [#126](https://github.com/shopl/shoplflow/pull/126) [`2eba1d6`](https://github.com/shopl/shoplflow/commit/2eba1d69585a1be04bf89ad3d75d53ee3a3e7131) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - tsconfig, package.json 수정
+
 ## 0.13.2
 
 ### Patch Changes
