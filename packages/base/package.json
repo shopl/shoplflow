@@ -32,14 +32,8 @@
     "types": "dist/index.d.ts",
     "exports": {
       ".": {
-        "import": {
-          "default": "./dist/index.js",
-          "types": "./dist/index.d.ts"
-        },
-        "require": {
-          "default": "./dist/index.cjs",
-          "types": "./dist/index.d.cts"
-        }
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
       },
       "./styles": "./dist/styles/global.css",
       "./reset": "./dist/styles/reset.css",
