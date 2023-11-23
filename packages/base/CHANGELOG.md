@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.13.4
+
+### Patch Changes
+
+- [#128](https://github.com/shopl/shoplflow/pull/128) [`627001a`](https://github.com/shopl/shoplflow/commit/627001a83e31747317c683e4c9eb76f33e8d017b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input 컴포넌트 export 경로 수정
+
 ## 0.13.3
 
 ### Patch Changes
