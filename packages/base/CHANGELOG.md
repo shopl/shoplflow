@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.13.1
+
+### Patch Changes
+
+- [#122](https://github.com/shopl/shoplflow/pull/122) [`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - popper option 수정
+
+- [#122](https://github.com/shopl/shoplflow/pull/122) [`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - package.json module 추가
+
+- Updated dependencies [[`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365), [`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365)]:
+  - @shoplflow/utils@0.4.0
+
 ## 0.13.0
 
 ### Minor Changes
