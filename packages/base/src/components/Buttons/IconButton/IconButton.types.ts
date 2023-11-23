@@ -6,7 +6,9 @@ import type {
   IconSourceProps,
   SizeVariantProps,
   StyleVariantProps,
+  ColorTokenProps,
 } from '../../../utils/type/ComponentProps';
+import type { IconSizeVariantsType } from '../../Icon';
 
 export const iconButtonSizeVar = {
   S: 'S',
@@ -29,7 +31,10 @@ export type IconButtonOptionProps<T extends ElementType = 'button'> = Omit<
   DisableProps &
   SizeVariantProps<IconButtonSizeVar> &
   StyleVariantProps<IconButtonStyleVar> &
-  IconSourceProps;
+  IconSourceProps &
+  ColorTokenProps & {
+    iconSize?: IconSizeVariantsType;
+  };
 
 export type IconButtonProps<T extends ElementType = 'button'> = PolymorphicComponentProps<T, IconButtonOptionProps>;
 

@@ -21,6 +21,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       onBlur,
       onFocus,
       minHeight = 100,
+      width,
       className,
       ...rest
     },
@@ -90,6 +91,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         direction={'column'}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
+        width={width}
         data-shoplflow={'text-area'}
       >
         <StyledTextarea

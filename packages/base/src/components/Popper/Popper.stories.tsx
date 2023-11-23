@@ -22,16 +22,16 @@ export const Playground: StoryFn<PopperProps> = (args) => {
   return (
     <Stack height={'400px'} width={'300px'} justify={'center'} align={'end'}>
       <ComponentStage>
-        <Popper
-          isOpen={isOpen}
-          {...args}
-          trigger={<Button onClick={handleToggle}>Popper Playground</Button>}
-          popper={
+        <Popper {...args}>
+          <Popper.Trigger isOpen={isOpen}>
+            <Button onClick={handleToggle}>Popper Playground</Button>
+          </Popper.Trigger>
+          <Popper.Portal>
             <Modal.Container>
               <Modal.Body>팝오버 안에 모달 넣기</Modal.Body>
             </Modal.Container>
-          }
-        />
+          </Popper.Portal>
+        </Popper>
       </ComponentStage>
     </Stack>
   );
@@ -51,16 +51,16 @@ export const AutoPlacement: StoryFn<PopperProps> = (args) => {
   return (
     <Stack height={'2000px'} width={'600px'} justify={'center'} align={'end'}>
       <ComponentStage>
-        <Popper
-          isOpen={isOpen}
-          {...args}
-          trigger={<Button onClick={handleToggle}>Popper Playground</Button>}
-          popper={
+        <Popper {...args}>
+          <Popper.Trigger isOpen={isOpen}>
+            <Button onClick={handleToggle}>Popper Playground</Button>
+          </Popper.Trigger>
+          <Popper.Portal>
             <Modal.Container>
               <Modal.Body>팝오버 안에 모달 넣기</Modal.Body>
             </Modal.Container>
-          }
-        />
+          </Popper.Portal>
+        </Popper>
       </ComponentStage>
     </Stack>
   );
@@ -68,7 +68,6 @@ export const AutoPlacement: StoryFn<PopperProps> = (args) => {
 
 AutoPlacement.args = {
   strategy: 'absolute',
-  isOpen: false,
   offset: 10,
   autoPlacement: {
     autoAlignment: true,

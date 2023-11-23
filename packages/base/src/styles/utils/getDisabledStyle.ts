@@ -7,6 +7,6 @@ export const getDisabledStyle = (disabled?: boolean) => {
 
   return css`
     opacity: 50%;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
   `;
 };

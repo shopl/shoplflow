@@ -1,20 +1,55 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
 import Dropdown from './Dropdown';
+import {DropdownContent} from './DropdownContent';
+import {DropdownButton} from './DropdownButton';
 import * as DropdownStories from './Dropdown.stories';
 
 <Meta of={DropdownStories} />
 
 # Dropdown
 
-Dropdown 컴포넌트 설명을 적어주세요.
+Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
+
+- Dropdown
+- DropdownButton
+- DropdownContent
+
+> Dropdown option
+> - CLICK: 화면을 클릭하면 닫힙니다.
+> - OUTSIDE_CLICK: 컨텐츠 영역 외부를 클릭하면 닫힙니다.
+> - NONE: 클릭으로 닫히지 않습니다.
+
+## Overview
 
 <Canvas of={DropdownStories.Playground} />
 
 
 ## ArgsTable
 
+### Dropdown
+
 <ArgsTable of={Dropdown} />
 
+### DropdownButton
+<ArgsTable of={DropdownButton} />
+
+### DropdownContent
+<ArgsTable of={DropdownContent} />
+
+
 ## Usage
+
+```
+<Dropdown
+  isOpen={true}
+  trigger={
+    <InputButton
+      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
+      rightSource={<IconButton iconSource={RightArrowIcon} styleVar={'GHOST'} sizeVar={'S'} />}
+    />
+  }
+  content={<Dropdown.Content type={'FILL'}>Content</Dropdown.Content>}
+/>
+```
 
 

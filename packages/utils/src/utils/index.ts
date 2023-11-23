@@ -4,3 +4,4 @@ export * from './extractColors';
 export * from './noop';
 export * from './throttle';
 export * from './isNullOrUndefined';
+export * from './OutSideClick';

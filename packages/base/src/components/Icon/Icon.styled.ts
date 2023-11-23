@@ -5,15 +5,15 @@ import { IconSizeVariants } from './Icon.types';
 
 const getIconSize = (size: IconSizeVariantsType) => {
   switch (size) {
-    case IconSizeVariants.X_SMALL:
+    case IconSizeVariants.XS:
       return '12px';
-    case IconSizeVariants.SMALL:
+    case IconSizeVariants.S:
       return '20px';
-    case IconSizeVariants.MEDIUM:
+    case IconSizeVariants.M:
       return '24px';
-    case IconSizeVariants.LARGE:
+    case IconSizeVariants.L:
       return '30px';
-    case IconSizeVariants.X_LARGE:
+    case IconSizeVariants.XL:
       return '36px';
     default:
       return '24px';

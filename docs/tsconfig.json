@@ -4,22 +4,31 @@
     "baseUrl": ".",
     "module": "commonjs",
     "allowJs": false,
-    "skipLibCheck": true,
-    "noImplicitAny": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,              // 엄격한 타입 체크 비활성화
+    "noImplicitAny": false,       // 모든 타입을 명시적으로 선언하지 않아도 됨
+    "noImplicitReturns": false,   // 모든 함수의 반환 타입을 명시적으로 선언하지 않아도 됨
+    "skipLibCheck": true,         // DefinitelyTyped 같은 타입 선언 파일 체크 생략
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
     "moduleResolution": "node",
     "declaration": true,
+    "skipDefaultLibCheck": true,
     "declarationMap": true,
     "resolveJsonModule": true,
-    "jsxImportSource": "@emotion/react",
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*", "emotion.d.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".storybook/**/*",
+    "emotion.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

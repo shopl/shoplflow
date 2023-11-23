@@ -49,6 +49,7 @@ export const StyledChip = styled.button<ChipToggleProps>`
   align-items: center;
   justify-content: center;
   border: none;
+  height: fit-content;
   width: fit-content;
   user-select: none;
   cursor: pointer;

@@ -2,11 +2,13 @@
   "name": "@shoplflow/utils",
   "version": "0.3.1",
   "license": "Apache-2.0",
+  "type": "module",
   "scripts": {
     "type-check": "tsc --noEmit || true",
-    "build:package": "node build.mjs",
-    "dev": "node build.mjs --watch"
+    "build:package": "rm -rf dist/ && tsup",
+    "dev": "tsup --watch"
   },
+  "main": "./src/index.ts",
   "exports": {
     ".": {
       "require": "./src/index.ts",
@@ -14,26 +16,28 @@
     },
     "./package.json": "./package.json"
   },
-  "main": "./src/index.ts",
   "publishConfig": {
     "access": "public",
     "main": "dist/index.js",
-    "module": "dist/index.mjs",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "exports": {
       ".": {
         "import": {
-          "default": "./dist/index.mjs",
-          "types": "./dist/index.d.mts"
-        },
-        "require": {
           "default": "./dist/index.js",
           "types": "./dist/index.d.ts"
+        },
+        "require": {
+          "default": "./dist/index.cjs",
+          "types": "./dist/index.d.cts"
         }
       },
       "./package.json": "./package.json"
     }
   },
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "*"
   },
@@ -47,6 +51,7 @@
     "esbuild-plugin-babel": "^0.2.3",
     "esbuild-plugin-d.ts": "^1.1.0",
     "react": "^18.2.0",
+    "tsup": "7.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.6.3"
   }

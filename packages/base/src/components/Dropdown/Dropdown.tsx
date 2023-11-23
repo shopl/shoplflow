@@ -1,19 +1,51 @@
-import React from 'react';
-import { StyledDropdown, StyledDropdownContent } from './Dropdown.styled';
+import React, { useEffect, useState } from 'react';
+import { StyledDropdown } from './Dropdown.styled';
 import { Popper } from '../Popper';
 import type { DropdownProps } from './Dropdown.types';
+import { DropdownContext } from './useDropdown';
+import { DropdownButton } from './DropdownButton';
+import { DropdownContent } from './DropdownContent';
 
-const Dropdown = ({ trigger, content, ...rest }: DropdownProps) => {
+const Dropdown = ({ isOpen: initialIsOpen, trigger, content, option = 'OUTSIDE_CLICK' }: DropdownProps) => {
+  const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>(null);
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (triggerRef) {
+      setSize({
+        width: triggerRef.offsetWidth,
+        height: triggerRef.offsetHeight,
+      });
+    }
+  }, [triggerRef]);
+
+  useEffect(() => {
+    if (initialIsOpen === undefined) {
+      return;
+    }
+    setIsOpen(initialIsOpen);
+  }, [initialIsOpen]);
+
   return (
     <StyledDropdown data-shoplflow={'Dropdown'}>
-      <Popper trigger={trigger} popper={content} {...rest} isOpen />
+      <DropdownContext.Provider value={{ ...size, isOpen, setIsOpen, option }}>
+        <Popper
+          autoPlacement={{
+            allowedPlacements: ['bottom-start', 'top-start'],
+          }}
+        >
+          <Popper.Trigger ref={setTriggerRef} isOpen={isOpen}>
+            {trigger}
+          </Popper.Trigger>
+          <Popper.Portal>{content}</Popper.Portal>
+        </Popper>
+      </DropdownContext.Provider>
     </StyledDropdown>
   );
 };
 
-const DropdownContent = ({ children }: { children: React.ReactNode }) => {
-  return <StyledDropdownContent>{children}</StyledDropdownContent>;
-};
+Dropdown.Button = DropdownButton;
 
 Dropdown.Content = DropdownContent;
 

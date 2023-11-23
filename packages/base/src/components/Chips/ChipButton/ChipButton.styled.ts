@@ -50,6 +50,7 @@ export const StyledChipButton = styled.button<ChipButtonProps>`
   align-items: center;
   justify-content: center;
   border: none;
+  height: fit-content;
   width: fit-content;
   gap: 4px;
   cursor: pointer;

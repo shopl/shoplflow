@@ -6,7 +6,6 @@ import type { InputProps } from './Input.types';
 import { IconButton } from '../../Buttons';
 import { assetFunction } from '../../../styles/IconAssets';
 import { useMergeRefs } from '../../../hooks/useMergeRef';
-import { Icon } from '../../Icon';
 import { InputWrapper } from '../common/input.styled';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -23,6 +22,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       type: initialType,
       maxLength,
       className,
+      width,
       ...rest
     },
     ref,
@@ -118,6 +118,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         isHovered={isHovered}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
+        width={width}
         data-shoplflow={'input'}
       >
         <StyledInput
@@ -136,17 +137,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <RightElementWrapper>
           {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
           {isFocused && Boolean(String(text).length > 0) && (
-            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
-              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
-            </IconButton>
+            <IconButton
+              sizeVar={'S'}
+              onClick={handleOnClear}
+              styleVar={'GHOST'}
+              iconSource={assetFunction('DeleteIcon')}
+              color={'neutral600'}
+            />
           )}
           {initialType === 'password' && (
-            <IconButton sizeVar={'S'} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
-              <Icon
-                color={'neutral600'}
-                iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
-              />
-            </IconButton>
+            <IconButton
+              sizeVar={'S'}
+              onClick={handleTogglePasswordType}
+              styleVar={'GHOST'}
+              color={'neutral600'}
+              iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
+            />
           )}
         </RightElementWrapper>
       </InputWrapper>

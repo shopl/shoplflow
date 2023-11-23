@@ -8,6 +8,7 @@ export * from './Chips';
 export * from './Buttons';
 export * from './Callout';
 export * from './Popper';
+export * from './Dropdown';
 export * from './Icon';
 export * from './Inputs';
 export * from './ControlButtons';

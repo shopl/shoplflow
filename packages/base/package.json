@@ -1,6 +1,7 @@
 {
   "name": "@shoplflow/base",
   "version": "0.13.0",
+  "type": "module",
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit",
@@ -27,17 +28,17 @@
   "publishConfig": {
     "access": "public",
     "main": "dist/index.js",
-    "module": "dist/index.mjs",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "exports": {
       ".": {
         "import": {
-          "default": "./dist/index.mjs",
-          "types": "./dist/index.d.mts"
-        },
-        "require": {
           "default": "./dist/index.js",
           "types": "./dist/index.d.ts"
+        },
+        "require": {
+          "default": "./dist/index.cjs",
+          "types": "./dist/index.d.cts"
         }
       },
       "./styles": "./dist/styles/global.css",
@@ -49,10 +50,8 @@
     "dist"
   ],
   "peerDependencies": {
-    "@emotion/react": "*",
-    "@emotion/styled": "*",
     "react": "*",
-    "react-dom": "*"
+    "typescript": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.22.19",
@@ -94,6 +93,7 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "tsup": "7.2.0",
+    "classnames": "^2.3.2",
     "typescript": "4.7.4"
   },
   "eslintConfig": {
@@ -102,14 +102,13 @@
     ]
   },
   "dependencies": {
+    "framer-motion": "10.12.6",
+    "react-custom-scrollbars-2": "^4.5.0",
     "@floating-ui/core": "^1.5.0",
     "@floating-ui/react": "^0.26.2",
     "@floating-ui/react-dom": "^2.0.3",
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
-    "@shoplflow/utils": "workspace:^",
-    "classnames": "^2.3.2",
-    "framer-motion": "10.12.6",
-    "react-custom-scrollbars-2": "^4.5.0"
+    "@shoplflow/utils": "workspace:^"
   }
 }

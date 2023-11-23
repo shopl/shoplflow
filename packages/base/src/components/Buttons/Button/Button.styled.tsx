@@ -71,6 +71,7 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   align-items: center;
   justify-content: center;
   height: fit-content;
+  width: fit-content;
   gap: 4px;
   padding: 0 12px;
   border-radius: 6px;

@@ -22,6 +22,7 @@
     },
     "build:mdx": {},
     "build:docs": {
+      "cache": false,
       "dependsOn": [
         "^build:docs",
         "build:mdx",
@@ -43,6 +44,7 @@
       ]
     },
     "build:storybook": {
+      "cache": false,
       "dependsOn": [
         "build:package"
       ],
@@ -51,6 +53,7 @@
       ]
     },
     "build": {
+      "cache": false,
       "dependsOn": [
         "^build",
         "build:package"

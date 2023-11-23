@@ -49,5 +49,5 @@ export const Playground: StoryFn<IconProps> = (args) => {
 };
 
 Playground.args = {
-  sizeVar: 'MEDIUM',
+  sizeVar: 'M',
 };
