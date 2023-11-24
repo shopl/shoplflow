@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.13.5
+
+### Patch Changes
+
+- [#130](https://github.com/shopl/shoplflow/pull/130) [`2d4368b`](https://github.com/shopl/shoplflow/commit/2d4368b73673cc335f0a03181338369695713197) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 모달 내부에 popper 위치시 modal 뒤에 content가 나타나는 문제 수정
+
 ## 0.13.4
 
 ### Patch Changes
