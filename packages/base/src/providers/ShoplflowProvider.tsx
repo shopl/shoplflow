@@ -4,6 +4,7 @@ import { useDomain } from '../hooks/useDomain';
 import type { DomainType } from '../types/Domain';
 import ModalPortal from '../portal/ModalPortal';
 import ModalProvider from './ModalProvider';
+import PopperPortal from '../portal/PopperPortal';
 
 export interface ShoplflowProviderProps {
   domain?: DomainType;
@@ -15,7 +16,9 @@ const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProp
 
   return (
     <ModalProvider>
+      <PopperPortal />
       <ModalPortal />
+
       {children}
     </ModalProvider>
   );

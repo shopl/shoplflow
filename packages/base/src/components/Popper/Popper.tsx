@@ -64,7 +64,7 @@ export const PopperPortal = forwardRef<HTMLDivElement, PopperPortalProps>(
     const refs = useMergeRefs(ref, setFloating);
 
     return (
-      <FloatingPortal>
+      <FloatingPortal id={'popper-portal-key'}>
         <AnimatePresence>
           {isOpen && (
             <motion.div

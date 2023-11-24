@@ -41,14 +41,8 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
 
 ```
 <Dropdown
-  isOpen={true}
-  trigger={
-    <InputButton
-      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
-      rightSource={<IconButton iconSource={RightArrowIcon} styleVar={'GHOST'} sizeVar={'S'} />}
-    />
-  }
-  content={<Dropdown.Content type={'FILL'}>Content</Dropdown.Content>}
+  content={<Dropdown.Content>dropdown content</Dropdown.Content>}
+  trigger={<Dropdown.Button placeholder={'테스트 버튼'} />}
 />
 ```
 

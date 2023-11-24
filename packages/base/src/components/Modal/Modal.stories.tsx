@@ -9,6 +9,7 @@ import { Text } from '../Text';
 import { Stack } from '../Stack';
 import { Button } from '../Buttons';
 import { useHandleModal } from '../../hooks';
+import { Dropdown } from '../Dropdown';
 
 export default {
   title: 'COMPONENTS/Modal',
@@ -27,6 +28,10 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
       <Modal.Body>
+        <Dropdown
+          content={<Dropdown.Content>dropdown content</Dropdown.Content>}
+          trigger={<Dropdown.Button placeholder={'테스트 버튼'} />}
+        />
         <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
       </Modal.Body>
       <Modal.Footer>
@@ -40,7 +45,11 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
 
 export const Playground: StoryFn<ModalContainerProps> = (args) => {
   const { addModal } = useHandleModal();
-  return <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>open Modal</Button>;
+  return (
+    <>
+      <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>open Modal</Button>
+    </>
+  );
 };
 
 export const Primary = () => {
