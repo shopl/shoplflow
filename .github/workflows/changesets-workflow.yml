@@ -9,8 +9,7 @@ on:
       - "docs/**"
     branches:
       - main
-    workflow_dispatch:
-
+      
 jobs:
   release:
     name: Release
