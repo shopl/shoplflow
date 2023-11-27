@@ -2,9 +2,6 @@ name: Token Update Workflow
 
 
 on:
-  push:
-    branches:
-      - 'feature/token'
   pull_request:
     types:
       - opened
@@ -15,9 +12,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       - name: 코드를 체크아웃하고 있어요.
@@ -52,7 +46,6 @@ jobs:
         run: pnpm install
 
       - name: main과 변경점을 비교하고 있어요. (first PR)
-        if: github.event.action == 'opened'
 
         run: |
           git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD -- 'packages/base/src/styles/' > /dev/null
@@ -68,10 +61,9 @@ jobs:
         run: pnpm --filter base build:tokens
 
       - name: Checkout to PR branch
-        if: env.LABEL_FOUND == 'true' && env.PATH_UPDATED == 'true'
-
+        if: env.PATH_UPDATED == 'true'
         run: |
-          git checkout ${{github.head_ref}}
+          git checkout ${{ github.head_ref }}
 
       - name: PR 생성자의 이름과 이메일을 가져오고 있어요.
         if: env.PATH_UPDATED == 'true'
@@ -89,14 +81,13 @@ jobs:
       - name: 토큰을 커밋하고 있어요.
         if: env.PATH_UPDATED == 'true'
         run: |
-          git checkout ${{github.head_ref}}
-          git config user.name "${{ env.PR_USER_NAME }}" # PR을 생성한 사용자의 이름을 사용합니다.
-          git config user.email "${{ env.PR_USER_EMAIL }}" # PR을 생성한 사용자의 이메일을 사용합니다.
+          git checkout ${{ github.head_ref }}
+          git config user.name "${{ env.PR_USER_NAME }}"
+          git config user.email "${{ env.PR_USER_EMAIL }}"
           git add .
-          git diff --quiet && git diff --staged --quiet
-          if [ $? -ne 0 ]; then
-          git commit -m "Update tokens via GitHub Actions"
-          git push
+          if git status --porcelain | grep .; then
+            git commit -m "Update tokens via GitHub Actions"
+            git push
           else
             comment="코드 변경사항이 없어요.🥲 토큰 업데이트를 다시 한번 확인해주세요."
             comment_url=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER | jq -r '.comments_url')
@@ -104,3 +95,4 @@ jobs:
           fi
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
+
