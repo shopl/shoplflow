@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.13.6
+
+### Patch Changes
+
+- [#132](https://github.com/shopl/shoplflow/pull/132) [`b5ca933`](https://github.com/shopl/shoplflow/commit/b5ca933f4f93fedf5c72a5ee690c7c1439f3d453) Thanks [@velo-kim](https://github.com/velo-kim)! - update global css
+
 ## 0.13.5
 
 ### Patch Changes
