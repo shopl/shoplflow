@@ -1,7 +1,14 @@
 name: Token Update Workflow
 
+
 on:
   push:
+    branches:
+      - 'feature/token'
+  pull_request:
+    types:
+      - opened
+      - synchronize
     branches:
       - 'feature/token'
 
