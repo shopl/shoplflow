@@ -47,7 +47,7 @@ const getStyleByStyleVar = (styleVar?: IconButtonStyleVar, color?: ColorTokens) 
         background: ${colorTokens.neutral0};
         border: 1px solid ${colorTokens.neutral350};
         &:hover {
-          background: ${colorTokens.neutral350};
+          background: ${colorTokens.neutral100};
         }
       `;
     case 'SOLID':
