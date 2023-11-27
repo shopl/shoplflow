@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import type { ButtonOptionProps, ButtonSizeVar, ButtonStyleVar } from './Button.types';
+import type { ColorTokens } from '../../../styles';
 import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
+import { getNextColor } from '../../../utils/getNextColor';
 
-const getStyleByStyleVar = (styleVar?: ButtonStyleVar, disabled?: boolean) => {
+const getStyleByStyleVar = (styleVar?: ButtonStyleVar, color?: ColorTokens, disabled?: boolean) => {
   switch (styleVar) {
     case 'PRIMARY':
       return css`
@@ -23,9 +25,12 @@ const getStyleByStyleVar = (styleVar?: ButtonStyleVar, disabled?: boolean) => {
         }
       `;
     case 'SOLID':
+      if (!color) {
+        throw new Error('Button의 SOLID 속성은 color를 필수로 받습니다.');
+      }
       return css`
-        border: 1px solid ${colorTokens.coolgray100};
-        background-color: ${colorTokens.coolgray50};
+        border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+        background-color: ${colorTokens[color]};
         :hover {
           background-color: ${!disabled && colorTokens.coolgray100};
         }
@@ -76,7 +81,7 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   padding: 0 12px;
   border-radius: 6px;
   cursor: pointer;
-  ${({ styleVar, disabled }) => getStyleByStyleVar(styleVar, disabled)};
+  ${({ styleVar, color, disabled }) => getStyleByStyleVar(styleVar, color, disabled)};
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;

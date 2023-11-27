@@ -5,9 +5,10 @@ import { Stack } from '../../Stack';
 import InputButton from './InputButton';
 import type { InputButtonProps } from './InputButton.types';
 import { Button, IconButton } from '../../Buttons';
-import { CalendarIcon } from '@shoplflow/hada-assets';
 import { Text } from '../../Text';
 import { ComponentStage } from '../../../styles/Box';
+import { Icon } from '../../Icon';
+import { CalendarIcon } from '@shoplflow/hada-assets';
 
 export default {
   title: 'COMPONENTS/Inputs/InputButton',
@@ -37,5 +38,9 @@ export const Playground: StoryFn<InputButtonProps> = (args) => {
 };
 Playground.args = {
   placeholder: 'placeholder',
-  rightSource: <IconButton sizeVar={'S'} styleVar={'GHOST'} iconSource={CalendarIcon} />,
+  rightSource: (
+    <IconButton sizeVar={'S'} styleVar={'GHOST'}>
+      <Icon iconSource={CalendarIcon} />
+    </IconButton>
+  ),
 };
