@@ -61,7 +61,9 @@ jobs:
 
       - name: 토큰을 생성하고 있어요
         if: env.PATH_UPDATED == 'true'
-        run: pnpm --filter base build:tokens
+        run: |
+          pnpm build:assets
+          pnpm --filter base build:tokens
 
       - name: Checkout to PR branch
         if: env.PATH_UPDATED == 'true'
