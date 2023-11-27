@@ -58,7 +58,7 @@ const getStyleByStyleVar = (styleVar?: IconButtonStyleVar, color?: ColorTokens) 
         border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
         background: ${colorTokens[color]};
         &:hover {
-          background: ${colorTokens.neutral400_5};
+          background: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
         }
       `;
     case 'GHOST':
