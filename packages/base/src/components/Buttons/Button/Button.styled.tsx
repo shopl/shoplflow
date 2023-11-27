@@ -32,7 +32,7 @@ const getStyleByStyleVar = (styleVar?: ButtonStyleVar, color?: ColorTokens, disa
         border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
         background-color: ${colorTokens[color]};
         :hover {
-          background-color: ${!disabled && colorTokens.coolgray100};
+          background-color: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
         }
       `;
     case 'GHOST':
