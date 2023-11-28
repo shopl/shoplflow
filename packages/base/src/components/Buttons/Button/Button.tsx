@@ -1,10 +1,11 @@
+import type { ComponentPropsWithRef, ElementType } from 'react';
 import { forwardRef } from 'react';
 import { Text } from '../../Text';
 import { StyledButton } from './Button.styled';
 import type { ButtonComponent, ButtonProps } from './Button.types';
 
 const Button: ButtonComponent = forwardRef(
-  <T extends React.ElementType = 'button'>(
+  <T extends ElementType = 'button'>(
     {
       styleVar = 'PRIMARY',
       sizeVar = 'M',
@@ -16,7 +17,7 @@ const Button: ButtonComponent = forwardRef(
       rightSource,
       ...rest
     }: ButtonProps<T>,
-    ref: React.ComponentPropsWithRef<T>['ref'],
+    ref: ComponentPropsWithRef<T>['ref'],
   ) => {
     return (
       <StyledButton

@@ -2,6 +2,7 @@ import type { $Values } from '@shoplflow/utils';
 import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, ReactElement } from 'react';
 import type { PolymorphicComponentProps } from '../../../types/PolymorphicComponentProps';
 import type {
+  ColorTokenProps,
   DisableProps,
   LeftAndRightNodeProps,
   SizeVariantProps,
@@ -33,6 +34,7 @@ export type ButtonOptionProps<T extends ElementType = 'button'> = Omit<
 > &
   SizeVariantProps<ButtonSizeVar> &
   StyleVariantProps<ButtonStyleVar> &
+  ColorTokenProps &
   DisableProps & {
     typography?: TypographyTokens;
   };

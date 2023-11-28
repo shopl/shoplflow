@@ -3,12 +3,11 @@ import type { PolymorphicComponentProps } from '../../../types/PolymorphicCompon
 import type { $Values } from '@shoplflow/utils';
 import type {
   DisableProps,
-  IconSourceProps,
   SizeVariantProps,
   StyleVariantProps,
   ColorTokenProps,
+  ChildrenProps,
 } from '../../../utils/type/ComponentProps';
-import type { IconSizeVariantsType } from '../../Icon';
 
 export const iconButtonSizeVar = {
   S: 'S',
@@ -18,6 +17,8 @@ export const iconButtonSizeVar = {
 export type IconButtonSizeVar = $Values<typeof iconButtonSizeVar>;
 
 export const iconButtonStyleVar = {
+  PRIMARY: 'PRIMARY',
+  SECONDARY: 'SECONDARY',
   SOLID: 'SOLID',
   GHOST: 'GHOST',
 } as const;
@@ -31,10 +32,8 @@ export type IconButtonOptionProps<T extends ElementType = 'button'> = Omit<
   DisableProps &
   SizeVariantProps<IconButtonSizeVar> &
   StyleVariantProps<IconButtonStyleVar> &
-  IconSourceProps &
-  ColorTokenProps & {
-    iconSize?: IconSizeVariantsType;
-  };
+  ChildrenProps &
+  ColorTokenProps;
 
 export type IconButtonProps<T extends ElementType = 'button'> = PolymorphicComponentProps<T, IconButtonOptionProps>;
 

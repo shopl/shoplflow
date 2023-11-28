@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
 import type { IconButtonOptionProps, IconButtonSizeVar, IconButtonStyleVar } from './IconButton.types';
+import type { ColorTokens } from '../../../styles';
 import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
+import { getNextColor } from '../../../utils/getNextColor';
 
 const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
   switch (sizeVar) {
@@ -30,27 +32,47 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
   }
 };
 
-const getStyleByStyleVar = (styleVar?: IconButtonStyleVar) => {
+const getStyleByStyleVar = (styleVar?: IconButtonStyleVar, color?: ColorTokens) => {
   switch (styleVar) {
-    case 'SOLID':
+    case 'PRIMARY':
       return css`
-        border: 1px solid ${colorTokens.neutral200};
+        background: ${colorTokens.primary300};
+        border: 1px solid ${colorTokens.primary400};
         &:hover {
-          background-color: ${colorTokens.neutral100};
+          background: ${colorTokens.primary400};
+        }
+      `;
+    case 'SECONDARY':
+      return css`
+        background: ${colorTokens.neutral0};
+        border: 1px solid ${colorTokens.neutral350};
+        &:hover {
+          background: ${colorTokens.neutral100};
+        }
+      `;
+    case 'SOLID':
+      if (!color) {
+        throw new Error('IconButton의 SOLID 속성은 color를 필수로 받습니다.');
+      }
+      return css`
+        border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+        background: ${colorTokens[color]};
+        &:hover {
+          background: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
         }
       `;
     case 'GHOST':
       return css`
         border: 1px solid transparent;
         &:hover {
-          background-color: ${colorTokens.neutral400_5};
+          background: ${colorTokens.neutral400_5};
         }
       `;
     default:
       return css`
         border: 1px solid ${colorTokens.neutral200};
         &:hover {
-          background-color: ${colorTokens.neutral100};
+          background: ${colorTokens.neutral100};
         }
       `;
   }
@@ -62,9 +84,9 @@ export const StyledIconButton = styled.button<IconButtonOptionProps>`
   border-radius: ${borderRadiusTokens.borderRadius06};
   justify-content: center;
   align-items: center;
-  background-color: ${colorTokens.neutral0};
+  background: ${colorTokens.neutral0};
   cursor: pointer;
-  ${({ styleVar }) => getStyleByStyleVar(styleVar)};
+  ${({ styleVar, color }) => getStyleByStyleVar(styleVar, color)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
   & > svg {
