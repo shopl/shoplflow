@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.13.8
+
+### Patch Changes
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button Solid type color 커스텀 추가
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton Primary, Secondary styleVar 추가
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton Background 컬러 지정
+
 ## 0.13.7
 
 ### Patch Changes
