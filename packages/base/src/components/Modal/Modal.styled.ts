@@ -87,17 +87,25 @@ export const BodyContainer = styled.div<{
   ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}
 `;
 
+export const ModalBodyContainerInner = styled.div`
+  display: grid;
+  align-self: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  //스크롤 생성시 하단 padding 적용하기 위한 설정
+  height: calc(100%);
+  box-sizing: border-box;
+`;
+
 export const ModalBodyContent = styled.div<{
   isIncludeHeader: boolean;
   sizeVar: ModalContainerProps['sizeVar'];
 }>`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  height: 100%;
   box-sizing: border-box;
   padding: 0 24px;
-  overflow: hidden;
   background: ${colorTokens.neutral0};
 `;
 

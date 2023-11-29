@@ -27,6 +27,7 @@ export interface ModalContainerOptionProps {
    * 모달의 외부를 클릭했을 때 실행되는 함수입니다.
    * @param args
    */
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   outsideClick?: (args?: any) => void;
 }
 
