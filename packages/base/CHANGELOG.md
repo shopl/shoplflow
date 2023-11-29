@@ -1,5 +1,84 @@
 # @shoplflow/base
 
+## 0.14.0
+
+### Minor Changes
+
+- [#143](https://github.com/shopl/shoplflow/pull/143) [`765399e`](https://github.com/shopl/shoplflow/commit/765399e007f3938511e07c2b497355560b30b426) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - scrollArea 추가
+
+### Patch Changes
+
+- [#143](https://github.com/shopl/shoplflow/pull/143) [`765399e`](https://github.com/shopl/shoplflow/commit/765399e007f3938511e07c2b497355560b30b426) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal body align 미적용 이슈 수정
+
+## 0.13.9
+
+### Patch Changes
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ChipButton > background 속성 최하단으로 이동
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - update assets, fix ChipButton style
+
+- Updated dependencies [[`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af)]:
+  - @shoplflow/shopl-assets@0.3.2
+  - @shoplflow/hada-assets@0.0.4
+
+## 0.13.8
+
+### Patch Changes
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button Solid type color 커스텀 추가
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton Primary, Secondary styleVar 추가
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton Background 컬러 지정
+
+## 0.13.7
+
+### Patch Changes
+
+- [#136](https://github.com/shopl/shoplflow/pull/136) [`2841b1c`](https://github.com/shopl/shoplflow/commit/2841b1c4a334c1e12509325c4afc5f87d7a73340) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - export path 수정
+
+## 0.13.6
+
+### Patch Changes
+
+- [#132](https://github.com/shopl/shoplflow/pull/132) [`b5ca933`](https://github.com/shopl/shoplflow/commit/b5ca933f4f93fedf5c72a5ee690c7c1439f3d453) Thanks [@velo-kim](https://github.com/velo-kim)! - update global css
+
+## 0.13.5
+
+### Patch Changes
+
+- [#130](https://github.com/shopl/shoplflow/pull/130) [`2d4368b`](https://github.com/shopl/shoplflow/commit/2d4368b73673cc335f0a03181338369695713197) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 모달 내부에 popper 위치시 modal 뒤에 content가 나타나는 문제 수정
+
+## 0.13.4
+
+### Patch Changes
+
+- [#128](https://github.com/shopl/shoplflow/pull/128) [`627001a`](https://github.com/shopl/shoplflow/commit/627001a83e31747317c683e4c9eb76f33e8d017b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input 컴포넌트 export 경로 수정
+
+## 0.13.3
+
+### Patch Changes
+
+- [#126](https://github.com/shopl/shoplflow/pull/126) [`2eba1d6`](https://github.com/shopl/shoplflow/commit/2eba1d69585a1be04bf89ad3d75d53ee3a3e7131) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - tsconfig, package.json 수정
+
+## 0.13.2
+
+### Patch Changes
+
+- [#124](https://github.com/shopl/shoplflow/pull/124) [`01811f7`](https://github.com/shopl/shoplflow/commit/01811f77d00d152429db198d1d8673023d486938) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - update base package.json type
+
+## 0.13.1
+
+### Patch Changes
+
+- [#122](https://github.com/shopl/shoplflow/pull/122) [`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - popper option 수정
+
+- [#122](https://github.com/shopl/shoplflow/pull/122) [`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - package.json module 추가
+
+- Updated dependencies [[`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365), [`ff4a114`](https://github.com/shopl/shoplflow/commit/ff4a11445a4d3a9d929f1e2ef317ec98ab8f0365)]:
+  - @shoplflow/utils@0.4.0
+
 ## 0.13.0
 
 ### Minor Changes

@@ -2,6 +2,8 @@ import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
 import Dropdown from './Dropdown';
 import {DropdownContent} from './DropdownContent';
 import {DropdownButton} from './DropdownButton';
+import {DropdownContent} from './DropdownContent';
+import {DropdownButton} from './DropdownButton';
 import * as DropdownStories from './Dropdown.stories';
 
 <Meta of={DropdownStories} />
@@ -41,14 +43,24 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
 
 ```
 <Dropdown
-  isOpen={true}
-  trigger={
-    <InputButton
-      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
-      rightSource={<IconButton iconSource={RightArrowIcon} styleVar={'GHOST'} sizeVar={'S'} />}
-    />
-  }
-  content={<Dropdown.Content type={'FILL'}>Content</Dropdown.Content>}
+  content={<Dropdown.Content>dropdown content</Dropdown.Content>}
+  trigger={<Dropdown.Button placeholder={'테스트 버튼'} />}
+/>
+```
+### Dropdown
+
+### DropdownButton
+<ArgsTable of={DropdownButton} />
+
+### DropdownContent
+<ArgsTable of={DropdownContent} />
+
+
+
+```
+<Dropdown
+  content={<Dropdown.Content>dropdown content</Dropdown.Content>}
+  trigger={<Dropdown.Button placeholder={'테스트 버튼'} />}
 />
 ```
 

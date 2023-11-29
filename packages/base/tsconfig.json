@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
+    "module": "esnext",
+    "target": "es6",
     "allowJs": false,
     "skipLibCheck": true,
     "noImplicitAny": false,

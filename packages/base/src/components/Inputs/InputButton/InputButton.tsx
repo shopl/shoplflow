@@ -4,9 +4,10 @@ import { StyledInputButton } from './InputButton.styled';
 import { InputWrapper } from '../common/input.styled';
 import { Stack } from '../../Stack';
 import { Text } from '../../Text';
-import { assetFunction } from '../../../styles/IconAssets';
 import { IconButton } from '../../Buttons';
 import type { InputButtonProps } from './InputButton.types';
+import { Icon } from '../../Icon';
+import { assetFunction } from '../../../styles/IconAssets';
 
 const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
   (
@@ -94,14 +95,9 @@ const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
           )}
           <Stack.Horizontal align={'center'}>
             {value && (
-              <IconButton
-                sizeVar={'S'}
-                onClick={handleOnClear}
-                styleVar={'GHOST'}
-                iconSource={assetFunction('DeleteIcon')}
-                color={'neutral600'}
-                disabled={disabled}
-              />
+              <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
+                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
+              </IconButton>
             )}
             {rightSource}
           </Stack.Horizontal>

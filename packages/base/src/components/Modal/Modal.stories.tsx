@@ -22,12 +22,14 @@ const mockBoxs: ReactNode[] = new Array(10)
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
-    <Modal.Container {...args} outsideClick={removeModal} height={400}>
+    <Modal.Container {...args} outsideClick={removeModal} height={600}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
       <Modal.Body>
-        <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
+        <Stack.Vertical height={'100%'} justify={'center'}>
+          {mockBoxs.map((box) => box)}
+        </Stack.Vertical>
       </Modal.Body>
       <Modal.Footer>
         <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
@@ -40,7 +42,11 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
 
 export const Playground: StoryFn<ModalContainerProps> = (args) => {
   const { addModal } = useHandleModal();
-  return <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>open Modal</Button>;
+  return (
+    <>
+      <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>open Modal</Button>
+    </>
+  );
 };
 
 export const Primary = () => {

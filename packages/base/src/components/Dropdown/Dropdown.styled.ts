@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { boxShadowTokens } from '../../styles';
+import { boxShadowTokens, colorTokens } from '../../styles';
 import type { DropdownButtonProps, DropdownContentProps, DropdownSizeVariantType } from './Dropdown.types';
 import { motion } from 'framer-motion';
 import { css } from '@emotion/react';
@@ -78,6 +78,7 @@ export const StyledDropdown = styled.div`
 export const StyledDropdownContent = styled.div<DropdownContentProps>`
   display: flex;
   flex-direction: column;
+  background: ${colorTokens.neutral0};
   width: ${({ width }) => width ?? '240px'};
   padding: 4px;
   border-radius: 6px;

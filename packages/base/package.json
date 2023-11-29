@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
@@ -32,13 +32,13 @@
     "types": "dist/index.d.ts",
     "exports": {
       ".": {
-        "import": {
-          "default": "./dist/index.js",
-          "types": "./dist/index.d.ts"
-        },
         "require": {
-          "default": "./dist/index.cjs",
-          "types": "./dist/index.d.cts"
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        },
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
         }
       },
       "./styles": "./dist/styles/global.css",
@@ -50,8 +50,10 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "*",
-    "typescript": "*"
+    "react": "^18",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/core": "^7.22.19",

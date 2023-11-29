@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 :root[data-shoplflow] {
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
+  --font-weight-regular: 500;
+  --font-weight-medium: 600;
   --font-weight-bold: 700;
   --border-radius04: 4px;
   --border-radius06: 6px;
@@ -169,13 +169,13 @@
     line-height: 18px;
     font-size: 13px;
   }
-  .caption_400 {
-    font-weight: var(--font-weight-regular);
+  .caption_700 {
+    font-weight: var(--font-weight-bold);
     line-height: 16px;
     font-size: 12px;
   }
-  .caption_700 {
-    font-weight: var(--font-weight-bold);
+  .caption_400 {
+    font-weight: var(--font-weight-regular);
     line-height: 16px;
     font-size: 12px;
   }
@@ -315,7 +315,7 @@
     font-size: 13px;
   }
   .body3_400 {
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-medium);
     line-height: 16px;
     font-size: 12px;
   }

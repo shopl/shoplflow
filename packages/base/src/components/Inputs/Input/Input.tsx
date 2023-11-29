@@ -7,6 +7,7 @@ import { IconButton } from '../../Buttons';
 import { assetFunction } from '../../../styles/IconAssets';
 import { useMergeRefs } from '../../../hooks/useMergeRef';
 import { InputWrapper } from '../common/input.styled';
+import { Icon } from '../../Icon';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -137,22 +138,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <RightElementWrapper>
           {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
           {isFocused && Boolean(String(text).length > 0) && (
-            <IconButton
-              sizeVar={'S'}
-              onClick={handleOnClear}
-              styleVar={'GHOST'}
-              iconSource={assetFunction('DeleteIcon')}
-              color={'neutral600'}
-            />
+            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
+              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
+            </IconButton>
           )}
           {initialType === 'password' && (
-            <IconButton
-              sizeVar={'S'}
-              onClick={handleTogglePasswordType}
-              styleVar={'GHOST'}
-              color={'neutral600'}
-              iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
-            />
+            <IconButton sizeVar={'S'} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
+              <Icon
+                color={'neutral600'}
+                iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
+              />
+            </IconButton>
           )}
         </RightElementWrapper>
       </InputWrapper>
