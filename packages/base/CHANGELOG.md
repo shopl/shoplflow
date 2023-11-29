@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.14.0
+
+### Minor Changes
+
+- [#143](https://github.com/shopl/shoplflow/pull/143) [`765399e`](https://github.com/shopl/shoplflow/commit/765399e007f3938511e07c2b497355560b30b426) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - scrollArea 추가
+
+### Patch Changes
+
+- [#143](https://github.com/shopl/shoplflow/pull/143) [`765399e`](https://github.com/shopl/shoplflow/commit/765399e007f3938511e07c2b497355560b30b426) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal body align 미적용 이슈 수정
+
 ## 0.13.9
 
 ### Patch Changes
