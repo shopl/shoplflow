@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { BodyContainer, ModalBodyContent } from './Modal.styled';
+import { BodyContainer, ModalBodyContainerInner, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps } from './Modal.types';
 import Scrollbars from 'react-custom-scrollbars-2';
 import { useResizeObserver } from '@shoplflow/utils';
@@ -9,6 +9,7 @@ const ModalBody = ({
   isIncludeHeader = false,
   isIncludeFooter = false,
   sizeVar,
+  scroll = true,
   height: modalContainerHeight,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useResizeObserver(document.body, {
@@ -48,10 +49,9 @@ const ModalBody = ({
     <BodyContainer isIncludeHeader={isIncludeHeader} height={setAutoHeightMin()}>
       <Scrollbars
         id={`scrollbar`}
-        // autoHeight
+        universal
         autoHeight={!modalContainerHeight}
         autoHeightMin={setAutoHeightMin()}
-        // autoHeightMax={'100%'}
         autoHeightMax={windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight}
         autoHide
         autoHideTimeout={1000}
@@ -61,9 +61,11 @@ const ModalBody = ({
           overflow: 'hidden',
         }}
       >
-        <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar}>
-          {children}
-        </ModalBodyContent>
+        <ModalBodyContainerInner>
+          <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar} scroll={scroll}>
+            {children}
+          </ModalBodyContent>
+        </ModalBodyContainerInner>
       </Scrollbars>
     </BodyContainer>
   );

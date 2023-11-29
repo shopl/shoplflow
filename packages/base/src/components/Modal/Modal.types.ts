@@ -27,6 +27,7 @@ export interface ModalContainerOptionProps {
    * 모달의 외부를 클릭했을 때 실행되는 함수입니다.
    * @param args
    */
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   outsideClick?: (args?: any) => void;
 }
 
@@ -45,6 +46,11 @@ export interface ModalBodyOptionProps {
   isIncludeHeader?: boolean;
   isIncludeFooter?: boolean;
   height?: number;
+  /**
+   * 전체 스크롤을 사용할지 여부를 설정합니다.
+   * 기본값 `true`
+   */
+  scroll?: boolean;
   sizeVar?: ModalSizeType;
 }
 // Modal Footer
