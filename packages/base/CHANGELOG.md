@@ -1,5 +1,17 @@
 # @shoplflow/base
 
+## 0.13.9
+
+### Patch Changes
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ChipButton > background 속성 최하단으로 이동
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - update assets, fix ChipButton style
+
+- Updated dependencies [[`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af)]:
+  - @shoplflow/shopl-assets@0.3.2
+  - @shoplflow/hada-assets@0.0.4
+
 ## 0.13.8
 
 ### Patch Changes
