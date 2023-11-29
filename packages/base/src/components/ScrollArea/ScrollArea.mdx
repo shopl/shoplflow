@@ -1,0 +1,35 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import ScrollArea from './ScrollArea';
+import * as ScrollAreaStories from './ScrollArea.stories';
+
+<Meta of={ScrollAreaStories} />
+
+# ScrollArea
+
+커스텀 스크롤 영역을 나타낼 때 사용합니다.
+
+[react-custom-scrollbars-2](https://github.com/RobPethick/react-custom-scrollbars-2) 라이브러리를 사용합니다.
+
+[공식문서](https://github.com/RobPethick/react-custom-scrollbars-2/tree/master/docs)
+
+<Canvas of={ScrollAreaStories.Playground} />
+
+
+## ArgsTable
+
+**onScrollFrame Function args**
+- values: (Object) 현재 위치에 대한 값들
+- values.top: (Number) scrollTop 진행률, 0에서 1 사이
+- values.left: (Number) scrollLeft 진행률, 0에서 1 사이
+- values.clientWidth: (Number) 뷰의 너비
+- values.clientHeight: (Number) 뷰의 높이
+- values.scrollWidth: (Number) 네이티브 scrollWidth
+- values.scrollHeight: (Number) 네이티브 scrollHeight
+- values.scrollLeft: (Number) 네이티브 scrollLeft
+- values.scrollTop: (Number) 네이티브 scrollTop
+
+<ArgsTable of={ScrollArea} />
+
+## Usage
+
+
