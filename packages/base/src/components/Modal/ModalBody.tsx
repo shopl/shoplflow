@@ -9,7 +9,6 @@ const ModalBody = ({
   isIncludeHeader = false,
   isIncludeFooter = false,
   sizeVar,
-  scroll = true,
   height: modalContainerHeight,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useResizeObserver(document.body, {
@@ -62,7 +61,7 @@ const ModalBody = ({
         }}
       >
         <ModalBodyContainerInner>
-          <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar} scroll={scroll}>
+          <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar}>
             {children}
           </ModalBodyContent>
         </ModalBodyContainerInner>

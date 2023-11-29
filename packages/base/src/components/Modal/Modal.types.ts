@@ -46,11 +46,6 @@ export interface ModalBodyOptionProps {
   isIncludeHeader?: boolean;
   isIncludeFooter?: boolean;
   height?: number;
-  /**
-   * 전체 스크롤을 사용할지 여부를 설정합니다.
-   * 기본값 `true`
-   */
-  scroll?: boolean;
   sizeVar?: ModalSizeType;
 }
 // Modal Footer

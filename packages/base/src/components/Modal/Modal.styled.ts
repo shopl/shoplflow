@@ -99,7 +99,6 @@ export const ModalBodyContainerInner = styled.div`
 
 export const ModalBodyContent = styled.div<{
   isIncludeHeader: boolean;
-  scroll: boolean;
   sizeVar: ModalContainerProps['sizeVar'];
 }>`
   display: flex;
