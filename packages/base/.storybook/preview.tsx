@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import type { Decorator, Preview } from '@storybook/react';
-import { Button, ShoplflowProvider, Stack } from '../src';
+import type { Decorator } from '@storybook/react';
+import { Button, ShoplflowProvider } from '../src';
 import './index.css';
 import '../src/styles/global.css';
 import '../src/styles/reset.css';
 import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
 import { withPerformance } from 'storybook-addon-performance';
-import { ComponentStage } from '../src/styles/Box';
 
 
 const ThemeButton  = styled.div`

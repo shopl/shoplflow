@@ -6,7 +6,7 @@ import { DropdownContext } from './useDropdown';
 import { DropdownButton } from './DropdownButton';
 import { DropdownContent } from './DropdownContent';
 
-const Dropdown = ({ isOpen: initialIsOpen, trigger, content, option = 'OUTSIDE_CLICK' }: DropdownProps) => {
+const Dropdown = ({ isOpen: initialIsOpen = false, trigger, popper, option = 'OUTSIDE_CLICK' }: DropdownProps) => {
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +38,7 @@ const Dropdown = ({ isOpen: initialIsOpen, trigger, content, option = 'OUTSIDE_C
           <Popper.Trigger ref={setTriggerRef} isOpen={isOpen}>
             {trigger}
           </Popper.Trigger>
-          <Popper.Portal>{content}</Popper.Portal>
+          <Popper.Portal>{popper}</Popper.Portal>
         </Popper>
       </DropdownContext.Provider>
     </StyledDropdown>
