@@ -3,6 +3,7 @@ import { boxShadowTokens, colorTokens } from '../../styles';
 import type { DropdownButtonProps, DropdownContentProps, DropdownSizeVariantType } from './Dropdown.types';
 import { motion } from 'framer-motion';
 import { css } from '@emotion/react';
+import type { CSSProperties } from 'react';
 
 export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
@@ -69,11 +70,8 @@ export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVariantType) => {
   }
 };
 
-export const StyledDropdown = styled.div`
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-  flex-direction: row;
+export const StyledDropdown = styled.div<{ width: CSSProperties['width'] }>`
+  width: ${({ width }) => width};
 `;
 export const StyledDropdownContent = styled.div<DropdownContentProps>`
   display: flex;
