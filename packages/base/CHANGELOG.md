@@ -1,5 +1,18 @@
 # @shoplflow/base
 
+## 0.15.0
+
+### Minor Changes
+
+- [#145](https://github.com/shopl/shoplflow/pull/145) [`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - floating UI middleware function 추가
+
+- [#145](https://github.com/shopl/shoplflow/pull/145) [`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Dropdown 구조 변경
+
+### Patch Changes
+
+- Updated dependencies [[`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761)]:
+  - @shoplflow/utils@0.5.0
+
 ## 0.14.0
 
 ### Minor Changes

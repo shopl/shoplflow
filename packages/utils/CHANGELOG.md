@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.5.0
+
+### Minor Changes
+
+- [#145](https://github.com/shopl/shoplflow/pull/145) [`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect hook 추가
+
 ## 0.4.0
 
 ### Minor Changes
