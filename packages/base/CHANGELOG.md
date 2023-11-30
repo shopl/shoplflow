@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.15.1
+
+### Patch Changes
+
+- [#147](https://github.com/shopl/shoplflow/pull/147) [`3920767`](https://github.com/shopl/shoplflow/commit/392076796e422f689c10aff67d80ac6d2ca599d4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input Button 태그 input으로 변경
+
+- [#147](https://github.com/shopl/shoplflow/pull/147) [`3920767`](https://github.com/shopl/shoplflow/commit/392076796e422f689c10aff67d80ac6d2ca599d4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - inputButton disable background 컬러 변경
+
 ## 0.15.0
 
 ### Minor Changes
