@@ -79,7 +79,7 @@ import { useState, useEffect } from 'react';
 type SelectedItem<T, Mode extends 'SINGLE' | 'MULTI'> = Mode extends 'SINGLE' ? T | null : T[];
 
 // 'SINGLE' 모드에 대한 오버로드 시그니처
-export function useSelected<T>(
+export function useSelect<T>(
   initialItems: T[],
   mode: 'SINGLE',
 ): {
@@ -90,7 +90,7 @@ export function useSelected<T>(
 };
 
 // 'MULTI' 모드에 대한 오버로드 시그니처
-export function useSelected<T>(
+export function useSelect<T>(
   initialItems: T[],
   mode: 'MULTI',
   max?: number,
@@ -101,7 +101,7 @@ export function useSelected<T>(
   handleToggleSelect: (item: T, id?: string) => void;
 };
 
-export function useSelected<T, Mode extends 'SINGLE' | 'MULTI'>(
+export function useSelect<T, Mode extends 'SINGLE' | 'MULTI'>(
   initialItems: T[],
   mode: Mode,
   max?: number,

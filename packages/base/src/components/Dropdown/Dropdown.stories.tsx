@@ -4,7 +4,7 @@ import type { StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
 import { Text } from '../Text';
-import { useSelected } from '@shoplflow/utils';
+import { useSelect } from '@shoplflow/utils';
 
 export default {
   title: 'COMPONENTS/Dropdown',
@@ -14,7 +14,7 @@ export default {
 export const Playground: StoryFn<DropdownProps> = (args) => {
   const data = new Array(10).fill(0).map((_, i) => `name${i}`);
 
-  const { selectedItem, handleToggleSelect } = useSelected<string>(data, 'MULTI');
+  const { selectedItem, handleToggleSelect } = useSelect<string>(data, 'MULTI');
   return (
     <Stack width={'500px'}>
       <ComponentStage>
