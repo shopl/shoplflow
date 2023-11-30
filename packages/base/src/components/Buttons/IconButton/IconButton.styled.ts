@@ -64,6 +64,7 @@ const getStyleByStyleVar = (styleVar?: IconButtonStyleVar, color?: ColorTokens) 
     case 'GHOST':
       return css`
         border: 1px solid transparent;
+        background: transparent;
         &:hover {
           background: ${colorTokens.neutral400_5};
         }

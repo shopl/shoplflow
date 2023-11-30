@@ -1,29 +1,16 @@
 import type { MouseEvent } from 'react';
 import React, { forwardRef, useCallback, useEffect, useState } from 'react';
-import { StyledInputButton } from './InputButton.styled';
+import { StyledInputButton, StyledInputButtonContent } from './InputButton.styled';
 import { InputWrapper } from '../common/input.styled';
 import { Stack } from '../../Stack';
-import { Text } from '../../Text';
 import { IconButton } from '../../Buttons';
 import type { InputButtonProps } from './InputButton.types';
 import { Icon } from '../../Icon';
 import { assetFunction } from '../../../styles/IconAssets';
 
-const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
+const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
   (
-    {
-      value,
-      defaultValue,
-      onChange,
-      onClick,
-      isSelected,
-      disabled = false,
-      rightSource,
-      placeholder,
-      onClear,
-      width,
-      ...rest
-    },
+    { value, defaultValue, onChange, onClick, isSelected, disabled = false, rightSource, onClear, width, ...rest },
     ref,
   ) => {
     const [text, setText] = useState('');
@@ -83,16 +70,8 @@ const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
         disabled={disabled}
         width={width}
       >
-        <StyledInputButton {...rest} onClick={handleOnClick} disabled={disabled} ref={ref}>
-          {text && text.length > 0 ? (
-            <Text typography={'body1_400'} color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
-              {text}
-            </Text>
-          ) : (
-            <Text typography={'body1_400'} color={'neutral350'} textOverflow={'ellipsis'} lineClamp={1}>
-              {placeholder}
-            </Text>
-          )}
+        <StyledInputButton onClick={handleOnClick} disabled={disabled}>
+          <StyledInputButtonContent className={'body1_400'} defaultValue={text} ref={ref} {...rest} />
           <Stack.Horizontal align={'center'}>
             {value && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>

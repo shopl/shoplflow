@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
-import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
+import { css } from '@emotion/react';
 
 export type Status = {
   isFocused?: boolean;
@@ -45,5 +45,10 @@ export const InputWrapper = styled.label<
   border-radius: 6px;
   background-color: ${colorTokens.neutral0};
   overflow: hidden;
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      background-color: ${colorTokens.neutral100};
+      cursor: not-allowed;
+    `};
 `;
