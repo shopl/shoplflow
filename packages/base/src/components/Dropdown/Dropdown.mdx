@@ -19,6 +19,9 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
 > - OUTSIDE_CLICK: 컨텐츠 영역 외부를 클릭하면 닫힙니다.
 > - NONE: 클릭으로 닫히지 않습니다.
 
+
+> 선택 기능을 사용하려면 `useSelected` 훅과 함께 사용해주세요.
+
 ## Overview
 
 <Canvas of={DropdownStories.Playground} />
@@ -39,11 +42,27 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
 
 ## Usage
 
+```tsx
+  const data = new Array(10).fill(0).map((_, i) => ({ name: `name${i}` }));
+  const { selectedItem, setSelectedItem } = useSelected<{ name: string }>(data, 'SINGLE');
+  return (
+    <Dropdown
+      {...args}
+      option={'CLICK'}
+      width={'100%'}
+      trigger={<Dropdown.Button placeholder={'값이 없어요'} value={selectedItem?.name} />}
+      popper={
+        <Dropdown.Content type={'FILL'}>
+          {data.map((item) => (
+            <Text key={item.name} onClick={() => setSelectedItem(item)}>
+              {item.name}
+            </Text>
+          ))}
+        </Dropdown.Content>
+      }
+    />
+  );
+};
 ```
-<Dropdown
-  content={<Dropdown.Content>dropdown content</Dropdown.Content>}
-  trigger={<Dropdown.Button placeholder={'테스트 버튼'} />}
-/>
-
 
 

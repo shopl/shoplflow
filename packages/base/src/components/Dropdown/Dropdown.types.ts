@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import type { ChildrenProps, DisableProps, LeftElementProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 
@@ -27,6 +27,7 @@ export interface DropdownOptionProps {
    * NONE: 클릭으로 닫히지 않습니다.
    */
   option?: DropdownOptionVar;
+  width?: CSSProperties['width'];
 }
 
 export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {

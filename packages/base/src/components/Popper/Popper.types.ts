@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from 'react';
+import type { CSSProperties, HTMLAttributes } from 'react';
 import type { Middleware } from '@floating-ui/react-dom';
 import type { Placement, AutoPlacementOptions } from '@floating-ui/react';
 import type { OffsetOptions } from '@floating-ui/core';
@@ -43,8 +43,8 @@ export interface PopperTriggerProps extends ChildrenProps, HTMLAttributes<HTMLDi
    * popper가 열려있는지 여부를 결정합니다.
    */
   isOpen?: boolean;
-  width?: string;
-  height?: string;
+  width?: CSSProperties['width'];
+  height?: CSSProperties['height'];
 }
 
 export interface PopperPortalProps extends ChildrenProps, HTMLAttributes<HTMLDivElement> {
