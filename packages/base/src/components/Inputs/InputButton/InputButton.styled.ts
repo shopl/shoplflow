@@ -15,6 +15,18 @@ export const StyledInputButton = styled.button`
   ${({ disabled }) =>
     disabled &&
     css`
+      background-color: ${colorTokens.neutral100};
       cursor: not-allowed;
     `}
+`;
+
+export const StyledInputButtonContent = styled.input`
+  display: flex;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  caret-color: transparent;
+  &::placeholder {
+    color: ${colorTokens.neutral350};
+  }
 `;
