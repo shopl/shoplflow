@@ -10,4 +10,15 @@ const List = ({ ...rest }: ListProps) => {
   );
 };
 
+const Content2Columns = () => {
+  return <StyledList data-shoplflow={'List'}>List</StyledList>;
+};
+
+const Text2Rows = () => {
+  return <StyledList data-shoplflow={'List'}>List</StyledList>;
+};
+
+List.Text2Rows = Text2Rows;
+List.Content2Columns = Content2Columns;
+
 export default List;

@@ -28,5 +28,7 @@ const getListStyleBySizeVar = (size: ListSizeVariantType) => {
 };
 
 export const StyledList = styled.div<ListOptionProps>`
+  padding: 6px 8px;
+  border-radius: 8px;
   ${({ sizeVar }) => sizeVar && getListStyleBySizeVar(sizeVar)}
 `;
