@@ -14,5 +14,5 @@ export interface ListContent2ColumnsProps extends ChildrenProps {}
 
 export interface ListText2RowsProps {
   title: ReactNode;
-  subTitle: ReactNode;
+  subTitle?: ReactNode;
 }

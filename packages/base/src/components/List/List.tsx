@@ -32,9 +32,11 @@ const Text2Rows = ({ title, subTitle }: ListText2RowsProps) => {
       <Text typography={'body1_500'} color={'neutral700'}>
         {title}
       </Text>
-      <Text typography={'body2_400'} color={'neutral400'}>
-        {subTitle}
-      </Text>
+      {subTitle && (
+        <Text typography={'body2_400'} color={'neutral400'}>
+          {subTitle}
+        </Text>
+      )}
     </StyledText2Rows>
   );
 };
