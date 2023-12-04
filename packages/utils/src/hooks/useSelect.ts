@@ -137,7 +137,7 @@ export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE
     throw new Error('입력받은 key가 data에 존재하지 않습니다. 올바른 key를 입력해주세요.');
   }
   if (options?.max && options.max < 1) {
-    throw new Error('max는 양수여야 합니다.');
+    throw new Error('max는 0보다 커야 합니다.');
   }
 
   const [selectedItem, setSelectedItem] = useState<T[]>(options?.defaultSelected ?? []);
