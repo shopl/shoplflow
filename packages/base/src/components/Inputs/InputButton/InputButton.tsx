@@ -29,9 +29,10 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
       }
     };
 
-    const handleOnClear = () => {
+    const handleOnClear = (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
       if (!disabled) {
-        onClear && onClear();
+        onClear && onClear(e);
         setText('');
       }
     };
