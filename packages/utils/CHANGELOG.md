@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.5.1
+
+### Patch Changes
+
+- [#151](https://github.com/shopl/shoplflow/pull/151) [`e438e97`](https://github.com/shopl/shoplflow/commit/e438e9728ba6916a31233f2250d5f6f1384a73cc) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect 편의성 수정 props, return 타입 변경
+
 ## 0.5.0
 
 ### Minor Changes
