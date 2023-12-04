@@ -15,14 +15,14 @@ export default {
   component: ModalContainer,
 };
 
-const mockBoxs: ReactNode[] = new Array(10)
+const mockBoxs: ReactNode[] = new Array(100)
   .fill(0)
   .map((_, index) => <Box key={index} width={'100%'} height={'100px'} background={'primary300'} />);
 
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
-    <Modal.Container {...args} outsideClick={removeModal} height={600}>
+    <Modal.Container {...args} outsideClick={removeModal}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
@@ -83,7 +83,7 @@ export const HeaderBody: StoryFn<ModalContainerProps> = (args) => (
 export const BodyFooter: StoryFn<ModalContainerProps> = (args) => (
   <Stack height={'500px'}>
     <ComponentStage>
-      <Modal.Container {...args} height={500}>
+      <Modal.Container {...args}>
         <Modal.Body>
           <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
         </Modal.Body>
