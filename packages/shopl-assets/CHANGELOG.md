@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.3.3
+
+### Patch Changes
+
+- [#149](https://github.com/shopl/shoplflow/pull/149) [`4832c98`](https://github.com/shopl/shoplflow/commit/4832c985b740b19ec055db67aa3e27414bdf6887) Thanks [@velo-kim](https://github.com/velo-kim)! - ic-mother 아이콘 추가
+
 ## 0.3.2
 
 ### Patch Changes

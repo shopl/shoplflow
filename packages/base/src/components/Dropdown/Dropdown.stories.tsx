@@ -12,9 +12,17 @@ export default {
 };
 
 export const Playground: StoryFn<DropdownProps> = (args) => {
-  const data = new Array(10).fill(0).map((_, i) => `name${i}`);
+  const data = new Array(10).fill(0).map((_, index) => {
+    return {
+      label: `label${index}`,
+      value: `value${index}`,
+    };
+  });
 
-  const { selectedItem, handleToggleSelect } = useSelect<string>(data, 'MULTI');
+  const { selectedItem, handleToggleSelect } = useSelect('MULTI', data, {
+    key: 'value',
+    max: 3,
+  });
   return (
     <Stack width={'500px'}>
       <ComponentStage>
@@ -22,12 +30,14 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
           {...args}
           option={'CLICK'}
           width={'100%'}
-          trigger={<Dropdown.Button placeholder={'값이 없어요'} value={selectedItem.map((data) => data).join(',')} />}
+          trigger={
+            <Dropdown.Button placeholder={'값이 없어요'} value={selectedItem.map((data) => data.value).join(',')} />
+          }
           popper={
             <Dropdown.Content type={'FILL'}>
               {data.map((item) => (
-                <Text key={item} onClick={() => handleToggleSelect(item)}>
-                  {item}
+                <Text key={item.value} onClick={() => handleToggleSelect(item.value)} style={{ cursor: 'pointer' }}>
+                  {item.label}
                 </Text>
               ))}
             </Dropdown.Content>
