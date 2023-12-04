@@ -9,7 +9,7 @@ import { useState } from 'react';
  * 기본값은 무제한입니다.
  *
  * ### Type
- * > `handleToggleSelect: (id?: string) => void;`
+ * > `handleToggleSelect: (id: string) => void;`
  * - id는 객체에서 특정 ID를 통해 비교할 수 있습니다.
  * - handleToggleSelect('someId');
  *
