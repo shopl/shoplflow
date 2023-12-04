@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { BodyContainer, ModalBodyContainerInner, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps } from './Modal.types';
 import { useResizeObserver } from '@shoplflow/utils';
@@ -11,9 +11,11 @@ const ModalBody = ({
   sizeVar,
   height: modalContainerHeight,
 }: ModalBodyProps) => {
-  const { height: windowHeight } = useResizeObserver(document.body, {
+  const { height } = useResizeObserver(document.body, {
     trackHeight: true,
   });
+
+  const [windowHeight, setWindowHeight] = useState(0);
 
   const headerHeight = 64;
   const footerHeight = 64;
@@ -43,6 +45,12 @@ const ModalBody = ({
   const heightUnderMaxHeight = windowHeight - topBottomMargin - headerFooterHeight;
 
   const heightOverMaxHeight = 1200 - topBottomMargin - headerFooterHeight;
+
+  useEffect(() => {
+    if (height) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, [height]);
 
   return (
     <BodyContainer isIncludeHeader={isIncludeHeader} height={setAutoHeightMin()}>
