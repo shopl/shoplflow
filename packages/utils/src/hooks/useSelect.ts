@@ -8,23 +8,47 @@ import { useState } from 'react';
  * MULTI 모드에서는 max 옵션을 통해 최대 선택 가능한 개수를 설정할 수 있습니다.
  * 기본값은 무제한입니다.
  *
+ * ### Arguments
+ *
+ * > `mode: 'SINGLE' | 'MULTI'`
+ * - mode는 'SINGLE'과 'MULTI'를 입력받습니다.
+ * - 'SINGLE'은 단일 선택 모드입니다.
+ * - 'MULTI'는 다중 선택 모드입니다.
+ *
+ * > `data: T[]`
+ * - data는 선택할 수 있는 아이템들의 배열입니다.
+ * - data는 아래와 같은 형태를 가지고 있어야 합니다.
+ *
+ * > `options?: { key: string; max?: number; defaultSelected?: T[] }`
+ *
+ * - key는 data의 아이템들의 고유한 key를 입력받습니다. item을 구분할 때 사용합니다.
+ * - max는 MULTI 모드에서 선택할 수 있는 최대 개수를 입력받습니다.
+ * - defaultSelected는 초기 선택된 아이템들의 배열을 입력받습니다.
+ *
+ *
  * ### Type
  * > `handleToggleSelect: (id: string) => void;`
  * - id는 객체에서 특정 ID를 통해 비교할 수 있습니다.
  * - handleToggleSelect('someId');
  *
- * > `setSelectedItem: (item: T) => void;`
- * - setSelectedItem은 선택된 item을 설정합니다.
- * - setSelectedItem('someItem');
  *
  * > `selectedItem: SelectedItem<T, Mode>;`
  * - selectedItem은 선택된 item을 반환합니다.
  * mode가 'SINGLE'일 경우 T | null을 반환합니다.
  * mode가 'MULTI'일 경우 T[]를 반환합니다.
  *
+ * > `handleSelect: (id: string) => void;`
+ * - handleSelect은 선택된 item을 추가합니다.
+ *
+ * > `handleRemove: (id: string) => void;`
+ * - handleRemove는 선택된 item을 제거합니다.
+ *
+ * > `handleReset: () => void;`
+ * - handleReset은 선택된 item들을 초기화합니다.
+ *
  * ## Usage
  * ```tsx filename="MULTI Select"
- * import {useSelected} from "@shoplflow/utils"
+ * import {useSelect} from "@shoplflow/utils"
  * const App = () => {
  *
  * const data = new Array(10).fill(0).map((_, index) => {
@@ -34,7 +58,7 @@ import { useState } from 'react';
  *   };
  * });
  *
- * const { selectedItem, handleToggleSelect } = useSelected('MULTI', data, { key: 'value' });
+ * const { selectedItem, handleToggleSelect } = useSelect('MULTI', data, { key: 'value' });
  *
  * return (
  * <Dropdown
@@ -58,7 +82,7 @@ import { useState } from 'react';
  * ```
  *
  * ```tsx filename="SINGLE Select"
- * import {useSelected} from "@shoplflow/utils"
+ * import {useSelect} from "@shoplflow/utils"
  * const App = () => {
  *
  * const data = new Array(10).fill(0).map((_, index) => {
@@ -68,7 +92,7 @@ import { useState } from 'react';
  *   };
  * });
  *
- * const { selectedItem, handleToggleSelect } = useSelected('SINGLE', data, { key: 'value' });
+ * const { selectedItem, handleToggleSelect } = useSelect('SINGLE', data, { key: 'value' });
  *
  * return (
  * <Dropdown

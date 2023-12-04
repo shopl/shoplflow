@@ -1,12 +1,19 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
 import List from './List';
 import * as ListStories from './List.stories';
+import AnatomyList from '../../assets/anatomy/list.png';
 
 <Meta of={ListStories} />
 
 # List
 
-List 컴포넌트 설명을 적어주세요.
+리스트는 2가지 컴포넌트로 구성되어 있습니다.
+
+- List
+- List.Text2Rows;
+
+
+<img src={AnatomyList} alt={'anatomy-list'}/>
 
 <Canvas of={ListStories.Playground} />
 
