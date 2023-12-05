@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.5.3
+
+### Patch Changes
+
+- [#155](https://github.com/shopl/shoplflow/pull/155) [`fcf41a1`](https://github.com/shopl/shoplflow/commit/fcf41a115413940ddc28eabde8c50b0c6c384b5d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect toggle 안되는 문제 수정
+
 ## 0.5.2
 
 ### Patch Changes
