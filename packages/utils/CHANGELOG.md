@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.5.2
+
+### Patch Changes
+
+- [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect 문서 업데이트
+
 ## 0.5.1
 
 ### Patch Changes
