@@ -19,7 +19,7 @@ export interface InputButtonOptionProps
   /**
    * 값이 삭제될 때 실행할 함수입니다.
    */
-  onClear?: () => void;
+  onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
 
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 
