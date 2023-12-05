@@ -195,12 +195,12 @@ export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE
   const handleToggleSelect = (id: string) => {
     const isSelected = selectedItem.find((item) => item[key] === id);
     if (isSelected) {
-      if (options?.max && selectedItem.length >= options.max) {
-        return;
-      }
       handleRemove(id);
     }
     if (!isSelected) {
+      if (options?.max && selectedItem.length >= options.max) {
+        return;
+      }
       handleSelect(id);
     }
   };
