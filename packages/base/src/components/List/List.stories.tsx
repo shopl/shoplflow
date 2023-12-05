@@ -18,7 +18,7 @@ export const Playground: StoryFn<ListProps> = (args) => {
       <ComponentStage>
         <List {...args} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
           <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
-          <List.Text2Rows title={'타이틀임'} />
+          <List.Text2Rows title={'타이틀'} />
         </List>
       </ComponentStage>
     </Stack>
@@ -35,7 +35,7 @@ export const With2Rows: StoryFn<ListProps> = (args) => {
       <ComponentStage>
         <List {...args} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
           <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
-          <List.Text2Rows title={'타이틀임'} subTitle={'섭타이틀'} />
+          <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />
         </List>
       </ComponentStage>
     </Stack>

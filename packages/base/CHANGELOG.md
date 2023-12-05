@@ -6,8 +6,6 @@
 
 - [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - List 컴포넌트 추가
 
-- [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - List 컴포넌트 추가
-
 ### Patch Changes
 
 - [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - inputButton 이벤트 버블링 방지
