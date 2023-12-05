@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.17.0
+
+### Minor Changes
+
+- [#155](https://github.com/shopl/shoplflow/pull/155) [`fcf41a1`](https://github.com/shopl/shoplflow/commit/fcf41a115413940ddc28eabde8c50b0c6c384b5d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Menu 컴포넌트 추가
+
+### Patch Changes
+
+- Updated dependencies [[`fcf41a1`](https://github.com/shopl/shoplflow/commit/fcf41a115413940ddc28eabde8c50b0c6c384b5d)]:
+  - @shoplflow/utils@0.5.3
+
 ## 0.16.0
 
 ### Minor Changes
