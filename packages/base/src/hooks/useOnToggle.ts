@@ -27,10 +27,10 @@ export const useOnToggle: UseOnToggle = (selected, defaultSelected) => {
   }, [isControlled, selected]);
 
   useEffect(() => {
-    if (defaultSelected) {
+    if (defaultSelected !== undefined) {
       setIsToggle(defaultSelected);
     }
-  }, [defaultSelected, isControlled]);
+  }, [defaultSelected]);
 
   return [isToggle, handleToggle];
 };

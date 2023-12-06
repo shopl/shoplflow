@@ -10,6 +10,8 @@ export * from './Callout';
 export * from './Popper';
 export * from './ScrollArea';
 export * from './Dropdown';
+export * from './Menu';
+export * from './List';
 export * from './Icon';
 export * from './Inputs';
 export * from './ControlButtons';
