@@ -20,6 +20,7 @@ const getStylesByStyleVariant = (
           }
           ${isHovered &&
           css`
+            border: 1.5px solid ${colorTokens.primary400};
             background: ${colorTokens.primary400};
           `}
         `;
@@ -30,6 +31,7 @@ const getStylesByStyleVariant = (
         border-radius: 4px;
         ${isHovered &&
         css`
+          border: 1.5px solid ${colorTokens.neutral300};
           background: ${colorTokens.neutral300};
         `}
 
