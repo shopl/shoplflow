@@ -100,3 +100,19 @@ Error.args = {
   isError: true,
   placeholder: '에러 상태에요.',
 };
+export const Number: StoryFn<InputProps> = (args) => {
+  return (
+    <Stack width={'500px'}>
+      <ComponentStage>
+        <Input value={0} {...args} />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+Number.args = {
+  disabled: false,
+  type: 'number',
+  min: 10,
+  max: 21,
+};

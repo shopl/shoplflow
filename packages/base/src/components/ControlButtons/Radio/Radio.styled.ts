@@ -49,6 +49,7 @@ export const Container = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
   padding: 4px;
   width: fit-content;
   height: fit-content;

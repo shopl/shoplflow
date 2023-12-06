@@ -22,6 +22,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       disabled,
       type: initialType,
       maxLength,
+      min,
+      max,
       className,
       width,
       ...rest
@@ -53,6 +55,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       [maxLength],
     );
 
+    const limitRange = useCallback(
+      (value: string) => {
+        if (min && Number(value) < min) {
+          return String(min);
+        }
+        if (max && Number(value) > max) {
+          return String(max);
+        }
+        return value;
+      },
+      [max, min],
+    );
+
     const handleOnMouseEnter = () => {
       setIsHovered(true);
     };
@@ -70,8 +85,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
       onChange && onChange(event);
+
       const slicedText = sliceText(event.target.value);
+
+      if (type === 'number') {
+        const limitedText = limitRange(slicedText);
+        setText(limitedText);
+        return;
+      }
       setText(slicedText);
+    };
+    const getWidth = () => {
+      if (type === 'number') {
+        return '64px';
+      } else {
+        return width;
+      }
     };
 
     const handleOnClear = () => {
@@ -91,7 +120,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
 
     useEffect(() => {
-      if (defaultValue) {
+      if (defaultValue !== undefined) {
         const convertString = convertToString(defaultValue);
         const slicedText = sliceText(convertString);
         setText(slicedText);
@@ -99,9 +128,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     }, [convertToString, defaultValue, maxLength, sliceText]);
 
     useEffect(() => {
-      if (value) {
+      if (value !== undefined) {
         const convertString = convertToString(value);
+
         const slicedText = sliceText(convertString);
+        inputRef.current?.value && (inputRef.current.value = slicedText);
         setText(slicedText);
       }
     }, [convertToString, maxLength, sliceText, value]);
@@ -119,7 +150,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         isHovered={isHovered}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
-        width={width}
+        width={getWidth()}
         data-shoplflow={'input'}
       >
         <StyledInput
@@ -135,22 +166,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           className={'body1_400' + (className ? ` ${className}` : '')}
           {...rest}
         />
-        <RightElementWrapper>
-          {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
-          {isFocused && Boolean(String(text).length > 0) && (
-            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
-              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
-            </IconButton>
-          )}
-          {initialType === 'password' && (
-            <IconButton sizeVar={'S'} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
-              <Icon
-                color={'neutral600'}
-                iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
-              />
-            </IconButton>
-          )}
-        </RightElementWrapper>
+        {!(type === 'number') && (
+          <RightElementWrapper>
+            {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
+            {isFocused && Boolean(String(text).length > 0) && (
+              <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
+                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
+              </IconButton>
+            )}
+            {initialType === 'password' && (
+              <IconButton sizeVar={'S'} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
+                <Icon
+                  color={'neutral600'}
+                  iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
+                />
+              </IconButton>
+            )}
+          </RightElementWrapper>
+        )}
       </InputWrapper>
     );
   },
