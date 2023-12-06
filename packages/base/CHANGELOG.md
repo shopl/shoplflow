@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.19.0
+
+### Minor Changes
+
+- [#159](https://github.com/shopl/shoplflow/pull/159) [`1c0b537`](https://github.com/shopl/shoplflow/commit/1c0b537162a923cc2e1637a8872f3aa4d7abd061) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input number 타입 추가
+
 ## 0.18.0
 
 ### Minor Changes
