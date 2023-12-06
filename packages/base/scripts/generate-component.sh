@@ -90,6 +90,6 @@ $prefix 컴포넌트 설명을 적어주세요.
 echo "export { default as ${prefix} } from './${prefix}';
 export * from './${prefix}';
 export * from './${prefix}.types';
-export * from './${prefix}.styled';" >> index.ts
+" >> index.ts
 
 echo "${prefix} 컴포넌트가 ${path}/${prefix} 경로에 생성되었어요."

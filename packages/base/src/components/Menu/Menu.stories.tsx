@@ -7,6 +7,7 @@ import Menu from './Menu';
 import type { MenuProps } from './Menu.types';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
+import { Checkbox } from '../ControlButtons';
 
 export default {
   title: 'COMPONENTS/Menu',
@@ -46,7 +47,6 @@ export const WithControls: StoryFn<MenuProps> = (args) => {
   });
   const { selectedItem, handleToggleSelect } = useSelect('MULTI', newArray, {
     key: 'name',
-    max: 5,
   });
   return (
     <Stack width={'500px'}>
@@ -75,6 +75,47 @@ export const WithControls: StoryFn<MenuProps> = (args) => {
   );
 };
 
-Playground.args = {
+WithControls.args = {
+  disabled: false,
+};
+export const WithCheckbox: StoryFn<MenuProps> = (args) => {
+  const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
+    return {
+      name: '메뉴' + index,
+    };
+  });
+  const { selectedItem, handleToggleSelect } = useSelect('MULTI', newArray, {
+    key: 'name',
+  });
+  return (
+    <Stack width={'500px'}>
+      <ComponentStage>
+        <Stack as={'ul'} width={'100%'}>
+          {newArray.map((item, index) => {
+            const isSelected = selectedItem.some((selectedItem) => selectedItem.name === item.name);
+            return (
+              <Menu
+                {...args}
+                isSelected={isSelected}
+                key={index}
+                onClick={() => handleToggleSelect(item.name)}
+                leftSource={<Checkbox />}
+              >
+                {item.name}
+              </Menu>
+            );
+          })}
+        </Stack>
+      </ComponentStage>
+      <Stack.Horizontal>
+        {selectedItem.map((item, index) => {
+          return <Text key={index}>{item.name}</Text>;
+        })}
+      </Stack.Horizontal>
+    </Stack>
+  );
+};
+
+WithCheckbox.args = {
   disabled: false,
 };

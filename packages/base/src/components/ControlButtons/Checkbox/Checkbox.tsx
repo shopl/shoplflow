@@ -1,11 +1,30 @@
 import type { MouseEvent } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, StyledCheckbox } from './Checkbox.styled';
 import type { CheckboxProps } from './Checkbox.types';
 import { useOnToggle } from '../../../hooks/useOnToggle';
 
-const Checkbox = ({ defaultSelected, isSelected, disabled, onClick, styleVar = 'PRIMARY', ...rest }: CheckboxProps) => {
+const Checkbox = ({
+  defaultSelected,
+  isSelected,
+  disabled,
+  onClick,
+  onMouseEnter,
+  onMouseLeave,
+  styleVar = 'PRIMARY',
+  ...rest
+}: CheckboxProps) => {
   const [selected, toggleSelected] = useOnToggle(isSelected, defaultSelected);
+
+  const [isHovered, toggleHovered] = useState(false);
+  const handleMouseLeave = (e: MouseEvent<HTMLButtonElement>) => {
+    toggleHovered(false);
+    onMouseLeave && onMouseLeave(e);
+  };
+  const handleMouseEnter = (e: MouseEvent<HTMLButtonElement>) => {
+    toggleHovered(true);
+    onMouseEnter && onMouseEnter(e);
+  };
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (disabled) {
@@ -16,8 +35,15 @@ const Checkbox = ({ defaultSelected, isSelected, disabled, onClick, styleVar = '
   };
 
   return (
-    <Container onClick={handleClick} disabled={disabled} {...rest} data-shoplflow={'Checkbox'}>
-      <StyledCheckbox styleVar={styleVar} isSelected={selected} disabled={disabled}>
+    <Container
+      onClick={handleClick}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
+      disabled={disabled}
+      {...rest}
+      data-shoplflow={'Checkbox'}
+    >
+      <StyledCheckbox styleVar={styleVar} isHovered={isHovered} isSelected={selected} disabled={disabled}>
         <svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'>
           <path
             fillRule='evenodd'

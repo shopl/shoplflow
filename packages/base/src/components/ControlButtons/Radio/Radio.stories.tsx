@@ -17,3 +17,8 @@ export const Playground: StoryFn<RadioProps> = (args) => {
     </Stack>
   );
 };
+
+Playground.args = {
+  isSelected: false,
+  defaultSelected: false,
+};

@@ -7,6 +7,7 @@ import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 const getStylesByStyleVariant = (
   styleVariant?: CheckboxOptionProps['styleVar'],
   isSelected?: CheckboxOptionProps['isSelected'],
+  isHovered?: boolean,
 ) => {
   switch (styleVariant) {
     case 'PRIMARY':
@@ -17,18 +18,21 @@ const getStylesByStyleVariant = (
           & > svg > path {
             fill: ${colorTokens.neutral0};
           }
-          &:hover {
+          ${isHovered &&
+          css`
             background: ${colorTokens.primary400};
-          }
+          `}
         `;
       }
       return css`
         background: ${colorTokens.neutral200};
         border: 1.5px solid ${colorTokens.neutral200};
         border-radius: 4px;
-        &:hover {
+        ${isHovered &&
+        css`
           background: ${colorTokens.neutral300};
-        }
+        `}
+
         & > svg > path {
           fill: ${colorTokens.neutral0};
         }
@@ -42,12 +46,13 @@ const getStylesByStyleVariant = (
           & > svg > path {
             fill: ${colorTokens.primary300};
           }
-          &:hover {
+          ${isHovered &&
+          css`
             border: 1.5px solid ${colorTokens.primary400};
             & > svg > path {
               fill: ${colorTokens.primary400};
             }
-          }
+          `}
         `;
       }
       return css`
@@ -57,19 +62,24 @@ const getStylesByStyleVariant = (
         & > svg > path {
           fill: ${colorTokens.neutral200};
         }
-        &:hover {
+        ${isHovered &&
+        css`
           border: 1.5px solid ${colorTokens.neutral300};
           & > svg > path {
             fill: ${colorTokens.neutral300};
           }
-        }
+        `}
       `;
     default:
       return '';
   }
 };
 
-export const StyledCheckbox = styled.button<CheckboxOptionProps>`
+export const StyledCheckbox = styled.button<
+  CheckboxOptionProps & {
+    isHovered: boolean;
+  }
+>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,11 +91,14 @@ export const StyledCheckbox = styled.button<CheckboxOptionProps>`
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
-  ${({ styleVar, isSelected }) => getStylesByStyleVariant(styleVar, isSelected)};
-  ${({ disabled }) => disabled && getDisabledStyle(disabled)};
+  ${({ styleVar, isSelected, isHovered }) => getStylesByStyleVariant(styleVar, isSelected, isHovered)};
+  ${({ disabled }) => getDisabledStyle(disabled)}
 `;
 
 export const Container = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 4px;
   width: fit-content;
   height: fit-content;

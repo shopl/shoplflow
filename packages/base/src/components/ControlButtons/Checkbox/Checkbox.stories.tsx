@@ -23,4 +23,5 @@ export const Playground: StoryFn<CheckboxProps> = (args) => {
 
 Playground.args = {
   defaultSelected: false,
+  styleVar: 'PRIMARY',
 };
