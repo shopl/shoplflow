@@ -10,6 +10,17 @@ export const StyledInput = styled.input`
   &::placeholder {
     color: ${colorTokens.neutral350};
   }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Firefox */
+  &[type='number'] {
+    padding: 4px 8px;
+    text-align: center;
+    -moz-appearance: textfield;
+  }
 `;
 
 export const RightElementWrapper = styled.div`
