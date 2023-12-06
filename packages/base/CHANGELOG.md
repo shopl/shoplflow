@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.18.0
+
+### Minor Changes
+
+- [#157](https://github.com/shopl/shoplflow/pull/157) [`c524b74`](https://github.com/shopl/shoplflow/commit/c524b7490cb02d684078cea5be9f2a8ec31a6276) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Radio 추가
+
+- [#157](https://github.com/shopl/shoplflow/pull/157) [`c524b74`](https://github.com/shopl/shoplflow/commit/c524b7490cb02d684078cea5be9f2a8ec31a6276) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Checkbox 컴포넌트 추가
+
 ## 0.17.0
 
 ### Minor Changes
