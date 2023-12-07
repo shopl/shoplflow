@@ -26,7 +26,7 @@ const List = ({ children, leftSource, rightSource, ...rest }: ListProps) => {
   );
 };
 
-const Text2Rows = ({ title, subTitle }: ListText2RowsProps) => {
+export const Text2Rows = ({ title, subTitle }: ListText2RowsProps) => {
   return (
     <StyledText2Rows>
       <Text typography={'body1_500'} color={'neutral700'}>
