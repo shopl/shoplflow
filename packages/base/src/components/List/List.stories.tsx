@@ -6,6 +6,7 @@ import List from './List';
 import type { ListProps } from './List.types';
 import { ComponentStage } from '../../styles/Box';
 import { Text } from '../Text';
+import { Checkbox, Radio } from '../ControlButtons';
 
 export default {
   title: 'COMPONENTS/List',
@@ -42,5 +43,25 @@ export const With2Rows: StoryFn<ListProps> = (args) => {
   );
 };
 With2Rows.args = {
+  disabled: false,
+};
+
+export const WithAllSource: StoryFn<ListProps> = (args) => {
+  return (
+    <Stack width={'500px'}>
+      <ComponentStage>
+        <List {...args} leftSource={<Checkbox />} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
+          <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
+          <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />
+        </List>
+        <List {...args} leftSource={<Radio />} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
+          <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
+          <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />
+        </List>
+      </ComponentStage>
+    </Stack>
+  );
+};
+WithAllSource.args = {
   disabled: false,
 };

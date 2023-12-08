@@ -12,17 +12,35 @@ import { colorTokens } from '../styles';
  */
 export const getNextColor = (color: ColorTokens, step = 1): ColorTokens => {
   const colorName = color.replace(/[0-9]|_/g, '');
-  const colorNumberString = color.replace(/[a-z]|_/g, '');
-  const decimalColorNumber = Number(colorNumberString) * 0.01;
 
-  const nextColorNumber = Math.floor(decimalColorNumber) + 100 * step;
-  const nextColorToken = `${colorName}${nextColorNumber}`;
-  const colorKeysOfColorName = Object.keys(colorTokens)
-    .filter((colorToken) => colorToken.includes(colorName))
-    .sort((a, b) => Number(a.replace(/[a-z]|_/g, '')) - Number(b.replace(/[a-z]|_/g, '')));
-  const colorTokenKeys = Object.keys(colorTokens);
-  const findColorToken = colorTokenKeys.find((colorToken) => colorToken === nextColorToken) as ColorTokens | undefined;
-  const lastColorToken = colorKeysOfColorName[colorKeysOfColorName.length - 1] as ColorTokens;
+  const colorTokenKeys = Object.keys(colorTokens) as ColorTokens[];
+  const findColorToken = colorTokenKeys.filter((colorToken) => colorToken.includes(colorName));
 
-  return findColorToken ? findColorToken : lastColorToken;
+  const extractNumbers = (str: ColorTokens) => {
+    const formattedStr = str.replace(/_/g, '.');
+    const regex = /\d+(\.\d+)?/g;
+    const match = formattedStr.match(regex);
+    return match ? parseFloat(match[0]) : 0;
+  };
+  // neutral700_5 와 같은 색상은 반환하지 않습니다.
+  const sortColorToken = findColorToken.sort((a, b) => extractNumbers(a) - extractNumbers(b));
+  // 현재 토큰의 인덱스 찾기
+  const currentIndex = sortColorToken.indexOf(color);
+
+  // 새 인덱스 계산
+  let newIndex = currentIndex + step;
+
+  let potentialToken = sortColorToken[newIndex];
+
+  while (potentialToken.endsWith('_5') || potentialToken.includes('50')) {
+    newIndex += Math.sign(step); // step의 방향으로 이동
+    if (newIndex < 0) {
+      potentialToken = sortColorToken[0];
+    }
+    if (newIndex >= sortColorToken.length) {
+      potentialToken = sortColorToken[sortColorToken.length - 1];
+    }
+    potentialToken = sortColorToken[newIndex];
+  }
+  return potentialToken;
 };
