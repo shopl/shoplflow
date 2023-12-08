@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.20.1
+
+### Patch Changes
+
+- [#164](https://github.com/shopl/shoplflow/pull/164) [`0eec1f6`](https://github.com/shopl/shoplflow/commit/0eec1f6c6d64bd9ebbcbe892ee049e223ea0ad0d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useOnToggle select 조건 수정
+
 ## 0.20.0
 
 ### Minor Changes
