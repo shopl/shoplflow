@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.20.0
+
+### Minor Changes
+
+- [#162](https://github.com/shopl/shoplflow/pull/162) [`39be0d5`](https://github.com/shopl/shoplflow/commit/39be0d53f3e8d1b498d5cddc3e7f9e778c5ab96b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Tag 컴포넌트 추가
+
 ## 0.19.0
 
 ### Minor Changes
