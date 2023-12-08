@@ -6,7 +6,9 @@ import * as TagStories from './Tag.stories';
 
 # Tag
 
-Tag 컴포넌트 설명을 적어주세요.
+Tag는 특정 정보를 보여줄 때 사용하는 데이터 표시 컴포넌트입니다.
+
+color를 사용하면 styleVar에 따라 스타일이 변경됩니다. 각 스타일은 가장 진한 색상을 기준으로 변경됩니다.
 
 <Canvas of={TagStories.Playground} />
 
@@ -17,4 +19,13 @@ Tag 컴포넌트 설명을 적어주세요.
 
 ## Usage
 
+```tsx
+const App = () => {
 
+  return (
+    <Tag color={'red300'} sizeVar={'M'}>
+      태그에요
+    </Tag>
+  );
+};
+```
