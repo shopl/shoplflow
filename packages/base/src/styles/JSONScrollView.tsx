@@ -8,7 +8,7 @@ interface JSONViewerProps {
   items: Array<Record<string, any>>;
 }
 
-export const JSONViewer = ({ items }: JSONViewerProps) => {
+export const JSONScrollView = ({ items }: JSONViewerProps) => {
   return (
     <ScrollArea>
       <Stack.Vertical as={'ul'}>

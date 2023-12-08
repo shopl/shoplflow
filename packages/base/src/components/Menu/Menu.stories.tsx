@@ -8,7 +8,7 @@ import type { MenuProps } from './Menu.types';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
 import { Checkbox } from '../ControlButtons';
-import { JSONViewer } from '../../styles/JSONViewer';
+import { JSONScrollView } from '../../styles/JSONScrollView';
 
 export default {
   title: 'COMPONENTS/Menu',
@@ -44,7 +44,7 @@ export const Playground: StoryFn<MenuProps> = (args) => {
           <Stack height={'24px'}>
             <Text typography={'body1_700'}>선택된 데이터</Text>
           </Stack>
-          <JSONViewer items={selectedItem} />
+          <JSONScrollView items={selectedItem} />
         </ComponentStage>
       </Stack.Vertical>
     </Stack.Horizontal>

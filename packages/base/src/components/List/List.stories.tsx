@@ -8,7 +8,7 @@ import { ComponentStage } from '../../styles/Box';
 import { Text } from '../Text';
 import { Checkbox, Radio } from '../ControlButtons';
 import { useSelect } from '@shoplflow/utils';
-import { JSONViewer } from '../../styles/JSONViewer';
+import { JSONScrollView } from '../../styles/JSONScrollView';
 
 export default {
   title: 'COMPONENTS/List',
@@ -58,7 +58,7 @@ export const Playground: StoryFn<ListProps> = (args) => {
           <Stack height={'24px'}>
             <Text typography={'body1_700'}>선택된 데이터</Text>
           </Stack>
-          <JSONViewer items={selectedItem} />
+          <JSONScrollView items={selectedItem} />
         </ComponentStage>
       </Stack.Vertical>
     </Stack.Horizontal>

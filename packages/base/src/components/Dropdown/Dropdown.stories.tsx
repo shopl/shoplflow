@@ -7,7 +7,7 @@ import { useSelect } from '@shoplflow/utils';
 import { Menu } from '../Menu';
 import { Text } from '../Text';
 import React from 'react';
-import { JSONViewer } from '../../styles/JSONViewer';
+import { JSONScrollView } from '../../styles/JSONScrollView';
 
 export default {
   title: 'COMPONENTS/Dropdown',
@@ -55,7 +55,7 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
           <Stack height={'24px'}>
             <Text typography={'body1_700'}>선택된 데이터</Text>
           </Stack>
-          <JSONViewer items={selectedItem} />
+          <JSONScrollView items={selectedItem} />
         </ComponentStage>
       </Stack.Vertical>
     </Stack.Horizontal>
