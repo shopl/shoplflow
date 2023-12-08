@@ -1,5 +1,6 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
 import List from './List';
+import { Text2Rows } from './List';
 import * as ListStories from './List.stories';
 import AnatomyList from '../../assets/anatomy/list.png';
 
@@ -29,9 +30,26 @@ import AnatomyList from '../../assets/anatomy/list.png';
 
 ## ArgsTable
 
+### List
+
 <ArgsTable of={List} />
+
+### List.Text2Rows
+
+<ArgsTable of={Text2Rows} />
 
 ## Usage
 
-<Canvas of={ListStories.WithButton} />
+```tsx
+import React from 'react';
+
+const App = () => {
+  return (
+    <List {...args} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
+      <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
+      <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />
+    </List>
+  )
+}
+```
 
