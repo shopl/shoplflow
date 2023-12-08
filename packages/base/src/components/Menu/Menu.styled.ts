@@ -19,7 +19,7 @@ export const StyledMenu = styled.li<MenuOptionProps>`
   }
   ${({ disabled }) => disabled && getDisabledStyle(disabled)}
   ${({ isSelected, leftSource }) =>
-    isSelected &&
+    isSelected === true &&
     !leftSource &&
     css`
       background: ${colorTokens.neutral200};

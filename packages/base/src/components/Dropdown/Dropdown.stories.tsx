@@ -3,8 +3,11 @@ import type { DropdownProps } from './Dropdown.types';
 import type { StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
-import { Text } from '../Text';
 import { useSelect } from '@shoplflow/utils';
+import { Menu } from '../Menu';
+import { Text } from '../Text';
+import React from 'react';
+import { JSONViewer } from '../../styles/JSONViewer';
 
 export default {
   title: 'COMPONENTS/Dropdown',
@@ -24,27 +27,38 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
     max: 3,
   });
   return (
-    <Stack width={'500px'}>
-      <ComponentStage>
+    <Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>
+      <ComponentStage justify={'start'}>
         <Dropdown
           {...args}
-          option={'CLICK'}
+          option={'OUTSIDE_CLICK'}
           width={'100%'}
           trigger={
             <Dropdown.Button placeholder={'값이 없어요'} value={selectedItem.map((data) => data.value).join(',')} />
           }
           popper={
             <Dropdown.Content type={'FILL'}>
-              {data.map((item) => (
-                <Text key={item.value} onClick={() => handleToggleSelect(item.value)} style={{ cursor: 'pointer' }}>
-                  {item.label}
-                </Text>
-              ))}
+              {data.map((item) => {
+                const isSelected = selectedItem.some((selected) => selected.value === item.value);
+                return (
+                  <Menu key={item.value} isSelected={isSelected} onClick={() => handleToggleSelect(item.value)}>
+                    {item.label}
+                  </Menu>
+                );
+              })}
             </Dropdown.Content>
           }
         />
       </ComponentStage>
-    </Stack>
+      <Stack.Vertical width={'400px'} height={'100%'} justify={'start'} align={'start'} spacing={'spacing12'}>
+        <ComponentStage align={'start'} justify={'start'}>
+          <Stack height={'24px'}>
+            <Text typography={'body1_700'}>선택된 데이터</Text>
+          </Stack>
+          <JSONViewer items={selectedItem} />
+        </ComponentStage>
+      </Stack.Vertical>
+    </Stack.Horizontal>
   );
 };
 
