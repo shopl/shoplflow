@@ -5,10 +5,16 @@ import type {
   RightNodeProps,
   SelectedProps,
 } from '../../utils/type/ComponentProps';
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 export interface ListProps extends ListOptionProps {}
-export interface ListOptionProps extends ChildrenProps, DisableProps, SelectedProps, LeftNodeProps, RightNodeProps {}
+export interface ListOptionProps
+  extends ChildrenProps,
+    DisableProps,
+    SelectedProps,
+    LeftNodeProps,
+    RightNodeProps,
+    HTMLAttributes<HTMLLIElement> {}
 
 export interface ListContent2ColumnsProps extends ChildrenProps {}
 

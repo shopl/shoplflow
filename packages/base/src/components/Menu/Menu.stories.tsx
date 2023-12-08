@@ -8,6 +8,7 @@ import type { MenuProps } from './Menu.types';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
 import { Checkbox } from '../ControlButtons';
+import { JSONScrollView } from '../../styles/JSONScrollView';
 
 export default {
   title: 'COMPONENTS/Menu',
@@ -15,23 +16,38 @@ export default {
 };
 
 export const Playground: StoryFn<MenuProps> = (args) => {
-  const newArray = new Array(10).fill({
-    name: '메뉴',
-  }) as Array<{ name: string }>;
+  const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
+    return {
+      name: '메뉴' + index,
+      other: '다른 데이터' + index,
+    };
+  });
+  const { selectedItem, handleToggleSelect } = useSelect('MULTI', newArray, {
+    key: 'name',
+  });
   return (
-    <Stack width={'500px'}>
+    <Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>
       <ComponentStage>
         <Stack as={'ul'} width={'100%'}>
           {newArray.map((item, index) => {
             return (
-              <Menu {...args} key={index}>
-                {item.name + index}
+              <Menu {...args} onClick={() => handleToggleSelect(item.name)} key={index}>
+                {item.name}
               </Menu>
             );
           })}
         </Stack>
       </ComponentStage>
-    </Stack>
+
+      <Stack.Vertical width={'400px'} height={'100%'} justify={'start'} align={'start'} spacing={'spacing12'}>
+        <ComponentStage align={'start'} justify={'start'}>
+          <Stack height={'24px'}>
+            <Text typography={'body1_700'}>선택된 데이터</Text>
+          </Stack>
+          <JSONScrollView items={selectedItem} />
+        </ComponentStage>
+      </Stack.Vertical>
+    </Stack.Horizontal>
   );
 };
 

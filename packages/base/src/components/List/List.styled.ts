@@ -3,7 +3,7 @@ import type { ListOptionProps } from './List.types';
 import { colorTokens } from '../../styles';
 import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
 
-export const StyledList = styled.div<ListOptionProps>`
+export const StyledList = styled.li<ListOptionProps>`
   display: flex;
   flex-direction: row;
   width: 100%;
