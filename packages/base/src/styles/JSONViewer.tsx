@@ -12,11 +12,12 @@ export const JSONViewer = ({ items }: JSONViewerProps) => {
   return (
     <ScrollArea>
       <Stack.Vertical as={'ul'}>
-        <AnimatePresence>
-          {items.map((item, index) => {
+        <AnimatePresence mode={'popLayout'}>
+          {items.map((item) => {
             return (
               <Code
-                key={index}
+                layout
+                key={JSON.stringify(item)}
                 initial={{
                   opacity: 0,
                   x: -10,
