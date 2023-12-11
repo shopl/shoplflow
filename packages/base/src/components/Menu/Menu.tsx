@@ -12,6 +12,7 @@ const Menu = ({
   isSelected,
   defaultSelected = false,
   onClick,
+  sizeVar = 'M',
   disabled = false,
   ...rest
 }: MenuProps) => {
@@ -30,7 +31,14 @@ const Menu = ({
   };
 
   return (
-    <StyledMenu isSelected={selected} leftSource={leftSource} onClick={handleOnClick} {...rest} data-shoplflow={'Menu'}>
+    <StyledMenu
+      sizeVar={sizeVar}
+      isSelected={selected}
+      leftSource={leftSource}
+      onClick={handleOnClick}
+      {...rest}
+      data-shoplflow={'Menu'}
+    >
       {leftSource && LeftSourceClone}
       <Stack.Horizontal width={'100%'} align={'center'} className={'body1_400'}>
         {children}
