@@ -56,7 +56,7 @@ export const Playground: StoryFn<MenuProps> = (args) => {
 
 Playground.args = {
   disabled: false,
-  sizeVar: 'M',
+  sizeVar: 'XS',
 };
 
 export const WithControls: StoryFn<MenuProps> = (args) => {
@@ -94,7 +94,7 @@ export const WithControls: StoryFn<MenuProps> = (args) => {
 
 WithControls.args = {
   disabled: false,
-  sizeVar: 'M',
+  sizeVar: 'XS',
 };
 export const WithCheckbox: StoryFn<MenuProps> = (args) => {
   const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
@@ -131,5 +131,5 @@ export const WithCheckbox: StoryFn<MenuProps> = (args) => {
 
 WithCheckbox.args = {
   disabled: false,
-  sizeVar: 'M',
+  sizeVar: 'XS',
 };

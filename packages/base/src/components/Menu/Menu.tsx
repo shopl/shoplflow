@@ -12,7 +12,7 @@ const Menu = ({
   isSelected,
   defaultSelected = false,
   onClick,
-  sizeVar = 'M',
+  sizeVar = 'XS',
   disabled = false,
   ...rest
 }: MenuProps) => {
