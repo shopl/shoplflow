@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.21.0
+
+### Minor Changes
+
+- [#166](https://github.com/shopl/shoplflow/pull/166) [`1829836`](https://github.com/shopl/shoplflow/commit/182983678891c66028fd7c4fd31aeae99695e1ae) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Menu sizeVar 추가
+
 ## 0.20.1
 
 ### Patch Changes
