@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import React from 'react';
-import { StyledMenu } from './Menu.styled';
+import { getFontStylesBySizeVar, StyledMenu } from './Menu.styled';
 import type { MenuProps } from './Menu.types';
 import { Stack } from '../Stack';
 import { useOnToggle } from '../../hooks/useOnToggle';
@@ -12,6 +12,7 @@ const Menu = ({
   isSelected,
   defaultSelected = false,
   onClick,
+  sizeVar = 'XS',
   disabled = false,
   ...rest
 }: MenuProps) => {
@@ -30,9 +31,16 @@ const Menu = ({
   };
 
   return (
-    <StyledMenu isSelected={selected} leftSource={leftSource} onClick={handleOnClick} {...rest} data-shoplflow={'Menu'}>
+    <StyledMenu
+      sizeVar={sizeVar}
+      isSelected={selected}
+      leftSource={leftSource}
+      onClick={handleOnClick}
+      {...rest}
+      data-shoplflow={'Menu'}
+    >
       {leftSource && LeftSourceClone}
-      <Stack.Horizontal width={'100%'} align={'center'} className={'body1_400'}>
+      <Stack.Horizontal width={'100%'} height={'100%'} align={'center'} className={getFontStylesBySizeVar(sizeVar)}>
         {children}
       </Stack.Horizontal>
       {rightSource && rightSource}

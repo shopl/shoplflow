@@ -9,6 +9,7 @@ import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
 import { Checkbox } from '../ControlButtons';
 import { JSONScrollView } from '../../styles/JSONScrollView';
+import { ScrollArea } from '../ScrollArea';
 
 export default {
   title: 'COMPONENTS/Menu',
@@ -18,7 +19,7 @@ export default {
 export const Playground: StoryFn<MenuProps> = (args) => {
   const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
     return {
-      name: '메뉴' + index,
+      name: '메뉴메뉴' + index,
       other: '다른 데이터' + index,
     };
   });
@@ -28,15 +29,17 @@ export const Playground: StoryFn<MenuProps> = (args) => {
   return (
     <Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>
       <ComponentStage>
-        <Stack as={'ul'} width={'100%'}>
-          {newArray.map((item, index) => {
-            return (
-              <Menu {...args} onClick={() => handleToggleSelect(item.name)} key={index}>
-                {item.name}
-              </Menu>
-            );
-          })}
-        </Stack>
+        <ScrollArea>
+          <Stack as={'ul'} width={'100%'}>
+            {newArray.map((item, index) => {
+              return (
+                <Menu {...args} onClick={() => handleToggleSelect(item.name)} key={index}>
+                  {item.name}
+                </Menu>
+              );
+            })}
+          </Stack>
+        </ScrollArea>
       </ComponentStage>
 
       <Stack.Vertical width={'400px'} height={'100%'} justify={'start'} align={'start'} spacing={'spacing12'}>
@@ -53,6 +56,7 @@ export const Playground: StoryFn<MenuProps> = (args) => {
 
 Playground.args = {
   disabled: false,
+  sizeVar: 'XS',
 };
 
 export const WithControls: StoryFn<MenuProps> = (args) => {
@@ -69,9 +73,11 @@ export const WithControls: StoryFn<MenuProps> = (args) => {
       <ComponentStage>
         <Stack as={'ul'} width={'100%'}>
           {newArray.map((item, index) => {
+            const isSelected = selectedItem.some((selectedItem) => selectedItem.name === item.name);
             return (
               <Menu
                 {...args}
+                isSelected={isSelected}
                 key={index}
                 onClick={() => handleToggleSelect(item.name)}
                 leftSource={<Stack width={'24px'} height={'24px'} background={'red200'} />}
@@ -82,17 +88,13 @@ export const WithControls: StoryFn<MenuProps> = (args) => {
           })}
         </Stack>
       </ComponentStage>
-      <Stack.Horizontal>
-        {selectedItem.map((item, index) => {
-          return <Text key={index}>{item.name}</Text>;
-        })}
-      </Stack.Horizontal>
     </Stack>
   );
 };
 
 WithControls.args = {
   disabled: false,
+  sizeVar: 'XS',
 };
 export const WithCheckbox: StoryFn<MenuProps> = (args) => {
   const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
@@ -123,15 +125,11 @@ export const WithCheckbox: StoryFn<MenuProps> = (args) => {
           })}
         </Stack>
       </ComponentStage>
-      <Stack.Horizontal>
-        {selectedItem.map((item, index) => {
-          return <Text key={index}>{item.name}</Text>;
-        })}
-      </Stack.Horizontal>
     </Stack>
   );
 };
 
 WithCheckbox.args = {
   disabled: false,
+  sizeVar: 'XS',
 };
