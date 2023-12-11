@@ -8,11 +8,11 @@ const getStylesBySizeVar = (sizeVar: MenuOptionProps['sizeVar']) => {
   switch (sizeVar) {
     case 'XS':
       return css`
-        height: 28px;
+        min-height: 28px;
       `;
     case 'S':
       return css`
-        height: 36px;
+        min-height: 36px;
       `;
     case 'M':
       return css`
@@ -22,6 +22,19 @@ const getStylesBySizeVar = (sizeVar: MenuOptionProps['sizeVar']) => {
       return css`
         height: 48px;
       `;
+  }
+};
+
+export const getFontStylesBySizeVar = (sizeVar: MenuOptionProps['sizeVar']) => {
+  switch (sizeVar) {
+    case 'XS':
+      return 'body2_400';
+    case 'S':
+      return 'body1_400';
+    case 'M':
+      return 'body1_400';
+    default:
+      return 'body1_400';
   }
 };
 
