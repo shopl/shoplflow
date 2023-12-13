@@ -16,5 +16,8 @@ export interface AvatarProps extends AvatarOptionProps {}
 export interface AvatarOptionProps
   extends SizeVariantProps<AvatarSizeVariantType>,
     ImgHTMLAttributes<HTMLImageElement> {
+  /**
+   * 아바타 우측 하단에 배지를 표시합니다.
+   */
   badge?: ReactNode;
 }
