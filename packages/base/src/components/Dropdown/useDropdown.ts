@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
-import type { DropdownOptionVar } from './Dropdown.types';
+import type { DropdownOptionVariantType } from './Dropdown.types';
 
 export type DropdownContextType = {
   isOpen: boolean;
-  option: DropdownOptionVar;
+  option: DropdownOptionVariantType;
   setIsOpen: (isOpen: boolean) => void;
   width: number;
   height: number;

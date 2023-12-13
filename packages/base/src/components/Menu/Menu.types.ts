@@ -16,7 +16,7 @@ export const MenuSizeVariants = {
   M: 'M',
 } as const;
 
-export type MenuSizeVariantKey = $Values<typeof MenuSizeVariants>;
+export type MenuSizeVariantType = $Values<typeof MenuSizeVariants>;
 
 export interface MenuProps extends MenuOptionProps, HTMLAttributes<HTMLLIElement> {}
 export interface MenuOptionProps
@@ -26,4 +26,4 @@ export interface MenuOptionProps
     LeftElementProps,
     SelectedProps,
     DefaultSelectedProps,
-    SizeVariantProps<MenuSizeVariantKey> {}
+    SizeVariantProps<MenuSizeVariantType> {}

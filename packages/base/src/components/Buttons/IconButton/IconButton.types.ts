@@ -9,29 +9,29 @@ import type {
   ChildrenProps,
 } from '../../../utils/type/ComponentProps';
 
-export const iconButtonSizeVar = {
+export const IconButtonSizeVariants = {
   S: 'S',
   M: 'M',
 } as const;
 
-export type IconButtonSizeVar = $Values<typeof iconButtonSizeVar>;
+export type IconButtonSizeVariantType = $Values<typeof IconButtonSizeVariants>;
 
-export const iconButtonStyleVar = {
+export const IconButtonStyleVariants = {
   PRIMARY: 'PRIMARY',
   SECONDARY: 'SECONDARY',
   SOLID: 'SOLID',
   GHOST: 'GHOST',
 } as const;
 
-export type IconButtonStyleVar = $Values<typeof iconButtonStyleVar>;
+export type IconButtonStyleVariantType = $Values<typeof IconButtonStyleVariants>;
 
 export type IconButtonOptionProps<T extends ElementType = 'button'> = Omit<
   ComponentPropsWithoutRef<T>,
   'color' | 'disabled'
 > &
   DisableProps &
-  SizeVariantProps<IconButtonSizeVar> &
-  StyleVariantProps<IconButtonStyleVar> &
+  SizeVariantProps<IconButtonSizeVariantType> &
+  StyleVariantProps<IconButtonStyleVariantType> &
   ChildrenProps &
   ColorTokenProps;
 
