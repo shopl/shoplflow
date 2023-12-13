@@ -14,6 +14,7 @@ const ChipToggle = ({
   isSelected,
   defaultSelected,
   color = 'neutral600',
+  radius,
   styleVar = ChipToggleStyleVariants.SOLID,
   sizeVar,
   leftSource,
@@ -33,6 +34,7 @@ const ChipToggle = ({
     <StyledChip
       {...rest}
       color={color}
+      $radius={radius}
       isSelected={isToggled}
       styleVar={styleVar}
       sizeVar={sizeVar}

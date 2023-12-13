@@ -16,7 +16,13 @@ export const getLineTypographyBySizeVar = (sizeVar: ChipToggleProps['sizeVar']):
   }
 };
 
-const solidStyle = ({ isSelected, color, radius }: ChipToggleProps) => css`
+const solidStyle = ({
+  isSelected,
+  color,
+  $radius,
+}: ChipToggleProps & {
+  $radius?: boolean;
+}) => css`
   padding: 7px 12px;
   gap: 4px;
   background: ${colorTokens.neutral150};
@@ -28,7 +34,7 @@ const solidStyle = ({ isSelected, color, radius }: ChipToggleProps) => css`
     background: ${colorTokens.neutral200};
   }
 
-  ${radius &&
+  ${$radius &&
   css`
     border-radius: ${borderRadiusTokens.borderRadius16};
   `};
@@ -44,7 +50,11 @@ const solidStyle = ({ isSelected, color, radius }: ChipToggleProps) => css`
   `};
 `;
 
-export const StyledChip = styled.button<ChipToggleProps>`
+export const StyledChip = styled.button<
+  ChipToggleProps & {
+    $radius?: boolean;
+  }
+>`
   display: flex;
   align-items: center;
   justify-content: center;
