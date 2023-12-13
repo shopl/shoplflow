@@ -32,6 +32,6 @@ export const WidthBadge: StoryFn<AvatarProps> = (args) => {
   );
 };
 
-Playground.args = {
+WidthBadge.args = {
   sizeVar: 'M',
 };
