@@ -31,5 +31,5 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-type-arguments": "off",
     "@typescript-eslint/no-explicit-any": "off"// 타입을 오픈하는 용도로 any를 사용하고 있어서
   },
-  ignorePatterns: ['.eslintrc.**'],
+  ignorePatterns: ['.eslintrc.**', 'next.config.js', 'docs/next.config.js', 'apps/*/next.config.js'],
 };

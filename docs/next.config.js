@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+
 const withNextra = require('nextra')({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
@@ -6,7 +6,9 @@ const withNextra = require('nextra')({
 
 module.exports = {
   output: '.next',
-
+  images: {
+    unoptimized: true,
+  },
   ...withNextra({
     reactStrictMode: true,
     webpack(config) {
