@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.22.0
+
+### Minor Changes
+
+- [#168](https://github.com/shopl/shoplflow/pull/168) [`ed4f99a`](https://github.com/shopl/shoplflow/commit/ed4f99a18063e21e51b334dd9d4b3e08666cac49) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Avatar 추가
+
+### Patch Changes
+
+- [#168](https://github.com/shopl/shoplflow/pull/168) [`ed4f99a`](https://github.com/shopl/shoplflow/commit/ed4f99a18063e21e51b334dd9d4b3e08666cac49) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - variant 변수 네이밍 통일
+
 ## 0.21.0
 
 ### Minor Changes
