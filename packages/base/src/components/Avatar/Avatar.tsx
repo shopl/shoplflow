@@ -8,7 +8,7 @@ const Avatar = ({ src, badge, ...rest }: AvatarProps) => {
     <StyledAvatarContainer>
       <StyledAvatar data-shoplflow={'Avatar'} {...rest}>
         {/*eslint-disable-next-line @typescript-eslint/no-unsafe-assignment*/}
-        <StyledAvatarImage src={src ?? AvatarImageNone} />
+        <StyledAvatarImage src={(src ?? AvatarImageNone) as string} />
       </StyledAvatar>
       <StyledAvatarBadge>{badge}</StyledAvatarBadge>
     </StyledAvatarContainer>

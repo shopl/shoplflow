@@ -28,7 +28,7 @@ export const Playground: StoryFn<ChipToggleProps> = (args) => {
 Playground.args = {
   text: '샤플플로우',
   defaultSelected: false,
-  radius: false,
+  radius: true,
   disabled: false,
   styleVar: 'SOLID',
   sizeVar: 'S',
