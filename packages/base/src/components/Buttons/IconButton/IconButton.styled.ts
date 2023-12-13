@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import type { IconButtonOptionProps, IconButtonSizeVar, IconButtonStyleVar } from './IconButton.types';
+import type { IconButtonOptionProps, IconButtonSizeVariantType, IconButtonStyleVariantType } from './IconButton.types';
 import type { ColorTokens } from '../../../styles';
 import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 import { getNextColor } from '../../../utils/getNextColor';
 
-const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
+const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
   switch (sizeVar) {
     case 'M':
       return css`
@@ -32,7 +32,7 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
   }
 };
 
-const getStyleByStyleVar = (styleVar?: IconButtonStyleVar, color?: ColorTokens) => {
+const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: ColorTokens) => {
   switch (styleVar) {
     case 'PRIMARY':
       return css`

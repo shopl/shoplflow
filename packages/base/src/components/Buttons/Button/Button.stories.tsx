@@ -1,7 +1,7 @@
 import type { StoryFn } from '@storybook/react';
 import Button from './Button';
 import type { ButtonProps } from './Button.types';
-import { buttonSizeVar, buttonStyleVar } from './Button.types';
+import { ButtonStyleVariants } from './Button.types';
 import { ComponentStage } from '../../../styles/Box';
 import { Stack } from '../../Stack';
 import { colorTokens } from '../../../styles';
@@ -11,13 +11,13 @@ export default {
   component: Button,
   argTypes: {
     styleVar: {
-      options: buttonStyleVar,
+      options: ButtonStyleVariants,
       control: { type: 'select' },
       description: '버튼 타입',
       defaultValue: 'primary',
     },
     sizeVar: {
-      options: buttonSizeVar,
+      options: ButtonStyleVariants,
       control: { type: 'radio' },
       description: '버튼 사이즈',
       defaultValue: 'M',

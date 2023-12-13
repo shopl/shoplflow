@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import type { ButtonOptionProps, ButtonSizeVar, ButtonStyleVar } from './Button.types';
+import type { ButtonOptionProps, ButtonSizeVariantType, ButtonStyleVariantType } from './Button.types';
 import type { ColorTokens } from '../../../styles';
 import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 import { getNextColor } from '../../../utils/getNextColor';
 
-const getStyleByStyleVar = (styleVar?: ButtonStyleVar, color?: ColorTokens, disabled?: boolean) => {
+const getStyleByStyleVar = (styleVar?: ButtonStyleVariantType, color?: ColorTokens, disabled?: boolean) => {
   switch (styleVar) {
     case 'PRIMARY':
       return css`
@@ -51,7 +51,7 @@ const getStyleByStyleVar = (styleVar?: ButtonStyleVar, color?: ColorTokens, disa
   }
 };
 
-const getStyleBySizeVar = (sizeVar?: ButtonSizeVar) => {
+const getStyleBySizeVar = (sizeVar?: ButtonSizeVariantType) => {
   switch (sizeVar) {
     case 'M':
       return css`
