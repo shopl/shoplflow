@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.22.1
+
+### Patch Changes
+
+- [#170](https://github.com/shopl/shoplflow/pull/170) [`5baf528`](https://github.com/shopl/shoplflow/commit/5baf528315a0d14e9d9fb786da275dd767e61450) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ChipToggle `Received 'true' for a non-boolean attribute.` 경고 해결
+
+- [#170](https://github.com/shopl/shoplflow/pull/170) [`5baf528`](https://github.com/shopl/shoplflow/commit/5baf528315a0d14e9d9fb786da275dd767e61450) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Avatar 문서 수정
+
 ## 0.22.0
 
 ### Minor Changes
