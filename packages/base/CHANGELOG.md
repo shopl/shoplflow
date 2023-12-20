@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.22.2
+
+### Patch Changes
+
+- [#172](https://github.com/shopl/shoplflow/pull/172) [`1856d30`](https://github.com/shopl/shoplflow/commit/1856d30849d0b02b5a4f9e87250ab2b043e7ae79) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton onClear 동작 이후에도 X 버튼 노출 문제 수정
+
 ## 0.22.1
 
 ### Patch Changes
