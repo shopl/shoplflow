@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.5.4
+
+### Patch Changes
+
+- [#176](https://github.com/shopl/shoplflow/pull/176) [`e9ea0d8`](https://github.com/shopl/shoplflow/commit/e9ea0d8b019117f9cd7f414c5a6dd62fd3d4d3a5) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect 에러 케이스 추가
+
 ## 0.5.3
 
 ### Patch Changes
