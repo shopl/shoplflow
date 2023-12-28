@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.22.3
+
+### Patch Changes
+
+- [#174](https://github.com/shopl/shoplflow/pull/174) [`d44c864`](https://github.com/shopl/shoplflow/commit/d44c864604b165ca9715902d2e98078838ae8f94) Thanks [@velo-kim](https://github.com/velo-kim)! - update: InputButton 삭제 버튼 컬러 변경, ModalProvider 바디 스크롤 방지 로직 추가
+
 ## 0.22.2
 
 ### Patch Changes
