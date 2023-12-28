@@ -157,7 +157,7 @@ export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE
   if (!data) {
     throw new Error('data는 필수 값입니다.');
   }
-  if (options?.key && !data[0]?.[options.key]) {
+  if (data.length > 0 && options?.key && !data[0][options.key]) {
     throw new Error('입력받은 key가 data에 존재하지 않습니다. 올바른 key를 입력해주세요.');
   }
   if (options?.max && options.max < 1) {
