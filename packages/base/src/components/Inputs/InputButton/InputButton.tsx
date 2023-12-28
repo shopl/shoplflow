@@ -76,7 +76,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
           <Stack.Horizontal align={'center'}>
             {text && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
-                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
+                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
               </IconButton>
             )}
             {rightSource}
