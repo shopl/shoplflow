@@ -1,5 +1,23 @@
 # @shoplflow/shopl-assets
 
+## 0.4.0
+
+### Minor Changes
+
+- [#178](https://github.com/shopl/shoplflow/pull/178) [`afaef60`](https://github.com/shopl/shoplflow/commit/afaef602ffc6bdec0a5dc2c353923f60047f454a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 아이콘 업데이트
+
+  - ic-close-small.svg
+  - ic-edit-line.svg
+  - ic-edit-solid.svg
+  - ic-mention.svg
+  - ic-paste.svg
+  - ic-photo.svg
+  - ic-reply.svg
+  - ic-subtract.svg
+  - ic-video.svg
+  - ic-close-medium.svg
+  - ic-comment.svg
+
 ## 0.3.3
 
 ### Patch Changes
