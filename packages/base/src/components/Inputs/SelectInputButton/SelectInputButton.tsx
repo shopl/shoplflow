@@ -25,6 +25,8 @@ const SelectInputButton = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleOnClick = (e: MouseEvent<HTMLLabelElement>) => {
+    e.preventDefault();
+
     if (!disabled) {
       onClick && onClick(e);
     }
@@ -71,7 +73,7 @@ const SelectInputButton = ({
               +{value.length - 1}
             </Text>
           )}
-          {value && (
+          {value && value.length > 0 && (
             <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
               <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
             </IconButton>

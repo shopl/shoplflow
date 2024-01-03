@@ -30,6 +30,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
     };
 
     const handleOnClear = (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
       e.stopPropagation();
       if (!disabled) {
         onClear && onClear(e);
