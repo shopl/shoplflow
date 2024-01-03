@@ -25,7 +25,6 @@ export const StyledIcon = styled.svg<IconOptionProps>`
   min-width: ${({ sizeVar }) => sizeVar && getIconSize(sizeVar)};
   height: ${({ sizeVar }) => sizeVar && getIconSize(sizeVar)};
   min-height: ${({ sizeVar }) => sizeVar && getIconSize(sizeVar)};
-
   & > path {
     fill: ${({ color }) => color && colorTokens[color]};
   }
