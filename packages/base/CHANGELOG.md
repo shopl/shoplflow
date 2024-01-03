@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.23.2
+
+### Patch Changes
+
+- [#184](https://github.com/shopl/shoplflow/pull/184) [`3a4c61a`](https://github.com/shopl/shoplflow/commit/3a4c61a50879ab1f68016b15967fe4b1f2a85201) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Stack 컴포넌트 min/max width/height 추가
+
 ## 0.23.1
 
 ### Patch Changes
