@@ -49,10 +49,14 @@ export interface StackOptionProps {
    * width 설정
    */
   width?: CSSProperties['width'];
+  maxWidth?: CSSProperties['maxWidth'];
+  minWidth?: CSSProperties['minWidth'];
   /**
    * height 설정
    */
   height?: CSSProperties['height'];
+  maxHeight?: CSSProperties['maxHeight'];
+  minHeight?: CSSProperties['minHeight'];
   /**
    * flex 설정
    */
