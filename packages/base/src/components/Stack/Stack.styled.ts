@@ -6,7 +6,11 @@ import { borderRadiusTokens, colorTokens, spacingTokens } from '../../styles';
 export const StyledStack = styled.div<StackOptionProps>`
   display: flex;
   width: ${({ width }) => width};
+  max-width: ${({ maxWidth }) => maxWidth};
+  min-width: ${({ minWidth }) => minWidth};
   height: ${({ height }) => height};
+  max-height: ${({ maxHeight }) => maxHeight};
+  min-height: ${({ minHeight }) => minHeight};
   flex-direction: ${({ direction }) => direction};
   align-items: ${({ align }) => align};
   justify-content: ${({ justify }) => justify};
