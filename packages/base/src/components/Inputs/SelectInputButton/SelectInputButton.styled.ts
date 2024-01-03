@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { colorTokens } from '../../../styles';
+import { css } from '@emotion/react';
 
-export const StyledInputButton = styled.div<{
+export const StyledSelectInputButton = styled.div<{
   disabled?: boolean;
 }>`
   display: flex;
@@ -20,15 +20,4 @@ export const StyledInputButton = styled.div<{
       background-color: ${colorTokens.neutral100};
       cursor: not-allowed;
     `}
-`;
-
-export const StyledInputButtonContent = styled.input`
-  display: flex;
-  width: 100%;
-  border: none;
-  box-sizing: border-box;
-  caret-color: transparent;
-  &::placeholder {
-    color: ${colorTokens.neutral350};
-  }
 `;

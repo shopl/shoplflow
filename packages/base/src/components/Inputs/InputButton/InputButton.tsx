@@ -23,13 +23,14 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
       return String(value);
     }, []);
 
-    const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = (e: MouseEvent<HTMLDivElement>) => {
       if (!disabled) {
         onClick && onClick(e);
       }
     };
 
     const handleOnClear = (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
       e.stopPropagation();
       if (!disabled) {
         onClear && onClear(e);
