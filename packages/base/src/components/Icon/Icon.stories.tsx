@@ -28,11 +28,14 @@ const Template = (iconName: IconNameType) => {
   return useStoryAssetFunction(iconName);
 };
 
-export const Playground: StoryFn<IconProps> = (args) => {
+export const Playground: StoryFn<IconProps> = ({ dangerouslySetInnerHTML, ...args }) => {
   const { domain } = useContext(StoryDomainContext);
 
   return (
     <Stack.Horizontal width={'100%'} flexWrap={'wrap'} spacing={'spacing20'}>
+      <IconStage>
+        <Icon dangerouslySetInnerHTML={dangerouslySetInnerHTML} color={args.color} sizeVar={args.sizeVar} />
+      </IconStage>
       {(domain === 'SHOPL' ? assetFilter(ShoplAssets, 'Icon') : assetFilter(HadaAssets, 'Icon')).map((asset) => (
         <Stack key={asset} align={'center'} spacing={'spacing08'} width={'100px'}>
           <IconStage>
