@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.23.0
+
+### Minor Changes
+
+- [#180](https://github.com/shopl/shoplflow/pull/180) [`ddd53e3`](https://github.com/shopl/shoplflow/commit/ddd53e35a0ade5384808adf0fe7521edffbca187) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - SelectInputButton 추가
+
+### Patch Changes
+
+- [#180](https://github.com/shopl/shoplflow/pull/180) [`ddd53e3`](https://github.com/shopl/shoplflow/commit/ddd53e35a0ade5384808adf0fe7521edffbca187) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton 이벤트 버블링 이슈 수정
+
 ## 0.22.5
 
 ### Patch Changes
