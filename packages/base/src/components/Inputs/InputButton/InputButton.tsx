@@ -23,7 +23,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
       return String(value);
     }, []);
 
-    const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = (e: MouseEvent<HTMLDivElement>) => {
       if (!disabled) {
         onClick && onClick(e);
       }

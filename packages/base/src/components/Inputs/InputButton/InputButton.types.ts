@@ -21,7 +21,7 @@ export interface InputButtonOptionProps
    */
   onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
 
-  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 
   /**
    * Input의 placeholder를 설정합니다.
