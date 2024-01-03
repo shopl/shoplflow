@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.23.1
+
+### Patch Changes
+
+- [#182](https://github.com/shopl/shoplflow/pull/182) [`4d98b5b`](https://github.com/shopl/shoplflow/commit/4d98b5b1fd86da7b5562f505b404a060bf63af8e) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - SelectInputButton export 추가
+
 ## 0.23.0
 
 ### Minor Changes
