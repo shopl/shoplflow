@@ -26,13 +26,14 @@ const SelectInputButton = ({
 
   const handleOnClick = (e: MouseEvent<HTMLLabelElement>) => {
     e.preventDefault();
-
+    e.stopPropagation();
     if (!disabled) {
       onClick && onClick(e);
     }
   };
 
   const handleOnClear = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     e.stopPropagation();
     if (!disabled) {
       onClear && onClear(e);
@@ -67,18 +68,20 @@ const SelectInputButton = ({
           </Text>
         )}
 
-        <Stack.Horizontal align={'center'}>
+        <Stack.Horizontal align={'center'} spacing={'spacing04'}>
           {value && value.length > 1 && (
             <Text typography={'body1_400'} color={'neutral700'}>
               +{value.length - 1}
             </Text>
           )}
-          {value && value.length > 0 && (
-            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
-              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
-            </IconButton>
-          )}
-          {rightSource}
+          <Stack.Horizontal align={'center'}>
+            {value && value.length > 0 && (
+              <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
+                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
+              </IconButton>
+            )}
+            {rightSource}
+          </Stack.Horizontal>
         </Stack.Horizontal>
       </StyledSelectInputButton>
     </InputWrapper>

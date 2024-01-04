@@ -32,23 +32,25 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
   }
 };
 
-const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: ColorTokens) => {
+const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: ColorTokens, isHovered?: boolean) => {
   switch (styleVar) {
     case 'PRIMARY':
       return css`
         background: ${colorTokens.primary300};
         border: 1px solid ${colorTokens.primary400};
-        &:hover {
+        ${isHovered &&
+        css`
           background: ${colorTokens.primary400};
-        }
+        `}
       `;
     case 'SECONDARY':
       return css`
         background: ${colorTokens.neutral0};
         border: 1px solid ${colorTokens.neutral350};
-        &:hover {
+        ${isHovered &&
+        css`
           background: ${colorTokens.neutral100};
-        }
+        `}
       `;
     case 'SOLID':
       if (!color) {
@@ -57,29 +59,37 @@ const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: Color
       return css`
         border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
         background: ${colorTokens[color]};
-        &:hover {
+
+        ${isHovered &&
+        css`
           background: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
-        }
+        `}
       `;
     case 'GHOST':
       return css`
         border: 1px solid transparent;
         background: transparent;
-        &:hover {
+        ${isHovered &&
+        css`
           background: ${colorTokens.neutral400_5};
-        }
+        `}
       `;
     default:
       return css`
         border: 1px solid ${colorTokens.neutral200};
-        &:hover {
+        ${isHovered &&
+        css`
           background: ${colorTokens.neutral100};
-        }
+        `}
       `;
   }
 };
 
-export const StyledIconButton = styled.button<IconButtonOptionProps>`
+export const StyledIconButton = styled.button<
+  IconButtonOptionProps & {
+    isHovered: boolean;
+  }
+>`
   display: flex;
   flex-shrink: 0;
   border-radius: ${borderRadiusTokens.borderRadius06};
@@ -87,7 +97,7 @@ export const StyledIconButton = styled.button<IconButtonOptionProps>`
   align-items: center;
   background: ${colorTokens.neutral0};
   cursor: pointer;
-  ${({ styleVar, color }) => getStyleByStyleVar(styleVar, color)};
+  ${({ styleVar, color, isHovered }) => getStyleByStyleVar(styleVar, color, isHovered)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
   & > svg {

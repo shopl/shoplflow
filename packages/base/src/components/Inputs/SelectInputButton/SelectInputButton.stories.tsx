@@ -8,6 +8,9 @@ import { useSelect } from '@shoplflow/utils';
 import List from '../../List/List';
 import { Checkbox } from '../../ControlButtons';
 import { Text } from '../../Text';
+import { Icon } from '../../Icon';
+import { IconButton } from '../../Buttons';
+import { RightArrowIcon } from '@shoplflow/shopl-assets';
 
 export default {
   title: 'COMPONENTS/Inputs/SelectInputButton',
@@ -29,7 +32,16 @@ export const Playground: StoryFn<SelectInputButtonProps> = (args) => {
   });
   return (
     <Stack width={'400px'}>
-      <SelectInputButton {...args} value={selectedItem} label={'title'} />
+      <SelectInputButton
+        {...args}
+        value={selectedItem}
+        label={'title'}
+        rightSource={
+          <IconButton styleVar={'GHOST'} sizeVar={'S'}>
+            <Icon iconSource={RightArrowIcon} color={'neutral350'} />
+          </IconButton>
+        }
+      />
       <Stack as={'ul'} width={'100%'}>
         {newArray.map((item, index) => {
           const isSelected = selectedItem.some((selected) => selected.title === item.title);

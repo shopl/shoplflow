@@ -16,10 +16,13 @@ export interface SelectInputButtonOptionProps
    * Input의 value가 변경될 경우 호출되는 함수입니다.
    */
   onClick?: (e: MouseEvent<HTMLLabelElement>) => void;
+
   /**
    * 선택한 값을 받습니다.
    */
-  value?: Array<Record<string, unknown>>;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value?: Array<Record<string, any>>;
   /**
    * 받은 value 중 label로 보여줄 값을 받습니다.
    */
