@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.1
+
+### Patch Changes
+
+- [#188](https://github.com/shopl/shoplflow/pull/188) [`2fd5851`](https://github.com/shopl/shoplflow/commit/2fd58515e42c324c1b9e66465dfd904f4abe00cf) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Icon HTMLAttributes 추가
+
 ## 0.24.0
 
 ### Minor Changes
