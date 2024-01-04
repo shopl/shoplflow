@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.0
+
+### Minor Changes
+
+- [#186](https://github.com/shopl/shoplflow/pull/186) [`b45d27d`](https://github.com/shopl/shoplflow/commit/b45d27d5db8326fbd905dea1aa48e1654b08830b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Icon `dangerouslySetInnerHTML` prop 추가
+
 ## 0.23.2
 
 ### Patch Changes
