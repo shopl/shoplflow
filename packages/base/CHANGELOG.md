@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.2
+
+### Patch Changes
+
+- [#190](https://github.com/shopl/shoplflow/pull/190) [`f2e4801`](https://github.com/shopl/shoplflow/commit/f2e4801ca215114c27cb12d5012c9493739efd56) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - SelectInputButton value 타입 변경
+
 ## 0.24.1
 
 ### Patch Changes
