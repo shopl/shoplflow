@@ -26,6 +26,7 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
     key: 'value',
     max: 3,
   });
+
   return (
     <Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>
       <ComponentStage justify={'start'}>
