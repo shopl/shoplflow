@@ -92,6 +92,7 @@ export const StyledDropdownButton = styled.button<DropdownButtonProps>`
   height: 100%;
   gap: 8px;
   cursor: pointer;
+  background-color: ${colorTokens.neutral0};
   ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
   ${({ disabled }) =>
     disabled &&
