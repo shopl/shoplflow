@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.24.4
+
+### Patch Changes
+
+- [#194](https://github.com/shopl/shoplflow/pull/194) [`79bf8e6`](https://github.com/shopl/shoplflow/commit/79bf8e628b605c69fa2fbd107c97d648da794871) Thanks [@velo-kim](https://github.com/velo-kim)! - style: Popper
+
+- [#194](https://github.com/shopl/shoplflow/pull/194) [`79bf8e6`](https://github.com/shopl/shoplflow/commit/79bf8e628b605c69fa2fbd107c97d648da794871) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: PopperPortal > div style에 position: relative 추가
+
 ## 0.24.3
 
 ### Patch Changes
