@@ -34,7 +34,9 @@ const Popper = ({
   });
 
   return (
-    <PopperContext.Provider value={{ ...refs, floatingStyles, isOpen, setIsOpen }}>{children}</PopperContext.Provider>
+    <PopperContext.Provider value={{ ...refs, floatingStyles: { ...floatingStyles, zIndex: 100 }, isOpen, setIsOpen }}>
+      {children}
+    </PopperContext.Provider>
   );
 };
 

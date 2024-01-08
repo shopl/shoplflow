@@ -9,7 +9,6 @@ const PopperPortal = () => {
           id={'popper-portal-key'}
           style={{
             zIndex: 20001,
-            position: 'relative',
           }}
         />,
         document.body,
