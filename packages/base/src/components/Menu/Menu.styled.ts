@@ -3,6 +3,7 @@ import { colorTokens } from '../../styles';
 import type { MenuOptionProps } from './Menu.types';
 import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
 import { css } from '@emotion/react';
+import { CheckboxSymbol, RadioSymbol } from '../ControlButtons';
 
 const getStylesBySizeVar = (sizeVar: MenuOptionProps['sizeVar']) => {
   switch (sizeVar) {
@@ -55,7 +56,7 @@ export const StyledMenu = styled.li<MenuOptionProps>`
   ${({ disabled }) => disabled && getDisabledStyle(disabled)}
   ${({ isSelected, leftSource }) =>
     isSelected === true &&
-    !leftSource &&
+    (!leftSource || (leftSource && !leftSource.type[RadioSymbol] && !leftSource.type[CheckboxSymbol])) &&
     css`
       background: ${colorTokens.neutral200};
       &:hover {
