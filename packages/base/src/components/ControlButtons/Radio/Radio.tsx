@@ -4,7 +4,7 @@ import { Container, StyledRadio } from './Radio.styled';
 import type { RadioProps } from './Radio.types';
 import { useOnToggle } from '../../../hooks/useOnToggle';
 
-export const RadioSymbol = Symbol('shoplflow-radio');
+export const RADIO_SYMBOL_KEY = Symbol('SHOPLFLOW_RADIO');
 
 const Radio = ({ isSelected, defaultSelected, disabled, onClick, onMouseEnter, onMouseLeave, ...rest }: RadioProps) => {
   const [selected, toggleSelected] = useOnToggle(isSelected, defaultSelected);
@@ -42,6 +42,6 @@ const Radio = ({ isSelected, defaultSelected, disabled, onClick, onMouseEnter, o
   );
 };
 
-Radio[RadioSymbol] = true;
+Radio[RADIO_SYMBOL_KEY] = true;
 
 export default Radio;
