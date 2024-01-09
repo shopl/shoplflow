@@ -4,6 +4,8 @@ import { Container, StyledCheckbox } from './Checkbox.styled';
 import type { CheckboxProps } from './Checkbox.types';
 import { useOnToggle } from '../../../hooks/useOnToggle';
 
+export const CHECKBOX_SYMBOL_KEY = Symbol('SHOPLFLOW_CHECKBOX');
+
 const Checkbox = ({
   defaultSelected,
   isSelected,
@@ -56,5 +58,7 @@ const Checkbox = ({
     </Container>
   );
 };
+
+Checkbox[CHECKBOX_SYMBOL_KEY] = true;
 
 export default Checkbox;

@@ -2,6 +2,8 @@ import React, { forwardRef } from 'react';
 import * as StyledMinusBox from './MinusButton.styled';
 import type { MinusBoxProps } from './MinusButton.types';
 
+export const MUNUS_BUTTON_SYMBOL_KEY = Symbol('SHOPLFLOW_MUNUS_BUTTON');
+
 const MinusButton = forwardRef<HTMLButtonElement, MinusBoxProps>(({ onClick, color = 'neutral300', ...rest }, ref) => {
   return (
     <StyledMinusBox.Container data-shoplflow={'minusButton'}>
@@ -22,5 +24,7 @@ const MinusButton = forwardRef<HTMLButtonElement, MinusBoxProps>(({ onClick, col
     </StyledMinusBox.Container>
   );
 });
+
+MinusButton[MUNUS_BUTTON_SYMBOL_KEY] = true;
 
 export default MinusButton;
