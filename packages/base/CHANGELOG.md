@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.24.6
+
+### Patch Changes
+
+- [#198](https://github.com/shopl/shoplflow/pull/198) [`db2c5b5`](https://github.com/shopl/shoplflow/commit/db2c5b5f8c4273a594977514f2d6df664dab915b) Thanks [@velo-kim](https://github.com/velo-kim)! - style: Checkbox Container background-color transparent로 변경
+
+- [#198](https://github.com/shopl/shoplflow/pull/198) [`db2c5b5`](https://github.com/shopl/shoplflow/commit/db2c5b5f8c4273a594977514f2d6df664dab915b) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Menu leftSource checkbox, radio 컴포넌트일 경우에만 isSelected 미처리
+
 ## 0.24.5
 
 ### Patch Changes
