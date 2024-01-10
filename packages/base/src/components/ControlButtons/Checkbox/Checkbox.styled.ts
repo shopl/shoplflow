@@ -104,4 +104,5 @@ export const Container = styled.button`
   padding: 4px;
   width: fit-content;
   height: fit-content;
+  background-color: transparent;
 `;
