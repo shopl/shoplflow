@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.5
+
+### Patch Changes
+
+- [#196](https://github.com/shopl/shoplflow/pull/196) [`fb6428f`](https://github.com/shopl/shoplflow/commit/fb6428f6a5f32e502f821e3900109a08ece2fe10) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Menu leftSource checkbox, radio 컴포넌트일 경우에만 isSelected 미처리
+
 ## 0.24.4
 
 ### Patch Changes
