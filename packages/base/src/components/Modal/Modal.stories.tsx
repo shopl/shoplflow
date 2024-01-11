@@ -1,6 +1,6 @@
 import type { StoryFn } from '@storybook/react';
 import { Box, ComponentStage } from '../../styles/Box';
-import { Modal } from './index';
+import { Modal, useHandleModal } from './index';
 import type { ModalContainerProps } from './Modal.types';
 import ModalContainer from './ModalContainer';
 import type { ReactNode } from 'react';
@@ -8,7 +8,6 @@ import React from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
 import { Button } from '../Buttons';
-import { useHandleModal } from '../../hooks';
 
 export default {
   title: 'COMPONENTS/Modal',

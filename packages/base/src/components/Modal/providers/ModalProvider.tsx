@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 import { useEffect, useMemo, useState } from 'react';
-import type { RemoveModalProps } from '../hooks/ModalContext';
-import { ModalContext, ModalHandlerContext } from '../hooks/ModalContext';
+
 import { isNullOrUndefined } from '@shoplflow/utils';
+import type { RemoveModalProps } from './ModalContext';
+import { ModalHandlerContext, ModalContext } from './ModalContext';
 
 interface ModalProviderProps {
   children?: ReactNode;

@@ -3,7 +3,7 @@ import BackDrop from '../components/BackDrop/BackDrop';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { ModalContext } from '../hooks/ModalContext';
+import { ModalContext } from '../components';
 
 export const SpaceMarginWrapper = styled(motion.div)`
   position: relative;

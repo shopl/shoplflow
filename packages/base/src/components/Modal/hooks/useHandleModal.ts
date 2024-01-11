@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ModalHandlerContext } from './ModalContext';
+import { ModalHandlerContext } from '../providers/ModalContext';
 
 export const useHandleModal = () => {
   // const addModal = useModalStore((state) => state.addModal);
