@@ -4,9 +4,12 @@ import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { getNextColor } from '../../../utils/getNextColor';
 
 export const Container = styled.div`
-  width: 32px;
-  height: 32px;
-  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 4px;
 `;
 
 export const IconButton = styled.button<{ color: ColorTokens }>`
@@ -25,6 +28,6 @@ export const IconButton = styled.button<{ color: ColorTokens }>`
     background 0.1s ease;
 
   &:hover {
-    background: ${({ color }) => colorTokens[getNextColor(color!, 1)]};
+    background: ${({ color }) => colorTokens[getNextColor(color, 1)]};
   }
 `;
