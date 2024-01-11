@@ -16,7 +16,7 @@ const getIconSize = (size: IconSizeVariantsType) => {
     case IconSizeVariants.XL:
       return '36px';
     default:
-      return '24px';
+      return 'fit-content';
   }
 };
 
