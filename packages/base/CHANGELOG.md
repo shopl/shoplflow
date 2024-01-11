@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.7
+
+### Patch Changes
+
+- [#200](https://github.com/shopl/shoplflow/pull/200) [`0d91fb0`](https://github.com/shopl/shoplflow/commit/0d91fb0abf3067a1e912359d4528b3c36fa29f31) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal 관련 type export 추가
+
 ## 0.24.6
 
 ### Patch Changes
