@@ -36,6 +36,7 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
     case 'S':
       return css`
         padding: 4px 4px 4px 8px;
+        gap: 4px;
       `;
     default:
       return css`
@@ -105,5 +106,5 @@ export const DropdownButtonIcon = styled(motion.div)<DropdownButtonProps>`
   align-items: center;
   justify-content: center;
 
-  ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
+  // ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
 `;
