@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.24.10
+
+### Patch Changes
+
+- [#206](https://github.com/shopl/shoplflow/pull/206) [`9317ead`](https://github.com/shopl/shoplflow/commit/9317ead4a0bc177e93ce68454d3ea0f37c52c2fb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Dropdown Button S size style 수정
+
+- [#206](https://github.com/shopl/shoplflow/pull/206) [`9317ead`](https://github.com/shopl/shoplflow/commit/9317ead4a0bc177e93ce68454d3ea0f37c52c2fb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Popper z-index 수정
+
 ## 0.24.9
 
 ### Patch Changes
