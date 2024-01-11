@@ -35,7 +35,16 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
           option={'OUTSIDE_CLICK'}
           width={'100%'}
           trigger={
-            <Dropdown.Button placeholder={'값이 없어요'} value={selectedItem.map((data) => data.value).join(',')} />
+            <Dropdown.Button
+              placeholder={'값이 없어요'}
+              value={
+                selectedItem.length > 0 && (
+                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
+                    {selectedItem.map((data) => data.value).join(',')}
+                  </Text>
+                )
+              }
+            />
           }
           popper={
             <Dropdown.Content type={'FILL'}>
