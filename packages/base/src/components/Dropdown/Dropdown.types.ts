@@ -58,7 +58,7 @@ export interface DropdownButtonProps
    * placeholder를 설정합니다.
    */
   placeholder?: string;
-  value?: string;
+  value?: ReactNode;
   /**
    * width를 설정합니다.
    */

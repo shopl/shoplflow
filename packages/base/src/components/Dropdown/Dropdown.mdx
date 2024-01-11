@@ -50,7 +50,7 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
       {...args}
       option={'CLICK'}
       width={'100%'}
-      trigger={<Dropdown.Button placeholder={'값이 없어요'} value={selectedItem?.name} />}
+      trigger={<Dropdown.Button placeholder={'값이 없어요'} value={(selectedItem.length > 0 && <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>{selectedItem?.name}</Text>)}
       popper={
         <Dropdown.Content type={'FILL'}>
           {data.map((item) => (
@@ -63,6 +63,4 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
     />
   );
 };
-```
-
 
