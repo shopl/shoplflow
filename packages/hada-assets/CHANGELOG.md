@@ -1,5 +1,11 @@
 # @shoplflow/hada-assets
 
+## 0.1.0
+
+### Minor Changes
+
+- [#208](https://github.com/shopl/shoplflow/pull/208) [`a26e49e`](https://github.com/shopl/shoplflow/commit/a26e49ee2c0d06de40f6e5ad9d13819799a69d4d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 생성된 아이콘의 사이즈가 고정되는 문제 수정
+
 ## 0.0.4
 
 ### Patch Changes
