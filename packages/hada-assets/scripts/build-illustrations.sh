@@ -5,6 +5,5 @@ svgr \
   --template ./scripts/templates/template.js \
   --index-template ./scripts/templates/illustration-index-template.js \
   ./src/illustrations/assets/ \
-  --icon \
   --typescript
 

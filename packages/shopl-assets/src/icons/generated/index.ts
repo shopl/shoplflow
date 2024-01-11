@@ -33,8 +33,11 @@ import IcChattingSolidMedium from './IcChattingSolidMedium';
 import IcCheckXlarge from './IcCheckXlarge';
 import IcCheckXsmall from './IcCheckXsmall';
 import IcCheck from './IcCheck';
+import IcCloseMedium from './IcCloseMedium';
+import IcCloseSmall from './IcCloseSmall';
 import IcClose from './IcClose';
 import IcCloudMedium from './IcCloudMedium';
+import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcCopy from './IcCopy';
 import IcDeadline from './IcDeadline';
@@ -50,6 +53,8 @@ import IcDraftsave from './IcDraftsave';
 import IcDrag from './IcDrag';
 import IcDrawer from './IcDrawer';
 import IcEditLarge from './IcEditLarge';
+import IcEditLine from './IcEditLine';
+import IcEditSolid from './IcEditSolid';
 import IcEditXsmall from './IcEditXsmall';
 import IcEdit from './IcEdit';
 import IcEmailXlarge from './IcEmailXlarge';
@@ -159,6 +164,7 @@ import IcLocation from './IcLocation';
 import IcMap from './IcMap';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemo from './IcMemo';
+import IcMention from './IcMention';
 import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
 import IcMore from './IcMore';
@@ -172,7 +178,9 @@ import IcNoticeSolidMedium from './IcNoticeSolidMedium';
 import IcNotice from './IcNotice';
 import IcOvertimeMedium from './IcOvertimeMedium';
 import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
+import IcPaste from './IcPaste';
 import IcPaymentMedium from './IcPaymentMedium';
+import IcPhoto from './IcPhoto';
 import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
@@ -187,6 +195,7 @@ import IcRatioMedium from './IcRatioMedium';
 import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
+import IcReply from './IcReply';
 import IcReportMedium from './IcReportMedium';
 import IcResendPushMedium from './IcResendPushMedium';
 import IcResendPush from './IcResendPush';
@@ -206,6 +215,7 @@ import IcSortingEarly from './IcSortingEarly';
 import IcSortingLate from './IcSortingLate';
 import IcSortingZtoa from './IcSortingZtoa';
 import IcStar from './IcStar';
+import IcSubtract from './IcSubtract';
 import IcSummeryView from './IcSummeryView';
 import IcSympathyMedium from './IcSympathyMedium';
 import IcTack from './IcTack';
@@ -217,6 +227,7 @@ import IcTrash from './IcTrash';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
+import IcVideo from './IcVideo';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
 import IcWaitingMedium from './IcWaitingMedium';
@@ -264,8 +275,11 @@ const icons = {
   'check-xlarge': IcCheckXlarge,
   'check-xsmall': IcCheckXsmall,
   check: IcCheck,
+  'close-medium': IcCloseMedium,
+  'close-small': IcCloseSmall,
   close: IcClose,
   'cloud-medium': IcCloudMedium,
+  comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
   copy: IcCopy,
   deadline: IcDeadline,
@@ -281,6 +295,8 @@ const icons = {
   drag: IcDrag,
   drawer: IcDrawer,
   'edit-large': IcEditLarge,
+  'edit-line': IcEditLine,
+  'edit-solid': IcEditSolid,
   'edit-xsmall': IcEditXsmall,
   edit: IcEdit,
   'email-xlarge': IcEmailXlarge,
@@ -390,6 +406,7 @@ const icons = {
   map: IcMap,
   'member-medium': IcMemberMedium,
   memo: IcMemo,
+  mention: IcMention,
   'minus-medium': IcMinusMedium,
   minus: IcMinus,
   more: IcMore,
@@ -403,7 +420,9 @@ const icons = {
   notice: IcNotice,
   'overtime-medium': IcOvertimeMedium,
   'password-error-xlarge': IcPasswordErrorXlarge,
+  paste: IcPaste,
   'payment-medium': IcPaymentMedium,
+  photo: IcPhoto,
   'pin-xlarge': IcPinXlarge,
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
@@ -418,6 +437,7 @@ const icons = {
   'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
+  reply: IcReply,
   'report-medium': IcReportMedium,
   'resend-push-medium': IcResendPushMedium,
   'resend-push': IcResendPush,
@@ -437,6 +457,7 @@ const icons = {
   'sorting-late': IcSortingLate,
   'sorting-ztoa': IcSortingZtoa,
   star: IcStar,
+  subtract: IcSubtract,
   'summery-view': IcSummeryView,
   'sympathy-medium': IcSympathyMedium,
   tack: IcTack,
@@ -448,6 +469,7 @@ const icons = {
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
+  video: IcVideo,
   'view-off': IcViewOff,
   'view-on': IcViewOn,
   'waiting-medium': IcWaitingMedium,
@@ -498,8 +520,11 @@ export {
   IcCheckXlarge as CheckXlargeIcon,
   IcCheckXsmall as CheckXsmallIcon,
   IcCheck as CheckIcon,
+  IcCloseMedium as CloseMediumIcon,
+  IcCloseSmall as CloseSmallIcon,
   IcClose as CloseIcon,
   IcCloudMedium as CloudMediumIcon,
+  IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
   IcCopy as CopyIcon,
   IcDeadline as DeadlineIcon,
@@ -515,6 +540,8 @@ export {
   IcDrag as DragIcon,
   IcDrawer as DrawerIcon,
   IcEditLarge as EditLargeIcon,
+  IcEditLine as EditLineIcon,
+  IcEditSolid as EditSolidIcon,
   IcEditXsmall as EditXsmallIcon,
   IcEdit as EditIcon,
   IcEmailXlarge as EmailXlargeIcon,
@@ -624,6 +651,7 @@ export {
   IcMap as MapIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemo as MemoIcon,
+  IcMention as MentionIcon,
   IcMinusMedium as MinusMediumIcon,
   IcMinus as MinusIcon,
   IcMore as MoreIcon,
@@ -637,7 +665,9 @@ export {
   IcNotice as NoticeIcon,
   IcOvertimeMedium as OvertimeMediumIcon,
   IcPasswordErrorXlarge as PasswordErrorXlargeIcon,
+  IcPaste as PasteIcon,
   IcPaymentMedium as PaymentMediumIcon,
+  IcPhoto as PhotoIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
@@ -652,6 +682,7 @@ export {
   IcReceiverMedium as ReceiverMediumIcon,
   IcRefresh as RefreshIcon,
   IcRepeat as RepeatIcon,
+  IcReply as ReplyIcon,
   IcReportMedium as ReportMediumIcon,
   IcResendPushMedium as ResendPushMediumIcon,
   IcResendPush as ResendPushIcon,
@@ -671,6 +702,7 @@ export {
   IcSortingLate as SortingLateIcon,
   IcSortingZtoa as SortingZtoaIcon,
   IcStar as StarIcon,
+  IcSubtract as SubtractIcon,
   IcSummeryView as SummeryViewIcon,
   IcSympathyMedium as SympathyMediumIcon,
   IcTack as TackIcon,
@@ -682,6 +714,7 @@ export {
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
+  IcVideo as VideoIcon,
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
   IcWaitingMedium as WaitingMediumIcon,
