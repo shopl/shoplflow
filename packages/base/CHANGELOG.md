@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.9
+
+### Patch Changes
+
+- [#204](https://github.com/shopl/shoplflow/pull/204) [`da8b5c0`](https://github.com/shopl/shoplflow/commit/da8b5c087cc03629a9e314ff4e5aa1b9f0fbb4d2) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - MinusButton size 수정
+
 ## 0.24.8
 
 ### Patch Changes
