@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.8
+
+### Patch Changes
+
+- [#202](https://github.com/shopl/shoplflow/pull/202) [`34fead1`](https://github.com/shopl/shoplflow/commit/34fead18443bc472ec6ce1efacc572c4a31c2a89) Thanks [@velo-kim](https://github.com/velo-kim)! - feature: DropdownButton value ReactNode로 변경
+
 ## 0.24.7
 
 ### Patch Changes
