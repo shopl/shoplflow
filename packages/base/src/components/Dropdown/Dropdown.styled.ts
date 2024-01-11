@@ -106,5 +106,5 @@ export const DropdownButtonIcon = styled(motion.div)<DropdownButtonProps>`
   align-items: center;
   justify-content: center;
 
-  // ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
+  ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
 `;

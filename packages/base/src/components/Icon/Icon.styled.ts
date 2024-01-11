@@ -3,7 +3,7 @@ import { colorTokens } from '../../styles';
 import type { IconOptionProps, IconSizeVariantsType } from './Icon.types';
 import { IconSizeVariants } from './Icon.types';
 
-const getIconSize = (size: IconSizeVariantsType) => {
+const getIconSize = (size?: IconSizeVariantsType) => {
   switch (size) {
     case IconSizeVariants.XS:
       return '12px';
