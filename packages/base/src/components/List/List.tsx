@@ -29,11 +29,11 @@ const List = ({ children, leftSource, rightSource, ...rest }: ListProps) => {
 export const Text2Rows = ({ title, subTitle }: ListText2RowsProps) => {
   return (
     <StyledText2Rows>
-      <Text typography={'body1_500'} color={'neutral700'}>
+      <Text typography={'body1_500'} color={'neutral700'} lineClamp={1} wordBreak={'break-all'}>
         {title}
       </Text>
       {subTitle && (
-        <Text typography={'body2_400'} color={'neutral400'}>
+        <Text typography={'body2_400'} color={'neutral400'} lineClamp={1} wordBreak={'break-all'}>
           {subTitle}
         </Text>
       )}
