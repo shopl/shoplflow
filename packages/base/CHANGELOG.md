@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.12
+
+### Patch Changes
+
+- [#210](https://github.com/shopl/shoplflow/pull/210) [`d15a6aa`](https://github.com/shopl/shoplflow/commit/d15a6aa48ebb5e6842e85347a14ea410b049c5f5) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - List.Text2Rows 말줄임 처리 추가
+
 ## 0.24.11
 
 ### Patch Changes
