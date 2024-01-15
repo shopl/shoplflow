@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.5.1
+
+### Patch Changes
+
+- [#212](https://github.com/shopl/shoplflow/pull/212) [`424e76a`](https://github.com/shopl/shoplflow/commit/424e76a67dbced84eb3aabf22fca21a764ada203) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 생성된 asset의 뷰박스가 누락된 문제 수정
+
 ## 0.5.0
 
 ### Minor Changes
