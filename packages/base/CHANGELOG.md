@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.14
+
+### Patch Changes
+
+- [#214](https://github.com/shopl/shoplflow/pull/214) [`a43f254`](https://github.com/shopl/shoplflow/commit/a43f254138929bb1d56f526aa96105688c1e7649) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: DropdownButton > Icon sizeVar "S" 명시
+
 ## 0.24.13
 
 ### Patch Changes
