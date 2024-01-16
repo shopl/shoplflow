@@ -64,7 +64,7 @@ export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>
               duration: 0.2,
             }}
           >
-            <Icon iconSource={DownArrowSolidXsmallIcon} color={'neutral400'} />
+            <Icon iconSource={DownArrowSolidXsmallIcon} color={'neutral400'} sizeVar='S' />
           </DropdownButtonIcon>
         </StyledDropdownButton>
       </InputWrapper>
