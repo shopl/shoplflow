@@ -23,24 +23,23 @@ export const getNextColor = (color: ColorTokens, step = 1): ColorTokens => {
     return match ? parseFloat(match[0]) : 0;
   };
   // neutral700_5 와 같은 색상은 반환하지 않습니다.
+
   const sortColorToken = findColorToken.sort((a, b) => extractNumbers(a) - extractNumbers(b));
-  // 현재 토큰의 인덱스 찾기
   const currentIndex = sortColorToken.indexOf(color);
 
-  // 새 인덱스 계산
-  let newIndex = currentIndex + step;
+  let newIndex = currentIndex;
+  let stepCount = 0;
 
-  let potentialToken = sortColorToken[newIndex];
-
-  while (potentialToken.endsWith('_5') || potentialToken.includes('50')) {
-    newIndex += Math.sign(step); // step의 방향으로 이동
-    if (newIndex < 0) {
-      potentialToken = sortColorToken[0];
+  while (stepCount < Math.abs(step)) {
+    newIndex += Math.sign(step);
+    if (newIndex < 0 || newIndex >= sortColorToken.length) {
+      break;
     }
-    if (newIndex >= sortColorToken.length) {
-      potentialToken = sortColorToken[sortColorToken.length - 1];
+    if (!sortColorToken[newIndex].endsWith('_5') && !sortColorToken[newIndex].includes('50')) {
+      stepCount++;
     }
-    potentialToken = sortColorToken[newIndex];
   }
-  return potentialToken;
+
+  newIndex = Math.max(0, Math.min(newIndex, sortColorToken.length - 1));
+  return sortColorToken[newIndex];
 };

@@ -21,7 +21,7 @@ const mockBoxs: ReactNode[] = new Array(100)
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
-    <Modal.Container {...args} outsideClick={removeModal}>
+    <Modal.Container {...args} outsideClick={removeModal} height={1000}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>

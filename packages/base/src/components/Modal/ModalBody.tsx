@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
 import { BodyContainer, ModalBodyContainerInner, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps } from './Modal.types';
-import { useResizeObserver } from '@shoplflow/utils';
 import { ScrollArea } from '../ScrollArea';
+import { useViewportSizeObserver } from '../../hooks/useViewportSizeObserver';
 
 const ModalBody = ({
   children,
@@ -11,9 +11,7 @@ const ModalBody = ({
   sizeVar,
   height: modalContainerHeight,
 }: ModalBodyProps) => {
-  const { height: windowHeight } = useResizeObserver(document.body, {
-    trackHeight: true,
-  });
+  const { height: windowHeight } = useViewportSizeObserver();
 
   const headerHeight = 64;
   const footerHeight = 64;
@@ -34,24 +32,48 @@ const ModalBody = ({
 
   const setAutoHeightMin = () => {
     if (modalContainerHeight) {
-      return modalContainerHeight - headerFooterHeight;
+      if (modalContainerHeight <= 1200) {
+        if (windowHeight < modalContainerHeight) {
+          return windowHeight - topBottomMargin - headerFooterHeight;
+        }
+        return 1200 - topBottomMargin - headerFooterHeight;
+      }
+      return modalContainerHeight - topBottomMargin - headerFooterHeight;
     } else {
       return '100%';
     }
   };
 
-  const heightUnderMaxHeight = windowHeight - topBottomMargin - headerFooterHeight;
+  const setAutoHeightMax = () => {
+    if (modalContainerHeight) {
+      if (modalContainerHeight > 1200) {
+        return 1200 - topBottomMargin - headerFooterHeight;
+      }
+      if (modalContainerHeight <= 1200) {
+        if (windowHeight < modalContainerHeight) {
+          return windowHeight - topBottomMargin - headerFooterHeight;
+        }
+        return modalContainerHeight - topBottomMargin - headerFooterHeight;
+      }
+    }
+    if (!modalContainerHeight) {
+      const heightUnderMaxHeight = windowHeight - topBottomMargin - headerFooterHeight;
 
-  const heightOverMaxHeight = 1200 - topBottomMargin - headerFooterHeight;
+      const heightOverMaxHeight = 1200 - topBottomMargin - headerFooterHeight;
+
+      return windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight;
+    }
+    return '100%';
+  };
 
   return (
-    <BodyContainer isIncludeHeader={isIncludeHeader} height={setAutoHeightMin()}>
+    <BodyContainer isIncludeHeader={isIncludeHeader} minHeight={setAutoHeightMin()} maxHeight={setAutoHeightMax()}>
       <ScrollArea
         id={`scrollbar`}
         universal
         autoHeight={!modalContainerHeight}
         autoHeightMin={setAutoHeightMin()}
-        autoHeightMax={windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight}
+        autoHeightMax={setAutoHeightMax()}
         style={{
           height: '100%',
           overflow: 'hidden',

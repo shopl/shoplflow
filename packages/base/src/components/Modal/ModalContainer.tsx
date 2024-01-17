@@ -6,9 +6,13 @@ import type { ModalBodyProps, ModalContainerProps } from './Modal.types';
 import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY } from './Modal.types';
 
 import { useParentElementClick, noop } from '@shoplflow/utils';
+import { useViewportSizeObserver } from '../../hooks/useViewportSizeObserver';
 
-const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
+const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: ModalContainerProps) => {
   const ref = useParentElementClick<HTMLDivElement>(outsideClick);
+  const { height: windowHeight } = useViewportSizeObserver();
+  const topBottomMargin = 64;
+  const heightWidthMargin = height ? height + topBottomMargin : undefined;
 
   const childrenArray = React.Children.toArray(children) as ReactNode[];
 
@@ -43,12 +47,12 @@ const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContain
       isIncludeHeader: Boolean(findHeader),
       isIncludeFooter: Boolean(findFooter),
       sizeVar: rest.sizeVar,
-      height: rest.height,
+      height: heightWidthMargin,
     } as React.HTMLAttributes<HTMLElement> & ModalBodyProps);
   });
 
   return (
-    <Container ref={ref} {...rest} data-shoplflow={'Modal'}>
+    <Container ref={ref} {...rest} height={heightWidthMargin} viewport={windowHeight} data-shoplflow={'Modal'}>
       {addPropInChildren}
     </Container>
   );

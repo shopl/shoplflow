@@ -36,7 +36,9 @@ export const StyledCallout = styled.div<CalloutProps>`
 
 export const StyledCalloutIcon = styled.svg`
   display: flex;
+  height: 20px;
   min-height: 20px;
+  width: 20px;
   min-width: 20px;
 `;
 export const TextWrapper = styled.div`
