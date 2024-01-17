@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.24.16
+
+### Patch Changes
+
+- [#218](https://github.com/shopl/shoplflow/pull/218) [`5d299f8`](https://github.com/shopl/shoplflow/commit/5d299f84f3ba13fb897fd2ae6792ce1de0bac12d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 아이콘 변경 대응
+
+- [#218](https://github.com/shopl/shoplflow/pull/218) [`5d299f8`](https://github.com/shopl/shoplflow/commit/5d299f84f3ba13fb897fd2ae6792ce1de0bac12d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 뷰포트에 따라 modal 높이가 변경되지 않던 문제 수정
+
+- [#218](https://github.com/shopl/shoplflow/pull/218) [`5d299f8`](https://github.com/shopl/shoplflow/commit/5d299f84f3ba13fb897fd2ae6792ce1de0bac12d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 컬러 단계 로직 수정
+
 ## 0.24.15
 
 ### Patch Changes
