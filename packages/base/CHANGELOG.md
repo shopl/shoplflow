@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.15
+
+### Patch Changes
+
+- [#216](https://github.com/shopl/shoplflow/pull/216) [`38dd211`](https://github.com/shopl/shoplflow/commit/38dd2114de42e6c89f1adc9526347ad3a10c85da) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ModalProvider 배경 스크롤 방지 로직 수정
+
 ## 0.24.14
 
 ### Patch Changes
