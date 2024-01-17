@@ -66,12 +66,14 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
   const dispatch = useMemo(() => ({ addModal, removeModal }), []);
 
   useEffect(() => {
-    if (openedModals.length === 1) {
-      document.body.style.cssText = 'overflow:hidden';
-      return () => {
-        document.body.style.cssText = 'overflow:unset';
-      };
+    if (openedModals.length !== 1) {
+      return;
     }
+
+    document.body.style.cssText = 'overflow:hidden';
+    return () => {
+      document.body.style.cssText = 'overflow:unset';
+    };
   }, [openedModals.length]);
 
   return (
