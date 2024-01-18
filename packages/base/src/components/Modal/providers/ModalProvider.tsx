@@ -76,6 +76,18 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
     };
   }, [openedModals.length]);
 
+  useEffect(() => {
+    const closeAllModals = () => {
+      setOpenedModals([]);
+    };
+
+    window.addEventListener('popstate', closeAllModals);
+
+    return () => {
+      window.removeEventListener('popstate', closeAllModals);
+    };
+  }, []);
+
   return (
     <ModalContext.Provider value={openedModals}>
       <ModalHandlerContext.Provider value={dispatch}>{children}</ModalHandlerContext.Provider>
