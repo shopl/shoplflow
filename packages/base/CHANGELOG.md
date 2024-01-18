@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.17
+
+### Patch Changes
+
+- [#220](https://github.com/shopl/shoplflow/pull/220) [`cf14c3d`](https://github.com/shopl/shoplflow/commit/cf14c3d3fde92a004f6bd4aab067a82a486d2191) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - inputButton 빈 string에도 변경될 수 있게 수정
+
 ## 0.24.16
 
 ### Patch Changes
