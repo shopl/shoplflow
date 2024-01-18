@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import React, { forwardRef, useCallback, useEffect, useState } from 'react';
+import React, { useRef, forwardRef, useCallback, useEffect, useState } from 'react';
 import { StyledInputButton, StyledInputButtonContent } from './InputButton.styled';
 import { InputWrapper } from '../common/input.styled';
 import { Stack } from '../../Stack';
@@ -15,7 +15,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
   ) => {
     const [text, setText] = useState('');
     const [isHovered, setIsHovered] = useState(false);
-
+    const prevValue = useRef(value);
     const convertToString = useCallback((value: string | number | readonly string[]) => {
       if (typeof value !== 'number') {
         return typeof value === 'string' ? value : value.join('');
@@ -52,9 +52,13 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
     }, [convertToString, defaultValue]);
 
     useEffect(() => {
-      if (value) {
+      if (!(value === undefined || value === null)) {
+        if (prevValue.current === value) {
+          return;
+        }
         const convertString = convertToString(value);
         setText(convertString);
+        prevValue.current = convertString;
       }
     }, [convertToString, value]);
 
