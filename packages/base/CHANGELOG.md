@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.24.18
+
+### Patch Changes
+
+- [#222](https://github.com/shopl/shoplflow/pull/222) [`f98a8e5`](https://github.com/shopl/shoplflow/commit/f98a8e5e456357a844f7d3945aad91976a85a911) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ModalProvider 배경 스크롤 방지 로직 수정
+
+- [#222](https://github.com/shopl/shoplflow/pull/222) [`f98a8e5`](https://github.com/shopl/shoplflow/commit/f98a8e5e456357a844f7d3945aad91976a85a911) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: 모달 뒤로가기 로직 추가
+
 ## 0.24.17
 
 ### Patch Changes
