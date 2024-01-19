@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.19
+
+### Patch Changes
+
+- [#224](https://github.com/shopl/shoplflow/pull/224) [`3819e16`](https://github.com/shopl/shoplflow/commit/3819e16d1ffc11867d01f90d24a41c5d2b93ccb7) Thanks [@velo-kim](https://github.com/velo-kim)! - style: Input DeleteIcon 컬러 변경 (netural600 -> neutarl350)
+
 ## 0.24.18
 
 ### Patch Changes
