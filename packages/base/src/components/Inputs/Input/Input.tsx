@@ -57,10 +57,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     const limitRange = useCallback(
       (value: string) => {
-        if (min && Number(value) < min) {
+        if (min && Number(value) < Number(min)) {
           return String(min);
         }
-        if (max && Number(value) > max) {
+        if (max && Number(value) > Number(max)) {
           return String(max);
         }
         return value;
@@ -171,7 +171,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
             {isFocused && Boolean(String(text).length > 0) && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
-                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral600'} />
+                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
               </IconButton>
             )}
             {initialType === 'password' && (
