@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.6.0
+
+### Minor Changes
+
+- [#225](https://github.com/shopl/shoplflow/pull/225) [`3c1b8fc`](https://github.com/shopl/shoplflow/commit/3c1b8fcbddb74fe4c1485579097ed7f6f868c7ee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Icon 업데이트
+
 ## 0.5.1
 
 ### Patch Changes
