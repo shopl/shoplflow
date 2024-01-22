@@ -29,7 +29,7 @@
   --coolgray300: #8092aa;
   --coolgray200: #cdd6e4;
   --coolgray100: #dce3ee;
-  --coolgray50: #ffffff;
+  --coolgray50: #f1f4f6;
   --navy400: #35485b;
   --navy300: #406588;
   --neutral0: #ffffff;
@@ -184,7 +184,7 @@
   --coolgray300: #8092aa;
   --coolgray200: #cdd6e4;
   --coolgray100: #dce3ee;
-  --coolgray50: #ffffff;
+  --coolgray50: #f1f4f6;
   --navy400: #35485b;
   --navy300: #406588;
   --neutral0: #ffffff;
@@ -315,7 +315,7 @@
     font-size: 13px;
   }
   .body3_400 {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-regular);
     line-height: 16px;
     font-size: 12px;
   }
