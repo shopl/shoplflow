@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.21
+
+### Patch Changes
+
+- [#228](https://github.com/shopl/shoplflow/pull/228) [`21043ed`](https://github.com/shopl/shoplflow/commit/21043ed343d9d4ca273c5f8fd8a0c78917925b23) Thanks [@bong9boy](https://github.com/bong9boy)! - body3_400 weight 수정
+
 ## 0.24.20
 
 ### Patch Changes
