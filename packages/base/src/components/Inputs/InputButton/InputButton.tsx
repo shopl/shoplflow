@@ -1,33 +1,21 @@
 import type { MouseEvent } from 'react';
-import React, { forwardRef, useCallback, useEffect, useState } from 'react';
-import { StyledInputButton } from './InputButton.styled';
+import React, { useRef, forwardRef, useCallback, useEffect, useState } from 'react';
+import { StyledInputButton, StyledInputButtonContent } from './InputButton.styled';
 import { InputWrapper } from '../common/input.styled';
 import { Stack } from '../../Stack';
-import { Text } from '../../Text';
-import { assetFunction } from '../../../styles/IconAssets';
 import { IconButton } from '../../Buttons';
 import type { InputButtonProps } from './InputButton.types';
+import { Icon } from '../../Icon';
+import { assetFunction } from '../../../styles/IconAssets';
 
-const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
+const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
   (
-    {
-      value,
-      defaultValue,
-      onChange,
-      onClick,
-      isSelected,
-      disabled = false,
-      rightSource,
-      placeholder,
-      onClear,
-      width,
-      ...rest
-    },
+    { value, defaultValue, onChange, onClick, isSelected, disabled = false, rightSource, onClear, width, ...rest },
     ref,
   ) => {
     const [text, setText] = useState('');
     const [isHovered, setIsHovered] = useState(false);
-
+    const prevValue = useRef(value);
     const convertToString = useCallback((value: string | number | readonly string[]) => {
       if (typeof value !== 'number') {
         return typeof value === 'string' ? value : value.join('');
@@ -35,15 +23,17 @@ const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
       return String(value);
     }, []);
 
-    const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = (e: MouseEvent<HTMLDivElement>) => {
       if (!disabled) {
         onClick && onClick(e);
       }
     };
 
-    const handleOnClear = () => {
+    const handleOnClear = (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
       if (!disabled) {
-        onClear && onClear();
+        onClear && onClear(e);
         setText('');
       }
     };
@@ -62,9 +52,13 @@ const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
     }, [convertToString, defaultValue]);
 
     useEffect(() => {
-      if (value) {
+      if (!(value === undefined || value === null)) {
+        if (prevValue.current === value) {
+          return;
+        }
         const convertString = convertToString(value);
         setText(convertString);
+        prevValue.current = convertString;
       }
     }, [convertToString, value]);
 
@@ -82,26 +76,13 @@ const InputButton = forwardRef<HTMLButtonElement, InputButtonProps>(
         disabled={disabled}
         width={width}
       >
-        <StyledInputButton {...rest} onClick={handleOnClick} disabled={disabled} ref={ref}>
-          {text && text.length > 0 ? (
-            <Text typography={'body1_400'} color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
-              {text}
-            </Text>
-          ) : (
-            <Text typography={'body1_400'} color={'neutral350'} textOverflow={'ellipsis'} lineClamp={1}>
-              {placeholder}
-            </Text>
-          )}
+        <StyledInputButton onClick={handleOnClick} disabled={disabled}>
+          <StyledInputButtonContent className={'body1_400'} defaultValue={text} ref={ref} {...rest} />
           <Stack.Horizontal align={'center'}>
-            {value && (
-              <IconButton
-                sizeVar={'S'}
-                onClick={handleOnClear}
-                styleVar={'GHOST'}
-                iconSource={assetFunction('DeleteIcon')}
-                color={'neutral600'}
-                disabled={disabled}
-              />
+            {text && (
+              <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
+                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
+              </IconButton>
             )}
             {rightSource}
           </Stack.Horizontal>

@@ -1,6 +1,6 @@
 import type { StoryFn } from '@storybook/react';
 import { Box, ComponentStage } from '../../styles/Box';
-import { Modal } from './index';
+import { Modal, useHandleModal } from './index';
 import type { ModalContainerProps } from './Modal.types';
 import ModalContainer from './ModalContainer';
 import type { ReactNode } from 'react';
@@ -8,31 +8,27 @@ import React from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
 import { Button } from '../Buttons';
-import { useHandleModal } from '../../hooks';
-import { Dropdown } from '../Dropdown';
 
 export default {
   title: 'COMPONENTS/Modal',
   component: ModalContainer,
 };
 
-const mockBoxs: ReactNode[] = new Array(10)
+const mockBoxs: ReactNode[] = new Array(100)
   .fill(0)
   .map((_, index) => <Box key={index} width={'100%'} height={'100px'} background={'primary300'} />);
 
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
-    <Modal.Container {...args} outsideClick={removeModal} height={400}>
+    <Modal.Container {...args} outsideClick={removeModal} height={1000}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
       <Modal.Body>
-        <Dropdown
-          content={<Dropdown.Content>dropdown content</Dropdown.Content>}
-          trigger={<Dropdown.Button placeholder={'테스트 버튼'} />}
-        />
-        <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
+        <Stack.Vertical height={'100%'} justify={'center'}>
+          {mockBoxs.map((box) => box)}
+        </Stack.Vertical>
       </Modal.Body>
       <Modal.Footer>
         <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
@@ -86,7 +82,7 @@ export const HeaderBody: StoryFn<ModalContainerProps> = (args) => (
 export const BodyFooter: StoryFn<ModalContainerProps> = (args) => (
   <Stack height={'500px'}>
     <ComponentStage>
-      <Modal.Container {...args} height={500}>
+      <Modal.Container {...args}>
         <Modal.Body>
           <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
         </Modal.Body>

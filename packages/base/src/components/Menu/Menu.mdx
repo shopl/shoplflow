@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import Menu from './Menu';
+import * as MenuStories from './Menu.stories';
+
+<Meta of={MenuStories} />
+
+# Menu
+
+Menu는 Dropdown Menu와 같이 메뉴 리스트를 나타낼 때 사용합니다.
+
+leftSource 데이터에 따라 선택상태 style이 변경됩니다.
+
+leftSource가 있을 경우 leftSource 컴포넌트에 isSelect prop이 전달됩니다.
+
+leftSource가 없을 경우 Menu 컴포넌트의 background가 변경됩니다.
+
+<Canvas of={MenuStories.Playground} />
+
+
+## ArgsTable
+
+<ArgsTable of={Menu} />
+
+## Usage
+
+```tsx
+{newArray.map((item, index) => {
+  return (
+    <Menu leftSource={<checkBox/>} key={index}>
+      {item.name + index}
+    </Menu>
+  );
+})}
+```
+
+
+

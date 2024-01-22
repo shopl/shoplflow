@@ -34,7 +34,11 @@ const Popper = ({
   });
 
   return (
-    <PopperContext.Provider value={{ ...refs, floatingStyles, isOpen, setIsOpen }}>{children}</PopperContext.Provider>
+    <PopperContext.Provider
+      value={{ ...refs, floatingStyles: { ...floatingStyles, zIndex: 20002 }, isOpen, setIsOpen }}
+    >
+      {children}
+    </PopperContext.Provider>
   );
 };
 
@@ -64,7 +68,7 @@ export const PopperPortal = forwardRef<HTMLDivElement, PopperPortalProps>(
     const refs = useMergeRefs(ref, setFloating);
 
     return (
-      <FloatingPortal id={'popper-portal-key'}>
+      <FloatingPortal>
         <AnimatePresence>
           {isOpen && (
             <motion.div

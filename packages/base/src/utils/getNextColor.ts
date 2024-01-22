@@ -12,16 +12,34 @@ import { colorTokens } from '../styles';
  */
 export const getNextColor = (color: ColorTokens, step = 1): ColorTokens => {
   const colorName = color.replace(/[0-9]|_/g, '');
-  const colorNumber = color.replace(/[a-z]|_/g, '');
 
-  const nextColorNumber = Number(colorNumber) + 100 * step;
-  const nextColorToken = `${colorName}${nextColorNumber}`;
-  const colorKeysOfColorName = Object.keys(colorTokens)
-    .filter((colorToken) => colorToken.includes(colorName))
-    .sort((a, b) => Number(a.replace(/[a-z]|_/g, '')) - Number(b.replace(/[a-z]|_/g, '')));
-  const colorTokenKeys = Object.keys(colorTokens);
-  const findColorToken = colorTokenKeys.find((colorToken) => colorToken === nextColorToken) as ColorTokens | undefined;
-  const lastColorToken = colorKeysOfColorName[colorKeysOfColorName.length - 1] as ColorTokens;
+  const colorTokenKeys = Object.keys(colorTokens) as ColorTokens[];
+  const findColorToken = colorTokenKeys.filter((colorToken) => colorToken.includes(colorName));
 
-  return findColorToken ? findColorToken : lastColorToken;
+  const extractNumbers = (str: ColorTokens) => {
+    const formattedStr = str.replace(/_/g, '.');
+    const regex = /\d+(\.\d+)?/g;
+    const match = formattedStr.match(regex);
+    return match ? parseFloat(match[0]) : 0;
+  };
+  // neutral700_5 와 같은 색상은 반환하지 않습니다.
+
+  const sortColorToken = findColorToken.sort((a, b) => extractNumbers(a) - extractNumbers(b));
+  const currentIndex = sortColorToken.indexOf(color);
+
+  let newIndex = currentIndex;
+  let stepCount = 0;
+
+  while (stepCount < Math.abs(step)) {
+    newIndex += Math.sign(step);
+    if (newIndex < 0 || newIndex >= sortColorToken.length) {
+      break;
+    }
+    if (!sortColorToken[newIndex].endsWith('_5') && !sortColorToken[newIndex].includes('50')) {
+      stepCount++;
+    }
+  }
+
+  newIndex = Math.max(0, Math.min(newIndex, sortColorToken.length - 1));
+  return sortColorToken[newIndex];
 };

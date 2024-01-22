@@ -1,5 +1,53 @@
 # @shoplflow/shopl-assets
 
+## 0.6.0
+
+### Minor Changes
+
+- [#225](https://github.com/shopl/shoplflow/pull/225) [`3c1b8fc`](https://github.com/shopl/shoplflow/commit/3c1b8fcbddb74fe4c1485579097ed7f6f868c7ee) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Icon 업데이트
+
+## 0.5.1
+
+### Patch Changes
+
+- [#212](https://github.com/shopl/shoplflow/pull/212) [`424e76a`](https://github.com/shopl/shoplflow/commit/424e76a67dbced84eb3aabf22fca21a764ada203) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 생성된 asset의 뷰박스가 누락된 문제 수정
+
+## 0.5.0
+
+### Minor Changes
+
+- [#208](https://github.com/shopl/shoplflow/pull/208) [`a26e49e`](https://github.com/shopl/shoplflow/commit/a26e49ee2c0d06de40f6e5ad9d13819799a69d4d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 생성된 아이콘의 사이즈가 고정되는 문제 수정
+
+## 0.4.0
+
+### Minor Changes
+
+- [#178](https://github.com/shopl/shoplflow/pull/178) [`afaef60`](https://github.com/shopl/shoplflow/commit/afaef602ffc6bdec0a5dc2c353923f60047f454a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 아이콘 업데이트
+
+  - ic-close-small.svg
+  - ic-edit-line.svg
+  - ic-edit-solid.svg
+  - ic-mention.svg
+  - ic-paste.svg
+  - ic-photo.svg
+  - ic-reply.svg
+  - ic-subtract.svg
+  - ic-video.svg
+  - ic-close-medium.svg
+  - ic-comment.svg
+
+## 0.3.3
+
+### Patch Changes
+
+- [#149](https://github.com/shopl/shoplflow/pull/149) [`4832c98`](https://github.com/shopl/shoplflow/commit/4832c985b740b19ec055db67aa3e27414bdf6887) Thanks [@velo-kim](https://github.com/velo-kim)! - ic-mother 아이콘 추가
+
+## 0.3.2
+
+### Patch Changes
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - update assets, fix ChipButton style
+
 ## 0.3.1
 
 ### Patch Changes

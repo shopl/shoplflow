@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
-import type { IconButtonOptionProps, IconButtonSizeVar, IconButtonStyleVar } from './IconButton.types';
+import type { IconButtonOptionProps, IconButtonSizeVariantType, IconButtonStyleVariantType } from './IconButton.types';
+import type { ColorTokens } from '../../../styles';
 import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
+import { getNextColor } from '../../../utils/getNextColor';
 
-const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
+const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
   switch (sizeVar) {
     case 'M':
       return css`
@@ -30,41 +32,72 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVar) => {
   }
 };
 
-const getStyleByStyleVar = (styleVar?: IconButtonStyleVar) => {
+const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: ColorTokens, isHovered?: boolean) => {
   switch (styleVar) {
-    case 'SOLID':
+    case 'PRIMARY':
       return css`
-        border: 1px solid ${colorTokens.neutral200};
-        &:hover {
-          background-color: ${colorTokens.neutral100};
-        }
+        background: ${colorTokens.primary300};
+        border: 1px solid ${colorTokens.primary400};
+        ${isHovered &&
+        css`
+          background: ${colorTokens.primary400};
+        `}
+      `;
+    case 'SECONDARY':
+      return css`
+        background: ${colorTokens.neutral0};
+        border: 1px solid ${colorTokens.neutral350};
+        ${isHovered &&
+        css`
+          background: ${colorTokens.neutral100};
+        `}
+      `;
+    case 'SOLID':
+      if (!color) {
+        throw new Error('IconButton의 SOLID 속성은 color를 필수로 받습니다.');
+      }
+      return css`
+        border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+        background: ${colorTokens[color]};
+
+        ${isHovered &&
+        css`
+          background: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+        `}
       `;
     case 'GHOST':
       return css`
         border: 1px solid transparent;
-        &:hover {
-          background-color: ${colorTokens.neutral400_5};
-        }
+        background: transparent;
+        ${isHovered &&
+        css`
+          background: ${colorTokens.neutral400_5};
+        `}
       `;
     default:
       return css`
         border: 1px solid ${colorTokens.neutral200};
-        &:hover {
-          background-color: ${colorTokens.neutral100};
-        }
+        ${isHovered &&
+        css`
+          background: ${colorTokens.neutral100};
+        `}
       `;
   }
 };
 
-export const StyledIconButton = styled.button<IconButtonOptionProps>`
+export const StyledIconButton = styled.button<
+  IconButtonOptionProps & {
+    isHovered: boolean;
+  }
+>`
   display: flex;
   flex-shrink: 0;
   border-radius: ${borderRadiusTokens.borderRadius06};
   justify-content: center;
   align-items: center;
-  background-color: ${colorTokens.neutral0};
+  background: ${colorTokens.neutral0};
   cursor: pointer;
-  ${({ styleVar }) => getStyleByStyleVar(styleVar)};
+  ${({ styleVar, color, isHovered }) => getStyleByStyleVar(styleVar, color, isHovered)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
   & > svg {

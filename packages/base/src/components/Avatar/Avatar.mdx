@@ -1,0 +1,26 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import Avatar from './Avatar';
+import * as AvatarStories from './Avatar.stories';
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+Avatar는 사용자의 프로필 이미지를 표시하는 컴포넌트입니다.
+
+<Canvas of={AvatarStories.Playground} />
+
+
+## ArgsTable
+
+<ArgsTable of={Avatar} />
+
+## Usage
+
+```tsx
+const App = () => (
+  return <Avatar badge={<Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />} src={'url'}/>
+);
+```
+
+

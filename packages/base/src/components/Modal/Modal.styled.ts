@@ -46,7 +46,22 @@ const getModalBodyTopBottomPadding = (isIncludeHeader: boolean) => {
   `;
 };
 
-export const Container = styled.div<ModalContainerProps>`
+const checkMaxHeight = (height: number, viewport: number) => {
+  const topBottomMargin = 64;
+  if (height > 1200) {
+    return 1200 - topBottomMargin;
+  }
+  if (height > viewport) {
+    return viewport - topBottomMargin;
+  }
+  return height - topBottomMargin;
+};
+
+export const Container = styled.div<
+  ModalContainerProps & {
+    viewport: number;
+  }
+>`
   display: flex;
   flex-direction: column;
   border-radius: ${borderRadiusTokens.borderRadius08};
@@ -54,7 +69,7 @@ export const Container = styled.div<ModalContainerProps>`
   box-shadow: ${boxShadowTokens.dropShadow};
   overflow: hidden;
   flex-grow: 1;
-  height: ${({ height }) => (height ? `${height}px` : 'initial')};
+  height: ${({ height, viewport }) => (height ? `${checkMaxHeight(height, viewport)}px` : 'initial')};
   min-height: 180px;
   max-height: 1200px;
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
@@ -73,7 +88,8 @@ export const HeaderContainer = styled.div`
 
 export const BodyContainer = styled.div<{
   isIncludeHeader: boolean;
-  height: string | number;
+  minHeight: string | number;
+  maxHeight: string | number;
 }>`
   display: flex;
   width: 100%;
@@ -81,10 +97,21 @@ export const BodyContainer = styled.div<{
   overflow: hidden;
   flex-direction: column;
   background: ${colorTokens.neutral0};
-  min-height: 112px;
-  min-height: ${({ height }) => height};
+  box-sizing: border-box;
+  min-height: ${({ minHeight }) => minHeight};
+  max-height: ${({ maxHeight }) => maxHeight}px;
   flex: 1;
   ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}
+`;
+
+export const ModalBodyContainerInner = styled.div`
+  display: grid;
+  align-self: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  //스크롤 생성시 하단 padding 적용하기 위한 설정
+  height: 100%;
+  box-sizing: border-box;
 `;
 
 export const ModalBodyContent = styled.div<{
@@ -93,11 +120,9 @@ export const ModalBodyContent = styled.div<{
 }>`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  height: 100%;
   box-sizing: border-box;
   padding: 0 24px;
-  overflow: hidden;
   background: ${colorTokens.neutral0};
 `;
 

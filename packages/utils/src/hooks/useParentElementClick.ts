@@ -8,7 +8,7 @@ import { useCallback, useEffect, useRef } from 'react';
  * ## Description
  * `useParentElementClick`은 부모 요소에 클릭이벤트를 등록합니다.
  *
- * 첫번째 인자로 `onClickOutside`를 받으며, 두번째 인자로 `initialRef`를 받습니다.
+ * 첫번째 인자로 `onClickOutside`를 받으며 ref를 return 합니다.
  *
  * `onClickOutside`는 클릭이벤트가 발생했을 때 실행되는 함수이며, `initialRef`는 클릭이벤트를 등록할 요소의 자식 요소를 받습니다.
  *
@@ -18,13 +18,12 @@ import { useCallback, useEffect, useRef } from 'react';
  * import {useParentElementClick} from "@shoplflow/utils"
  *
  * const Container = () => {
- *     const ref = React.useRef<HTMLDivElement>(null);
+ *      const ref = useParentElementClick<HTMLDivElement>(outsideClick);
  *
  *     const outsideClick = () => {
  *         console.log("outside click");
  *     }
  *
- *     useParentElementClick<HTMLDivElement>(outsideClick, ref);
  *
  *     return(
  *         <div ref={ref}>container</div>
@@ -45,8 +44,7 @@ import { useCallback, useEffect, useRef } from 'react';
  *
  * ```tsx
  * const ModalContainer = ({ children, outsideClick = noop, ...rest }: ModalContainerProps) => {
- *   const ref = React.useRef<HTMLDivElement>(null);
- *   useParentElementClick<HTMLDivElement>(outsideClick, ref);
+ *   const ref = useParentElementClick<HTMLDivElement>(outsideClick);
  *
  *   // ...생략
  *

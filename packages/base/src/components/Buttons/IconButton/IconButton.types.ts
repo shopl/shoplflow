@@ -3,38 +3,37 @@ import type { PolymorphicComponentProps } from '../../../types/PolymorphicCompon
 import type { $Values } from '@shoplflow/utils';
 import type {
   DisableProps,
-  IconSourceProps,
   SizeVariantProps,
   StyleVariantProps,
   ColorTokenProps,
+  ChildrenProps,
 } from '../../../utils/type/ComponentProps';
-import type { IconSizeVariantsType } from '../../Icon';
 
-export const iconButtonSizeVar = {
+export const IconButtonSizeVariants = {
   S: 'S',
   M: 'M',
 } as const;
 
-export type IconButtonSizeVar = $Values<typeof iconButtonSizeVar>;
+export type IconButtonSizeVariantType = $Values<typeof IconButtonSizeVariants>;
 
-export const iconButtonStyleVar = {
+export const IconButtonStyleVariants = {
+  PRIMARY: 'PRIMARY',
+  SECONDARY: 'SECONDARY',
   SOLID: 'SOLID',
   GHOST: 'GHOST',
 } as const;
 
-export type IconButtonStyleVar = $Values<typeof iconButtonStyleVar>;
+export type IconButtonStyleVariantType = $Values<typeof IconButtonStyleVariants>;
 
 export type IconButtonOptionProps<T extends ElementType = 'button'> = Omit<
   ComponentPropsWithoutRef<T>,
   'color' | 'disabled'
 > &
   DisableProps &
-  SizeVariantProps<IconButtonSizeVar> &
-  StyleVariantProps<IconButtonStyleVar> &
-  IconSourceProps &
-  ColorTokenProps & {
-    iconSize?: IconSizeVariantsType;
-  };
+  SizeVariantProps<IconButtonSizeVariantType> &
+  StyleVariantProps<IconButtonStyleVariantType> &
+  ChildrenProps &
+  ColorTokenProps;
 
 export type IconButtonProps<T extends ElementType = 'button'> = PolymorphicComponentProps<T, IconButtonOptionProps>;
 

@@ -3,8 +3,8 @@ import React from 'react';
 import { useDomain } from '../hooks/useDomain';
 import type { DomainType } from '../types/Domain';
 import ModalPortal from '../portal/ModalPortal';
-import ModalProvider from './ModalProvider';
 import PopperPortal from '../portal/PopperPortal';
+import ModalProvider from '../components/Modal/providers/ModalProvider';
 
 export interface ShoplflowProviderProps {
   domain?: DomainType;

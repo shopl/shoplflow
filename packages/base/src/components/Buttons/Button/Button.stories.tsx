@@ -1,25 +1,31 @@
 import type { StoryFn } from '@storybook/react';
 import Button from './Button';
 import type { ButtonProps } from './Button.types';
-import { buttonSizeVar, buttonStyleVar } from './Button.types';
+import { ButtonStyleVariants } from './Button.types';
 import { ComponentStage } from '../../../styles/Box';
 import { Stack } from '../../Stack';
+import { colorTokens } from '../../../styles';
 
 export default {
   title: 'COMPONENTS/Buttons/Button',
   component: Button,
   argTypes: {
     styleVar: {
-      options: buttonStyleVar,
+      options: ButtonStyleVariants,
       control: { type: 'select' },
       description: '버튼 타입',
       defaultValue: 'primary',
     },
     sizeVar: {
-      options: buttonSizeVar,
+      options: ButtonStyleVariants,
       control: { type: 'radio' },
       description: '버튼 사이즈',
       defaultValue: 'M',
+    },
+    color: {
+      options: Object.keys(colorTokens),
+      control: { type: 'select' },
+      defaultValue: 'primary400',
     },
     onClick: { action: 'clicked' },
   },
@@ -39,7 +45,7 @@ Primary.args = {
   styleVar: 'PRIMARY',
   sizeVar: 'M',
   children: '버튼',
-  disabled: true,
+  disabled: false,
 };
 
 export const Secondary: StoryFn<ButtonProps> = (args) => {
@@ -73,6 +79,7 @@ Solid.args = {
   styleVar: 'SOLID',
   sizeVar: 'M',
   children: '버튼',
+  color: 'ocean100',
   disabled: false,
 };
 

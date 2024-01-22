@@ -1,5 +1,349 @@
 # @shoplflow/base
 
+## 0.24.20
+
+### Patch Changes
+
+- Updated dependencies [[`3c1b8fc`](https://github.com/shopl/shoplflow/commit/3c1b8fcbddb74fe4c1485579097ed7f6f868c7ee)]:
+  - @shoplflow/shopl-assets@0.6.0
+
+## 0.24.19
+
+### Patch Changes
+
+- [#224](https://github.com/shopl/shoplflow/pull/224) [`3819e16`](https://github.com/shopl/shoplflow/commit/3819e16d1ffc11867d01f90d24a41c5d2b93ccb7) Thanks [@velo-kim](https://github.com/velo-kim)! - style: Input DeleteIcon 컬러 변경 (netural600 -> neutarl350)
+
+## 0.24.18
+
+### Patch Changes
+
+- [#222](https://github.com/shopl/shoplflow/pull/222) [`f98a8e5`](https://github.com/shopl/shoplflow/commit/f98a8e5e456357a844f7d3945aad91976a85a911) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ModalProvider 배경 스크롤 방지 로직 수정
+
+- [#222](https://github.com/shopl/shoplflow/pull/222) [`f98a8e5`](https://github.com/shopl/shoplflow/commit/f98a8e5e456357a844f7d3945aad91976a85a911) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: 모달 뒤로가기 로직 추가
+
+## 0.24.17
+
+### Patch Changes
+
+- [#220](https://github.com/shopl/shoplflow/pull/220) [`cf14c3d`](https://github.com/shopl/shoplflow/commit/cf14c3d3fde92a004f6bd4aab067a82a486d2191) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - inputButton 빈 string에도 변경될 수 있게 수정
+
+## 0.24.16
+
+### Patch Changes
+
+- [#218](https://github.com/shopl/shoplflow/pull/218) [`5d299f8`](https://github.com/shopl/shoplflow/commit/5d299f84f3ba13fb897fd2ae6792ce1de0bac12d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 아이콘 변경 대응
+
+- [#218](https://github.com/shopl/shoplflow/pull/218) [`5d299f8`](https://github.com/shopl/shoplflow/commit/5d299f84f3ba13fb897fd2ae6792ce1de0bac12d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 뷰포트에 따라 modal 높이가 변경되지 않던 문제 수정
+
+- [#218](https://github.com/shopl/shoplflow/pull/218) [`5d299f8`](https://github.com/shopl/shoplflow/commit/5d299f84f3ba13fb897fd2ae6792ce1de0bac12d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 컬러 단계 로직 수정
+
+## 0.24.15
+
+### Patch Changes
+
+- [#216](https://github.com/shopl/shoplflow/pull/216) [`38dd211`](https://github.com/shopl/shoplflow/commit/38dd2114de42e6c89f1adc9526347ad3a10c85da) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ModalProvider 배경 스크롤 방지 로직 수정
+
+## 0.24.14
+
+### Patch Changes
+
+- [#214](https://github.com/shopl/shoplflow/pull/214) [`a43f254`](https://github.com/shopl/shoplflow/commit/a43f254138929bb1d56f526aa96105688c1e7649) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: DropdownButton > Icon sizeVar "S" 명시
+
+## 0.24.13
+
+### Patch Changes
+
+- Updated dependencies [[`424e76a`](https://github.com/shopl/shoplflow/commit/424e76a67dbced84eb3aabf22fca21a764ada203)]:
+  - @shoplflow/shopl-assets@0.5.1
+  - @shoplflow/hada-assets@0.1.1
+
+## 0.24.12
+
+### Patch Changes
+
+- [#210](https://github.com/shopl/shoplflow/pull/210) [`d15a6aa`](https://github.com/shopl/shoplflow/commit/d15a6aa48ebb5e6842e85347a14ea410b049c5f5) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - List.Text2Rows 말줄임 처리 추가
+
+## 0.24.11
+
+### Patch Changes
+
+- Updated dependencies [[`a26e49e`](https://github.com/shopl/shoplflow/commit/a26e49ee2c0d06de40f6e5ad9d13819799a69d4d)]:
+  - @shoplflow/shopl-assets@0.5.0
+  - @shoplflow/hada-assets@0.1.0
+
+## 0.24.10
+
+### Patch Changes
+
+- [#206](https://github.com/shopl/shoplflow/pull/206) [`9317ead`](https://github.com/shopl/shoplflow/commit/9317ead4a0bc177e93ce68454d3ea0f37c52c2fb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Dropdown Button S size style 수정
+
+- [#206](https://github.com/shopl/shoplflow/pull/206) [`9317ead`](https://github.com/shopl/shoplflow/commit/9317ead4a0bc177e93ce68454d3ea0f37c52c2fb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Popper z-index 수정
+
+## 0.24.9
+
+### Patch Changes
+
+- [#204](https://github.com/shopl/shoplflow/pull/204) [`da8b5c0`](https://github.com/shopl/shoplflow/commit/da8b5c087cc03629a9e314ff4e5aa1b9f0fbb4d2) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - MinusButton size 수정
+
+## 0.24.8
+
+### Patch Changes
+
+- [#202](https://github.com/shopl/shoplflow/pull/202) [`34fead1`](https://github.com/shopl/shoplflow/commit/34fead18443bc472ec6ce1efacc572c4a31c2a89) Thanks [@velo-kim](https://github.com/velo-kim)! - feature: DropdownButton value ReactNode로 변경
+
+## 0.24.7
+
+### Patch Changes
+
+- [#200](https://github.com/shopl/shoplflow/pull/200) [`0d91fb0`](https://github.com/shopl/shoplflow/commit/0d91fb0abf3067a1e912359d4528b3c36fa29f31) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal 관련 type export 추가
+
+## 0.24.6
+
+### Patch Changes
+
+- [#198](https://github.com/shopl/shoplflow/pull/198) [`db2c5b5`](https://github.com/shopl/shoplflow/commit/db2c5b5f8c4273a594977514f2d6df664dab915b) Thanks [@velo-kim](https://github.com/velo-kim)! - style: Checkbox Container background-color transparent로 변경
+
+- [#198](https://github.com/shopl/shoplflow/pull/198) [`db2c5b5`](https://github.com/shopl/shoplflow/commit/db2c5b5f8c4273a594977514f2d6df664dab915b) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Menu leftSource checkbox, radio 컴포넌트일 경우에만 isSelected 미처리
+
+## 0.24.5
+
+### Patch Changes
+
+- [#196](https://github.com/shopl/shoplflow/pull/196) [`fb6428f`](https://github.com/shopl/shoplflow/commit/fb6428f6a5f32e502f821e3900109a08ece2fe10) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Menu leftSource checkbox, radio 컴포넌트일 경우에만 isSelected 미처리
+
+## 0.24.4
+
+### Patch Changes
+
+- [#194](https://github.com/shopl/shoplflow/pull/194) [`79bf8e6`](https://github.com/shopl/shoplflow/commit/79bf8e628b605c69fa2fbd107c97d648da794871) Thanks [@velo-kim](https://github.com/velo-kim)! - style: Popper
+
+- [#194](https://github.com/shopl/shoplflow/pull/194) [`79bf8e6`](https://github.com/shopl/shoplflow/commit/79bf8e628b605c69fa2fbd107c97d648da794871) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: PopperPortal > div style에 position: relative 추가
+
+## 0.24.3
+
+### Patch Changes
+
+- [#192](https://github.com/shopl/shoplflow/pull/192) [`80137b7`](https://github.com/shopl/shoplflow/commit/80137b796b48339d38696480db38cd238b538767) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: PopperPortal > div style에 position: relative 추가
+
+## 0.24.2
+
+### Patch Changes
+
+- [#190](https://github.com/shopl/shoplflow/pull/190) [`f2e4801`](https://github.com/shopl/shoplflow/commit/f2e4801ca215114c27cb12d5012c9493739efd56) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - SelectInputButton value 타입 변경
+
+## 0.24.1
+
+### Patch Changes
+
+- [#188](https://github.com/shopl/shoplflow/pull/188) [`2fd5851`](https://github.com/shopl/shoplflow/commit/2fd58515e42c324c1b9e66465dfd904f4abe00cf) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Icon HTMLAttributes 추가
+
+## 0.24.0
+
+### Minor Changes
+
+- [#186](https://github.com/shopl/shoplflow/pull/186) [`b45d27d`](https://github.com/shopl/shoplflow/commit/b45d27d5db8326fbd905dea1aa48e1654b08830b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Icon `dangerouslySetInnerHTML` prop 추가
+
+## 0.23.2
+
+### Patch Changes
+
+- [#184](https://github.com/shopl/shoplflow/pull/184) [`3a4c61a`](https://github.com/shopl/shoplflow/commit/3a4c61a50879ab1f68016b15967fe4b1f2a85201) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Stack 컴포넌트 min/max width/height 추가
+
+## 0.23.1
+
+### Patch Changes
+
+- [#182](https://github.com/shopl/shoplflow/pull/182) [`4d98b5b`](https://github.com/shopl/shoplflow/commit/4d98b5b1fd86da7b5562f505b404a060bf63af8e) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - SelectInputButton export 추가
+
+## 0.23.0
+
+### Minor Changes
+
+- [#180](https://github.com/shopl/shoplflow/pull/180) [`ddd53e3`](https://github.com/shopl/shoplflow/commit/ddd53e35a0ade5384808adf0fe7521edffbca187) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - SelectInputButton 추가
+
+### Patch Changes
+
+- [#180](https://github.com/shopl/shoplflow/pull/180) [`ddd53e3`](https://github.com/shopl/shoplflow/commit/ddd53e35a0ade5384808adf0fe7521edffbca187) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton 이벤트 버블링 이슈 수정
+
+## 0.22.5
+
+### Patch Changes
+
+- Updated dependencies [[`afaef60`](https://github.com/shopl/shoplflow/commit/afaef602ffc6bdec0a5dc2c353923f60047f454a)]:
+  - @shoplflow/shopl-assets@0.4.0
+
+## 0.22.4
+
+### Patch Changes
+
+- Updated dependencies [[`e9ea0d8`](https://github.com/shopl/shoplflow/commit/e9ea0d8b019117f9cd7f414c5a6dd62fd3d4d3a5)]:
+  - @shoplflow/utils@0.5.4
+
+## 0.22.3
+
+### Patch Changes
+
+- [#174](https://github.com/shopl/shoplflow/pull/174) [`d44c864`](https://github.com/shopl/shoplflow/commit/d44c864604b165ca9715902d2e98078838ae8f94) Thanks [@velo-kim](https://github.com/velo-kim)! - update: InputButton 삭제 버튼 컬러 변경, ModalProvider 바디 스크롤 방지 로직 추가
+
+## 0.22.2
+
+### Patch Changes
+
+- [#172](https://github.com/shopl/shoplflow/pull/172) [`1856d30`](https://github.com/shopl/shoplflow/commit/1856d30849d0b02b5a4f9e87250ab2b043e7ae79) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton onClear 동작 이후에도 X 버튼 노출 문제 수정
+
+## 0.22.1
+
+### Patch Changes
+
+- [#170](https://github.com/shopl/shoplflow/pull/170) [`5baf528`](https://github.com/shopl/shoplflow/commit/5baf528315a0d14e9d9fb786da275dd767e61450) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ChipToggle `Received 'true' for a non-boolean attribute.` 경고 해결
+
+- [#170](https://github.com/shopl/shoplflow/pull/170) [`5baf528`](https://github.com/shopl/shoplflow/commit/5baf528315a0d14e9d9fb786da275dd767e61450) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Avatar 문서 수정
+
+## 0.22.0
+
+### Minor Changes
+
+- [#168](https://github.com/shopl/shoplflow/pull/168) [`ed4f99a`](https://github.com/shopl/shoplflow/commit/ed4f99a18063e21e51b334dd9d4b3e08666cac49) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Avatar 추가
+
+### Patch Changes
+
+- [#168](https://github.com/shopl/shoplflow/pull/168) [`ed4f99a`](https://github.com/shopl/shoplflow/commit/ed4f99a18063e21e51b334dd9d4b3e08666cac49) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - variant 변수 네이밍 통일
+
+## 0.21.0
+
+### Minor Changes
+
+- [#166](https://github.com/shopl/shoplflow/pull/166) [`1829836`](https://github.com/shopl/shoplflow/commit/182983678891c66028fd7c4fd31aeae99695e1ae) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Menu sizeVar 추가
+
+## 0.20.1
+
+### Patch Changes
+
+- [#164](https://github.com/shopl/shoplflow/pull/164) [`0eec1f6`](https://github.com/shopl/shoplflow/commit/0eec1f6c6d64bd9ebbcbe892ee049e223ea0ad0d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useOnToggle select 조건 수정
+
+## 0.20.0
+
+### Minor Changes
+
+- [#162](https://github.com/shopl/shoplflow/pull/162) [`39be0d5`](https://github.com/shopl/shoplflow/commit/39be0d53f3e8d1b498d5cddc3e7f9e778c5ab96b) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Tag 컴포넌트 추가
+
+## 0.19.0
+
+### Minor Changes
+
+- [#159](https://github.com/shopl/shoplflow/pull/159) [`1c0b537`](https://github.com/shopl/shoplflow/commit/1c0b537162a923cc2e1637a8872f3aa4d7abd061) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input number 타입 추가
+
+## 0.18.0
+
+### Minor Changes
+
+- [#157](https://github.com/shopl/shoplflow/pull/157) [`c524b74`](https://github.com/shopl/shoplflow/commit/c524b7490cb02d684078cea5be9f2a8ec31a6276) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Radio 추가
+
+- [#157](https://github.com/shopl/shoplflow/pull/157) [`c524b74`](https://github.com/shopl/shoplflow/commit/c524b7490cb02d684078cea5be9f2a8ec31a6276) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Checkbox 컴포넌트 추가
+
+## 0.17.0
+
+### Minor Changes
+
+- [#155](https://github.com/shopl/shoplflow/pull/155) [`fcf41a1`](https://github.com/shopl/shoplflow/commit/fcf41a115413940ddc28eabde8c50b0c6c384b5d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Menu 컴포넌트 추가
+
+### Patch Changes
+
+- Updated dependencies [[`fcf41a1`](https://github.com/shopl/shoplflow/commit/fcf41a115413940ddc28eabde8c50b0c6c384b5d)]:
+  - @shoplflow/utils@0.5.3
+
+## 0.16.0
+
+### Minor Changes
+
+- [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - List 컴포넌트 추가
+
+### Patch Changes
+
+- [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - inputButton 이벤트 버블링 방지
+
+- Updated dependencies [[`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c)]:
+  - @shoplflow/utils@0.5.2
+
+## 0.15.3
+
+### Patch Changes
+
+- Updated dependencies [[`e438e97`](https://github.com/shopl/shoplflow/commit/e438e9728ba6916a31233f2250d5f6f1384a73cc)]:
+  - @shoplflow/utils@0.5.1
+
+## 0.15.2
+
+### Patch Changes
+
+- Updated dependencies [[`4832c98`](https://github.com/shopl/shoplflow/commit/4832c985b740b19ec055db67aa3e27414bdf6887)]:
+  - @shoplflow/shopl-assets@0.3.3
+
+## 0.15.1
+
+### Patch Changes
+
+- [#147](https://github.com/shopl/shoplflow/pull/147) [`3920767`](https://github.com/shopl/shoplflow/commit/392076796e422f689c10aff67d80ac6d2ca599d4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input Button 태그 input으로 변경
+
+- [#147](https://github.com/shopl/shoplflow/pull/147) [`3920767`](https://github.com/shopl/shoplflow/commit/392076796e422f689c10aff67d80ac6d2ca599d4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - inputButton disable background 컬러 변경
+
+## 0.15.0
+
+### Minor Changes
+
+- [#145](https://github.com/shopl/shoplflow/pull/145) [`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - floating UI middleware function 추가
+
+- [#145](https://github.com/shopl/shoplflow/pull/145) [`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Dropdown 구조 변경
+
+### Patch Changes
+
+- Updated dependencies [[`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761)]:
+  - @shoplflow/utils@0.5.0
+
+## 0.14.0
+
+### Minor Changes
+
+- [#143](https://github.com/shopl/shoplflow/pull/143) [`765399e`](https://github.com/shopl/shoplflow/commit/765399e007f3938511e07c2b497355560b30b426) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - scrollArea 추가
+
+### Patch Changes
+
+- [#143](https://github.com/shopl/shoplflow/pull/143) [`765399e`](https://github.com/shopl/shoplflow/commit/765399e007f3938511e07c2b497355560b30b426) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - modal body align 미적용 이슈 수정
+
+## 0.13.9
+
+### Patch Changes
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ChipButton > background 속성 최하단으로 이동
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - update assets, fix ChipButton style
+
+- Updated dependencies [[`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af)]:
+  - @shoplflow/shopl-assets@0.3.2
+  - @shoplflow/hada-assets@0.0.4
+
+## 0.13.8
+
+### Patch Changes
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button Solid type color 커스텀 추가
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton Primary, Secondary styleVar 추가
+
+- [#138](https://github.com/shopl/shoplflow/pull/138) [`19ce15f`](https://github.com/shopl/shoplflow/commit/19ce15f4567da4ce091e1a87ed3ce589deab06d3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton Background 컬러 지정
+
+## 0.13.7
+
+### Patch Changes
+
+- [#136](https://github.com/shopl/shoplflow/pull/136) [`2841b1c`](https://github.com/shopl/shoplflow/commit/2841b1c4a334c1e12509325c4afc5f87d7a73340) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - export path 수정
+
+## 0.13.6
+
+### Patch Changes
+
+- [#132](https://github.com/shopl/shoplflow/pull/132) [`b5ca933`](https://github.com/shopl/shoplflow/commit/b5ca933f4f93fedf5c72a5ee690c7c1439f3d453) Thanks [@velo-kim](https://github.com/velo-kim)! - update global css
+
 ## 0.13.5
 
 ### Patch Changes

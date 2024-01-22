@@ -1,5 +1,23 @@
 # @shoplflow/hada-assets
 
+## 0.1.1
+
+### Patch Changes
+
+- [#212](https://github.com/shopl/shoplflow/pull/212) [`424e76a`](https://github.com/shopl/shoplflow/commit/424e76a67dbced84eb3aabf22fca21a764ada203) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 생성된 asset의 뷰박스가 누락된 문제 수정
+
+## 0.1.0
+
+### Minor Changes
+
+- [#208](https://github.com/shopl/shoplflow/pull/208) [`a26e49e`](https://github.com/shopl/shoplflow/commit/a26e49ee2c0d06de40f6e5ad9d13819799a69d4d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 생성된 아이콘의 사이즈가 고정되는 문제 수정
+
+## 0.0.4
+
+### Patch Changes
+
+- [#141](https://github.com/shopl/shoplflow/pull/141) [`ff15740`](https://github.com/shopl/shoplflow/commit/ff15740029d00a21391ecf16058876d3fcae92af) Thanks [@velo-kim](https://github.com/velo-kim)! - update assets, fix ChipButton style
+
 ## 0.0.3
 
 ### Patch Changes

@@ -12,3 +12,9 @@ export const Modal = {
 };
 
 export * from './Modal.types';
+
+export * from './hooks/useModalValue';
+export * from './hooks/useHandleModal';
+
+export * from './providers/ModalContext';
+export * from './providers/ModalProvider';

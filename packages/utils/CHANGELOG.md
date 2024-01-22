@@ -1,5 +1,35 @@
 # @shoplflow/utils
 
+## 0.5.4
+
+### Patch Changes
+
+- [#176](https://github.com/shopl/shoplflow/pull/176) [`e9ea0d8`](https://github.com/shopl/shoplflow/commit/e9ea0d8b019117f9cd7f414c5a6dd62fd3d4d3a5) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect 에러 케이스 추가
+
+## 0.5.3
+
+### Patch Changes
+
+- [#155](https://github.com/shopl/shoplflow/pull/155) [`fcf41a1`](https://github.com/shopl/shoplflow/commit/fcf41a115413940ddc28eabde8c50b0c6c384b5d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect toggle 안되는 문제 수정
+
+## 0.5.2
+
+### Patch Changes
+
+- [#153](https://github.com/shopl/shoplflow/pull/153) [`cbb79bf`](https://github.com/shopl/shoplflow/commit/cbb79bfd487e66c2b3b80352e26167666207354c) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect 문서 업데이트
+
+## 0.5.1
+
+### Patch Changes
+
+- [#151](https://github.com/shopl/shoplflow/pull/151) [`e438e97`](https://github.com/shopl/shoplflow/commit/e438e9728ba6916a31233f2250d5f6f1384a73cc) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect 편의성 수정 props, return 타입 변경
+
+## 0.5.0
+
+### Minor Changes
+
+- [#145](https://github.com/shopl/shoplflow/pull/145) [`a243dd5`](https://github.com/shopl/shoplflow/commit/a243dd5bb2c0fe8997022131c25bbaac59e9b761) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect hook 추가
+
 ## 0.4.0
 
 ### Minor Changes

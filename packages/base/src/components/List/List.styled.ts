@@ -1,32 +1,27 @@
 import styled from '@emotion/styled';
-import type { ListSizeVariantType, ListOptionProps } from './List.types';
-import { css } from '@emotion/react';
+import type { ListOptionProps } from './List.types';
+import { colorTokens } from '../../styles';
+import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
 
-const getListStyleBySizeVar = (size: ListSizeVariantType) => {
-  switch (size) {
-    case 'SX':
-      return css`
-        padding: 6px 12px;
-      `;
-    case 'S':
-      return css`
-        padding: 6px 12px;
-      `;
-    case 'M':
-      return css`
-        padding: 6px 12px;
-      `;
-    case 'L':
-      return css`
-        padding: 6px 12px;
-      `;
-    default:
-      return css`
-        padding: 6px 12px;
-      `;
+export const StyledList = styled.li<ListOptionProps>`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 6px 8px;
+  gap: 4px;
+  border-radius: 8px;
+  background: ${colorTokens.neutral0};
+  cursor: pointer;
+  ${({ disabled }) => disabled && getDisabledStyle(disabled)}
+  &:hover {
+    background: ${colorTokens.neutral100};
   }
-};
+`;
 
-export const StyledList = styled.div<ListOptionProps>`
-  ${({ sizeVar }) => sizeVar && getListStyleBySizeVar(sizeVar)}
+export const StyledText2Rows = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
 `;

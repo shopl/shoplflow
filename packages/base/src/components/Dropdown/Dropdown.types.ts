@@ -1,14 +1,14 @@
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import type { ChildrenProps, DisableProps, LeftElementProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 
-const dropdownOptionVar = {
+const DropdownOptionVariants = {
   CLICK: 'CLICK',
   OUTSIDE_CLICK: 'OUTSIDE_CLICK',
   NONE: 'NONE',
 } as const;
 
-export type DropdownOptionVar = $Values<typeof dropdownOptionVar>;
+export type DropdownOptionVariantType = $Values<typeof DropdownOptionVariants>;
 
 export interface DropdownProps extends DropdownOptionProps {}
 export interface DropdownOptionProps {
@@ -16,8 +16,8 @@ export interface DropdownOptionProps {
    * 외부에서 `isOpen`을 제어할 수 있습니다.
    */
   isOpen?: boolean;
-  content: ReactNode;
-  trigger: ReactNode;
+  trigger?: ReactNode;
+  popper?: ReactNode;
   /**
    * 드롭다운이 어떻게 닫힐 수 있는지 옵션을 설정합니다.
    *
@@ -26,10 +26,11 @@ export interface DropdownOptionProps {
    * OUTSIDE_CLICK: 컨텐츠 영역 외부를 클릭하면 닫힙니다.
    * NONE: 클릭으로 닫히지 않습니다.
    */
-  option?: DropdownOptionVar;
+  option?: DropdownOptionVariantType;
+  width?: CSSProperties['width'];
 }
 
-export interface DropdownContentProps extends ChildrenProps, HTMLAttributes<HTMLDivElement> {
+export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {
   /**
    * 컨텐츠가 부모 `width`를 따라갈지, 고정될지 결정합니다.
    */
@@ -57,10 +58,7 @@ export interface DropdownButtonProps
    * placeholder를 설정합니다.
    */
   placeholder?: string;
-  /**
-   * 선택된 값을 노출합니다.
-   */
-  value?: string;
+  value?: ReactNode;
   /**
    * width를 설정합니다.
    */

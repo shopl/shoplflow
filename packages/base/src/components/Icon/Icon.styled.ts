@@ -3,7 +3,7 @@ import { colorTokens } from '../../styles';
 import type { IconOptionProps, IconSizeVariantsType } from './Icon.types';
 import { IconSizeVariants } from './Icon.types';
 
-const getIconSize = (size: IconSizeVariantsType) => {
+const getIconSize = (size?: IconSizeVariantsType) => {
   switch (size) {
     case IconSizeVariants.XS:
       return '12px';
@@ -16,7 +16,7 @@ const getIconSize = (size: IconSizeVariantsType) => {
     case IconSizeVariants.XL:
       return '36px';
     default:
-      return '24px';
+      return 'fit-content';
   }
 };
 
@@ -25,7 +25,6 @@ export const StyledIcon = styled.svg<IconOptionProps>`
   min-width: ${({ sizeVar }) => sizeVar && getIconSize(sizeVar)};
   height: ${({ sizeVar }) => sizeVar && getIconSize(sizeVar)};
   min-height: ${({ sizeVar }) => sizeVar && getIconSize(sizeVar)};
-
   & > path {
     fill: ${({ color }) => color && colorTokens[color]};
   }

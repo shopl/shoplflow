@@ -21,6 +21,7 @@
   },
   "include": [
     "src/emotion.d.ts",
+    "images.d.ts",
     "src"
   ],
   "exclude": [

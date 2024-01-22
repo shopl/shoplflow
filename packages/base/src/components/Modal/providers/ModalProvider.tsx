@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
-import { useMemo, useState } from 'react';
-import type { RemoveModalProps } from '../hooks/ModalContext';
-import { ModalContext, ModalHandlerContext } from '../hooks/ModalContext';
+import { useEffect, useMemo, useState } from 'react';
+
 import { isNullOrUndefined } from '@shoplflow/utils';
+import type { RemoveModalProps } from './ModalContext';
+import { ModalHandlerContext, ModalContext } from './ModalContext';
 
 interface ModalProviderProps {
   children?: ReactNode;
@@ -63,6 +64,29 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
     }
   };
   const dispatch = useMemo(() => ({ addModal, removeModal }), []);
+
+  useEffect(() => {
+    if (openedModals.length !== 1) {
+      return;
+    }
+
+    document.body.style.cssText = 'overflow:hidden';
+    return () => {
+      document.body.style.cssText = 'overflow:unset';
+    };
+  }, [openedModals.length]);
+
+  useEffect(() => {
+    const closeAllModals = () => {
+      setOpenedModals([]);
+    };
+
+    window.addEventListener('popstate', closeAllModals);
+
+    return () => {
+      window.removeEventListener('popstate', closeAllModals);
+    };
+  }, []);
 
   return (
     <ModalContext.Provider value={openedModals}>

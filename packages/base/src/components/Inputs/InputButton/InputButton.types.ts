@@ -1,9 +1,9 @@
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, MouseEvent } from 'react';
 import type { DisableProps, RightElementProps, SelectedProps } from '../../../utils/type/ComponentProps';
 
 export interface InputButtonProps extends InputButtonOptionProps {}
 export interface InputButtonOptionProps
-  extends Omit<HTMLAttributes<HTMLButtonElement>, 'onChange'>,
+  extends Omit<HTMLAttributes<HTMLInputElement>, 'onChange' | 'onClick'>,
     RightElementProps,
     DisableProps,
     SelectedProps {
@@ -19,7 +19,10 @@ export interface InputButtonOptionProps
   /**
    * 값이 삭제될 때 실행할 함수입니다.
    */
-  onClear?: () => void;
+  onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
+
+  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+
   /**
    * Input의 placeholder를 설정합니다.
    */
