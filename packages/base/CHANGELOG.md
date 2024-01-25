@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.24.24
+
+### Patch Changes
+
+- [#234](https://github.com/shopl/shoplflow/pull/234) [`179ca27`](https://github.com/shopl/shoplflow/commit/179ca27ed132ea7cc1ef6b36ca5440edb8bc1972) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input number 타입 height 수정
+
+- [#234](https://github.com/shopl/shoplflow/pull/234) [`179ca27`](https://github.com/shopl/shoplflow/commit/179ca27ed132ea7cc1ef6b36ca5440edb8bc1972) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - DropdownButton isError 상태 추가
+
 ## 0.24.23
 
 ### Patch Changes
