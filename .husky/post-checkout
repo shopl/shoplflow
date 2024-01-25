@@ -1,4 +1,17 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# 현재 체크아웃된 브랜치 이름을 가져옵니다.
+current_branch=$(git branch --show-current)
+
+# 원격 저장소에 현재 브랜치가 존재하는지 확인합니다.
+if git ls-remote --heads origin $current_branch | grep -q $current_branch; then
+    # 원격에 현재 브랜치가 있으면 pull을 실행합니다.
+    git pull origin $current_branch
+else
+    # 원격에 현재 브랜치가 없으면 pull을 실행하지 않습니다.
+    echo "Remote branch not found. Skipping git pull."
+fi
+
+# 노드 모듈을 새로고침하는 pnpm 명령어를 실행합니다.
 pnpm run refresh:node_modules
