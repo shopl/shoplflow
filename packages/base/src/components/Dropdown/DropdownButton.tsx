@@ -14,7 +14,7 @@ import { Icon } from '../Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
 
 export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>(
-  ({ width, onClick, sizeVar = 'M', placeholder, value, disabled, leftSource, ...rest }, ref) => {
+  ({ width = '100%', onClick, sizeVar = 'M', isError, placeholder, value, disabled, leftSource, ...rest }, ref) => {
     const { isOpen, setIsOpen } = useDropdown();
 
     const [isHovered, setIsHovered] = useState(false);
@@ -41,6 +41,7 @@ export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>
         isHovered={isHovered}
         disabled={disabled}
         width={width}
+        isError={isError}
         height={getDropdownHeightBySizeVar(sizeVar)}
       >
         <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
