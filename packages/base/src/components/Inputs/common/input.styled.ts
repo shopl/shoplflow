@@ -38,12 +38,12 @@ export const InputWrapper = styled.label<
 >`
   display: flex;
   align-items: center;
-  width: ${({ width }) => width ?? 'calc(100% - 2px)'};
-  min-width: ${({ minWidth }) => minWidth ?? 'fit-content'};
-  height: ${({ height }) => height ?? 'fit-content'};
+  width: ${({ width }) => `calc(${width} - 2px)` ?? 'calc(100% - 2px)'};
+  min-width: ${({ minWidth }) => `calc(${minWidth} - 2px)` ?? 'fit-content'};
+  height: ${({ height }) => `calc(${height} - 2px)` ?? 'fit-content'};
   flex-direction: ${({ direction }) => direction || 'row'};
   justify-content: space-between;
-  min-height: ${({ minHeight }) => minHeight ?? '38px'};
+  min-height: ${({ minHeight }) => `calc(${minHeight} - 2px)` ?? 'fit-content'};
   margin: 1px;
   gap: 8px;
   box-shadow: 0 0 0 1px ${(props) => getBorderColorByStatus(props)};
