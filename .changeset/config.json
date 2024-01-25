@@ -6,7 +6,7 @@
       "repo": "shopl/shoplflow"
     }
   ],
-  "commit": true,
+  "commit": false,
   "fixed": [],
   "linked": [],
   "ignore": ["docs"],
