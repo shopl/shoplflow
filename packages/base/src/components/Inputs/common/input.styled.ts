@@ -27,18 +27,23 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Sta
 
 export const InputWrapper = styled.label<
   Status & {
-    height?: string;
-    width?: string;
+    height?: CSSStyleDeclaration['height'];
+    width?: CSSStyleDeclaration['width'];
+    minHeight?: CSSStyleDeclaration['minHeight'];
+    maxHeight?: CSSStyleDeclaration['maxHeight'];
+    minWidth?: CSSStyleDeclaration['minWidth'];
+    maxWidth?: CSSStyleDeclaration['maxWidth'];
     direction?: 'row' | 'column';
   }
 >`
   display: flex;
   align-items: center;
   width: ${({ width }) => width ?? '100%'};
-  height: fit-content;
+  min-width: ${({ minWidth }) => minWidth ?? 'fit-content'};
+  height: ${({ height }) => height ?? 'fit-content'};
   flex-direction: ${({ direction }) => direction || 'row'};
   justify-content: space-between;
-  min-height: ${({ height }) => height ?? '40px'};
+  min-height: ${({ minHeight }) => minHeight ?? '40px'};
   margin: 1px;
   gap: 8px;
   box-shadow: 0 0 0 1px ${(props) => getBorderColorByStatus(props)};

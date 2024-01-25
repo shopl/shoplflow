@@ -11,12 +11,12 @@ export const BottomElementWrapper = styled.div`
   background-color: ${colorTokens.neutral0};
 `;
 
-export const StyledTextarea = styled.textarea<{ minHeight?: number }>`
+export const StyledTextarea = styled.textarea`
   padding: 8px 12px 0 12px;
   background-color: transparent;
   resize: none;
   width: 100%;
-  height: ${({ minHeight }) => (minHeight ? `${minHeight}px` : '300px')};
+  height: 100%;
   flex: 1;
   word-break: break-all;
   ${({ disabled }) => getDisabledStyle(disabled)};

@@ -37,6 +37,7 @@ export type ButtonOptionProps<T extends ElementType = 'button'> = Omit<
   ColorTokenProps &
   DisableProps & {
     typography?: TypographyTokens;
+    lineClamp?: number;
   };
 
 export type ButtonProps<T extends ElementType = 'button'> = PolymorphicComponentProps<T, ButtonOptionProps> &

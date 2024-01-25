@@ -11,6 +11,7 @@ const setEllipsis = (maxLines: number) => {
     -webkit-line-clamp: ${maxLines};
     -webkit-box-orient: vertical;
     overflow: hidden;
+    word-break: break-all;
     text-overflow: ellipsis;
   `;
 };
