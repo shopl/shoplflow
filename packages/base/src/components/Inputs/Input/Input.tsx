@@ -25,7 +25,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       min,
       max,
       className,
-      width,
+      width = '100%',
       ...rest
     },
     ref,
@@ -151,6 +151,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         width={getWidth()}
+        height={type === 'number' ? '32px' : '40px'}
         data-shoplflow={'input'}
       >
         <StyledInput
