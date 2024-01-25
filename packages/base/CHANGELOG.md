@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.24.22
+
+### Patch Changes
+
+- [#230](https://github.com/shopl/shoplflow/pull/230) [`9ac6257`](https://github.com/shopl/shoplflow/commit/9ac6257c4b39cc1375ebfb32eda794578bfbfc04) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - TextArea Height 조정 불가능 버그 수정
+
+- [#230](https://github.com/shopl/shoplflow/pull/230) [`9ac6257`](https://github.com/shopl/shoplflow/commit/9ac6257c4b39cc1375ebfb32eda794578bfbfc04) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button lineClamp 옵션 추가
+
 ## 0.24.21
 
 ### Patch Changes
