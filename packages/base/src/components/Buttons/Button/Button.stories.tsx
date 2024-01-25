@@ -28,6 +28,10 @@ export default {
       defaultValue: 'primary400',
     },
     onClick: { action: 'clicked' },
+    lineClamp: {
+      control: { type: 'number' },
+      defaultValue: undefined,
+    },
   },
 };
 
