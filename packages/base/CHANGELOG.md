@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.23
+
+### Patch Changes
+
+- [#232](https://github.com/shopl/shoplflow/pull/232) [`8b57d71`](https://github.com/shopl/shoplflow/commit/8b57d719aa686d5e24717a7a10caa55e9e4e14da) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - changeset fix
+
 ## 0.24.22
 
 ### Patch Changes
