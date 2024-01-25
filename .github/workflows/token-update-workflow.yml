@@ -91,7 +91,7 @@ jobs:
           git config user.email "${{ env.PR_USER_EMAIL }}"
           git add .
           if git status --porcelain | grep .; then
-            git commit -m "Update tokens via GitHub Actions"
+            git commit -m "Update tokens via GitHub Actions" --no-verify
             git push
           else
             comment="코드 변경사항이 없어요.🥲 토큰 업데이트를 다시 한번 확인해주세요."
