@@ -18,7 +18,7 @@ const SelectInputButton = ({
   value,
   placeholder,
   label,
-  width,
+  width = '100%',
   rightSource,
   ...rest
 }: SelectInputButtonProps) => {
@@ -56,14 +56,17 @@ const SelectInputButton = ({
       isFocused={isSelected}
       disabled={disabled}
       width={width}
+      minHeight={'40px'}
       {...rest}
       data-shoplflow={'SelectInputButton'}
     >
       <StyledSelectInputButton>
         {value && value.length > 0 && label ? (
-          <Text typography={'body1_400'}>{value[0][label] as string}</Text>
+          <Text typography={'body1_400'} lineClamp={1}>
+            {value[0][label] as string}
+          </Text>
         ) : (
-          <Text typography={'body1_400'} color={'neutral350'}>
+          <Text typography={'body1_400'} lineClamp={1} color={'neutral350'}>
             {placeholder}
           </Text>
         )}
