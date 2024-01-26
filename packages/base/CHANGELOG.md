@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.25
+
+### Patch Changes
+
+- [#236](https://github.com/shopl/shoplflow/pull/236) [`d7d35d6`](https://github.com/shopl/shoplflow/commit/d7d35d6c83f92539530c596401fa6f99f204cf7a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input minHeight 추가
+
 ## 0.24.24
 
 ### Patch Changes
