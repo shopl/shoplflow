@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
+import { css } from '@emotion/react';
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{
+  disabled?: boolean;
+}>`
   padding: 4px 0 4px 12px;
   background-color: transparent;
   width: 100%;
@@ -15,6 +18,12 @@ export const StyledInput = styled.input`
     -webkit-appearance: none;
     margin: 0;
   }
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      color: ${colorTokens.neutral350};
+      cursor: not-allowed;
+    `};
   /* Firefox */
   &[type='number'] {
     padding: 4px 8px;
