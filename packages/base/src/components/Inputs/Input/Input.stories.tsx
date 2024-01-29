@@ -101,11 +101,11 @@ Error.args = {
   placeholder: '에러 상태에요.',
 };
 export const Number: StoryFn<InputProps> = (args) => {
+  const [t, sT] = useState(false);
   return (
-    <Stack width={'500px'}>
-      <ComponentStage>
-        <Input value={0} {...args} />
-      </ComponentStage>
+    <Stack width={'300px'} height={'300px'}>
+      <button onClick={() => sT(!t)}>aaa</button>
+      <ComponentStage>{t && <Input value={0} {...args} />}</ComponentStage>
     </Stack>
   );
 };

@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.28
+
+### Patch Changes
+
+- [#242](https://github.com/shopl/shoplflow/pull/242) [`d7e3cc8`](https://github.com/shopl/shoplflow/commit/d7e3cc899980a603ca76fccdcaa7a5784f855536) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input Number 토글 시 width가 일시적으로 가변되는 현상 수정
+
 ## 0.24.27
 
 ### Patch Changes

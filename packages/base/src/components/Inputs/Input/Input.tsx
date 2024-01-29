@@ -26,14 +26,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       min,
       max,
       className,
-      width = '100%',
+      width,
       ...rest
     },
     ref,
   ) => {
     const [text, setText] = useState('');
     const [isFocused, setIsFocused] = useState(false);
-    const [type, setType] = useState<HTMLInputTypeAttribute | undefined>('text');
+    const [type, setType] = useState<HTMLInputTypeAttribute | undefined>(undefined);
     const [isHovered, setIsHovered] = useState(false);
     const uniqueId = useId();
     const inputRef = React.useRef<HTMLInputElement>(null);
@@ -86,13 +86,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       }
       setText(slicedText);
     };
-    const getWidth = () => {
-      if (type === 'number') {
-        return '64px';
-      } else {
-        return width;
-      }
-    };
 
     const handleOnClear = () => {
       onClear && onClear();
@@ -141,9 +134,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         isHovered={isHovered}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
-        width={getWidth()}
-        height={type === 'number' ? '32px' : '40px'}
-        maxHeight={type === 'number' ? '32px' : '40px'}
+        type={type}
+        width={width}
+        height={'40px'}
+        maxHeight={'40px'}
         data-shoplflow={'input'}
       >
         <StyledInput
