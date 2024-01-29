@@ -38,15 +38,16 @@ export const InputWrapper = styled.label<
 >`
   display: flex;
   align-items: center;
-  width: ${({ width }) => `calc(${width} - 2px)` ?? 'calc(100% - 2px)'};
-  min-width: ${({ minWidth }) => `calc(${minWidth} - 2px)` ?? 'fit-content'};
-  height: ${({ height }) => `calc(${height} - 2px)` ?? 'fit-content'};
   flex-direction: ${({ direction }) => direction || 'row'};
+  width: ${({ width }) => width ?? '100%'};
+  min-width: ${({ minWidth }) => minWidth ?? 'initial'};
+  max-width: ${({ maxWidth }) => maxWidth ?? 'initial'};
+  min-height: ${({ minHeight }) => minHeight ?? 'initial'};
+  max-height: ${({ maxHeight }) => maxHeight ?? 'initial'};
+  height: ${({ height }) => height ?? 'initial'};
   justify-content: space-between;
-  min-height: ${({ minHeight }) => `calc(${minHeight} - 2px)` ?? 'fit-content'};
-  margin: 1px;
   gap: 8px;
-  box-shadow: 0 0 0 1px ${(props) => getBorderColorByStatus(props)};
+  border: 1px solid ${(props) => getBorderColorByStatus(props)};
   border-radius: 6px;
   background-color: ${colorTokens.neutral0};
   overflow: hidden;

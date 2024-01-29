@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+git fetch --all --prune
+
 # 현재 체크아웃된 브랜치 이름을 가져옵니다.
 current_branch=$(git branch --show-current)
 

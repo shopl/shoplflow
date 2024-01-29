@@ -86,6 +86,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
         isFocused={isSelected}
         disabled={disabled}
         minHeight={'40px'}
+        maxHeight={'40px'}
         width={width}
       >
         <StyledInputButton onClick={handleOnClick} disabled={disabled}>
