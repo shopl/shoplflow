@@ -15,6 +15,7 @@ const Button: ButtonComponent = forwardRef(
       children,
       leftSource,
       rightSource,
+      lineClamp,
       ...rest
     }: ButtonProps<T>,
     ref: ComponentPropsWithRef<T>['ref'],
@@ -33,8 +34,7 @@ const Button: ButtonComponent = forwardRef(
       >
         {leftSource}
         <Text
-          wordBreak={'keep-all'}
-          whiteSpace={'nowrap'}
+          lineClamp={lineClamp}
           color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
           typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
         >

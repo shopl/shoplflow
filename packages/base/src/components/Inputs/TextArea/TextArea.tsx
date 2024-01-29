@@ -20,8 +20,9 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
       defaultValue,
       onBlur,
       onFocus,
-      minHeight = 100,
+      minHeight = '100px',
       width,
+      height,
       className,
       ...rest
     },
@@ -91,6 +92,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         direction={'column'}
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
+        height={height}
+        minHeight={minHeight}
         width={width}
         data-shoplflow={'text-area'}
       >
@@ -106,7 +109,6 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={ref}
           maxLength={maxLength}
           disabled={disabled}
-          minHeight={minHeight}
           {...rest}
         />
         <BottomElementWrapper>

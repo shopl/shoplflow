@@ -8,6 +8,7 @@ import { assetFunction } from '../../../styles/IconAssets';
 import { useMergeRefs } from '../../../hooks/useMergeRef';
 import { InputWrapper } from '../common/input.styled';
 import { Icon } from '../../Icon';
+import { getNumberLimitRange } from './utils/getNumberLimiteRange';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
@@ -25,7 +26,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       min,
       max,
       className,
-      width,
+      width = '100%',
       ...rest
     },
     ref,
@@ -55,19 +56,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       [maxLength],
     );
 
-    const limitRange = useCallback(
-      (value: string) => {
-        if (min && Number(value) < Number(min)) {
-          return String(min);
-        }
-        if (max && Number(value) > Number(max)) {
-          return String(max);
-        }
-        return value;
-      },
-      [max, min],
-    );
-
     const handleOnMouseEnter = () => {
       setIsHovered(true);
     };
@@ -89,7 +77,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       const slicedText = sliceText(event.target.value);
 
       if (type === 'number') {
-        const limitedText = limitRange(slicedText);
+        const numberValue = Number(slicedText);
+        const numberMin = Number(min);
+        const numberMax = Number(max);
+        const limitedText = getNumberLimitRange(numberValue, numberMin, numberMax);
         setText(limitedText);
         return;
       }
@@ -151,6 +142,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         width={getWidth()}
+        height={type === 'number' ? '32px' : '40px'}
+        maxHeight={type === 'number' ? '32px' : '40px'}
         data-shoplflow={'input'}
       >
         <StyledInput

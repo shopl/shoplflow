@@ -1,5 +1,45 @@
 # @shoplflow/base
 
+## 0.24.27
+
+### Patch Changes
+
+- [#240](https://github.com/shopl/shoplflow/pull/240) [`8c6dcdd`](https://github.com/shopl/shoplflow/commit/8c6dcdd84c33427e35cc35299ddeb35cf52a47f8) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input label 스타일 수정
+
+## 0.24.26
+
+### Patch Changes
+
+- [#238](https://github.com/shopl/shoplflow/pull/238) [`fb1cb89`](https://github.com/shopl/shoplflow/commit/fb1cb89b5af8952b86ec4a4d6f6e1bf43a2457ef) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input type number disable 상태일 경우 스타일 버그 수정
+
+## 0.24.25
+
+### Patch Changes
+
+- [#236](https://github.com/shopl/shoplflow/pull/236) [`d7d35d6`](https://github.com/shopl/shoplflow/commit/d7d35d6c83f92539530c596401fa6f99f204cf7a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - input minHeight 추가
+
+## 0.24.24
+
+### Patch Changes
+
+- [#234](https://github.com/shopl/shoplflow/pull/234) [`179ca27`](https://github.com/shopl/shoplflow/commit/179ca27ed132ea7cc1ef6b36ca5440edb8bc1972) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input number 타입 height 수정
+
+- [#234](https://github.com/shopl/shoplflow/pull/234) [`179ca27`](https://github.com/shopl/shoplflow/commit/179ca27ed132ea7cc1ef6b36ca5440edb8bc1972) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - DropdownButton isError 상태 추가
+
+## 0.24.23
+
+### Patch Changes
+
+- [#232](https://github.com/shopl/shoplflow/pull/232) [`8b57d71`](https://github.com/shopl/shoplflow/commit/8b57d719aa686d5e24717a7a10caa55e9e4e14da) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - changeset fix
+
+## 0.24.22
+
+### Patch Changes
+
+- [#230](https://github.com/shopl/shoplflow/pull/230) [`9ac6257`](https://github.com/shopl/shoplflow/commit/9ac6257c4b39cc1375ebfb32eda794578bfbfc04) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - TextArea Height 조정 불가능 버그 수정
+
+- [#230](https://github.com/shopl/shoplflow/pull/230) [`9ac6257`](https://github.com/shopl/shoplflow/commit/9ac6257c4b39cc1375ebfb32eda794578bfbfc04) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button lineClamp 옵션 추가
+
 ## 0.24.21
 
 ### Patch Changes

@@ -1,5 +1,47 @@
 # test-env
 
+## 0.0.68
+
+### Patch Changes
+
+- Updated dependencies [[`8c6dcdd`](https://github.com/shopl/shoplflow/commit/8c6dcdd84c33427e35cc35299ddeb35cf52a47f8)]:
+  - @shoplflow/base@0.24.27
+
+## 0.0.67
+
+### Patch Changes
+
+- Updated dependencies [[`fb1cb89`](https://github.com/shopl/shoplflow/commit/fb1cb89b5af8952b86ec4a4d6f6e1bf43a2457ef)]:
+  - @shoplflow/base@0.24.26
+
+## 0.0.66
+
+### Patch Changes
+
+- Updated dependencies [[`d7d35d6`](https://github.com/shopl/shoplflow/commit/d7d35d6c83f92539530c596401fa6f99f204cf7a)]:
+  - @shoplflow/base@0.24.25
+
+## 0.0.65
+
+### Patch Changes
+
+- Updated dependencies [[`179ca27`](https://github.com/shopl/shoplflow/commit/179ca27ed132ea7cc1ef6b36ca5440edb8bc1972), [`179ca27`](https://github.com/shopl/shoplflow/commit/179ca27ed132ea7cc1ef6b36ca5440edb8bc1972)]:
+  - @shoplflow/base@0.24.24
+
+## 0.0.64
+
+### Patch Changes
+
+- Updated dependencies [[`8b57d71`](https://github.com/shopl/shoplflow/commit/8b57d719aa686d5e24717a7a10caa55e9e4e14da)]:
+  - @shoplflow/base@0.24.23
+
+## 0.0.63
+
+### Patch Changes
+
+- Updated dependencies [[`9ac6257`](https://github.com/shopl/shoplflow/commit/9ac6257c4b39cc1375ebfb32eda794578bfbfc04), [`9ac6257`](https://github.com/shopl/shoplflow/commit/9ac6257c4b39cc1375ebfb32eda794578bfbfc04)]:
+  - @shoplflow/base@0.24.22
+
 ## 0.0.62
 
 ### Patch Changes

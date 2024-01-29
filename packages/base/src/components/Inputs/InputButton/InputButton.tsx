@@ -10,7 +10,18 @@ import { assetFunction } from '../../../styles/IconAssets';
 
 const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
   (
-    { value, defaultValue, onChange, onClick, isSelected, disabled = false, rightSource, onClear, width, ...rest },
+    {
+      value,
+      defaultValue,
+      onChange,
+      onClick,
+      isSelected,
+      disabled = false,
+      rightSource,
+      onClear,
+      width = '100%',
+      ...rest
+    },
     ref,
   ) => {
     const [text, setText] = useState('');
@@ -74,6 +85,8 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
         isHovered={isHovered}
         isFocused={isSelected}
         disabled={disabled}
+        minHeight={'40px'}
+        maxHeight={'40px'}
         width={width}
       >
         <StyledInputButton onClick={handleOnClick} disabled={disabled}>

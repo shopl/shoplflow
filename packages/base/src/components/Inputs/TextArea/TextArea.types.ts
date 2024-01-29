@@ -11,12 +11,12 @@ export interface TextAreaOptionProps extends DisableProps, ErrorProps {
   /**
    * text area의 높이를 조절해요.
    */
-  height?: number;
+  height?: string;
 
   /**
    * text area의 최소 높이를 조절해요.
    */
-  minHeight?: number;
+  minHeight?: string;
 }
 
 export type TextAreaProps = ComponentPropsWithoutRef<'textarea'> & TextAreaOptionProps;

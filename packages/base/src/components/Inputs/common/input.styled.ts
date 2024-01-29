@@ -27,21 +27,27 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Sta
 
 export const InputWrapper = styled.label<
   Status & {
-    height?: string;
-    width?: string;
+    height?: CSSStyleDeclaration['height'];
+    width?: CSSStyleDeclaration['width'];
+    minHeight?: CSSStyleDeclaration['minHeight'];
+    maxHeight?: CSSStyleDeclaration['maxHeight'];
+    minWidth?: CSSStyleDeclaration['minWidth'];
+    maxWidth?: CSSStyleDeclaration['maxWidth'];
     direction?: 'row' | 'column';
   }
 >`
   display: flex;
   align-items: center;
-  width: ${({ width }) => width ?? '100%'};
-  height: fit-content;
   flex-direction: ${({ direction }) => direction || 'row'};
+  width: ${({ width }) => width ?? '100%'};
+  min-width: ${({ minWidth }) => minWidth ?? 'initial'};
+  max-width: ${({ maxWidth }) => maxWidth ?? 'initial'};
+  min-height: ${({ minHeight }) => minHeight ?? 'initial'};
+  max-height: ${({ maxHeight }) => maxHeight ?? 'initial'};
+  height: ${({ height }) => height ?? 'initial'};
   justify-content: space-between;
-  min-height: ${({ height }) => height ?? '40px'};
-  margin: 1px;
   gap: 8px;
-  box-shadow: 0 0 0 1px ${(props) => getBorderColorByStatus(props)};
+  border: 1px solid ${(props) => getBorderColorByStatus(props)};
   border-radius: 6px;
   background-color: ${colorTokens.neutral0};
   overflow: hidden;
