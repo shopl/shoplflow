@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
+import type { HTMLInputTypeAttribute } from 'react';
 
 export type Status = {
   isFocused?: boolean;
@@ -25,6 +26,45 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Sta
   return colorTokens.neutral300;
 };
 
+export const getStyleByType = ({
+  type,
+  height,
+  minHeight,
+  maxHeight,
+  width,
+  minWidth,
+  maxWidth,
+}: {
+  type?: HTMLInputTypeAttribute;
+  width?: CSSStyleDeclaration['width'];
+  minWidth?: CSSStyleDeclaration['minWidth'];
+  maxWidth?: CSSStyleDeclaration['maxWidth'];
+  height?: CSSStyleDeclaration['height'];
+  minHeight?: CSSStyleDeclaration['minHeight'];
+  maxHeight?: CSSStyleDeclaration['maxHeight'];
+}) => {
+  if (type === 'number') {
+    return css`
+      width: 64px;
+      height: 32px;
+    `;
+  }
+  if (type === 'text' || type === 'password') {
+    return css`
+      width: ${width ?? '100%'};
+      min-width: ${minWidth ?? 'initial'};
+      max-width: ${maxWidth ?? 'initial'};
+      height: ${height ?? 'initial'};
+      min-height: ${minHeight ?? 'initial'};
+      max-height: ${maxHeight ?? 'initial'};
+    `;
+  }
+  return css`
+    width: 64px;
+    height: 32px;
+  `;
+};
+
 export const InputWrapper = styled.label<
   Status & {
     height?: CSSStyleDeclaration['height'];
@@ -34,17 +74,15 @@ export const InputWrapper = styled.label<
     minWidth?: CSSStyleDeclaration['minWidth'];
     maxWidth?: CSSStyleDeclaration['maxWidth'];
     direction?: 'row' | 'column';
+    type?: HTMLInputTypeAttribute;
   }
 >`
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: ${({ direction }) => direction || 'row'};
-  width: ${({ width }) => width ?? '100%'};
-  min-width: ${({ minWidth }) => minWidth ?? 'initial'};
-  max-width: ${({ maxWidth }) => maxWidth ?? 'initial'};
-  min-height: ${({ minHeight }) => minHeight ?? 'initial'};
-  max-height: ${({ maxHeight }) => maxHeight ?? 'initial'};
-  height: ${({ height }) => height ?? 'initial'};
+  ${({ type, height, minHeight, maxHeight, width, maxWidth, minWidth }) =>
+    getStyleByType({ type, height, minHeight, maxHeight, width, maxWidth, minWidth })};
   justify-content: space-between;
   gap: 8px;
   border: 1px solid ${(props) => getBorderColorByStatus(props)};

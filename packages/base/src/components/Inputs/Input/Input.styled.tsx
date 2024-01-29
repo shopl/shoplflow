@@ -7,7 +7,8 @@ export const StyledInput = styled.input<{
 }>`
   padding: 4px 0 4px 12px;
   background-color: transparent;
-  width: 100%;
+  display: flex;
+  min-width: 64px;
   border: none;
   box-sizing: border-box;
   &::placeholder {
@@ -29,6 +30,12 @@ export const StyledInput = styled.input<{
     padding: 4px 8px;
     text-align: center;
     -moz-appearance: textfield;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
 `;
 
