@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.27
+
+### Patch Changes
+
+- [#240](https://github.com/shopl/shoplflow/pull/240) [`8c6dcdd`](https://github.com/shopl/shoplflow/commit/8c6dcdd84c33427e35cc35299ddeb35cf52a47f8) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input label 스타일 수정
+
 ## 0.24.26
 
 ### Patch Changes
