@@ -15,11 +15,11 @@ const Tooltip = ({
 }: TooltipProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const show = useCallback(() => {
+  const showHandler = useCallback(() => {
     setIsOpen(true);
   }, []);
 
-  const hide = useCallback(() => {
+  const hideHandler = useCallback(() => {
     setIsOpen(false);
   }, []);
 
@@ -28,10 +28,10 @@ const Tooltip = ({
       <Popper.Trigger
         ref={triggerRef}
         isOpen={isOpen}
-        onMouseOver={show}
-        onMouseLeave={hide}
-        onFocus={show}
-        onBlur={hide}
+        onMouseOver={showHandler}
+        onMouseLeave={hideHandler}
+        onFocus={showHandler}
+        onBlur={hideHandler}
       >
         {trigger}
       </Popper.Trigger>

@@ -6,28 +6,33 @@ import * as TooltipStories from './Tooltip.stories';
 <Meta of={TooltipStories} />
 
 # Tooltip
+디자인 시스템에서 사용하는 툴팁 컴포넌트에요.
+
+> placement를 통해 툴팁 위치를 결정할 수 있어요.
+> offset을 통해 trigger와 간격을 조정할 수 있어요.
+
 
 ## Overview
-
 <Canvas of={TooltipStories.Playground} />
 
 
 ## ArgsTable
 
-### Dropdown
-
+### Tooltip
 <ArgsTable of={Tooltip} />
-
-### DropdownContent
+### TooltipContent
 <ArgsTable of={TooltipContent} />
 
 
 ## Usage
 
 ```tsx
-  const data = new Array(10).fill(0).map((_, i) => ({ name: `name${i}` }));
-  const { selectedItem, setSelectedItem } = useSelected<{ name: string }>(data, 'SINGLE');
-  return (
-  );
+import { Tooltip, Text } from '@shoplflow/base'
+  
+  const Example = () => {
+    return (
+      <Tooltip placement="bottom-end" trigger={<Text typography='body2_40'>여기를 호버해주세요.</Text>} popper={<TooltipContent content='노출되는 툴팁 컨텐츠 영역입니다.'/>}  />
+    )
+  }
 ```
 
