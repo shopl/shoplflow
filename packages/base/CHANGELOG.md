@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.31
+
+### Patch Changes
+
+- [#248](https://github.com/shopl/shoplflow/pull/248) [`6425754`](https://github.com/shopl/shoplflow/commit/6425754af0a90e1d6a3352902a829bd16aaad90a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input Number 레이아웃 변경 버그 수정
+
 ## 0.24.30
 
 ### Patch Changes
