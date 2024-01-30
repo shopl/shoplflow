@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.29
+
+### Patch Changes
+
+- [#244](https://github.com/shopl/shoplflow/pull/244) [`21e0ebf`](https://github.com/shopl/shoplflow/commit/21e0ebf706922ba7af6e9d91930a5f87cebc3fe3) Thanks [@velo-kim](https://github.com/velo-kim)! - Tooltip 컴포넌트 추가 및 각 컴포넌트 index 파일 styled import 제거
+
 ## 0.24.28
 
 ### Patch Changes
