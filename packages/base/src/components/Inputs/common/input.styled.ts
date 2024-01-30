@@ -49,19 +49,14 @@ export const getStyleByType = ({
       height: 32px;
     `;
   }
-  if (type === 'text' || type === 'password') {
-    return css`
-      width: ${width ?? '100%'};
-      min-width: ${minWidth ?? 'initial'};
-      max-width: ${maxWidth ?? 'initial'};
-      height: ${height ?? 'initial'};
-      min-height: ${minHeight ?? 'initial'};
-      max-height: ${maxHeight ?? 'initial'};
-    `;
-  }
+
   return css`
-    width: 64px;
-    height: 32px;
+    width: ${width ?? '100%'};
+    min-width: ${minWidth ?? 'initial'};
+    max-width: ${maxWidth ?? 'initial'};
+    height: ${height ?? 'initial'};
+    min-height: ${minHeight ?? 'initial'};
+    max-height: ${maxHeight ?? 'initial'};
   `;
 };
 
