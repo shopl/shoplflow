@@ -18,9 +18,10 @@ const Popper = ({
   children,
 }: PopperProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
   const { refs, floatingStyles } = useFloating({
     strategy,
-    placement: placement,
+    placement,
     whileElementsMounted: autoUpdate,
     middleware: [
       offset(initialOffset),
