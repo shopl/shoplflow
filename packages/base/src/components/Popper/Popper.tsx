@@ -68,20 +68,22 @@ export const PopperPortal = forwardRef<HTMLDivElement, PopperPortalProps>(
 
     const refs = useMergeRefs(ref, setFloating);
 
+    if (!isOpen) {
+      return null;
+    }
+
     return (
       <FloatingPortal>
         <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={animation.initial}
-              animate={animation.animate}
-              exit={animation.exit}
-              ref={refs}
-              style={floatingStyles}
-            >
-              {children}
-            </motion.div>
-          )}
+          <motion.div
+            initial={animation.initial}
+            animate={animation.animate}
+            exit={animation.exit}
+            ref={refs}
+            style={floatingStyles}
+          >
+            {children}
+          </motion.div>
         </AnimatePresence>
       </FloatingPortal>
     );
