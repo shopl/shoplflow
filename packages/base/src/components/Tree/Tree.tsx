@@ -28,11 +28,12 @@ const TreeItem = ({
   leftSource,
   rightSource,
   depth = 0,
-  initialIsOpen = false,
+  initialIsOpen,
   isOpen,
   ...rest
 }: TreeItemProps) => {
-  const [isOpened, setIsOpened] = React.useState(isOpen ?? initialIsOpen);
+  const [isOpened, setIsOpened] = React.useState(initialIsOpen ?? false);
+
   const CloneChildren = React.Children.map(children, (child) => {
     if (!React.isValidElement(child)) {
       return child;
@@ -56,7 +57,7 @@ const TreeItem = ({
   }, [isOpen]);
 
   return (
-    <AnimatePresence mode={'popLayout'}>
+    <AnimatePresence mode={'sync'}>
       <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(text)} {...rest}>
         <LeftElementWrapper>
           {leftSource}
@@ -83,7 +84,7 @@ const TreeItem = ({
         </RightElementWrapper>
       </StyledTreeItem>
       {isOpened && children && (
-        <m.div key={String(CloneChildren)} {...AnimateKey} variants={fadeInOut} layout>
+        <m.div key={'children' + String(CloneChildren)} {...AnimateKey} variants={fadeInOut} layout>
           {CloneChildren}
         </m.div>
       )}

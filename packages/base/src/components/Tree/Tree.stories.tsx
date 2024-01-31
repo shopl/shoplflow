@@ -24,8 +24,8 @@ export const Playground: StoryFn<TreeProps> = () => {
           <Tree>
             <Tree.Item
               leftSource={<Checkbox />}
-              initialIsOpen
               text={'샤플'}
+              initialIsOpen
               rightSource={
                 <Tag
                   styleVar={'TINT'}
@@ -60,7 +60,6 @@ export const Playground: StoryFn<TreeProps> = () => {
               <Tree.Item
                 leftSource={<Checkbox />}
                 text={'디자인'}
-                initialIsOpen
                 rightSource={
                   <Tag
                     styleVar={'TINT'}
@@ -90,6 +89,13 @@ export const WithScrollArea: StoryFn<TreeProps> = () => {
       <ComponentStage>
         <ScrollArea>
           <Tree>
+            <Tree.Item leftSource={<Checkbox />} text={'과일'}>
+              <Tree.Item leftSource={<Checkbox />} text={'사과'}>
+                <Tree.Item leftSource={<Checkbox />} text={'후지'} />
+                <Tree.Item leftSource={<Checkbox />} text={'청포도'} />
+              </Tree.Item>
+              <Tree.Item leftSource={<Checkbox />} text={'바나나'} />
+            </Tree.Item>
             <Tree.Item
               leftSource={<Checkbox />}
               text={'서울시'}
