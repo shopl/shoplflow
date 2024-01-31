@@ -1,5 +1,23 @@
 # @shoplflow/base
 
+## 0.24.32
+
+### Patch Changes
+
+- [#250](https://github.com/shopl/shoplflow/pull/250) [`b55f3b2`](https://github.com/shopl/shoplflow/commit/b55f3b2780182260cc766d6c0a48184e7f64d115) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: Popper > FloatingPortal Dom 여러개 생성되는 이슈 수정
+
+## 0.24.31
+
+### Patch Changes
+
+- [#248](https://github.com/shopl/shoplflow/pull/248) [`6425754`](https://github.com/shopl/shoplflow/commit/6425754af0a90e1d6a3352902a829bd16aaad90a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Input Number 레이아웃 변경 버그 수정
+
+## 0.24.30
+
+### Patch Changes
+
+- [#246](https://github.com/shopl/shoplflow/pull/246) [`3ae6a28`](https://github.com/shopl/shoplflow/commit/3ae6a28389b731ef4bfe4a0ba17f42db4ea7f09c) Thanks [@velo-kim](https://github.com/velo-kim)! - Fix: getStyleByType(input.styyled.ts) 불필요한 조건문 제거
+
 ## 0.24.29
 
 ### Patch Changes
