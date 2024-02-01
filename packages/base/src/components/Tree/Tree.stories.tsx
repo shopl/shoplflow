@@ -24,7 +24,7 @@ export const Playground: StoryFn<TreeProps> = () => {
           <Tree>
             <Tree.Item
               leftSource={<Checkbox />}
-              text={'샤플'}
+              content={'샤플'}
               initialIsOpen
               rightSource={
                 <Tag
@@ -39,7 +39,7 @@ export const Playground: StoryFn<TreeProps> = () => {
             >
               <Tree.Item
                 leftSource={<Checkbox />}
-                text={'프론트엔드'}
+                content={'프론트엔드'}
                 initialIsOpen
                 rightSource={
                   <Tag
@@ -52,14 +52,14 @@ export const Playground: StoryFn<TreeProps> = () => {
                   </Tag>
                 }
               >
-                <Tree.Item leftSource={<Checkbox />} text={'Kevin'} />
-                <Tree.Item leftSource={<Checkbox />} text={'Daisy'} />
-                <Tree.Item leftSource={<Checkbox />} text={'Jason'} />
-                <Tree.Item leftSource={<Checkbox />} text={'Velo'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Kevin'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Daisy'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Jason'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Velo'} />
               </Tree.Item>
               <Tree.Item
                 leftSource={<Checkbox />}
-                text={'디자인'}
+                content={'디자인'}
                 rightSource={
                   <Tag
                     styleVar={'TINT'}
@@ -71,9 +71,9 @@ export const Playground: StoryFn<TreeProps> = () => {
                   </Tag>
                 }
               >
-                <Tree.Item leftSource={<Checkbox />} text={'Casper'} />
-                <Tree.Item leftSource={<Checkbox />} text={'Jin'} />
-                <Tree.Item leftSource={<Checkbox />} text={'Bb'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Casper'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Jin'} />
+                <Tree.Item leftSource={<Checkbox />} content={'Bb'} />
               </Tree.Item>
             </Tree.Item>
           </Tree>
@@ -89,16 +89,16 @@ export const WithScrollArea: StoryFn<TreeProps> = () => {
       <ComponentStage>
         <ScrollArea>
           <Tree>
-            <Tree.Item leftSource={<Checkbox />} text={'과일'}>
-              <Tree.Item leftSource={<Checkbox />} text={'사과'}>
-                <Tree.Item leftSource={<Checkbox />} text={'후지'} />
-                <Tree.Item leftSource={<Checkbox />} text={'청포도'} />
+            <Tree.Item leftSource={<Checkbox />} content={'과일'}>
+              <Tree.Item leftSource={<Checkbox />} content={'사과'}>
+                <Tree.Item leftSource={<Checkbox />} content={'후지'} />
+                <Tree.Item leftSource={<Checkbox />} content={'청포도'} />
               </Tree.Item>
-              <Tree.Item leftSource={<Checkbox />} text={'바나나'} />
+              <Tree.Item leftSource={<Checkbox />} content={'바나나'} />
             </Tree.Item>
             <Tree.Item
               leftSource={<Checkbox />}
-              text={'서울시'}
+              content={'서울시'}
               rightSource={
                 <Tag
                   styleVar={'TINT'}
@@ -111,36 +111,36 @@ export const WithScrollArea: StoryFn<TreeProps> = () => {
               }
             >
               {서울시_구_목록.map((item) => (
-                <Tree.Item leftSource={<Checkbox />} text={item} key={item} />
+                <Tree.Item leftSource={<Checkbox />} content={item} key={item} />
               ))}
             </Tree.Item>
             <Tree.Item
               leftSource={<Checkbox />}
-              text={'디자인'}
+              content={'디자인'}
               rightSource={
                 <Tag styleVar={'TINT'} sizeVar={'XS'} color={'yellow300'}>
                   4
                 </Tag>
               }
             >
-              <Tree.Item leftSource={<Checkbox />} text={'Figma'} />
-              <Tree.Item leftSource={<Checkbox />} text={'Zeplin'} />
-              <Tree.Item leftSource={<Checkbox />} text={'Sketch'} />
-              <Tree.Item leftSource={<Checkbox />} text={'Adobe XD'} />
+              <Tree.Item leftSource={<Checkbox />} content={'Figma'} />
+              <Tree.Item leftSource={<Checkbox />} content={'Zeplin'} />
+              <Tree.Item leftSource={<Checkbox />} content={'Sketch'} />
+              <Tree.Item leftSource={<Checkbox />} content={'Adobe XD'} />
             </Tree.Item>
             <Tree.Item
               leftSource={<Checkbox />}
-              text={'IDE'}
+              content={'IDE'}
               rightSource={
                 <Tag styleVar={'TINT'} sizeVar={'XS'} color={'primary300'}>
                   4
                 </Tag>
               }
             >
-              <Tree.Item leftSource={<Checkbox />} text={'VSCode'} />
-              <Tree.Item leftSource={<Checkbox />} text={'WebStorm'} />
-              <Tree.Item leftSource={<Checkbox />} text={'IntelliJ'} />
-              <Tree.Item leftSource={<Checkbox />} text={'Eclipse'} />
+              <Tree.Item leftSource={<Checkbox />} content={'VSCode'} />
+              <Tree.Item leftSource={<Checkbox />} content={'WebStorm'} />
+              <Tree.Item leftSource={<Checkbox />} content={'IntelliJ'} />
+              <Tree.Item leftSource={<Checkbox />} content={'Eclipse'} />
             </Tree.Item>
           </Tree>
         </ScrollArea>

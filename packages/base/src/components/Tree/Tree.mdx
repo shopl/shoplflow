@@ -1,5 +1,5 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
-import Tree from './Tree';
+import Tree, { TreeItem } from './Tree';
 import * as TreeStories from './Tree.stories';
 
 <Meta of={TreeStories} />
@@ -13,7 +13,11 @@ Tree 컴포넌트 설명을 적어주세요.
 
 ## ArgsTable
 
+### Tree
 <ArgsTable of={Tree} />
+
+### Tree.Item
+<ArgsTable of={TreeItem} />
 
 ## Usage
 

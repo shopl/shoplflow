@@ -22,9 +22,9 @@ const Tree = ({ children, ...rest }: TreeProps) => {
   );
 };
 
-const TreeItem = ({
+export const TreeItem = ({
   children,
-  text,
+  content,
   leftSource,
   rightSource,
   depth = 0,
@@ -58,11 +58,11 @@ const TreeItem = ({
 
   return (
     <AnimatePresence mode={'sync'}>
-      <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(text)} {...rest}>
+      <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(content)} {...rest}>
         <LeftElementWrapper>
           {leftSource}
           <Text typography={'body1_500'} lineClamp={1}>
-            {text}
+            {content}
           </Text>
         </LeftElementWrapper>
         <RightElementWrapper>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { isGenericIsArray } from './isGenericIsArray';
 
 /**
  * select 기능을 추상화한 hook입니다.
@@ -121,7 +122,18 @@ type SelectedItem<T, Mode extends 'SINGLE' | 'MULTI'> = Mode extends 'SINGLE' ? 
 export function useSelect<T>(
   mode: 'SINGLE',
   data: T[],
-  options?: { key: string; defaultSelected?: T[] },
+  options?: { key: keyof T; defaultSelected?: T[] },
+): {
+  selectedItem: SelectedItem<T, 'SINGLE'>;
+  handleToggleSelect: (id: string) => void;
+  handleSelect: (id: string) => void;
+  handleReset: () => void;
+  handleRemove: (id: string) => void;
+};
+export function useSelect<T>(
+  mode: 'SINGLE',
+  data: T[],
+  options?: { key: keyof T; defaultSelected?: Array<T[keyof T]> },
 ): {
   selectedItem: SelectedItem<T, 'SINGLE'>;
   handleToggleSelect: (id: string) => void;
@@ -133,7 +145,18 @@ export function useSelect<T>(
 export function useSelect<T>(
   mode: 'MULTI',
   data: T[],
-  options?: { key: string; max?: number; defaultSelected?: T[] },
+  options?: { key: keyof T; max?: number; defaultSelected?: T[] },
+): {
+  selectedItem: SelectedItem<T, 'MULTI'>;
+  handleToggleSelect: (id: string) => void;
+  handleSelect: (id: string) => void;
+  handleReset: () => void;
+  handleRemove: (id: string) => void;
+};
+export function useSelect<T>(
+  mode: 'MULTI',
+  data: T[],
+  options?: { key: keyof T; max?: number; defaultSelected?: Array<T[keyof T]> },
 ): {
   selectedItem: SelectedItem<T, 'MULTI'>;
   handleToggleSelect: (id: string) => void;
@@ -146,7 +169,7 @@ export function useSelect<T>(
 export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE' | 'MULTI'>(
   mode: Mode,
   data: T[],
-  options?: { key: string; max?: number; defaultSelected?: T[] },
+  options?: { key: keyof T; max?: number; defaultSelected?: T[] | string[] },
 ): {
   selectedItem: T[] | T | null;
   handleSelect: (id: string) => void;
@@ -164,7 +187,21 @@ export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE
     throw new Error('max는 0보다 커야 합니다.');
   }
 
-  const [selectedItem, setSelectedItem] = useState<T[]>(options?.defaultSelected ?? []);
+  const getInitialSelected = () => {
+    let initialSelectedItems: T[] = [];
+    if (options?.defaultSelected) {
+      if (isGenericIsArray<T>(options.defaultSelected)) {
+        // defaultSelected가 T[] 타입일 경우
+        initialSelectedItems = options.defaultSelected;
+      } else {
+        // defaultSelected가 특정 키의 값들을 포함하는 배열일 경우
+        initialSelectedItems = data.filter((item) => options.defaultSelected?.includes(item[options?.key]));
+      }
+    }
+    return initialSelectedItems;
+  };
+
+  const [selectedItem, setSelectedItem] = useState<T[]>(getInitialSelected());
   const key = options?.key || 'id';
 
   // 아이디를 이용해 데이터 배열에서 아이템 찾는 함수

@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import { colorTokens } from '../../styles';
 import { m } from 'framer-motion';
 
-export const StyledTree = styled.div`
+export const StyledTree = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100%;
