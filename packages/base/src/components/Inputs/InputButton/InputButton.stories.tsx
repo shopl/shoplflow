@@ -23,7 +23,7 @@ export const Playground: StoryFn<InputButtonProps> = (args) => {
   return (
     <Stack width={'400px'} height={'400px'} spacing={'spacing12'}>
       <ComponentStage>
-        <InputButton value={value} {...args} onChange={(value) => setValue(value)} />
+        <InputButton value={value} defaultValue={'기본값'} {...args} onChange={(value) => setValue(value)} />
       </ComponentStage>
       <Text>아래 버튼을 눌러 값을 할당해주세요.</Text>
       <Stack.Horizontal width={'100%'} justify={'space-between'}>
