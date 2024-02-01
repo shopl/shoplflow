@@ -1,0 +1,49 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import Tabs from './Tabs';
+import * as TabsStories from './Tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Trigger와 Panel이 있는 컴파운드 기반의 Tab Component입니다.
+
+- 외부에서도 선택된 탭을 컨트롤해야 한다면 onChangeTab: tab(string) => void 시그니처의 함수를 Tabs에 Props으로 넘겨주세요
+
+
+<Canvas of={TabsStories.Playground} />
+
+
+## ArgsTable
+
+### Tabs
+<ArgsTable of={Tabs} />
+
+### TabTrigger
+<ArgsTable of={Tabs.Trigger} />
+
+### TabsPanel
+<ArgsTable of={Tabs.Panel} />
+
+## Usage
+
+```typescript
+import { Tabs } from '@shoplflow/base';
+
+const App = () => {
+  return (
+      <Tabs initialTab='value1' level="level1">
+        <Stack.Horizontal>
+          <Tabs.Trigger value={'value1'} label={'label1'} />
+          <Tabs.Trigger value={'value2'} label={'label2'} />
+          <Tabs.Trigger value={'value3'} label={'label3'} />
+        </Stack.Horizontal>
+        <Tabs.Panel value={'value1'}>value1</Tabs.Panel>
+        <Tabs.Panel value={'value2'}>value2</Tabs.Panel>
+        <Tabs.Panel value={'value3'}>value3</Tabs.Panel>
+      </Tabs>
+  )
+}
+```
+
+
