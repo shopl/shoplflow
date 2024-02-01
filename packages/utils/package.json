@@ -6,7 +6,8 @@
   "scripts": {
     "type-check": "tsc --noEmit || true",
     "build:package": "rm -rf dist/ && tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "test": "vitest"
   },
   "main": "./src/index.ts",
   "exports": {
@@ -45,12 +46,14 @@
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.8.2",
     "@types/react": "^18.2.22",
     "esbuild": "0.18.17",
     "esbuild-plugin-babel": "^0.2.3",
     "esbuild-plugin-d.ts": "^1.1.0",
+    "jsdom": "^24.0.0",
     "react": "^18.2.0",
     "ts-node": "^10.9.1",
     "tsup": "7.2.0",

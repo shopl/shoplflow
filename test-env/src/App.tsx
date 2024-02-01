@@ -55,10 +55,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   const { addModal } = useHandleModal();
-  const { selectedItem } = useSelect('MULTI', data, {
+  const { selectedItem, handleToggleSelect, handleReset } = useSelect('SINGLE', data, {
     key: 'id',
-    max: 2,
-    defaultSelected: [1, 2],
   });
 
   return (
@@ -72,7 +70,9 @@ function App() {
         </a>
       </Stack.Horizontal>
       <h1 className={'heading1_700'}>Shoplflow Test Env</h1>
-      <Text>{selectedItem.map((data) => data.name).join('')}</Text>
+      <Text>{selectedItem?.name}</Text>
+      <button onClick={handleReset}>reset</button>
+      <button onClick={() => handleToggleSelect(1)}>remove 1</button>
       <Stack.Vertical align={'center'}>
         <Stack.Horizontal justify={'center'}>
           <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
