@@ -20,7 +20,7 @@ const Tree = ({ children, ...rest }: TreeProps) => {
 
 export const TreeItem = ({
   children,
-  content,
+  label,
   leftSource,
   rightSource,
   depth = 0,
@@ -54,11 +54,11 @@ export const TreeItem = ({
 
   return (
     <AnimatePresence mode={'sync'}>
-      <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(content)} {...rest}>
+      <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(label)} {...rest}>
         <LeftElementWrapper>
           {leftSource}
           <Text typography={'body1_400'} lineClamp={1}>
-            {content}
+            {label}
           </Text>
         </LeftElementWrapper>
         <RightElementWrapper>

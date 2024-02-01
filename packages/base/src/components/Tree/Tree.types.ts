@@ -2,7 +2,7 @@ import type { ChildrenProps, LeftElementProps, RightElementProps } from '../../u
 import type { ReactNode } from 'react';
 
 export interface TreeProps extends TreeOptionProps {}
-export interface TreeOptionProps extends ChildrenProps, LeftElementProps {}
+export interface TreeOptionProps extends ChildrenProps {}
 
 export interface TreeItemProps extends TreeItemOptionProps {}
 
@@ -15,7 +15,7 @@ export interface TreeItemOptionProps extends ChildrenProps, LeftElementProps, Ri
   /**
    * 내부에 들어갈 요소를 설정합니다.
    */
-  content?: ReactNode;
+  label?: ReactNode;
   /**
    * 초기 값을 설정합니다.
    */

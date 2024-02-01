@@ -22,4 +22,17 @@ TreeItem의 children을 통해 중첩 데이터를 표현할 수 있습니다.
 
 ## Usage
 
+```tsx
+
+const App = () => {
+  return (
+    <Tree>
+      <Tree.Item label="Parent">
+        <Tree.Item label="Child 1" />
+        <Tree.Item label="Child 2" />
+      </Tree.Item>
+    </Tree>
+  );
+}
+```
 
