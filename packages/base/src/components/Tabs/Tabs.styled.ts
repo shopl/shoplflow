@@ -76,7 +76,7 @@ export const getActiveTriggerStyleByLevel = (levelVar: TabsLevel) => {
   }
 };
 
-export const StyledTabTrigger = styled.div<{ isActive: boolean; isHover: boolean; levelVar: TabsLevel }>`
+export const StyledTab = styled.div<{ isActive: boolean; isHover: boolean; levelVar: TabsLevel }>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -148,7 +148,7 @@ export const getActiveTextStyleByLevel = (levelVar: TabsLevel) => {
   }
 };
 
-export const StyledTabTriggerText = styled(Text)<{ levelVar: TabsLevel; isHover: boolean; isActive: boolean }>`
+export const StyledTabText = styled(Text)<{ levelVar: TabsLevel; isHover: boolean; isActive: boolean }>`
   cursor: pointer;
   transition: all 200ms ease;
 
