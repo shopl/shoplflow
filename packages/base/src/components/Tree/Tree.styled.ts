@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import type { TreeItemOptionProps } from './Tree.types';
 import { css } from '@emotion/react';
 import { colorTokens } from '../../styles';
-import { m } from 'framer-motion';
+import { m, motion } from 'framer-motion';
 
-export const StyledTree = styled.ul`
+export const StyledTree = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -14,7 +14,7 @@ export const StyledTreeItem = styled(m.li)<TreeItemOptionProps>`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: fit-content;
+  height: 48px;
   gap: 4px;
   align-items: center;
   justify-content: space-between;

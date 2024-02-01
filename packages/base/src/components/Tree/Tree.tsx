@@ -12,12 +12,8 @@ import { fadeInOut } from '../../animation/fadeInOut';
 
 const Tree = ({ children, ...rest }: TreeProps) => {
   return (
-    <StyledTree {...rest} data-shoplflow={'Tree'}>
-      <LayoutGroup>
-        <AnimatePresence mode={'popLayout'} initial={false}>
-          {children}
-        </AnimatePresence>
-      </LayoutGroup>
+    <StyledTree {...rest} data-shoplflow={'Tree'} layout layoutRoot>
+      <LayoutGroup>{children}</LayoutGroup>
     </StyledTree>
   );
 };
@@ -61,7 +57,7 @@ export const TreeItem = ({
       <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(content)} {...rest}>
         <LeftElementWrapper>
           {leftSource}
-          <Text typography={'body1_500'} lineClamp={1}>
+          <Text typography={'body1_400'} lineClamp={1}>
             {content}
           </Text>
         </LeftElementWrapper>
@@ -84,7 +80,7 @@ export const TreeItem = ({
         </RightElementWrapper>
       </StyledTreeItem>
       {isOpened && children && (
-        <m.div key={'children' + String(CloneChildren)} {...AnimateKey} variants={fadeInOut} layout>
+        <m.div key={'children' + String(CloneChildren)} layout {...AnimateKey} variants={fadeInOut}>
           {CloneChildren}
         </m.div>
       )}

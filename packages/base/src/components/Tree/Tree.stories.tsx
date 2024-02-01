@@ -75,6 +75,17 @@ export const Playground: StoryFn<TreeProps> = () => {
                 <Tree.Item leftSource={<Checkbox />} content={'Jin'} />
                 <Tree.Item leftSource={<Checkbox />} content={'Bb'} />
               </Tree.Item>
+              <Tree.Item leftSource={<Checkbox />} content={'중첩 테스트'}>
+                <Tree.Item leftSource={<Checkbox />} content={'사과'}>
+                  <Tree.Item leftSource={<Checkbox />} content={'배'}>
+                    <Tree.Item leftSource={<Checkbox />} content={'귤'} />
+                    <Tree.Item leftSource={<Checkbox />} content={'포도'} />
+                  </Tree.Item>
+                  <Tree.Item leftSource={<Checkbox />} content={'포도'} />
+                </Tree.Item>
+                <Tree.Item leftSource={<Checkbox />} content={'바나나'} />
+                <Tree.Item leftSource={<Checkbox />} content={'딸기'} />
+              </Tree.Item>
             </Tree.Item>
           </Tree>
         </ScrollArea>
