@@ -18,3 +18,4 @@ export * from './Icon';
 export * from './Inputs';
 export * from './ControlButtons';
 export * from './Tooltip';
+export * from './Tabs';
