@@ -14,6 +14,7 @@ export * from './Dropdown';
 export * from './Menu';
 export * from './List';
 export * from './Tag';
+export * from './Tree';
 export * from './Icon';
 export * from './Inputs';
 export * from './ControlButtons';

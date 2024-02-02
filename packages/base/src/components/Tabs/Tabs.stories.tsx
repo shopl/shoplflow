@@ -5,7 +5,6 @@ import { Stack } from '../Stack';
 import Tabs from './Tabs';
 import type { TabsProps } from './Tabs.types';
 import { ComponentStage } from '../../styles/Box';
-import { SwitchCase } from './SwitchCase';
 
 export default {
   title: 'COMPONENTS/Tabs',
@@ -32,7 +31,6 @@ export const Playground: StoryFn<TabsProps> = (args) => {
             <Tabs.Tab value={'c'} label={'label3'} />
           </Stack.Horizontal>
         </Tabs>
-        <SwitchCase value={'a'} caseBy={{ a: <div>a case</div>, b: <div>b case</div>, c: <div>c case</div> }} />
       </ComponentStage>
     </Stack>
   );
