@@ -14,6 +14,8 @@ export default {
 export const Playground: StoryFn<TabsProps> = (args) => {
   const [activeTab, setActiveTab] = useState('a');
 
+  // const caseBy = useMemo(() => ({ a: <div>??</div> }), []);
+
   return (
     <Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>
       <ComponentStage>
@@ -57,7 +59,6 @@ export const Level2: StoryFn<TabsProps> = (args) => {
             <Tabs.Tab value={'c'} label={'label3'} />
           </Stack.Horizontal>
         </Tabs>
-        {/* <SwitchCase value={'a'} caseBy={{ a: <div>a case</div>, b: <div>b case</div>, c: <div>c case</div> }} /> */}
       </ComponentStage>
     </Stack>
   );
@@ -85,7 +86,6 @@ export const Level3: StoryFn<TabsProps> = (args) => {
             <Tabs.Tab value={'c'} label={'label3'} />
           </Stack.Horizontal>
         </Tabs>
-        {/* <SwitchCase value={'a'} caseBy={{ a: <div>a case</div>, b: <div>b case</div>, c: <div>c case</div> }} /> */}
       </ComponentStage>
     </Stack>
   );
