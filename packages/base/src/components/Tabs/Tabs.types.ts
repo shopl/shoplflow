@@ -1,5 +1,5 @@
 import type { ChildrenProps, LeftAndRightNodeProps } from '../../utils/type/ComponentProps';
-import type { HTMLAttributes, ReactElement } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 export type TabsLevel = 'level1' | 'level2' | 'level3';
 export interface TabsProps extends TabsOptionProps {
@@ -30,5 +30,11 @@ export interface TabOptionProps extends LeftAndRightNodeProps {
 
 export interface SwitchCaseProps {
   value: string;
-  caseBy: { [key: string]: ReactElement };
+  caseBy: { [key: string]: ReactNode };
+}
+
+export interface TestSwitchCaseProps {
+  value?: string;
+  caseBy?: { [key: string]: ReactNode };
+  node: ReactNode;
 }
