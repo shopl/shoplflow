@@ -1,72 +1,22 @@
 import styled from '@emotion/styled';
 import { Text } from '../Text';
-import type { TabsLevel } from './Tabs.types';
 import { css } from '@emotion/react';
+import type { ColorTokens } from '../../styles';
 import { colorTokens } from '../../styles';
+import type { TabStyleVariantType, TabStyledProps, TabTextStyledProps } from './Tabs.types';
 
-export const getHoverTriggerStyleByLevel = (levelVar: TabsLevel) => {
-  switch (levelVar) {
-    case 'level2': {
-      return css`
-        color: red;
-      `;
-    }
-    case 'level3': {
-      return css`
-        color: red;
-      `;
-    }
-    default: {
-      return null;
-    }
-  }
-};
-
-export const getWrapperStyleByLevel = (levelVar: TabsLevel) => {
-  switch (levelVar) {
-    case 'level3': {
-      return css`
-        padding-inline: 16px;
-        height: 48px;
-        ::after {
-          content: ''; /* 가상 요소에는 content 속성이 필수 */
-          position: absolute; /* 부모 요소를 기준으로 위치 지정 */
-          left: 0;
-          right: 0;
-          bottom: 0px; /* 아래에서 시작 */
-          height: 0px; /* 가상 요소의 높이 */
-          background: #000; /* 배경 색상 */
-          transition: transform 0.3s; /* 부드러운 애니메이션 효과 */
-        }
-      `;
-    }
-    default: {
-      return css`
-        padding-inline: 0px;
-        height: 40px;
-      `;
-    }
-  }
-};
-
-export const getActiveTriggerStyleByLevel = (levelVar: TabsLevel) => {
-  switch (levelVar) {
-    case 'level2': {
-      return css`
-        color: red;
-      `;
-    }
-    case 'level3': {
+export const getHoverTabStyleByStyleVar = (styleVar: TabStyleVariantType) => {
+  switch (styleVar) {
+    case 'INFO': {
       return css`
         ::after {
           content: '';
           position: absolute;
           left: 0;
           right: 0;
-          bottom: 3px;
-          height: 3px;
-          background: #000;
-          transition: height 0.3s ease;
+          bottom: -2px;
+          height: 2px;
+          background: ${colorTokens.neutral500};
         }
       `;
     }
@@ -76,37 +26,67 @@ export const getActiveTriggerStyleByLevel = (levelVar: TabsLevel) => {
   }
 };
 
-export const StyledTab = styled.div<{ isActive: boolean; isHover: boolean; levelVar: TabsLevel }>`
+export const getWrapperStyleByStyleVar = (styleVar: TabStyleVariantType) => {
+  switch (styleVar) {
+    case 'INFO': {
+      return css`
+        padding-inline: 16px;
+      `;
+    }
+    default: {
+      return null;
+    }
+  }
+};
+
+export const getActiveTriggerStyleByStyleVar = (styleVar: TabStyleVariantType) => {
+  switch (styleVar) {
+    case 'INFO': {
+      return css`
+        ::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -2px;
+          height: 2px;
+          background: #000;
+        }
+      `;
+    }
+    default: {
+      return null;
+    }
+  }
+};
+
+export const StyledTab = styled.div<TabStyledProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 12px 16px;
   width: fit-content;
   cursor: pointer;
   position: relative;
-  transition: all 300ms ease;
+  user-select: none;
 
-  ${({ levelVar }) => getWrapperStyleByLevel(levelVar)};
+  ${({ styleVar }) => styleVar && getWrapperStyleByStyleVar(styleVar)};
 
   /* hover style */
-  ${({ levelVar, isActive, isHover }) => !isActive && isHover && getHoverTriggerStyleByLevel(levelVar)}
+  ${({ isActive, isHover, styleVar }) => !isActive && isHover && styleVar && getHoverTabStyleByStyleVar(styleVar)}
 
   /* active style */
-  ${({ isActive, levelVar }) => isActive && getActiveTriggerStyleByLevel(levelVar)}
+  ${({ isActive, styleVar }) => isActive && styleVar && getActiveTriggerStyleByStyleVar(styleVar)}
 `;
 
-export const getTextStyleByLevel = (levelVar: TabsLevel) => {
-  switch (levelVar) {
-    case 'level1': {
+export const getTextStyleByStyleVar = (styleVar: TabStyleVariantType) => {
+  switch (styleVar) {
+    case 'NORMAL': {
       return css`
-        color: ${colorTokens.neutral500};
+        color: ${colorTokens.neutral400};
       `;
     }
-    case 'level2': {
-      return css`
-        color: ${colorTokens.neutral350};
-      `;
-    }
-    case 'level3': {
+    case 'INFO': {
       return css`
         color: ${colorTokens.neutral500};
       `;
@@ -114,14 +94,14 @@ export const getTextStyleByLevel = (levelVar: TabsLevel) => {
   }
 };
 
-const getHoverTextStyleByLevel = (levelVar: TabsLevel) => {
-  switch (levelVar) {
-    case 'level2': {
+const getHoverTextStyleByStyleVar = (styleVar: TabStyleVariantType) => {
+  switch (styleVar) {
+    case 'NORMAL': {
       return css`
         color: ${colorTokens.neutral500};
       `;
     }
-    case 'level3': {
+    case 'INFO': {
       return css`
         color: ${colorTokens.neutral700};
       `;
@@ -132,10 +112,14 @@ const getHoverTextStyleByLevel = (levelVar: TabsLevel) => {
   }
 };
 
-export const getActiveTextStyleByLevel = (levelVar: TabsLevel) => {
-  switch (levelVar) {
-    case 'level2':
-    case 'level3': {
+export const getActiveTextStyleByStyleVar = (styleVar: TabStyleVariantType, activeColor?: ColorTokens) => {
+  switch (styleVar) {
+    case 'NORMAL': {
+      return css`
+        color: ${activeColor ? colorTokens[activeColor] : colorTokens.neutral700};
+      `;
+    }
+    case 'INFO': {
       return css`
         color: ${colorTokens.neutral700};
       `;
@@ -148,17 +132,15 @@ export const getActiveTextStyleByLevel = (levelVar: TabsLevel) => {
   }
 };
 
-export const StyledTabText = styled(Text)<{ levelVar: TabsLevel; isHover: boolean; isActive: boolean }>`
+export const StyledTabText = styled(Text)<TabTextStyledProps>`
   cursor: pointer;
-  transition: all 200ms ease;
 
-  ${({ levelVar }) => getTextStyleByLevel(levelVar)};
+  ${({ styleVar }) => styleVar && getTextStyleByStyleVar(styleVar)};
 
   /* hover style */
-  ${({ isHover, levelVar, isActive }) => !isActive && isHover && getHoverTextStyleByLevel(levelVar)}
+  ${({ isHover, styleVar, isActive }) => !isActive && isHover && styleVar && getHoverTextStyleByStyleVar(styleVar)}
 
   /* active style */
-  ${({ isActive, levelVar }) => isActive && getActiveTextStyleByLevel(levelVar)}
+  ${({ isActive, styleVar, activeColor }) =>
+    isActive && styleVar && getActiveTextStyleByStyleVar(styleVar, activeColor)}
 `;
-
-export const StyledTabPanel = styled.div``;

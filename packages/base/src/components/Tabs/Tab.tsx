@@ -6,9 +6,21 @@ import type { TabProps } from './Tabs.types';
 import { StyledTabText, StyledTab } from './Tabs.styled';
 
 import type { TypographyTokens } from '../../styles';
+import { Indicator } from './Indicator';
 
-export const Tab = ({ value, label, leftSource, rightSource, as, onClick, ...args }: TabProps) => {
-  const { activeTab, setActiveTab, level } = useTabs();
+export const Tab = ({
+  value,
+  label,
+  leftSource,
+  rightSource,
+  as,
+  styleVar = 'NORMAL',
+  sizeVar = 'L',
+  onClick,
+  activeColor,
+  ...args
+}: TabProps) => {
+  const { activeTab, setActiveTab } = useTabs();
 
   const [isHover, setIsHover] = useState(false);
 
@@ -26,15 +38,18 @@ export const Tab = ({ value, label, leftSource, rightSource, as, onClick, ...arg
     setActiveTab(value);
   };
 
-  let typography: TypographyTokens = 'title2_700';
+  let typography: TypographyTokens = 'title1_700';
 
-  if (level === 'level2' || level === 'level3') {
-    typography = 'title1_700';
+  if (styleVar === 'INFO') {
+    typography = 'body1_700';
+  }
+
+  if (styleVar === 'NORMAL' && sizeVar === 'M') {
+    typography = 'title2_700';
   }
 
   return (
     <StyledTab
-      levelVar={level}
       isActive={isActive}
       as={as}
       onClick={clickHandler}
@@ -43,13 +58,22 @@ export const Tab = ({ value, label, leftSource, rightSource, as, onClick, ...arg
       onFocus={hoverHandler}
       onBlur={unhoverHandler}
       isHover={isHover}
+      styleVar={styleVar}
       {...args}
     >
       {leftSource}
-      <StyledTabText isHover={isHover} levelVar={level} lineClamp={2} typography={`${typography}`} isActive={isActive}>
+      <StyledTabText
+        isHover={isHover}
+        lineClamp={2}
+        typography={`${typography}`}
+        isActive={isActive}
+        activeColor={activeColor}
+        styleVar={styleVar}
+      >
         {label}
       </StyledTabText>
       {rightSource}
+      {styleVar === 'INFO' && isActive && <Indicator layoutId='underline' />}
     </StyledTab>
   );
 };

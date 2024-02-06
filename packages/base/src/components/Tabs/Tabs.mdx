@@ -11,7 +11,7 @@ import * as TabsStories from './Tabs.stories';
 - 탭을 컨트롤하기 위해 onChange: tab(string) => void 시그니처의 함수를 Tabs에 Props으로 넘겨주세요
 
 
-{/* <Canvas of={TabsStories.Playground} /> */}
+<Canvas of={TabsStories.Playground} />
 
 
 ## ArgsTable
@@ -33,17 +33,18 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('value1');
 
   return (
-      <Tabs initialTab={activeTab} level="level1" onChange={setActiveTab}>
+    <>
+      <Tabs initialTab={activeTab} onChange={setActiveTab}>
         <Stack.Horizontal>
           <Tabs.Tab value={'value1'} label={'label1'} />
           <Tabs.Tab value={'value2'} label={'label2'} />
           <Tabs.Tab value={'value3'} label={'label3'} />
         </Stack.Horizontal>
-        <Tabs.SwitchCase
-          value={activeTab}
-          caseBy={{ value1: <div>a case</div>, value2: <div>b case</div>, value3: <div>c case</div> }}
-        />
       </Tabs>
+      {activeTab === "a" && <div>acitve a</div>}
+      {activeTab === "b" && <div>acitve a</div>}
+      {activeTab === "c" && <div>acitve a</div>}
+    </>
   )
 }
 ```

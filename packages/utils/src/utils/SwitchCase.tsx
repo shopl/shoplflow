@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+
 export type SwitchCaseProps<T extends Record<string, ReactNode>> = {
   value: T extends Record<infer K, ReactNode> ? K : never;
   caseBy: T;

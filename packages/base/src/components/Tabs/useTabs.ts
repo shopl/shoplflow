@@ -1,10 +1,8 @@
 import { createContext, useContext } from 'react';
-import type { TabsLevel } from './Tabs.types';
 
 export type TabsContextType = {
   activeTab: string | null;
   setActiveTab: (tab: string) => void;
-  level: TabsLevel;
 };
 
 export const TabsContext = createContext<TabsContextType | null>(null);

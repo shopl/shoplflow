@@ -5,6 +5,9 @@ import { Stack } from '../Stack';
 import Tabs from './Tabs';
 import type { TabsProps } from './Tabs.types';
 import { ComponentStage } from '../../styles/Box';
+import { Icon } from '../Icon';
+import { EditIcon } from '@shoplflow/shopl-assets';
+import { colorTokens } from '../../styles';
 
 export default {
   title: 'COMPONENTS/Tabs',
@@ -13,8 +16,6 @@ export default {
 
 export const Playground: StoryFn<TabsProps> = (args) => {
   const [activeTab, setActiveTab] = useState('a');
-
-  // const caseBy = useMemo(() => ({ a: <div>??</div> }), []);
 
   return (
     <Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>
@@ -27,10 +28,10 @@ export const Playground: StoryFn<TabsProps> = (args) => {
             setActiveTab(tab);
           }}
         >
-          <Stack.Horizontal spacing='spacing24' width='100%'>
-            <Tabs.Tab value={'a'} label={'label1'} />
-            <Tabs.Tab value={'b'} label={'label2'} />
-            <Tabs.Tab value={'c'} label={'label3'} />
+          <Stack.Horizontal width='100%'>
+            <Tabs.Tab styleVar='NORMAL' activeColor='primary300' value={'a'} label={'label1'} />
+            <Tabs.Tab styleVar='NORMAL' activeColor='primary300' value={'b'} label={'label2'} />
+            <Tabs.Tab styleVar='NORMAL' activeColor='primary300' value={'c'} label={'label3'} />
           </Stack.Horizontal>
         </Tabs>
       </ComponentStage>
@@ -39,11 +40,7 @@ export const Playground: StoryFn<TabsProps> = (args) => {
 };
 
 Playground.args = {
-  level: 'level1',
   initialTab: 'a',
-  onChange() {
-    return;
-  },
 };
 
 export const Level2: StoryFn<TabsProps> = (args) => {
@@ -52,11 +49,12 @@ export const Level2: StoryFn<TabsProps> = (args) => {
   return (
     <Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>
       <ComponentStage>
+        <div>active tab: {activeTab}</div>
         <Tabs {...args} initialTab={activeTab} onChange={setActiveTab}>
-          <Stack.Horizontal spacing='spacing24' width='100%'>
-            <Tabs.Tab value={'a'} label={'label1'} />
-            <Tabs.Tab value={'b'} label={'label2'} />
-            <Tabs.Tab value={'c'} label={'label3'} />
+          <Stack.Horizontal width='100%'>
+            <Tabs.Tab styleVar='NORMAL' sizeVar='M' value={'a'} label={'label1'} />
+            <Tabs.Tab styleVar='NORMAL' sizeVar='M' value={'b'} label={'label2'} />
+            <Tabs.Tab styleVar='NORMAL' sizeVar='M' value={'c'} label={'label3'} />
           </Stack.Horizontal>
         </Tabs>
       </ComponentStage>
@@ -65,25 +63,51 @@ export const Level2: StoryFn<TabsProps> = (args) => {
 };
 
 Level2.args = {
-  level: 'level2',
   initialTab: 'a',
-  onChange() {
-    return;
-  },
 };
 
 export const Level3: StoryFn<TabsProps> = (args) => {
   const [activeTab, setActiveTab] = useState('a');
+
+  const rightSource = (
+    <div
+      style={{
+        backgroundColor: colorTokens.primary300,
+        width: '20px',
+        height: '20px',
+        borderRadius: '100%',
+        flexShrink: 0,
+      }}
+    />
+  );
 
   return (
     <Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>
       <ComponentStage>
         <div>active tab: {activeTab}</div>
         <Tabs {...args} initialTab={activeTab} onChange={setActiveTab}>
-          <Stack.Horizontal spacing='spacing24' width='100%'>
-            <Tabs.Tab value={'a'} label={'label1'} />
-            <Tabs.Tab value={'b'} label={'label2'} />
-            <Tabs.Tab value={'c'} label={'label3'} />
+          <Stack.Horizontal width='100%'>
+            <Tabs.Tab
+              styleVar='INFO'
+              value={'a'}
+              label={'Long label example.....'}
+              leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}
+              rightSource={rightSource}
+            />
+            <Tabs.Tab
+              styleVar='INFO'
+              value={'b'}
+              label={'label2'}
+              leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}
+              rightSource={rightSource}
+            />
+            <Tabs.Tab
+              styleVar='INFO'
+              value={'c'}
+              label={'label3'}
+              leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}
+              rightSource={rightSource}
+            />
           </Stack.Horizontal>
         </Tabs>
       </ComponentStage>
@@ -92,9 +116,5 @@ export const Level3: StoryFn<TabsProps> = (args) => {
 };
 
 Level3.args = {
-  level: 'level3',
   initialTab: 'a',
-  onChange() {
-    return;
-  },
 };
