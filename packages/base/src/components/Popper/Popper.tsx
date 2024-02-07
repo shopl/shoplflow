@@ -36,7 +36,7 @@ const Popper = ({
 
   return (
     <PopperContext.Provider
-      value={{ ...refs, floatingStyles: { ...floatingStyles, zIndex: 20002 }, isOpen, setIsOpen, ...floating }}
+      value={{ isOpen, setIsOpen, ...floating, ...refs, floatingStyles: { ...floatingStyles, zIndex: 20002 } }}
     >
       {children}
     </PopperContext.Provider>
