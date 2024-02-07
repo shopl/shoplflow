@@ -19,7 +19,7 @@ const Popper = ({
 }: PopperProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { refs, floatingStyles } = useFloating({
+  const { refs, floatingStyles, ...floating } = useFloating({
     strategy,
     placement,
     whileElementsMounted: autoUpdate,
@@ -36,7 +36,7 @@ const Popper = ({
 
   return (
     <PopperContext.Provider
-      value={{ ...refs, floatingStyles: { ...floatingStyles, zIndex: 20002 }, isOpen, setIsOpen }}
+      value={{ ...refs, floatingStyles: { ...floatingStyles, zIndex: 20002 }, isOpen, setIsOpen, ...floating }}
     >
       {children}
     </PopperContext.Provider>
