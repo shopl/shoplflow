@@ -1,5 +1,19 @@
 # @shoplflow/base
 
+## 0.24.34
+
+### Patch Changes
+
+- [#256](https://github.com/shopl/shoplflow/pull/256) [`9623f96`](https://github.com/shopl/shoplflow/commit/9623f9641a46edef28004a58369450d6b6906ce1) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: PopperContext에 useFloating 모든 리턴 타입 추가
+
+## 0.24.33
+
+### Patch Changes
+
+- [#253](https://github.com/shopl/shoplflow/pull/253) [`e902631`](https://github.com/shopl/shoplflow/commit/e9026316c2877e21e5ebf4bc4985a1088cb4d57f) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button workBreak 옵션 수정
+
+- [#253](https://github.com/shopl/shoplflow/pull/253) [`e902631`](https://github.com/shopl/shoplflow/commit/e9026316c2877e21e5ebf4bc4985a1088cb4d57f) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - InputButton value 초기 상태를 감지하지 못하는 이슈 수정
+
 ## 0.24.32
 
 ### Patch Changes
