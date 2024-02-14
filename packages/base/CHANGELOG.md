@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.35
+
+### Patch Changes
+
+- [#258](https://github.com/shopl/shoplflow/pull/258) [`2625242`](https://github.com/shopl/shoplflow/commit/2625242f7cafda72f4e9633bd824fe06f7c2b1e4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Text word-break 속성 미적용 버그 수정
+
 ## 0.24.34
 
 ### Patch Changes
