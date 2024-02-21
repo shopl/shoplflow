@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.24.36
+
+### Patch Changes
+
+- [#260](https://github.com/shopl/shoplflow/pull/260) [`4eac4eb`](https://github.com/shopl/shoplflow/commit/4eac4eb72e10cc3605961e4e36dd04672147d558) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: ModalBody > setContentHeightMax 함수 생성하여 BodyContainer와 ScrollArea의 maxHeight 구하는 로직을 분리하였습니다.
+
 ## 0.24.35
 
 ### Patch Changes
