@@ -63,7 +63,24 @@ const ModalBody = ({
 
       return windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight;
     }
-    return '100%';
+    return 0;
+  };
+
+  const setContentHeightMax = () => {
+    let autoHeightMax = setAutoHeightMax();
+
+    // Content top padding 빼주기
+    autoHeightMax = autoHeightMax - 24;
+
+    if (isIncludeHeader) {
+      autoHeightMax = autoHeightMax - 24;
+    }
+
+    if (!isIncludeHeader) {
+      autoHeightMax = autoHeightMax - 16;
+    }
+
+    return autoHeightMax;
   };
 
   return (
@@ -73,7 +90,7 @@ const ModalBody = ({
         universal
         autoHeight={!modalContainerHeight}
         autoHeightMin={setAutoHeightMin()}
-        autoHeightMax={setAutoHeightMax()}
+        autoHeightMax={setContentHeightMax()}
         style={{
           height: '100%',
           overflow: 'hidden',
