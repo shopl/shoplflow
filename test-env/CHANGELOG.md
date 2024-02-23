@@ -1,5 +1,12 @@
 # test-env
 
+## 0.0.79
+
+### Patch Changes
+
+- Updated dependencies [[`3c8d9d7`](https://github.com/shopl/shoplflow/commit/3c8d9d767ceeb09668d9b35ac2acc6db6d91222d)]:
+  - @shoplflow/base@0.25.1
+
 ## 0.0.78
 
 ### Patch Changes

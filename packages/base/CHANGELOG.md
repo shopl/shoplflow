@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.25.1
+
+### Patch Changes
+
+- [#262](https://github.com/shopl/shoplflow/pull/262) [`3c8d9d7`](https://github.com/shopl/shoplflow/commit/3c8d9d767ceeb09668d9b35ac2acc6db6d91222d) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - [Feature/add modal size] Modal sizeVar에 XXXL 추가
+
 ## 0.25.0
 
 ### Minor Changes
