@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.25.0
+
+### Minor Changes
+
+- Modal 컴포넌트에 XXXL size 추가
+
 ## 0.24.36
 
 ### Patch Changes
