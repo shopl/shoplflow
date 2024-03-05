@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.25.2
+
+### Patch Changes
+
+- [#265](https://github.com/shopl/shoplflow/pull/265) [`e3ad05a`](https://github.com/shopl/shoplflow/commit/e3ad05aa7a7d24d98881c2de1eadb4d2a03227ae) Thanks [@bong9boy](https://github.com/bong9boy)! - spacing02, paragraph1, paragraph2 추가
+
 ## 0.25.1
 
 ### Patch Changes
