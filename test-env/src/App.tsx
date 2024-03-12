@@ -4,6 +4,7 @@ import './App.css';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import { Modal, useHandleModal, ChipToggle, Stack, Text } from '@shoplflow/base';
+import { useSelect } from '@shoplflow/utils';
 
 const TestModal = () => {
   const { removeModal, addModal } = useHandleModal();
@@ -39,11 +40,24 @@ const TestModal = () => {
     </Modal.Container>
   );
 };
+const data = [
+  {
+    id: 1,
+    name: 'name1',
+  },
+  {
+    id: 2,
+    name: 'name2',
+  },
+];
 
 function App() {
   const [count, setCount] = useState(0);
 
   const { addModal } = useHandleModal();
+  const { selectedItem, handleToggleSelect, handleReset } = useSelect('SINGLE', data, {
+    key: 'id',
+  });
 
   return (
     <Stack.Vertical align={'center'}>
@@ -56,7 +70,9 @@ function App() {
         </a>
       </Stack.Horizontal>
       <h1 className={'heading1_700'}>Shoplflow Test Env</h1>
-      <Text>some Test</Text>
+      <Text>{selectedItem?.name}</Text>
+      <button onClick={handleReset}>reset</button>
+      <button onClick={() => handleToggleSelect(1)}>remove 1</button>
       <Stack.Vertical align={'center'}>
         <Stack.Horizontal justify={'center'}>
           <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>

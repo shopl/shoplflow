@@ -12,6 +12,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@shoplflow/base": "workspace:^",
+    "@shoplflow/utils": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

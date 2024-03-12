@@ -2,3 +2,8 @@
 dist/**
 storybook-static/**
 build/**
+node_modules/**
+**/node_modules/**
+
+test-env/**
+**/__tests__/**

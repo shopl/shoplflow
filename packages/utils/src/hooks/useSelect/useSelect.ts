@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { getInitialSelected } from './getInitialSelected';
 
 /**
  * select 기능을 추상화한 hook입니다.
@@ -121,7 +122,18 @@ type SelectedItem<T, Mode extends 'SINGLE' | 'MULTI'> = Mode extends 'SINGLE' ? 
 export function useSelect<T>(
   mode: 'SINGLE',
   data: T[],
-  options?: { key: string; defaultSelected?: T[] },
+  options?: { key: keyof T; defaultSelected?: T[] },
+): {
+  selectedItem: SelectedItem<T, 'SINGLE'>;
+  handleToggleSelect: (id: string) => void;
+  handleSelect: (id: string) => void;
+  handleReset: () => void;
+  handleRemove: (id: string) => void;
+};
+export function useSelect<T>(
+  mode: 'SINGLE',
+  data: T[],
+  options?: { key: keyof T; defaultSelected?: Array<T[keyof T]> },
 ): {
   selectedItem: SelectedItem<T, 'SINGLE'>;
   handleToggleSelect: (id: string) => void;
@@ -133,7 +145,18 @@ export function useSelect<T>(
 export function useSelect<T>(
   mode: 'MULTI',
   data: T[],
-  options?: { key: string; max?: number; defaultSelected?: T[] },
+  options?: { key: keyof T; max?: number; defaultSelected?: T[] },
+): {
+  selectedItem: SelectedItem<T, 'MULTI'>;
+  handleToggleSelect: (id: string) => void;
+  handleSelect: (id: string) => void;
+  handleReset: () => void;
+  handleRemove: (id: string) => void;
+};
+export function useSelect<T>(
+  mode: 'MULTI',
+  data: T[],
+  options?: { key: keyof T; max?: number; defaultSelected?: Array<T[keyof T]> },
 ): {
   selectedItem: SelectedItem<T, 'MULTI'>;
   handleToggleSelect: (id: string) => void;
@@ -146,7 +169,7 @@ export function useSelect<T>(
 export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE' | 'MULTI'>(
   mode: Mode,
   data: T[],
-  options?: { key: string; max?: number; defaultSelected?: T[] },
+  options?: { key: keyof T; max?: number; defaultSelected?: T[] | string[] },
 ): {
   selectedItem: T[] | T | null;
   handleSelect: (id: string) => void;
@@ -164,53 +187,74 @@ export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE
     throw new Error('max는 0보다 커야 합니다.');
   }
 
-  const [selectedItem, setSelectedItem] = useState<T[]>(options?.defaultSelected ?? []);
+  const initialSelected = getInitialSelected<T>(data, options?.defaultSelected || [], options?.key as string);
+
+  const [selectedItem, setSelectedItem] = useState<T[]>(initialSelected);
   const key = options?.key || 'id';
 
+  const result = useMemo(() => {
+    return mode === 'MULTI' ? selectedItem : selectedItem[0] || null;
+  }, [selectedItem, mode]);
+
   // 아이디를 이용해 데이터 배열에서 아이템 찾는 함수
-  const findItemById = (id: string): T | undefined => {
-    return data.find((item) => item[key] === id);
-  };
+  const findItemById = useCallback(
+    (id: string): T | undefined => {
+      return data.find((item) => item[key] === id);
+    },
+    [data, key],
+  );
 
   // 아이템 선택 함수
-  const handleSelect = (id: string) => {
-    const newItem = findItemById(id);
-    if (newItem) {
-      setSelectedItem((currentSelected) => {
-        if (mode === 'MULTI') {
-          return [...currentSelected, newItem];
-        } else {
-          return [newItem];
-        }
-      });
-    }
-  };
+  const handleSelect = useCallback(
+    (id: string) => {
+      const newItem = findItemById(id);
+
+      if (newItem) {
+        setSelectedItem((currentSelected) => {
+          if (mode === 'MULTI') {
+            return [...currentSelected, newItem];
+          } else {
+            return [newItem];
+          }
+        });
+      }
+    },
+    [findItemById, mode],
+  );
 
   // 아이템 제거 함수
-  const handleRemove = (id: string) => {
-    setSelectedItem((currentSelected) => currentSelected.filter((item) => item[key] !== id));
-  };
+  const handleRemove = useCallback(
+    (id: string) => {
+      setSelectedItem((currentSelected) => currentSelected.filter((item) => item[key] !== id));
+    },
+    [setSelectedItem, key],
+  );
 
   // 메인 토글 함수
-  const handleToggleSelect = (id: string) => {
-    const isSelected = selectedItem.find((item) => item[key] === id);
-    if (isSelected) {
-      handleRemove(id);
-    }
-    if (!isSelected) {
-      if (options?.max && selectedItem.length >= options.max) {
-        return;
-      }
-      handleSelect(id);
-    }
-  };
+  const handleToggleSelect = useCallback(
+    (id: string) => {
+      const isSelected = selectedItem.find((item) => item[key] === id);
 
-  const handleReset = () => {
+      if (isSelected) {
+        handleRemove(id);
+      }
+      if (!isSelected) {
+        if (options?.max && selectedItem.length >= options.max) {
+          return;
+        }
+
+        handleSelect(id);
+      }
+    },
+    [handleRemove, handleSelect, options?.max, selectedItem, key],
+  );
+
+  const handleReset = useCallback(() => {
     setSelectedItem([]);
-  };
+  }, []);
 
   return {
-    selectedItem: mode === 'MULTI' ? selectedItem : selectedItem[0] || null,
+    selectedItem: result,
     handleReset,
     handleToggleSelect,
     handleSelect,

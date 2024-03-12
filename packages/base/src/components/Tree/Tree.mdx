@@ -1,20 +1,38 @@
 import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
-import Tree from './Tree';
+import Tree, { TreeItem } from './Tree';
 import * as TreeStories from './Tree.stories';
 
 <Meta of={TreeStories} />
 
 # Tree
 
-Tree 컴포넌트 설명을 적어주세요.
+트리 컴포넌트는 계층 데이터를 표현할 때 사용합니다.
+TreeItem의 children을 통해 중첩 데이터를 표현할 수 있습니다.
 
 <Canvas of={TreeStories.Playground} />
 
 
 ## ArgsTable
 
+### Tree
 <ArgsTable of={Tree} />
+
+### Tree.Item
+<ArgsTable of={TreeItem} />
 
 ## Usage
 
+```tsx
+
+const App = () => {
+  return (
+    <Tree>
+      <Tree.Item label="Parent">
+        <Tree.Item label="Child 1" />
+        <Tree.Item label="Child 2" />
+      </Tree.Item>
+    </Tree>
+  );
+}
+```
 
