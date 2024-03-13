@@ -11,6 +11,7 @@ const MODAL_SIZE_M = 640;
 const MODAL_SIZE_L = 768;
 const MODAL_SIZE_XL = 1040;
 const MODAL_SIZE_XXL = 1280;
+const MODAL_SIZE_XXXL = 1600;
 
 const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
   switch (size) {
@@ -28,6 +29,8 @@ const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
       return MODAL_SIZE_XL;
     case 'XXL':
       return MODAL_SIZE_XXL;
+    case 'XXXL':
+      return MODAL_SIZE_XXXL;
     default:
       return MODAL_SIZE_M;
   }

@@ -1,5 +1,29 @@
 # @shoplflow/base
 
+## 0.25.2
+
+### Patch Changes
+
+- [#265](https://github.com/shopl/shoplflow/pull/265) [`e3ad05a`](https://github.com/shopl/shoplflow/commit/e3ad05aa7a7d24d98881c2de1eadb4d2a03227ae) Thanks [@bong9boy](https://github.com/bong9boy)! - spacing02, paragraph1, paragraph2 추가
+
+## 0.25.1
+
+### Patch Changes
+
+- [#262](https://github.com/shopl/shoplflow/pull/262) [`3c8d9d7`](https://github.com/shopl/shoplflow/commit/3c8d9d767ceeb09668d9b35ac2acc6db6d91222d) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - [Feature/add modal size] Modal sizeVar에 XXXL 추가
+
+## 0.25.0
+
+### Minor Changes
+
+- Modal 컴포넌트에 XXXL size 추가
+
+## 0.24.36
+
+### Patch Changes
+
+- [#260](https://github.com/shopl/shoplflow/pull/260) [`4eac4eb`](https://github.com/shopl/shoplflow/commit/4eac4eb72e10cc3605961e4e36dd04672147d558) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: ModalBody > setContentHeightMax 함수 생성하여 BodyContainer와 ScrollArea의 maxHeight 구하는 로직을 분리하였습니다.
+
 ## 0.24.35
 
 ### Patch Changes
