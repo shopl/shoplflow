@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.7.0
+
+### Minor Changes
+
+- [#269](https://github.com/shopl/shoplflow/pull/269) [`47f17fa`](https://github.com/shopl/shoplflow/commit/47f17faab88d915fc9a8d38e6b346b7dc80f169c) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - add icons
+
 ## 0.6.0
 
 ### Minor Changes
