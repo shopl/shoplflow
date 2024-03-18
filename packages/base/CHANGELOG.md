@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.26.0
+
+### Minor Changes
+
+- [#271](https://github.com/shopl/shoplflow/pull/271) [`371d108`](https://github.com/shopl/shoplflow/commit/371d10876f3050beb89594c5e0fa3915df591185) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 추가
+
+- [#271](https://github.com/shopl/shoplflow/pull/271) [`371d108`](https://github.com/shopl/shoplflow/commit/371d10876f3050beb89594c5e0fa3915df591185) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal Full size 추가
+
 ## 0.25.4
 
 ### Patch Changes
