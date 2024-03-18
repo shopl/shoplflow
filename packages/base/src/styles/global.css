@@ -13,6 +13,7 @@
   --border-radius12: 12px;
   --border-radius16: 16px;
   --border-radius20: 20px;
+  --spacing02: 2px;
   --spacing04: 4px;
   --spacing06: 6px;
   --spacing08: 8px;
@@ -333,5 +334,15 @@
     font-weight: var(--font-weight-regular);
     line-height: 16px;
     font-size: 12px;
+  }
+  .paragraph1 {
+    font-weight: var(--font-weight-regular);
+    line-height: 22px;
+    font-size: 14px;
+  }
+  .paragraph2 {
+    font-weight: var(--font-weight-regular);
+    line-height: 20px;
+    font-size: 13px;
   }
 }

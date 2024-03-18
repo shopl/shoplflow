@@ -1,5 +1,62 @@
 # @shoplflow/base
 
+## 0.26.0
+
+### Minor Changes
+
+- [#271](https://github.com/shopl/shoplflow/pull/271) [`371d108`](https://github.com/shopl/shoplflow/commit/371d10876f3050beb89594c5e0fa3915df591185) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 추가
+
+- [#271](https://github.com/shopl/shoplflow/pull/271) [`371d108`](https://github.com/shopl/shoplflow/commit/371d10876f3050beb89594c5e0fa3915df591185) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal Full size 추가
+
+## 0.25.4
+
+### Patch Changes
+
+- Updated dependencies [[`47f17fa`](https://github.com/shopl/shoplflow/commit/47f17faab88d915fc9a8d38e6b346b7dc80f169c)]:
+  - @shoplflow/shopl-assets@0.7.0
+
+## 0.25.3
+
+### Patch Changes
+
+- [#267](https://github.com/shopl/shoplflow/pull/267) [`d2b09c7`](https://github.com/shopl/shoplflow/commit/d2b09c723a85b26540cc60b7e232ed0692f52542) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ScrollArea가 Iframe 내부에서 동작하지 않는 버그 수정
+
+## 0.25.2
+
+### Patch Changes
+
+- [#265](https://github.com/shopl/shoplflow/pull/265) [`e3ad05a`](https://github.com/shopl/shoplflow/commit/e3ad05aa7a7d24d98881c2de1eadb4d2a03227ae) Thanks [@bong9boy](https://github.com/bong9boy)! - spacing02, paragraph1, paragraph2 추가
+
+## 0.25.1
+
+### Patch Changes
+
+- [#262](https://github.com/shopl/shoplflow/pull/262) [`3c8d9d7`](https://github.com/shopl/shoplflow/commit/3c8d9d767ceeb09668d9b35ac2acc6db6d91222d) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - [Feature/add modal size] Modal sizeVar에 XXXL 추가
+
+## 0.25.0
+
+### Minor Changes
+
+- Modal 컴포넌트에 XXXL size 추가
+
+## 0.24.36
+
+### Patch Changes
+
+- [#260](https://github.com/shopl/shoplflow/pull/260) [`4eac4eb`](https://github.com/shopl/shoplflow/commit/4eac4eb72e10cc3605961e4e36dd04672147d558) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: ModalBody > setContentHeightMax 함수 생성하여 BodyContainer와 ScrollArea의 maxHeight 구하는 로직을 분리하였습니다.
+
+## 0.24.35
+
+### Patch Changes
+
+- [#258](https://github.com/shopl/shoplflow/pull/258) [`2625242`](https://github.com/shopl/shoplflow/commit/2625242f7cafda72f4e9633bd824fe06f7c2b1e4) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Text word-break 속성 미적용 버그 수정
+
+## 0.24.34
+
+### Patch Changes
+
+- [#256](https://github.com/shopl/shoplflow/pull/256) [`9623f96`](https://github.com/shopl/shoplflow/commit/9623f9641a46edef28004a58369450d6b6906ce1) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: PopperContext에 useFloating 모든 리턴 타입 추가
+
 ## 0.24.33
 
 ### Patch Changes
@@ -231,7 +288,7 @@
 
 ### Patch Changes
 
-- [#184](https://github.com/shopl/shoplflow/pull/184) [`3a4c61a`](https://github.com/shopl/shoplflow/commit/3a4c61a50879ab1f68016b15967fe4b1f2a85201) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Stack 컴포넌트 min/max width/height 추가
+- [#184](https://github.com/shopl/shoplflow/pull/184) [`3a4c61a`](https://github.com/shopl/shoplflow/commit/3a4c61a50879ab1f68016b15967fe4b1f2a85201) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 컴포넌트 min/max width/height 추가
 
 ## 0.23.1
 
@@ -636,7 +693,7 @@
 
 - [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - TypographyToken object 추가
 
-- [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Stack 컴포넌트 추가
+- [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 컴포넌트 추가
 
 - [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ㄴstorybook 세팅
 

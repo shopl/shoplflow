@@ -24,16 +24,16 @@ html의 `input`과 동일하게 사용할 수 있어요.
 ## Usage
 
 ```tsx
-import { Stack, Input } from "@shoplflow/base";
+import { StackContainer, Input } from "@shoplflow/base";
 
 const Example = () => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <Stack width={'500px'} height={'300px'} justify={'center'}>
+    <StackContainer width={'500px'} height={'300px'} justify={'center'}>
       <Input maxLength={50} ref={inputRef} />
-    </Stack>
+    </StackContainer>
   );
 }
 ```

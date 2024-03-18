@@ -11,6 +11,7 @@ const MODAL_SIZE_M = 640;
 const MODAL_SIZE_L = 768;
 const MODAL_SIZE_XL = 1040;
 const MODAL_SIZE_XXL = 1280;
+const MODAL_SIZE_XXXL = 1600;
 
 const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
   switch (size) {
@@ -28,6 +29,8 @@ const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
       return MODAL_SIZE_XL;
     case 'XXL':
       return MODAL_SIZE_XXL;
+    case 'XXXL':
+      return MODAL_SIZE_XXXL;
     default:
       return MODAL_SIZE_M;
   }
@@ -43,6 +46,17 @@ const getModalBodyTopBottomPadding = (isIncludeHeader: boolean) => {
   return css`
     padding-top: 24px;
     padding-bottom: 24px;
+  `;
+};
+
+const getFullScreenModal = () => {
+  return css`
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
   `;
 };
 
@@ -72,8 +86,17 @@ export const Container = styled.div<
   height: ${({ height, viewport }) => (height ? `${checkMaxHeight(height, viewport)}px` : 'initial')};
   min-height: 180px;
   max-height: 1200px;
+
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
   max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  ${({ sizeVar }) =>
+    sizeVar &&
+    window.innerWidth <= getModalWidthFromSize(sizeVar) + 40 &&
+    css`
+      width: ${window.innerWidth - 40}px;
+      max-width: ${window.innerWidth - 40}px;
+    `};
+  ${({ sizeVar }) => sizeVar === 'FULL' && getFullScreenModal()};
 `;
 
 export const HeaderContainer = styled.div`
