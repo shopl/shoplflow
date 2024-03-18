@@ -63,12 +63,12 @@ export interface StackOptionProps {
   flex?: CSSProperties['flex'];
   /**
    * @deprecated
-   * background 설정
+   * StackContainer를 사용해주세요.
    */
   background?: ColorTokens;
   /**
    * @deprecated
-   * border-radius 설정
+   * StackContainer를 사용해주세요.
    */
   radius?: BorderRadiusTokens;
 }

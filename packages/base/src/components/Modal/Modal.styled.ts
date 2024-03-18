@@ -49,6 +49,17 @@ const getModalBodyTopBottomPadding = (isIncludeHeader: boolean) => {
   `;
 };
 
+const getFullScreenModal = () => {
+  return css`
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+  `;
+};
+
 const checkMaxHeight = (height: number, viewport: number) => {
   const topBottomMargin = 64;
   if (height > 1200) {
@@ -75,8 +86,17 @@ export const Container = styled.div<
   height: ${({ height, viewport }) => (height ? `${checkMaxHeight(height, viewport)}px` : 'initial')};
   min-height: 180px;
   max-height: 1200px;
+
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
   max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  ${({ sizeVar }) =>
+    sizeVar &&
+    window.innerWidth <= getModalWidthFromSize(sizeVar) + 40 &&
+    css`
+      width: ${window.innerWidth - 40}px;
+      max-width: ${window.innerWidth - 40}px;
+    `};
+  ${({ sizeVar }) => sizeVar === 'FULL' && getFullScreenModal()};
 `;
 
 export const HeaderContainer = styled.div`

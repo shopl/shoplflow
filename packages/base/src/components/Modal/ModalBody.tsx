@@ -46,6 +46,9 @@ const ModalBody = ({
 
   const setAutoHeightMax = () => {
     if (modalContainerHeight) {
+      if (sizeVar === 'FULL') {
+        return windowHeight;
+      }
       if (modalContainerHeight > 1200) {
         return 1200 - topBottomMargin - headerFooterHeight;
       }

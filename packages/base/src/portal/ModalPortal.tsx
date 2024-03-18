@@ -12,7 +12,7 @@ export const SpaceMarginWrapper = styled(motion.div)`
   justify-content: center;
   flex-grow: 1;
   z-index: 101;
-  padding: 32px 20px;
+  //padding: 32px 20px;
   width: 100%;
   height: 100%;
 `;

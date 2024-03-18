@@ -9,6 +9,7 @@ export const ModalSize = {
   XL: 'XL',
   XXL: 'XXL',
   XXXL: 'XXXL',
+  FULL: 'FULL',
 } as const;
 
 export type ModalSizeType = $Values<typeof ModalSize>;
