@@ -1,5 +1,18 @@
 # @shoplflow/base
 
+## 0.25.4
+
+### Patch Changes
+
+- Updated dependencies [[`47f17fa`](https://github.com/shopl/shoplflow/commit/47f17faab88d915fc9a8d38e6b346b7dc80f169c)]:
+  - @shoplflow/shopl-assets@0.7.0
+
+## 0.25.3
+
+### Patch Changes
+
+- [#267](https://github.com/shopl/shoplflow/pull/267) [`d2b09c7`](https://github.com/shopl/shoplflow/commit/d2b09c723a85b26540cc60b7e232ed0692f52542) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ScrollArea가 Iframe 내부에서 동작하지 않는 버그 수정
+
 ## 0.25.2
 
 ### Patch Changes
