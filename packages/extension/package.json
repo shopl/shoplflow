@@ -11,8 +11,7 @@
     "build:hmr": "rollup --config utils/reload/rollup.config.ts",
     "wss": "node utils/reload/initReloadServer.js",
     "dev": "pnpm build:hmr && (run-p wss build:watch)",
-    "dev:firefox": "pnpm build:hmr && (run-p wss build:firefox:watch)",
-    "test": "jest"
+    "dev:firefox": "pnpm build:hmr && (run-p wss build:firefox:watch)"
   },
   "type": "module",
   "dependencies": {
