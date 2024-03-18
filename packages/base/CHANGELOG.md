@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.26.0
+
+### Minor Changes
+
+- [#271](https://github.com/shopl/shoplflow/pull/271) [`371d108`](https://github.com/shopl/shoplflow/commit/371d10876f3050beb89594c5e0fa3915df591185) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 추가
+
+- [#271](https://github.com/shopl/shoplflow/pull/271) [`371d108`](https://github.com/shopl/shoplflow/commit/371d10876f3050beb89594c5e0fa3915df591185) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal Full size 추가
+
 ## 0.25.4
 
 ### Patch Changes
@@ -280,7 +288,7 @@
 
 ### Patch Changes
 
-- [#184](https://github.com/shopl/shoplflow/pull/184) [`3a4c61a`](https://github.com/shopl/shoplflow/commit/3a4c61a50879ab1f68016b15967fe4b1f2a85201) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Stack 컴포넌트 min/max width/height 추가
+- [#184](https://github.com/shopl/shoplflow/pull/184) [`3a4c61a`](https://github.com/shopl/shoplflow/commit/3a4c61a50879ab1f68016b15967fe4b1f2a85201) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 컴포넌트 min/max width/height 추가
 
 ## 0.23.1
 
@@ -685,7 +693,7 @@
 
 - [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - TypographyToken object 추가
 
-- [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Stack 컴포넌트 추가
+- [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - StackContainer 컴포넌트 추가
 
 - [#50](https://github.com/shopl/shoplflow/pull/50) [`791da63`](https://github.com/shopl/shoplflow/commit/791da631a19479bfab11bbe716fe429458886c9a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ㄴstorybook 세팅
 

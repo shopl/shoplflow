@@ -9,15 +9,15 @@ import type {
   StringElementType,
 } from '../../utils/type/ComponentProps';
 
-export type StackGenericProps<T extends StringElementType = 'div'> = RenderConfigProps &
+export type StackContainerGenericProps<T extends StringElementType = 'div'> = RenderConfigProps &
   StackContainerProps &
   HTMLPropsWithoutRef<T>;
 
-export type StackComponentType = <T extends StringElementType = 'div'>(
-  props: StackGenericProps<T> & Pick<ComponentPropsWithRef<T>, 'ref'>,
+export type StackContainerComponentType = <T extends StringElementType = 'div'>(
+  props: StackContainerGenericProps<T> & Pick<ComponentPropsWithRef<T>, 'ref'>,
 ) => ReactElement | null;
 
-export type MotionStackComponentType<T extends StringElementType = 'div'> = CustomDomComponent<
+export type MotionStackContainerComponentType<T extends StringElementType = 'div'> = CustomDomComponent<
   RenderConfigProps & HTMLPropsWithoutRef<T> & StackContainerProps
 >;
 

@@ -1,5 +1,5 @@
 // SHOPLFLOW_DOCS_IGNORE
-export { default as Stack } from './Stack';
-export * from './Stack';
-export * from './Stack.types';
-export * from './Stack.styled';
+export { default as StackContainer } from './StackContainer';
+export * from './StackContainer';
+export * from './StackContainer.types';
+export * from './StackContainer.styled';
