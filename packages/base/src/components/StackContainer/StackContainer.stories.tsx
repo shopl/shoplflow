@@ -1,12 +1,12 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { Box, ComponentStage } from '../../styles/Box';
-import { MotionStack, Stack } from './Stack';
-import type { StackContainerProps } from './Stack.types';
+import { MotionStackContainer, StackContainer } from './StackContainer';
+import type { StackContainerProps } from './StackContainer.types';
 
 const meta: Meta = {
   title: 'COMPONENTS/StackContainer',
-  component: Stack,
+  component: StackContainer,
 };
 
 export default meta;
@@ -15,12 +15,12 @@ const TEST_ID = 'stack';
 
 export const Primary: StoryFn<StackContainerProps> = (args) => (
   <ComponentStage>
-    <Stack {...args} width={'fit-content'} data-testid={TEST_ID}>
+    <StackContainer {...args} width={'fit-content'} data-testid={TEST_ID}>
       <Box background={'primary100'} />
       <Box background={'primary100'} />
       <Box background={'primary100'} />
       <Box background={'primary100'} />
-    </Stack>
+    </StackContainer>
   </ComponentStage>
 );
 
@@ -32,33 +32,33 @@ export const Primary: StoryFn<StackContainerProps> = (args) => (
 
 export const Horizontal: StoryFn<StackContainerProps> = (args) => (
   <ComponentStage>
-    <Stack.Horizontal {...args} width={'fit-content'}>
+    <StackContainer.Horizontal {...args} width={'fit-content'}>
       <Box background={'primary100'} />
       <Box background={'primary100'} />
       <Box background={'primary100'} />
       <Box background={'primary100'} />
-    </Stack.Horizontal>
+    </StackContainer.Horizontal>
   </ComponentStage>
 );
 
 export const Vertical: StoryFn<StackContainerProps> = (args) => (
   <ComponentStage>
-    <Stack.Vertical {...args} width={'fit-content'}>
+    <StackContainer.Vertical {...args} width={'fit-content'}>
       <Box background={'primary100'} />
       <Box background={'primary100'} />
       <Box background={'primary100'} />
       <Box background={'primary100'} />
-    </Stack.Vertical>
+    </StackContainer.Vertical>
   </ComponentStage>
 );
 
 export const Motion: StoryFn<StackContainerProps> = (args) => (
   <ComponentStage>
-    <MotionStack {...args} width={'fit-content'}>
+    <MotionStackContainer {...args} width={'fit-content'}>
       <Box background={'primary100'} layoutId={'1'} />
       <Box background={'primary100'} layoutId={'2'} />
       <Box background={'primary100'} layoutId={'3'} />
       <Box background={'primary100'} layoutId={'4'} />
-    </MotionStack>
+    </MotionStackContainer>
   </ComponentStage>
 );
