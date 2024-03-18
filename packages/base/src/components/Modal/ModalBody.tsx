@@ -31,6 +31,9 @@ const ModalBody = ({
   const headerFooterHeight = useMemo(() => getHeaderFooterHeight(), [getHeaderFooterHeight]);
 
   const setAutoHeightMin = () => {
+    if (sizeVar === 'FULL') {
+      return windowHeight - topBottomMargin - headerFooterHeight;
+    }
     if (modalContainerHeight) {
       if (modalContainerHeight <= 1200) {
         if (windowHeight < modalContainerHeight) {
@@ -45,10 +48,10 @@ const ModalBody = ({
   };
 
   const setAutoHeightMax = () => {
+    if (sizeVar === 'FULL') {
+      return windowHeight;
+    }
     if (modalContainerHeight) {
-      if (sizeVar === 'FULL') {
-        return windowHeight;
-      }
       if (modalContainerHeight > 1200) {
         return 1200 - topBottomMargin - headerFooterHeight;
       }
