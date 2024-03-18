@@ -62,10 +62,12 @@ export interface StackOptionProps {
    */
   flex?: CSSProperties['flex'];
   /**
+   * @deprecated
    * background 설정
    */
   background?: ColorTokens;
   /**
+   * @deprecated
    * border-radius 설정
    */
   radius?: BorderRadiusTokens;

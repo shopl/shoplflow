@@ -8,9 +8,9 @@ import type {
   StackComponentType,
   StackGenericProps,
   StackContainerProps,
-} from './Stack.types';
+} from './StackContainer.types';
 
-import { StyledStack } from './Stack.styled';
+import { StyledStack } from './StackContainer.styled';
 import type { StringElementType } from '../../utils/type/ComponentProps';
 
 /**
@@ -31,6 +31,8 @@ const createStackComponent = (stackOption?: StackContainerProps): StackComponent
       flexWrap = stackOption?.flexWrap ?? 'initial',
       flex = stackOption?.flex ?? 'initial',
       radius = stackOption?.radius,
+      margin = stackOption?.margin ?? 'initial',
+      padding = stackOption?.padding ?? 'initial',
       background = stackOption?.background,
       ...rest
     }: StackGenericProps,
@@ -50,6 +52,8 @@ const createStackComponent = (stackOption?: StackContainerProps): StackComponent
         flex={flex}
         background={background}
         radius={radius}
+        margin={margin}
+        padding={padding}
         {...rest}
         data-shoplflow={'Stack'}
       >
@@ -63,17 +67,17 @@ interface StackType extends StackComponentType {
   Horizontal: StackComponentType;
 }
 
-export const Stack = createStackComponent() as StackType;
-Stack.Vertical = createStackComponent({ direction: 'column' });
-Stack.Horizontal = createStackComponent({ direction: 'row' });
+export const StackContainer = createStackComponent() as StackType;
+StackContainer.Vertical = createStackComponent({ direction: 'column' });
+StackContainer.Horizontal = createStackComponent({ direction: 'row' });
 
 interface MotionStackType extends MotionStackComponentType {
   Vertical: MotionStackComponentType;
   Horizontal: MotionStackComponentType;
 }
 
-export const MotionStack = motion(Stack) as MotionStackType;
-MotionStack.Vertical = motion(Stack.Vertical);
-MotionStack.Horizontal = motion(Stack.Horizontal);
+export const MotionStack = motion(StackContainer) as MotionStackType;
+MotionStack.Vertical = motion(StackContainer.Vertical);
+MotionStack.Horizontal = motion(StackContainer.Horizontal);
 
-export default Stack;
+export default StackContainer;
