@@ -4,21 +4,21 @@ import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 
 import type {
-  MotionStackComponentType,
-  StackComponentType,
-  StackGenericProps,
+  MotionStackContainerComponentType,
+  StackContainerComponentType,
+  StackContainerGenericProps,
   StackContainerProps,
 } from './StackContainer.types';
 
-import { StyledStack } from './StackContainer.styled';
+import { StyledStackContainer } from './StackContainer.styled';
 import type { StringElementType } from '../../utils/type/ComponentProps';
 
 /**
  *
  * @param {StackContainerProps} stackOption
- * @return {StackComponentType}
+ * @return {StackContainerComponentType}
  */
-const createStackComponent = (stackOption?: StackContainerProps): StackComponentType =>
+const createStackComponent = (stackOption?: StackContainerProps): StackContainerComponentType =>
   forwardRef(function Stack(
     {
       as = 'div',
@@ -35,11 +35,11 @@ const createStackComponent = (stackOption?: StackContainerProps): StackComponent
       padding = stackOption?.padding ?? 'initial',
       background = stackOption?.background,
       ...rest
-    }: StackGenericProps,
+    }: StackContainerGenericProps,
     ref: ComponentPropsWithRef<StringElementType>['ref'],
   ) {
     return (
-      <StyledStack
+      <StyledStackContainer
         as={as}
         spacing={spacing}
         ref={ref}
@@ -58,26 +58,26 @@ const createStackComponent = (stackOption?: StackContainerProps): StackComponent
         data-shoplflow={'Stack'}
       >
         {rest.children}
-      </StyledStack>
+      </StyledStackContainer>
     );
   });
 
-interface StackType extends StackComponentType {
-  Vertical: StackComponentType;
-  Horizontal: StackComponentType;
+interface StackContainerType extends StackContainerComponentType {
+  Vertical: StackContainerComponentType;
+  Horizontal: StackContainerComponentType;
 }
 
-export const StackContainer = createStackComponent() as StackType;
+export const StackContainer = createStackComponent() as StackContainerType;
 StackContainer.Vertical = createStackComponent({ direction: 'column' });
 StackContainer.Horizontal = createStackComponent({ direction: 'row' });
 
-interface MotionStackType extends MotionStackComponentType {
-  Vertical: MotionStackComponentType;
-  Horizontal: MotionStackComponentType;
+interface MotionStackType extends MotionStackContainerComponentType {
+  Vertical: MotionStackContainerComponentType;
+  Horizontal: MotionStackContainerComponentType;
 }
 
-export const MotionStack = motion(StackContainer) as MotionStackType;
-MotionStack.Vertical = motion(StackContainer.Vertical);
-MotionStack.Horizontal = motion(StackContainer.Horizontal);
+export const MotionStackContainer = motion(StackContainer) as MotionStackType;
+MotionStackContainer.Vertical = motion(StackContainer.Vertical);
+MotionStackContainer.Horizontal = motion(StackContainer.Horizontal);
 
 export default StackContainer;

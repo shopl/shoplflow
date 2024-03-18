@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
 import { Box, ComponentStage } from '../../styles/Box';
-import { MotionStack, StackContainer } from './StackContainer';
+import { MotionStackContainer, StackContainer } from './StackContainer';
 import type { StackContainerProps } from './StackContainer.types';
 
 const meta: Meta = {
@@ -54,11 +54,11 @@ export const Vertical: StoryFn<StackContainerProps> = (args) => (
 
 export const Motion: StoryFn<StackContainerProps> = (args) => (
   <ComponentStage>
-    <MotionStack {...args} width={'fit-content'}>
+    <MotionStackContainer {...args} width={'fit-content'}>
       <Box background={'primary100'} layoutId={'1'} />
       <Box background={'primary100'} layoutId={'2'} />
       <Box background={'primary100'} layoutId={'3'} />
       <Box background={'primary100'} layoutId={'4'} />
-    </MotionStack>
+    </MotionStackContainer>
   </ComponentStage>
 );

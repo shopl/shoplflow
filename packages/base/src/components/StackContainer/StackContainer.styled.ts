@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import type { StackContainerOptionProps } from './StackContainer.types';
 import { borderRadiusTokens, colorTokens, spacingTokens } from '../../styles';
 
-export const StyledStack = styled.div<StackContainerOptionProps>`
+export const StyledStackContainer = styled.div<StackContainerOptionProps>`
   display: flex;
   width: ${({ width }) => width};
   max-width: ${({ maxWidth }) => maxWidth};

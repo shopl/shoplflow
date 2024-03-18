@@ -2,6 +2,21 @@ import type { positionValues } from 'react-custom-scrollbars-2';
 import type { ChildrenProps } from '../../utils/type/ComponentProps';
 import type * as React from 'react';
 
+export interface ScrollbarRefType {
+  scrollTop(top: number): void;
+  scrollLeft(left: number): void;
+  scrollToTop(): void;
+  scrollToBottom(): void;
+  scrollToLeft(): void;
+  scrollToRight(): void;
+  getScrollLeft(): number;
+  getScrollTop(): number;
+  getScrollWidth(): number;
+  getScrollHeight(): number;
+  getClientWidth(): number;
+  getClientHeight(): number;
+}
+
 export interface ScrollAreaProps extends ScrollAreaOptionProps, ChildrenProps {}
 export interface ScrollAreaOptionProps {
   id?: string;
