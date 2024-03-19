@@ -14,7 +14,7 @@ export default {
   component: ModalContainer,
 };
 
-const mockBoxs: ReactNode[] = new Array(100)
+const mockBoxs: ReactNode[] = new Array(1)
   .fill(0)
   .map((_, index) => <Box key={index} width={'100%'} height={'100px'} background={'primary300'} />);
 
@@ -25,11 +25,7 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
-      <Modal.Body>
-        <Stack.Vertical height={'100%'} justify={'center'}>
-          {mockBoxs.map((box) => box)}
-        </Stack.Vertical>
-      </Modal.Body>
+      <Modal.Body>{mockBoxs.map((box) => box)}</Modal.Body>
       <Modal.Footer>
         <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
         <Button styleVar={'SECONDARY'}>버튼</Button>

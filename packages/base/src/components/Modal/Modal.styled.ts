@@ -121,7 +121,7 @@ export const BodyContainer = styled.div<{
   flex-direction: column;
   background: ${colorTokens.neutral0};
   box-sizing: border-box;
-  min-height: ${({ minHeight }) => minHeight};
+  min-height: ${({ minHeight }) => minHeight}px;
   max-height: ${({ maxHeight }) => maxHeight}px;
   flex: 1;
   ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}
