@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.26.1
+
+### Patch Changes
+
+- [#274](https://github.com/shopl/shoplflow/pull/274) [`15244d2`](https://github.com/shopl/shoplflow/commit/15244d23971a3527b762752d8853d02c0c801a42) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal FULL size body height 버그 수정
+
 ## 0.26.0
 
 ### Minor Changes
