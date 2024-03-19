@@ -55,7 +55,7 @@ const createStackComponent = (stackOption?: StackContainerProps): StackContainer
         margin={margin}
         padding={padding}
         {...rest}
-        data-shoplflow={'Stack'}
+        data-shoplflow={'StackContainer'}
       >
         {rest.children}
       </StyledStackContainer>

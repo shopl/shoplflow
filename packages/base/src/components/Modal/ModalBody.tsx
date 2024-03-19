@@ -90,7 +90,12 @@ const ModalBody = ({
   };
 
   return (
-    <BodyContainer isIncludeHeader={isIncludeHeader} minHeight={setAutoHeightMin()} maxHeight={setAutoHeightMax()}>
+    <BodyContainer
+      isIncludeHeader={isIncludeHeader}
+      sizeVar={sizeVar}
+      minHeight={setAutoHeightMin()}
+      maxHeight={setAutoHeightMax()}
+    >
       <ScrollArea
         id={`scrollbar`}
         universal
