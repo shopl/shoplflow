@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.26.4
+
+### Patch Changes
+
+- [#279](https://github.com/shopl/shoplflow/pull/279) [`9a12682`](https://github.com/shopl/shoplflow/commit/9a126820dd8dc013cb0e048e740fd62893097500) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal padding top bottom 미적용 이슈 수정
+
 ## 0.26.3
 
 ### Patch Changes
