@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.26.3
+
+### Patch Changes
+
+- [#273](https://github.com/shopl/shoplflow/pull/273) [`816909a`](https://github.com/shopl/shoplflow/commit/816909ac8abe8b7107621ff2bd6cb9936dcdd8fe) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: Stack(Container)ComponentType 수정
+
 ## 0.26.2
 
 ### Patch Changes
