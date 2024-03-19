@@ -37,16 +37,16 @@ const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
 };
 
 const getModalBodyTopBottomPadding = (isIncludeHeader: boolean, sizeVar: ModalContainerProps['sizeVar']) => {
-  if (isIncludeHeader) {
-    return css`
-      padding-top: 16px;
-      padding-bottom: 24px;
-    `;
-  }
   if (sizeVar === 'FULL') {
     return css`
       padding-top: 0;
       padding-bottom: 0;
+    `;
+  }
+  if (isIncludeHeader) {
+    return css`
+      padding-top: 16px;
+      padding-bottom: 24px;
     `;
   }
   return css`
@@ -131,7 +131,7 @@ export const BodyContainer = styled.div<{
   min-height: ${({ minHeight }) => minHeight}px;
   max-height: ${({ maxHeight }) => maxHeight}px;
   flex: 1;
-  ${({ isIncludeHeader, sizeVar }) => getModalBodyTopBottomPadding(isIncludeHeader, sizeVar)}
+  ${({ isIncludeHeader, sizeVar }) => getModalBodyTopBottomPadding(isIncludeHeader, sizeVar)};
 `;
 
 export const ModalBodyContainerInner = styled.div`
