@@ -1,5 +1,25 @@
 # @shoplflow/base
 
+## 0.26.3
+
+### Patch Changes
+
+- [#273](https://github.com/shopl/shoplflow/pull/273) [`816909a`](https://github.com/shopl/shoplflow/commit/816909ac8abe8b7107621ff2bd6cb9936dcdd8fe) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: Stack(Container)ComponentType 수정
+
+## 0.26.2
+
+### Patch Changes
+
+- [#276](https://github.com/shopl/shoplflow/pull/276) [`c38a9d7`](https://github.com/shopl/shoplflow/commit/c38a9d771df1b52f03fb32649d5aadfeebe8bae3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Full Modal 상태의 ModalBody padding 제거
+
+- [#276](https://github.com/shopl/shoplflow/pull/276) [`c38a9d7`](https://github.com/shopl/shoplflow/commit/c38a9d771df1b52f03fb32649d5aadfeebe8bae3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal FULL size body height 버그 수정
+
+## 0.26.1
+
+### Patch Changes
+
+- [#274](https://github.com/shopl/shoplflow/pull/274) [`15244d2`](https://github.com/shopl/shoplflow/commit/15244d23971a3527b762752d8853d02c0c801a42) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal FULL size body height 버그 수정
+
 ## 0.26.0
 
 ### Minor Changes

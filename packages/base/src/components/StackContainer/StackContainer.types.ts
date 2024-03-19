@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, CSSProperties, ReactElement } from 'react';
+import type { CSSProperties, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react';
 
 import type { CustomDomComponent } from 'framer-motion';
 import type { BorderRadiusTokens, ColorTokens, SpacingTokens } from '../../styles';
@@ -13,9 +13,14 @@ export type StackContainerGenericProps<T extends StringElementType = 'div'> = Re
   StackContainerProps &
   HTMLPropsWithoutRef<T>;
 
-export type StackContainerComponentType = <T extends StringElementType = 'div'>(
-  props: StackContainerGenericProps<T> & Pick<ComponentPropsWithRef<T>, 'ref'>,
-) => ReactElement | null;
+// NOTICE: 주석 처리된 type과 forwardRef return type이 불일치해서, 에러 나타납니다.
+// export type StackContainerComponentType = <T extends StringElementType = 'div'>(
+//   props: StackContainerGenericProps<T> & Pick<ComponentPropsWithRef<T>, 'ref'>,
+// ) => ReactElement | null;
+
+export type StackContainerComponentType = ForwardRefExoticComponent<
+  PropsWithoutRef<StackContainerGenericProps> & RefAttributes<HTMLElement>
+>;
 
 export type MotionStackContainerComponentType<T extends StringElementType = 'div'> = CustomDomComponent<
   RenderConfigProps & HTMLPropsWithoutRef<T> & StackContainerProps
