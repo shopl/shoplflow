@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.26.5
+
+### Patch Changes
+
+- [#281](https://github.com/shopl/shoplflow/pull/281) [`529b413`](https://github.com/shopl/shoplflow/commit/529b413e232a3218728d52381f424002f37674bd) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Add Pagination Component
+
 ## 0.26.4
 
 ### Patch Changes
