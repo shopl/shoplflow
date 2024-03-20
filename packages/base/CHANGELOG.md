@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.26.6
+
+### Patch Changes
+
+- [#283](https://github.com/shopl/shoplflow/pull/283) [`487177c`](https://github.com/shopl/shoplflow/commit/487177ccb06018b17ca7be3f7e43e98173c647c2) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: export Pagination (component/index.ts)
+
+- [#283](https://github.com/shopl/shoplflow/pull/283) [`487177c`](https://github.com/shopl/shoplflow/commit/487177ccb06018b17ca7be3f7e43e98173c647c2) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Add Pagination Component
+
 ## 0.26.5
 
 ### Patch Changes
