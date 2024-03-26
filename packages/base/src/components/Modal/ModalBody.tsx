@@ -31,12 +31,15 @@ const ModalBody = ({
   const headerFooterHeight = useMemo(() => getHeaderFooterHeight(), [getHeaderFooterHeight]);
 
   const setAutoHeightMin = () => {
+    if (sizeVar === 'FULL') {
+      return windowHeight - topBottomMargin - headerFooterHeight;
+    }
     if (modalContainerHeight) {
       if (modalContainerHeight <= 1200) {
         if (windowHeight < modalContainerHeight) {
           return windowHeight - topBottomMargin - headerFooterHeight;
         }
-        return 1200 - topBottomMargin - headerFooterHeight;
+        return modalContainerHeight - topBottomMargin - headerFooterHeight;
       }
       return modalContainerHeight - topBottomMargin - headerFooterHeight;
     } else {
@@ -45,10 +48,10 @@ const ModalBody = ({
   };
 
   const setAutoHeightMax = () => {
+    if (sizeVar === 'FULL') {
+      return windowHeight;
+    }
     if (modalContainerHeight) {
-      if (sizeVar === 'FULL') {
-        return windowHeight;
-      }
       if (modalContainerHeight > 1200) {
         return 1200 - topBottomMargin - headerFooterHeight;
       }
@@ -87,7 +90,12 @@ const ModalBody = ({
   };
 
   return (
-    <BodyContainer isIncludeHeader={isIncludeHeader} minHeight={setAutoHeightMin()} maxHeight={setAutoHeightMax()}>
+    <BodyContainer
+      isIncludeHeader={isIncludeHeader}
+      sizeVar={sizeVar}
+      minHeight={setAutoHeightMin()}
+      maxHeight={setAutoHeightMax()}
+    >
       <ScrollArea
         id={`scrollbar`}
         universal

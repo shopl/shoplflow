@@ -1,5 +1,51 @@
 # @shoplflow/base
 
+## 0.26.7
+
+### Patch Changes
+
+- [#285](https://github.com/shopl/shoplflow/pull/285) [`92af54c`](https://github.com/shopl/shoplflow/commit/92af54cd48a2e786084e21789eb4a5eda3c4ed02) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal Body height 버그 수정
+
+## 0.26.6
+
+### Patch Changes
+
+- [#283](https://github.com/shopl/shoplflow/pull/283) [`487177c`](https://github.com/shopl/shoplflow/commit/487177ccb06018b17ca7be3f7e43e98173c647c2) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: export Pagination (component/index.ts)
+
+- [#283](https://github.com/shopl/shoplflow/pull/283) [`487177c`](https://github.com/shopl/shoplflow/commit/487177ccb06018b17ca7be3f7e43e98173c647c2) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Add Pagination Component
+
+## 0.26.5
+
+### Patch Changes
+
+- [#281](https://github.com/shopl/shoplflow/pull/281) [`529b413`](https://github.com/shopl/shoplflow/commit/529b413e232a3218728d52381f424002f37674bd) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Add Pagination Component
+
+## 0.26.4
+
+### Patch Changes
+
+- [#279](https://github.com/shopl/shoplflow/pull/279) [`9a12682`](https://github.com/shopl/shoplflow/commit/9a126820dd8dc013cb0e048e740fd62893097500) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal padding top bottom 미적용 이슈 수정
+
+## 0.26.3
+
+### Patch Changes
+
+- [#273](https://github.com/shopl/shoplflow/pull/273) [`816909a`](https://github.com/shopl/shoplflow/commit/816909ac8abe8b7107621ff2bd6cb9936dcdd8fe) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: Stack(Container)ComponentType 수정
+
+## 0.26.2
+
+### Patch Changes
+
+- [#276](https://github.com/shopl/shoplflow/pull/276) [`c38a9d7`](https://github.com/shopl/shoplflow/commit/c38a9d771df1b52f03fb32649d5aadfeebe8bae3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Full Modal 상태의 ModalBody padding 제거
+
+- [#276](https://github.com/shopl/shoplflow/pull/276) [`c38a9d7`](https://github.com/shopl/shoplflow/commit/c38a9d771df1b52f03fb32649d5aadfeebe8bae3) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal FULL size body height 버그 수정
+
+## 0.26.1
+
+### Patch Changes
+
+- [#274](https://github.com/shopl/shoplflow/pull/274) [`15244d2`](https://github.com/shopl/shoplflow/commit/15244d23971a3527b762752d8853d02c0c801a42) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal FULL size body height 버그 수정
+
 ## 0.26.0
 
 ### Minor Changes

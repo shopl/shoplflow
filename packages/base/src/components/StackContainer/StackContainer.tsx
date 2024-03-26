@@ -19,7 +19,7 @@ import type { StringElementType } from '../../utils/type/ComponentProps';
  * @return {StackContainerComponentType}
  */
 const createStackComponent = (stackOption?: StackContainerProps): StackContainerComponentType =>
-  forwardRef(function Stack(
+  forwardRef(function Stack<T extends StringElementType = 'div'>(
     {
       as = 'div',
       spacing = stackOption?.spacing,
@@ -35,7 +35,7 @@ const createStackComponent = (stackOption?: StackContainerProps): StackContainer
       padding = stackOption?.padding ?? 'initial',
       background = stackOption?.background,
       ...rest
-    }: StackContainerGenericProps,
+    }: StackContainerGenericProps<T>,
     ref: ComponentPropsWithRef<StringElementType>['ref'],
   ) {
     return (
@@ -55,7 +55,7 @@ const createStackComponent = (stackOption?: StackContainerProps): StackContainer
         margin={margin}
         padding={padding}
         {...rest}
-        data-shoplflow={'Stack'}
+        data-shoplflow={'StackContainer'}
       >
         {rest.children}
       </StyledStackContainer>

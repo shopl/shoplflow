@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, CSSProperties, ReactElement } from 'react';
+import type { CSSProperties, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react';
 
 import type { CustomDomComponent } from 'framer-motion';
 import type { BorderRadiusTokens, ColorTokens, SpacingTokens } from '../../styles';
@@ -13,9 +13,9 @@ export type StackGenericProps<T extends StringElementType = 'div'> = RenderConfi
   StackProps &
   HTMLPropsWithoutRef<T>;
 
-export type StackComponentType = <T extends StringElementType = 'div'>(
-  props: StackGenericProps<T> & Pick<ComponentPropsWithRef<T>, 'ref'>,
-) => ReactElement | null;
+export type StackComponentType = ForwardRefExoticComponent<
+  PropsWithoutRef<StackGenericProps> & RefAttributes<HTMLElement>
+>;
 
 export type MotionStackComponentType<T extends StringElementType = 'div'> = CustomDomComponent<
   RenderConfigProps & HTMLPropsWithoutRef<T> & StackProps
