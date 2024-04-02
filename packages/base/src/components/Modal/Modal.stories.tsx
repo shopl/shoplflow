@@ -14,18 +14,19 @@ export default {
   component: ModalContainer,
 };
 
-const mockBoxs: ReactNode[] = new Array(1)
+const mockBoxs: ReactNode[] = new Array(10)
   .fill(0)
   .map((_, index) => <Box key={index} width={'100%'} height={'100px'} background={'primary300'} />);
 
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   return (
-    <Modal.Container {...args} outsideClick={removeModal} height={1000}>
+    <Modal.Container {...args} outsideClick={removeModal} height={900}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
       <Modal.Body>{mockBoxs.map((box) => box)}</Modal.Body>
+
       <Modal.Footer>
         <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
         <Button styleVar={'SECONDARY'}>버튼</Button>

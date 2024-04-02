@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.26.6",
+  "version": "0.26.8",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
@@ -50,14 +50,15 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": "^18",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/core": "^7.22.19",
     "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.22.15",
     "@emotion/babel-plugin": "^11.11.0",
     "@emotion/is-prop-valid": "^1.2.1",
@@ -87,6 +88,7 @@
     "@types/node": "20.4.9",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "classnames": "^2.3.2",
     "eslint-plugin-storybook": "^0.6.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -95,7 +97,6 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
     "tsup": "7.2.0",
-    "classnames": "^2.3.2",
     "typescript": "4.7.4"
   },
   "eslintConfig": {
@@ -104,13 +105,13 @@
     ]
   },
   "dependencies": {
-    "framer-motion": "10.12.6",
-    "react-custom-scrollbars-2": "^4.5.0",
     "@floating-ui/core": "^1.5.0",
     "@floating-ui/react": "^0.26.2",
     "@floating-ui/react-dom": "^2.0.3",
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
-    "@shoplflow/utils": "workspace:^"
+    "@shoplflow/utils": "workspace:^",
+    "framer-motion": "10.12.6",
+    "react-custom-scrollbars-2": "^4.5.0"
   }
 }

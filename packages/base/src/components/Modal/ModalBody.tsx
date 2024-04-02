@@ -39,7 +39,7 @@ const ModalBody = ({
         if (windowHeight < modalContainerHeight) {
           return windowHeight - topBottomMargin - headerFooterHeight;
         }
-        return 1200 - topBottomMargin - headerFooterHeight;
+        return modalContainerHeight - topBottomMargin - headerFooterHeight;
       }
       return modalContainerHeight - topBottomMargin - headerFooterHeight;
     } else {

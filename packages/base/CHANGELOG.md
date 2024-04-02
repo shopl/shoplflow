@@ -1,5 +1,19 @@
 # @shoplflow/base
 
+## 0.26.8
+
+### Patch Changes
+
+- [#287](https://github.com/shopl/shoplflow/pull/287) [`1ec67c7`](https://github.com/shopl/shoplflow/commit/1ec67c70ee18249a793ee67d45007bd040abbcc8) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Tabs 컴포넌트 추가
+
+- [#287](https://github.com/shopl/shoplflow/pull/287) [`1ec67c7`](https://github.com/shopl/shoplflow/commit/1ec67c70ee18249a793ee67d45007bd040abbcc8) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: Tab 컴포넌트 로직 변경(props, style)
+
+## 0.26.7
+
+### Patch Changes
+
+- [#285](https://github.com/shopl/shoplflow/pull/285) [`92af54c`](https://github.com/shopl/shoplflow/commit/92af54cd48a2e786084e21789eb4a5eda3c4ed02) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Modal Body height 버그 수정
+
 ## 0.26.6
 
 ### Patch Changes
