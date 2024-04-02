@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.26.9
+
+### Patch Changes
+
+- [#289](https://github.com/shopl/shoplflow/pull/289) [`b17b38c`](https://github.com/shopl/shoplflow/commit/b17b38c5bacb768f3650818a1659f33d7819406f) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - ModalFooter가 잘리는 이슈 수정
+
 ## 0.26.8
 
 ### Patch Changes
