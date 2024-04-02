@@ -14,7 +14,7 @@ const ModalBody = ({
   const { height: windowHeight } = useViewportSizeObserver();
 
   const headerHeight = 64;
-  const footerHeight = 64;
+  const footerHeight = 72;
 
   const topBottomMargin = 64;
   const getHeaderFooterHeight = useCallback(() => {
