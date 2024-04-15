@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.7.1
+
+### Patch Changes
+
+- [#291](https://github.com/shopl/shoplflow/pull/291) [`0f76e0a`](https://github.com/shopl/shoplflow/commit/0f76e0a748fabe6347ff783762c2f100d0491e7d) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - update stamp, checkbox icon
+
 ## 0.7.0
 
 ### Minor Changes
