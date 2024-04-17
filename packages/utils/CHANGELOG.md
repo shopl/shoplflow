@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.6.0
+
+### Minor Changes
+
+- [#252](https://github.com/shopl/shoplflow/pull/252) [`ce1886a`](https://github.com/shopl/shoplflow/commit/ce1886ad07d7b22598134dd64d7822b369c11900) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - useSelect default value에 id 리스트 케이스 추가
+
 ## 0.5.4
 
 ### Patch Changes
