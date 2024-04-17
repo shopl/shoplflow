@@ -33,5 +33,5 @@ module.exports = {
       version: "detect"
     }
   },
-  ignorePatterns: ['.eslintrc.**', 'next.config.js', 'docs/next.config.js', 'apps/*/next.config.js'],
+  ignorePatterns: ['.eslintrc.**', 'next.config.js', 'docs/next.config.js', 'apps/*/next.config.js', 'packages/extension/**/*'],
 };

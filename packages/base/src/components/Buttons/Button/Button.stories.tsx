@@ -32,6 +32,10 @@ export default {
       control: { type: 'number' },
       defaultValue: undefined,
     },
+    isLoading: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+    },
   },
 };
 

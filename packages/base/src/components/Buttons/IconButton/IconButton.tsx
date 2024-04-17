@@ -2,10 +2,21 @@ import type { ComponentPropsWithRef, ElementType, MouseEvent } from 'react';
 import { useState, forwardRef } from 'react';
 import { StyledIconButton } from './IconButton.styled';
 import type { IconButtonProps, IconButtonComponent } from './IconButton.types';
+import LoadingSpinner from '../../../assets/LoadingSpinner';
 
 const IconButton: IconButtonComponent = forwardRef(
   <T extends ElementType = 'button'>(
-    { styleVar, sizeVar, disabled, children, color, onMouseEnter, onMouseLeave, ...rest }: IconButtonProps<T>,
+    {
+      styleVar,
+      sizeVar,
+      disabled,
+      children,
+      color,
+      onMouseEnter,
+      onMouseLeave,
+      isLoading = false,
+      ...rest
+    }: IconButtonProps<T>,
     ref: ComponentPropsWithRef<T>['ref'],
   ) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -30,7 +41,11 @@ const IconButton: IconButtonComponent = forwardRef(
         {...rest}
         data-shoplflow={'IconButton'}
       >
-        {children}
+        {isLoading ? (
+          <LoadingSpinner color={styleVar === 'SECONDARY' || styleVar === 'GHOST' ? 'neutral500' : 'neutral0'} />
+        ) : (
+          children
+        )}
       </StyledIconButton>
     );
   },

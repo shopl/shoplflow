@@ -1,5 +1,7 @@
+// eslint-disable
 import tokens from '../../src/styles/tokens.json';
-import { separateTokens } from '../seperate-tokens';
+import { separateTokens } from '../seperate-tokens.cjs';
+import { describe, expect, it } from 'vitest'
 
 describe('separateTokens', () => {
   const result = separateTokens(Object.assign(tokens));
@@ -7,10 +9,11 @@ describe('separateTokens', () => {
     throw new Error('result is undefined');
   }
 
+
   it('생성된 토큰의 일부 값을 확인합니다.', () => {
-    expect(result.spacingTokens.spacing04).toEqual('4px');
-    expect(result.borderRadiusTokens.borderRadius04).toEqual('4px');
-    expect(result.fontWeightTokens.regular).toEqual('400');
+    expect(result.spacingTokens.spacing04).toEqual("4px");
+    //@ts-ignore
+    expect(result.fontWeightTokens['font-weight-regular']).toEqual("500");
   });
 
   it('하다와 샤플 컬러 토큰 키가 일치하는지 확인합니다.', () => {

@@ -5,6 +5,7 @@ import type { DomainType } from '../types/Domain';
 import ModalPortal from '../portal/ModalPortal';
 import PopperPortal from '../portal/PopperPortal';
 import ModalProvider from '../components/Modal/providers/ModalProvider';
+import { domAnimation, LazyMotion } from 'framer-motion';
 
 export interface ShoplflowProviderProps {
   domain?: DomainType;
@@ -18,8 +19,7 @@ const ShoplflowProvider = ({ children, domain = 'SHOPL' }: ShoplflowProviderProp
     <ModalProvider>
       <PopperPortal />
       <ModalPortal />
-
-      {children}
+      <LazyMotion features={domAnimation}>{children}</LazyMotion>
     </ModalProvider>
   );
 };
