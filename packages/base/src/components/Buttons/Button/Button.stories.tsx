@@ -1,7 +1,7 @@
 import type { StoryFn } from '@storybook/react';
 import Button from './Button';
 import type { ButtonProps } from './Button.types';
-import { ButtonStyleVariants } from './Button.types';
+import { ButtonSizeVariants, ButtonStyleVariants } from './Button.types';
 import { ComponentStage } from '../../../styles/Box';
 import { Stack } from '../../Stack';
 import { colorTokens } from '../../../styles';
@@ -17,7 +17,7 @@ export default {
       defaultValue: 'primary',
     },
     sizeVar: {
-      options: ButtonStyleVariants,
+      options: ButtonSizeVariants,
       control: { type: 'radio' },
       description: '버튼 사이즈',
       defaultValue: 'M',
@@ -31,6 +31,10 @@ export default {
     lineClamp: {
       control: { type: 'number' },
       defaultValue: undefined,
+    },
+    isLoading: {
+      control: { type: 'boolean' },
+      defaultValue: false,
     },
   },
 };

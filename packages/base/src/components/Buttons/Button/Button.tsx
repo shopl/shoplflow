@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import { Text } from '../../Text';
 import { StyledButton } from './Button.styled';
 import type { ButtonComponent, ButtonProps } from './Button.types';
+import LoadingSpinner from '../../../assets/LoadingSpinner';
 
 const Button: ButtonComponent = forwardRef(
   <T extends ElementType = 'button'>(
@@ -15,6 +16,7 @@ const Button: ButtonComponent = forwardRef(
       children,
       leftSource,
       rightSource,
+      isLoading = false,
       lineClamp,
       ...rest
     }: ButtonProps<T>,
@@ -33,13 +35,17 @@ const Button: ButtonComponent = forwardRef(
         data-shoplflow={'Button'}
       >
         {leftSource}
-        <Text
-          lineClamp={lineClamp}
-          color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
-          typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
-        >
-          {children}
-        </Text>
+        {isLoading ? (
+          <LoadingSpinner color={styleVar === 'SECONDARY' || styleVar === 'GHOST' ? 'neutral500' : 'neutral0'} />
+        ) : (
+          <Text
+            lineClamp={lineClamp}
+            color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
+            typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
+          >
+            {children}
+          </Text>
+        )}
         {rightSource}
       </StyledButton>
     );

@@ -5,6 +5,7 @@ import type {
   ColorTokenProps,
   DisableProps,
   LeftAndRightNodeProps,
+  LoadingProps,
   SizeVariantProps,
   StyleVariantProps,
 } from '../../../utils/type/ComponentProps';
@@ -35,7 +36,8 @@ export type ButtonOptionProps<T extends ElementType = 'button'> = Omit<
   SizeVariantProps<ButtonSizeVariantType> &
   StyleVariantProps<ButtonStyleVariantType> &
   ColorTokenProps &
-  DisableProps & {
+  DisableProps &
+  LoadingProps & {
     typography?: TypographyTokens;
     lineClamp?: number;
   };

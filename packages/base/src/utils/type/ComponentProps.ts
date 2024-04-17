@@ -36,6 +36,12 @@ export interface SelectedProps {
    */
   isSelected?: boolean;
 }
+export interface LoadingProps {
+  /**
+   * 로딩 여부를 설정합니다.
+   */
+  isLoading?: boolean;
+}
 export interface DefaultSelectedProps {
   /**
    * 초기 선택 값을 설정합니다.
