@@ -120,6 +120,7 @@ export const colorTokens = {
  primary300,
  primary400,
 };
+const spacing02 = 'var(--spacing02)';
 const spacing04 = 'var(--spacing04)';
 const spacing06 = 'var(--spacing06)';
 const spacing08 = 'var(--spacing08)';
@@ -131,6 +132,7 @@ const spacing30 = 'var(--spacing30)';
 const spacing32 = 'var(--spacing32)';
 const spacing40 = 'var(--spacing40)';
 export const spacingTokens = {
+ spacing02,
  spacing04,
  spacing06,
  spacing08,
@@ -167,6 +169,8 @@ const body3_400 = '.body3_400';
 const body3_500 = '.body3_500';
 const caption_700 = '.caption_700';
 const caption_400 = '.caption_400';
+const paragraph1 = '.paragraph1';
+const paragraph2 = '.paragraph2';
 export const typographyTokens = {
  heading1_700,
  heading1_400,
@@ -189,4 +193,6 @@ export const typographyTokens = {
  body3_500,
  caption_700,
  caption_400,
+ paragraph1,
+ paragraph2,
 };

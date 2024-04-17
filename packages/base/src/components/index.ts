@@ -1,6 +1,7 @@
 // SHOPLFLOW_DOCS_IGNORE
 export * from './Avatar';
 export * from './Stack';
+export * from './StackContainer';
 export * from './Text';
 export * from './Modal';
 export * from './BackDrop';
@@ -14,7 +15,10 @@ export * from './Dropdown';
 export * from './Menu';
 export * from './List';
 export * from './Tag';
+export * from './Tree';
 export * from './Icon';
 export * from './Inputs';
 export * from './ControlButtons';
 export * from './Tooltip';
+export * from './Tabs';
+export * from './Pagination';

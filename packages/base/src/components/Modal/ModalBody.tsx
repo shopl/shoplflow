@@ -14,7 +14,7 @@ const ModalBody = ({
   const { height: windowHeight } = useViewportSizeObserver();
 
   const headerHeight = 64;
-  const footerHeight = 64;
+  const footerHeight = 72;
 
   const topBottomMargin = 64;
   const getHeaderFooterHeight = useCallback(() => {
@@ -31,12 +31,15 @@ const ModalBody = ({
   const headerFooterHeight = useMemo(() => getHeaderFooterHeight(), [getHeaderFooterHeight]);
 
   const setAutoHeightMin = () => {
+    if (sizeVar === 'FULL') {
+      return windowHeight - topBottomMargin - headerFooterHeight;
+    }
     if (modalContainerHeight) {
       if (modalContainerHeight <= 1200) {
         if (windowHeight < modalContainerHeight) {
           return windowHeight - topBottomMargin - headerFooterHeight;
         }
-        return 1200 - topBottomMargin - headerFooterHeight;
+        return modalContainerHeight - topBottomMargin - headerFooterHeight;
       }
       return modalContainerHeight - topBottomMargin - headerFooterHeight;
     } else {
@@ -45,6 +48,9 @@ const ModalBody = ({
   };
 
   const setAutoHeightMax = () => {
+    if (sizeVar === 'FULL') {
+      return windowHeight;
+    }
     if (modalContainerHeight) {
       if (modalContainerHeight > 1200) {
         return 1200 - topBottomMargin - headerFooterHeight;
@@ -63,17 +69,39 @@ const ModalBody = ({
 
       return windowHeight > 1200 ? heightOverMaxHeight : heightUnderMaxHeight;
     }
-    return '100%';
+    return 0;
+  };
+
+  const setContentHeightMax = () => {
+    let autoHeightMax = setAutoHeightMax();
+
+    // Content top padding 빼주기
+    autoHeightMax = autoHeightMax - 24;
+
+    if (isIncludeHeader) {
+      autoHeightMax = autoHeightMax - 24;
+    }
+
+    if (!isIncludeHeader) {
+      autoHeightMax = autoHeightMax - 16;
+    }
+
+    return autoHeightMax;
   };
 
   return (
-    <BodyContainer isIncludeHeader={isIncludeHeader} minHeight={setAutoHeightMin()} maxHeight={setAutoHeightMax()}>
+    <BodyContainer
+      isIncludeHeader={isIncludeHeader}
+      sizeVar={sizeVar}
+      minHeight={setAutoHeightMin()}
+      maxHeight={setAutoHeightMax()}
+    >
       <ScrollArea
         id={`scrollbar`}
         universal
         autoHeight={!modalContainerHeight}
         autoHeightMin={setAutoHeightMin()}
-        autoHeightMax={setAutoHeightMax()}
+        autoHeightMax={setContentHeightMax()}
         style={{
           height: '100%',
           overflow: 'hidden',

@@ -32,7 +32,7 @@ export const StyledText = styled.span<TextOptionProps>`
     opacity &&
     css`
       opacity: ${opacity};
-    `}
+    `};
   ${({ wordBreak }) =>
     wordBreak &&
     css`

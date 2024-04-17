@@ -40,6 +40,8 @@ const Button: ButtonComponent = forwardRef(
         ) : (
           <Text
             lineClamp={lineClamp}
+            whiteSpace={'nowrap'}
+            wordBreak={'keep-all'}
             color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
             typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
           >

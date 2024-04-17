@@ -22,6 +22,7 @@
     "version": "pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish",
     "prepare": "husky install",
+    "clear:branch": "script/delete-remote-branches.sh",
     "post-checkout": "pnpm run refresh:node_modules",
     "postinstall": "husky install && pnpm config set store-dir .pnpm-store"
   },

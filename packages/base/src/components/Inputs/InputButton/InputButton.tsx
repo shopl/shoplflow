@@ -24,9 +24,10 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
     },
     ref,
   ) => {
-    const [text, setText] = useState('');
+    const [text, setText] = useState(value ?? defaultValue ?? '');
     const [isHovered, setIsHovered] = useState(false);
-    const prevValue = useRef(value);
+    const prevValue = useRef(value ?? defaultValue ?? '');
+
     const convertToString = useCallback((value: string | number | readonly string[]) => {
       if (typeof value !== 'number') {
         return typeof value === 'string' ? value : value.join('');
@@ -56,26 +57,23 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
     };
 
     useEffect(() => {
-      if (defaultValue) {
-        const convertString = convertToString(defaultValue);
-        setText(convertString);
+      if (prevValue.current === value) {
+        return;
       }
-    }, [convertToString, defaultValue]);
-
-    useEffect(() => {
-      if (!(value === undefined || value === null)) {
-        if (prevValue.current === value) {
-          return;
-        }
+      if (value || value === '') {
         const convertString = convertToString(value);
+
         setText(convertString);
         prevValue.current = convertString;
       }
     }, [convertToString, value]);
 
     useEffect(() => {
-      onChange && onChange(convertToString(value ?? ''));
-    }, [convertToString, onChange, value]);
+      if (prevValue.current === value) {
+        return;
+      }
+      onChange && onChange(convertToString(text));
+    }, [convertToString, onChange, value, text]);
 
     return (
       <InputWrapper
@@ -90,7 +88,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
         width={width}
       >
         <StyledInputButton onClick={handleOnClick} disabled={disabled}>
-          <StyledInputButtonContent className={'body1_400'} defaultValue={text} ref={ref} {...rest} />
+          <StyledInputButtonContent className={'body1_400'} value={text} ref={ref} {...rest} />
           <Stack.Horizontal align={'center'}>
             {text && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>

@@ -37,12 +37,15 @@ import { Popper } from '@shoplflow/base';
 
 const App = () => {
   return(
-    <Popper
-      isOpen={isOpen}
-      placement="bottom"
-      trigger={<div>Trigger</div>}
-    >
-      <div>Popper Content</div>
+    <Popper>
+      <Popper.Trigger isOpen={isOpen}>
+        <Button onClick={handleToggle}>Popper Playground</Button>
+      </Popper.Trigger>
+      <Popper.Portal>
+        <Modal.Container>
+          <Modal.Body>팝오버 안에 모달 넣기</Modal.Body>
+        </Modal.Container>
+      </Popper.Portal>
     </Popper>
   )
 }

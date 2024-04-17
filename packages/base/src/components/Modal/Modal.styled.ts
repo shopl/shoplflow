@@ -11,6 +11,7 @@ const MODAL_SIZE_M = 640;
 const MODAL_SIZE_L = 768;
 const MODAL_SIZE_XL = 1040;
 const MODAL_SIZE_XXL = 1280;
+const MODAL_SIZE_XXXL = 1600;
 
 const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
   switch (size) {
@@ -28,12 +29,20 @@ const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
       return MODAL_SIZE_XL;
     case 'XXL':
       return MODAL_SIZE_XXL;
+    case 'XXXL':
+      return MODAL_SIZE_XXXL;
     default:
       return MODAL_SIZE_M;
   }
 };
 
-const getModalBodyTopBottomPadding = (isIncludeHeader: boolean) => {
+const getModalBodyTopBottomPadding = (isIncludeHeader: boolean, sizeVar: ModalContainerProps['sizeVar']) => {
+  if (sizeVar === 'FULL') {
+    return css`
+      padding-top: 0;
+      padding-bottom: 0;
+    `;
+  }
   if (isIncludeHeader) {
     return css`
       padding-top: 16px;
@@ -43,6 +52,17 @@ const getModalBodyTopBottomPadding = (isIncludeHeader: boolean) => {
   return css`
     padding-top: 24px;
     padding-bottom: 24px;
+  `;
+};
+
+const getFullScreenModal = () => {
+  return css`
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
   `;
 };
 
@@ -72,8 +92,17 @@ export const Container = styled.div<
   height: ${({ height, viewport }) => (height ? `${checkMaxHeight(height, viewport)}px` : 'initial')};
   min-height: 180px;
   max-height: 1200px;
+
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
   max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
+  ${({ sizeVar }) =>
+    sizeVar &&
+    window.innerWidth <= getModalWidthFromSize(sizeVar) + 40 &&
+    css`
+      width: ${window.innerWidth - 40}px;
+      max-width: ${window.innerWidth - 40}px;
+    `};
+  ${({ sizeVar }) => sizeVar === 'FULL' && getFullScreenModal()};
 `;
 
 export const HeaderContainer = styled.div`
@@ -90,6 +119,7 @@ export const BodyContainer = styled.div<{
   isIncludeHeader: boolean;
   minHeight: string | number;
   maxHeight: string | number;
+  sizeVar: ModalContainerProps['sizeVar'];
 }>`
   display: flex;
   width: 100%;
@@ -98,10 +128,10 @@ export const BodyContainer = styled.div<{
   flex-direction: column;
   background: ${colorTokens.neutral0};
   box-sizing: border-box;
-  min-height: ${({ minHeight }) => minHeight};
+  min-height: ${({ minHeight }) => minHeight}px;
   max-height: ${({ maxHeight }) => maxHeight}px;
   flex: 1;
-  ${({ isIncludeHeader }) => getModalBodyTopBottomPadding(isIncludeHeader)}
+  ${({ isIncludeHeader, sizeVar }) => getModalBodyTopBottomPadding(isIncludeHeader, sizeVar)};
 `;
 
 export const ModalBodyContainerInner = styled.div`
@@ -123,6 +153,11 @@ export const ModalBodyContent = styled.div<{
   height: 100%;
   box-sizing: border-box;
   padding: 0 24px;
+  ${({ sizeVar }) =>
+    sizeVar === 'FULL' &&
+    css`
+      padding: 0;
+    `};
   background: ${colorTokens.neutral0};
 `;
 
