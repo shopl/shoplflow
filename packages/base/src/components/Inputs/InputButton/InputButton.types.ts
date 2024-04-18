@@ -1,9 +1,9 @@
-import type { HTMLAttributes, MouseEvent } from 'react';
+import type { InputHTMLAttributes, MouseEvent } from 'react';
 import type { DisableProps, RightElementProps, SelectedProps } from '../../../utils/type/ComponentProps';
 
 export interface InputButtonProps extends InputButtonOptionProps {}
 export interface InputButtonOptionProps
-  extends Omit<HTMLAttributes<HTMLInputElement>, 'onChange' | 'onClick'>,
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'onClick'>,
     RightElementProps,
     DisableProps,
     SelectedProps {
