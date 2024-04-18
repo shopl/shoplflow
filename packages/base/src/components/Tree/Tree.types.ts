@@ -1,10 +1,11 @@
 import type { ChildrenProps, LeftElementProps, RightElementProps } from '../../utils/type/ComponentProps';
 import type { ReactNode } from 'react';
+import type { HTMLMotionProps } from 'framer-motion';
 
 export interface TreeProps extends TreeOptionProps {}
 export interface TreeOptionProps extends ChildrenProps {}
 
-export interface TreeItemProps extends TreeItemOptionProps {}
+export interface TreeItemProps extends TreeItemOptionProps, Omit<HTMLMotionProps<'li'>, 'children'> {}
 
 export interface TreeItemOptionProps extends ChildrenProps, LeftElementProps, RightElementProps {
   /**
