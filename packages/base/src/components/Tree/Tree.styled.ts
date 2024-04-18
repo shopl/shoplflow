@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { TreeItemOptionProps } from './Tree.types';
 import { css } from '@emotion/react';
 import { colorTokens } from '../../styles';
-import { m, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const StyledTree = styled(motion.ul)`
   display: flex;
@@ -10,7 +10,7 @@ export const StyledTree = styled(motion.ul)`
   width: 100%;
 `;
 
-export const StyledTreeItem = styled(m.li)<TreeItemOptionProps>`
+export const StyledTreeItem = styled(motion.li)<TreeItemOptionProps>`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -42,7 +42,7 @@ export const RightElementWrapper = styled.div`
   flex-direction: row;
   align-items: center;
 `;
-export const IconWrapper = styled(m.div)`
+export const IconWrapper = styled(motion.div)`
   display: flex;
   width: fit-content;
   height: fit-content;

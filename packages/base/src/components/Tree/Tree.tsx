@@ -5,15 +5,24 @@ import { TREE_SYMBOL_KEY } from './Tree.types';
 import { Text } from '../Text';
 import { IconButton } from '../Buttons';
 import { DownArrowIcon } from '@shoplflow/shopl-assets';
-import { AnimatePresence, LayoutGroup, m } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { Icon } from '../Icon';
-import { AnimateKey } from '../../animation/AnimateKey';
 import { fadeInOut } from '../../animation/fadeInOut';
+import { AnimateKey } from '../../animation/AnimateKey';
 
 const Tree = ({ children, ...rest }: TreeProps) => {
+  const [isMounted, setIsMounted] = React.useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  if (!isMounted) {
+    return null;
+  }
   return (
     <StyledTree {...rest} data-shoplflow={'Tree'} layout layoutRoot>
-      <LayoutGroup>{children}</LayoutGroup>
+      <LayoutGroup>
+        <AnimatePresence mode={'sync'}>{children}</AnimatePresence>
+      </LayoutGroup>
     </StyledTree>
   );
 };
@@ -53,8 +62,8 @@ export const TreeItem = ({
   }, [isOpen]);
 
   return (
-    <AnimatePresence mode={'sync'}>
-      <StyledTreeItem depth={depth} {...AnimateKey} variants={fadeInOut} layout key={String(label)} {...rest}>
+    <>
+      <StyledTreeItem depth={depth} variants={fadeInOut} {...AnimateKey} layout key={String(label)} {...rest}>
         <LeftElementWrapper>
           {leftSource}
           <Text typography={'body1_400'} lineClamp={1}>
@@ -79,12 +88,14 @@ export const TreeItem = ({
           )}
         </RightElementWrapper>
       </StyledTreeItem>
-      {isOpened && children && (
-        <m.div key={'children' + String(CloneChildren)} layout {...AnimateKey} variants={fadeInOut}>
-          {CloneChildren}
-        </m.div>
-      )}
-    </AnimatePresence>
+      <AnimatePresence mode={'sync'}>
+        {isOpened && children && (
+          <motion.div key={'children' + String(CloneChildren)} layout {...AnimateKey} variants={fadeInOut}>
+            {CloneChildren}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 TreeItem[TREE_SYMBOL_KEY] = true;
