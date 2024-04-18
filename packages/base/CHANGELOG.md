@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.27.3
+
+### Patch Changes
+
+- [#298](https://github.com/shopl/shoplflow/pull/298) [`9fedd43`](https://github.com/shopl/shoplflow/commit/9fedd4315bfeda826aa96edb4789d2e25c49d562) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - update InputButton Attribute
+
+- [#298](https://github.com/shopl/shoplflow/pull/298) [`9fedd43`](https://github.com/shopl/shoplflow/commit/9fedd4315bfeda826aa96edb4789d2e25c49d562) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Tree Item HTMLAttribute 추가
+
 ## 0.27.2
 
 ### Patch Changes
