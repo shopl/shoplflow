@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.27.2
+
+### Patch Changes
+
+- [#296](https://github.com/shopl/shoplflow/pull/296) [`b889804`](https://github.com/shopl/shoplflow/commit/b889804806afd50dcd81aeb96946efe551fd0a07) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Tree Item HTMLAttribute 추가
+
 ## 0.27.1
 
 ### Patch Changes
