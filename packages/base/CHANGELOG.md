@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.27.1
+
+### Patch Changes
+
+- [#294](https://github.com/shopl/shoplflow/pull/294) [`1f333f8`](https://github.com/shopl/shoplflow/commit/1f333f871e0eba3eeb058cc0305f8b58790c52a2) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 모달 내 Tree 애니메이션 미동작 이슈 수정
+
 ## 0.27.0
 
 ### Minor Changes
