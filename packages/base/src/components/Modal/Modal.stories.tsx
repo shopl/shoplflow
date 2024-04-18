@@ -8,11 +8,6 @@ import React from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
 import { Button } from '../Buttons';
-import Tree from '../Tree/Tree';
-import { Checkbox } from '../ControlButtons';
-import { Tag } from '../Tag';
-import { Icon } from '../Icon';
-import { InfoEmployeeIcon } from '@shoplflow/shopl-assets';
 
 export default {
   title: 'COMPONENTS/Modal',
@@ -31,76 +26,7 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
 
-      <Modal.Body>
-        <Tree>
-          <Tree.Item
-            leftSource={<Checkbox />}
-            label={'샤플'}
-            initialIsOpen
-            rightSource={
-              <Tag
-                styleVar={'TINT'}
-                sizeVar={'XS'}
-                color={'primary300'}
-                leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'primary300'} />}
-              >
-                2
-              </Tag>
-            }
-          >
-            <Tree.Item
-              leftSource={<Checkbox />}
-              label={'프론트엔드'}
-              initialIsOpen
-              rightSource={
-                <Tag
-                  styleVar={'TINT'}
-                  sizeVar={'XS'}
-                  color={'green300'}
-                  leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'green300'} />}
-                >
-                  4
-                </Tag>
-              }
-            >
-              <Tree.Item leftSource={<Checkbox />} label={'Kevin'} />
-              <Tree.Item leftSource={<Checkbox />} label={'Daisy'} />
-              <Tree.Item leftSource={<Checkbox />} label={'Jason'} />
-              <Tree.Item leftSource={<Checkbox />} label={'Velo'} />
-            </Tree.Item>
-            <Tree.Item
-              leftSource={<Checkbox />}
-              label={'디자인'}
-              rightSource={
-                <Tag
-                  styleVar={'TINT'}
-                  sizeVar={'XS'}
-                  color={'green300'}
-                  leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'green300'} />}
-                >
-                  4
-                </Tag>
-              }
-            >
-              <Tree.Item leftSource={<Checkbox />} label={'Casper'} />
-              <Tree.Item leftSource={<Checkbox />} label={'Jin'} />
-              <Tree.Item leftSource={<Checkbox />} label={'Bb'} />
-            </Tree.Item>
-            <Tree.Item leftSource={<Checkbox />} label={'중첩 테스트'}>
-              <Tree.Item leftSource={<Checkbox />} label={'사과'}>
-                <Tree.Item leftSource={<Checkbox />} label={'배'}>
-                  <Tree.Item leftSource={<Checkbox />} label={'귤'} />
-                  <Tree.Item leftSource={<Checkbox />} label={'포도'} />
-                </Tree.Item>
-                <Tree.Item leftSource={<Checkbox />} label={'포도'} />
-              </Tree.Item>
-              <Tree.Item leftSource={<Checkbox />} label={'바나나'} />
-              <Tree.Item leftSource={<Checkbox />} label={'딸기'} />
-            </Tree.Item>
-          </Tree.Item>
-        </Tree>
-        {/*{mockBoxs.map((box) => box)}*/}
-      </Modal.Body>
+      <Modal.Body>{mockBoxs.map((box) => box)}</Modal.Body>
 
       <Modal.Footer>
         <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
