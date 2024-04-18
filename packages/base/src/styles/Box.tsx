@@ -18,7 +18,7 @@ export const Box = styled(motion.div)<{
   cursor: pointer;
 `;
 
-export const ComponentStage = styled.div<{
+export const ComponentStage = styled(motion.div)<{
   height?: CSSProperties['height'];
   width?: CSSProperties['width'];
   align?: CSSProperties['alignItems'];

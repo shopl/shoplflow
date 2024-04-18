@@ -9,12 +9,6 @@ import * as ModalStories from "./Modal.stories";
 
 > **기본 스크롤바로 인한 layout shift 현상을 개선하기 위해 스크롤바 컴포넌트를 사용하고 있습니다.**
 
-- `react-custom-scrollbars-2`라이브러리는 번들 결과물에 포함됩니다.
-
-> **ShoplflowProvider에는 ModalPortal이 포함되어있습니다.**
-
-- ModalPortal로 모달만 별도로 사용할 수도 있습니다.
-
 Modal 컴포넌트는 Window 위에 추가적으로 나타나는 팝업입니다.
 
 Modal 컴포넌트는 4가지 컴포넌트로 구성되어있습니다.
@@ -27,9 +21,6 @@ Modal 컴포넌트는 4가지 컴포넌트로 구성되어있습니다.
 > **아래의 조건으로 스타일이 변경됩니다.**
 - Header가 있는 경우: Body 상단 padding 16px
 - Header가 없는 경우: Body 상단 padding 24px
-
-특정 컴포넌트 내부에
-
 
 
 
@@ -44,9 +35,9 @@ Modal 컴포넌트는 4가지 컴포넌트로 구성되어있습니다.
 
 ShoplflowProvider에는 모달을 열고 닫는 Portal이 포함되어있습니다.
 
-모달을 열고 닫는 handle 함수는 `useHandleModal` hook을 통해 제공됩니다.
+모달을 열고 닫는 handle 함수는 **`useHandleModal`** hook을 통해 제공됩니다.
 
-모달 상태를 확인하는 `useModalValue` hook을 통해 모달 상태를 확인할 수 있습니다.
+모달 상태를 확인하는 **`useModalValue`** hook을 통해 모달 상태를 확인할 수 있습니다.
 
 
 <Canvas of={ModalStories.Primary} />

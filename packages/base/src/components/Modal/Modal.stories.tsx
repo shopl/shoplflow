@@ -25,6 +25,7 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
+
       <Modal.Body>{mockBoxs.map((box) => box)}</Modal.Body>
 
       <Modal.Footer>

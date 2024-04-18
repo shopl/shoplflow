@@ -1,5 +1,31 @@
 # @shoplflow/base
 
+## 0.27.1
+
+### Patch Changes
+
+- [#294](https://github.com/shopl/shoplflow/pull/294) [`1f333f8`](https://github.com/shopl/shoplflow/commit/1f333f871e0eba3eeb058cc0305f8b58790c52a2) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 모달 내 Tree 애니메이션 미동작 이슈 수정
+
+## 0.27.0
+
+### Minor Changes
+
+- [#252](https://github.com/shopl/shoplflow/pull/252) [`ce1886a`](https://github.com/shopl/shoplflow/commit/ce1886ad07d7b22598134dd64d7822b369c11900) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Tree 컴포넌트 추가
+
+### Patch Changes
+
+- [#252](https://github.com/shopl/shoplflow/pull/252) [`ce1886a`](https://github.com/shopl/shoplflow/commit/ce1886ad07d7b22598134dd64d7822b369c11900) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - Button Loading 상태 추가
+
+- Updated dependencies [[`ce1886a`](https://github.com/shopl/shoplflow/commit/ce1886ad07d7b22598134dd64d7822b369c11900)]:
+  - @shoplflow/utils@0.6.0
+
+## 0.26.10
+
+### Patch Changes
+
+- Updated dependencies [[`0f76e0a`](https://github.com/shopl/shoplflow/commit/0f76e0a748fabe6347ff783762c2f100d0491e7d)]:
+  - @shoplflow/shopl-assets@0.7.1
+
 ## 0.26.9
 
 ### Patch Changes

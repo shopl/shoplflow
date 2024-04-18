@@ -31,6 +31,10 @@ export default {
       defaultValue: 'primary400',
     },
     onClick: { action: 'clicked' },
+    isLoading: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+    },
   },
 };
 
