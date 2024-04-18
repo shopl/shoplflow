@@ -35,7 +35,6 @@ export const LeftElementWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 4px;
 `;
 export const RightElementWrapper = styled.div`
   display: flex;
