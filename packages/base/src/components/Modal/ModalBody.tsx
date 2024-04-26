@@ -32,7 +32,7 @@ const ModalBody = ({
 
   const setAutoHeightMin = () => {
     if (sizeVar === 'FULL') {
-      return windowHeight - topBottomMargin - headerFooterHeight;
+      return windowHeight - headerFooterHeight;
     }
     if (modalContainerHeight) {
       if (modalContainerHeight <= 1200) {
@@ -102,10 +102,7 @@ const ModalBody = ({
         autoHeight={!modalContainerHeight}
         autoHeightMin={setAutoHeightMin()}
         autoHeightMax={setContentHeightMax()}
-        style={{
-          height: '100%',
-          overflow: 'hidden',
-        }}
+        style={{}}
       >
         <ModalBodyContainerInner>
           <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar}>
