@@ -102,7 +102,6 @@ export const FullScreen: StoryFn<ModalContainerProps> = () => (
       position: 'fixed',
       height: '100vh',
       width: '100vw',
-
       top: 0,
       left: 0,
       right: 0,
@@ -115,7 +114,7 @@ export const FullScreen: StoryFn<ModalContainerProps> = () => (
       </Modal.Header>
       <Modal.Body>
         <Stack.Horizontal height={'100%'} width={'100%'}>
-          <Box width={'2000px'} height={'30px'} background={'primary300'} />
+          <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
         </Stack.Horizontal>
       </Modal.Body>
       <Modal.Footer>
