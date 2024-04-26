@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.27.4
+
+### Patch Changes
+
+- [#300](https://github.com/shopl/shoplflow/pull/300) [`a07b002`](https://github.com/shopl/shoplflow/commit/a07b002446c1ce39f1c152059cfbcca3b3aa17fb) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - FullSize Modal minHeight이 작게 설정되는 이슈 수정
+
 ## 0.27.3
 
 ### Patch Changes
