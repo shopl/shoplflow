@@ -1,15 +1,17 @@
 import type { ChildrenProps, LeftElementProps, RightElementProps } from '../../utils/type/ComponentProps';
 import type { ReactNode } from 'react';
+import type { HTMLMotionProps } from 'framer-motion';
 
 export interface TreeProps extends TreeOptionProps {}
 export interface TreeOptionProps extends ChildrenProps {}
 
-export interface TreeItemProps extends TreeItemOptionProps {}
+export interface TreeItemProps extends TreeItemOptionProps, Omit<HTMLMotionProps<'li'>, 'children'> {}
 
 export interface TreeItemOptionProps extends ChildrenProps, LeftElementProps, RightElementProps {
   /**
    * 트리의 깊이를 설정합니다.
    * 자동으로 설정되는 값이므로 별도로 설정하지 않아도 됩니다.
+   * 재귀로 Tree를 구현할 경우 사용해주세요.
    */
   depth?: number;
   /**

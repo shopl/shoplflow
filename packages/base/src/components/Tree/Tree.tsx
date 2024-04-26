@@ -9,6 +9,7 @@ import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { Icon } from '../Icon';
 import { fadeInOut } from '../../animation/fadeInOut';
 import { AnimateKey } from '../../animation/AnimateKey';
+import { StackContainer } from '../StackContainer';
 
 const Tree = ({ children, ...rest }: TreeProps) => {
   const [isMounted, setIsMounted] = React.useState(false);
@@ -66,9 +67,11 @@ export const TreeItem = ({
       <StyledTreeItem depth={depth} variants={fadeInOut} {...AnimateKey} layout key={String(label)} {...rest}>
         <LeftElementWrapper>
           {leftSource}
-          <Text typography={'body1_400'} lineClamp={1}>
-            {label}
-          </Text>
+          <StackContainer padding={'0 0 0 4px'}>
+            <Text typography={'body1_400'} lineClamp={1}>
+              {label}
+            </Text>
+          </StackContainer>
         </LeftElementWrapper>
         <RightElementWrapper>
           {rightSource}
