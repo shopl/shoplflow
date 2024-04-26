@@ -14,7 +14,7 @@ export default {
   component: ModalContainer,
 };
 
-const mockBoxs: ReactNode[] = new Array(10)
+const mockBoxs: ReactNode[] = new Array(20)
   .fill(0)
   .map((_, index) => <Box key={index} width={'100%'} height={'100px'} background={'primary300'} />);
 
@@ -91,5 +91,37 @@ export const BodyFooter: StoryFn<ModalContainerProps> = (args) => (
         </Modal.Footer>
       </Modal.Container>
     </ComponentStage>
+  </Stack>
+);
+
+export const FullScreen: StoryFn<ModalContainerProps> = () => (
+  <Stack
+    height={'100%'}
+    width={'100%'}
+    style={{
+      position: 'fixed',
+      height: '100vh',
+      width: '100vw',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+    }}
+  >
+    <Modal.Container sizeVar={'FULL'}>
+      <Modal.Header>
+        <Text typography={'title1_700'}>모달 헤더 영역</Text>
+      </Modal.Header>
+      <Modal.Body>
+        <Stack.Horizontal height={'100%'} width={'100%'}>
+          <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
+        </Stack.Horizontal>
+      </Modal.Body>
+      <Modal.Footer>
+        <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
+        <Button styleVar={'SECONDARY'}>버튼</Button>
+        <Button>버튼</Button>
+      </Modal.Footer>
+    </Modal.Container>
   </Stack>
 );
