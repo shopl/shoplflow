@@ -56,15 +56,14 @@ import { useCallback, useEffect, useRef } from 'react';
  * };
  * ```
  */
-export const useParentElementClick = <T extends HTMLElement>(onClickOutside: (target: EventTarget | null) => void) => {
+export const useParentElementClick = <T extends HTMLElement>(onClickOutside: (target: Event | null) => void) => {
   const ref = useRef<T>(null);
 
   const handleClick = useCallback(
     (e: Event) => {
-      e.stopPropagation();
       const parentNode = ref.current?.parentNode;
       if (parentNode && !ref.current?.contains(e.target as Node)) {
-        onClickOutside(e.target);
+        onClickOutside(e);
       }
     },
     [ref, onClickOutside],
