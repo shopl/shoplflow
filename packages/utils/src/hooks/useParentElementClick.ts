@@ -61,6 +61,7 @@ export const useParentElementClick = <T extends HTMLElement>(onClickOutside: (ta
 
   const handleClick = useCallback(
     (e: Event) => {
+      e.stopPropagation();
       const parentNode = ref.current?.parentNode;
       if (parentNode && !ref.current?.contains(e.target as Node)) {
         onClickOutside(e.target);
