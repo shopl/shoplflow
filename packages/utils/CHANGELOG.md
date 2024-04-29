@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.6.1
+
+### Patch Changes
+
+- [#302](https://github.com/shopl/shoplflow/pull/302) [`c2e5fde`](https://github.com/shopl/shoplflow/commit/c2e5fdea94d998e23430495e4e9a75ae6c6e5c54) Thanks [@velo-kim](https://github.com/velo-kim)! - Update: useParentElementClick hook
+
 ## 0.6.0
 
 ### Minor Changes
