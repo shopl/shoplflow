@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.6.2
+
+### Patch Changes
+
+- [#304](https://github.com/shopl/shoplflow/pull/304) [`9c9f67d`](https://github.com/shopl/shoplflow/commit/9c9f67ddfca78340d16178f768dc7260e1be9645) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: useParentElementClick handleClick parameter 변경"
+
 ## 0.6.1
 
 ### Patch Changes
