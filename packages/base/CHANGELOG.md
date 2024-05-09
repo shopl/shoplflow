@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.28.0
+
+### Minor Changes
+
+- DropdownButton value에 Text component 적용
+
 ## 0.27.6
 
 ### Patch Changes
