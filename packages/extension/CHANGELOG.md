@@ -1,5 +1,14 @@
 # @shoplflow/extension
 
+## 0.0.21
+
+### Patch Changes
+
+- [#306](https://github.com/shopl/shoplflow/pull/306) [`fc95c1a`](https://github.com/shopl/shoplflow/commit/fc95c1a2e55e230f29e109fec4207497a223bae6) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - [SH-814] Fix/dropdown button
+
+- Updated dependencies [[`fc95c1a`](https://github.com/shopl/shoplflow/commit/fc95c1a2e55e230f29e109fec4207497a223bae6)]:
+  - @shoplflow/base@0.28.1
+
 ## 0.0.20
 
 ### Patch Changes
