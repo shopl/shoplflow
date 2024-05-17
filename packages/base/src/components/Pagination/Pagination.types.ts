@@ -24,6 +24,10 @@ export interface PaginationOptionProps extends LeftAndRightNodeProps {
    * @example: [1] [2] [3] [4] [5]
    */
   pageCount?: number;
+  /**
+   * 내부 로직을 사용하지 않고, 외부에서 totalCount를 받을 수 있습니다
+   */
+  totalCount?: number;
 
   previousPage: () => void;
   nextPage: () => void;

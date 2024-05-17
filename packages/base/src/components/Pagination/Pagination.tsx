@@ -17,9 +17,10 @@ const Pagination = ({
   gotoPage,
   leftSource,
   rightSource,
+  totalCount,
   ...rest
 }: PaginationProps) => {
-  const pageTotalCount = Math.ceil(itemsTotalCount / Number(pageSize));
+  const pageTotalCount = totalCount ?? Math.ceil(itemsTotalCount / Number(pageSize));
   const showLeftEllipsis = currentPage > pageCount - 1;
   const showRightEllipsis =
     currentPage < pageTotalCount && Math.ceil((currentPage + 1) / pageCount) < Math.ceil(pageTotalCount / pageCount);
