@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.28.2
+
+### Patch Changes
+
+- [#308](https://github.com/shopl/shoplflow/pull/308) [`dc2b83f`](https://github.com/shopl/shoplflow/commit/dc2b83f37967d45bac5dbc5003ec1e1d933a7a86) Thanks [@velo-kim](https://github.com/velo-kim)! - Pagination에 totalCount Props 추가
+
 ## 0.28.1
 
 ### Patch Changes
