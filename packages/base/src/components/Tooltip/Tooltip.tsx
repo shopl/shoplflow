@@ -32,6 +32,7 @@ const Tooltip = ({
         onMouseLeave={hideHandler}
         onFocus={showHandler}
         onBlur={hideHandler}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         {trigger}
       </Popper.Trigger>
