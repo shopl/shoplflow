@@ -46,14 +46,18 @@ export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>
       >
         <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
           {leftSource && leftSource}
-          <Text
-            typography={getDropdownFontSizeBySizeVar(sizeVar)}
-            color={value ? 'neutral700' : 'neutral400'}
-            textOverflow={'ellipsis'}
-            lineClamp={1}
-          >
-            {value || placeholder}
-          </Text>
+
+          {value || (
+            <Text
+              typography={getDropdownFontSizeBySizeVar(sizeVar)}
+              color={value ? 'neutral700' : 'neutral400'}
+              textOverflow={'ellipsis'}
+              lineClamp={1}
+            >
+              {placeholder}
+            </Text>
+          )}
+
           <DropdownButtonIcon
             sizeVar={sizeVar}
             animate={{
