@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.28.4
+
+### Patch Changes
+
+- [#313](https://github.com/shopl/shoplflow/pull/313) [`34e2258`](https://github.com/shopl/shoplflow/commit/34e2258739e17313ab4f0f9f0cc733af0230de06) Thanks [@velo-kim](https://github.com/velo-kim)! - DropdownButton value 감싸던 Text Component 제거
+
 ## 0.28.3
 
 ### Patch Changes
