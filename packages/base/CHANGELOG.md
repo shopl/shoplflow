@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.28.3
+
+### Patch Changes
+
+- [#310](https://github.com/shopl/shoplflow/pull/310) [`7b93a12`](https://github.com/shopl/shoplflow/commit/7b93a12abdf1d858ea1d894968dccf335cb0696b) Thanks [@velo-kim](https://github.com/velo-kim)! - Tooltip Trigger 스타일 조정
+
 ## 0.28.2
 
 ### Patch Changes
