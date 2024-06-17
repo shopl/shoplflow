@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.7.2
+
+### Patch Changes
+
+- [#315](https://github.com/shopl/shoplflow/pull/315) [`41020e7`](https://github.com/shopl/shoplflow/commit/41020e7452892ec6aa68fb685cfd4b179595db3f) Thanks [@velo-kim](https://github.com/velo-kim)! - update: ic-attachement.svg
+
 ## 0.7.1
 
 ### Patch Changes
