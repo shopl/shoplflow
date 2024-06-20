@@ -1,7 +1,5 @@
 import * as ShoplAssets from '@shoplflow/shopl-assets';
 import * as HadaAssets from '@shoplflow/hada-assets';
-import type { IconSource as ShoplIconSource } from '@shoplflow/shopl-assets';
-import type { IconSource as HadaIconSource } from '@shoplflow/hada-assets';
 
 import { useContext } from 'react';
 import type { DomainType } from '../types/Domain';
@@ -18,8 +16,8 @@ export type IconNameType = ShoplIconKey & HadaIconKey;
  */
 export const useStoryAssetFunction = (iconName: IconNameType) => {
   const { domain } = useContext(StoryDomainContext);
-  const HadaIcon = HadaAssets[iconName] as HadaIconSource;
-  const ShoplIcon = ShoplAssets[iconName] as ShoplIconSource;
+  const HadaIcon = HadaAssets[iconName];
+  const ShoplIcon = ShoplAssets[iconName];
   return domain === 'HADA' ? HadaIcon : ShoplIcon;
 };
 
@@ -29,7 +27,7 @@ export const useStoryAssetFunction = (iconName: IconNameType) => {
  */
 export const assetFunction = (iconName: IconNameType, domainProps?: DomainType) => {
   const domain = domainProps ?? getDomain();
-  const HadaIcon = HadaAssets[iconName] as HadaIconSource;
-  const ShoplIcon = ShoplAssets[iconName] as ShoplIconSource;
+  const HadaIcon = HadaAssets[iconName];
+  const ShoplIcon = ShoplAssets[iconName];
   return domain === 'hada' ? HadaIcon : ShoplIcon;
 };
