@@ -7,7 +7,7 @@
     "type-check": "tsc --noEmit",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
-    "build:component": "scripts/generate-component.sh",
+    "generate:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
     "dev:stories": "storybook dev -p 6007",
