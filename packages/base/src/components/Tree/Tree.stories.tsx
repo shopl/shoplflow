@@ -24,22 +24,22 @@ export const Playground: StoryFn<TreeProps> = () => {
           <Tree>
             <Tree.Item
               leftSource={<Checkbox />}
-              label={'샤플'}
+              label={'샤플앤컴퍼니'}
               initialIsOpen
               rightSource={
                 <Tag
                   styleVar={'TINT'}
                   sizeVar={'XS'}
-                  color={'primary300'}
-                  leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'primary300'} />}
+                  color={'shopl300'}
+                  leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'shopl300'} />}
                 >
-                  2
+                  9
                 </Tag>
               }
             >
               <Tree.Item
                 leftSource={<Checkbox />}
-                label={'프론트엔드'}
+                label={'프로덕트'}
                 initialIsOpen
                 rightSource={
                   <Tag
@@ -52,14 +52,14 @@ export const Playground: StoryFn<TreeProps> = () => {
                   </Tag>
                 }
               >
-                <Tree.Item leftSource={<Checkbox />} label={'Kevin'} />
-                <Tree.Item leftSource={<Checkbox />} label={'Daisy'} />
-                <Tree.Item leftSource={<Checkbox />} label={'Jason'} />
-                <Tree.Item leftSource={<Checkbox />} label={'Velo'} />
+                <Tree.Item leftSource={<Checkbox />} label={'기획'} />
+                <Tree.Item leftSource={<Checkbox />} label={'개발'} />
+                <Tree.Item leftSource={<Checkbox />} label={'운영'} />
+                <Tree.Item leftSource={<Checkbox />} label={'QA'} />
               </Tree.Item>
               <Tree.Item
                 leftSource={<Checkbox />}
-                label={'디자인'}
+                label={'비즈니스'}
                 rightSource={
                   <Tag
                     styleVar={'TINT'}
@@ -67,14 +67,15 @@ export const Playground: StoryFn<TreeProps> = () => {
                     color={'green300'}
                     leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'green300'} />}
                   >
-                    4
+                    3
                   </Tag>
                 }
               >
-                <Tree.Item leftSource={<Checkbox />} label={'Casper'} />
-                <Tree.Item leftSource={<Checkbox />} label={'Jin'} />
-                <Tree.Item leftSource={<Checkbox />} label={'Bb'} />
+                <Tree.Item leftSource={<Checkbox />} label={'마케팅'} />
+                <Tree.Item leftSource={<Checkbox />} label={'영업'} />
+                <Tree.Item leftSource={<Checkbox />} label={'경영지원'} />
               </Tree.Item>
+              <Tree.Item leftSource={<Checkbox />} label={'디자인'} />
               <Tree.Item leftSource={<Checkbox />} label={'중첩 테스트'}>
                 <Tree.Item leftSource={<Checkbox />} label={'사과'}>
                   <Tree.Item leftSource={<Checkbox />} label={'배'}>
@@ -86,6 +87,9 @@ export const Playground: StoryFn<TreeProps> = () => {
                 <Tree.Item leftSource={<Checkbox />} label={'바나나'} />
                 <Tree.Item leftSource={<Checkbox />} label={'딸기'} />
               </Tree.Item>
+            </Tree.Item>
+            <Tree.Item disabled leftSource={<Checkbox />} label={'비활성화 테스트'}>
+              <Tree.Item disabled leftSource={<Checkbox />} label={'비활성화된 item'} />
             </Tree.Item>
           </Tree>
         </ScrollArea>

@@ -36,6 +36,7 @@ export const TreeItem = ({
   depth = 0,
   initialIsOpen,
   isOpen,
+  disabled = false,
   ...rest
 }: TreeItemProps) => {
   const [isOpened, setIsOpened] = React.useState(initialIsOpen ?? false);
@@ -52,7 +53,8 @@ export const TreeItem = ({
     return child;
   });
 
-  const handleToggle = () => {
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     setIsOpened((prev) => !prev);
   };
 
@@ -64,11 +66,19 @@ export const TreeItem = ({
 
   return (
     <>
-      <StyledTreeItem depth={depth} variants={fadeInOut} {...AnimateKey} layout key={String(label)} {...rest}>
+      <StyledTreeItem
+        disabled={disabled}
+        depth={depth}
+        variants={fadeInOut}
+        {...AnimateKey}
+        layout
+        key={String(label)}
+        {...rest}
+      >
         <LeftElementWrapper>
           {leftSource}
           <StackContainer padding={'0 0 0 4px'}>
-            <Text typography={'body1_400'} lineClamp={1}>
+            <Text typography={'body1_400'} lineClamp={1} color={disabled ? 'neutral350' : 'neutral700'}>
               {label}
             </Text>
           </StackContainer>
@@ -76,7 +86,7 @@ export const TreeItem = ({
         <RightElementWrapper>
           {rightSource}
           {children && (
-            <IconButton styleVar={'GHOST'} onClick={handleToggle}>
+            <IconButton styleVar={'GHOST'} onClick={handleToggle} sizeVar='S'>
               <IconWrapper
                 animate={{
                   rotate: isOpened ? 180 : 0,
@@ -85,7 +95,7 @@ export const TreeItem = ({
                   },
                 }}
               >
-                <Icon iconSource={DownArrowIcon} sizeVar={'S'} />
+                <Icon iconSource={DownArrowIcon} sizeVar={'S'} color='neutral400' />
               </IconWrapper>
             </IconButton>
           )}
