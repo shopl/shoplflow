@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.30.1
+
+### Patch Changes
+
+- [#321](https://github.com/shopl/shoplflow/pull/321) [`ab05d8b`](https://github.com/shopl/shoplflow/commit/ab05d8b017ef08f85452847fca99f9619666187e) Thanks [@velo-kim](https://github.com/velo-kim)! - feature: ToggleButton 컴포넌트를 만들었어요!
+
 ## 0.30.0
 
 ### Minor Changes
