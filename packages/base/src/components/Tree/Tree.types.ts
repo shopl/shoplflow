@@ -26,7 +26,7 @@ export interface TreeItemOptionProps extends ChildrenProps, LeftElementProps, Ri
    * 트리아이템을 직접 조작할 때 사용합니다.
    */
   isOpen?: boolean;
-  /*
+  /**
    * 트리 영역의 click event 비활성화 여부를 설정합니다.
    * leftsource의 click event는 별도 설정이 필요합니다.
    */

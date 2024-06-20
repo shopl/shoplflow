@@ -37,6 +37,7 @@ export const TreeItem = ({
   initialIsOpen,
   isOpen,
   disabled = false,
+  onClick,
   ...rest
 }: TreeItemProps) => {
   const [isOpened, setIsOpened] = React.useState(initialIsOpen ?? false);
@@ -58,6 +59,21 @@ export const TreeItem = ({
     setIsOpened((prev) => !prev);
   };
 
+  const handleClickTreeItem = (e: React.MouseEvent<HTMLLIElement>) => {
+    if (disabled || !onClick) {
+      return;
+    }
+    return onClick(e);
+  };
+
+  const LeftSourceClone = leftSource
+    ? React.cloneElement(leftSource, {
+        disabled,
+        onClick,
+        ...rest,
+      })
+    : leftSource;
+
   useEffect(() => {
     if (isOpen !== undefined) {
       setIsOpened(isOpen);
@@ -73,10 +89,11 @@ export const TreeItem = ({
         {...AnimateKey}
         layout
         key={String(label)}
+        onClick={handleClickTreeItem}
         {...rest}
       >
         <LeftElementWrapper>
-          {leftSource}
+          {LeftSourceClone && LeftSourceClone}
           <StackContainer padding={'0 0 0 4px'}>
             <Text typography={'body1_400'} lineClamp={1} color={disabled ? 'neutral350' : 'neutral700'}>
               {label}
