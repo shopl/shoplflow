@@ -3,6 +3,7 @@ import type { TreeItemOptionProps } from './Tree.types';
 import { css } from '@emotion/react';
 import { colorTokens } from '../../styles';
 import { motion } from 'framer-motion';
+import { getDisabledStyle } from '../../styles/utils/getDisabledStyle';
 
 export const StyledTree = styled(motion.ul)`
   display: flex;
@@ -18,10 +19,10 @@ export const StyledTreeItem = styled(motion.li)<TreeItemOptionProps>`
   gap: 4px;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 8px 8px 8px 0;
   border-radius: 8px;
   background: transparent;
-  cursor: initial;
+  cursor: ${({ onClick }) => (onClick ? 'pointer' : 'initial')};
   ${({ depth }) =>
     depth &&
     css`
@@ -30,6 +31,7 @@ export const StyledTreeItem = styled(motion.li)<TreeItemOptionProps>`
   &:hover {
     background: ${colorTokens.neutral400_5};
   }
+  ${({ disabled }) => disabled && getDisabledStyle(disabled)}
 `;
 export const LeftElementWrapper = styled.div`
   display: flex;
