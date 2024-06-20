@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.29.0
+
+### Minor Changes
+
+- [#317](https://github.com/shopl/shoplflow/pull/317) [`df4cbcc`](https://github.com/shopl/shoplflow/commit/df4cbcc32a0620adb2f969a55c4b3eb22f0692d7) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Tree component에 disabled 속성 추가 및 사소한 style 수정
+
 ## 0.28.5
 
 ### Patch Changes
