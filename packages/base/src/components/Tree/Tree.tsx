@@ -63,6 +63,7 @@ export const TreeItem = ({
     if (disabled || !onClick) {
       return;
     }
+
     return onClick(e);
   };
 
