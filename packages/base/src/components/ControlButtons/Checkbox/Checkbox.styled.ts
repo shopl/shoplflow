@@ -77,7 +77,15 @@ const getStylesByStyleVariant = (
   }
 };
 
-export const StyledCheckbox = styled.button<
+export const StyledCheckHiddenInput = styled.input`
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+`;
+
+export const StyledCheckbox = styled.label<
   CheckboxOptionProps & {
     isHovered: boolean;
   }
