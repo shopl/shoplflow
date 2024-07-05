@@ -5,7 +5,7 @@ import type {
   SelectedProps,
   StyleVariantProps,
 } from '../../../utils/type/ComponentProps';
-import type { ButtonHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, InputHTMLAttributes } from 'react';
 
 export const CheckboxStyleVariants = {
   PRIMARY: 'PRIMARY',
@@ -20,4 +20,5 @@ export interface CheckboxOptionProps
     SelectedProps,
     DefaultSelectedProps,
     DisableProps,
-    ButtonHTMLAttributes<HTMLButtonElement> {}
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'onMouseLeave' | 'onMouseEnter'>,
+    Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onMouseLeave' | 'onMouseEnter'> {}
