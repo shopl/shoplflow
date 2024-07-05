@@ -20,5 +20,5 @@ export interface CheckboxOptionProps
     SelectedProps,
     DefaultSelectedProps,
     DisableProps,
-    Omit<InputHTMLAttributes<HTMLInputElement>, 'onMouseLeave' | 'onMouseEnter'>,
-    Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onMouseLeave' | 'onMouseEnter'> {}
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'onMouseLeave' | 'onMouseEnter' | 'onClick'>,
+    Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onMouseLeave' | 'onMouseEnter' | 'onClick'> {}

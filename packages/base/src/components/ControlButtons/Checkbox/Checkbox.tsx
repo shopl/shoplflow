@@ -7,7 +7,10 @@ import { useOnToggle } from '../../../hooks/useOnToggle';
 export const CHECKBOX_SYMBOL_KEY = Symbol('SHOPLFLOW_CHECKBOX');
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ defaultSelected, isSelected, disabled, onMouseEnter, onMouseLeave, styleVar = 'PRIMARY', id, ...rest }, ref) => {
+  (
+    { defaultSelected, isSelected, disabled, onMouseEnter, onClick, onMouseLeave, styleVar = 'PRIMARY', id, ...rest },
+    ref,
+  ) => {
     const [selected, toggleSelected] = useOnToggle(isSelected, defaultSelected);
 
     const [isHovered, toggleHovered] = useState(false);
@@ -20,11 +23,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       onMouseEnter && onMouseEnter(e);
     };
 
-    const handleClick = () => {
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
       if (disabled) {
         return;
       }
-
+      onClick && onClick(e);
       toggleSelected();
     };
 
