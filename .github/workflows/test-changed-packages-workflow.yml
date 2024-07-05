@@ -26,10 +26,9 @@ jobs:
           node-version-file: ".nvmrc"
 
       - name: pnpm을 설정하고 있어요.
-        uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 8.6.12
-          run_install: false
+        run: |
+          npm install -g pnpm@8.6.12
+          pnpm config set store-dir ~/.pnpm-store
 
       - name: Get pnpm store directory
         shell: bash

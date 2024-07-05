@@ -27,29 +27,28 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: 7
-          run_install: false
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm@8.6.12
+          pnpm config set store-dir ~/.pnpm-store
 
       - name: Get pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
         run: pnpm install
 
       - name: main과 변경점을 비교하고 있어요. (first PR)
-
         run: |
           git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD -- 'packages/base/src/styles/' > /dev/null
           if [ $? -eq 0 ]; then
