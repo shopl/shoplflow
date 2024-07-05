@@ -38,7 +38,7 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
     }
 
     return (
-      <StyledToggleInner disabled={disabled}>
+      <StyledToggleInner disabled={disabled} type='button'>
         <StyledToggleInnerInput
           width={fixedWidth}
           disabled={disabled}
