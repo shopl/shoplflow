@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.30.4
+
+### Patch Changes
+
+- [#330](https://github.com/shopl/shoplflow/pull/330) [`80084bd`](https://github.com/shopl/shoplflow/commit/80084bd406068056306f7bb497376d77bf220252) Thanks [@velo-kim](https://github.com/velo-kim)! - Checkbox를 업데이트 했어요
+
 ## 0.30.3
 
 ### Patch Changes
