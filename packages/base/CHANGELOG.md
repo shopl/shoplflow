@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.30.3
+
+### Patch Changes
+
+- [#328](https://github.com/shopl/shoplflow/pull/328) [`d6709da`](https://github.com/shopl/shoplflow/commit/d6709dabccaaf8be57956b74c8de0b21dc972123) Thanks [@velo-kim](https://github.com/velo-kim)! - DropdownButtonProps를 수정했어요
+
+- [#328](https://github.com/shopl/shoplflow/pull/328) [`d6709da`](https://github.com/shopl/shoplflow/commit/d6709dabccaaf8be57956b74c8de0b21dc972123) Thanks [@velo-kim](https://github.com/velo-kim)! - 버튼 기반의 컴포넌트 타입을 변경했어요
+
 ## 0.30.2
 
 ### Patch Changes
