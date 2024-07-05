@@ -5,7 +5,7 @@ import type {
   SelectedProps,
   StyleVariantProps,
 } from '../../../utils/type/ComponentProps';
-import type { HTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 
 export const CheckboxStyleVariants = {
   PRIMARY: 'PRIMARY',
@@ -20,4 +20,4 @@ export interface CheckboxOptionProps
     SelectedProps,
     DefaultSelectedProps,
     DisableProps,
-    HTMLAttributes<HTMLButtonElement> {}
+    ButtonHTMLAttributes<HTMLButtonElement> {}

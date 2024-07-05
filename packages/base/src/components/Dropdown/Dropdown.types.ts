@@ -1,4 +1,4 @@
-import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import type { ChildrenProps, DisableProps, LeftElementProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 
@@ -50,7 +50,7 @@ const dropdownSizeVariants = {
 export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;
 
 export interface DropdownButtonProps
-  extends HTMLAttributes<HTMLButtonElement>,
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
     DisableProps,
     LeftElementProps,
     SizeVariantProps<DropdownSizeVariantType> {
