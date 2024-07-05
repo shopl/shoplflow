@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.30.2
+
+### Patch Changes
+
+- [#325](https://github.com/shopl/shoplflow/pull/325) [`f23700f`](https://github.com/shopl/shoplflow/commit/f23700f5131eb7af07eeebe16196265396419963) Thanks [@velo-kim](https://github.com/velo-kim)! - update: ToggleButton의 타입을 button으로 지정했어요
+
+- [#325](https://github.com/shopl/shoplflow/pull/325) [`f23700f`](https://github.com/shopl/shoplflow/commit/f23700f5131eb7af07eeebe16196265396419963) Thanks [@velo-kim](https://github.com/velo-kim)! - 깃헙액션을 업데이트 했어요
+
+- [#325](https://github.com/shopl/shoplflow/pull/325) [`f23700f`](https://github.com/shopl/shoplflow/commit/f23700f5131eb7af07eeebe16196265396419963) Thanks [@velo-kim](https://github.com/velo-kim)! - update: github action
+
 ## 0.30.1
 
 ### Patch Changes
