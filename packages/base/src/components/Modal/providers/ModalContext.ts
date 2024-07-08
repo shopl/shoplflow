@@ -17,7 +17,7 @@ export type RemoveModalProps = {
 export type ModalContext = ModalStateType[];
 
 export type ModalHandlerContext = {
-  addModal: (modal: ReactNode, id?: string) => void;
+  addModal: (modal: ReactNode, id?: string, zIndex?: number) => void;
   removeModal: (props?: RemoveModalProps) => void;
 };
 
