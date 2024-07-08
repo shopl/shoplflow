@@ -3,7 +3,7 @@ import type { BackDropProps } from './BackDrop.types';
 import { fadeInOut } from '../../animation/fadeInOut';
 import { BackDropStyled } from './BackDrop.styled';
 
-const BackDrop = ({ children }: BackDropProps) => {
+const BackDrop = ({ children, zIndex }: BackDropProps) => {
   return (
     <BackDropStyled
       variants={fadeInOut}
@@ -11,6 +11,7 @@ const BackDrop = ({ children }: BackDropProps) => {
       animate={'animate'}
       exit={'exit'}
       data-shoplflow={'BackDrop'}
+      zIndex={zIndex}
     >
       {children}
     </BackDropStyled>

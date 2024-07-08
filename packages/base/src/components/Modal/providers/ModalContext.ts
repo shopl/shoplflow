@@ -5,6 +5,10 @@ import { noop } from '@shoplflow/utils';
 export type ModalStateType = {
   component: ReactNode;
   id?: string;
+  /**
+   * custom zIndex를 넣어주세요
+   */
+  zIndex?: number;
 };
 export type RemoveModalProps = {
   id?: string;
