@@ -12,12 +12,12 @@ interface ModalProviderProps {
 const ModalProvider = ({ children }: ModalProviderProps) => {
   const [openedModals, setOpenedModals] = useState<ModalContext>([]);
 
-  const addModal = (component: ReactNode, id?: string) => {
+  const addModal = (component: ReactNode, id?: string, zIndex?: number) => {
     setOpenedModals((modals) => {
       if (modals) {
-        return [...modals, { component, id }];
+        return [...modals, { component, id, zIndex }];
       }
-      return [{ component, id }];
+      return [{ component, id, zIndex }];
     });
   };
 
