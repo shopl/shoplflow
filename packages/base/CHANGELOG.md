@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.30.6
+
+### Patch Changes
+
+- [#335](https://github.com/shopl/shoplflow/pull/335) [`8fae0ee`](https://github.com/shopl/shoplflow/commit/8fae0eedaa282e5d4f6960fe3b50e7c04331211a) Thanks [@velo-kim](https://github.com/velo-kim)! - addModal의 파라미터를 변경했어요
+
+- [#335](https://github.com/shopl/shoplflow/pull/335) [`8fae0ee`](https://github.com/shopl/shoplflow/commit/8fae0eedaa282e5d4f6960fe3b50e7c04331211a) Thanks [@velo-kim](https://github.com/velo-kim)! - Modal의 BackDrop zIndex를 커스텀할 수 있게 변경했어요
+
 ## 0.30.5
 
 ### Patch Changes
