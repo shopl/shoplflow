@@ -24,7 +24,7 @@ const ModalPortal = () => {
       {createPortal(
         <AnimatePresence>
           {modal.map((item, index) => (
-            <BackDrop key={index}>
+            <BackDrop key={index} zIndex={item.zIndex}>
               <SpaceMarginWrapper>{item.component}</SpaceMarginWrapper>
             </BackDrop>
           ))}
