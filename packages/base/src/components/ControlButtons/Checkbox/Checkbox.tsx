@@ -43,7 +43,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         <StyledCheckHiddenInput type='checkbox' disabled={disabled} id={id} {...rest} ref={ref} />
         <StyledCheckbox
           styleVar={styleVar}
-          htmlFor='id'
+          htmlFor={id}
           isHovered={isHovered}
           isSelected={selected}
           disabled={disabled}
