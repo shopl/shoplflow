@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.30.8
+
+### Patch Changes
+
+- [#339](https://github.com/shopl/shoplflow/pull/339) [`0912514`](https://github.com/shopl/shoplflow/commit/0912514c4ad5a3bfb8b91ca029a5cf11a5049fee) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: Checkbox id 값을 수정했어요
+
 ## 0.30.7
 
 ### Patch Changes
