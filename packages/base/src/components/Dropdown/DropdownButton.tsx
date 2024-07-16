@@ -33,6 +33,16 @@ export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>
       setIsHovered(false);
     };
 
+    const getTextColor = ({ value, disabled }: { value?: React.ReactNode | null; disabled?: boolean }) => {
+      if (disabled) {
+        return 'neutral350';
+      }
+      if (!value) {
+        return 'neutral400';
+      }
+      return 'neutral700';
+    };
+
     return (
       <InputWrapper
         onMouseEnter={handleOnMouseEnter}
@@ -50,7 +60,7 @@ export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>
           {value || (
             <Text
               typography={getDropdownFontSizeBySizeVar(sizeVar)}
-              color={value ? 'neutral700' : 'neutral400'}
+              color={getTextColor({ value, disabled })}
               textOverflow={'ellipsis'}
               lineClamp={1}
             >
