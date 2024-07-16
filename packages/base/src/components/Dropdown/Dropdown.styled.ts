@@ -98,6 +98,7 @@ export const StyledDropdownButton = styled.button<DropdownButtonProps>`
   ${({ disabled }) =>
     disabled &&
     css`
+      background-color: ${colorTokens.neutral100};
       cursor: not-allowed;
     `}
 `;

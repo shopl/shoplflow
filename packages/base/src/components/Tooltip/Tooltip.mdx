@@ -20,7 +20,7 @@ import * as TooltipStories from './Tooltip.stories';
 
 ### Tooltip
 <ArgsTable of={Tooltip} />
-### TooltipContent
+### Tooltip.Content
 <ArgsTable of={TooltipContent} />
 
 
@@ -28,10 +28,10 @@ import * as TooltipStories from './Tooltip.stories';
 
 ```tsx
 import { Tooltip, Text } from '@shoplflow/base'
-  
+
   const Example = () => {
     return (
-      <Tooltip placement="bottom-end" trigger={<Text typography='body2_40'>여기를 호버해주세요.</Text>} popper={<TooltipContent content='노출되는 툴팁 컨텐츠 영역입니다.'/>}  />
+      <Tooltip placement="bottom-end" trigger={<Text typography='body2_40'>여기를 호버해주세요.</Text>} popper={<Tooltip.Content content='노출되는 툴팁 컨텐츠 영역입니다.'/>}  />
     )
   }
 ```
