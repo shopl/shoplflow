@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.0
+
+### Minor Changes
+
+- [#341](https://github.com/shopl/shoplflow/pull/341) [`afa6685`](https://github.com/shopl/shoplflow/commit/afa6685bb7ee990b137d8e1615b7fb56062018fc) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Dropdown Button disabled 스타일링 수정 및 storybook docs 수정
+
 ## 0.30.8
 
 ### Patch Changes
