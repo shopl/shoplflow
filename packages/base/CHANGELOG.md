@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.1
+
+### Patch Changes
+
+- [#343](https://github.com/shopl/shoplflow/pull/343) [`0b2a854`](https://github.com/shopl/shoplflow/commit/0b2a854d7d5fb5fae1c65d045ca48cea2a2d71c9) Thanks [@velo-kim](https://github.com/velo-kim)! - InputButton에 useClear Prop을 추가했어요
+
 ## 0.31.0
 
 ### Minor Changes
