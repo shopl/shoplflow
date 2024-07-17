@@ -20,7 +20,10 @@ export interface InputButtonOptionProps
    * 값이 삭제될 때 실행할 함수입니다.
    */
   onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
-
+  /**
+   * Clear 아이콘의 노출 유무를 설정합니다.
+   */
+  useClear?: boolean;
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 
   /**
