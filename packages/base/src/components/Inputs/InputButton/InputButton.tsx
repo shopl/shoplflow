@@ -17,6 +17,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
       onClick,
       isSelected,
       disabled = false,
+      useClear = true,
       rightSource,
       onClear,
       width = '100%',
@@ -90,7 +91,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
         <StyledInputButton onClick={handleOnClick} disabled={disabled}>
           <StyledInputButtonContent className={'body1_400'} value={text} ref={ref} {...rest} />
           <Stack.Horizontal align={'center'}>
-            {text && (
+            {useClear && text && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
                 <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
               </IconButton>
