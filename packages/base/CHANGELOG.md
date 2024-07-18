@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.31.2
+
+### Patch Changes
+
+- [#345](https://github.com/shopl/shoplflow/pull/345) [`45f1724`](https://github.com/shopl/shoplflow/commit/45f1724f839eb21e2f4bd9996bfdc0adac3ef44d) Thanks [@shopl-dev](https://github.com/shopl-dev)! - Update: .npmrc
+
+- Updated dependencies [[`45f1724`](https://github.com/shopl/shoplflow/commit/45f1724f839eb21e2f4bd9996bfdc0adac3ef44d)]:
+  - @shoplflow/hada-assets@0.1.2
+  - @shoplflow/shopl-assets@0.7.3
+  - @shoplflow/utils@0.6.3
+
 ## 0.31.1
 
 ### Patch Changes

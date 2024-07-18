@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.7.3
+
+### Patch Changes
+
+- [#345](https://github.com/shopl/shoplflow/pull/345) [`45f1724`](https://github.com/shopl/shoplflow/commit/45f1724f839eb21e2f4bd9996bfdc0adac3ef44d) Thanks [@shopl-dev](https://github.com/shopl-dev)! - Update: .npmrc
+
 ## 0.7.2
 
 ### Patch Changes
