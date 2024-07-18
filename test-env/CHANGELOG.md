@@ -1,5 +1,15 @@
 # test-env
 
+## 0.0.119
+
+### Patch Changes
+
+- [#345](https://github.com/shopl/shoplflow/pull/345) [`45f1724`](https://github.com/shopl/shoplflow/commit/45f1724f839eb21e2f4bd9996bfdc0adac3ef44d) Thanks [@shopl-dev](https://github.com/shopl-dev)! - Update: .npmrc
+
+- Updated dependencies [[`45f1724`](https://github.com/shopl/shoplflow/commit/45f1724f839eb21e2f4bd9996bfdc0adac3ef44d)]:
+  - @shoplflow/base@0.31.2
+  - @shoplflow/utils@0.6.3
+
 ## 0.0.118
 
 ### Patch Changes
