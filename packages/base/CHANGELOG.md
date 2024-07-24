@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.31.3
+
+### Patch Changes
+
+- [#348](https://github.com/shopl/shoplflow/pull/348) [`cf1fc57`](https://github.com/shopl/shoplflow/commit/cf1fc57affac0b4a82a74458cf210ec5694fcead) Thanks [@velo-kim](https://github.com/velo-kim)! - ToggleButton을 업데이트 했어요
+
+- [#347](https://github.com/shopl/shoplflow/pull/347) [`9118266`](https://github.com/shopl/shoplflow/commit/91182660214920b39c7ca6bfd52a2e9a455cb353) Thanks [@velo-kim](https://github.com/velo-kim)! - update .npmrc
+
 ## 0.31.2
 
 ### Patch Changes
