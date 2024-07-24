@@ -59,7 +59,12 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
           selected={selected}
           sizeVar={sizeVar}
         >
-          <Text lineClamp={1} wordBreak='break-all' typography='body2_400'>
+          <Text
+            lineClamp={1}
+            color={selected ? 'neutral700' : 'neutral500'}
+            wordBreak='break-all'
+            typography={selected ? 'body2_500' : 'body2_400'}
+          >
             {label}
           </Text>
         </StyledToggleInnerLabel>
