@@ -105,7 +105,9 @@ export const Number: StoryFn<InputProps> = (args) => {
   return (
     <Stack width={'300px'} height={'300px'}>
       <button onClick={() => sT(!t)}>aaa</button>
-      <ComponentStage>{t && <Input value={0} {...args} />}</ComponentStage>
+      <ComponentStage>
+        {t && <Input customNumberInputHeight='40px' borderRadius='borderRadius12' value={0} {...args} />}
+      </ComponentStage>
     </Stack>
   );
 };

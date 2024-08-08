@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { colorTokens } from '../../../styles';
+import type { BorderRadiusTokens } from '../../../styles';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import type { HTMLInputTypeAttribute } from 'react';
 
@@ -35,6 +36,7 @@ export const getStyleByType = ({
   minWidth,
   maxWidth,
   borderRadius,
+  customNumberInputHeight,
 }: {
   type?: HTMLInputTypeAttribute;
   width?: CSSStyleDeclaration['width'];
@@ -43,12 +45,14 @@ export const getStyleByType = ({
   height?: CSSStyleDeclaration['height'];
   minHeight?: CSSStyleDeclaration['minHeight'];
   maxHeight?: CSSStyleDeclaration['maxHeight'];
-  borderRadius?: CSSStyleDeclaration['borderRadius'];
+  borderRadius?: BorderRadiusTokens;
+  customNumberInputHeight?: string;
 }) => {
   if (type === 'number') {
     return css`
       width: ${width || '64px'};
-      height: ${height || '32px'};
+      height: ${customNumberInputHeight || '32px'};
+      border-radius: ${borderRadius ? borderRadiusTokens[borderRadius] : '6px'};
     `;
   }
 
@@ -59,7 +63,7 @@ export const getStyleByType = ({
     height: ${height || 'initial'};
     min-height: ${minHeight || 'initial'};
     max-height: ${maxHeight || 'initial'};
-    border-radius: ${borderRadius || '6px'};
+    border-radius: ${borderRadius ? borderRadiusTokens[borderRadius] : '6px'};
   `;
 };
 
@@ -71,8 +75,9 @@ export const InputWrapper = styled.label<
     maxHeight?: CSSStyleDeclaration['maxHeight'];
     minWidth?: CSSStyleDeclaration['minWidth'];
     maxWidth?: CSSStyleDeclaration['maxWidth'];
-    borderRadius?: CSSStyleDeclaration['borderRadius'];
+    borderRadius?: BorderRadiusTokens;
     direction?: 'row' | 'column';
+    customNumberInputHeight?: string;
     type?: HTMLInputTypeAttribute;
   }
 >`
@@ -81,8 +86,18 @@ export const InputWrapper = styled.label<
   align-items: center;
   border-radius: 6px;
   flex-direction: ${({ direction }) => direction || 'row'};
-  ${({ type, height, minHeight, maxHeight, width, maxWidth, minWidth, borderRadius }) =>
-    getStyleByType({ type, height, minHeight, maxHeight, width, maxWidth, minWidth, borderRadius })};
+  ${({ type, height, minHeight, maxHeight, width, maxWidth, minWidth, borderRadius, customNumberInputHeight }) =>
+    getStyleByType({
+      customNumberInputHeight,
+      type,
+      height,
+      minHeight,
+      maxHeight,
+      width,
+      maxWidth,
+      minWidth,
+      borderRadius,
+    })};
   justify-content: space-between;
   gap: 8px;
   border: 1px solid ${(props) => getBorderColorByStatus(props)};
