@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.7
+
+### Patch Changes
+
+- [#356](https://github.com/shopl/shoplflow/pull/356) [`79005c6`](https://github.com/shopl/shoplflow/commit/79005c6eeb8245322837087f3e413e929e3d1f07) Thanks [@velo-kim](https://github.com/velo-kim)! - Input border-radius를 변경할 수 있어요
+
 ## 0.31.6
 
 ### Patch Changes
