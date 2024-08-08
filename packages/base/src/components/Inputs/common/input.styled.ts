@@ -34,6 +34,7 @@ export const getStyleByType = ({
   width,
   minWidth,
   maxWidth,
+  borderRadius,
 }: {
   type?: HTMLInputTypeAttribute;
   width?: CSSStyleDeclaration['width'];
@@ -42,21 +43,23 @@ export const getStyleByType = ({
   height?: CSSStyleDeclaration['height'];
   minHeight?: CSSStyleDeclaration['minHeight'];
   maxHeight?: CSSStyleDeclaration['maxHeight'];
+  borderRadius?: CSSStyleDeclaration['borderRadius'];
 }) => {
   if (type === 'number') {
     return css`
-      width: 64px;
-      height: 32px;
+      width: ${width || '64px'};
+      height: ${height || '32px'};
     `;
   }
 
   return css`
-    width: ${width ?? '100%'};
-    min-width: ${minWidth ?? 'initial'};
-    max-width: ${maxWidth ?? 'initial'};
-    height: ${height ?? 'initial'};
-    min-height: ${minHeight ?? 'initial'};
-    max-height: ${maxHeight ?? 'initial'};
+    width: ${width || '100%'};
+    min-width: ${minWidth || 'initial'};
+    max-width: ${maxWidth || 'initial'};
+    height: ${height || 'initial'};
+    min-height: ${minHeight || 'initial'};
+    max-height: ${maxHeight || 'initial'};
+    border-radius: ${borderRadius || '6px'};
   `;
 };
 
@@ -68,6 +71,7 @@ export const InputWrapper = styled.label<
     maxHeight?: CSSStyleDeclaration['maxHeight'];
     minWidth?: CSSStyleDeclaration['minWidth'];
     maxWidth?: CSSStyleDeclaration['maxWidth'];
+    borderRadius?: CSSStyleDeclaration['borderRadius'];
     direction?: 'row' | 'column';
     type?: HTMLInputTypeAttribute;
   }
@@ -75,13 +79,13 @@ export const InputWrapper = styled.label<
   position: relative;
   display: flex;
   align-items: center;
+  border-radius: 6px;
   flex-direction: ${({ direction }) => direction || 'row'};
-  ${({ type, height, minHeight, maxHeight, width, maxWidth, minWidth }) =>
-    getStyleByType({ type, height, minHeight, maxHeight, width, maxWidth, minWidth })};
+  ${({ type, height, minHeight, maxHeight, width, maxWidth, minWidth, borderRadius }) =>
+    getStyleByType({ type, height, minHeight, maxHeight, width, maxWidth, minWidth, borderRadius })};
   justify-content: space-between;
   gap: 8px;
   border: 1px solid ${(props) => getBorderColorByStatus(props)};
-  border-radius: 6px;
   background-color: ${colorTokens.neutral0};
   overflow: hidden;
   ${({ disabled }) =>
