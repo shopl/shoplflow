@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.6
+
+### Patch Changes
+
+- [#354](https://github.com/shopl/shoplflow/pull/354) [`7a5da9d`](https://github.com/shopl/shoplflow/commit/7a5da9d069e5fb53238db2e6f1c25c2398db55af) Thanks [@velo-kim](https://github.com/velo-kim)! - Input의 커스텀 스타일의 범위를 넓혔어요
+
 ## 0.31.5
 
 ### Patch Changes
