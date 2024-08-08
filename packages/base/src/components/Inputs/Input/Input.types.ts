@@ -10,5 +10,6 @@ export interface InputProps
 export interface InputOptionProps extends ErrorProps {
   width?: string;
   maxLength?: number;
+  borderRadius?: CSSStyleDeclaration['borderRadius'];
   onClear?: () => void;
 }
