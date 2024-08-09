@@ -1,5 +1,39 @@
 # @shoplflow/base
 
+## 0.31.7
+
+### Patch Changes
+
+- [#356](https://github.com/shopl/shoplflow/pull/356) [`79005c6`](https://github.com/shopl/shoplflow/commit/79005c6eeb8245322837087f3e413e929e3d1f07) Thanks [@velo-kim](https://github.com/velo-kim)! - Input border-radius를 변경할 수 있어요
+
+## 0.31.6
+
+### Patch Changes
+
+- [#354](https://github.com/shopl/shoplflow/pull/354) [`7a5da9d`](https://github.com/shopl/shoplflow/commit/7a5da9d069e5fb53238db2e6f1c25c2398db55af) Thanks [@velo-kim](https://github.com/velo-kim)! - Input의 커스텀 스타일의 범위를 넓혔어요
+
+## 0.31.5
+
+### Patch Changes
+
+- Updated dependencies [[`d08f959`](https://github.com/shopl/shoplflow/commit/d08f959cefda105b3e3b7fd78d74d38062334282)]:
+  - @shoplflow/shopl-assets@0.8.1
+
+## 0.31.4
+
+### Patch Changes
+
+- Updated dependencies [[`4a688cc`](https://github.com/shopl/shoplflow/commit/4a688cc180d261c87110158a0c2e2dbaca0c7135)]:
+  - @shoplflow/shopl-assets@0.8.0
+
+## 0.31.3
+
+### Patch Changes
+
+- [#348](https://github.com/shopl/shoplflow/pull/348) [`cf1fc57`](https://github.com/shopl/shoplflow/commit/cf1fc57affac0b4a82a74458cf210ec5694fcead) Thanks [@velo-kim](https://github.com/velo-kim)! - ToggleButton을 업데이트 했어요
+
+- [#347](https://github.com/shopl/shoplflow/pull/347) [`9118266`](https://github.com/shopl/shoplflow/commit/91182660214920b39c7ca6bfd52a2e9a455cb353) Thanks [@velo-kim](https://github.com/velo-kim)! - update .npmrc
+
 ## 0.31.2
 
 ### Patch Changes

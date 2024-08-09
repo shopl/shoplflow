@@ -207,6 +207,7 @@ import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
 import IcReply from './IcReply';
 import IcReportMedium from './IcReportMedium';
+import IcRequired from './IcRequired';
 import IcResendPushMedium from './IcResendPushMedium';
 import IcResendPush from './IcResendPush';
 import IcReturn from './IcReturn';
@@ -464,6 +465,7 @@ const icons = {
   repeat: IcRepeat,
   reply: IcReply,
   'report-medium': IcReportMedium,
+  required: IcRequired,
   'resend-push-medium': IcResendPushMedium,
   'resend-push': IcResendPush,
   return: IcReturn,
@@ -724,6 +726,7 @@ export {
   IcRepeat as RepeatIcon,
   IcReply as ReplyIcon,
   IcReportMedium as ReportMediumIcon,
+  IcRequired as RequiredIcon,
   IcResendPushMedium as ResendPushMediumIcon,
   IcResendPush as ResendPushIcon,
   IcReturn as ReturnIcon,

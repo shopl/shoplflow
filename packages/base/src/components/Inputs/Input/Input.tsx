@@ -27,6 +27,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       max,
       className,
       width,
+      borderRadius,
+      customNumberInputHeight,
       ...rest
     },
     ref,
@@ -139,6 +141,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         height={'40px'}
         maxHeight={'40px'}
         data-shoplflow={'input'}
+        borderRadius={borderRadius}
+        customNumberInputHeight={customNumberInputHeight}
       >
         <StyledInput
           onFocus={handleOnFocus}

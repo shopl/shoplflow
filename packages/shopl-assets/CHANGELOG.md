@@ -1,5 +1,17 @@
 # @shoplflow/shopl-assets
 
+## 0.8.1
+
+### Patch Changes
+
+- [#352](https://github.com/shopl/shoplflow/pull/352) [`d08f959`](https://github.com/shopl/shoplflow/commit/d08f959cefda105b3e3b7fd78d74d38062334282) Thanks [@velo-kim](https://github.com/velo-kim)! - ic-required를 변경했어요
+
+## 0.8.0
+
+### Minor Changes
+
+- [#350](https://github.com/shopl/shoplflow/pull/350) [`4a688cc`](https://github.com/shopl/shoplflow/commit/4a688cc180d261c87110158a0c2e2dbaca0c7135) Thanks [@velo-kim](https://github.com/velo-kim)! - Add IcRequired Component
+
 ## 0.7.3
 
 ### Patch Changes
