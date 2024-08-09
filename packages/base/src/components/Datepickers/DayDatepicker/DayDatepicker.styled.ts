@@ -1,6 +1,183 @@
 import styled from '@emotion/styled';
 import { colorTokens, fontWeightTokens } from '../../../styles';
 
+export const SmallStyledDayDatepickerWrapper = styled.div<{
+  modalHeight?: string;
+  height?: string;
+  isInitSelectedStyle?: boolean;
+}>`
+  display: flex;
+  width: 280px;
+  height: ${({ height, modalHeight }) =>
+    height ? (modalHeight === '656px' ? `calc(${modalHeight} - 184px)` : '100%') : '100%'};
+  flex-direction: column;
+
+  & .dayDatepickerArea .react-datepicker {
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    font-family: 'Pretendard', 'Pretendard JP', sans-serif !important;
+    box-shadow: 0px 10px 30px 0px rgba(51, 51, 51, 0.2);
+
+    & .highlighted-sundays {
+      color: ${colorTokens.red300};
+    }
+
+    &__month-text--selected {
+      color: #fff;
+    }
+
+    &-popper {
+      width: 432px;
+      padding-top: 0;
+    }
+
+    &__month-container {
+      width: 100%;
+    }
+
+    &__month {
+      margin: 8px 0 0;
+    }
+
+    &__header {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 18px;
+    }
+
+    &__month-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1.75rem;
+    }
+
+    &__month-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.75rem;
+      height: 3.75rem;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #333;
+
+      :hover {
+        background-color: #eaf5fe;
+        color: ${colorTokens.primary300};
+      }
+
+      &--selected {
+        background-color: ${colorTokens.primary300};
+      }
+    }
+
+    &__week {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    &__day-names {
+      width: 100%;
+      height: 18px;
+      margin: 8px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__day-name {
+      color: ${colorTokens.neutral400};
+      width: 32px;
+      margin: 0;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1rem;
+
+      :last-of-type {
+        margin: 0;
+      }
+    }
+
+    &__day {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 2.5rem;
+      color: ${colorTokens.neutral700};
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+
+      &--outside-month {
+        color: ${colorTokens.neutral400};
+      }
+
+      &--today {
+        color: ${colorTokens.primary300};
+        font-weight: ${fontWeightTokens.fontWeightRegular};
+      }
+
+      &--keyboard-selected {
+        background-color: ${({ isInitSelectedStyle }) => (isInitSelectedStyle ? colorTokens.neutral0 : 'transparent')};
+        color: ${colorTokens.neutral700};
+      }
+
+      &--selected {
+        color: ${colorTokens.neutral0};
+        background-color: ${colorTokens.primary300};
+      }
+
+      &--highlighted {
+        color: ${colorTokens.neutral0};
+        background-color: ${colorTokens.primary300};
+      }
+
+      &--disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+        color: ${colorTokens.neutral700};
+
+        &.react-datepicker__day--keyboard-selected {
+          background-color: ${colorTokens.neutral200};
+        }
+        &.react-datepicker__day--excluded {
+          color: ${colorTokens.neutral0};
+        }
+      }
+
+      &:not(&--disabled):not(&--selected):not(&--highlighted):not(&--range-end):hover {
+        color: ${colorTokens.primary300};
+        background-color: ${colorTokens.primary100};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &__year {
+      &-wrapper {
+        justify-content: center;
+      }
+    }
+  }
+`;
+
 export const StyledDayDatepicker = styled.div<{
   modalHeight?: string;
   height?: string;
@@ -131,7 +308,7 @@ export const StyledDayDatepicker = styled.div<{
           .react-datepicker__year-text--in-range,
           .react-datepicker__day--selecting-range-start
         ) {
-        background-color: ${colorTokens.shopl100};
+        background-color: ${colorTokens.primary100};
       }
 
       &--in-range {
@@ -141,14 +318,14 @@ export const StyledDayDatepicker = styled.div<{
 
         &:not(.react-datepicker__day--range-start):not(.react-datepicker__day--range-end) {
           border-radius: 0;
-          background-color: ${colorTokens.shopl100};
+          background-color: ${colorTokens.primary100};
           color: ${colorTokens.primary300};
         }
 
         &:not(.react-datepicker__day--range-end):not(.react-datepicker__day--range-start):after {
           width: 0.625rem;
           height: 100%;
-          background-color: ${colorTokens.shopl100};
+          background-color: ${colorTokens.primary100};
           position: absolute;
           content: '';
           right: -0.625rem;
@@ -159,7 +336,7 @@ export const StyledDayDatepicker = styled.div<{
         &.react-datepicker__day--range-start {
           width: 50px;
           height: 40px;
-          background-color: #eaf5ff;
+          background-color: ${colorTokens.primary100};
           margin-right: 0;
           padding-right: 0.625rem;
           box-sizing: border-box;
@@ -170,7 +347,7 @@ export const StyledDayDatepicker = styled.div<{
         &.react-datepicker__day--range-end {
           width: 40px;
           height: 40px;
-          background-color: #eaf5ff;
+          background-color: ${colorTokens.primary100};
           box-sizing: border-box;
           border: unset;
           border-radius: 0 50% 50% 0;
@@ -178,7 +355,7 @@ export const StyledDayDatepicker = styled.div<{
         &.react-datepicker__day--range-end.react-datepicker__day--range-start {
           width: 40px;
           height: 40px;
-          background-color: #eaf5ff;
+          background-color: ${colorTokens.primary100};
           box-sizing: border-box;
           border: unset;
           border-radius: 50%;
@@ -224,7 +401,7 @@ export const StyledDayDatepicker = styled.div<{
 
       &:not(&--disabled):not(&--selected):not(&--highlighted):not(&--range-end):hover {
         color: ${colorTokens.primary300};
-        background-color: ${colorTokens.shopl100};
+        background-color: ${colorTokens.primary100};
       }
     }
 

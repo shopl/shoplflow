@@ -1,14 +1,16 @@
 import React from 'react';
-import { StyledDayDatepicker } from './DayDatepicker.styled';
+import { SmallStyledDayDatepickerWrapper, StyledDayDatepicker } from './DayDatepicker.styled';
 import type { DayDatepickerProps } from './DayDatepicker.types';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import DayDatepickerHeader from './DayDatepickerHeader';
 
-const DayDatepicker = ({ modalHeight, height, isInitSelectedStyle, ...rest }: DayDatepickerProps) => {
+const DayDatepicker = ({ modalHeight, height, isInitSelectedStyle, sizeVar, ...rest }: DayDatepickerProps) => {
+  const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
+
   return (
-    <StyledDayDatepicker
+    <Wrapper
       modalHeight={modalHeight}
       height={height}
       isInitSelectedStyle={isInitSelectedStyle}
@@ -24,7 +26,7 @@ const DayDatepicker = ({ modalHeight, height, isInitSelectedStyle, ...rest }: Da
           {...rest}
         />
       </div>
-    </StyledDayDatepicker>
+    </Wrapper>
   );
 };
 
