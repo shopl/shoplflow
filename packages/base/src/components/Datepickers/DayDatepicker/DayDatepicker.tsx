@@ -6,7 +6,14 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import DayDatepickerHeader from './DayDatepickerHeader';
 
-const DayDatepicker = ({ modalHeight, height, isInitSelectedStyle, sizeVar, ...rest }: DayDatepickerProps) => {
+const DayDatepicker = ({
+  modalHeight,
+  height,
+  isInitSelectedStyle,
+  sizeVar,
+  children,
+  ...rest
+}: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
 
   return (
@@ -24,7 +31,9 @@ const DayDatepicker = ({ modalHeight, height, isInitSelectedStyle, sizeVar, ...r
             return <div className='each-day'>{dayOfMonth}</div>;
           }}
           {...rest}
-        />
+        >
+          {children}
+        </DatePicker>
       </div>
     </Wrapper>
   );

@@ -70,7 +70,7 @@ export const SmallStyledDayDatepickerWrapper = styled.div<{
       color: #333;
 
       :hover {
-        background-color: #eaf5fe;
+        background-color: ${colorTokens.primary100};
         color: ${colorTokens.primary300};
       }
 
@@ -242,12 +242,13 @@ export const StyledDayDatepicker = styled.div<{
       color: #333;
 
       :hover {
-        background-color: #eaf5fe;
+        background-color: ${colorTokens.primary100};
         color: ${colorTokens.primary300};
       }
 
       &--selected {
         background-color: ${colorTokens.primary300};
+        color: ${colorTokens.neutral0};
       }
     }
 
