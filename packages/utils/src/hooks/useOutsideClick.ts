@@ -7,7 +7,7 @@ type UseOutsideClickProps = {
   onClose?: () => void;
 };
 
-const useOutsideClick = ({
+export const useOutsideClick = ({
   selector,
   useOutsideScroll,
   onClose,
@@ -73,5 +73,3 @@ const useOutsideClick = ({
 
   return [isOpened, setIsOpened];
 };
-
-export default useOutsideClick;
