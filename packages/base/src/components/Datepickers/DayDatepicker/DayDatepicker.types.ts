@@ -8,6 +8,9 @@ export const DayDatepickerSizeVariants = {
   M: 'M',
 } as const;
 
+/**
+ * single, multiple, range  union type (캘린더의 형태)
+ */
 export type DayCalendarType =
   | { type: 'single'; handleDayChange: (date: Date | null) => void }
   | { type: 'multiple'; handleMutlipleDaysChange: (date: Date[] | null) => void }
@@ -15,23 +18,23 @@ export type DayCalendarType =
 
 export type DayDatepickerSizeVariantType = $Values<typeof DayDatepickerSizeVariants>;
 
-export type DayDatepickerProps = Omit<DatePickerProps, 'selectsRange' | 'selectsMultiple' | 'onChange'> &
+export type DayDatepickerProps = Pick<
+  DatePickerProps,
+  | 'highlightDates'
+  | 'startDate'
+  | 'endDate'
+  | 'locale'
+  | 'selectedDates'
+  | 'selected'
+  | 'children'
+  | 'excludeDates'
+  | 'calendarStartDay'
+> &
   DayDatepickerOptionProps;
 export type DayDatepickerOptionProps = {
-  isInitSelectedStyle?: boolean;
-  /**
-   * 시작년도 (옵션 리스트 시작년도)
-   */
-  startYear?: number;
-  /**
-   * 마지막년도 (옵션 리스트 마지막년도)
-   */
-  endYear?: number;
-  locale?: Locale;
   /**
    * 캘린더 타입
    */
-
   calendarType: DayCalendarType;
 } & SizeVariantProps<DayDatepickerSizeVariantType>;
 

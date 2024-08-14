@@ -8,16 +8,7 @@ import { useOutsideClick } from '@shoplflow/utils';
 import YearStepper from './YearStepper';
 import { ko } from 'date-fns/locale';
 
-type MonthStepperProps = DayDatepickerHeaderCustomProps & {
-  /**
-   * 시작년도 (옵션 리스트 시작년도)
-   */
-  startYear?: number;
-  /**
-   * 마지막년도 (옵션 리스트 마지막년도)
-   */
-  endYear?: number;
-};
+type MonthStepperProps = DayDatepickerHeaderCustomProps;
 
 const MonthStepper = ({
   date,
@@ -26,13 +17,11 @@ const MonthStepper = ({
   increaseMonth,
   changeYear,
   changeMonth,
-  // minDate,
-  // maxDate,
+  minDate,
+  maxDate,
   locale,
   prevMonthButtonDisabled,
   nextMonthButtonDisabled,
-  startYear = 2000,
-  endYear = 2100,
 }: MonthStepperProps) => {
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: '.react-datepicker__header',
@@ -68,11 +57,11 @@ const MonthStepper = ({
               selectsEnd
               dateFormat='mm'
               selected={date}
-              // minDate={minDate}
-              // maxDate={maxDate}
+              minDate={minDate}
+              maxDate={maxDate}
               locale={locale ?? ko}
               showMonthYearPicker
-              renderCustomHeader={(props) => <YearStepper startYear={startYear} endYear={endYear} {...props} />}
+              renderCustomHeader={(props) => <YearStepper {...props} />}
               showFourColumnMonthYearPicker
             />
           </div>

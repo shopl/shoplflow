@@ -1,10 +1,10 @@
 import type { ComponentPropsWithRef, ElementType, MouseEvent } from 'react';
 import { useState, forwardRef } from 'react';
 import { StyledIconButton } from './IconButton.styled';
-import type { IconButtonProps, IconButtonComponent } from './IconButton.types';
+import type { IconButtonProps } from './IconButton.types';
 import LoadingSpinner from '../../../assets/LoadingSpinner';
 
-const IconButton: IconButtonComponent = forwardRef(
+const IconButton = forwardRef(
   <T extends ElementType = 'button'>(
     {
       styleVar,

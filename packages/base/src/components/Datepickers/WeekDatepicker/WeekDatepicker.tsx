@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Container, EachWeekArea, WeekArea, WeekContainer } from './WeekDatepicker.styled';
 import type { WeekDatepickerProps } from './WeekDatepicker.types';
 import YearStepper from '../stepper/YearStepper';
-import SimpleBar from 'simplebar-react';
 
 const WeekDatepicker = ({
   // yearForWeek,
@@ -39,22 +38,18 @@ const WeekDatepicker = ({
           changeYear={(year) => {
             setCurrentDate(new Date(year, currentDate.getMonth(), currentDate.getDate()));
           }}
-          startYear={2000}
-          endYear={2100}
         />
-        <SimpleBar style={{ maxHeight: '500px' }}>
-          <WeekArea>
-            {weekArray.map((each) => (
-              <EachWeekArea
-                key={`W` + each.substring(4, 6)}
-                className={rangeCheckDom(each)}
-                onClick={() => (rangeCheckDom(each).indexOf('week-disabled') === -1 ? handleWeekClick(each) : {})}
-              >
-                <div className='each-day'>{`W` + each.substring(4, 6)}</div>
-              </EachWeekArea>
-            ))}
-          </WeekArea>
-        </SimpleBar>
+        <WeekArea>
+          {weekArray.map((each) => (
+            <EachWeekArea
+              key={`W` + each.substring(4, 6)}
+              className={rangeCheckDom(each)}
+              onClick={() => (rangeCheckDom(each).indexOf('week-disabled') === -1 ? handleWeekClick(each) : {})}
+            >
+              <div className='each-day'>{`W` + each.substring(4, 6)}</div>
+            </EachWeekArea>
+          ))}
+        </WeekArea>
       </WeekContainer>
     </Container>
   );

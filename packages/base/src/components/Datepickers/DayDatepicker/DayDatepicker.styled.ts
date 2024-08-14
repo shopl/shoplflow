@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
 import { colorTokens, fontWeightTokens } from '../../../styles';
 
-export const SmallStyledDayDatepickerWrapper = styled.div<{
-  isInitSelectedStyle?: boolean;
-}>`
+export const SmallStyledDayDatepickerWrapper = styled.div`
   display: flex;
   width: 280px;
   height: 100%;
@@ -136,11 +134,6 @@ export const SmallStyledDayDatepickerWrapper = styled.div<{
         font-weight: ${fontWeightTokens.fontWeightRegular};
       }
 
-      &--keyboard-selected {
-        background-color: ${({ isInitSelectedStyle }) => (isInitSelectedStyle ? colorTokens.neutral0 : 'transparent')};
-        color: ${colorTokens.neutral700};
-      }
-
       &--in-selecting-range:not(
           .react-datepicker__day--in-range,
           .react-datepicker__month-text--in-range,
@@ -254,9 +247,7 @@ export const SmallStyledDayDatepickerWrapper = styled.div<{
   }
 `;
 
-export const StyledDayDatepicker = styled.div<{
-  isInitSelectedStyle?: boolean;
-}>`
+export const StyledDayDatepicker = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
@@ -344,7 +335,7 @@ export const StyledDayDatepicker = styled.div<{
     }
 
     &__day-name {
-      width: 2.5rem;
+      width: 40px;
       margin: 0 10px 0 0;
       color: ${colorTokens.navy300};
       font-size: 13px;
@@ -357,9 +348,9 @@ export const StyledDayDatepicker = styled.div<{
     }
 
     &__day {
-      width: 2.5rem;
-      height: 2.5rem;
-      line-height: 2.5rem;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
       margin: 0 10px 0 0;
       color: ${colorTokens.neutral700};
       border-radius: 50%;
@@ -373,11 +364,6 @@ export const StyledDayDatepicker = styled.div<{
       &--today {
         color: ${colorTokens.primary300};
         font-weight: ${fontWeightTokens.fontWeightRegular};
-      }
-
-      &--keyboard-selected {
-        background-color: ${({ isInitSelectedStyle }) => (isInitSelectedStyle ? colorTokens.neutral0 : 'transparent')};
-        color: ${colorTokens.neutral700};
       }
 
       &--in-selecting-range:not(

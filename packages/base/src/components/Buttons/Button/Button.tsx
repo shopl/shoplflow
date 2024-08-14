@@ -2,10 +2,10 @@ import type { ComponentPropsWithRef, ElementType } from 'react';
 import { forwardRef } from 'react';
 import { Text } from '../../Text';
 import { StyledButton } from './Button.styled';
-import type { ButtonComponent, ButtonProps } from './Button.types';
+import type { ButtonProps } from './Button.types';
 import LoadingSpinner from '../../../assets/LoadingSpinner';
 
-const Button: ButtonComponent = forwardRef(
+const Button = forwardRef(
   <T extends ElementType = 'button'>(
     {
       styleVar = 'PRIMARY',

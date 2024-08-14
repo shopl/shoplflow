@@ -8,7 +8,7 @@ export type WeekDatepickerProps = {
    */
   currentYear?: number;
   /**
-   * 현재 ㄴ선택된 주별
+   * 현재 선택된 주별
    */
   selectWeeks: string;
 

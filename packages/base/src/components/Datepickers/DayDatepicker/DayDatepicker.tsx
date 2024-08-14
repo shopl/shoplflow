@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import React from 'react';
 import { SmallStyledDayDatepickerWrapper, StyledDayDatepicker } from './DayDatepicker.styled';
 import type { DayDatepickerProps } from './DayDatepicker.types';
 import DatePicker from 'react-datepicker';
@@ -7,15 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import MonthStepper from '../stepper/MonthStepper';
 
-const DayDatepicker = ({
-  isInitSelectedStyle,
-  sizeVar,
-  children,
-  startYear,
-  endYear,
-  calendarType,
-  ...rest
-}: DayDatepickerProps) => {
+const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
 
   /**
@@ -23,11 +13,11 @@ const DayDatepicker = ({
    */
   if (calendarType.type === 'range') {
     return (
-      <Wrapper isInitSelectedStyle={isInitSelectedStyle} data-shoplflow={'DayDatepicker'}>
+      <Wrapper data-shoplflow={'DayDatepicker'}>
         <div className='dayDatepickerArea'>
           <DatePicker
             inline
-            renderCustomHeader={(props) => <MonthStepper startYear={startYear} endYear={endYear} {...props} />}
+            renderCustomHeader={(props) => <MonthStepper {...props} />}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
@@ -48,11 +38,11 @@ const DayDatepicker = ({
    */
   if (calendarType.type === 'multiple') {
     return (
-      <Wrapper isInitSelectedStyle={isInitSelectedStyle} data-shoplflow={'DayDatepicker'}>
+      <Wrapper data-shoplflow={'DayDatepicker'}>
         <div className='dayDatepickerArea'>
           <DatePicker
             inline
-            renderCustomHeader={(props) => <MonthStepper startYear={startYear} endYear={endYear} {...props} />}
+            renderCustomHeader={(props) => <MonthStepper {...props} />}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
@@ -68,11 +58,11 @@ const DayDatepicker = ({
   }
 
   return (
-    <Wrapper isInitSelectedStyle={isInitSelectedStyle} data-shoplflow={'DayDatepicker'}>
+    <Wrapper data-shoplflow={'DayDatepicker'}>
       <div className='dayDatepickerArea'>
         <DatePicker
           inline
-          renderCustomHeader={(props) => <MonthStepper startYear={startYear} endYear={endYear} {...props} />}
+          renderCustomHeader={(props) => <MonthStepper {...props} />}
           renderDayContents={(dayOfMonth) => {
             return <div className='each-day'>{dayOfMonth}</div>;
           }}
