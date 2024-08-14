@@ -1,7 +1,7 @@
 import type { $Values } from '@shoplflow/utils';
 import type { DatePickerProps, ReactDatePickerCustomHeaderProps } from 'react-datepicker';
 import type { Locale } from 'react-datepicker/dist/date_utils';
-import type { SizeVariantProps } from 'src/utils/type/ComponentProps';
+import type { SizeVariantProps } from '../../../utils/type/ComponentProps';
 
 export const DayDatepickerSizeVariants = {
   S: 'S',
