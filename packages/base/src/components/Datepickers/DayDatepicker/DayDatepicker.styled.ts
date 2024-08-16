@@ -69,10 +69,10 @@ export const SmallStyledDayDatepickerWrapper = styled.div`
         color: ${colorTokens.primary300};
       }
 
-      &--keyboard-selected {
+      /* &--keyboard-selected {
         background-color: ${colorTokens.primary100};
         color: ${colorTokens.neutral700};
-      }
+      } */
 
       &--selected:not(.react-datepicker--keyboard-selected) {
         background-color: ${colorTokens.primary300};
@@ -310,10 +310,10 @@ export const StyledDayDatepicker = styled.div`
         color: ${colorTokens.primary300};
       }
 
-      &--keyboard-selected {
+      /* &--keyboard-selected {
         background-color: ${colorTokens.primary100};
         color: ${colorTokens.neutral700};
-      }
+      } */
 
       &--selected:not(.react-datepicker--keyboard-selected) {
         background-color: ${colorTokens.primary300};
