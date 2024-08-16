@@ -69,10 +69,10 @@ export const SmallStyledDayDatepickerWrapper = styled.div`
         color: ${colorTokens.primary300};
       }
 
-      /* &--keyboard-selected {
+      &--keyboard-selected {
         background-color: ${colorTokens.primary100};
         color: ${colorTokens.neutral700};
-      } */
+      }
 
       &--selected:not(.react-datepicker--keyboard-selected) {
         background-color: ${colorTokens.primary300};
@@ -124,6 +124,10 @@ export const SmallStyledDayDatepickerWrapper = styled.div`
       font-size: 14px;
       font-weight: 500;
       margin: 0px;
+
+      &--keyboard-selected {
+        background-color: transparent;
+      }
 
       &--outside-month {
         color: ${colorTokens.neutral400};
@@ -310,10 +314,10 @@ export const StyledDayDatepicker = styled.div`
         color: ${colorTokens.primary300};
       }
 
-      /* &--keyboard-selected {
+      &--keyboard-selected {
         background-color: ${colorTokens.primary100};
         color: ${colorTokens.neutral700};
-      } */
+      }
 
       &--selected:not(.react-datepicker--keyboard-selected) {
         background-color: ${colorTokens.primary300};
@@ -356,6 +360,10 @@ export const StyledDayDatepicker = styled.div`
       border-radius: 50%;
       font-size: 14px;
       font-weight: 500;
+
+      &--keyboard-selected {
+        background-color: transparent;
+      }
 
       &--outside-month {
         color: ${colorTokens.neutral400};
