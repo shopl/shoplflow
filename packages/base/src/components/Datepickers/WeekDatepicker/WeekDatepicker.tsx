@@ -66,9 +66,6 @@ const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, 
         return;
       }
 
-      // 파라미터로 들어온 year + week의 조합이 기존 선택된 날짜보다 이후거나 같은 경우
-      setSelectedStartWeekAndYear([selectedWeek, selectedYear]);
-
       if (selectedWeek !== week || selectedYear !== year) {
         setSelectedEndWeekAndYear([week, year]);
       }
@@ -115,7 +112,7 @@ const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, 
           const isReady = isStart && Boolean(selectedEndWeekAndYear);
           let inRange = false;
 
-          let disbled = false;
+          let disabled = false;
 
           if (minDate) {
             const minWeek = getISOWeek(minDate);
@@ -123,13 +120,13 @@ const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, 
 
             // 최소 년도보다 현재 년도가 작음
             if (currentYear < minYear) {
-              disbled = true;
+              disabled = true;
             }
 
             // 최소년도와 현재년도가 같고, 주차가 작거나 같음
             if (currentYear === minYear) {
               if (currentWeek <= minWeek) {
-                disbled = true;
+                disabled = true;
               }
             }
           }
@@ -140,13 +137,13 @@ const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, 
 
             // 최대년도보다 현재 년도가 큼
             if (currentYear > maxYear) {
-              disbled = true;
+              disabled = true;
             }
 
             // 최대년도와 현재년도가 같고, 주차가 크거나 같음
             if (currentYear === maxYear) {
               if (currentWeek >= maxWeek) {
-                disbled = true;
+                disabled = true;
               }
             }
           }
@@ -189,16 +186,16 @@ const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, 
               isStart={isStart}
               isReady={isReady}
               isEnd={isEnd}
-              disbled={disbled}
+              disabled={disabled}
               key={index}
               onClick={() => {
-                if (disbled) {
+                if (disabled) {
                   return;
                 }
                 clickWeek(Number(each), currentDate.getFullYear());
               }}
             >
-              <EachWeekDate inRange={inRange} isStart={isStart} isEnd={isEnd} disbled={disbled}>
+              <EachWeekDate inRange={inRange} isStart={isStart} isEnd={isEnd} disabled={disabled}>
                 W{each}
               </EachWeekDate>
             </EachWeekArea>

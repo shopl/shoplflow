@@ -31,7 +31,11 @@ export type WeekDatepickerProps = {
    * 최대 선택 가능 날짜
    */
   maxDate?: Date;
-};
-export interface WeekDatepickerOptionProps {}
 
-export type WeekDatepickerStyleType = { inRange: boolean; isStart: boolean; isEnd: boolean; disbled: boolean };
+  /**
+   * 하나의 주만 선택 여부
+   */
+  onlySingleWeek?: boolean;
+};
+
+export type WeekDatepickerStyleType = { inRange: boolean; isStart: boolean; isEnd: boolean; disabled: boolean };

@@ -5,7 +5,7 @@ import type { WeekDatepickerStyleType } from './WeekDatepicker.types';
 
 // 날짜 동그라미 영역 스타일
 export const getEachDateStyle = (props: WeekDatepickerStyleType) => {
-  const { inRange, isStart, isEnd, disbled } = props;
+  const { inRange, isStart, isEnd, disabled } = props;
 
   if (isStart || isEnd) {
     return css`
@@ -21,7 +21,7 @@ export const getEachDateStyle = (props: WeekDatepickerStyleType) => {
     `;
   }
 
-  if (disbled) {
+  if (disabled) {
     return css`
       color: ${colorTokens.neutral400};
       cursor: not-allowed;
@@ -37,7 +37,7 @@ export const getEachDateStyle = (props: WeekDatepickerStyleType) => {
 
 // 날짜 래퍼 영역
 export const getEachWeekAreaStyle = (props: WeekDatepickerStyleType & { isReady: boolean }) => {
-  const { inRange, isStart, isEnd, isReady, disbled } = props;
+  const { inRange, isStart, isEnd, isReady, disabled } = props;
 
   if (isStart && isReady) {
     return css`
@@ -74,7 +74,7 @@ export const getEachWeekAreaStyle = (props: WeekDatepickerStyleType & { isReady:
     `;
   }
 
-  if (disbled) {
+  if (disabled) {
     return css`
       cursor: not-allowed;
     `;

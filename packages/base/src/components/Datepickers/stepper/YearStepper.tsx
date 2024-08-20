@@ -8,6 +8,7 @@ import { Popper } from '../../Popper';
 import { flip, shift } from '@floating-ui/core';
 import YearSelect from './YearSelect';
 import { useMemo } from 'react';
+import { Text } from '../../Text';
 
 type YearStepperProps = Pick<
   DayDatepickerHeaderCustomProps,
@@ -65,10 +66,9 @@ const YearStepper = ({
               setIsOpen((prev) => !prev);
             }}
           >
-            {`${date.getFullYear()}`}
+            <Text typography='title1_700'>{`${date.getFullYear()}`}</Text>
           </Month>
         </Popper.Trigger>
-        {/* {isOpen && ( */}
         <Popper.Portal>
           <YearSelect
             className='react-datepicker-year-stepper'
@@ -82,7 +82,6 @@ const YearStepper = ({
             activeValue={date.getFullYear()}
           />
         </Popper.Portal>
-        {/* )} */}
       </Popper>
 
       <IconButton
