@@ -6,7 +6,14 @@ import YearStepper from '../stepper/YearStepper';
 import { getEndOfISOWeek, getStartOfISOWeek, getWeeksInYear } from '../helpers';
 import { getISOWeek, getISOWeekYear } from 'date-fns';
 
-const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, maxDate }: WeekDatepickerProps) => {
+const WeekDatepicker = ({
+  handleWeekClick,
+  initStartDate,
+  initEndDate,
+  minDate,
+  maxDate,
+  onlySingleWeek,
+}: WeekDatepickerProps) => {
   const year = initStartDate?.getFullYear() || new Date().getFullYear();
   const [currentDate, setCurrentDate] = useState(new Date(year, 5, 5));
 
@@ -33,8 +40,8 @@ const WeekDatepicker = ({ handleWeekClick, initStartDate, initEndDate, minDate, 
   }, [selectedYear]);
 
   const clickWeek = (week: number, year: number) => {
-    // 시작일 선택 or 시작 + 마지막 주이 이미 선택되어 있을 경우
-    if (!selectedStartWeekAndYear || (selectedStartWeekAndYear && selectedEndWeekAndYear)) {
+    // onlySingleWeek or 시작일 선택 or 시작 + 마지막 주이 이미 선택되어 있을 경우
+    if (onlySingleWeek || !selectedStartWeekAndYear || (selectedStartWeekAndYear && selectedEndWeekAndYear)) {
       setSelectedStartWeekAndYear([week, year]);
       setSelectedEndWeekAndYear(null);
       handleWeekClick({

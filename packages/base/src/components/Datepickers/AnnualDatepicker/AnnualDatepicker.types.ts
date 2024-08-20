@@ -1,2 +1,6 @@
-export interface AnnualDatepickerProps extends AnnualDatepickerOptionProps {}
-export interface AnnualDatepickerOptionProps {}
+export type AnnualDatepickerProps = {
+  currentYear?: number;
+  startYear?: number;
+  endYear?: number;
+  handleYearClick: (year: number) => void;
+};

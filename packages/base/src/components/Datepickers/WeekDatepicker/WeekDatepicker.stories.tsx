@@ -50,3 +50,23 @@ export const MinMaxWeek: StoryFn<WeekDatepickerProps> = (args) => {
     </Stack>
   );
 };
+
+export const OnlySingle: StoryFn<WeekDatepickerProps> = (args) => {
+  const [selectedWeek, setSelectedWeek] = useState<WeekClickDateInfo | null>(null);
+
+  return (
+    <Stack>
+      <WeekDatepicker
+        {...args}
+        initStartDate={new Date()}
+        onlySingleWeek
+        handleWeekClick={(date) => {
+          setSelectedWeek(date);
+        }}
+      />
+      <Stack.Vertical align='center' spacing='spacing08' width='100%'>
+        <div>{JSON.stringify(selectedWeek)}</div>
+      </Stack.Vertical>
+    </Stack>
+  );
+};
