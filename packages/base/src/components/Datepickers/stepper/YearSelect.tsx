@@ -17,6 +17,7 @@ export type YearSelectProps = {
 const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHeight, onClick }: YearSelectProps) => {
   const optionListRef = useRef<Array<null | HTMLLIElement>>([]);
   const parentRef = useRef<HTMLUListElement>(null);
+
   const [isAllRefMounted, setIsAllRefMounted] = useState<boolean>(false);
   const [isOpened, setIsOpened] = useOutsideClick({
     selector: `.${parentClassName}` || '',
@@ -39,9 +40,6 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
 
     if (heightPerOption * (selectedOptionIndex + 1) >= parentHeight) {
       parentRef.current?.scrollTo({ top: heightPerOption * selectedOptionIndex });
-      // optionListRef.current[selectedOptionIndex]?.scrollIntoView({
-      //   behavior: 'smooth',
-      // });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAllRefMounted, activeValue, maxHeight]);

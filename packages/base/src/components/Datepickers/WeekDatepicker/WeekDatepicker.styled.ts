@@ -1,33 +1,114 @@
 import styled from '@emotion/styled';
-import { colorTokens, fontWeightTokens } from '../../../styles';
+import { colorTokens } from '../../../styles';
+import { css } from '@emotion/react';
+import type { WeekDatepickerStyleType } from './WeekDatepicker.types';
 
-export const Container = styled.div<{ modalHeight?: string }>`
-  display: flex;
-  width: 100%;
-  height: ${({ modalHeight }) => (modalHeight === '656px' ? `calc(${modalHeight} - 184px)` : '100%')};
-  flex-direction: column;
-`;
+// 날짜 동그라미 영역 스타일
+export const getEachDateStyle = (props: WeekDatepickerStyleType) => {
+  const { inRange, isStart, isEnd, disbled } = props;
+
+  if (isStart || isEnd) {
+    return css`
+      background-color: ${colorTokens.primary300};
+      color: ${colorTokens.neutral0};
+    `;
+  }
+
+  if (inRange) {
+    return css`
+      background-color: ${colorTokens.primary100};
+      color: ${colorTokens.neutral700};
+    `;
+  }
+
+  if (disbled) {
+    return css`
+      color: ${colorTokens.neutral400};
+      cursor: not-allowed;
+    `;
+  }
+
+  return css`
+    &:hover {
+      background-color: ${colorTokens.primary100};
+    }
+  `;
+};
+
+// 날짜 래퍼 영역
+export const getEachWeekAreaStyle = (props: WeekDatepickerStyleType & { isReady: boolean }) => {
+  const { inRange, isStart, isEnd, isReady, disbled } = props;
+
+  if (isStart && isReady) {
+    return css`
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 24px;
+        background: ${colorTokens.primary100};
+      }
+    `;
+  }
+
+  if (isEnd && !isStart) {
+    return css`
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 24px;
+        background: ${colorTokens.primary100};
+      }
+    `;
+  }
+
+  if (inRange) {
+    return css`
+      background-color: ${colorTokens.primary100};
+      color: ${colorTokens.neutral700};
+    `;
+  }
+
+  if (disbled) {
+    return css`
+      cursor: not-allowed;
+    `;
+  }
+};
 
 export const WeekContainer = styled.div`
-  flex: 1;
-  padding: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 400px;
+  gap: 16px;
+  padding: 16px 24px 24px;
 `;
 
 export const WeekArea = styled.div`
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(7, 48px);
+  grid-template-columns: repeat(7, 1fr);
   grid-row-gap: 8px;
-  /* overflow-y: auto; */
-  margin: 16px 0;
-  padding: 0 32px;
-  height: 272px;
-
-  & > div:nth-of-type(6n) {
-    margin-right: 0;
-  }
 `;
 
-export const EachWeekArea = styled.div`
+export const EachWeekArea = styled.div<WeekDatepickerStyleType & { isReady: boolean }>`
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  ${(props) => getEachWeekAreaStyle(props)}
+`;
+
+export const EachWeekDate = styled.div<WeekDatepickerStyleType>`
   width: 48px;
   height: 48px;
   text-align: center;
@@ -36,78 +117,8 @@ export const EachWeekArea = styled.div`
   padding: 0;
   border-radius: 50%;
   cursor: pointer;
-  &:not(.week-disabled):hover {
-    background-color: ${colorTokens.primary100};
-  }
+  position: absolute;
+  z-index: 10;
 
-  &.week-disabled {
-    cursor: not-allowed;
-    color: ${colorTokens.neutral200};
-  }
-
-  &.week-in-range {
-    background-color: ${colorTokens.primary300};
-    color: ${colorTokens.neutral0};
-    position: relative;
-
-    &:not(.week-range-start):not(.week-range-end):not(.only-week-in-range) {
-      border-radius: 0;
-      background-color: ${colorTokens.primary100};
-      color: ${colorTokens.primary300};
-    }
-
-    &.week-range-start {
-      width: 48px;
-      height: 48px;
-      background-color: #eaf5ff;
-      margin-right: 0;
-      padding-right: 36px;
-      box-sizing: border-box;
-      border: unset;
-      border-radius: 50% 0 0 50%;
-    }
-
-    &.week-range-start:nth-of-type(6n) {
-      width: 48px;
-      height: 48px;
-      background-color: #eaf5ff;
-      margin-right: 0;
-      padding-right: 36px;
-      box-sizing: border-box;
-      border: unset;
-      border-radius: 50% 0 0 50%;
-    }
-
-    &.week-range-end {
-      width: 48px;
-      height: 48px;
-      background-color: #eaf5ff;
-      box-sizing: border-box;
-      border: unset;
-      border-radius: 0 50% 50% 0;
-    }
-
-    &.week-range-start .each-day,
-    &.week-range-end .each-day {
-      width: 48px;
-      height: 48px;
-      background-color: ${colorTokens.primary300};
-      border-radius: 100%;
-    }
-  }
-`;
-
-export const DateContentWrapper = styled.div`
-  display: flex;
-  height: 72px;
-  padding: 12px 0;
-  margin-inline: 24px;
-  gap: 8px;
-  flex-direction: column;
-  box-sizing: border-box;
-  font-weight: ${fontWeightTokens.fontWeightBold};
-  text-align: center;
-  line-height: 20px;
-  border-top: 1px solid ${colorTokens.neutral200};
-  color: ${colorTokens.primary300};
+  ${(props) => getEachDateStyle(props)}
 `;

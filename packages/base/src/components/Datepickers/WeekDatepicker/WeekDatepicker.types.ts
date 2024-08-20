@@ -1,46 +1,37 @@
+export type WeekClickDateInfo = {
+  startWeek?: number;
+  startYear?: number;
+  startDate?: Date;
+  endWeek?: number;
+  endYear?: number;
+  endDate?: Date;
+};
+
 export type WeekDatepickerProps = {
   /**
-   * 현재 연도의 Date 밸류
+   * 선택된 시작 날짜
    */
-  yearForWeek: Date;
+  initStartDate?: Date;
   /**
-   * 연도의 숫자
+   * 선택된 마지막 날짜
    */
-  currentYear?: number;
-  /**
-   * 현재 선택된 주별
-   */
-  selectWeeks: string;
+  initEndDate?: Date;
 
-  weekArray: string[];
   /**
-   * @param year
-   * 상단 연도 변경하기
+   * @param dateInfo
    */
-  handleChangeYear: (year: Date) => void;
-  /**
-   * @param week
-   */
-  handleWeekClick: (week: string) => void;
-  /**
-   * @param week
-   * 클릭여부 함수를 위한 작업
-   */
-  rangeCheckDom: (week: string) => string;
+  handleWeekClick: (dateInfo: WeekClickDateInfo) => void;
 
-  handlePreviousYearDisabled: boolean;
-  handleNextYearDisabled: boolean;
   /**
-   * 이전 연도로 가는 함수
+   * 최소 선택 가능 날짜
    */
-  handlePreviousYearOfWeekTab: () => void;
-  /**
-   * 다음 연도로 가는 함수
-   */
-  handleNextYearOfWeekTab: () => void;
-  modalHeight?: string;
+  minDate?: Date;
 
-  minDate: Date | null;
-  maxDate: Date | null;
+  /**
+   * 최대 선택 가능 날짜
+   */
+  maxDate?: Date;
 };
 export interface WeekDatepickerOptionProps {}
+
+export type WeekDatepickerStyleType = { inRange: boolean; isStart: boolean; isEnd: boolean; disbled: boolean };
