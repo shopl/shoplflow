@@ -43,7 +43,6 @@ export const SmallStyledDayDatepickerWrapper = styled.div`
       padding: 0;
       font-size: 14px;
       font-style: normal;
-      font-weight: 700;
       line-height: 18px;
     }
 

@@ -31,6 +31,7 @@ export type DayDatepickerProps = Pick<
   | 'calendarStartDay'
 > &
   DayDatepickerOptionProps;
+
 export type DayDatepickerOptionProps = {
   /**
    * 캘린더 타입

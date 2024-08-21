@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { colorTokens } from '../../../styles';
+import { colorTokens, fontWeightTokens } from '../../../styles';
 
 export const Header = styled.div`
   display: flex;
@@ -38,6 +38,10 @@ export const DatePickerWrapper = styled.div`
     &__month-wrapper {
       column-gap: 8px;
       margin-top: 8px;
+    }
+
+    &__month-text--today {
+      font-weight: ${fontWeightTokens.fontWeightRegular};
     }
   }
 `;

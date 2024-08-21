@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { EachMonthArea, EachMonthDate, MonthArea, MonthContainer } from './MonthDatepicker.styled';
 import type { MonthDatepickerProps } from './MonthDatepicker.types';
 import YearStepper from '../stepper/YearStepper';
-import { endOfMonth, startOfMonth } from 'date-fns';
+import { differenceInCalendarMonths, endOfMonth, startOfMonth } from 'date-fns';
 
 const MonthDatepicker = ({
   handleMonthClick,
@@ -40,17 +40,23 @@ const MonthDatepicker = ({
       handleMonthClick({
         startDate: startOfMonth(new Date(year, month - 1)),
         endDate: endOfMonth(new Date(year, month - 1)),
+        selectedMonthRange: 1,
       });
       return;
     }
 
     // 시작일 선택 or 시작 + 마지막 월이 이미 선택되어 있을 경우
     if (!selectedStartMonthAndYear || (selectedStartMonthAndYear && selectedEndMonthAndYear)) {
+      const startDate = startOfMonth(new Date(year, month - 1));
+      const endDate = endOfMonth(new Date(year, month - 1));
+
       setSelectedStartMonthAndYear([month, year]);
       setSelectedEndMonthAndYear(null);
       handleMonthClick({
-        startDate: startOfMonth(new Date(year, month - 1)),
-        endDate: endOfMonth(new Date(year, month - 1)),
+        startDate,
+        endDate,
+        // 현재 달 까지 포함
+        selectedMonthRange: differenceInCalendarMonths(endDate, startDate) + 1,
       });
       return;
     }
@@ -60,11 +66,16 @@ const MonthDatepicker = ({
       // 년도가 이전 or 년도 동일 + 달이 이전
       const [selectedMonth, selectedYear] = selectedStartMonthAndYear;
       if (selectedYear > year || (selectedYear === year && selectedMonth > month)) {
+        const startDate = startOfMonth(new Date(year, month - 1));
+        const endDate = endOfMonth(new Date(selectedYear, selectedMonth - 1));
+
         setSelectedStartMonthAndYear([month, year]);
         setSelectedEndMonthAndYear([selectedMonth, selectedYear]);
         handleMonthClick({
-          startDate: startOfMonth(new Date(year, month - 1)),
-          endDate: endOfMonth(new Date(selectedYear, selectedMonth - 1)),
+          startDate,
+          endDate,
+          // 현재 달 까지 포함
+          selectedMonthRange: differenceInCalendarMonths(endDate, startDate) + 1,
         });
         return;
       }
@@ -72,10 +83,14 @@ const MonthDatepicker = ({
       if (selectedMonth !== month || selectedYear !== year) {
         setSelectedEndMonthAndYear([month, year]);
       }
+      const startDate = startOfMonth(new Date(selectedYear, selectedMonth - 1));
+      const endDate = endOfMonth(new Date(year, month - 1));
 
       handleMonthClick({
-        startDate: startOfMonth(new Date(selectedYear, selectedMonth - 1)),
-        endDate: endOfMonth(new Date(year, month - 1)),
+        startDate,
+        endDate,
+        // 현재 달까지 포함
+        selectedMonthRange: differenceInCalendarMonths(endDate, startDate) + 1,
       });
     }
   };

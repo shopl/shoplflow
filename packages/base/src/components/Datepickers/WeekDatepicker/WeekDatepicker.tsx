@@ -4,7 +4,7 @@ import { WeekArea, WeekContainer, EachWeekArea, EachWeekDate } from './WeekDatep
 import type { WeekDatepickerProps } from './WeekDatepicker.types';
 import YearStepper from '../stepper/YearStepper';
 import { getEndOfISOWeek, getStartOfISOWeek, getWeeksInYear } from '../helpers';
-import { getISOWeek, getISOWeekYear } from 'date-fns';
+import { differenceInCalendarISOWeeks, getISOWeek, getISOWeekYear } from 'date-fns';
 
 const WeekDatepicker = ({
   handleWeekClick,
@@ -51,24 +51,31 @@ const WeekDatepicker = ({
         endYear: year,
         endWeek: week,
         endDate: getEndOfISOWeek(week, year),
+        selectedWeeksRange: 1,
       });
       return;
     }
 
     // 날짜가 하나만 선택
     if (selectedStartWeekAndYear && !selectedEndWeekAndYear) {
-      // 년도가 이전 or 년도 동일 주가 이전
       const [selectedWeek, selectedYear] = selectedStartWeekAndYear;
+
+      // 선택된 년도가 이전 or 년도 동일 주가 이전
       if (selectedYear > year || (selectedYear === year && selectedWeek > week)) {
+        const startDate = getStartOfISOWeek(week, year);
+        const endDate = getEndOfISOWeek(selectedWeek, selectedYear);
+
         setSelectedStartWeekAndYear([week, year]);
         setSelectedEndWeekAndYear([selectedWeek, selectedYear]);
         handleWeekClick({
           startYear: year,
           startWeek: week,
-          startDate: getStartOfISOWeek(week, year),
+          startDate: startDate,
           endYear: selectedYear,
           endWeek: selectedWeek,
-          endDate: getEndOfISOWeek(selectedWeek, selectedYear),
+          endDate: endDate,
+          // 현재 주까지 포함
+          selectedWeeksRange: differenceInCalendarISOWeeks(endDate, startDate) + 1,
         });
         return;
       }
@@ -77,13 +84,17 @@ const WeekDatepicker = ({
         setSelectedEndWeekAndYear([week, year]);
       }
 
+      const startDate = getStartOfISOWeek(selectedWeek, selectedYear);
+      const endDate = getEndOfISOWeek(week, year);
       handleWeekClick({
         startYear: selectedYear,
         startWeek: selectedWeek,
-        startDate: getStartOfISOWeek(selectedWeek, selectedYear),
+        startDate: startDate,
         endYear: year,
         endWeek: week,
-        endDate: getEndOfISOWeek(week, year),
+        endDate: endDate,
+        // 현재 주까지 포함
+        selectedWeeksRange: differenceInCalendarISOWeeks(endDate, startDate) + 1,
       });
     }
   };
@@ -121,6 +132,7 @@ const WeekDatepicker = ({
 
           let disabled = false;
 
+          // 최소 날짜가 있는 경우
           if (minDate) {
             const minWeek = getISOWeek(minDate);
             const minYear = getISOWeekYear(minDate);
@@ -138,6 +150,7 @@ const WeekDatepicker = ({
             }
           }
 
+          // 최대 날짜가 있는 경우
           if (maxDate) {
             const maxWeek = getISOWeek(maxDate);
             const maxYear = getISOWeekYear(maxDate);

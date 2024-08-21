@@ -8,7 +8,7 @@ import { ko } from 'date-fns/locale';
 import { Button } from '../../Buttons';
 
 export default {
-  title: 'COMPONENTS/DayDatepicker',
+  title: 'COMPONENTS/Datepickers/DayDatepicker',
   component: DayDatepicker,
 };
 

@@ -1,6 +1,7 @@
 export type MonthClickDateInfo = {
   startDate?: Date;
   endDate?: Date;
+  selectedMonthRange: number;
 };
 
 export type MonthDatepickerProps = {

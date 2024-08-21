@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import type { StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
@@ -7,7 +7,7 @@ import type { WeekClickDateInfo, WeekDatepickerProps } from './WeekDatepicker.ty
 import { Text } from '../../Text';
 
 export default {
-  title: 'COMPONENTS/WeekDatepicker',
+  title: 'COMPONENTS/Datepickers/WeekDatepicker',
   component: WeekDatepicker,
 };
 

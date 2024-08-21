@@ -5,6 +5,10 @@ export type WeekClickDateInfo = {
   endWeek?: number;
   endYear?: number;
   endDate?: Date;
+  /**
+   * 선택된 주차 범위 (ex: 4주)
+   */
+  selectedWeeksRange: number;
 };
 
 export type WeekDatepickerProps = {

@@ -7,8 +7,9 @@ import { IconButton } from '../../Buttons';
 import { useOutsideClick } from '@shoplflow/utils';
 import YearStepper from './YearStepper';
 import { ko } from 'date-fns/locale';
+import { Text } from '../../Text';
 
-type MonthStepperProps = DayDatepickerHeaderCustomProps;
+type MonthStepperProps = DayDatepickerHeaderCustomProps & { sizeVar: 'S' | 'M' };
 
 const MonthStepper = ({
   date,
@@ -20,13 +21,14 @@ const MonthStepper = ({
   minDate,
   maxDate,
   locale,
+  sizeVar,
   prevMonthButtonDisabled,
   nextMonthButtonDisabled,
 }: MonthStepperProps) => {
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: '.react-datepicker__header',
-    // useOutsideScroll: true,
   });
+
   return (
     <Header className='calendarHeader'>
       <IconButton styleVar='GHOST' sizeVar='S' onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
@@ -38,7 +40,9 @@ const MonthStepper = ({
           setIsOpen((prev) => !prev);
         }}
       >
-        {`${date.getFullYear()}.${monthDate.getMonth() + 1}`}
+        <Text typography={sizeVar === 'M' ? 'title1_700' : 'body1_700'}>{`${date.getFullYear()}.${
+          monthDate.getMonth() + 1
+        }`}</Text>
       </Month>
       {isOpen && (
         <DatePickerWrapper>

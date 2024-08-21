@@ -6,7 +6,7 @@ import AnnualDatepicker from './AnnualDatepicker';
 import type { AnnualDatepickerProps } from './AnnualDatepicker.types';
 
 export default {
-  title: 'COMPONENTS/AnnualDatepicker',
+  title: 'COMPONENTS/Datepickers/AnnualDatepicker',
   component: AnnualDatepicker,
 };
 

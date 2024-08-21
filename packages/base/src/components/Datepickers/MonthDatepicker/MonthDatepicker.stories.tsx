@@ -7,7 +7,7 @@ import type { MonthClickDateInfo, MonthDatepickerProps } from './MonthDatepicker
 import { Text } from '../../Text';
 
 export default {
-  title: 'COMPONENTS/MonthDatepicker',
+  title: 'COMPONENTS/Datepickers/MonthDatepicker',
   component: MonthDatepicker,
 };
 
@@ -34,6 +34,7 @@ export const Playground: StoryFn<MonthDatepickerProps> = (args) => {
               }-${selectedDateInfo.endDate.getDate()}`
             : ''}
         </Text>
+        <Text>selected range :{selectedDateInfo?.selectedMonthRange}</Text>
       </Stack.Vertical>
     </Stack>
   );
@@ -67,6 +68,7 @@ export const OnlySingle: StoryFn<MonthDatepickerProps> = (args) => {
               }-${selectedDateInfo.endDate.getDate()}`
             : ''}
         </Text>
+        <Text>selected range :{selectedDateInfo?.selectedMonthRange}</Text>
       </Stack.Vertical>
     </Stack>
   );
@@ -99,6 +101,7 @@ export const MinMax: StoryFn<MonthDatepickerProps> = (args) => {
               }-${selectedDateInfo.endDate.getDate()}`
             : ''}
         </Text>
+        <Text>selected range :{selectedDateInfo?.selectedMonthRange}</Text>
       </Stack.Vertical>
     </Stack>
   );

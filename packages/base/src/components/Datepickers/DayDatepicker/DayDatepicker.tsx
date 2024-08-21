@@ -17,7 +17,7 @@ const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepick
         <div className='dayDatepickerArea'>
           <DatePicker
             inline
-            renderCustomHeader={(props) => <MonthStepper {...props} />}
+            renderCustomHeader={(props) => <MonthStepper sizeVar={sizeVar || 'M'} {...props} />}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
@@ -42,7 +42,7 @@ const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepick
         <div className='dayDatepickerArea'>
           <DatePicker
             inline
-            renderCustomHeader={(props) => <MonthStepper {...props} />}
+            renderCustomHeader={(props) => <MonthStepper sizeVar={sizeVar || 'M'} {...props} />}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
@@ -62,7 +62,7 @@ const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepick
       <div className='dayDatepickerArea'>
         <DatePicker
           inline
-          renderCustomHeader={(props) => <MonthStepper {...props} />}
+          renderCustomHeader={(props) => <MonthStepper sizeVar={sizeVar || 'M'} {...props} />}
           renderDayContents={(dayOfMonth) => {
             return <div className='each-day'>{dayOfMonth}</div>;
           }}
