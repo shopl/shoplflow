@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.8
+
+### Patch Changes
+
+- [#359](https://github.com/shopl/shoplflow/pull/359) [`0bc40e9`](https://github.com/shopl/shoplflow/commit/0bc40e9e6ad7769097a49ea2a8c08405495449f0) Thanks [@velo-kim](https://github.com/velo-kim)! - Input 업데이트 blur event 핸들링을 변경했어요
+
 ## 0.31.7
 
 ### Patch Changes
