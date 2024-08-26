@@ -110,7 +110,10 @@
     "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
     "@shoplflow/utils": "workspace:^",
+    "date-fns": "^3.6.0",
     "framer-motion": "10.12.6",
-    "react-custom-scrollbars-2": "^4.5.0"
+    "react-custom-scrollbars-2": "^4.5.0",
+    "react-datepicker": "^7.3.0",
+    "simplebar-react": "^3.2.6"
   }
 }

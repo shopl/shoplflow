@@ -29,10 +29,10 @@ const getStyleByStyleVar = (styleVar?: ButtonStyleVariantType, color?: ColorToke
         throw new Error('Button의 SOLID 속성은 color를 필수로 받습니다.');
       }
       return css`
-        border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+        border: 1px solid ${colorTokens[getNextColor(color)]};
         background-color: ${colorTokens[color]};
         :hover {
-          background-color: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+          background-color: ${colorTokens[getNextColor(color)]};
         }
       `;
     case 'GHOST':

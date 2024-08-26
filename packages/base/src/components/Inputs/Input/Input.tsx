@@ -73,6 +73,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       onBlur && onBlur(event);
       setIsFocused(false);
     };
+
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
       onChange && onChange(event);
 

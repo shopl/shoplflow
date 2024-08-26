@@ -57,12 +57,12 @@ const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: Color
         throw new Error('IconButton의 SOLID 속성은 color를 필수로 받습니다.');
       }
       return css`
-        border: 1px solid ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+        border: 1px solid ${colorTokens[getNextColor(color)]};
         background: ${colorTokens[color]};
 
         ${isHovered &&
         css`
-          background: ${colorTokens[getNextColor(color) as keyof ColorTokens]};
+          background: ${colorTokens[getNextColor(color)]};
         `}
       `;
     case 'GHOST':
