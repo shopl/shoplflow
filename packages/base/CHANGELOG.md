@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.31.9
+
+### Patch Changes
+
+- [#358](https://github.com/shopl/shoplflow/pull/358) [`cda60b1`](https://github.com/shopl/shoplflow/commit/cda60b1d773c7152a2aacb6b9db02f83ce56a3fa) Thanks [@velo-kim](https://github.com/velo-kim)! - ToggleButton을 업데이트 했어요
+
+- [#358](https://github.com/shopl/shoplflow/pull/358) [`cda60b1`](https://github.com/shopl/shoplflow/commit/cda60b1d773c7152a2aacb6b9db02f83ce56a3fa) Thanks [@velo-kim](https://github.com/velo-kim)! - DayDatepicker 컴포넌트를 만들었어요
+
+- Updated dependencies [[`cda60b1`](https://github.com/shopl/shoplflow/commit/cda60b1d773c7152a2aacb6b9db02f83ce56a3fa)]:
+  - @shoplflow/utils@0.6.4
+
 ## 0.31.8
 
 ### Patch Changes
