@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.10
+
+### Patch Changes
+
+- [#362](https://github.com/shopl/shoplflow/pull/362) [`010ee0e`](https://github.com/shopl/shoplflow/commit/010ee0efc148a4d7f43a9b5a636b2f129081662b) Thanks [@velo-kim](https://github.com/velo-kim)! - DayDatepicker의 type을 변경했어요
+
 ## 0.31.9
 
 ### Patch Changes
