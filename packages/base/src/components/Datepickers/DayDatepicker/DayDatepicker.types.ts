@@ -37,6 +37,9 @@ export type DayDatepickerOptionProps = {
    * 캘린더 타입
    */
   calendarType: DayCalendarType;
+  minDate?: Date;
+  maxDate?: Date;
+  locale?: Locale;
 } & SizeVariantProps<DayDatepickerSizeVariantType>;
 
 export type DayDatepickerHeaderCustomProps = ReactDatePickerCustomHeaderProps & {
