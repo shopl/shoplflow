@@ -28,7 +28,7 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const height = Math.min(parentRef.current?.scrollHeight ?? 0, Number(maxHeight));
+  const height = Math.min(parentRef.current?.scrollHeight ?? 0, Number(parseInt(maxHeight || '0')));
 
   useEffect(() => {
     if (!isAllRefMounted || !activeValue || !maxHeight) {
