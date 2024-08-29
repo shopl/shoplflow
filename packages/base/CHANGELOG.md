@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.14
+
+### Patch Changes
+
+- [#370](https://github.com/shopl/shoplflow/pull/370) [`1eff60b`](https://github.com/shopl/shoplflow/commit/1eff60bf1f2b291635d0ce8a9d6ed7fb74d8d8bb) Thanks [@velo-kim](https://github.com/velo-kim)! - YearSelect의 height를 동적으로 지정하게 변경했어요
+
 ## 0.31.13
 
 ### Patch Changes
