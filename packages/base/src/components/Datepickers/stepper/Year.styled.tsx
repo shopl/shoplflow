@@ -1,34 +1,6 @@
 import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
 
-export const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 32px;
-  gap: 8px;
-`;
-
-export const Month = styled.p`
-  font-size: 18px;
-  color: ${colorTokens.neutral700};
-  cursor: pointer;
-`;
-
-export const DatePickerWrapper = styled.div`
-  position: absolute;
-  z-index: 10;
-  top: 3rem;
-
-  border: 1px solid #eaeaea;
-  box-shadow: 0px 10px 30px 0px rgba(51, 51, 51, 0.2);
-  .react-datepicker {
-    border: 1px solid #eaeaea;
-  }
-`;
-
 // Select styles
 export const Container = styled.div`
   border-radius: 4px;
@@ -39,6 +11,7 @@ export const Container = styled.div`
   position: relative;
   top: 0px;
   left: 0px;
+  width: 60px;
 
   & .simplebar-placeholder {
     height: 0px !important;
@@ -71,8 +44,14 @@ export const OptionListItem = styled.li<{ isActive?: boolean }>`
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
-  text-align: left;
-  white-space: break-spaces;
+  text-align: center;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
   cursor: pointer;
   border-radius: 4px;
   background-color: ${({ isActive }) => isActive && colorTokens.primary300};

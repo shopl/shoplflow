@@ -28,6 +28,8 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const height = Math.min(parentRef.current?.scrollHeight ?? 0, Number(maxHeight));
+
   useEffect(() => {
     if (!isAllRefMounted || !activeValue || !maxHeight) {
       return;
@@ -46,10 +48,11 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
 
   return (
     <Container className={`${parentClassName} ${className}`}>
-      <OptionList ref={parentRef} maxHeight={maxHeight}>
+      <OptionList ref={parentRef} maxHeight={maxHeight} style={{ height }}>
         <SimpleBarReact
           style={{
             maxHeight,
+            height,
           }}
           placeholder={undefined}
         >
