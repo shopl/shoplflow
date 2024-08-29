@@ -65,7 +65,7 @@ const MonthStepper = ({
               maxDate={maxDate}
               locale={locale ?? ko}
               showMonthYearPicker
-              renderCustomHeader={(props) => <YearStepper {...props} />}
+              renderCustomHeader={(props) => <YearStepper {...props} minDate={minDate} maxDate={maxDate} />}
               showFourColumnMonthYearPicker
             />
           </div>

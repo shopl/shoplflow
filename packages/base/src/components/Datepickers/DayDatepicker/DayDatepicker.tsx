@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import MonthStepper from '../stepper/MonthStepper';
 
-const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepickerProps) => {
+const DayDatepicker = ({ sizeVar, children, minDate, maxDate, calendarType, ...rest }: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
 
   /**
@@ -17,11 +17,15 @@ const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepick
         <div className='dayDatepickerArea'>
           <DatePicker
             inline
-            renderCustomHeader={(props) => <MonthStepper sizeVar={sizeVar || 'M'} {...props} />}
+            renderCustomHeader={(props) => (
+              <MonthStepper sizeVar={sizeVar || 'M'} {...props} minDate={minDate} maxDate={maxDate} />
+            )}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
             {...rest}
+            minDate={minDate}
+            maxDate={maxDate}
             selectsRange
             selectsMultiple={undefined}
             onChange={calendarType.handleDayRangeChange}
@@ -42,11 +46,15 @@ const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepick
         <div className='dayDatepickerArea'>
           <DatePicker
             inline
-            renderCustomHeader={(props) => <MonthStepper sizeVar={sizeVar || 'M'} {...props} />}
+            renderCustomHeader={(props) => (
+              <MonthStepper sizeVar={sizeVar || 'M'} {...props} minDate={minDate} maxDate={maxDate} />
+            )}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
             {...rest}
+            minDate={minDate}
+            maxDate={maxDate}
             selectsMultiple
             onChange={calendarType.handleMutlipleDaysChange}
           >
@@ -62,11 +70,15 @@ const DayDatepicker = ({ sizeVar, children, calendarType, ...rest }: DayDatepick
       <div className='dayDatepickerArea'>
         <DatePicker
           inline
-          renderCustomHeader={(props) => <MonthStepper sizeVar={sizeVar || 'M'} {...props} />}
+          renderCustomHeader={(props) => (
+            <MonthStepper sizeVar={sizeVar || 'M'} {...props} minDate={minDate} maxDate={maxDate} />
+          )}
           renderDayContents={(dayOfMonth) => {
             return <div className='each-day'>{dayOfMonth}</div>;
           }}
           {...rest}
+          minDate={minDate}
+          maxDate={maxDate}
           onChange={calendarType.handleDayChange}
         >
           {children}
