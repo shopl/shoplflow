@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.15
+
+### Patch Changes
+
+- [#372](https://github.com/shopl/shoplflow/pull/372) [`0874b52`](https://github.com/shopl/shoplflow/commit/0874b5211ffd6f14ddc7a400a8f831fecca868db) Thanks [@velo-kim](https://github.com/velo-kim)! - DayDatepicker MonthStepper의 locale 값을 Datepicker와 매핑해주었어요
+
 ## 0.31.14
 
 ### Patch Changes
