@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.11
+
+### Patch Changes
+
+- [#364](https://github.com/shopl/shoplflow/pull/364) [`a74b49a`](https://github.com/shopl/shoplflow/commit/a74b49aa94064caab86952e222b248467a6d01a8) Thanks [@velo-kim](https://github.com/velo-kim)! - DayDatepicker minDate, minDate 버그를 수정했어요
+
 ## 0.31.10
 
 ### Patch Changes
