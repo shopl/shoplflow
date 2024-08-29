@@ -1,11 +1,11 @@
-import type { ComponentPropsWithRef, ElementType, MouseEvent } from 'react';
+import type { ComponentPropsWithRef, MouseEvent } from 'react';
 import { useState, forwardRef } from 'react';
 import { StyledIconButton } from './IconButton.styled';
 import type { IconButtonProps } from './IconButton.types';
 import LoadingSpinner from '../../../assets/LoadingSpinner';
 
 const IconButton = forwardRef(
-  <T extends ElementType = 'button'>(
+  (
     {
       styleVar,
       sizeVar,
@@ -16,8 +16,8 @@ const IconButton = forwardRef(
       onMouseLeave,
       isLoading = false,
       ...rest
-    }: IconButtonProps<T>,
-    ref: ComponentPropsWithRef<T>['ref'],
+    }: IconButtonProps<'button'>,
+    ref: ComponentPropsWithRef<'button'>['ref'],
   ) => {
     const [isHovered, setIsHovered] = useState(false);
     const handleOnMouseEnter = (e: MouseEvent<HTMLButtonElement>) => {

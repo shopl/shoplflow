@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, ElementType } from 'react';
+import type { ComponentPropsWithRef } from 'react';
 import { forwardRef } from 'react';
 import { Text } from '../../Text';
 import { StyledButton } from './Button.styled';
@@ -6,7 +6,7 @@ import type { ButtonProps } from './Button.types';
 import LoadingSpinner from '../../../assets/LoadingSpinner';
 
 const Button = forwardRef(
-  <T extends ElementType = 'button'>(
+  (
     {
       styleVar = 'PRIMARY',
       sizeVar = 'M',
@@ -19,8 +19,8 @@ const Button = forwardRef(
       isLoading = false,
       lineClamp,
       ...rest
-    }: ButtonProps<T>,
-    ref: ComponentPropsWithRef<T>['ref'],
+    }: ButtonProps<'button'>,
+    ref: ComponentPropsWithRef<'button'>['ref'],
   ) => {
     return (
       <StyledButton

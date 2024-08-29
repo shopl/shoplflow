@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, ReactElement } from 'react';
+import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType } from 'react';
 import type { PolymorphicComponentProps } from '../../../types/PolymorphicComponentProps';
 import type { $Values } from '@shoplflow/utils';
 import type {
@@ -9,6 +9,7 @@ import type {
   ChildrenProps,
   LoadingProps,
 } from '../../../utils/type/ComponentProps';
+import type React from 'react';
 
 export const IconButtonSizeVariants = {
   S: 'S',
@@ -43,4 +44,4 @@ export type IconButtonComponent = <T extends ElementType = 'button'>(
   props: IconButtonProps<T> & {
     ref?: ComponentPropsWithRef<T>['ref'];
   },
-) => ReactElement | null;
+) => React.ReactElement | null;
