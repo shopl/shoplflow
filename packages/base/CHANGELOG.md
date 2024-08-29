@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.12
+
+### Patch Changes
+
+- [#366](https://github.com/shopl/shoplflow/pull/366) [`2795daf`](https://github.com/shopl/shoplflow/commit/2795daf456f92d86373a80e6a31ce94ac20e281c) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: IconButton, Button Props 추론 안되던 이슈를 수정했어요
+
 ## 0.31.11
 
 ### Patch Changes
