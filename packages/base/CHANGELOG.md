@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.13
+
+### Patch Changes
+
+- [#368](https://github.com/shopl/shoplflow/pull/368) [`a1c4979`](https://github.com/shopl/shoplflow/commit/a1c497958dd20e9f74f3c703cf58bc5343aefbca) Thanks [@velo-kim](https://github.com/velo-kim)! - YearSelect의 스타일을 변경했어요
+
 ## 0.31.12
 
 ### Patch Changes
