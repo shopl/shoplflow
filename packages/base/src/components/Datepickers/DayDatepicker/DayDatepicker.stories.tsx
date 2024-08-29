@@ -4,7 +4,7 @@ import type { StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
 import DayDatepicker from './DayDatepicker';
 import type { DayDatepickerProps, DayDatepickerSizeVariantType } from './DayDatepicker.types';
-import { ko } from 'date-fns/locale';
+import { ko, ja } from 'date-fns/locale';
 import { Button } from '../../Buttons';
 
 export default {
@@ -52,8 +52,8 @@ export const Playground: StoryFn<DayDatepickerProps> = () => {
             }
           },
         }}
-        minDate={new Date('1999-01-01')}
-        maxDate={new Date('2030-01-01')}
+        minDate={new Date('2024-01-01')}
+        maxDate={new Date('2029-01-01')}
         sizeVar={sizeVar}
         locale={ko}
       />
@@ -132,7 +132,7 @@ export const Range: StoryFn<DayDatepickerProps> = () => {
         startDate={startDate || undefined}
         endDate={endDate || undefined}
         sizeVar={'M'}
-        locale={ko}
+        locale={ja}
       />
     </Stack>
   );
