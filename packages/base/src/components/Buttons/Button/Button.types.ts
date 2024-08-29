@@ -1,5 +1,5 @@
 import type { $Values } from '@shoplflow/utils';
-import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, ReactElement } from 'react';
+import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType } from 'react';
 import type { PolymorphicComponentProps } from '../../../types/PolymorphicComponentProps';
 import type {
   ColorTokenProps,
@@ -49,4 +49,4 @@ export type ButtonComponent = <T extends ElementType = 'button'>(
   props: ButtonProps<T> & {
     ref?: ComponentPropsWithRef<T>['ref'];
   },
-) => ReactElement | null;
+) => React.ReactElement | null;
