@@ -52,6 +52,8 @@ export const Playground: StoryFn<DayDatepickerProps> = () => {
             }
           },
         }}
+        minDate={new Date('1999-01-01')}
+        maxDate={new Date('2030-01-01')}
         sizeVar={sizeVar}
         locale={ko}
       />
