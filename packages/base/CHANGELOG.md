@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.16
+
+### Patch Changes
+
+- [#374](https://github.com/shopl/shoplflow/pull/374) [`56b76b3`](https://github.com/shopl/shoplflow/commit/56b76b3f91b51de3c1a09eec1cb9acffea0eead5) Thanks [@velo-kim](https://github.com/velo-kim)! - DayDatepicker에 fixedHeight 프롭을 추가했어요
+
 ## 0.31.15
 
 ### Patch Changes
