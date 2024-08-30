@@ -5,7 +5,16 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import MonthStepper from '../stepper/MonthStepper';
 
-const DayDatepicker = ({ sizeVar, children, minDate, maxDate, calendarType, locale, ...rest }: DayDatepickerProps) => {
+const DayDatepicker = ({
+  sizeVar,
+  children,
+  minDate,
+  maxDate,
+  calendarType,
+  locale,
+  fixedHeight = true,
+  ...rest
+}: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
 
   /**
@@ -30,6 +39,7 @@ const DayDatepicker = ({ sizeVar, children, minDate, maxDate, calendarType, loca
             selectsMultiple={undefined}
             locale={locale}
             onChange={calendarType.handleDayRangeChange}
+            fixedHeight={fixedHeight}
           >
             {children}
           </DatePicker>
@@ -59,6 +69,7 @@ const DayDatepicker = ({ sizeVar, children, minDate, maxDate, calendarType, loca
             locale={locale}
             selectsMultiple
             onChange={calendarType.handleMutlipleDaysChange}
+            fixedHeight={fixedHeight}
           >
             {children}
           </DatePicker>
@@ -83,6 +94,7 @@ const DayDatepicker = ({ sizeVar, children, minDate, maxDate, calendarType, loca
           maxDate={maxDate}
           locale={locale}
           onChange={calendarType.handleDayChange}
+          fixedHeight={fixedHeight}
         >
           {children}
         </DatePicker>

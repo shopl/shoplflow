@@ -29,6 +29,7 @@ export type DayDatepickerProps = Pick<
   | 'children'
   | 'excludeDates'
   | 'calendarStartDay'
+  | 'fixedHeight'
 > &
   DayDatepickerOptionProps;
 
