@@ -18,6 +18,7 @@ export const Playground: StoryFn<AnnualDatepickerProps> = (args) => {
       <AnnualDatepicker
         {...args}
         currentYear={selectedYear}
+        disabledYears={[2020, 2030, 2040]}
         handleYearClick={(year) => {
           setSelectedYear(year);
         }}
