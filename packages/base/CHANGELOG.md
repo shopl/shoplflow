@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.17
+
+### Patch Changes
+
+- [#376](https://github.com/shopl/shoplflow/pull/376) [`661a17f`](https://github.com/shopl/shoplflow/commit/661a17f53ea55d660be1b6691e97f7a63120243d) Thanks [@velo-kim](https://github.com/velo-kim)! - AnnualDatepicker에 선택 불가능한 년도를 받을 수 있게 했어요
+
 ## 0.31.16
 
 ### Patch Changes
