@@ -19,14 +19,14 @@ const MonthDatepicker = ({
    * [월, 년도]
    */
   const [selectedStartMonthAndYear, setSelectedStartMonthAndYear] = useState(
-    initStartDate ? [initStartDate.getMonth(), initStartDate.getFullYear()] : null,
+    initStartDate ? [initStartDate.getMonth() + 1, initStartDate.getFullYear()] : null,
   );
 
   /**
    * [월, 년도]
    */
   const [selectedEndMonthAndYear, setSelectedEndMonthAndYear] = useState(
-    initEndDate ? [initEndDate.getMonth(), initEndDate.getFullYear()] : null,
+    initEndDate ? [initEndDate.getMonth() + 1, initEndDate.getFullYear()] : null,
   );
 
   const Months = useMemo(() => {

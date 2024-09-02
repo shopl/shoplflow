@@ -39,7 +39,7 @@ export const getEachDateStyle = (props: MonthDatepickerStyleType) => {
 export const getEachMonthAreaStyle = (props: MonthDatepickerStyleType & { isReady: boolean }) => {
   const { inRange, isStart, isEnd, isReady, disabled } = props;
 
-  if (isStart && isReady) {
+  if (isStart && isReady && !isEnd) {
     return css`
       &::after {
         content: '';
