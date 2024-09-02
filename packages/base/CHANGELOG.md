@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.19
+
+### Patch Changes
+
+- [#380](https://github.com/shopl/shoplflow/pull/380) [`b04c3cd`](https://github.com/shopl/shoplflow/commit/b04c3cd6df22b48d1c05365eb6b7c09e10cbb37c) Thanks [@velo-kim](https://github.com/velo-kim)! - Datepicker Style을 업데이트 했어요
+
 ## 0.31.18
 
 ### Patch Changes
