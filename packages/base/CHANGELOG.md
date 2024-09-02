@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.18
+
+### Patch Changes
+
+- [#378](https://github.com/shopl/shoplflow/pull/378) [`156cf4f`](https://github.com/shopl/shoplflow/commit/156cf4fd85c39cfbf046377f9b3e970eb49743ea) Thanks [@velo-kim](https://github.com/velo-kim)! - MonthDatepicker 선택된 달의 영역을 표시했어요
+
 ## 0.31.17
 
 ### Patch Changes
