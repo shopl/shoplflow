@@ -39,7 +39,11 @@ export const getEachDateStyle = (props: WeekDatepickerStyleType) => {
 export const getEachWeekAreaStyle = (props: WeekDatepickerStyleType & { isReady: boolean }) => {
   const { inRange, isStart, isEnd, isReady, disabled } = props;
 
-  if (isStart && isReady && !isEnd) {
+  if (isStart && isEnd) {
+    return;
+  }
+
+  if (isStart && isReady) {
     return css`
       &::after {
         content: '';
