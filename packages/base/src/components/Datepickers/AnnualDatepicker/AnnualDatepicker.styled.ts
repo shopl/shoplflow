@@ -61,6 +61,7 @@ export const EachYearArea = styled.div<{ isSelected?: boolean; disabled?: boolea
   justify-content: center;
   align-items: center;
   position: relative;
+  user-select: none;
 
   ${(props) => getEachYearAreaStyle(props)}
 `;
@@ -76,6 +77,8 @@ export const EachYearDate = styled.div<{ isSelected?: boolean; disabled?: boolea
   cursor: pointer;
   position: absolute;
   z-index: 10;
+
+  user-select: none;
 
   ${(props) => getEachDateStyle(props)}
 `;
