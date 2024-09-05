@@ -10,7 +10,7 @@ import type { TitleProps } from './Title.types';
 const Title = ({
   title,
   titleTypography = 'body1_700',
-  titleColor,
+  titleColor = 'neutral700',
   description,
   tooltipPlacement = 'right',
   isRequired,
@@ -20,11 +20,18 @@ const Title = ({
   rightSource,
 }: TitleProps) => {
   return (
-    <Stack.Vertical width={'100%'}>
-      <StackContainer direction={'row'} align={'center'} width={'100%'} height={'40px'} justify={'space-between'}>
+    <Stack.Vertical width={'100%'} height={'auto'}>
+      <StackContainer
+        direction={'row'}
+        align={'center'}
+        width={'100%'}
+        minHeight={'40px'}
+        height={'auto'}
+        justify={'space-between'}
+      >
         {/* 제목 영역 */}
         <Stack.Horizontal align='center' spacing={'spacing04'}>
-          <Text color={titleColor} typography={titleTypography}>
+          <Text color={titleColor} typography={titleTypography} style={{ wordWrap: 'break-word' }}>
             {title}
           </Text>
           {isRequired && <Styled.Required>*</Styled.Required>}
@@ -42,7 +49,7 @@ const Title = ({
       </StackContainer>
       {/* 설명 영역 */}
       {description && (
-        <StackContainer height={'30px'}>
+        <StackContainer minHeight={'30px'} height={'auto'}>
           <Text typography={'body1_400'} color={'neutral500'}>
             {description}
           </Text>
