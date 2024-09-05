@@ -20,7 +20,7 @@ const Title = ({
   rightSource,
 }: TitleProps) => {
   return (
-    <Stack.Vertical width={'100%'} height={'auto'}>
+    <Stack.Vertical width={'100%'}>
       <StackContainer
         direction={'row'}
         align={'center'}
