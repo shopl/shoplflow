@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
-import { colorTokens, fontWeightTokens } from '../../styles';
+import { colorTokens, typographyTokens } from '../../styles';
 
-export const Required = styled.div`
+export const Required = styled.span`
   color: ${colorTokens.red300};
-  font-weight: ${fontWeightTokens.fontWeightBold};
-  font-size: 14px;
-  height: 20px;
+  ${typographyTokens.body1_700}
 `;
