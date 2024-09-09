@@ -45,14 +45,14 @@ RequiredIndicator.args = {
 export const WithHelpIcon: StoryFn<TitleProps> = Template.bind({});
 WithHelpIcon.args = {
   title: '도움말 예시',
-  showHelpIcon: true,
+  isShowHelpIcon: true,
   tooltipMessage: '툴팁 메세지입니다.',
 };
 
 export const WithButton: StoryFn<TitleProps> = Template.bind({});
 WithButton.args = {
   title: '추가영역 예시입니다.',
-  showHelpIcon: true,
+  isShowHelpIcon: true,
   tooltipMessage: '버튼외에 다른 아이콘들도 넣을 수 있어요.',
   tooltipPlacement: 'right',
   tooltipOffsetValue: 10,

@@ -39,12 +39,12 @@ export type TitleProps = RightElementProps & {
   /**
    * 도움말 아이콘 표시 여부
    */
-  showHelpIcon?: boolean;
+  isShowHelpIcon?: boolean;
 
   /**
    * 툴팁 사용 여부
    */
-  showTooltip?: boolean;
+  isShowTooltip?: boolean;
 
   /**
    * 툴팁 내용

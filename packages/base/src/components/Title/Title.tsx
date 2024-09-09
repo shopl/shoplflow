@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Styled from './Title.styled';
 import { HelpIcon } from '@shoplflow/shopl-assets';
 import { Stack } from '../Stack';
 import { StackContainer } from '../StackContainer';
@@ -16,7 +15,7 @@ const Title = ({
   description,
   tooltipPlacement = 'right',
   isRequired,
-  showHelpIcon,
+  isShowHelpIcon,
   tooltipOffsetValue,
   tooltipMessage = '',
   rightSource,
@@ -36,13 +35,18 @@ const Title = ({
       >
         {/* 제목 영역 */}
         <Stack.Horizontal align='center' spacing={'spacing04'}>
-          <Text color={titleColor} typography={titleTypography} style={{ wordWrap: 'break-word' }}>
-            {title} {isRequired && <Styled.Required>*</Styled.Required>}
+          <Text color={titleColor} typography={titleTypography} wordBreak={'break-all'}>
+            {title}{' '}
+            {isRequired && (
+              <Text typography='body1_700' color={'red300'}>
+                *
+              </Text>
+            )}
           </Text>
           <Text color={'primary300'} typography={'body1_700'}>
             {total}
           </Text>
-          {showHelpIcon && (
+          {isShowHelpIcon && (
             <Tooltip
               placement={tooltipPlacement}
               offset={tooltipOffsetValue}
@@ -57,7 +61,7 @@ const Title = ({
       {/* 설명 영역 */}
       {description && (
         <StackContainer minHeight={'30px'} height={'auto'}>
-          <Text typography={descriptionTypography} color={'neutral500'}>
+          <Text typography={descriptionTypography} color={'neutral500'} wordBreak={'break-all'}>
             {description}
           </Text>
         </StackContainer>
