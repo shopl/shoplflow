@@ -29,12 +29,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       width,
       borderRadius,
       customNumberInputHeight,
+      onKeyDown,
       ...rest
     },
     ref,
   ) => {
     const [text, setText] = useState('');
     const [isFocused, setIsFocused] = useState(false);
+
     const [type, setType] = useState<HTMLInputTypeAttribute | undefined>(initialType);
     const [isHovered, setIsHovered] = useState(false);
     const uniqueId = useId();
@@ -71,7 +73,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
     const handleOnBlur = (event: FocusEvent<HTMLInputElement>) => {
       onBlur && onBlur(event);
-      setIsFocused(false);
+    };
+
+    const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.code === 'Tab') {
+        setIsFocused(false);
+      }
+      onKeyDown && onKeyDown(event);
     };
 
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -90,6 +98,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       setText(slicedText);
     };
 
+    // event: MouseEvent<HTMLButtonElement>
     const handleOnClear = () => {
       onClear && onClear();
       if (inputRef.current) {
@@ -149,6 +158,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           onFocus={handleOnFocus}
           onBlur={handleOnBlur}
           onChange={handleOnChange}
+          onKeyDown={handleOnKeyDown}
           maxLength={maxLength}
           disabled={disabled}
           value={text}
