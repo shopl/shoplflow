@@ -137,3 +137,23 @@ export const Range: StoryFn<DayDatepickerProps> = () => {
     </Stack>
   );
 };
+
+export const Single: StoryFn<DayDatepickerProps> = () => {
+  const [startDate, setStartDate] = React.useState<Date | null>(new Date());
+
+  return (
+    <Stack width='400px'>
+      <DayDatepicker
+        calendarType={{
+          type: 'single',
+          handleDayChange(date) {
+            setStartDate(date);
+          },
+        }}
+        selected={startDate ?? null}
+        sizeVar={'M'}
+        locale={ja}
+      />
+    </Stack>
+  );
+};
