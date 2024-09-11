@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.31.20
+
+### Patch Changes
+
+- [#382](https://github.com/shopl/shoplflow/pull/382) [`76ffa86`](https://github.com/shopl/shoplflow/commit/76ffa869f62217eb58f0006aa797c8ecde0cc450) Thanks [@ayaan0209](https://github.com/ayaan0209)! - 타이틀 컴포넌트 생성
+
+- [#384](https://github.com/shopl/shoplflow/pull/384) [`79cfc11`](https://github.com/shopl/shoplflow/commit/79cfc11353ee63a3ac1506cd782c7e66884c7546) Thanks [@velo-kim](https://github.com/velo-kim)! - Update: Input의 isFocused 값이 변경되는 이벤트를 Blur > Keydown으로 변경했어요
+
 ## 0.31.19
 
 ### Patch Changes
