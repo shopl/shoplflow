@@ -15,6 +15,7 @@ const IconButton = forwardRef(
       onMouseEnter,
       onMouseLeave,
       isLoading = false,
+      type = 'button',
       ...rest
     }: IconButtonProps<'button'>,
     ref: ComponentPropsWithRef<'button'>['ref'],
@@ -38,6 +39,7 @@ const IconButton = forwardRef(
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         isHovered={isHovered}
+        type={type}
         {...rest}
         data-shoplflow={'IconButton'}
       >
