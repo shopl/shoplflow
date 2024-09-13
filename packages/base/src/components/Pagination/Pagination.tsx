@@ -41,7 +41,7 @@ const Pagination = ({
 
         {showLeftEllipsis && (
           <Ellipsis>
-            <Text>...</Text>
+            <Text typography='body2_700'>...</Text>
           </Ellipsis>
         )}
 
@@ -53,14 +53,14 @@ const Pagination = ({
                 isActive={currentPage === idx + Math.floor(currentPage / pageCount) * pageCount}
                 onClick={() => gotoPage(idx + Math.floor(currentPage / pageCount) * pageCount)}
               >
-                {idx + 1 + Math.floor(currentPage / pageCount) * pageCount}
+                <Text typography='body2_700'>{idx + 1 + Math.floor(currentPage / pageCount) * pageCount}</Text>
               </PageItem>
             ),
         )}
 
         {showRightEllipsis && (
           <Ellipsis>
-            <Text>...</Text>
+            <Text typography='body2_700'>...</Text>
           </Ellipsis>
         )}
 
