@@ -69,6 +69,7 @@ const getRadiusBySize = (size?: TagOptionProps['sizeVar']) => {
 const getColorsByStyleVariant = (
   styleVariant?: TagOptionProps['styleVar'],
   color: TagOptionProps['color'] = 'neutral700',
+  background?: TagOptionProps['color'],
 ) => {
   switch (styleVariant) {
     case 'SOLID':
@@ -78,7 +79,7 @@ const getColorsByStyleVariant = (
       `;
     case 'TINT':
       return css`
-        background: ${colorTokens[getNextColor(color, -2)]};
+        background: ${background ? colorTokens[background] : colorTokens[getNextColor(color, -2)]};
         color: ${colorTokens[color]};
       `;
     case 'LINE':
@@ -102,6 +103,6 @@ export const StyledTag = styled.div<TagOptionProps>`
   cursor: default;
   gap: 2px;
   ${({ sizeVar }) => getTagStyleBySize(sizeVar)};
-  ${({ color, styleVar }) => getColorsByStyleVariant(styleVar, color)};
+  ${({ color, styleVar, background }) => getColorsByStyleVariant(styleVar, color, background)};
   ${({ radius, sizeVar }) => radius && getRadiusBySize(sizeVar)};
 `;
