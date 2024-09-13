@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.32.0
+
+### Minor Changes
+
+- [#387](https://github.com/shopl/shoplflow/pull/387) [`506ad81`](https://github.com/shopl/shoplflow/commit/506ad81fef2b3d11d845d6491c0d0661417af9f6) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Pagination, Tag 스타일 수정 및 Icon 추가
+
+### Patch Changes
+
+- Updated dependencies [[`506ad81`](https://github.com/shopl/shoplflow/commit/506ad81fef2b3d11d845d6491c0d0661417af9f6)]:
+  - @shoplflow/shopl-assets@0.9.0
+
 ## 0.31.21
 
 ### Patch Changes
