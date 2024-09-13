@@ -8,6 +8,7 @@ import IcAbnormalW from './IcAbnormalW';
 import IcAddXsmall from './IcAddXsmall';
 import IcAdd from './IcAdd';
 import IcAdminLarge from './IcAdminLarge';
+import IcAiChatBot from './IcAiChatBot';
 import IcAlbumXlarge from './IcAlbumXlarge';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
 import IcAlert from './IcAlert';
@@ -33,6 +34,7 @@ import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
 import IcCamera from './IcCamera';
 import IcCategory from './IcCategory';
 import IcChannel from './IcChannel';
+import IcChanneltalkMedium from './IcChanneltalkMedium';
 import IcChatActivityMedium from './IcChatActivityMedium';
 import IcChatLarge from './IcChatLarge';
 import IcChattingMedium from './IcChattingMedium';
@@ -44,6 +46,7 @@ import IcCheckbox from './IcCheckbox';
 import IcCloseMedium from './IcCloseMedium';
 import IcCloseSmall from './IcCloseSmall';
 import IcClose from './IcClose';
+import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
@@ -53,6 +56,7 @@ import IcDeadline from './IcDeadline';
 import IcDelete from './IcDelete';
 import IcDesc from './IcDesc';
 import IcDisplayMedium from './IcDisplayMedium';
+import IcDocMedium from './IcDocMedium';
 import IcDownArrowSolidXsmall from './IcDownArrowSolidXsmall';
 import IcDownArrowXsmall from './IcDownArrowXsmall';
 import IcDownArrow from './IcDownArrow';
@@ -266,6 +270,7 @@ const icons = {
   'add-xsmall': IcAddXsmall,
   add: IcAdd,
   'admin-large': IcAdminLarge,
+  'ai-chat-bot': IcAiChatBot,
   'album-xlarge': IcAlbumXlarge,
   'alert-popup-xlarge': IcAlertPopupXlarge,
   alert: IcAlert,
@@ -291,6 +296,7 @@ const icons = {
   camera: IcCamera,
   category: IcCategory,
   channel: IcChannel,
+  'channeltalk-medium': IcChanneltalkMedium,
   'chat-activity-medium': IcChatActivityMedium,
   'chat-large': IcChatLarge,
   'chatting-medium': IcChattingMedium,
@@ -302,6 +308,7 @@ const icons = {
   'close-medium': IcCloseMedium,
   'close-small': IcCloseSmall,
   close: IcClose,
+  'closing-medium': IcClosingMedium,
   'cloud-medium': IcCloudMedium,
   comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
@@ -311,6 +318,7 @@ const icons = {
   delete: IcDelete,
   desc: IcDesc,
   'display-medium': IcDisplayMedium,
+  'doc-medium': IcDocMedium,
   'down-arrow-solid-xsmall': IcDownArrowSolidXsmall,
   'down-arrow-xsmall': IcDownArrowXsmall,
   'down-arrow': IcDownArrow,
@@ -527,6 +535,7 @@ export {
   IcAddXsmall as AddXsmallIcon,
   IcAdd as AddIcon,
   IcAdminLarge as AdminLargeIcon,
+  IcAiChatBot as AiChatBotIcon,
   IcAlbumXlarge as AlbumXlargeIcon,
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
   IcAlert as AlertIcon,
@@ -552,6 +561,7 @@ export {
   IcCamera as CameraIcon,
   IcCategory as CategoryIcon,
   IcChannel as ChannelIcon,
+  IcChanneltalkMedium as ChanneltalkMediumIcon,
   IcChatActivityMedium as ChatActivityMediumIcon,
   IcChatLarge as ChatLargeIcon,
   IcChattingMedium as ChattingMediumIcon,
@@ -563,6 +573,7 @@ export {
   IcCloseMedium as CloseMediumIcon,
   IcCloseSmall as CloseSmallIcon,
   IcClose as CloseIcon,
+  IcClosingMedium as ClosingMediumIcon,
   IcCloudMedium as CloudMediumIcon,
   IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
@@ -572,6 +583,7 @@ export {
   IcDelete as DeleteIcon,
   IcDesc as DescIcon,
   IcDisplayMedium as DisplayMediumIcon,
+  IcDocMedium as DocMediumIcon,
   IcDownArrowSolidXsmall as DownArrowSolidXsmallIcon,
   IcDownArrowXsmall as DownArrowXsmallIcon,
   IcDownArrow as DownArrowIcon,

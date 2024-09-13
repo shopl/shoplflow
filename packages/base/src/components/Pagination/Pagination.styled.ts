@@ -21,9 +21,6 @@ export const PageItem = styled.button<{ isActive: boolean }>`
   height: 32px;
   border-radius: ${borderRadiusTokens.borderRadius08};
   background-color: ${({ isActive }) => (isActive ? colorTokens.neutral300 : colorTokens.neutral0)};
-  font-size: 13px;
-  font-weight: ${({ isActive }) => isActive && '600'};
-  line-height: 2;
   cursor: pointer;
 
   &:hover {

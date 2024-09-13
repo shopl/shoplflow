@@ -5,6 +5,7 @@ import type {
   LeftAndRightElementProps,
   SizeVariantProps,
   StyleVariantProps,
+  BackgroundColorProps,
 } from '../../utils/type/ComponentProps';
 import type { HTMLAttributes } from 'react';
 
@@ -30,6 +31,7 @@ export interface TagOptionProps
     ColorTokenProps,
     LeftAndRightElementProps,
     ChildrenProps,
+    BackgroundColorProps,
     Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
   radius?: boolean;
 }
