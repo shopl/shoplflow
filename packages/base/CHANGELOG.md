@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.31.21
+
+### Patch Changes
+
+- [#385](https://github.com/shopl/shoplflow/pull/385) [`bc39b6b`](https://github.com/shopl/shoplflow/commit/bc39b6b76a54e5b0eb2fb7d953cda32707ef6af1) Thanks [@velo-kim](https://github.com/velo-kim)! - IconButton type의 기본값을 설정했어요
+
 ## 0.31.20
 
 ### Patch Changes
