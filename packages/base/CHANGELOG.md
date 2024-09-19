@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.1
+
+### Patch Changes
+
+- [#389](https://github.com/shopl/shoplflow/pull/389) [`f9cd5c6`](https://github.com/shopl/shoplflow/commit/f9cd5c68f66d145308306904aebe4010e0c203c1) Thanks [@velo-kim](https://github.com/velo-kim)! - Fix: Input의 Blur 이벤트 핸들링 함수를 수정했어요
+
 ## 0.32.0
 
 ### Minor Changes
