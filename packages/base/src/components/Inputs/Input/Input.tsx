@@ -73,6 +73,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
     const handleOnBlur = (event: FocusEvent<HTMLInputElement>) => {
       onBlur && onBlur(event);
+      !isHovered && setIsFocused(false);
     };
 
     const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
