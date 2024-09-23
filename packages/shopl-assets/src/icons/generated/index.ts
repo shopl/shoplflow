@@ -183,6 +183,7 @@ import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
 import IcMore from './IcMore';
 import IcMother from './IcMother';
+import IcMoveSolid from './IcMoveSolid';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
 import IcNoGrade from './IcNoGrade';
@@ -445,6 +446,7 @@ const icons = {
   minus: IcMinus,
   more: IcMore,
   mother: IcMother,
+  'move-solid': IcMoveSolid,
   move: IcMove,
   'movie-01': IcMovie01,
   'no-grade': IcNoGrade,
@@ -710,6 +712,7 @@ export {
   IcMinus as MinusIcon,
   IcMore as MoreIcon,
   IcMother as MotherIcon,
+  IcMoveSolid as MoveSolidIcon,
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
   IcNoGrade as NoGradeIcon,
