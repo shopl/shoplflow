@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.9.1
+
+### Patch Changes
+
+- [#392](https://github.com/shopl/shoplflow/pull/392) [`fe09df3`](https://github.com/shopl/shoplflow/commit/fe09df3497cc0cece49cfe68a2d23ec3674072b5) Thanks [@ayaan0209](https://github.com/ayaan0209)! - 아이콘 추가
+
 ## 0.9.0
 
 ### Minor Changes
