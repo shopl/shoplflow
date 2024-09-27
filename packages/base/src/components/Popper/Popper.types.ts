@@ -7,6 +7,18 @@ import type { ChildrenProps } from '../../utils/type/ComponentProps';
 export interface PopperProps extends PopperOptionProps {}
 export interface PopperOptionProps extends ChildrenProps {
   /**
+   * tooltip open 상태
+   * onOpenChange와 함께 사용해야 합니다!
+   */
+  open?: boolean;
+
+  /**
+   * open 상태 변경 감지 이벤트입니다.
+   * @param open
+   * @returns
+   */
+  onOpenChange?: (open: boolean) => void;
+  /**
    * popper의 offset을 설정합니다.
    *
    * Ref: https://floating-ui.com/docs/offset#offset

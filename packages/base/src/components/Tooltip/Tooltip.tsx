@@ -5,6 +5,8 @@ import { TooltipContent } from './TooltipContent';
 import { flip, shift } from '@floating-ui/core';
 
 const Tooltip = ({
+  open,
+  onOpenChange,
   trigger,
   popper,
   placement = 'bottom-start',
@@ -16,18 +18,25 @@ const Tooltip = ({
   const [isOpen, setIsOpen] = useState(false);
 
   const showHandler = useCallback(() => {
-    setIsOpen(true);
-  }, []);
+    if (open === undefined) {
+      setIsOpen(true);
+    }
+    onOpenChange?.(true);
+  }, [open, onOpenChange]);
 
   const hideHandler = useCallback(() => {
-    setIsOpen(false);
-  }, []);
+    if (open === undefined) {
+      setIsOpen(false);
+    }
+
+    onOpenChange?.(false);
+  }, [open, onOpenChange]);
 
   return (
     <Popper offset={offset} placement={placement} middlewares={[flip(), shift({ padding: 5 })]} {...popperProps}>
       <Popper.Trigger
         ref={triggerRef}
-        isOpen={isOpen}
+        isOpen={isOpen || open}
         onMouseOver={showHandler}
         onMouseLeave={hideHandler}
         onFocus={showHandler}
