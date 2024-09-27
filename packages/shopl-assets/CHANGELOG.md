@@ -1,5 +1,17 @@
 # @shoplflow/shopl-assets
 
+## 0.10.1
+
+### Patch Changes
+
+- [#398](https://github.com/shopl/shoplflow/pull/398) [`d75ac04`](https://github.com/shopl/shoplflow/commit/d75ac049833be602d6ab0e1b3b12b625ed5ef946) Thanks [@velo-kim](https://github.com/velo-kim)! - Fix: LineIcon의 Gtag를 제거했어요
+
+## 0.10.0
+
+### Minor Changes
+
+- [#395](https://github.com/shopl/shoplflow/pull/395) [`ebd2b4d`](https://github.com/shopl/shoplflow/commit/ebd2b4dd4ae0899476a22c28d1742c65e6a0715b) Thanks [@velo-kim](https://github.com/velo-kim)! - HelpLine, AlertLine, AlertLine Icon을 추가했어요
+
 ## 0.9.1
 
 ### Patch Changes

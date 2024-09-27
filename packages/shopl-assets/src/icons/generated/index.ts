@@ -10,6 +10,7 @@ import IcAdd from './IcAdd';
 import IcAdminLarge from './IcAdminLarge';
 import IcAiChatBot from './IcAiChatBot';
 import IcAlbumXlarge from './IcAlbumXlarge';
+import IcAlertLine from './IcAlertLine';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
 import IcAlert from './IcAlert';
 import IcAnnualMedium from './IcAnnualMedium';
@@ -53,6 +54,7 @@ import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcCopy from './IcCopy';
 import IcCustomText from './IcCustomText';
 import IcDeadline from './IcDeadline';
+import IcDeleteLine from './IcDeleteLine';
 import IcDelete from './IcDelete';
 import IcDesc from './IcDesc';
 import IcDisplayMedium from './IcDisplayMedium';
@@ -119,6 +121,7 @@ import IcGraph from './IcGraph';
 import IcGroupMedium from './IcGroupMedium';
 import IcGroupSolidMedium from './IcGroupSolidMedium';
 import IcHelpCenterMedium from './IcHelpCenterMedium';
+import IcHelpLine from './IcHelpLine';
 import IcHelpMedium from './IcHelpMedium';
 import IcHelp from './IcHelp';
 import IcHideMedium from './IcHideMedium';
@@ -273,6 +276,7 @@ const icons = {
   'admin-large': IcAdminLarge,
   'ai-chat-bot': IcAiChatBot,
   'album-xlarge': IcAlbumXlarge,
+  'alert-line': IcAlertLine,
   'alert-popup-xlarge': IcAlertPopupXlarge,
   alert: IcAlert,
   'annual-medium': IcAnnualMedium,
@@ -316,6 +320,7 @@ const icons = {
   copy: IcCopy,
   'custom-text': IcCustomText,
   deadline: IcDeadline,
+  'delete-line': IcDeleteLine,
   delete: IcDelete,
   desc: IcDesc,
   'display-medium': IcDisplayMedium,
@@ -382,6 +387,7 @@ const icons = {
   'group-medium': IcGroupMedium,
   'group-solid-medium': IcGroupSolidMedium,
   'help-center-medium': IcHelpCenterMedium,
+  'help-line': IcHelpLine,
   'help-medium': IcHelpMedium,
   help: IcHelp,
   'hide-medium': IcHideMedium,
@@ -539,6 +545,7 @@ export {
   IcAdminLarge as AdminLargeIcon,
   IcAiChatBot as AiChatBotIcon,
   IcAlbumXlarge as AlbumXlargeIcon,
+  IcAlertLine as AlertLineIcon,
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
   IcAlert as AlertIcon,
   IcAnnualMedium as AnnualMediumIcon,
@@ -582,6 +589,7 @@ export {
   IcCopy as CopyIcon,
   IcCustomText as CustomTextIcon,
   IcDeadline as DeadlineIcon,
+  IcDeleteLine as DeleteLineIcon,
   IcDelete as DeleteIcon,
   IcDesc as DescIcon,
   IcDisplayMedium as DisplayMediumIcon,
@@ -648,6 +656,7 @@ export {
   IcGroupMedium as GroupMediumIcon,
   IcGroupSolidMedium as GroupSolidMediumIcon,
   IcHelpCenterMedium as HelpCenterMediumIcon,
+  IcHelpLine as HelpLineIcon,
   IcHelpMedium as HelpMediumIcon,
   IcHelp as HelpIcon,
   IcHideMedium as HideMediumIcon,
