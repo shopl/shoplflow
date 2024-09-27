@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.10.0
+
+### Minor Changes
+
+- [#395](https://github.com/shopl/shoplflow/pull/395) [`ebd2b4d`](https://github.com/shopl/shoplflow/commit/ebd2b4dd4ae0899476a22c28d1742c65e6a0715b) Thanks [@velo-kim](https://github.com/velo-kim)! - HelpLine, AlertLine, AlertLine Icon을 추가했어요
+
 ## 0.9.1
 
 ### Patch Changes
