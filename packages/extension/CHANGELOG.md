@@ -1,5 +1,14 @@
 # @shoplflow/extension
 
+## 0.0.63
+
+### Patch Changes
+
+- [#400](https://github.com/shopl/shoplflow/pull/400) [`486729d`](https://github.com/shopl/shoplflow/commit/486729d364fbed345ca8633ea9068ef1eafb8a90) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - Tooltip 고정 노출을 위한 open state props를 추가했어요
+
+- Updated dependencies [[`486729d`](https://github.com/shopl/shoplflow/commit/486729d364fbed345ca8633ea9068ef1eafb8a90)]:
+  - @shoplflow/base@0.32.5
+
 ## 0.0.62
 
 ### Patch Changes
