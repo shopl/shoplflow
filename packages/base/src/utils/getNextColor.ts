@@ -28,6 +28,7 @@ export const getNextColor = (color: ColorTokens, step = 1): ColorTokens => {
   const currentIndex = sortColorToken.indexOf(color);
 
   let newIndex = currentIndex;
+
   let stepCount = 0;
 
   while (stepCount < Math.abs(step)) {
@@ -35,11 +36,12 @@ export const getNextColor = (color: ColorTokens, step = 1): ColorTokens => {
     if (newIndex < 0 || newIndex >= sortColorToken.length) {
       break;
     }
-    if (!sortColorToken[newIndex].endsWith('_5') && !sortColorToken[newIndex].includes('50')) {
+    if (!sortColorToken[newIndex].endsWith('_5') && !sortColorToken[newIndex].endsWith('50')) {
       stepCount++;
     }
   }
 
   newIndex = Math.max(0, Math.min(newIndex, sortColorToken.length - 1));
+
   return sortColorToken[newIndex];
 };
