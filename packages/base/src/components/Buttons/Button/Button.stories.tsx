@@ -87,7 +87,7 @@ Solid.args = {
   styleVar: 'SOLID',
   sizeVar: 'M',
   children: '버튼',
-  color: 'ocean100',
+  color: 'neutral300',
   disabled: false,
 };
 
