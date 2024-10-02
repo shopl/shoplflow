@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.6
+
+### Patch Changes
+
+- [#402](https://github.com/shopl/shoplflow/pull/402) [`13b54ee`](https://github.com/shopl/shoplflow/commit/13b54eeb5d726ae4a8785051ac9a0f763e4b0c72) Thanks [@velo-kim](https://github.com/velo-kim)! - Fix: Button Solid color400 일 경우, borderColor 600으로 되는 버그 수정
+
 ## 0.32.5
 
 ### Patch Changes
