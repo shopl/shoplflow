@@ -12,6 +12,7 @@ import type {
 import type React from 'react';
 
 export const IconButtonSizeVariants = {
+  XS: 'XS',
   S: 'S',
   M: 'M',
 } as const;

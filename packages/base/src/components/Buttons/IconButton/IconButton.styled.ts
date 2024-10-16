@@ -22,6 +22,13 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
         height: 32px;
         min-height: 32px;
       `;
+    case 'XS':
+      return css`
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        min-height: 24px;
+      `;
     default:
       return css`
         width: 40px;
