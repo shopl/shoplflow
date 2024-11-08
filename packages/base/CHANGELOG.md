@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.9
+
+### Patch Changes
+
+- [#407](https://github.com/shopl/shoplflow/pull/407) [`4cc0bcd`](https://github.com/shopl/shoplflow/commit/4cc0bcdc8de3d0eb12eb67ee7d889b77886645eb) Thanks [@velo-kim](https://github.com/velo-kim)! - CalloutText의 typography를 paragraph2로 변경했어요
+
 ## 0.32.8
 
 ### Patch Changes
