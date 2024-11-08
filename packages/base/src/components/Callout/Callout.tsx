@@ -15,7 +15,7 @@ const Callout = ({ children, styleVar = 'INFORMATION', ...rest }: CalloutProps) 
 
 const CalloutText = ({ children, ...rest }: TextProps) => {
   return (
-    <Text {...rest} typography={'body3_400'}>
+    <Text {...rest} typography={'paragraph2'}>
       {children}
     </Text>
   );
