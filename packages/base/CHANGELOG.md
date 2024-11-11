@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.10
+
+### Patch Changes
+
+- Text 컴포넌트에 textOverflow 적용 및 Title 컴포넌트 삭제
+
 ## 0.32.9
 
 ### Patch Changes
