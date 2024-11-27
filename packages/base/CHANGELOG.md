@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.10
+
+### Patch Changes
+
+- [#411](https://github.com/shopl/shoplflow/pull/411) [`7320893`](https://github.com/shopl/shoplflow/commit/73208937e2bbb2144149b32e0bf500dd0f5f63b1) Thanks [@Kim-777](https://github.com/Kim-777)! - Datepicker Props를 업데이트 했어요
+
 ## 0.32.9
 
 ### Patch Changes
