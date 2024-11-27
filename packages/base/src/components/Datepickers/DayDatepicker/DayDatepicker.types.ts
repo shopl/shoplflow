@@ -30,6 +30,7 @@ export type DayDatepickerProps = Pick<
   | 'excludeDates'
   | 'calendarStartDay'
   | 'fixedHeight'
+  | 'className'
 > &
   DayDatepickerOptionProps;
 
@@ -47,4 +48,5 @@ export type DayDatepickerHeaderCustomProps = ReactDatePickerCustomHeaderProps & 
   minDate?: Date;
   maxDate?: Date;
   locale?: Locale;
+  className?: string;
 };

@@ -28,7 +28,7 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const height = Math.min(optionList.length * 32 ?? 0, Number(parseInt(maxHeight || '0')));
+  const height = Math.min((optionList?.length ?? 0) * 32, Number(parseInt(maxHeight || '0')));
 
   useEffect(() => {
     if (!isAllRefMounted || !activeValue || !maxHeight) {
@@ -48,13 +48,14 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
 
   return (
     <Container className={`${parentClassName} ${className}`}>
-      <OptionList ref={parentRef} maxHeight={maxHeight} style={{ height }}>
+      <OptionList ref={parentRef} maxHeight={maxHeight} style={{ height }} className={className}>
         <SimpleBarReact
           style={{
             maxHeight,
             height,
           }}
           placeholder={undefined}
+          className={className}
         >
           {optionList?.map((option, index) => (
             <OptionListItem
@@ -68,6 +69,7 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
                 optionListRef.current[index] = el;
                 index + 1 === optionList.length && setIsAllRefMounted(true);
               }}
+              className={className}
             >
               {option.label}
             </OptionListItem>
