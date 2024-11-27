@@ -20,6 +20,7 @@ type YearStepperProps = Pick<
   | 'changeYear'
   | 'minDate'
   | 'maxDate'
+  | 'className'
 >;
 
 const YearStepper = ({
@@ -31,6 +32,7 @@ const YearStepper = ({
   changeYear,
   minDate,
   maxDate,
+  className,
 }: YearStepperProps) => {
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: '.react-datepicker-year-stepper',
@@ -48,7 +50,7 @@ const YearStepper = ({
   );
 
   return (
-    <Header className='calendarHeader'>
+    <Header className={`calendarHeader ${className}`}>
       <IconButton
         styleVar='GHOST'
         sizeVar='S'
@@ -60,7 +62,7 @@ const YearStepper = ({
       <Popper placement='bottom' middlewares={[flip(), shift({ padding: 5 })]}>
         <Popper.Trigger isOpen={isOpen}>
           <Month
-            className='react-datepicker-year-stepper'
+            className={`react-datepicker-year-stepper ${className}`}
             onClick={(event) => {
               event.stopPropagation();
               setIsOpen((prev) => !prev);
@@ -71,13 +73,13 @@ const YearStepper = ({
         </Popper.Trigger>
         <Popper.Portal>
           <YearSelect
-            className='react-datepicker-year-stepper'
+            className={`react-datepicker-year-stepper ${className}`}
             optionList={OptionList}
             onClick={({ value }) => {
               changeYear(value);
               setIsOpen(false);
             }}
-            parentClassName='react-datepicker-year-stepper'
+            parentClassName={`react-datepicker-year-stepper ${className}`}
             maxHeight={`200px`}
             activeValue={date.getFullYear()}
           />

@@ -6,6 +6,7 @@ import DayDatepicker from './DayDatepicker';
 import type { DayDatepickerProps, DayDatepickerSizeVariantType } from './DayDatepicker.types';
 import { ko, ja } from 'date-fns/locale';
 import { Button } from '../../Buttons';
+import { useOutsideClick } from '@shoplflow/utils';
 
 export default {
   title: 'COMPONENTS/Datepickers/DayDatepicker',
@@ -65,27 +66,40 @@ export const SmallSize: StoryFn<DayDatepickerProps> = () => {
   const [startDate, setStartDate] = React.useState<Date | null>(new Date());
   const [endDate, setEndDate] = React.useState<Date | null>(null);
 
+  const [isOpen, setIsOpen] = useOutsideClick({ selector: '.test', useOutsideScroll: true });
+
   return (
     <Stack width='400px'>
-      <DayDatepicker
-        highlightDates={startDate ? [startDate] : undefined}
-        startDate={startDate || undefined}
-        endDate={endDate || undefined}
-        calendarType={{
-          type: 'range',
-          handleDayRangeChange(dates) {
-            if (Array.isArray(dates)) {
-              const [start, end] = dates;
-              setStartDate(start);
-              setEndDate(end);
-            } else {
-              setStartDate(dates);
-            }
-          },
+      <Button
+        className='test'
+        onClick={() => {
+          setIsOpen((prev) => !prev);
         }}
-        sizeVar={'S'}
-        locale={ko}
-      />
+      >
+        DatePicker를 보려면 클릭해주세요~
+      </Button>
+      {isOpen && (
+        <DayDatepicker
+          className='test'
+          highlightDates={startDate ? [startDate] : undefined}
+          startDate={startDate || undefined}
+          endDate={endDate || undefined}
+          calendarType={{
+            type: 'range',
+            handleDayRangeChange(dates) {
+              if (Array.isArray(dates)) {
+                const [start, end] = dates;
+                setStartDate(start);
+                setEndDate(end);
+              } else {
+                setStartDate(dates);
+              }
+            },
+          }}
+          sizeVar={'S'}
+          locale={ko}
+        />
+      )}
     </Stack>
   );
 };

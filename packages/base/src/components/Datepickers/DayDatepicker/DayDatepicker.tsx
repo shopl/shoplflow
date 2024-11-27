@@ -13,6 +13,7 @@ const DayDatepicker = ({
   calendarType,
   locale,
   fixedHeight = true,
+  className,
   ...rest
 }: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
@@ -22,16 +23,24 @@ const DayDatepicker = ({
    */
   if (calendarType.type === 'range') {
     return (
-      <Wrapper data-shoplflow={'DayDatepicker'}>
-        <div className='dayDatepickerArea'>
+      <Wrapper data-shoplflow={'DayDatepicker'} className={className}>
+        <div className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}>
           <DatePicker
             inline
             renderCustomHeader={(props) => (
-              <MonthStepper sizeVar={sizeVar || 'M'} {...props} minDate={minDate} maxDate={maxDate} locale={locale} />
+              <MonthStepper
+                sizeVar={sizeVar || 'M'}
+                {...props}
+                minDate={minDate}
+                maxDate={maxDate}
+                locale={locale}
+                className={className}
+              />
             )}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
             }}
+            className={className}
             {...rest}
             minDate={minDate}
             maxDate={maxDate}
@@ -53,12 +62,19 @@ const DayDatepicker = ({
    */
   if (calendarType.type === 'multiple') {
     return (
-      <Wrapper data-shoplflow={'DayDatepicker'}>
-        <div className='dayDatepickerArea'>
+      <Wrapper data-shoplflow={'DayDatepicker'} className={className}>
+        <div className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}>
           <DatePicker
             inline
             renderCustomHeader={(props) => (
-              <MonthStepper sizeVar={sizeVar || 'M'} {...props} minDate={minDate} maxDate={maxDate} locale={locale} />
+              <MonthStepper
+                sizeVar={sizeVar || 'M'}
+                {...props}
+                minDate={minDate}
+                maxDate={maxDate}
+                locale={locale}
+                className={className}
+              />
             )}
             renderDayContents={(dayOfMonth) => {
               return <div className='each-day'>{dayOfMonth}</div>;
@@ -80,11 +96,18 @@ const DayDatepicker = ({
 
   return (
     <Wrapper data-shoplflow={'DayDatepicker'}>
-      <div className='dayDatepickerArea'>
+      <div className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}>
         <DatePicker
           inline
           renderCustomHeader={(props) => (
-            <MonthStepper sizeVar={sizeVar || 'M'} {...props} minDate={minDate} maxDate={maxDate} locale={locale} />
+            <MonthStepper
+              sizeVar={sizeVar || 'M'}
+              {...props}
+              minDate={minDate}
+              maxDate={maxDate}
+              locale={locale}
+              className={className}
+            />
           )}
           renderDayContents={(dayOfMonth) => {
             return <div className='each-day'>{dayOfMonth}</div>;

@@ -24,18 +24,19 @@ const MonthStepper = ({
   sizeVar,
   prevMonthButtonDisabled,
   nextMonthButtonDisabled,
+  className,
 }: MonthStepperProps) => {
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: '.react-datepicker__header',
   });
 
   return (
-    <Header className='calendarHeader'>
+    <Header className={`calendarHeader ${className}`}>
       <IconButton styleVar='GHOST' sizeVar='S' onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
         <Icon iconSource={LeftArrowIcon} sizeVar='XS' color={prevMonthButtonDisabled ? 'neutral200' : 'neutral700'} />
       </IconButton>
       <Month
-        className='react-datepicker__header'
+        className={`react-datepicker__header ${className}`}
         onClick={() => {
           setIsOpen((prev) => !prev);
         }}
@@ -46,9 +47,9 @@ const MonthStepper = ({
       </Month>
       {isOpen && (
         <DatePickerWrapper>
-          <div className='datepicker-header-wrapper'>
+          <div className={`datepicker-header-wrapper ${className}`}>
             <DatePicker
-              className='datepicker-custom-month'
+              className={`datepicker-custom-month ${className}`}
               onChange={(date) => {
                 if (!date) {
                   return;
@@ -65,7 +66,9 @@ const MonthStepper = ({
               maxDate={maxDate}
               locale={locale ?? ko}
               showMonthYearPicker
-              renderCustomHeader={(props) => <YearStepper {...props} minDate={minDate} maxDate={maxDate} />}
+              renderCustomHeader={(props) => (
+                <YearStepper {...props} minDate={minDate} maxDate={maxDate} className={className} />
+              )}
               showFourColumnMonthYearPicker
             />
           </div>
