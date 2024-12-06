@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Generate by scripts/generate-tokens.js */
 /* eslint-disable */
 *{
