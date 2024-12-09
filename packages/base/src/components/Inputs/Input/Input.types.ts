@@ -27,4 +27,6 @@ export interface InputOptionProps extends ErrorProps, SizeVariantProps<InputSize
   borderRadius?: BorderRadiusTokens;
   customNumberInputHeight?: string;
   onClear?: () => void;
+  gap?: CSSStyleDeclaration['gap'];
+  initIsFocused?: boolean;
 }
