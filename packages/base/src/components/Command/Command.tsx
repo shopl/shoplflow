@@ -1,9 +1,11 @@
 import { Command as CommandPrimitive } from 'cmdk';
 import { cn } from '../../lib/utils';
-import React, { useState } from 'react';
+import React from 'react';
 import { Icon } from '../Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
-import { useMergeRefs } from '@shoplflow/utils';
+import { IconButton } from '../Buttons';
+import { IconWrapper } from './Command.styled';
+import type { CommandInputOptionProps } from './Command.types';
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -22,33 +24,54 @@ Command.displayName = CommandPrimitive.displayName;
 
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
-  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & {
-    onOpen?: () => void;
-    isOpen?: boolean;
-  }
->(({ className, onOpen, ...props }, ref) => {
-  const [inputRef, setInputRef] = useState<HTMLInputElement>();
-
-  const refs = useMergeRefs(ref, (ref) => setInputRef(ref || undefined));
-
+  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & CommandInputOptionProps
+>(({ className, onOpen, isOpen, disabled, sizeVar, ...props }, ref) => {
   return (
     <div
-      className='rounded-lg flex items-center pr-2 pl-3 border-solid border border-sky-500 h-10 gap-1'
-      onClick={() => {
+      className={cn(
+        'rounded-lg flex items-center pr-1 pl-2 border-solid border border-[#DDDDDD] h-10 gap-1 ',
+        !isOpen && !disabled && 'hover:border-neutral-950',
+        disabled && 'bg-[#F9F9F9] border-[#DDDDDD]',
+        isOpen && 'border-[#3299FE]',
+        sizeVar === 'S' ? 'h-7' : 'h-10',
+        className,
+      )}
+      onClick={(event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        if (disabled) {
+          return;
+        }
         onOpen?.();
-        inputRef?.focus();
       }}
     >
       <CommandPrimitive.Input
-        ref={refs}
+        ref={ref}
         className={cn(
           'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 border',
           className,
         )}
+        disabled={disabled}
+        aria-disabled={disabled}
         {...props}
       />
-
-      <Icon sizeVar='XS' color='neutral400' iconSource={DownArrowSolidXsmallIcon} />
+      <IconButton styleVar='GHOST' sizeVar='XS' style={{ cursor: disabled ? 'not-allowed' : 'cursor' }}>
+        <IconWrapper
+          animate={{
+            rotate: isOpen ? 180 : 0,
+            transition: {
+              duration: 0.2,
+            },
+          }}
+        >
+          <Icon
+            sizeVar='XS'
+            color='neutral400'
+            iconSource={DownArrowSolidXsmallIcon}
+            style={{ cursor: disabled ? 'not-allowed' : 'cursor' }}
+          />
+        </IconWrapper>
+      </IconButton>
     </div>
   );
 });
@@ -61,7 +84,7 @@ const CommandList = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
-    className={cn('max-h-[300px] p-1 bg-white overflow-y-auto overflow-x-hidden', className)}
+    className={cn('max-h-[158px] p-1 bg-white overflow-y-auto overflow-x-hidden', className)}
     {...props}
   />
 ));
@@ -71,7 +94,7 @@ CommandList.displayName = CommandPrimitive.List.displayName;
 const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Empty>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
->((props, ref) => <CommandPrimitive.Empty ref={ref} className='py-6 text-center text-sm' {...props} />);
+>((props, ref) => <CommandPrimitive.Empty ref={ref} className='py-0 text-center text-sm invisible' {...props} />);
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
@@ -106,7 +129,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-yellow-300 data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+      "relative flex cursor-default gap-2 select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-[#eaeaea] data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
       className,
     )}
     {...props}

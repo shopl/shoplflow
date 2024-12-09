@@ -1,129 +1,116 @@
 import type { ComboboxProps } from './Combobox.types';
-
+import type { Command as CommandPrimitive } from 'cmdk';
 import { Command, CommandInput, CommandItem, CommandList } from '../Command';
 import { Popper } from '../Popper';
 import { Text } from '../Text';
 import { useOutsideClick } from '@shoplflow/utils';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { offset, shift } from '@floating-ui/core';
+import { HOURS_TO_CHANGES, MINUTES_TO_CHANGE } from './ComboboxLists';
 
-const Combobox = ({ ...rest }: ComboboxProps) => {
+const Combobox = ({ unit, disabled, sizeVar, inputType, ...rest }: ComboboxProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-combobox`).current;
-
+  const inputRef = useRef<React.ElementRef<typeof CommandPrimitive.Input>>(null);
+  const [value, setValue] = useState('');
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: `.${selector}`,
     useOutsideScroll: true,
   });
 
+  const click = () => {
+    if (!isOpen && inputRef) {
+      inputRef.current?.focus();
+    }
+
+    if (isOpen && inputRef) {
+      inputRef.current?.blur();
+    }
+
+    setIsOpen((prev) => !prev);
+  };
+
+  let items = inputType === 'hours' ? HOURS_TO_CHANGES : MINUTES_TO_CHANGE;
+
+  if (unit) {
+    items = items.filter((item) => Number(item.value) % unit === 0);
+  }
+
+  const values = items.map((item) => item.value);
+
   return (
-    <Popper>
-      <Command className={`rounded-lg shadow-md w-[64px] h-10 ${selector}`} {...rest}>
+    <Popper middlewares={[shift({ padding: 4 }), offset(4)]}>
+      <Command className={`rounded-md w-[90px] h-10 ${selector}`} {...rest}>
         <Popper.Trigger isOpen={isOpen} className={selector}>
           <CommandInput
             placeholder='0'
-            onBlur={() => {
-              setIsOpen(false);
-            }}
-            onOpen={() => {
-              setIsOpen((prev) => !prev);
-            }}
+            onOpen={click}
             isOpen={isOpen}
             className={selector}
+            ref={inputRef}
+            value={value}
+            onValueChange={(value) => {
+              setValue(value);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                const currentValue = event.currentTarget.value;
+                if (values.includes(currentValue)) {
+                  setValue(currentValue);
+                  setIsOpen(false);
+                  inputRef.current?.blur();
+                  return;
+                } else {
+                  setValue('');
+                  setIsOpen(false);
+                  inputRef.current?.blur();
+                }
+              }
+            }}
+            onBlur={(event) => {
+              const currentValue = event.currentTarget.value;
+              const target = event.target;
+              const isNested = Boolean(target.closest(`.${selector}`));
+
+              if (isNested) {
+                return;
+              }
+
+              if (values.includes(currentValue)) {
+                setValue(currentValue);
+                setIsOpen(false);
+                return;
+              }
+              setValue('');
+              setIsOpen(false);
+            }}
+            disabled={disabled}
+            sizeVar={sizeVar}
           />
         </Popper.Trigger>
         <Popper.Portal className={selector}>
-          <CommandList className={`w-[64px] ${selector}`}>
-            <CommandItem value='calendar'>
-              <Text typography='caption_400' lineClamp={2}>
-                Calendar
-              </Text>
-            </CommandItem>
-            <CommandItem value='emoji'>
-              <Text typography='caption_400' lineClamp={2}>
-                Search Emoji
-              </Text>
-            </CommandItem>
-            <CommandItem disabled value='calculator'>
-              <Text typography='caption_400' lineClamp={2}>
-                Calculator
-              </Text>
-            </CommandItem>
+          <CommandList className={`w-[90px] rounded-md ${selector} shadow-md `}>
+            {items?.map((item) => (
+              <CommandItem
+                value={item.value}
+                key={item.value}
+                onSelect={(currentValue) => {
+                  if (values.includes(currentValue)) {
+                    setValue(currentValue);
+                    setIsOpen(false);
+                    inputRef.current?.blur();
+                    return;
+                  }
 
-            <CommandItem value='profile'>
-              <Text typography='caption_400' lineClamp={2}>
-                Profile
-              </Text>
-            </CommandItem>
-            <CommandItem value='billing'>
-              <Text typography='caption_400' lineClamp={2}>
-                Billing
-              </Text>
-            </CommandItem>
-            <CommandItem value='settings'>
-              <Text typography='caption_400' lineClamp={2}>
-                Settings
-              </Text>
-            </CommandItem>
-
-            <CommandItem value='test1'>
-              <Text typography='caption_400' lineClamp={2}>
-                test1
-              </Text>
-            </CommandItem>
-            <CommandItem value='test2'>
-              <Text typography='caption_400' lineClamp={2}>
-                test2
-              </Text>
-            </CommandItem>
-            <CommandItem value='test3'>
-              <Text typography='caption_400' lineClamp={2}>
-                test3
-              </Text>
-            </CommandItem>
-            <CommandItem value='test4'>
-              <Text typography='caption_400' lineClamp={2}>
-                test4
-              </Text>
-            </CommandItem>
-            <CommandItem value='test5'>
-              <Text typography='caption_400' lineClamp={2}>
-                test5
-              </Text>
-            </CommandItem>
-            <CommandItem value='test6'>
-              <Text typography='caption_400' lineClamp={2}>
-                test6
-              </Text>
-            </CommandItem>
-            <CommandItem value='test7'>
-              <Text typography='caption_400' lineClamp={2}>
-                test7
-              </Text>
-            </CommandItem>
-            <CommandItem value='test8'>
-              <Text typography='caption_400' lineClamp={2}>
-                test8
-              </Text>
-            </CommandItem>
-            <CommandItem value='test9'>
-              <Text typography='caption_400' lineClamp={2}>
-                test9
-              </Text>
-            </CommandItem>
-            <CommandItem value='test10'>
-              <Text typography='caption_400' lineClamp={2}>
-                test10
-              </Text>
-            </CommandItem>
-            <CommandItem value='test11'>
-              <Text typography='caption_400' lineClamp={2}>
-                test11
-              </Text>
-            </CommandItem>
-            <CommandItem value='test12'>
-              <Text typography='caption_400' lineClamp={2}>
-                test12
-              </Text>
-            </CommandItem>
+                  setValue('');
+                  inputRef.current?.blur();
+                  setIsOpen(false);
+                }}
+              >
+                <Text typography='body1_400' lineClamp={2}>
+                  {item.label}
+                </Text>
+              </CommandItem>
+            ))}
           </CommandList>
         </Popper.Portal>
       </Command>

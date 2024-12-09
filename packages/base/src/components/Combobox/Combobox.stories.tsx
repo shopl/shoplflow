@@ -13,7 +13,60 @@ export default {
 export const Playground: StoryFn<ComboboxProps> = (args) => {
   return (
     <Stack>
-      <Combobox {...args} />
+      <Combobox
+        {...args}
+        inputType='hours'
+
+        // onChange={() => {
+        //   console.log('??');
+        // }}
+      />
+    </Stack>
+  );
+};
+
+export const Minutes: StoryFn<ComboboxProps> = (args) => {
+  return (
+    <Stack width={'200px'}>
+      <Combobox
+        {...args}
+        inputType='minutes'
+        disabled={true}
+        // onChange={() => {
+        //   console.log('??');
+        // }}
+      />
+    </Stack>
+  );
+};
+
+export const SMallSizeHours: StoryFn<ComboboxProps> = (args) => {
+  return (
+    <Stack width={'200px'}>
+      <Combobox
+        {...args}
+        inputType='hours'
+        sizeVar='S'
+        // onChange={() => {
+        //   console.log('??');
+        // }}
+      />
+    </Stack>
+  );
+};
+
+export const Unit5Minutes: StoryFn<ComboboxProps> = (args) => {
+  return (
+    <Stack width={'200px'}>
+      <Combobox
+        {...args}
+        inputType='minutes'
+        sizeVar='M'
+        unit={5}
+        // onChange={() => {
+        //   console.log('??');
+        // }}
+      />
     </Stack>
   );
 };

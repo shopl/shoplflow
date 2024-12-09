@@ -30,6 +30,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       borderRadius,
       customNumberInputHeight,
       onKeyDown,
+      sizeVar = 'M',
+      rightSource,
+      minWidth,
       ...rest
     },
     ref,
@@ -138,6 +141,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       setType(initialType);
     }, [initialType]);
 
+    const height = sizeVar === 'M' ? '40px' : '32px';
+
     return (
       <InputWrapper
         htmlFor={uniqueId}
@@ -149,8 +154,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         onMouseLeave={handleOnMouseLeave}
         type={type}
         width={width}
-        height={'40px'}
-        maxHeight={'40px'}
+        height={height}
+        maxHeight={height}
         data-shoplflow={'input'}
         borderRadius={borderRadius}
         customNumberInputHeight={customNumberInputHeight}
@@ -166,6 +171,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           type={type}
           id={uniqueId}
           ref={refs}
+          minWidth={minWidth}
           className={'body1_400' + (className ? ` ${className}` : '')}
           {...rest}
         />
@@ -187,6 +193,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             )}
           </RightElementWrapper>
         )}
+
+        {rightSource && <RightElementWrapper>{rightSource}</RightElementWrapper>}
       </InputWrapper>
     );
   },
