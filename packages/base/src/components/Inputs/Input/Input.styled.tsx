@@ -4,11 +4,12 @@ import { css } from '@emotion/react';
 
 export const StyledInput = styled.input<{
   disabled?: boolean;
+  minWidth?: string;
 }>`
   padding: 4px 0 4px 12px;
   background-color: transparent;
   display: flex;
-  min-width: 64px;
+  min-width: ${({ minWidth }) => minWidth || '64px'};
   width: 100%;
   border: none;
   box-sizing: border-box;

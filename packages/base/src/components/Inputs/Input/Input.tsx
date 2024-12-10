@@ -30,12 +30,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       borderRadius,
       customNumberInputHeight,
       onKeyDown,
+      sizeVar = 'M',
+      rightSource,
+      minWidth,
+      gap,
+      initIsFocused,
       ...rest
     },
     ref,
   ) => {
     const [text, setText] = useState('');
-    const [isFocused, setIsFocused] = useState(false);
+    const [isFocused, setIsFocused] = useState(Boolean(initIsFocused));
 
     const [type, setType] = useState<HTMLInputTypeAttribute | undefined>(initialType);
     const [isHovered, setIsHovered] = useState(false);
@@ -138,6 +143,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       setType(initialType);
     }, [initialType]);
 
+    const height = sizeVar === 'M' ? '40px' : '32px';
+
+    useEffect(() => {
+      if (typeof initIsFocused === 'undefined') {
+        return;
+      }
+
+      setIsFocused(initIsFocused);
+    }, [initIsFocused]);
+
     return (
       <InputWrapper
         htmlFor={uniqueId}
@@ -149,11 +164,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         onMouseLeave={handleOnMouseLeave}
         type={type}
         width={width}
-        height={'40px'}
-        maxHeight={'40px'}
+        height={height}
+        maxHeight={height}
         data-shoplflow={'input'}
         borderRadius={borderRadius}
         customNumberInputHeight={customNumberInputHeight}
+        gap={gap}
       >
         <StyledInput
           onFocus={handleOnFocus}
@@ -166,6 +182,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           type={type}
           id={uniqueId}
           ref={refs}
+          minWidth={minWidth}
           className={'body1_400' + (className ? ` ${className}` : '')}
           {...rest}
         />
@@ -187,6 +204,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             )}
           </RightElementWrapper>
         )}
+
+        {rightSource && rightSource}
       </InputWrapper>
     );
   },
