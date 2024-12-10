@@ -1,6 +1,6 @@
 import type { $Values } from '@shoplflow/utils';
 import type { InputHTMLAttributes } from 'react';
-import type { ColorTokenProps, SizeVariantProps } from 'src/utils/type/ComponentProps';
+import type { ColorTokenProps, SizeVariantProps } from '../../../utils/type/ComponentProps';
 
 export const NumberComboboxSizeVariants = {
   S: 'S',
