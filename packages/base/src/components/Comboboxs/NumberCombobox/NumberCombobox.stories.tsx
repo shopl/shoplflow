@@ -79,3 +79,41 @@ export const Minutes: StoryFn<NumberComboboxProps> = (args) => {
     </Stack>
   );
 };
+
+export const InitValue: StoryFn<NumberComboboxProps> = (args) => {
+  const [value, setValue] = useState('20');
+  const [isError, setIsError] = useState(false);
+  return (
+    <Stack>
+      <NumberCombobox
+        {...args}
+        value={value}
+        items={MINUTES}
+        isError={isError}
+        onChange={(event) => {
+          setValue(event.target.value);
+          if (!isError) {
+            return;
+          }
+
+          setIsError(false);
+        }}
+        maxLength={99}
+        onSelect={(value) => {
+          // Check if the input value is a number
+          if (/^\d*$/.test(value)) {
+            const numberValue = parseInt(value, 10);
+
+            if (numberValue <= 60) {
+              setValue(String(numberValue).padStart(2, '0'));
+              return;
+            }
+            setValue('');
+            setIsError(true);
+            alert('60 넘게 입력 불가!');
+          }
+        }}
+      />
+    </Stack>
+  );
+};

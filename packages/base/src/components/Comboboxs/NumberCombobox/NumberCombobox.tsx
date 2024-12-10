@@ -24,7 +24,9 @@ const NumberCombobox = ({
   items,
   isError,
   sizeVar = 'M',
+  placeholder = 'Enter',
   maxLength,
+  className,
   ...rest
 }: NumberComboboxProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-number-combobox`).current;
@@ -35,17 +37,23 @@ const NumberCombobox = ({
     useOutsideScroll: true,
   });
 
+  let _className = `${selector}`;
+
+  if (className) {
+    _className += ` ${className}`;
+  }
+
   return (
-    <StyledNumberCombobox data-shoplflow={'NumberCombobox'} color='shopl300' className={selector}>
+    <StyledNumberCombobox data-shoplflow={'NumberCombobox'} color='shopl300' className={_className}>
       <Popper middlewares={[offset(4)]}>
-        <Popper.Trigger isOpen={isOpen} className={selector}>
+        <Popper.Trigger isOpen={isOpen} className={_className}>
           <Input
             sizeVar={sizeVar}
             width={width}
             ref={inputRef}
             type='number'
             style={{ textAlign: 'left', paddingRight: '0px' }}
-            className={selector}
+            className={_className}
             gap='4px'
             initIsFocused={isOpen}
             value={value}
@@ -54,12 +62,13 @@ const NumberCombobox = ({
               setIsOpen(true);
             }}
             autoCapitalize='off'
+            // Number Input의 height는 따로 관리됩니다
             customNumberInputHeight={sizeVar === 'S' ? '32px' : '40px'}
             isError={isError}
             minWidth={`calc(100% -32px)`}
             autoComplete='off'
             autoCorrect='off'
-            placeholder='입력'
+            placeholder={placeholder}
             disabled={disabled}
             onKeyDown={(event) => {
               // 위, 아래 방향키 조작 X
@@ -81,7 +90,7 @@ const NumberCombobox = ({
             maxLength={maxLength}
             onBlur={(event) => {
               const target = event.target;
-              const isNested = Boolean(target.closest(`.${selector}`));
+              const isNested = Boolean(target.closest(`.${_className}`));
 
               if (isNested) {
                 return;
@@ -93,7 +102,7 @@ const NumberCombobox = ({
                 <IconButton
                   sizeVar='XS'
                   styleVar='GHOST'
-                  className={selector}
+                  className={_className}
                   onClick={() => {
                     if (disabled) {
                       return;
@@ -125,7 +134,7 @@ const NumberCombobox = ({
         </Popper.Trigger>
         <Popper.Portal>
           <SimpleBar
-            className={selector}
+            className={_className}
             style={{
               height: '128px',
               maxHeight: '128px',
@@ -142,6 +151,9 @@ const NumberCombobox = ({
                 key={item.value}
                 isSelected={value === item.value}
                 onClick={() => {
+                  if (disabled) {
+                    return;
+                  }
                   onSelect?.(item.value);
                   setIsOpen(false);
                 }}
