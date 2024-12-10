@@ -23,6 +23,7 @@ export const StyledText = styled.span<TextOptionProps>`
   ${({ lineClamp }) => lineClamp && setEllipsis(lineClamp)};
   text-align: ${({ textAlign }) => textAlign && textAlign};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
+  text-overflow: ${({ textOverflow }) => textOverflow && textOverflow};
   ${({ textDecorations }) =>
     textDecorations &&
     css`
