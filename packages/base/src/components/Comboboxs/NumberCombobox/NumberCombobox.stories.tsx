@@ -52,22 +52,16 @@ export const Minutes: StoryFn<NumberComboboxProps> = (args) => {
         value={value}
         items={MINUTES}
         isError={isError}
-        onChange={() => {
+        onChange={(event) => {
+          setValue(event.target.value);
           if (!isError) {
             return;
           }
 
           setIsError(false);
         }}
+        maxLength={99}
         onSelect={(value) => {
-          if (value === '0') {
-            return;
-          }
-
-          if (!value) {
-            return;
-          }
-
           // Check if the input value is a number
           if (/^\d*$/.test(value)) {
             const numberValue = parseInt(value, 10);

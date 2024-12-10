@@ -24,6 +24,7 @@ const NumberCombobox = ({
   items,
   isError,
   sizeVar = 'M',
+  maxLength,
   ...rest
 }: NumberComboboxProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-number-combobox`).current;
@@ -77,6 +78,7 @@ const NumberCombobox = ({
                 return;
               }
             }}
+            maxLength={maxLength}
             onBlur={(event) => {
               const target = event.target;
               const isNested = Boolean(target.closest(`.${selector}`));
