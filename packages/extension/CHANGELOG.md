@@ -1,5 +1,12 @@
 # @shoplflow/extension
 
+## 0.0.68
+
+### Patch Changes
+
+- Updated dependencies [[`6fbdfca`](https://github.com/shopl/shoplflow/commit/6fbdfca1e4b43972ef94fccdbc3b009c151df1aa)]:
+  - @shoplflow/base@0.32.11
+
 ## 0.0.67
 
 ### Patch Changes

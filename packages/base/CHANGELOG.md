@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.11
+
+### Patch Changes
+
+- [#410](https://github.com/shopl/shoplflow/pull/410) [`6fbdfca`](https://github.com/shopl/shoplflow/commit/6fbdfca1e4b43972ef94fccdbc3b009c151df1aa) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Title 컴포넌트 제거 및 Text 컴포넌트에 textOverflow 적용
+
 ## 0.32.10
 
 ### Patch Changes
