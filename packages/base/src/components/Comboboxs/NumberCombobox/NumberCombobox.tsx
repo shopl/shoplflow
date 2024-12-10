@@ -1,57 +1,63 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { StyledNumberCombobox, IconWrapper } from './NumberCombobox.styled';
 import type { NumberComboboxProps } from './NumberCombobox.types';
-import { Input } from '../Inputs';
-import { IconButton } from '../Buttons';
-import { Icon } from '../Icon';
+import { Input } from '../../Inputs';
+import { IconButton } from '../../Buttons';
+import { Icon } from '../../Icon';
 import { UpArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
-import { Popper } from '../Popper';
+import { Popper } from '../../Popper';
 import { offset } from '@floating-ui/core';
 import { useOutsideClick } from '@shoplflow/utils';
-import { Menu } from '../Menu';
-import { Text } from '../Text';
-import { Stack } from '../Stack';
-import { colorTokens } from '../../styles';
-import { HOURS, MINUTES } from './NumberComboboxLists';
-import { StackContainer } from '../StackContainer';
+import { Menu } from '../../Menu';
+import { Text } from '../../Text';
+import { colorTokens } from '../../../styles';
+import { StackContainer } from '../../StackContainer';
+import SimpleBar from 'simplebar-react';
 
-const NumberCombobox = ({ inputType, unit, disabled, onSelect, value: _initValue, ...rest }: NumberComboboxProps) => {
+const NumberCombobox = ({
+  disabled,
+  onSelect,
+  onChange,
+  value,
+  width = '90px',
+  onBlur,
+  items,
+  isError,
+  sizeVar = 'M',
+  ...rest
+}: NumberComboboxProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-number-combobox`).current;
   const inputRef = useRef<HTMLInputElement>(null);
-  const [value, setValue] = useState(_initValue || '');
+
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: `.${selector}`,
     useOutsideScroll: true,
   });
 
-  let items = inputType === 'hours' ? HOURS : MINUTES;
-
-  if (unit) {
-    items = items.filter((item) => Number(item.value) % unit === 0);
-  }
-
-  const values = items.map((item) => item.value);
-
   return (
-    <StyledNumberCombobox data-shoplflow={'NumberCombobox'} color='shopl300'>
+    <StyledNumberCombobox data-shoplflow={'NumberCombobox'} color='shopl300' className={selector}>
       <Popper middlewares={[offset(4)]}>
         <Popper.Trigger isOpen={isOpen} className={selector}>
           <Input
-            sizeVar='S'
-            width='90px'
+            sizeVar={sizeVar}
+            width={width}
+            ref={inputRef}
             type='number'
             style={{ textAlign: 'left', paddingRight: '0px' }}
-            minWidth='50px'
             className={selector}
             gap='4px'
             initIsFocused={isOpen}
             value={value}
-            onChange={(event) => {
-              setValue(event.target.value);
-            }}
+            onChange={onChange}
             onFocus={() => {
               setIsOpen(true);
             }}
+            autoCapitalize='off'
+            customNumberInputHeight={sizeVar === 'S' ? '32px' : '40px'}
+            isError={isError}
+            minWidth={`calc(100% -32px)`}
+            autoComplete='off'
+            autoCorrect='off'
             placeholder='입력'
             disabled={disabled}
             onKeyDown={(event) => {
@@ -65,21 +71,20 @@ const NumberCombobox = ({ inputType, unit, disabled, onSelect, value: _initValue
 
               if (event.key === 'Enter') {
                 const currentValue = event.currentTarget.value;
-                if (values.includes(currentValue)) {
-                  setValue(currentValue);
-                  onSelect?.(value);
-                  setIsOpen(false);
-                  inputRef.current?.blur();
-                  return;
-                } else {
-                  setValue('');
-                  onSelect?.('');
-                  inputRef.current?.blur();
-                }
+                onSelect?.(currentValue);
+                setIsOpen(false);
+                inputRef.current?.blur();
+                return;
               }
             }}
-            onBlur={() => {
-              onSelect?.(value);
+            onBlur={(event) => {
+              const target = event.target;
+              const isNested = Boolean(target.closest(`.${selector}`));
+
+              if (isNested) {
+                return;
+              }
+              onBlur?.(event);
             }}
             rightSource={
               <StackContainer.Horizontal padding='0px 4px 0px 0px'>
@@ -93,6 +98,7 @@ const NumberCombobox = ({ inputType, unit, disabled, onSelect, value: _initValue
                     }
                     setIsOpen((prev) => !prev);
                   }}
+                  style={{ cursor: disabled ? 'not-allowed' : 'cursor' }}
                 >
                   <IconWrapper
                     animate={{
@@ -116,42 +122,32 @@ const NumberCombobox = ({ inputType, unit, disabled, onSelect, value: _initValue
           />
         </Popper.Trigger>
         <Popper.Portal>
-          <Stack.Vertical
+          <SimpleBar
             className={selector}
             style={{
-              height: '100%',
+              height: '128px',
               maxHeight: '128px',
-              width: '90px',
+              width,
               padding: '4px',
               filter: 'drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.12))',
               boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.12)',
               borderRadius: '8px',
-              overflowY: 'scroll',
               backgroundColor: colorTokens.neutral0,
             }}
           >
-            <Stack.Vertical
-              className={selector}
-              style={{
-                height: '100%',
-                width: '100%',
-              }}
-            >
-              {items.map((item) => (
-                <Menu
-                  key={item.value}
-                  isSelected={value === item.value}
-                  onClick={() => {
-                    setValue(item.value);
-                    onSelect?.(item.value);
-                    setIsOpen(false);
-                  }}
-                >
-                  <Text typography='body1_400'>{item.label}</Text>
-                </Menu>
-              ))}
-            </Stack.Vertical>
-          </Stack.Vertical>
+            {items.map((item) => (
+              <Menu
+                key={item.value}
+                isSelected={value === item.value}
+                onClick={() => {
+                  onSelect?.(item.value);
+                  setIsOpen(false);
+                }}
+              >
+                <Text typography='body1_400'>{item.label}</Text>
+              </Menu>
+            ))}
+          </SimpleBar>
         </Popper.Portal>
       </Popper>
     </StyledNumberCombobox>

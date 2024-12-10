@@ -27,4 +27,4 @@ export * from './Datepickers';
 export * from './Title';
 export * from './Combobox';
 export * from './Command';
-export * from './NumberCombobox';
+export * from './Comboboxs';

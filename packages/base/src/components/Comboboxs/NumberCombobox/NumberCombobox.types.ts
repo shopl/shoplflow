@@ -11,16 +11,18 @@ export type NumberComboboxSizeVariantType = $Values<typeof NumberComboboxSizeVar
 
 export type NumberComboboxInputType = 'hours' | 'minutes';
 
+export type NumberComboboxErrorType = 'range' | 'unit';
+
 export type NumberComboboxOptionProps = ColorTokenProps & SizeVariantProps<NumberComboboxSizeVariantType>;
 
 export type NumberComboboxProps = NumberComboboxOptionProps &
   Omit<InputHTMLAttributes<HTMLInputElement>, 'width'> & {
-    /**
-     * 시간 단위 (ex: 5 > 0, 5, 10....)
-     */
-    unit?: number;
-    inputType: NumberComboboxInputType;
     disabled?: boolean;
     onSelect?: (value: string | number | readonly string[]) => void;
-    onError?: () => void;
+    width?: string;
+    items: Array<{ label: string; value: string }>;
+    /**
+     * 에러 여부
+     */
+    isError?: boolean;
   };

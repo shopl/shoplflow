@@ -6,6 +6,8 @@ import { Button, ShoplflowProvider } from '../src';
 import './index.css';
 import '../src/styles/global.css';
 import '../src/styles/reset.css';
+// Simplebar css 설정, 사용하는 컨슈머에도 해당 css import가 필요함
+import 'simplebar-react/dist/simplebar.min.css';
 
 import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
 import { withPerformance } from 'storybook-addon-performance';
