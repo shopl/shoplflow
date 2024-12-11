@@ -102,6 +102,7 @@ import IcGradeBadge from './IcGradeBadge';
 import IcGradientAttendance from './IcGradientAttendance';
 import IcGradientBoard from './IcGradientBoard';
 import IcGradientDisplay from './IcGradientDisplay';
+import IcGradientDoc from './IcGradientDoc';
 import IcGradientGps from './IcGradientGps';
 import IcGradientInventory from './IcGradientInventory';
 import IcGradientJp from './IcGradientJp';
@@ -368,6 +369,7 @@ const icons = {
   'gradient-attendance': IcGradientAttendance,
   'gradient-board': IcGradientBoard,
   'gradient-display': IcGradientDisplay,
+  'gradient-doc': IcGradientDoc,
   'gradient-gps': IcGradientGps,
   'gradient-inventory': IcGradientInventory,
   'gradient-jp': IcGradientJp,
@@ -637,6 +639,7 @@ export {
   IcGradientAttendance as GradientAttendanceIcon,
   IcGradientBoard as GradientBoardIcon,
   IcGradientDisplay as GradientDisplayIcon,
+  IcGradientDoc as GradientDocIcon,
   IcGradientGps as GradientGpsIcon,
   IcGradientInventory as GradientInventoryIcon,
   IcGradientJp as GradientJpIcon,
