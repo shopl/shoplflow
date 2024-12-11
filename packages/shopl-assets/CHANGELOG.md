@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.10.2
+
+### Patch Changes
+
+- [#415](https://github.com/shopl/shoplflow/pull/415) [`78efcd5`](https://github.com/shopl/shoplflow/commit/78efcd537ff1b0b5cd3864f33955e6d824b05626) Thanks [@ayaan0209](https://github.com/ayaan0209)! - shopl-assets에 GradientDoc 아이콘 추가
+
 ## 0.10.1
 
 ### Patch Changes
