@@ -15,6 +15,7 @@ const Text = forwardRef(
       color = 'neutral700',
       display = 'inline-block',
       textAlign = 'start',
+      textOverflow,
       className,
       as,
       ...rest
@@ -29,6 +30,7 @@ const Text = forwardRef(
         color={color}
         display={display}
         textAlign={textAlign}
+        textOverflow={textOverflow}
         as={as}
         {...rest}
         data-shoplflow={'Text'}

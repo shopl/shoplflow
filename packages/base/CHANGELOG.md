@@ -1,5 +1,18 @@
 # @shoplflow/base
 
+## 0.32.12
+
+### Patch Changes
+
+- Updated dependencies [[`78efcd5`](https://github.com/shopl/shoplflow/commit/78efcd537ff1b0b5cd3864f33955e6d824b05626)]:
+  - @shoplflow/shopl-assets@0.10.2
+
+## 0.32.11
+
+### Patch Changes
+
+- [#410](https://github.com/shopl/shoplflow/pull/410) [`6fbdfca`](https://github.com/shopl/shoplflow/commit/6fbdfca1e4b43972ef94fccdbc3b009c151df1aa) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Title 컴포넌트 제거 및 Text 컴포넌트에 textOverflow 적용
+
 ## 0.32.10
 
 ### Patch Changes
