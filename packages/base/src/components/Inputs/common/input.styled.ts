@@ -78,6 +78,7 @@ export const InputWrapper = styled.label<
     borderRadius?: BorderRadiusTokens;
     direction?: 'row' | 'column';
     customNumberInputHeight?: string;
+    gap?: CSSStyleDeclaration['gap'];
     type?: HTMLInputTypeAttribute;
   }
 >`
@@ -99,7 +100,7 @@ export const InputWrapper = styled.label<
       borderRadius,
     })};
   justify-content: space-between;
-  gap: 8px;
+  gap: ${({ gap }) => gap || '8px'};
   border: 1px solid ${(props) => getBorderColorByStatus(props)};
   background-color: ${colorTokens.neutral0};
   overflow: hidden;

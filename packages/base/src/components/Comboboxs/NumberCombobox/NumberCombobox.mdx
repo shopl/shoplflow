@@ -1,0 +1,56 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import NumberCombobox from './NumberCombobox';
+import * as NumberComboboxStories from './NumberCombobox.stories';
+
+<Meta of={NumberComboboxStories} />
+
+# NumberCombobox
+
+넘버를 입력, 드롭다운으로 셀렉할 수 있는 컴포넌트에요. inputType을 통해 시간, 분을 선택할 수 있고 unit을 통해 단위를 정할 수 있어요
+
+<Canvas of={NumberComboboxStories.Playground} />
+
+
+## ArgsTable
+
+<ArgsTable of={NumberCombobox} />
+
+## Usage
+```typescript
+export const Example = () => {
+  const [value, setValue] = useState('');
+  const [isError, setIsError] = useState(false);
+  return (
+    <Stack>
+      <NumberCombobox
+        value={value}
+        items={MINUTES}
+        isError={isError}
+        onChange={(event) => {
+          setValue(event.target.value);
+          if (!isError) {
+            return;
+          }
+
+          setIsError(false);
+        }}
+        maxLength={99}
+        onSelect={(value) => {
+          // Check if the input value is a number
+          if (/^\d*$/.test(value)) {
+            const numberValue = parseInt(value, 10);
+
+            if (numberValue <= 60) {
+              setValue(String(numberValue).padStart(2, '0'));
+              return;
+            }
+            setValue('');
+            setIsError(true);
+          }
+        }}
+      />
+    </Stack>
+  );
+};
+```
+
