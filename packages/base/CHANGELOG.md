@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.13
+
+### Patch Changes
+
+- [#413](https://github.com/shopl/shoplflow/pull/413) [`45f1396`](https://github.com/shopl/shoplflow/commit/45f139679b5f9674147c9ecb44cf52db2c772e8c) Thanks [@velo-kim](https://github.com/velo-kim)! - Feat: NumberCombobox를 만들었어요
+
 ## 0.32.12
 
 ### Patch Changes
