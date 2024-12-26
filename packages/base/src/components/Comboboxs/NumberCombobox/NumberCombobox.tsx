@@ -4,7 +4,7 @@ import type { NumberComboboxProps } from './NumberCombobox.types';
 import { Input } from '../../Inputs';
 import { IconButton } from '../../Buttons';
 import { Icon } from '../../Icon';
-import { UpArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
+import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
 import { Popper } from '../../Popper';
 import { offset } from '@floating-ui/core';
 import { useOutsideClick } from '@shoplflow/utils';
@@ -120,7 +120,7 @@ const NumberCombobox = ({
                     }}
                   >
                     <Icon
-                      iconSource={UpArrowSolidXsmallIcon}
+                      iconSource={DownArrowSolidXsmallIcon}
                       sizeVar='XS'
                       color='neutral400'
                       style={{ cursor: disabled ? 'not-allowed' : 'cursor' }}
