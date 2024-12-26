@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.14
+
+### Patch Changes
+
+- [#418](https://github.com/shopl/shoplflow/pull/418) [`1f41a6d`](https://github.com/shopl/shoplflow/commit/1f41a6d254968db28e17eabc78f7a789418c323b) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: NumberCombobox의 아이콘 방향을 변경했어요
+
 ## 0.32.13
 
 ### Patch Changes
