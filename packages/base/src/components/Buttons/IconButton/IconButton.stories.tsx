@@ -52,7 +52,7 @@ export const Primary: StoryFn<IconButtonProps> = (args) => {
 
 Primary.args = {
   styleVar: 'PRIMARY',
-  sizeVar: 'M',
+  sizeVar: 'XS',
   color: 'primary400',
   disabled: false,
 };

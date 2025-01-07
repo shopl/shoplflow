@@ -14,10 +14,6 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
         min-width: 40px;
         height: 40px;
         min-height: 40px;
-        & > svg {
-          width: 24px;
-          height: 24px;
-        }
       `;
     case 'S':
       return css`
@@ -25,10 +21,6 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
         min-width: 32px;
         height: 32px;
         min-height: 32px;
-        & > svg {
-          width: 20px;
-          height: 20px;
-        }
       `;
     case 'XS':
       return css`
@@ -36,10 +28,6 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
         min-width: 24px;
         height: 24px;
         min-height: 24px;
-        & > svg {
-          width: 12px;
-          height: 12px;
-        }
       `;
     default:
       return css`
@@ -47,10 +35,6 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
         min-width: 40px;
         height: 40px;
         min-height: 40px;
-        & > svg {
-          width: 20px;
-          height: 20px;
-        }
       `;
   }
 };
@@ -123,4 +107,8 @@ export const StyledIconButton = styled.button<
   ${({ styleVar, color, isHovered }) => getStyleByStyleVar(styleVar, color, isHovered)};
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
+  & > svg {
+    width: 20px;
+    height: 20px;
+  }
 `;
