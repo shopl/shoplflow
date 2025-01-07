@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.15
+
+### Patch Changes
+
+- [#420](https://github.com/shopl/shoplflow/pull/420) [`837efc4`](https://github.com/shopl/shoplflow/commit/837efc4b3e51b9fdf409c11b76e4a514faa2e77c) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: IconButton > svg 크기 고정
+
 ## 0.32.14
 
 ### Patch Changes
