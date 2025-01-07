@@ -71,13 +71,18 @@ const NumberCombobox = ({
             placeholder={placeholder}
             disabled={disabled}
             onKeyDown={(event) => {
+              event.stopPropagation();
               // 위, 아래 방향키 조작 X
               if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
                 event.preventDefault();
                 return;
               }
 
-              setIsOpen(true);
+              if (event.key === 'Tab') {
+                setIsOpen(false);
+              } else {
+                setIsOpen(true);
+              }
 
               if (event.key === 'Enter') {
                 const currentValue = event.currentTarget.value;

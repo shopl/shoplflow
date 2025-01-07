@@ -28,7 +28,6 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
     const [text, setText] = useState(value ?? defaultValue ?? '');
     const [isHovered, setIsHovered] = useState(false);
     const prevValue = useRef(value ?? defaultValue ?? '');
-
     const convertToString = useCallback((value: string | number | readonly string[]) => {
       if (typeof value !== 'number') {
         return typeof value === 'string' ? value : value.join('');
