@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.16
+
+### Patch Changes
+
+- [#422](https://github.com/shopl/shoplflow/pull/422) [`2df7eda`](https://github.com/shopl/shoplflow/commit/2df7eda72b065feb5f8bb33722648b4560e63479) Thanks [@velo-kim](https://github.com/velo-kim)! - Update: NumberCombobox 키보드 이벤트를 업데이트 했어요
+
 ## 0.32.15
 
 ### Patch Changes
