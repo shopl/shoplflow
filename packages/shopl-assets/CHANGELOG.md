@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.10.3
+
+### Patch Changes
+
+- [#425](https://github.com/shopl/shoplflow/pull/425) [`63dcd6d`](https://github.com/shopl/shoplflow/commit/63dcd6db9d3a83e78252977a04ea0577e3a7ad35) Thanks [@velo-kim](https://github.com/velo-kim)! - ic-excel을 추가했어요
+
 ## 0.10.2
 
 ### Patch Changes
