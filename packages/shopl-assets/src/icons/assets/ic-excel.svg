@@ -1,0 +1,16 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="#DDDDDD"/>
+<g id="Shopl">
+<path d="M-9230 -2396C-9230 -2397.1 -9229.1 -2398 -9228 -2398H12943C12944.1 -2398 12945 -2397.1 12945 -2396V2400C12945 2401.1 12944.1 2402 12943 2402H-9228C-9229.1 2402 -9230 2401.1 -9230 2400V-2396Z" fill="#D6E9FB"/>
+<g id="Iconography / Small">
+<rect width="2000" height="4000" transform="translate(-1630 -1998)" fill="white"/>
+<rect id="Rectangle 350" opacity="0.8" x="-30" y="-30" width="80" height="80" rx="16" fill="#F9F9F9"/>
+<g id="shopl/ic-excel">
+<rect id="Rectangle 306" x="2.75" y="2.75" width="14.5" height="14.5" rx="2.25" stroke="#333333" stroke-width="1.5"/>
+<rect id="Rectangle 307" x="4" y="6" width="12" height="2" fill="#333333"/>
+<rect id="Rectangle 146" x="4" y="11" width="12" height="2" fill="#333333"/>
+<rect id="Rectangle 145" x="9" y="4" width="12" height="2" transform="rotate(90 9 4)" fill="#333333"/>
+</g>
+</g>
+</g>
+</svg>
