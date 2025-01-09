@@ -15,7 +15,3 @@ export const Playground: StoryFn<TableSkeletonProps> = (args) => {
     </Stack>
   );
 };
-
-Playground.args = {
-  type: 'list',
-};

@@ -36,8 +36,8 @@ export const HeaderRowWrapper = styled.div<{
   column-gap: 1px;
   background-color: transparent;
 
-  ${ColumnWrapper} {
-    background-color: ${({ rowColor }) => rowColor || colorTokens.neutral150};
+  & .column-wrapper {
+    background-color: ${colorTokens.neutral150};
   }
 `;
 

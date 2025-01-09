@@ -29,10 +29,10 @@ const TableSkeleton = (props: TableSkeletonProps) => {
             {Array.from({ length: columnNum }).map((_, colIndex) => {
               const key = `${rowIndex}-${colIndex}`;
               if (colIndex === 0 || (colIndex === columnNum - 1 && lastColumnNoSkeleton)) {
-                return <SC.ColumnWrapper key={key} />;
+                return <SC.ColumnWrapper className='column-wrapper' key={key} />;
               }
               return (
-                <SC.ColumnWrapper justifyContent='center' key={key}>
+                <SC.ColumnWrapper className='column-wrapper' justifyContent='center' key={key}>
                   <Skeleton
                     style={{
                       width: '60px',
