@@ -1,6 +1,6 @@
 import * as SC from './TableSkeleton.styled';
 import Skeleton from '../Skeleton/Skeleton';
-import type { GridTableSkeletonProps, ListTableSkeletonProps, TableSkeletonProps } from './TableSkeleton.types';
+import type { TableSkeletonProps } from './TableSkeleton.types';
 
 const TableSkeleton = (props: TableSkeletonProps) => {
   const { type, rowNum = 6, columnNum = 9 } = props;
@@ -15,7 +15,7 @@ const TableSkeleton = (props: TableSkeletonProps) => {
       firstColumnSkeletonStyle,
       rowStyle,
       customGridTemplateColumnsStyle,
-    } = props as GridTableSkeletonProps;
+    } = props;
 
     return (
       <SC.Wrapper>
@@ -91,7 +91,7 @@ const TableSkeleton = (props: TableSkeletonProps) => {
   }
 
   // List type
-  const { firstColumnWidth = 48 } = props as ListTableSkeletonProps;
+  const { firstColumnWidth = 48 } = props;
 
   return (
     <SC.TableSkeletonWrapper>

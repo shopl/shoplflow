@@ -62,7 +62,7 @@ export const TableSkeletonWrapper = styled.div`
 
 export const TableHeaderSkeleton = styled.div`
   display: table-header-group;
-  background-color: #eaeaea;
+  background-color: ${colorTokens.neutral400};
 `;
 
 export const TableHeaderCellSkeleton = styled.div<{ width?: number }>`
@@ -70,7 +70,7 @@ export const TableHeaderCellSkeleton = styled.div<{ width?: number }>`
   padding: 8px;
   height: 48px;
   background: #f9f9f9;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid ${colorTokens.neutral200};
   vertical-align: middle;
 
   &:last-child {
