@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.18
+
+### Patch Changes
+
+- [#428](https://github.com/shopl/shoplflow/pull/428) [`dd57107`](https://github.com/shopl/shoplflow/commit/dd571073c5b21e29ed70eb1eebb901fc8f7362b1) Thanks [@velo-kim](https://github.com/velo-kim)! - NumberCombobox Popover의 zIndex 커스텀 기능을 추가했어요
+
 ## 0.32.17
 
 ### Patch Changes
