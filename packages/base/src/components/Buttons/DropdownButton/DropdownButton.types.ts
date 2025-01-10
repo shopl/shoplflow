@@ -1,6 +1,6 @@
 import type { Placement } from '@floating-ui/core';
 import type { $Values } from '@shoplflow/utils';
-import type { SizeVariantProps, StyleVariantProps } from 'src/utils/type/ComponentProps';
+import type { SizeVariantProps, StyleVariantProps } from '../../../utils/type/ComponentProps';
 
 export const DropdownButtonSizeVariants = {
   S: 'S',
