@@ -1,5 +1,5 @@
 import type { $Values } from '@shoplflow/utils';
-import type { InputHTMLAttributes } from 'react';
+import type { CSSProperties, InputHTMLAttributes } from 'react';
 import type { ColorTokenProps, SizeVariantProps } from '../../../utils/type/ComponentProps';
 
 export const NumberComboboxSizeVariants = {
@@ -25,4 +25,5 @@ export type NumberComboboxProps = NumberComboboxOptionProps &
      * 에러 여부
      */
     isError?: boolean;
+    floatingZIndex?: CSSProperties['zIndex'];
   };

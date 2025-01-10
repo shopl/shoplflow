@@ -27,6 +27,7 @@ const NumberCombobox = ({
   placeholder = 'Enter',
   maxLength,
   className,
+  floatingZIndex,
   ...rest
 }: NumberComboboxProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-number-combobox`).current;
@@ -141,7 +142,7 @@ const NumberCombobox = ({
             {...rest}
           />
         </Popper.Trigger>
-        <Popper.Portal>
+        <Popper.Portal zIndex={floatingZIndex}>
           <SimpleBar
             className={_className}
             style={{
