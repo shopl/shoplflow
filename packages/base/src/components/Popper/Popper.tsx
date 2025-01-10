@@ -62,11 +62,17 @@ export const PopperTrigger = forwardRef<HTMLDivElement, PopperTriggerProps>(
 );
 
 export const PopperPortal = forwardRef<HTMLDivElement, PopperPortalProps>(
-  ({ children, animation: initialAnimation }, ref) => {
+  ({ children, animation: initialAnimation, zIndex }, ref) => {
     const { floatingStyles, setFloating, isOpen } = usePopper();
     const animation = initialAnimation ?? fadeInOut;
 
     const refs = useMergeRefs(ref, setFloating);
+
+    let _floatingStyles = { ...floatingStyles };
+
+    if (zIndex) {
+      _floatingStyles = { ...floatingStyles, zIndex };
+    }
 
     if (!isOpen) {
       return null;
@@ -80,7 +86,7 @@ export const PopperPortal = forwardRef<HTMLDivElement, PopperPortalProps>(
             animate={animation.animate}
             exit={animation.exit}
             ref={refs}
-            style={floatingStyles}
+            style={_floatingStyles}
           >
             {children}
           </motion.div>
