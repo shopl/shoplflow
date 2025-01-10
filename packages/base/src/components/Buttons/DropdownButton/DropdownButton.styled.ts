@@ -3,7 +3,7 @@ import { colorTokens } from '../../..//styles';
 import { motion } from 'framer-motion';
 
 export const StyledPopoverContentWrapper = styled.div`
-  width: 102px;
+  min-width: 112px;
   padding: 4px;
   filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.12));
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);

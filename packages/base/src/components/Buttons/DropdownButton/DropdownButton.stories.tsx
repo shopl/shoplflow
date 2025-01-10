@@ -4,6 +4,7 @@ import type { StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
 import DropdownButton from './DropdownButton';
 import type { DropdownButtonProps } from './DropdownButton.types';
+import { Text } from '../../../components/Text';
 
 export default {
   title: 'COMPONENTS/Buttons/DropdownButton',
@@ -22,7 +23,7 @@ export const Playground: StoryFn<DropdownButtonProps> = (args) => {
             setSelectedItem('Shopl');
           }}
         >
-          <div>Shopl</div>
+          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
         </DropdownButton.Menu>
         <DropdownButton.Menu
           isSelected={selectedItem === 'Hada'}
