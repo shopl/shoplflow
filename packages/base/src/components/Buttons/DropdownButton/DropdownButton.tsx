@@ -39,6 +39,7 @@ const DropdownButton = ({
   children,
   placement = 'bottom-end',
   styleVar = 'PRIMARY',
+  floatingZIndex,
   ...rest
 }: DropdownButtonProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-dropdown-button`).current;
@@ -82,7 +83,11 @@ const DropdownButton = ({
                   duration: 0.2,
                 }}
               >
-                <Icon iconSource={DownArrowSolidXsmallIcon} color={'neutral400'} sizeVar='XS' />
+                <Icon
+                  iconSource={DownArrowSolidXsmallIcon}
+                  color={styleVar === 'PRIMARY' ? 'coolgray300' : 'neutral400'}
+                  sizeVar='XS'
+                />
               </StyledArrowIcon>
             }
             onClick={() => {
@@ -98,7 +103,7 @@ const DropdownButton = ({
             </Text>
           </Button>
         </Popper.Trigger>
-        <Popper.Portal>
+        <Popper.Portal zIndex={floatingZIndex}>
           <StyledPopoverContentWrapper className={_className}>{children}</StyledPopoverContentWrapper>
         </Popper.Portal>
       </Popper>
