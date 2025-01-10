@@ -29,6 +29,7 @@ export const Playground: StoryFn<NumberComboboxProps> = (args) => {
           console.info('value : ', value);
           return;
         }}
+        floatingZIndex={2005}
       />
     </Stack>
   );
