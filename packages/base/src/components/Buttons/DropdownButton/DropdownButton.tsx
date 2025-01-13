@@ -60,7 +60,7 @@ const DropdownButton = ({
 
   if (styleVar === 'PRIMARY') {
     _styleVar = 'SOLID';
-    color = 'coolgray100';
+    color = 'coolgray50';
   }
 
   return (
