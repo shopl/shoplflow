@@ -3,7 +3,7 @@ import { StyledDropdown } from './Dropdown.styled';
 import { Popper } from '../Popper';
 import type { DropdownProps } from './Dropdown.types';
 import { DropdownContext } from './useDropdown';
-import { DropdownButton } from './DropdownButton';
+import { DropdownTriggerButton } from './DropdownTriggerButton';
 import { DropdownContent } from './DropdownContent';
 
 const Dropdown = ({
@@ -52,7 +52,7 @@ const Dropdown = ({
   );
 };
 
-Dropdown.Button = DropdownButton;
+Dropdown.Button = DropdownTriggerButton;
 
 Dropdown.Content = DropdownContent;
 

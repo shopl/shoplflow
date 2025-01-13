@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { boxShadowTokens, colorTokens } from '../../styles';
-import type { DropdownButtonProps, DropdownContentProps, DropdownSizeVariantType } from './Dropdown.types';
+import type { DropdownTriggerButtonProps, DropdownContentProps, DropdownSizeVariantType } from './Dropdown.types';
 import { motion } from 'framer-motion';
 import { css } from '@emotion/react';
 import type { CSSProperties } from 'react';
@@ -84,7 +84,7 @@ export const StyledDropdownContent = styled.div<DropdownContentProps>`
   box-shadow: ${boxShadowTokens.dropShadow};
 `;
 
-export const StyledDropdownButton = styled.button<DropdownButtonProps>`
+export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,7 +102,7 @@ export const StyledDropdownButton = styled.button<DropdownButtonProps>`
       cursor: not-allowed;
     `}
 `;
-export const DropdownButtonIcon = styled(motion.div)<DropdownButtonProps>`
+export const DropdownButtonIcon = styled(motion.div)<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;

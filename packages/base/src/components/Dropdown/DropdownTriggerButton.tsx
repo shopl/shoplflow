@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 import React, { forwardRef, useState } from 'react';
-import type { DropdownButtonProps } from './Dropdown.types';
+import type { DropdownTriggerButtonProps } from './Dropdown.types';
 import { useDropdown } from './useDropdown';
 import { InputWrapper } from '../Inputs/common/input.styled';
 import {
@@ -13,7 +13,7 @@ import { Text } from '../Text';
 import { Icon } from '../Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
 
-export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>(
+export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTriggerButtonProps>(
   ({ width = '100%', onClick, sizeVar = 'M', isError, placeholder, value, disabled, leftSource, ...rest }, ref) => {
     const { isOpen, setIsOpen } = useDropdown();
 
