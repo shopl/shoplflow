@@ -64,11 +64,10 @@ const DropdownButton = ({
   }
 
   return (
-    <DropdownButtonContext.Provider value={{ isOpen, setIsOpen }}>
+    <DropdownButtonContext.Provider value={{ isOpen, setIsOpen }} data-shoplflow={'DropdownButton'}>
       <Popper placement={placement} offset={4}>
         <Popper.Trigger isOpen={isOpen} className={_className}>
           <Button
-            data-shoplflow={'DropdownButton'}
             className={_className}
             sizeVar={sizeVar}
             styleVar={_styleVar}

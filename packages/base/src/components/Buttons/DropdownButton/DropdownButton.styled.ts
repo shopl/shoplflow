@@ -1,13 +1,9 @@
 import styled from '@emotion/styled';
-import { colorTokens } from '../../..//styles';
 import { motion } from 'framer-motion';
+import { getPopoverContentStyle } from '../../../styles/utils/getPopoverContentStyle';
 
 export const StyledPopoverContentWrapper = styled.div`
-  min-width: 112px;
-  padding: 4px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
-  background-color: ${colorTokens.neutral0};
+  ${getPopoverContentStyle()}
 `;
 
 export const StyledArrowIcon = styled(motion.div)`

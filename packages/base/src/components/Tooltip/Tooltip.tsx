@@ -33,7 +33,13 @@ const Tooltip = ({
   }, [open, onOpenChange]);
 
   return (
-    <Popper offset={offset} placement={placement} middlewares={[flip(), shift({ padding: 5 })]} {...popperProps}>
+    <Popper
+      offset={offset}
+      placement={placement}
+      middlewares={[flip(), shift({ padding: 5 })]}
+      data-shoplflow={'Tooltip'}
+      {...popperProps}
+    >
       <Popper.Trigger
         ref={triggerRef}
         isOpen={isOpen || open}
