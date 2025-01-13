@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.19
+
+### Patch Changes
+
+- [#427](https://github.com/shopl/shoplflow/pull/427) [`57f6a6f`](https://github.com/shopl/shoplflow/commit/57f6a6ff529fab6089e01d0ee7deeb3c54e42583) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: DropdownButton 컴포넌트를 만들었어요
+
 ## 0.32.18
 
 ### Patch Changes
