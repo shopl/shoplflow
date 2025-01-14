@@ -2,6 +2,7 @@ import type { $Values } from '@shoplflow/utils';
 import type { ComponentPropsWithoutRef, CSSProperties } from 'react';
 import type {
   ColorTokenProps,
+  DisableProps,
   LeftAndRightNodeProps,
   SizeVariantProps,
   StyleVariantProps,
@@ -23,14 +24,14 @@ export const SplitButtonStyleVariants = {
 export type SplitButtonStyleVariantType = $Values<typeof SplitButtonStyleVariants>;
 
 export interface SplitButtonProps extends SplitButtonOptionProps {
+  placement?: Placement;
+  floatingZIndex?: CSSProperties['zIndex'];
+  lineClamp?: number;
   text: string;
 }
-export type SplitButtonOptionProps = Omit<ComponentPropsWithoutRef<'button'>, 'color'> &
+export type SplitButtonOptionProps = Omit<ComponentPropsWithoutRef<'button'>, 'color' | 'disabled'> &
   SizeVariantProps<SplitButtonSizeVariantType> &
   StyleVariantProps<SplitButtonStyleVariantType> &
   LeftAndRightNodeProps &
-  ColorTokenProps & {
-    placement?: Placement;
-    floatingZIndex?: CSSProperties['zIndex'];
-    lineClamp?: number;
-  };
+  DisableProps &
+  ColorTokenProps;
