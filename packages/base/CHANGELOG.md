@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.20
+
+### Patch Changes
+
+- [#431](https://github.com/shopl/shoplflow/pull/431) [`0bfd4c2`](https://github.com/shopl/shoplflow/commit/0bfd4c2c80b2cbeb70e613645c80eb3ea6301270) Thanks [@velo-kim](https://github.com/velo-kim)! - SplitButton을 만들었어요
+
 ## 0.32.19
 
 ### Patch Changes
