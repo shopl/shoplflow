@@ -102,7 +102,7 @@ const SplitButton = ({
             >
               <Icon
                 iconSource={DownArrowSolidXsmallIcon}
-                color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral400'}
+                color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral600'}
                 sizeVar='XS'
               />
             </StyledArrowIcon>
