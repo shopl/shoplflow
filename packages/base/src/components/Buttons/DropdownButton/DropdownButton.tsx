@@ -12,6 +12,7 @@ import { Text } from '../../../components/Text';
 import type { ColorTokens } from '../../../styles';
 import { Icon } from '../../../components/Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
+import { shift } from '@floating-ui/core';
 
 const DropdownButtonMenu = ({ onClick, children, ...rest }: MenuProps) => {
   const { setIsOpen } = useDropdownButtonContext();
@@ -64,11 +65,10 @@ const DropdownButton = ({
   }
 
   return (
-    <DropdownButtonContext.Provider value={{ isOpen, setIsOpen }}>
-      <Popper placement={placement} offset={4}>
+    <DropdownButtonContext.Provider value={{ isOpen, setIsOpen }} data-shoplflow={'DropdownButton'}>
+      <Popper placement={placement} offset={4} middlewares={[shift({ crossAxis: true, padding: 4 })]}>
         <Popper.Trigger isOpen={isOpen} className={_className}>
           <Button
-            data-shoplflow={'DropdownButton'}
             className={_className}
             sizeVar={sizeVar}
             styleVar={_styleVar}
