@@ -22,7 +22,9 @@ export const SplitButtonStyleVariants = {
 
 export type SplitButtonStyleVariantType = $Values<typeof SplitButtonStyleVariants>;
 
-export interface SplitButtonProps extends SplitButtonOptionProps {}
+export interface SplitButtonProps extends SplitButtonOptionProps {
+  text: string;
+}
 export type SplitButtonOptionProps = Omit<ComponentPropsWithoutRef<'button'>, 'color'> &
   SizeVariantProps<SplitButtonSizeVariantType> &
   StyleVariantProps<SplitButtonStyleVariantType> &
