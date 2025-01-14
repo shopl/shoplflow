@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
 import ScrollArea from './ScrollArea';
 import * as ScrollAreaStories from './ScrollArea.stories';
 
@@ -15,7 +15,7 @@ import * as ScrollAreaStories from './ScrollArea.stories';
 <Canvas of={ScrollAreaStories.Playground} />
 
 
-## ArgsTable
+## PureArgsTable
 
 **onScrollFrame Function args**
 - values: (Object) 현재 위치에 대한 값들
@@ -28,7 +28,7 @@ import * as ScrollAreaStories from './ScrollArea.stories';
 - values.scrollLeft: (Number) 네이티브 scrollLeft
 - values.scrollTop: (Number) 네이티브 scrollTop
 
-<ArgsTable of={ScrollArea} />
+<PureArgsTable of={ScrollArea} />
 
 ## Usage
 

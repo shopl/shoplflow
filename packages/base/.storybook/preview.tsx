@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import type { Decorator } from '@storybook/react';
 import { Button, ShoplflowProvider } from '../src';
 import './index.css';
 import '../src/styles/global.css';
 import '../src/styles/reset.css';
 // Simplebar css 설정, 사용하는 컨슈머에도 해당 css import가 필요함
 import 'simplebar-react/dist/simplebar.min.css';
-
+import { Preview } from '@storybook/react';
 import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
-import { withPerformance } from 'storybook-addon-performance';
-
 
 const ThemeButton  = styled.div`
   position: fixed;
@@ -30,16 +27,11 @@ justify-content: center;
 `;
 
 
-
-
-
-
-
-export const decorator: Decorator = (Story, context) => {
-const domainContext = useStoryDomain();
-
-  return (
-    <StoryDomainContext.Provider value={domainContext}>
+const preview: Preview = {
+  decorators: [
+    (Story) => {
+      const domainContext = useStoryDomain();
+      return (<StoryDomainContext.Provider value={domainContext}>
       <ShoplflowProvider domain={domainContext.domain}>
 
           <ThemeButton>
@@ -50,32 +42,9 @@ const domainContext = useStoryDomain();
               <Story />
           </Container>
       </ShoplflowProvider>
-    </StoryDomainContext.Provider>
-  )
-}
+    </StoryDomainContext.Provider>)
+    }
+  ],
+};
 
-
-export const decorators:Decorator[] = [decorator, withPerformance];
-
-export const parameters = {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
-    a11y: {
-      element: '#component-root',
-      manual: true,
-      config: {
-        rules: [
-          {
-            id: 'color-contrast',
-            enabled: false,
-          },
-        ],
-      },
-    },
-}
-
+export default preview;

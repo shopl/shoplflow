@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
 import Tree, { TreeItem } from './Tree';
 import * as TreeStories from './Tree.stories';
 
@@ -12,13 +12,13 @@ TreeItem의 children을 통해 중첩 데이터를 표현할 수 있습니다.
 <Canvas of={TreeStories.Playground} />
 
 
-## ArgsTable
+## PureArgsTable
 
 ### Tree
-<ArgsTable of={Tree} />
+<PureArgsTable of={Tree} />
 
 ### Tree.Item
-<ArgsTable of={TreeItem} />
+<PureArgsTable of={TreeItem} />
 
 ## Usage
 
