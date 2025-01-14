@@ -23,14 +23,15 @@ export const SplitButtonStyleVariants = {
 
 export type SplitButtonStyleVariantType = $Values<typeof SplitButtonStyleVariants>;
 
-export interface SplitButtonProps extends SplitButtonOptionProps {
+export interface SplitButtonProps
+  extends Omit<ComponentPropsWithoutRef<'button'>, 'color' | 'disabled'>,
+    SplitButtonOptionProps {
   placement?: Placement;
   floatingZIndex?: CSSProperties['zIndex'];
   lineClamp?: number;
   text: string;
 }
-export type SplitButtonOptionProps = Omit<ComponentPropsWithoutRef<'button'>, 'color' | 'disabled'> &
-  SizeVariantProps<SplitButtonSizeVariantType> &
+export type SplitButtonOptionProps = SizeVariantProps<SplitButtonSizeVariantType> &
   StyleVariantProps<SplitButtonStyleVariantType> &
   LeftAndRightNodeProps &
   DisableProps &
