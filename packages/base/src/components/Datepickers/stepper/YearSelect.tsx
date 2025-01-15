@@ -54,7 +54,6 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
             maxHeight,
             height,
           }}
-          placeholder={undefined}
           className={className}
         >
           {optionList?.map((option, index) => (

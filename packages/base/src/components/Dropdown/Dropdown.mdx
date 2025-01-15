@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Dropdown from './Dropdown';
 import {DropdownContent} from './DropdownContent';
 import {DropdownTriggerButton} from './DropdownTriggerButton';
@@ -7,7 +7,6 @@ import * as DropdownStories from './Dropdown.stories';
 <Meta of={DropdownStories} />
 
 # Dropdown
-
 Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
 
 - Dropdown
@@ -23,26 +22,9 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
 > 선택 기능을 사용하려면 `useSelected` 훅과 함께 사용해주세요.
 
 ## Overview
-
 <Canvas of={DropdownStories.Playground} />
 
-
-## ArgsTable
-
-### Dropdown
-
-<ArgsTable of={Dropdown} />
-
-### Dropdow.Button
-<ArgsTable of={DropdownTriggerButton} />
-
-### Dropdown.Content
-<ArgsTable of={DropdownContent} />
-
-
 ## Usage
-
-
 ```tsx
   const data = new Array(10).fill(0).map((_, i) => ({ name: `name${i}` }));
   const { selectedItem, setSelectedItem } = useSelected<{ name: string }>(data, 'SINGLE');
@@ -64,4 +46,8 @@ Dropdown은 총 세가지 컴포넌트로 나뉘어집니다.
     />
   );
 ```
+
+## Props
+<Controls of={DropdownStories.Playground} />
+
 

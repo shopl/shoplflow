@@ -1,0 +1,1019 @@
+🔎 checking possible migrations..
+
+🔎 found a 'addons-api' migration:
+╭ Migration notification ────────────────────────────────────────────────────────────────╮
+│                                                                                        │
+│   Attention: We've detected that you're using the following package which is removed   │
+│   in Storybook 8 and beyond:                                                           │
+│                                                                                        │
+│   - @storybook/addons                                                                  │
+│                                                                                        │
+│   This package has been deprecated and replaced with @storybook/preview-api and        │
+│   @storybook/manager-api.                                                              │
+│                                                                                        │
+│   You can find more information about the new addons API in the migration guide:       │
+│   https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#new-addons-api       │
+│                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to continue? › (Y/n)✔ Do you want to continue? … yes
+
+🔎 found a 'viteConfigFile' migration:
+╭ Migration notification ──────────────────────────────────────────────────────────╮
+│                                                                                  │
+│   Since version 8.0.0, Storybook no longer ships with an in-built Vite config.   │
+│   Please add a vite.config.js file to your project root.                         │
+│                                                                                  │
+│   You can find more information on how to do this here:                          │
+│   https://storybook.js.org/docs/8.0/migration-guide#missing-viteconfigjs-file    │
+│                                                                                  │
+│   This change was necessary to support newer versions of Vite.                   │
+│                                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to continue? › (Y/n)✔ Do you want to continue? … yes
+
+🔎 found a 'remove-jest-testing-library' migration:
+╭ Automigration detected ────────────────────────────────────────────────────────────────╮
+│                                                                                        │
+│   Attention: We've detected that you're using the following packages which are known   │
+│   to be incompatible since Storybook 8:                                                │
+│                                                                                        │
+│   - @storybook/testing-library                                                         │
+│                                                                                        │
+│   We will uninstall them for you and install @storybook/test instead.                  │
+│                                                                                        │
+│   Also, we can help you migrate your stories to use the new package.                   │
+│                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'remove-jest-testing-library' migration on your project? › (Y/n)✔ Do you want to run the 'remove-jest-testing-library' migration on your project? … yes
+? Please enter the glob for your stories to migrate to @storybook/test › ./src/**/*.stories.*✔ Please enter the glob for your stories to migrate to @storybook/test … ./src/**/*.stories.*
+=> Applying migrate-to-test-package: 37 files
+✅ ran remove-jest-testing-library migration
+
+🔎 found a 'remove-argtypes-regex' migration:
+╭ Manual migration detected ─────────────────────────────────────────────────────────────╮
+│                                                                                        │
+│   Attention: We've detected that you're using argTypesRegex:                           │
+│                                                                                        │
+│   .storybook/preview.tsx                                                               │
+│   59 |                                                                                 │
+│   60 | export const parameters = {                                                     │
+│   > 61 |     actions: { argTypesRegex: "^on[A-Z].*" },                                 │
+│   |                ^^^^^^^^^^^^^                                                       │
+│   62 |     controls: {                                                                 │
+│   63 |       matchers: {                                                               │
+│   64 |         color: /(background|color)$/i,                                          │
+│                                                                                        │
+│   Storybook's play functions let you render your stories interactively.                │
+│                                                                                        │
+│   In the past, play functions mocked action args implicitly by analyzing the           │
+│   argTypesRegex                                                                        │
+│   in your preview.js|ts file.                                                          │
+│                                                                                        │
+│   However, Storybook 8 changes this behavior, and we now recommend using the           │
+│   (fn) function to mock your component's methods instead.                              │
+│                                                                                        │
+│   Use the following command to check for implied mocked actions in your play           │
+│   functions:                                                                           │
+│   npx storybook migrate find-implicit-spies --glob="**/*.stories.@(js|jsx|ts|tsx)"     │
+│                                                                                        │
+│   Then, refer to our docs to migrate your play functions to Storybook 8:               │
+│   https://storybook.js.org/docs/essentials/actions#via-storybooktest-fn-spy-function   │
+│                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+
+? Select continue once you have made the required changes, or quit to exit the migration process › quit / continue✔ Select continue once you have made the required changes, or quit to exit the migration process … quit / continue
+
+🔎 found a 'wrap-require' migration:
+╭ Automigration detected ────────────────────────────────────────────────────────────────╮
+│                                                                                        │
+│   We have detected that you're using Storybook 8.4.7 in a monorepo project.            │
+│   For Storybook to work correctly, some fields in your main config must be updated.    │
+│   We can do this for you automatically.                                                │
+│                                                                                        │
+│   More info: https://storybook.js.org/docs/faq#how-do-i-fix-module-resolution-in-spe   │
+│   cial-environments                                                                    │
+│                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+? Do you want to run the 'wrap-require' migration on your project? › (Y/n)✔ Do you want to run the 'wrap-require' migration on your project? … yes
+✅ ran wrap-require migration
+
+⚠️  failed to check fix react-docgen
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix storyshots
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix remove-react-dependency
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix remove-legacy-mdx1
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix webpack5-compiler-setup
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix mdx1to3
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix upgradeStorybookRelatedDependencies
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix visual-tests-addon
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix autodocs-tags
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+⚠️  failed to check fix initial-globals
+
+Error: Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts file.
+
+Original error:
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in /node_modules/storybook-addon-performance/package.json
+    at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)
+    at new NodeError (node:internal/errors:399:5)
+    at exportsNotFound (node:internal/modules/esm/resolve:361:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:697:9)
+    at resolveExports (node:internal/modules/cjs/loader:565:36)
+    at Module._findPath (node:internal/modules/cjs/loader:634:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)
+    at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:4794:36)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at getAbsolutePath (/.storybook/main.ts:10:26)
+    at Object.<anonymous> (/.storybook/main.ts:19:5)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11666:11)
+    at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:11680:14)
+    at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/common/index.cjs:17493:18)
+    at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2544)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+    at getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:72:2624)
+    at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:2659)
+    at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:531:1625)
+    at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:1612)
+    at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/core/dist/core-server/index.cjs:35757:12)
+    at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cli/dist/bin/index.cjs:600:2078)
+
+╭ Migration check ran with failures ─────────────────────────────────────────────────────╮
+│                                                                                        │
+│   Successful migrations:                                                               │
+│                                                                                        │
+│   remove-jest-testing-library, wrap-require                                            │
+│                                                                                        │
+│   Failed migrations:                                                                   │
+│                                                                                        │
+│   react-docgen:                                                                        │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   storyshots:                                                                          │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   remove-react-dependency:                                                             │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   remove-legacy-mdx1:                                                                  │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   webpack5-compiler-setup:                                                             │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   mdx1to3:                                                                             │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   upgradeStorybookRelatedDependencies:                                                 │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   visual-tests-addon:                                                                  │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   autodocs-tags:                                                                       │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│   initial-globals:                                                                     │
+│   Unable to find or evaluate .storybook/main.ts: SB_CORE-SERVER_0007                   │
+│   (MainFileEvaluationError): Storybook couldn't evaluate your .storybook/main.ts       │
+│   file.                                                                                │
+│                                                                                        │
+│   Original error:                                                                      │
+│   Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not       │
+│   defined by "exports" in /node_modules/storybook-addon-performance/package.json       │
+│   at __node_internal_captureLargerStackTrace (node:internal/errors:490:5)              │
+│   at new NodeError (node:internal/errors:399:5)                                        │
+│   at exportsNotFound (node:internal/modules/esm/resolve:361:10)                        │
+│   at packageExportsResolve (node:internal/modules/esm/resolve:697:9)                   │
+│   at resolveExports (node:internal/modules/cjs/loader:565:36)                          │
+│   at Module._findPath (node:internal/modules/cjs/loader:634:31)                        │
+│   at Module._resolveFilename (node:internal/modules/cjs/loader:1061:27)                │
+│   at Module._resolveFilename (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esb   │
+│   uild-register/dist/node.js:4794:36)                                                  │
+│   at Function.resolve (node:internal/modules/cjs/helpers:116:19)                       │
+│   at getAbsolutePath (/.storybook/main.ts:10:26)                                       │
+│   at Object.<anonymous> (/.storybook/main.ts:19:5)                                     │
+│   at Module._compile (node:internal/modules/cjs/loader:1254:14)                        │
+│   at Module._compile (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/esbuild-reg   │
+│   ister/dist/node.js:2258:26)                                                          │
+│   at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)                 │
+│   at Object.newLoader [as .ts] (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/e   │
+│   sbuild-register/dist/node.js:2262:9)                                                 │
+│   at Module.load (node:internal/modules/cjs/loader:1117:32)                            │
+│   at Module._load (node:internal/modules/cjs/loader:958:12)                            │
+│   at Module.require (node:internal/modules/cjs/loader:1141:19)                         │
+│   at require (node:internal/modules/cjs/helpers:110:18)                                │
+│   at interopRequireDefault (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@stor   │
+│   ybook/core/dist/common/index.cjs:11666:11)                                           │
+│   at serverRequire (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/co   │
+│   re/dist/common/index.cjs:11680:14)                                                   │
+│   at loadMainConfig (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   ore/dist/common/index.cjs:17493:18)                                                  │
+│   at async getStorybookData (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@sto   │
+│   rybook/cli/dist/bin/index.cjs:72:2544)                                               │
+│   at async runFixes (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/c   │
+│   li/dist/bin/index.cjs:531:2659)                                                      │
+│   at async automigrate (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyboo   │
+│   k/cli/dist/bin/index.cjs:531:1625)                                                   │
+│   at async doUpgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/   │
+│   cli/dist/bin/index.cjs:600:1612)                                                     │
+│   at async withTelemetry (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storyb   │
+│   ook/core/dist/core-server/index.cjs:35757:12)                                        │
+│   at async upgrade (/Users/ari/.npm/_npx/7122ab1f221a777a/node_modules/@storybook/cl   │
+│   i/dist/bin/index.cjs:600:2078)                                                       │
+│                                                                                        │
+│   You can find the full logs in                                                        │
+│   /Users/ari/Desktop/projects/shoplflow/packages/base/migration-storybook.log          │
+│                                                                                        │
+│   Manual migrations:                                                                   │
+│                                                                                        │
+│   remove-argtypes-regex                                                                │
+│                                                                                        │
+│   ─────────────────────────────────────────────────                                    │
+│                                                                                        │
+│   If you'd like to run the migrations again, you can do so by running 'npx storybook   │
+│   automigrate'                                                                         │
+│                                                                                        │
+│   The automigrations try to migrate common patterns in your project, but might not     │
+│   contain everything needed to migrate to the latest version of Storybook.             │
+│                                                                                        │
+│   Please check the changelog and migration guide for manual migrations and more        │
+│   information: https://storybook.js.org/docs/migration-guide                           │
+│   And reach out on Discord if you need help: https://discord.gg/storybook              │
+│                                                                                        │
+╰────────────────────────────────────────────────────────────────────────────────────────╯
+

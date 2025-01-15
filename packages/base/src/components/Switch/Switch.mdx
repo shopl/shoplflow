@@ -1,20 +1,19 @@
-import { Canvas, ArgsTable, Meta } from '@storybook/blocks';
+import { Canvas, Controls, Meta } from '@storybook/blocks';
 import * as SwitchStories from './Switch.stories.tsx';
 import Switch from './Switch.tsx';
 
 <Meta of={SwitchStories}/>
 
 # Switch
-
 정해진 옵션값을 조작하는 버튼입니다. <br/>
 default, active, disabled의 상태를 가지며 `activeColor` 속성으로 활성화 상태의 배경 색상을 변경할 수 있습니다.
 
+## Overview
  <Canvas of={SwitchStories.Playground}/>
 
 ## Usage
-
 ```tsx
-import Switch from "./Switch";
+import { Switch } from '@shoplflow/base';
 
 const Example = () => {
     return (
@@ -23,4 +22,5 @@ const Example = () => {
 }
 ```
 
-<ArgsTable of={Switch}/>
+## Props
+<Controls of={SwitchStories.Playground}/>
