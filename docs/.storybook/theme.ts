@@ -1,7 +1,8 @@
+
+import type { ThemeVars } from '@storybook/theming';
 import { create } from '@storybook/theming';
 
-
-export default create({
+const customTheme: ThemeVars =  create({
   base: 'light',
   // colorPrimary: 'var(--primary400)',
   // colorSecondary: 'var(--primary300)',
@@ -26,3 +27,6 @@ export default create({
   // inputTextColor: 'var(--neutral700)',
   brandTitle: 'Shoplflow',
 });
+
+
+export default customTheme;
