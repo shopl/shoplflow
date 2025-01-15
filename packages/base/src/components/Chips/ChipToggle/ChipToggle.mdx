@@ -1,4 +1,4 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import ChipToggle from './ChipToggle';
 import * as ChipToggleStories from './ChipToggle.stories';
 
@@ -6,7 +6,6 @@ import * as ChipToggleStories from './ChipToggle.stories';
 <Meta of={ChipToggleStories} />
 
 # ChipToggle
-
 ChipToggle 컴포넌트는 Chip모양의 Toggle입니다.
 
 ## style Variants
@@ -15,15 +14,11 @@ ChipToggle 컴포넌트는 Chip모양의 Toggle입니다.
 
 `default`, `hover` 상태의 커스텀은 불가능하며 `selected` 상태의 메인`color`를 선택할 수 있습니다.
 
+## Overview
 <Canvas of={ChipToggleStories.Playground} />
 
-## PureArgsTable
-
-<PureArgsTable of={ChipToggle} />
-
 ## Usage
-
-```
+```tsx
 import ChipToggle from './ChipToggle';
 
 <ChipToggle
@@ -33,3 +28,5 @@ import ChipToggle from './ChipToggle';
 />
 ```
 
+## Props
+<Controls of={ChipToggleStories.Playground} />

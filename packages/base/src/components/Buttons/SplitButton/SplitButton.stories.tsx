@@ -39,10 +39,12 @@ export const Playground: StoryFn<SplitButtonProps> = (args) => {
     </Stack>
   );
 };
+
 Playground.args = {
   styleVar: 'PRIMARY',
   sizeVar: 'M',
   leftSource: <div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />,
+  text: 'Button',
 };
 
 export const Secondary: StoryFn<SplitButtonProps> = (args) => {

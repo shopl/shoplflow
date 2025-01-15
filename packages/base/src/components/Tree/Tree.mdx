@@ -1,28 +1,19 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Tree, { TreeItem } from './Tree';
 import * as TreeStories from './Tree.stories';
 
 <Meta of={TreeStories} />
 
 # Tree
-
 트리 컴포넌트는 계층 데이터를 표현할 때 사용합니다.
 TreeItem의 children을 통해 중첩 데이터를 표현할 수 있습니다.
 
+## Overview
 <Canvas of={TreeStories.Playground} />
 
-
-## PureArgsTable
-
-### Tree
-<PureArgsTable of={Tree} />
-
-### Tree.Item
-<PureArgsTable of={TreeItem} />
-
 ## Usage
-
 ```tsx
+import { Tree } from '@shoplflow/base'
 
 const App = () => {
   return (
@@ -36,3 +27,5 @@ const App = () => {
 }
 ```
 
+## Props
+<Controls of={TreeStories.Playground} />

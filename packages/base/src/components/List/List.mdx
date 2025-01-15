@@ -1,4 +1,4 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import List from './List';
 import { Text2Rows } from './List';
 import * as ListStories from './List.stories';
@@ -7,7 +7,6 @@ import AnatomyList from '../../assets/anatomy/list.png';
 <Meta of={ListStories} />
 
 # List
-
 리스트는 특정 데이터를 나열할 때 사용하며 2가지 컴포넌트로 구성되어 있습니다.
 
 - List
@@ -28,18 +27,7 @@ import AnatomyList from '../../assets/anatomy/list.png';
 <Canvas of={ListStories.Playground} />
 
 
-## PureArgsTable
-
-### List
-
-<PureArgsTable of={List} />
-
-### List.Text2Rows
-
-<PureArgsTable of={Text2Rows} />
-
 ## Usage
-
 ```tsx
 import React from 'react';
 
@@ -53,3 +41,5 @@ const App = () => {
 }
 ```
 
+## List
+<Controls of={ListStories.Playground} />

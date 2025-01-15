@@ -1,9 +1,9 @@
-import {PureArgsTable, Canvas, Meta} from '@storybook/blocks';
+import {Controls, Canvas, Meta} from '@storybook/blocks';
 import StackContainer from "./StackContainer.tsx";
-import * as StackStories from './StackContainer.stories.tsx';
+import * as StackContainerStories from './StackContainer.stories.tsx';
 
 
-<Meta of={StackStories} />
+<Meta of={StackContainerStories} />
 
 # StackContainer & MotionStack
 
@@ -20,19 +20,17 @@ Stack 컴포넌트와 동일하게 사용할 수 있지만 Container의 목적�
 
 `StackContainer.Horizontal`과 `StackContainer.Vertical`을 통해 각각 수평 정렬과 수직 정렬이 기본값인 Stack을 사용할 수 있어요.
 
-<Canvas of={StackStories.Primary} />
-
-## PureArgsTable
-
-<PureArgsTable of={StackContainer} />
+<Canvas of={StackContainerStories.Primary} />
 
 ## Usage
+<Canvas of={StackContainerStories.Horizontal} sourceState={"shown"}  />
+<Canvas of={StackContainerStories.Vertical} sourceState={"shown"}  />
+<Canvas of={StackContainerStories.Motion} sourceState={"shown"}  />
 
-<Canvas of={StackStories.Horizontal} sourceState={"shown"}  />
+## Props
+<Controls of={StackContainerStories.Primary} />
 
-<Canvas of={StackStories.Vertical} sourceState={"shown"}  />
 
-<Canvas of={StackStories.Motion} sourceState={"shown"}  />
 
 
 

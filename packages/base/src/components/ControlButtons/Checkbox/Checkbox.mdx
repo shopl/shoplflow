@@ -1,26 +1,25 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Checkbox from './Checkbox';
 import * as CheckboxStories from './Checkbox.stories';
 
 <Meta of={CheckboxStories} />
 
 # Checkbox
-
 Checkbox는 선택할 수 있는 옵션을 제공하는 버튼 컴포넌트입니다.
 
+## Overview
 <Canvas of={CheckboxStories.Playground} />
 
-
-## PureArgsTable
-
-<PureArgsTable of={Checkbox} />
-
 ## Usage
-
 ```tsx
+import { Checkbox } from '@shoplflow/base';
+
 const App = () => {
   return (
       <Checkbox isSelected>Checkbox 1</Checkbox>
   );
 };
 ```
+
+## Props
+<Controls of={CheckboxStories.Playground} />

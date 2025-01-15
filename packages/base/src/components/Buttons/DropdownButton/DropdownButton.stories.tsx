@@ -38,6 +38,10 @@ export const Playground: StoryFn<DropdownButtonProps> = (args) => {
   );
 };
 
+Playground.args = {
+  text: 'Button',
+};
+
 export const Secondary: StoryFn<DropdownButtonProps> = (args) => {
   return (
     <Stack>
@@ -51,6 +55,10 @@ export const Secondary: StoryFn<DropdownButtonProps> = (args) => {
       </DropdownButton>
     </Stack>
   );
+};
+
+Secondary.args = {
+  text: 'Button',
 };
 
 export const Small: StoryFn<DropdownButtonProps> = (args) => {
@@ -68,6 +76,10 @@ export const Small: StoryFn<DropdownButtonProps> = (args) => {
   );
 };
 
+Small.args = {
+  text: 'Button',
+};
+
 export const Disabled: StoryFn<DropdownButtonProps> = (args) => {
   return (
     <Stack>
@@ -81,4 +93,8 @@ export const Disabled: StoryFn<DropdownButtonProps> = (args) => {
       </DropdownButton>
     </Stack>
   );
+};
+
+Disabled.args = {
+  text: 'Button',
 };

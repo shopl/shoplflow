@@ -1,28 +1,20 @@
 import Input from './Input'
 import * as InputStories from './Input.stories'
-import { Canvas, Meta, Controls, PureArgsTable} from '@storybook/blocks';
+import { Canvas, Meta, Controls} from '@storybook/blocks';
 
 <Meta of={InputStories} />
 
 # Input
-
 html의 `input`과 동일하게 사용할 수 있어요.
 
-최대 글자수가 지정될 경우에만 포커싱할 때 글자수 카운터가 표시돼요.
-
-만약 글자가 입력된 경우 우측에 X 버튼이 노출되며 클릭 시 입력된 글자가 모두 삭제돼요.
+> - 최대 글자수가 지정될 경우에만 포커싱할 때 글자수 카운터가 표시돼요.
+> - 만약 글자가 입력된 경우 우측에 X 버튼이 노출되며 클릭 시 입력된 글자가 모두 삭제돼요.
 
 
 ## Overview
-
 <Canvas of={InputStories.Playground} />
 
-## PureArgsTable
-
-<PureArgsTable of={Input} />
-
 ## Usage
-
 ```tsx
 import { StackContainer, Input } from "@shoplflow/base";
 
@@ -38,3 +30,5 @@ const Example = () => {
 }
 ```
 
+## Props
+<Controls of={InputStories.Playground} />

@@ -66,7 +66,7 @@ export const Playground: StoryFn<${prefix}Props> = (args) => {
 
 " >> ${prefix}.stories.tsx
 
-echo "import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+echo "import { Controls, Canvas, Meta } from '@storybook/blocks';
 import ${prefix} from './${prefix}';
 import * as ${prefix}Stories from './${prefix}.stories';
 
@@ -79,11 +79,12 @@ $prefix 컴포넌트 설명을 적어주세요.
 <Canvas of={${prefix}Stories.Playground} />
 
 
-## PureArgsTable
-
-<PureArgsTable of={${prefix}} />
+## Props
+<Controls of={${prefix}} />
 
 ## Usage
+```tsx
+```
 
 " >> ${prefix}.mdx
 

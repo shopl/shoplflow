@@ -1,4 +1,4 @@
-import {PureArgsTable, Canvas, Meta} from '@storybook/blocks';
+import {Controls, Canvas, Meta} from '@storybook/blocks';
 import Stack from "./Stack";
 import * as StackStories from './Stack.stories';
 
@@ -20,19 +20,18 @@ StackContainer 컴포넌트는 자식 컴포넌트의 레이아웃 영역을 감
 
 `StackContainer.Horizontal`과 `StackContainer.Vertical`을 통해 각각 수평 정렬과 수직 정렬이 기본값인 Stack을 사용할 수 있어요.
 
+## Overview
 <Canvas of={StackStories.Primary} />
 
-## PureArgsTable
-
-<PureArgsTable of={Stack} />
-
 ## Usage
-
 <Canvas of={StackStories.Horizontal} sourceState={"shown"}  />
-
 <Canvas of={StackStories.Vertical} sourceState={"shown"}  />
-
 <Canvas of={StackStories.Motion} sourceState={"shown"}  />
+
+## Props
+<Controls of={StackStories.Primary} />
+
+
 
 
 

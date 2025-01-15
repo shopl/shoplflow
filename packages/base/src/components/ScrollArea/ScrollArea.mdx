@@ -1,4 +1,4 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import ScrollArea from './ScrollArea';
 import * as ScrollAreaStories from './ScrollArea.stories';
 
@@ -15,8 +15,7 @@ import * as ScrollAreaStories from './ScrollArea.stories';
 <Canvas of={ScrollAreaStories.Playground} />
 
 
-## PureArgsTable
-
+## Props
 **onScrollFrame Function args**
 - values: (Object) 현재 위치에 대한 값들
 - values.top: (Number) scrollTop 진행률, 0에서 1 사이
@@ -28,7 +27,7 @@ import * as ScrollAreaStories from './ScrollArea.stories';
 - values.scrollLeft: (Number) 네이티브 scrollLeft
 - values.scrollTop: (Number) 네이티브 scrollTop
 
-<PureArgsTable of={ScrollArea} />
+<Controls of={ScrollAreaStories.Playground} />
 
 ## Usage
 

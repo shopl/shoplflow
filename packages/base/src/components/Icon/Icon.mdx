@@ -1,4 +1,4 @@
-import { PureArgsTable, Canvas, Meta, CodeOrSourceMdx, Source } from '@storybook/blocks';
+import { Controls, Canvas, Meta, CodeOrSourceMdx, Source } from '@storybook/blocks';
 import Icon from './Icon';
 import * as IconStories from './Icon.stories';
 
@@ -29,15 +29,10 @@ svg를 string 타입으로 받아 렌더링합니다. `<svg>` 태그 **내부 �
 <Source code={`// 전달하는 코드
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM7.5 11C7.22386 11 7 11.2239 7 11.5V12.5C7 12.7761 7.22386 13 7.5 13H16.5C16.7761 13 17 12.7761 17 12.5V11.5C17 11.2239 16.7761 11 16.5 11H7.5Z" fill="#333333"/>`}/>
 
-
-
-
-## PureArgsTable
-
-<PureArgsTable of={Icon} />
-
 ## Usage
-
-
 <Canvas of={IconStories.Playground} />
+
+## Props
+<Controls of={IconStories.Playground} />
+
 

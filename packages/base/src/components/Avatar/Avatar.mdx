@@ -1,26 +1,25 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Canvas, Controls, Story, Meta } from '@storybook/blocks';
 import Avatar from './Avatar';
 import * as AvatarStories from './Avatar.stories';
 
 <Meta of={AvatarStories} />
 
 # Avatar
+Avatar는 사용자의 프로필 이미지를 표시하는 컴포넌트에요.
 
-Avatar는 사용자의 프로필 이미지를 표시하는 컴포넌트입니다.
-
+## Overview
 <Canvas of={AvatarStories.Playground} />
 
-
-## PureArgsTable
-
-<PureArgsTable of={Avatar} />
-
 ## Usage
-
 ```tsx
-const App = () => (
-  return <Avatar badge={<Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />} src={'url'}/>
-);
+import { Avatar } from '@shoplflow/base';
+
+<Avatar badge={<Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />} {...args} />
 ```
+
+## Props
+<Controls of={AvatarStories.Playground} />
+
+
 
 

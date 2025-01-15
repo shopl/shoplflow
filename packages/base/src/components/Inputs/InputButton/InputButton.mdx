@@ -1,28 +1,20 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import InputButton from './InputButton';
 import * as InputButtonStories from './InputButton.stories';
 
 <Meta of={InputButtonStories} />
 
 # InputButton
-
 `InputButton` 컴포넌트는 값을 선택하는 로직과 상호작용할 수 있는 input 컴포넌트입니다.
 
-Ref로 접근할 경우 HTMLInputElement를 반환합니다.
+> - Ref로 접근할 경우 HTMLInputElement를 반환합니다.
+> - 값이 추가/변경되거나 삭제될 때마다 `onChange` 콜백이 호출됩니다.
+> -값이 존재할 경우 X 버튼이 노출되며 클릭시 onClear 콜백이 호출됩니다.
 
-값이 추가/변경되거나 삭제될 때마다 `onChange` 콜백이 호출됩니다.
-
-값이 존재할 경우 X 버튼이 노출되며 클릭시 onClear 콜백이 호출됩니다.
-
+## Overview
 <Canvas of={InputButtonStories.Playground} />
 
-
-## PureArgsTable
-
-<PureArgsTable of={InputButton} />
-
 ## Usage
-
 ```tsx
 import { InputButton } from '@shoplflow/base';
 
@@ -39,3 +31,5 @@ const Example = () => {
 };
 ```
 
+## Props
+<Controls of={InputButtonStories.Playground} />

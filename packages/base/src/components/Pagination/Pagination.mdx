@@ -1,20 +1,77 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Pagination from './Pagination';
 import * as PaginationStories from './Pagination.stories';
 
 <Meta of={PaginationStories} />
 
 # Pagination
-
 Pagination 컴포넌트 입니다.
 
+## Overview
 <Canvas of={PaginationStories.Playground} />
 
-
-## PureArgsTable
-
-<PureArgsTable of={Pagination} />
-
 ## Usage
+```tsx
+import { Pagination } from '@shoplflow/base';
+
+const Example: StoryFn<PaginationProps> = (args) => {
+  const itemsTotalCount = 86;
+
+  const [pageSize, setPageSize] = useState('20');
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const pageSizeList = new Array(10).fill(0).map((_, index) => {
+    return {
+      label: `${index + 1}0`,
+      value: `${index + 1}0`,
+    };
+  });
+
+  return (
+      <Pagination
+        {...args}
+        currentPage={currentPage}
+        previousPage={() => {
+          setCurrentPage((prev) => prev - 1);
+        }}
+        pageSize={pageSize}
+        pageCount={5}
+        nextPage={() => {
+          setCurrentPage((prev) => prev + 1);
+        }}
+        itemsTotalCount={itemsTotalCount}
+        gotoPage={(page) => {
+          setCurrentPage(page);
+        }}
+        leftSource={
+          <Stack.Horizontal>
+            <Button styleVar='GHOST' sizeVar='S'>
+              leftSource
+            </Button>
+            <Button styleVar='PRIMARY' sizeVar='S'>
+              leftSource
+            </Button>
+          </Stack.Horizontal>
+        }
+        rightSource={
+          <PaginationSizeSelector
+            data={pageSizeList}
+            pageSize={pageSize}
+            setPageSize={(value) => {
+              setCurrentPage(0);
+              setPageSize(value);
+            }}
+          />
+        }
+      />
+  );
+};
+
+```
+
+## Props
+<Controls of={PaginationStories.Playground} />
+
+
 
 

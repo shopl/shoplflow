@@ -1,24 +1,18 @@
-import { PureArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Callout from './Callout';
 import * as CalloutStories from './Callout.stories';
 
 <Meta of={CalloutStories} />
 
 # Callout
-
 Callout은 중요한 알림이나 정보를 보여주는 메세지를 나타낼 때 사용합니다.
 
+## Overview
 <Canvas of={CalloutStories.Playground} />
 
 
-## PureArgsTable
-
-<PureArgsTable of={Callout} />
-
 ## Usage
-
 ```tsx
-import React from 'react';
 import { StackContainer, Callout } from '@shoplflow/base';
 
 export const App = () => {
@@ -35,6 +29,5 @@ export const App = () => {
   );
 };
 ```
-
-
-
+## Props
+<Controls of={CalloutStories.Playground} />
