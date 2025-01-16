@@ -1,5 +1,65 @@
 # @shoplflow/base
 
+## 0.32.21
+
+### Patch Changes
+
+- [#433](https://github.com/shopl/shoplflow/pull/433) [`db277d134b5ba6e6c50a073c34506c6026f26646`](https://github.com/shopl/shoplflow/commit/db277d134b5ba6e6c50a073c34506c6026f26646) Thanks [@velo-kim](https://github.com/velo-kim)! - Storybook 버전을 8로 업데이트 했어요
+
+- Updated dependencies [[`db277d134b5ba6e6c50a073c34506c6026f26646`](https://github.com/shopl/shoplflow/commit/db277d134b5ba6e6c50a073c34506c6026f26646)]:
+  - @shoplflow/shopl-assets@0.10.4
+  - @shoplflow/hada-assets@0.1.3
+  - @shoplflow/utils@0.6.5
+
+## 0.32.20
+
+### Patch Changes
+
+- [#431](https://github.com/shopl/shoplflow/pull/431) [`0bfd4c2`](https://github.com/shopl/shoplflow/commit/0bfd4c2c80b2cbeb70e613645c80eb3ea6301270) Thanks [@velo-kim](https://github.com/velo-kim)! - SplitButton을 만들었어요
+
+## 0.32.19
+
+### Patch Changes
+
+- [#427](https://github.com/shopl/shoplflow/pull/427) [`57f6a6f`](https://github.com/shopl/shoplflow/commit/57f6a6ff529fab6089e01d0ee7deeb3c54e42583) Thanks [@velo-kim](https://github.com/velo-kim)! - feat: DropdownButton 컴포넌트를 만들었어요
+
+## 0.32.18
+
+### Patch Changes
+
+- [#428](https://github.com/shopl/shoplflow/pull/428) [`dd57107`](https://github.com/shopl/shoplflow/commit/dd571073c5b21e29ed70eb1eebb901fc8f7362b1) Thanks [@velo-kim](https://github.com/velo-kim)! - NumberCombobox Popover의 zIndex 커스텀 기능을 추가했어요
+
+## 0.32.17
+
+### Patch Changes
+
+- Updated dependencies [[`63dcd6d`](https://github.com/shopl/shoplflow/commit/63dcd6db9d3a83e78252977a04ea0577e3a7ad35)]:
+  - @shoplflow/shopl-assets@0.10.3
+
+## 0.32.16
+
+### Patch Changes
+
+- [#422](https://github.com/shopl/shoplflow/pull/422) [`2df7eda`](https://github.com/shopl/shoplflow/commit/2df7eda72b065feb5f8bb33722648b4560e63479) Thanks [@velo-kim](https://github.com/velo-kim)! - Update: NumberCombobox 키보드 이벤트를 업데이트 했어요
+
+## 0.32.15
+
+### Patch Changes
+
+- [#420](https://github.com/shopl/shoplflow/pull/420) [`837efc4`](https://github.com/shopl/shoplflow/commit/837efc4b3e51b9fdf409c11b76e4a514faa2e77c) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: IconButton > svg 크기 고정
+
+## 0.32.14
+
+### Patch Changes
+
+- [#418](https://github.com/shopl/shoplflow/pull/418) [`1f41a6d`](https://github.com/shopl/shoplflow/commit/1f41a6d254968db28e17eabc78f7a789418c323b) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: NumberCombobox의 아이콘 방향을 변경했어요
+
+## 0.32.13
+
+### Patch Changes
+
+- [#413](https://github.com/shopl/shoplflow/pull/413) [`45f1396`](https://github.com/shopl/shoplflow/commit/45f139679b5f9674147c9ecb44cf52db2c772e8c) Thanks [@velo-kim](https://github.com/velo-kim)! - Feat: NumberCombobox를 만들었어요
+
 ## 0.32.12
 
 ### Patch Changes

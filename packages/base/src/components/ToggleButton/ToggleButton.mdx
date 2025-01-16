@@ -1,20 +1,42 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import ToggleButton from './ToggleButton';
 import * as ToggleButtonStories from './ToggleButton.stories';
 
 <Meta of={ToggleButtonStories} />
 
 # ToggleButton
+정해진 옵션값을 조작하는 버튼이에요
 
-버튼 모양을 하고 있지만, 라디오 타입의 인풋입니다! 
-
+## Overview
 <Canvas of={ToggleButtonStories.Playground} />
 
-
-## ArgsTable
-
-<ArgsTable of={ToggleButton} />
-
 ## Usage
-TBD
+```tsx
+import { ToggleButton } from '@shoplflow/base';
+
+const Example = () => {
+  const [selectedValue, setSelectedValue] = useState('test1');
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
+  return (
+    <ToggleButton
+      onChange={onChange}
+      selectedValue={selectedValue}
+      targetName='group'
+      sizeVar='S'
+      fixedWidth={100}
+    >
+      <ToggleButton.InnerRadio value='test1' label='test1' id={'1'} />
+      <ToggleButton.InnerRadio value='test2' label='test2' id={'2'} disabled />
+      <ToggleButton.InnerRadio value='test3' label='test3' id={'3'} />
+    </ToggleButton>
+  );
+};
+```
+
+## Props
+<Controls of={ToggleButtonStories.Playground} />
 

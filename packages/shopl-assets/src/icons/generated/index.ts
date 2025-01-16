@@ -80,6 +80,7 @@ import IcEmailXlarge from './IcEmailXlarge';
 import IcEmojiMedium from './IcEmojiMedium';
 import IcEmojiPlusMedium from './IcEmojiPlusMedium';
 import IcEndPage from './IcEndPage';
+import IcExcel from './IcExcel';
 import IcExclamationXlarge from './IcExclamationXlarge';
 import IcExitFullScreenMedium from './IcExitFullScreenMedium';
 import IcExpected from './IcExpected';
@@ -354,6 +355,7 @@ const icons = {
   'emoji-medium': IcEmojiMedium,
   'emoji-plus-medium': IcEmojiPlusMedium,
   'end-page': IcEndPage,
+  excel: IcExcel,
   'exclamation-xlarge': IcExclamationXlarge,
   'exit-full-screen-medium': IcExitFullScreenMedium,
   expected: IcExpected,
@@ -631,6 +633,7 @@ export {
   IcEmojiMedium as EmojiMediumIcon,
   IcEmojiPlusMedium as EmojiPlusMediumIcon,
   IcEndPage as EndPageIcon,
+  IcExcel as ExcelIcon,
   IcExclamationXlarge as ExclamationXlargeIcon,
   IcExitFullScreenMedium as ExitFullScreenMediumIcon,
   IcExpected as ExpectedIcon,

@@ -1,0 +1,39 @@
+import { Controls, Canvas, Meta } from '@storybook/blocks';
+import SplitButton from './SplitButton';
+import * as SplitButtonStories from './SplitButton.stories';
+
+<Meta of={SplitButtonStories} />
+
+# SplitButton
+SplitButton 컴포넌트 설명을 적어주세요.
+<Canvas of={SplitButtonStories.Playground} />
+
+
+## Usage
+```tsx
+const [selectedItem, setSelectedItem] = useState<'Shopl' | 'Hada'>('Shopl');
+
+  return (
+      <SplitButton {...args} text={'Button'}>
+        <SplitButton.Menu
+          isSelected={selectedItem === 'Shopl'}
+          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
+          onClick={() => {
+            setSelectedItem('Shopl');
+          }}
+        >
+          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
+        </SplitButton.Menu>
+        <SplitButton.Menu
+          isSelected={selectedItem === 'Hada'}
+          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
+          onClick={() => {
+            setSelectedItem('Hada');
+          }}
+        >
+          <Text>Hada</Text>
+        </SplitButton.Menu>
+      </SplitButton>
+```
+## Props
+<Controls of={SplitButtonStories.Playground} />

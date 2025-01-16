@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Tooltip from './Tooltip';
 import {TooltipContent} from './TooltipContent';
 import * as TooltipStories from './Tooltip.stories';
@@ -15,17 +15,7 @@ import * as TooltipStories from './Tooltip.stories';
 ## Overview
 <Canvas of={TooltipStories.Playground} />
 
-
-## ArgsTable
-
-### Tooltip
-<ArgsTable of={Tooltip} />
-### Tooltip.Content
-<ArgsTable of={TooltipContent} />
-
-
 ## Usage
-
 ```tsx
 import { Tooltip, Text } from '@shoplflow/base'
 
@@ -35,4 +25,8 @@ import { Tooltip, Text } from '@shoplflow/base'
     )
   }
 ```
+
+## Props
+<Controls of={TooltipStories.Playground} />
+
 

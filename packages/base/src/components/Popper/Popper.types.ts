@@ -60,6 +60,7 @@ export interface PopperTriggerProps extends ChildrenProps, HTMLAttributes<HTMLDi
 }
 
 export interface PopperPortalProps extends ChildrenProps, HTMLAttributes<HTMLDivElement> {
+  zIndex?: CSSProperties['zIndex'];
   /**
    * animation을 넣을 수 있습니다.
    * framer-motion의 animation을 사용합니다.

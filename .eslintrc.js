@@ -23,7 +23,8 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off", // 타입을 오픈하는 용도로 any를 사용하고 있어서
         "@typescript-eslint/no-floating-promises": "off",
         "@typescript-eslint/no-unsafe-member-access": 'off',
-        "@typescript-eslint/no-unsafe-argument": 'off'
+        "@typescript-eslint/no-unsafe-argument": 'off',
+        "@typescript-eslint/no-unsafe-call": 'off'
       },
     }
   ],

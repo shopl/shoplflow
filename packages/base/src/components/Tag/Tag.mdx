@@ -1,26 +1,19 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Tag from './Tag';
 import * as TagStories from './Tag.stories';
 
 <Meta of={TagStories} />
 
 # Tag
-
 Tag는 특정 정보를 보여줄 때 사용하는 데이터 표시 컴포넌트입니다.
 
-`color`를 사용하면 `styleVar`에 따라 자동으로 스타일이 변경됩니다. 각 스타일은 채도가 높은 색상을 기준으로 변경됩니다.
+> - `color`를 사용하면 `styleVar`에 따라 자동으로 스타일이 변경됩니다. 각 스타일은 채도가 높은 색상을 기준으로 변경됩니다.
+> - `styleVar`를 TINT로 설정했을 경우, `background`를 통해 배경색을 별도로 지정할 수 있습니다.
 
-`styleVar`를 TINT로 설정했을 경우, `background`를 통해 배경색을 별도로 지정할 수 있습니다.
-
+## Overview
 <Canvas of={TagStories.Playground} />
 
-
-## ArgsTable
-
-<ArgsTable of={Tag} />
-
 ## Usage
-
 ```tsx
 const App = () => {
 
@@ -31,3 +24,6 @@ const App = () => {
   );
 };
 ```
+
+## Props
+<Controls of={TagStories.Playground} />

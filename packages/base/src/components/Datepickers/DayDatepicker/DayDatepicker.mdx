@@ -1,24 +1,76 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import DayDatepicker from './DayDatepicker';
 import * as DayDatepickerStories from './DayDatepicker.stories';
 
 <Meta of={DayDatepickerStories} />
 
 # DayDatepicker
+날짜를 선택하는 데이트 피커 컴포넌트에요
 
-- 날짜를 선택하는 데이트 피커 컴포넌트에요
+> - sizeVar를 S, M 사이즈를 선택할 수 있어요._createMdxContent
+> - calendarType을 통해 single, multiple, range 데이트 피커를 선택할 수 있어요
 
-sizeVar를 S, M 사이즈를 선택할 수 있어요._createMdxContent
-
-> calendarType을 통해 single, multiple, range 데이트 피커를 선택할 수 있어요
-
+## Overview
 <Canvas of={DayDatepickerStories.Playground} />
 
-
-## ArgsTable
-
-<ArgsTable of={DayDatepicker} />
-
 ## Usage
+```tsx
+import { Stack, Button, DayDatepicker} from '@shoplflow/base';
+
+const Example = () => {
+  const [startDate, setStartDate] = React.useState<Date | null>(new Date());
+  const [endDate, setEndDate] = React.useState<Date | null>(null);
+  const [sizeVar, setSizeVar] = React.useState<DayDatepickerSizeVariantType>('M');
+
+  return (
+    <Stack width='400px'>
+      <Stack.Horizontal spacing='spacing08'>
+        <Button
+          onClick={() => {
+            setSizeVar('S');
+          }}
+        >
+          S 사이즈
+        </Button>
+        <Button
+          onClick={() => {
+            setSizeVar('M');
+          }}
+        >
+          M 사이즈
+        </Button>
+      </Stack.Horizontal>
+
+      <DayDatepicker
+        highlightDates={startDate ? [startDate] : undefined}
+        startDate={startDate || undefined}
+        endDate={endDate || undefined}
+        calendarType={{
+          type: 'range',
+          handleDayRangeChange(dates) {
+            if (Array.isArray(dates)) {
+              const [start, end] = dates;
+              setStartDate(start);
+              setEndDate(end);
+            } else {
+              setStartDate(dates);
+            }
+          },
+        }}
+        minDate={new Date('2024-01-01')}
+        maxDate={new Date('2029-01-01')}
+        sizeVar={sizeVar}
+        locale={ko}
+      />
+    </Stack>
+  );
+}
+
+```
+
+## Props
+<Controls of={DayDatepickerStories.Playground} />
+
+
 
 

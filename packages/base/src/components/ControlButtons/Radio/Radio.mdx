@@ -1,23 +1,19 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Radio from './Radio';
 import * as RadioStories from './Radio.stories';
 
 <Meta of={RadioStories} />
 
 # Radio
-
 Radio는 값을 선택할 때 사용하는 버튼 컴포넌트입니다.
 
+## Overview
 <Canvas of={RadioStories.Playground} />
 
-
-## ArgsTable
-
-<ArgsTable of={Radio} />
-
 ## Usage
-
 ```tsx
+import { Radio } from '@shoplflow/base';
+
 const App = () => {
 
   return (
@@ -25,3 +21,6 @@ const App = () => {
   );
 };
 ```
+
+## Props
+<Controls of={RadioStories.Playground} />

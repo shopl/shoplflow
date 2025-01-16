@@ -49,7 +49,7 @@ const dropdownSizeVariants = {
 
 export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;
 
-export interface DropdownButtonProps
+export interface DropdownTriggerButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
     DisableProps,
     LeftElementProps,

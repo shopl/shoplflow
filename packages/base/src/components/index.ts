@@ -24,3 +24,4 @@ export * from './Tabs';
 export * from './Pagination';
 export * from './ToggleButton';
 export * from './Datepickers';
+export * from './Comboboxs';

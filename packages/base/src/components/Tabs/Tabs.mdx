@@ -1,31 +1,20 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { Controls, Canvas, Meta } from '@storybook/blocks';
 import Tabs from './Tabs';
 import * as TabsStories from './Tabs.stories';
 
 <Meta of={TabsStories} />
 
 # Tabs
-
 단일 Tab으로  SwitchCase의 노출 View를 변동하는 컴포넌트입니다.
 
-- 탭을 컨트롤하기 위해 onChange: tab(string) => void 시그니처의 함수를 Tabs에 Props으로 넘겨주세요
+> - 탭을 컨트롤하기 위해 onChange: tab(string) => void 시그니처의 함수를 Tabs에 Props으로 넘겨주세요
 
-
+## Overview
 <Canvas of={TabsStories.Playground} />
 
 
-## ArgsTable
-
-### Tabs
-<ArgsTable of={Tabs} />
-
-### Tab
-<ArgsTable of={Tabs.Tab} />
-
-
 ## Usage
-
-```typescript
+```tsx
 import { Tabs } from '@shoplflow/base';
 
 const App = () => {
@@ -33,7 +22,6 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('value1');
 
   return (
-    <>
       <Tabs initialTab={activeTab} onChange={setActiveTab}>
         <Stack.Horizontal>
           <Tabs.Tab value={'value1'} label={'label1'} />
@@ -41,12 +29,9 @@ const App = () => {
           <Tabs.Tab value={'value3'} label={'label3'} />
         </Stack.Horizontal>
       </Tabs>
-      {activeTab === "a" && <div>acitve a</div>}
-      {activeTab === "b" && <div>acitve a</div>}
-      {activeTab === "c" && <div>acitve a</div>}
-    </>
   )
 }
 ```
 
-
+## Props
+<Controls of={TabsStories.Playground} />

@@ -1,0 +1,43 @@
+import { Controls, Canvas, Meta } from '@storybook/blocks';
+import DropdownButton from './DropdownButton';
+import * as DropdownButtonStories from './DropdownButton.stories';
+
+<Meta of={DropdownButtonStories} />
+
+# DropdownButton
+화살표를 포함한 버튼으로 2단계의 구체적인 옵션을 제공하는 버튼이에요.
+
+## Overview
+<Canvas of={DropdownButtonStories.Playground} />
+
+## Usage
+```tsx
+const [selectedItem, setSelectedItem] = useState<'Shopl' | 'Hada'>('Shopl');
+
+  return (
+    <Stack>
+      <DropdownButton {...args} text='Button'>
+        <DropdownButton.Menu
+          isSelected={selectedItem === 'Shopl'}
+          onClick={() => {
+            setSelectedItem('Shopl');
+          }}
+        >
+          <div>Shopl</div>
+        </DropdownButton.Menu>
+        <DropdownButton.Menu
+          isSelected={selectedItem === 'Hada'}
+          onClick={() => {
+            setSelectedItem('Hada');
+          }}
+        >
+          <div>Hada</div>
+        </DropdownButton.Menu>
+      </DropdownButton>
+    </Stack>
+  );
+```
+
+## Props
+<Controls of={DropdownButtonStories.Playground} />
+

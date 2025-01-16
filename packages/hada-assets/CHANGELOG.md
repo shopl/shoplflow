@@ -1,5 +1,11 @@
 # @shoplflow/hada-assets
 
+## 0.1.3
+
+### Patch Changes
+
+- [#433](https://github.com/shopl/shoplflow/pull/433) [`db277d134b5ba6e6c50a073c34506c6026f26646`](https://github.com/shopl/shoplflow/commit/db277d134b5ba6e6c50a073c34506c6026f26646) Thanks [@velo-kim](https://github.com/velo-kim)! - Storybook 버전을 8로 업데이트 했어요
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,38 +1,28 @@
 import * as ChipButtonStories from './ChipButton.stories';
-import {ArgsTable, Canvas, Meta} from '@storybook/blocks';
+import {Controls, Canvas, Meta} from '@storybook/blocks';
 import ChipButton from "./ChipButton";
 
 <Meta of={ChipButtonStories} />
 
 # ChipButton
-
 ChipToggle과 다르게 클릭 이벤트만 가지고 있는 버튼입니다.
 
-styleVar에 따라 기준 속성이 변경됩니다.
+> - styleVar에 따라 기준 속성이 변경됩니다.
 
 
 ## style Variants
-
 ### LINE
-
 border 컬러를 기준으로 색상을 설정합니다.
-
 > 색상 50 단위는 생략됩니다.
 
 - border-color: **기준이 되는 컬러 (color props로 설정됩니다.)**
 - hover 상태 border-color: border 기준 2단계 높은 색상
 - text: border 기준 4단계 높은 색상
 
-
-## Props
-
-<ArgsTable of={ChipButton} />
-
 ## Usage
-
 <Canvas of={ChipButtonStories.Playground} />
 
-```
+```tsx
 import ChipButton from './ChipButton';
 
 <ChipButton
@@ -40,3 +30,6 @@ import ChipButton from './ChipButton';
   onClick={() => {}}
 />
 ```
+
+## Props
+<Controls of={ChipButtonStories.Playground} />
