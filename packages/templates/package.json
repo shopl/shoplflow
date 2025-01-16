@@ -1,0 +1,113 @@
+{
+  "name": "@shoplflow/templates",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "build:package": "rm -rf dist/ && tsup",
+    "build:storybook": "storybook build",
+    "build": "pnpm run build:package && pnpm run build:storybook",
+    "dev:stories": "storybook dev -p 6008",
+    "dev": "tsup --watch",
+    "build-storybook": "storybook build"
+  },
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "require": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        },
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        }
+      },
+      "./package.json": "./package.json"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.19",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.22.15",
+    "@emotion/babel-plugin": "^11.11.0",
+    "@emotion/is-prop-valid": "^1.2.1",
+    "@emotion/react": "11.10.8",
+    "@emotion/styled": "11.10.8",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-a11y": "^8.4.7",
+    "@storybook/addon-actions": "^8.4.7",
+    "@storybook/addon-backgrounds": "^8.4.7",
+    "@storybook/addon-controls": "^8.4.7",
+    "@storybook/addon-docs": "^8.4.7",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
+    "@storybook/addon-mdx-gfm": "^8.4.7",
+    "@storybook/addon-measure": "^8.4.7",
+    "@storybook/addon-outline": "^8.4.7",
+    "@storybook/addon-toolbars": "^8.4.7",
+    "@storybook/addon-viewport": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/manager-api": "^8.4.7",
+    "@storybook/preview-api": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "@storybook/theming": "^8.4.7",
+    "@types/node": "20.4.9",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "classnames": "^2.3.2",
+    "eslint-plugin-storybook": "^0.6.13",
+    "storybook": "^8.4.7",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "tsup": "7.2.0",
+    "typescript": "4.7.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  },
+  "dependencies": {
+    "@floating-ui/core": "^1.5.0",
+    "@floating-ui/react": "^0.26.2",
+    "@floating-ui/react-dom": "^2.0.3",
+    "@shoplflow/base": "workspace:^",
+    "@shoplflow/shopl-assets": "workspace:^",
+    "@shoplflow/hada-assets": "workspace:^",
+    "@shoplflow/utils": "workspace:^",
+    "date-fns": "^3.6.0",
+    "framer-motion": "10.12.6",
+    "react": "^18.2.0",
+    "react-datepicker": "^7.3.0",
+    "react-dom": "^18.2.0",
+    "simplebar-react": "^3.2.6"
+  }
+}
