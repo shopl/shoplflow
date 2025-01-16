@@ -1,0 +1,25 @@
+import { Canvas, Controls, Story, Meta } from '@storybook/blocks';
+import Example from './Example';
+import * as ExampleStories from './Example.stories';
+
+<Meta of={ExampleStories} />
+
+# Exmple
+Template 컴포넌트를 처음으로 시작해보았습니다.
+
+## Overview
+<Canvas of={ExampleStories.Playground} />
+
+## Usage
+```tsx
+import { Example } from '@shoplflow/templates';
+
+<Exmple text={"예제~"}/>
+```
+
+## Props
+<Controls of={ExampleStories.Playground} />
+
+
+
+
