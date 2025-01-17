@@ -6,6 +6,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "build:package": "rm -rf dist/ && tsup",
+    "generate:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
     "dev:stories": "storybook dev -p 6008",
@@ -59,6 +60,7 @@
     "@emotion/styled": "11.10.8",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-designs": "^8.0.3",
     "@storybook/addon-a11y": "^8.4.7",
     "@storybook/addon-actions": "^8.4.7",
     "@storybook/addon-backgrounds": "^8.4.7",

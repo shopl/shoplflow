@@ -65,6 +65,7 @@
     "@emotion/styled": "11.10.8",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-designs": "^8.0.3",
     "@storybook/addon-a11y": "^8.4.7",
     "@storybook/addon-actions": "^8.4.7",
     "@storybook/addon-backgrounds": "^8.4.7",
