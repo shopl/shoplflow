@@ -3,14 +3,41 @@ import React from 'react';
 import type { StoryFn } from '@storybook/react';
 import { Button, colorTokens, Stack, Switch } from '@shoplflow/base';
 import TitleGroup from './TitleGroup';
-import type { TitleGroupProps } from './TitleGroup.types';
+import type { TitleGroupHeaderProps, TitleGroupHelpIconProps, TitleGroupProps } from './TitleGroup.types';
+
+interface PlaygroundProps extends TitleGroupProps, TitleGroupHeaderProps, TitleGroupHelpIconProps {
+  showActions: boolean;
+}
 
 export default {
   title: 'COMPONENTS/TitleGroup',
   component: TitleGroup,
+  argTypes: {
+    isRequired: {
+      control: 'boolean',
+      defaultValue: true,
+    },
+    tooltipPlacement: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+      defaultValue: 'right',
+    },
+    tooltipMessage: {
+      control: 'text',
+      defaultValue: 'Tooltip 노출',
+    },
+    count: {
+      control: 'text',
+      defaultValue: '00',
+    },
+    showActions: {
+      control: 'boolean',
+      defaultValue: true,
+    },
+  },
 };
 
-export const Playground: StoryFn<TitleGroupProps> = () => {
+export const Playground: StoryFn<PlaygroundProps> = (args) => {
   return (
     <Stack.Horizontal width='600px'>
       <TitleGroup>
@@ -18,31 +45,46 @@ export const Playground: StoryFn<TitleGroupProps> = () => {
           <TitleGroup.Header
             depth={1}
             title='Title'
-            isRequired={true}
-            count='00'
+            count={args.count}
+            isRequired={args.isRequired}
             helpIconProps={{
-              tooltipPlacement: 'right',
+              tooltipPlacement: args.tooltipPlacement,
               tooltipOffsetValue: 4,
-              tooltipMessage: 'Tooltip 노출',
+              tooltipMessage: args.tooltipMessage,
               onClick: () => {
                 return;
               },
             }}
           />
-          <TitleGroup.Actions>
-            <Button styleVar='SECONDARY' sizeVar='S'>
-              Button
-            </Button>
-            <div
-              style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
-            />
-            <Switch activeColor='primary300' />
-          </TitleGroup.Actions>
+          {args.showActions && (
+            <TitleGroup.Actions>
+              <Button styleVar='SECONDARY' sizeVar='S'>
+                Button
+              </Button>
+              <div
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  backgroundColor: `${colorTokens.shopl100}`,
+                  marginInline: '4px',
+                }}
+              />
+              <Switch activeColor='primary300' />
+            </TitleGroup.Actions>
+          )}
         </TitleGroup.HeaderBox>
         <TitleGroup.Description description='paragraph1' />
       </TitleGroup>
     </Stack.Horizontal>
   );
+};
+
+Playground.args = {
+  isRequired: true,
+  tooltipPlacement: 'right',
+  tooltipMessage: 'Tooltip 노출',
+  count: '00',
+  showActions: true,
 };
 
 Playground.parameters = {
