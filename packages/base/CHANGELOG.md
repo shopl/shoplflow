@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.23
+
+### Patch Changes
+
+- [#437](https://github.com/shopl/shoplflow/pull/437) [`496f1b9ca238b031b43ed43d56873deffcc0e6a4`](https://github.com/shopl/shoplflow/commit/496f1b9ca238b031b43ed43d56873deffcc0e6a4) Thanks [@velo-kim](https://github.com/velo-kim)! - templates: Title 컴포넌트를 만들었어요
+
 ## 0.32.22
 
 ### Patch Changes
