@@ -1,0 +1,24 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import ModalSkeleton from './ModalSkeleton';
+import * as ModalSkeletonStories from './ModalSkeleton.stories';
+import { Markdown } from '@storybook/blocks';
+import ReadMe from './ModalSkeleton.md?raw';
+
+<Meta of={ModalSkeletonStories} />
+
+# ModalSkeleton
+
+`ModalSkeleton`은 모달의 로딩 상태를 보여주는 스켈레톤 컴포넌트입니다.
+
+<Canvas of={ModalSkeletonStories.Playground} />
+
+
+## ArgsTable
+
+<ArgsTable of={ModalSkeleton} />
+
+- **type** (required): `'push' | 'white-reason'` 타입으로, 스켈레톤의 리스트 스타일을 결정합니다.
+
+## Usage
+
+<Markdown>{ReadMe}</Markdown>
