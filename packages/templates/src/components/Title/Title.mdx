@@ -5,16 +5,52 @@ import * as TitleStories from './Title.stories';
 <Meta of={TitleStories} />
 
 # Title
-
-Title 컴포넌트 설명을 적어주세요.
+3뎊스로 이루어진 타이틀 컴포넌트
 
 <Canvas of={TitleStories.Playground} />
 
+## Usage
+```tsx
+import { Button, IconButton, Icon, Switch } from '@shoplflow/base'
+import { Title } from '@shoplflow/templates'
+
+const Example = () => {
+
+  return (
+      <Title>
+        <Title.HeaderBox>
+          <Title.Header
+            depth={1}
+            title='Title'
+            isRequired={true}
+            count='00'
+            helpIconProps={{
+              tooltipPlacement: 'right',
+              tooltipOffsetValue: 4,
+              tooltipMessage: 'Tooltip 노출',
+              onClick: () => {
+                return;
+              },
+            }}
+          />
+          <Title.Actions>
+            <Button styleVar='SECONDARY'>Button</Button>
+            <div
+              style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
+            />
+            <Switch activeColor='primary300' />
+          </Title.Actions>
+        </Title.HeaderBox>
+        <Title.Description description='paragraph1' />
+      </Title>
+  );
+}
+```
 
 ## Props
 <Controls of={TitleStories.Playground} />
 
-## Usage
+
 
 
 
