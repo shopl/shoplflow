@@ -1,2 +1,2 @@
 export * from './Example';
-export * from './Title';
+export * from './TitleGroup';

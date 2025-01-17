@@ -1,8 +1,34 @@
-import { Stack, StackContainer, Text } from '@shoplflow/base';
-import { StyledRequired, getTypographyAndColor } from './Title.styled';
-import type { ActionsProps, DescriptionProps, TitleHeaderProps, TitleProps } from './Title.types';
-import TitleHelpIcon from './TitleHelpIcon';
+import { Icon, IconButton, Stack, StackContainer, Text, Tooltip } from '@shoplflow/base';
+import { StyledRequired, getTypographyAndColor } from './TitleGroup.styled';
+import type {
+  ActionsProps,
+  DescriptionProps,
+  TitleGroupHeaderProps,
+  TitleGroupProps,
+  TitleGroupHelpIconProps,
+} from './TitleGroup.types';
 import type { ChildrenProps } from '@shoplflow/base/src/utils/type/ComponentProps';
+import { HelpLineIcon } from '@shoplflow/shopl-assets';
+
+const TitleGroupHelpIcon = ({
+  tooltipPlacement,
+  tooltipOffsetValue,
+  tooltipMessage,
+  onClick,
+}: TitleGroupHelpIconProps) => {
+  return (
+    <Tooltip
+      placement={tooltipPlacement}
+      offset={tooltipOffsetValue}
+      trigger={
+        <IconButton styleVar={'GHOST'} sizeVar={'XS'} onClick={onClick}>
+          <Icon iconSource={HelpLineIcon} color={'neutral400'} />
+        </IconButton>
+      }
+      popper={tooltipMessage && <Tooltip.Content content={tooltipMessage} />}
+    />
+  );
+};
 
 const Actions = ({ children }: ActionsProps) => {
   return <Stack.Horizontal align='center'>{children}</Stack.Horizontal>;
@@ -15,7 +41,7 @@ const HeaderBox = ({ children }: ChildrenProps) => {
     </StackContainer.Horizontal>
   );
 };
-const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleHeaderProps) => {
+const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleGroupHeaderProps) => {
   const { color, typography } = getTypographyAndColor(depth);
   return (
     <Stack.Horizontal align='center'>
@@ -30,7 +56,7 @@ const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleHeaderP
           </Text>
         )}
       </Stack.Horizontal>
-      {helpIconProps && <TitleHelpIcon {...helpIconProps} />}
+      {helpIconProps && <TitleGroupHelpIcon {...helpIconProps} />}
     </Stack.Horizontal>
   );
 };
@@ -45,7 +71,7 @@ const Description = ({ description }: DescriptionProps) => {
   );
 };
 
-const Title = ({ children }: TitleProps) => {
+const TitleGroup = ({ children }: TitleGroupProps) => {
   return (
     <Stack.Vertical width='100%' data-shoplflow={'Title'}>
       {children}
@@ -53,9 +79,9 @@ const Title = ({ children }: TitleProps) => {
   );
 };
 
-Title.HeaderBox = HeaderBox;
-Title.Header = Header;
-Title.Actions = Actions;
-Title.Description = Description;
+TitleGroup.HeaderBox = HeaderBox;
+TitleGroup.Header = Header;
+TitleGroup.Actions = Actions;
+TitleGroup.Description = Description;
 
-export default Title;
+export default TitleGroup;

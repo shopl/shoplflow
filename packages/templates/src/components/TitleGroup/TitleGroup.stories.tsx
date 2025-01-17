@@ -2,20 +2,20 @@ import React from 'react';
 
 import type { StoryFn } from '@storybook/react';
 import { Button, colorTokens, Stack, Switch } from '@shoplflow/base';
-import Title from './Title';
-import type { TitleProps } from './Title.types';
+import TitleGroup from './TitleGroup';
+import type { TitleGroupProps } from './TitleGroup.types';
 
 export default {
-  title: 'COMPONENTS/Title',
-  component: Title,
+  title: 'COMPONENTS/TitleGroup',
+  component: TitleGroup,
 };
 
-export const Playground: StoryFn<TitleProps> = () => {
+export const Playground: StoryFn<TitleGroupProps> = () => {
   return (
     <Stack.Horizontal width='600px'>
-      <Title>
-        <Title.HeaderBox>
-          <Title.Header
+      <TitleGroup>
+        <TitleGroup.HeaderBox>
+          <TitleGroup.Header
             depth={1}
             title='Title'
             isRequired={true}
@@ -29,7 +29,7 @@ export const Playground: StoryFn<TitleProps> = () => {
               },
             }}
           />
-          <Title.Actions>
+          <TitleGroup.Actions>
             <Button styleVar='SECONDARY' sizeVar='S'>
               Button
             </Button>
@@ -37,10 +37,10 @@ export const Playground: StoryFn<TitleProps> = () => {
               style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
             />
             <Switch activeColor='primary300' />
-          </Title.Actions>
-        </Title.HeaderBox>
-        <Title.Description description='paragraph1' />
-      </Title>
+          </TitleGroup.Actions>
+        </TitleGroup.HeaderBox>
+        <TitleGroup.Description description='paragraph1' />
+      </TitleGroup>
     </Stack.Horizontal>
   );
 };
@@ -52,12 +52,12 @@ Playground.parameters = {
   },
 };
 
-export const Depth2: StoryFn<TitleProps> = () => {
+export const Depth2: StoryFn<TitleGroupProps> = () => {
   return (
     <Stack.Horizontal width='600px'>
-      <Title>
-        <Title.HeaderBox>
-          <Title.Header
+      <TitleGroup>
+        <TitleGroup.HeaderBox>
+          <TitleGroup.Header
             depth={2}
             title='Title'
             isRequired={true}
@@ -71,7 +71,7 @@ export const Depth2: StoryFn<TitleProps> = () => {
               },
             }}
           />
-          <Title.Actions>
+          <TitleGroup.Actions>
             <Button styleVar='SECONDARY' sizeVar='S'>
               Button
             </Button>
@@ -79,20 +79,20 @@ export const Depth2: StoryFn<TitleProps> = () => {
               style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
             />
             <Switch activeColor='primary300' />
-          </Title.Actions>
-        </Title.HeaderBox>
-        <Title.Description description='paragraph1' />
-      </Title>
+          </TitleGroup.Actions>
+        </TitleGroup.HeaderBox>
+        <TitleGroup.Description description='paragraph1' />
+      </TitleGroup>
     </Stack.Horizontal>
   );
 };
 
-export const Depth3: StoryFn<TitleProps> = () => {
+export const Depth3: StoryFn<TitleGroupProps> = () => {
   return (
     <Stack.Horizontal width='600px'>
-      <Title>
-        <Title.HeaderBox>
-          <Title.Header
+      <TitleGroup>
+        <TitleGroup.HeaderBox>
+          <TitleGroup.Header
             depth={3}
             title='Title'
             isRequired={true}
@@ -106,7 +106,7 @@ export const Depth3: StoryFn<TitleProps> = () => {
               },
             }}
           />
-          <Title.Actions>
+          <TitleGroup.Actions>
             <Button styleVar='SECONDARY' sizeVar='S'>
               Button
             </Button>
@@ -114,20 +114,20 @@ export const Depth3: StoryFn<TitleProps> = () => {
               style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
             />
             <Switch activeColor='primary300' />
-          </Title.Actions>
-        </Title.HeaderBox>
-        <Title.Description description='paragraph1' />
-      </Title>
+          </TitleGroup.Actions>
+        </TitleGroup.HeaderBox>
+        <TitleGroup.Description description='paragraph1' />
+      </TitleGroup>
     </Stack.Horizontal>
   );
 };
 
-export const WithoutActions: StoryFn<TitleProps> = () => {
+export const WithoutActions: StoryFn<TitleGroupProps> = () => {
   return (
     <Stack.Horizontal width='600px'>
-      <Title>
-        <Title.HeaderBox>
-          <Title.Header
+      <TitleGroup>
+        <TitleGroup.HeaderBox>
+          <TitleGroup.Header
             depth={1}
             title='Title'
             isRequired={true}
@@ -141,19 +141,19 @@ export const WithoutActions: StoryFn<TitleProps> = () => {
               },
             }}
           />
-        </Title.HeaderBox>
-        <Title.Description description='paragraph1' />
-      </Title>
+        </TitleGroup.HeaderBox>
+        <TitleGroup.Description description='paragraph1' />
+      </TitleGroup>
     </Stack.Horizontal>
   );
 };
 
-export const WithoutDescription: StoryFn<TitleProps> = () => {
+export const WithoutDescription: StoryFn<TitleGroupProps> = () => {
   return (
     <Stack.Horizontal width='600px'>
-      <Title>
-        <Title.HeaderBox>
-          <Title.Header
+      <TitleGroup>
+        <TitleGroup.HeaderBox>
+          <TitleGroup.Header
             depth={1}
             title='Title'
             isRequired={true}
@@ -167,7 +167,7 @@ export const WithoutDescription: StoryFn<TitleProps> = () => {
               },
             }}
           />
-          <Title.Actions>
+          <TitleGroup.Actions>
             <Button styleVar='SECONDARY' sizeVar='S'>
               Button
             </Button>
@@ -175,9 +175,9 @@ export const WithoutDescription: StoryFn<TitleProps> = () => {
               style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
             />
             <Switch activeColor='primary300' />
-          </Title.Actions>
-        </Title.HeaderBox>
-      </Title>
+          </TitleGroup.Actions>
+        </TitleGroup.HeaderBox>
+      </TitleGroup>
     </Stack.Horizontal>
   );
 };

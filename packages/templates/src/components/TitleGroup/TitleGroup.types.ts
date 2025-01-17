@@ -10,7 +10,7 @@ export type DescriptionProps = {
   description: string;
 };
 
-export type TitleHelpIconProps = {
+export type TitleGroupHelpIconProps = {
   /**
    * 툴팁 내용, 없을 경우 Tooltip 미노출
    */
@@ -36,7 +36,7 @@ export type TitleHelpIconProps = {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export type TitleHeaderProps = {
+export type TitleGroupHeaderProps = {
   /**
    * 제목
    */
@@ -61,7 +61,7 @@ export type TitleHeaderProps = {
    * 필수 여부 표시
    */
   isRequired?: boolean;
-  helpIconProps?: TitleHelpIconProps;
+  helpIconProps?: TitleGroupHelpIconProps;
 };
 
-export interface TitleProps extends ChildrenProps {}
+export interface TitleGroupProps extends ChildrenProps {}
