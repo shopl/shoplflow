@@ -37,8 +37,8 @@ const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleHeaderP
 
 const Description = ({ description }: DescriptionProps) => {
   return (
-    <StackContainer minHeight={'30px'} height={'auto'}>
-      <Text typography={'body1_400'} color={'neutral500'} wordBreak={'break-all'}>
+    <StackContainer minHeight='30px' height='auto'>
+      <Text typography='paragraph1' color='neutral500' wordBreak='break-all'>
         {description}
       </Text>
     </StackContainer>
