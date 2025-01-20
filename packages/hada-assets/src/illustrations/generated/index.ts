@@ -1,18 +1,18 @@
-import English from './English';
-import Korean from './Korean';
-import ImgAlert from './ImgAlert';
-import ImgAssignees from './ImgAssignees';
-import ImgAverage from './ImgAverage';
-import ImgCheckedFacility from './ImgCheckedFacility';
-import ImgChecklist from './ImgChecklist';
-import ImgFacility from './ImgFacility';
-import ImgPending from './ImgPending';
-import ImgResolved from './ImgResolved';
-import ImgScheduled from './ImgScheduled';
-import ImgTutorial01 from './ImgTutorial01';
-import ImgTutorial02 from './ImgTutorial02';
-import ImgTutorial03 from './ImgTutorial03';
-import ImgUpgrade from './ImgUpgrade';
+import English from "./English";
+import Korean from "./Korean";
+import ImgAlert from "./ImgAlert";
+import ImgAssignees from "./ImgAssignees";
+import ImgAverage from "./ImgAverage";
+import ImgCheckedFacility from "./ImgCheckedFacility";
+import ImgChecklist from "./ImgChecklist";
+import ImgFacility from "./ImgFacility";
+import ImgPending from "./ImgPending";
+import ImgResolved from "./ImgResolved";
+import ImgScheduled from "./ImgScheduled";
+import ImgTutorial01 from "./ImgTutorial01";
+import ImgTutorial02 from "./ImgTutorial02";
+import ImgTutorial03 from "./ImgTutorial03";
+import ImgUpgrade from "./ImgUpgrade";
 
 const illustrations = {
   english: English,
@@ -20,15 +20,15 @@ const illustrations = {
   alert: ImgAlert,
   assignees: ImgAssignees,
   average: ImgAverage,
-  'checked-facility': ImgCheckedFacility,
+  "checked-facility": ImgCheckedFacility,
   checklist: ImgChecklist,
   facility: ImgFacility,
   pending: ImgPending,
   resolved: ImgResolved,
   scheduled: ImgScheduled,
-  'tutorial-01': ImgTutorial01,
-  'tutorial-02': ImgTutorial02,
-  'tutorial-03': ImgTutorial03,
+  "tutorial-01": ImgTutorial01,
+  "tutorial-02": ImgTutorial02,
+  "tutorial-03": ImgTutorial03,
   upgrade: ImgUpgrade,
 };
 
