@@ -13,6 +13,27 @@ SelectInputButton은 InputButton에 Multiple Select 기능을 추가한 컴포�
 
 ## Usage
 ```tsx
+import SelectInputButton from './SelectInputButton';
+
+export default function Example() {
+  const options = [
+    { id: 1, name: 'Option 1' },
+    { id: 2, name: 'Option 2' },
+    { id: 3, name: 'Option 3' },
+  ];
+
+  return (
+    <SelectInputButton
+      value={options}
+      label="name"
+      placeholder="옵션을 선택하세요"
+      onClick={() => console.log('클릭')}
+      onClear={() => console.log('클리어')}
+      rightSource={<span style={{ color: 'blue' }}>더보기</span>}
+      disabled={false}
+    />
+  );
+}
 ```
 
 ## Props
