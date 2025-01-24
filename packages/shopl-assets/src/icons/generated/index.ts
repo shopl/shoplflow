@@ -196,6 +196,9 @@ import IcNormal from './IcNormal';
 import IcNoticeMedium from './IcNoticeMedium';
 import IcNoticeSolidMedium from './IcNoticeSolidMedium';
 import IcNotice from './IcNotice';
+import IcOnboardingAttendance from './IcOnboardingAttendance';
+import IcOnboardingBoth from './IcOnboardingBoth';
+import IcOnboardingSetting from './IcOnboardingSetting';
 import IcOvertimeMedium from './IcOvertimeMedium';
 import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
 import IcPaste from './IcPaste';
@@ -464,6 +467,9 @@ const icons = {
   'notice-medium': IcNoticeMedium,
   'notice-solid-medium': IcNoticeSolidMedium,
   notice: IcNotice,
+  'onboarding-attendance': IcOnboardingAttendance,
+  'onboarding-both': IcOnboardingBoth,
+  'onboarding-setting': IcOnboardingSetting,
   'overtime-medium': IcOvertimeMedium,
   'password-error-xlarge': IcPasswordErrorXlarge,
   paste: IcPaste,
@@ -735,6 +741,9 @@ export {
   IcNoticeMedium as NoticeMediumIcon,
   IcNoticeSolidMedium as NoticeSolidMediumIcon,
   IcNotice as NoticeIcon,
+  IcOnboardingAttendance as OnboardingAttendanceIcon,
+  IcOnboardingBoth as OnboardingBothIcon,
+  IcOnboardingSetting as OnboardingSettingIcon,
   IcOvertimeMedium as OvertimeMediumIcon,
   IcPasswordErrorXlarge as PasswordErrorXlargeIcon,
   IcPaste as PasteIcon,
