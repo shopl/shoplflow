@@ -1,0 +1,21 @@
+import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import TableSkeleton from './TableSkeleton';
+import * as TableSkeletonStories from './TableSkeleton.stories';
+import { Markdown } from '@storybook/blocks';
+import ReadMe from './TableSkeleton.md?raw';
+
+<Meta of={TableSkeletonStories} />
+
+# TableSkeleton
+
+`TableSkeleton` 컴포넌트는 테이블 데이터를 로딩 중일 때의 스켈레톤 UI를 제공합니다. 그리드 및 리스트 형태로 렌더링할 수 있습니다.
+
+<Canvas of={TableSkeletonStories.Playground} />
+
+## ArgsTable
+
+<ArgsTable of={TableSkeleton} />
+
+## Usage
+
+<Markdown>{ReadMe}</Markdown>
