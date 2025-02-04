@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.32.26",
+  "version": "0.32.27",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
