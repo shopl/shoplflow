@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import Button from './Button';
 import type { ButtonProps } from './Button.types';
 import { ButtonSizeVariants, ButtonStyleVariants } from './Button.types';
@@ -6,18 +6,18 @@ import { ComponentStage } from '../../../styles/Box';
 import { Stack } from '../../Stack';
 import { colorTokens } from '../../../styles';
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'COMPONENTS/Buttons/Button',
   component: Button,
   argTypes: {
     styleVar: {
-      options: ButtonStyleVariants,
+      options: Object.values(ButtonStyleVariants),
       control: { type: 'select' },
       description: '버튼 타입',
       defaultValue: 'primary',
     },
     sizeVar: {
-      options: ButtonSizeVariants,
+      options: Object.values(ButtonSizeVariants),
       control: { type: 'radio' },
       description: '버튼 사이즈',
       defaultValue: 'M',
@@ -38,6 +38,8 @@ export default {
     },
   },
 };
+
+export default meta;
 
 export const Primary: StoryFn<ButtonProps> = (args) => {
   return (
