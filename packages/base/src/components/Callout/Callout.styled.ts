@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import type { CalloutProps } from './Callout.types';
 
 const informationStyle = css`
-  background: ${colorTokens.neutral100};
+  background: ${colorTokens.neutral400_5};
   & > span {
     color: ${colorTokens.neutral600};
   }
