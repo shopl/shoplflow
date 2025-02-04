@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.27
+
+### Patch Changes
+
+- [#447](https://github.com/shopl/shoplflow/pull/447) [`3f88f884d5b09ac5c583f8bddf86cfa363c046c2`](https://github.com/shopl/shoplflow/commit/3f88f884d5b09ac5c583f8bddf86cfa363c046c2) Thanks [@velo-kim](https://github.com/velo-kim)! - NumberCombobox onKeyDown 핸들러를 업데이트 했어요
+
 ## 0.32.26
 
 ### Patch Changes
