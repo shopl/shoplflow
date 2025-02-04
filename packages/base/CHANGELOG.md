@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.25
+
+### Patch Changes
+
+- [#443](https://github.com/shopl/shoplflow/pull/443) [`f7a01a0e611c0f4864ffa84e4a7bdcdfeb86b7a8`](https://github.com/shopl/shoplflow/commit/f7a01a0e611c0f4864ffa84e4a7bdcdfeb86b7a8) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Callout Info 아이콘 색이 잘못되어있어서 수정했습니다.
+
 ## 0.32.24
 
 ### Patch Changes
