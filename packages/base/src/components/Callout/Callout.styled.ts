@@ -8,8 +8,11 @@ const informationStyle = css`
   & > span {
     color: ${colorTokens.neutral600};
   }
+  & > svg > circle {
+    fill: ${colorTokens.neutral200};
+  }
   & > svg > path {
-    fill: ${colorTokens.neutral600};
+    fill: ${colorTokens.neutral400};
   }
 `;
 const alertStyle = css`
