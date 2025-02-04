@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.26
+
+### Patch Changes
+
+- [#445](https://github.com/shopl/shoplflow/pull/445) [`63fe6496c3e989c93fca81f1ab7b75417a57707c`](https://github.com/shopl/shoplflow/commit/63fe6496c3e989c93fca81f1ab7b75417a57707c) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Callout Info background neutral100 -> neutral400_5로 수정했습니다.
+
 ## 0.32.25
 
 ### Patch Changes
