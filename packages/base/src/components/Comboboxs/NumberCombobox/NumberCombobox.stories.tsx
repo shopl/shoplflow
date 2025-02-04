@@ -1,18 +1,35 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
 import NumberCombobox from './NumberCombobox';
-import type { NumberComboboxProps } from './NumberCombobox.types';
+import { NumberComboboxSizeVariants, type NumberComboboxProps } from './NumberCombobox.types';
 import { HOURS, MINUTES } from './NumberComboboxLists';
 
-export default {
+const meta: Meta<typeof NumberCombobox> = {
   title: 'COMPONENTS/Comboboxs/NumberCombobox',
   component: NumberCombobox,
+  argTypes: {
+    value: { control: { type: 'text' } },
+    onChange: { action: 'onChange' },
+    onSelect: { action: 'onSelect' },
+    disabled: { control: { type: 'boolean' }, defaultValue: false },
+    autoFocus: { control: { type: 'boolean' }, defaultValue: false },
+    floatingZIndex: { control: { type: 'number' }, description: 'Popover z-index' },
+    width: { control: { type: 'text' }, description: '넓이' },
+    sizeVar: {
+      options: Object.values(NumberComboboxSizeVariants),
+      control: { type: 'radio' },
+      description: '사이즈',
+      defaultValue: 'M',
+    },
+  },
 };
 
+export default meta;
+
 export const Playground: StoryFn<NumberComboboxProps> = (args) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(args.value);
 
   return (
     <Stack>
@@ -20,27 +37,38 @@ export const Playground: StoryFn<NumberComboboxProps> = (args) => {
         {...args}
         items={HOURS}
         value={value}
-        autoFocus={false}
-        width='90px'
         onChange={(event) => {
-          setValue(event.target.value);
+          setValue(event.target.value.replace(/\D/g, ''));
         }}
         onSelect={(value) => {
-          console.info('value : ', value);
+          setValue(value);
+
           return;
         }}
-        floatingZIndex={2005}
       />
     </Stack>
   );
 };
 
+Playground.args = {
+  value: '12',
+  disabled: false,
+  autoFocus: false,
+  floatingZIndex: 2005,
+  width: '90px',
+  sizeVar: 'M',
+};
+
 export const Disabled: StoryFn<NumberComboboxProps> = (args) => {
   return (
     <Stack>
-      <NumberCombobox {...args} items={HOURS} disabled />
+      <NumberCombobox {...args} items={HOURS} />
     </Stack>
   );
+};
+
+Disabled.args = {
+  disabled: true,
 };
 
 export const Minutes: StoryFn<NumberComboboxProps> = (args) => {
