@@ -46,7 +46,7 @@ export interface ${prefix}OptionProps {
 echo "import React from 'react';
 
 import type { StoryFn } from '@storybook/react';
-import { Stack } from '../Stack';
+import { Stack } from '@shoplflow/base';
 import ${prefix} from './${prefix}';
 import type { ${prefix}Props } from './${prefix}.types';
 

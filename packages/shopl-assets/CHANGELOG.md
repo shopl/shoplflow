@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.11.0
+
+### Minor Changes
+
+- [#441](https://github.com/shopl/shoplflow/pull/441) [`40c82c94942591e9572edd9cc78d9a2018b3d3d8`](https://github.com/shopl/shoplflow/commit/40c82c94942591e9572edd9cc78d9a2018b3d3d8) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Icon을 추가했어요
+
 ## 0.10.4
 
 ### Patch Changes

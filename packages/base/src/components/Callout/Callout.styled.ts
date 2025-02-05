@@ -4,12 +4,15 @@ import { css } from '@emotion/react';
 import type { CalloutProps } from './Callout.types';
 
 const informationStyle = css`
-  background: ${colorTokens.neutral100};
+  background: ${colorTokens.neutral400_5};
   & > span {
     color: ${colorTokens.neutral600};
   }
+  & > svg > circle {
+    fill: ${colorTokens.neutral200};
+  }
   & > svg > path {
-    fill: ${colorTokens.neutral600};
+    fill: ${colorTokens.neutral400};
   }
 `;
 const alertStyle = css`

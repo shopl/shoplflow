@@ -1,16 +1,15 @@
 {
-  "name": "@shoplflow/base",
-  "version": "0.32.27",
+  "name": "@shoplflow/templates",
+  "version": "0.0.7",
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
     "generate:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
-    "dev:stories": "storybook dev -p 6007",
+    "dev:stories": "storybook dev -p 6008",
     "dev": "tsup --watch",
     "build-storybook": "storybook build"
   },
@@ -20,8 +19,6 @@
       "require": "./src/index.ts",
       "import": "./src/index.ts"
     },
-    "./styles": "./src/styles/global.css",
-    "./reset": "./src/styles/reset.css",
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -40,8 +37,6 @@
           "default": "./dist/index.js"
         }
       },
-      "./styles": "./dist/styles/global.css",
-      "./reset": "./dist/styles/reset.css",
       "./package.json": "./package.json"
     }
   },
@@ -106,13 +101,13 @@
     "@floating-ui/core": "^1.5.0",
     "@floating-ui/react": "^0.26.2",
     "@floating-ui/react-dom": "^2.0.3",
-    "@shoplflow/hada-assets": "workspace:^",
+    "@shoplflow/base": "workspace:^",
     "@shoplflow/shopl-assets": "workspace:^",
+    "@shoplflow/hada-assets": "workspace:^",
     "@shoplflow/utils": "workspace:^",
     "date-fns": "^3.6.0",
     "framer-motion": "10.12.6",
     "react": "^18.2.0",
-    "react-custom-scrollbars-2": "^4.5.0",
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.2.0",
     "simplebar-react": "^3.2.6"

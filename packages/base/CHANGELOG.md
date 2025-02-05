@@ -1,5 +1,42 @@
 # @shoplflow/base
 
+## 0.32.27
+
+### Patch Changes
+
+- [#447](https://github.com/shopl/shoplflow/pull/447) [`3f88f884d5b09ac5c583f8bddf86cfa363c046c2`](https://github.com/shopl/shoplflow/commit/3f88f884d5b09ac5c583f8bddf86cfa363c046c2) Thanks [@velo-kim](https://github.com/velo-kim)! - NumberCombobox onKeyDown 핸들러를 업데이트 했어요
+
+## 0.32.26
+
+### Patch Changes
+
+- [#445](https://github.com/shopl/shoplflow/pull/445) [`63fe6496c3e989c93fca81f1ab7b75417a57707c`](https://github.com/shopl/shoplflow/commit/63fe6496c3e989c93fca81f1ab7b75417a57707c) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Callout Info background neutral100 -> neutral400_5로 수정했습니다.
+
+## 0.32.25
+
+### Patch Changes
+
+- [#443](https://github.com/shopl/shoplflow/pull/443) [`f7a01a0e611c0f4864ffa84e4a7bdcdfeb86b7a8`](https://github.com/shopl/shoplflow/commit/f7a01a0e611c0f4864ffa84e4a7bdcdfeb86b7a8) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Callout Info 아이콘 색이 잘못되어있어서 수정했습니다.
+
+## 0.32.24
+
+### Patch Changes
+
+- Updated dependencies [[`40c82c94942591e9572edd9cc78d9a2018b3d3d8`](https://github.com/shopl/shoplflow/commit/40c82c94942591e9572edd9cc78d9a2018b3d3d8)]:
+  - @shoplflow/shopl-assets@0.11.0
+
+## 0.32.23
+
+### Patch Changes
+
+- [#437](https://github.com/shopl/shoplflow/pull/437) [`496f1b9ca238b031b43ed43d56873deffcc0e6a4`](https://github.com/shopl/shoplflow/commit/496f1b9ca238b031b43ed43d56873deffcc0e6a4) Thanks [@velo-kim](https://github.com/velo-kim)! - templates: Title 컴포넌트를 만들었어요
+
+## 0.32.22
+
+### Patch Changes
+
+- [#435](https://github.com/shopl/shoplflow/pull/435) [`64918e9b32ded778207ce8312b99bf97eb7d7cde`](https://github.com/shopl/shoplflow/commit/64918e9b32ded778207ce8312b99bf97eb7d7cde) Thanks [@velo-kim](https://github.com/velo-kim)! - shopl-templates package를 세팅했어요
+
 ## 0.32.21
 
 ### Patch Changes

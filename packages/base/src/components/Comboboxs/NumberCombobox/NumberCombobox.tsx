@@ -75,6 +75,15 @@ const NumberCombobox = ({
               // Bubbling X
               event.stopPropagation();
 
+              // 허용할 키 목록: 숫자(0~9), 백스페이스, 딜리트, 화살표 키, 탭, 엔터
+              if (
+                !/^\d$/.test(event.key) &&
+                !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Enter'].includes(event.key)
+              ) {
+                event.preventDefault();
+                return;
+              }
+
               // 위, 아래 방향키 조작 X
               if (event.key === 'ArrowUp' || event.key === 'ArrowDown' || event.key === '-') {
                 event.preventDefault();

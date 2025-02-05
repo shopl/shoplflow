@@ -1,0 +1,56 @@
+import { Controls, Canvas, Meta } from '@storybook/blocks';
+import TitleGroup from './TitleGroup';
+import * as TitleGroupStories from './TitleGroup.stories';
+
+<Meta of={TitleGroupStories} />
+
+# TitleGroup
+타이틀과 함께 사용되는 요소의 집합체
+
+## Overview
+<Canvas of={TitleGroupStories.Playground} />
+
+## Usage
+```tsx
+import { Button, IconButton, Icon, Switch } from '@shoplflow/base'
+import { TitleGroup } from '@shoplflow/templates'
+
+const Example = () => {
+  return (
+      <TitleGroup>
+        <TitleGroup.HeaderBox>
+          <TitleGroup.Header
+            depth={1}
+            title='Title'
+            isRequired={true}
+            count='00'
+            helpIconProps={{
+              tooltipPlacement: 'right',
+              tooltipOffsetValue: 4,
+              tooltipMessage: 'Tooltip 노출',
+              onClick: () => {
+                return;
+              },
+            }}
+          />
+          <TitleGroup.Actions>
+            <Button styleVar='SECONDARY'>Button</Button>
+            <div
+              style={{ width: '20px', height: '20px', backgroundColor: `${colorTokens.shopl100}`, marginInline: '4px' }}
+            />
+            <Switch activeColor='primary300' />
+          </TitleGroup.Actions>
+        </TitleGroup.HeaderBox>
+        <TitleGroup.Description description='paragraph1' />
+      </TitleGroup>
+  );
+}
+```
+
+## Props
+<Controls of={TitleGroupStories.Playground} />
+
+
+
+
+
