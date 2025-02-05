@@ -26,12 +26,20 @@ export const Playground: StoryFn<InputProps> = (args) => {
 };
 
 Playground.args = {
-  placeholder: 'input 예제에요.',
+  placeholder: 'input 예제입니다',
   disabled: false,
   onClear: () => {
     return;
   },
 };
+
+Playground.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
+  },
+};
+
 export const Password: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -46,7 +54,7 @@ export const Password: StoryFn<InputProps> = (args) => {
 
 Password.args = {
   type: 'password',
-  placeholder: '타입이 password인 경우에요.',
+  placeholder: '타입이 password인 경우입니다.',
   disabled: false,
   onClear: () => {
     return;
@@ -78,7 +86,7 @@ export const CheckValue: StoryFn<InputProps> = (args) => {
 };
 
 CheckValue.args = {
-  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있어요.',
+  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있습니다.',
   disabled: false,
   onClear: () => {
     return;
@@ -98,7 +106,7 @@ export const Error: StoryFn<InputProps> = (args) => {
 Error.args = {
   disabled: false,
   isError: true,
-  placeholder: '에러 상태에요.',
+  placeholder: '에러 상태입니다.',
 };
 export const Number: StoryFn<InputProps> = (args) => {
   const [t, sT] = useState(false);

@@ -15,7 +15,8 @@ const meta: Meta<typeof NumberCombobox> = {
     onSelect: { action: 'onSelect' },
     disabled: { control: { type: 'boolean' }, defaultValue: false },
     autoFocus: { control: { type: 'boolean' }, defaultValue: false },
-    floatingZIndex: { control: { type: 'number' }, description: 'Popover z-index' },
+    floatingZIndex: { control: { type: 'number' }, description: '커스텀 Popover z-index' },
+    maxLength: { control: { type: 'number' }, description: '최대 길이' },
     width: { control: { type: 'text' }, description: '넓이' },
     sizeVar: {
       options: Object.values(NumberComboboxSizeVariants),
@@ -57,6 +58,13 @@ Playground.args = {
   floatingZIndex: 2005,
   width: '90px',
   sizeVar: 'M',
+};
+
+Playground.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=8305-405&m=dev',
+  },
 };
 
 export const Disabled: StoryFn<NumberComboboxProps> = (args) => {

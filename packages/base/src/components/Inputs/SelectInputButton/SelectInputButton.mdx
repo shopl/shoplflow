@@ -6,6 +6,7 @@ import * as SelectInputButtonStories from './SelectInputButton.stories';
 
 # SelectInputButton
 SelectInputButton은 InputButton에 Multiple Select 기능을 추가한 컴포넌트입니다.
+
 > - 선택한 최초 값만 표시되며 최초 값 외의 값은 +n으로 표시됩니다.
 
 ## Overview
@@ -13,6 +14,53 @@ SelectInputButton은 InputButton에 Multiple Select 기능을 추가한 컴포�
 
 ## Usage
 ```tsx
+const Example: StoryFn<SelectInputButtonProps> = (args) => {
+  const newArray: Array<{ title: string; subTitle: string; other: string }> = new Array(10)
+    .fill(0)
+    .map((item, index) => {
+      return {
+        title: '제목' + index,
+        subTitle: '서브 타이틀' + index,
+        other: '다른 데이터' + index,
+      };
+    });
+  const { selectedItem, handleToggleSelect } = useSelect('MULTI', newArray, {
+    key: 'title',
+  });
+  return (
+    <Stack width={'400px'}>
+      <SelectInputButton
+        {...args}
+        value={selectedItem}
+        label={'title'}
+        rightSource={
+          <IconButton styleVar={'GHOST'} sizeVar={'S'}>
+            <Icon iconSource={RightArrowIcon} color={'neutral350'} />
+          </IconButton>
+        }
+      />
+      <Stack as={'ul'} width={'100%'}>
+        {newArray.map((item, index) => {
+          const isSelected = selectedItem.some((selected) => selected.title === item.title);
+          return (
+            <List
+              key={index}
+              isSelected={isSelected}
+              onClick={() => {
+                handleToggleSelect(item.title);
+              }}
+              leftSource={<Checkbox />}
+              rightSource={<Text whiteSpace={'nowrap'}>{item.other}</Text>}
+            >
+              <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
+              <List.Text2Rows title={item.title} subTitle={item.subTitle} />
+            </List>
+          );
+        })}
+      </Stack>
+    </Stack>
+  );
+};
 ```
 
 ## Props
