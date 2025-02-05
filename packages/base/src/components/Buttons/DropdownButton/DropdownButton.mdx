@@ -5,7 +5,7 @@ import * as DropdownButtonStories from './DropdownButton.stories';
 <Meta of={DropdownButtonStories} />
 
 # DropdownButton
-화살표를 포함한 버튼으로 2단계의 구체적인 옵션을 제공하는 버튼이에요.
+화살표를 포함한 버튼으로 2단계의 구체적인 옵션을 제공하는 버튼입니다.
 
 ## Overview
 <Canvas of={DropdownButtonStories.Playground} />
@@ -16,7 +16,7 @@ const [selectedItem, setSelectedItem] = useState<'Shopl' | 'Hada'>('Shopl');
 
   return (
     <Stack>
-      <DropdownButton {...args} text='Button'>
+      <DropdownButton {...args} >
         <DropdownButton.Menu
           isSelected={selectedItem === 'Shopl'}
           onClick={() => {
