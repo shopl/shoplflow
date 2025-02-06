@@ -24,16 +24,10 @@ export type ChipButtonSizeVariantType = $Values<typeof ChipButtonSizeVariants>;
 export interface ChipButtonProps
   extends ChipButtonOptionProps,
     Omit<HTMLAttributes<HTMLButtonElement>, 'color'>,
-    /**
-     * border 기준 4단계 높은 색상
-     */
     TextProps,
     DisableProps,
     LeftAndRightElementProps,
     SizeVariantProps<ChipButtonSizeVariantType>,
-    /**
-     * styleVar에 따라 기준 속성이 변경됩니다.
-     */
     StyleVariantProps<ChipButtonStyleVariantType>,
     ColorTokenProps,
     BackgroundColorProps {}

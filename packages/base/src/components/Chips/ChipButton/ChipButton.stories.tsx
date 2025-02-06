@@ -8,13 +8,20 @@ export default {
   title: 'COMPONENTS/Chips/ChipButton',
   component: ChipButton,
   argTypes: {
+    text: {
+      control: {
+        type: 'text',
+      },
+      description: 'border 기준 4단계 높은 색상',
+      defaultValue: 'ChipButton',
+    },
     onClick: { action: 'clicked' },
     styleVar: {
       control: {
         type: 'select',
       },
       options: Object.values(ChipButtonStyleVariants),
-      description: 'Style variant of the ChipButton',
+      description: 'ChipButton의 스타일을 설정합니다. styleVar에 따라 기준 속성이 변경됩니다',
       defaultValue: ChipButtonStyleVariants.LINE,
     },
     sizeVar: {
@@ -22,7 +29,7 @@ export default {
         type: 'select',
       },
       options: Object.values(ChipButtonSizeVariants),
-      description: 'Size variant of the ChipButton',
+      description: 'ChipButton의 사이즈를 설정합니다.',
       defaultValue: ChipButtonSizeVariants.S,
     },
   },
