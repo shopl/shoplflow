@@ -55,16 +55,19 @@ const getStyleBySizeVar = (sizeVar?: ButtonSizeVariantType) => {
   switch (sizeVar) {
     case 'M':
       return css`
+        gap: 4px;
         min-width: 72px;
         min-height: 40px;
       `;
     case 'S':
       return css`
+        gap: 2px;
         min-width: 54px;
         min-height: 32px;
       `;
     default:
       return css`
+        gap: 4px;
         min-width: 72px;
         min-height: 40px;
       `;
@@ -77,7 +80,7 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   justify-content: center;
   height: fit-content;
   width: fit-content;
-  gap: 4px;
+  /* gap: 4px; */
   padding: 0 12px;
   border-radius: 6px;
   cursor: pointer;
