@@ -90,7 +90,7 @@ export const Level3: StoryFn<TabsProps> = (args) => {
             <Tabs.Tab
               styleVar='INFO'
               value={'a'}
-              label={'Long label example.....'}
+              label={'Long'}
               leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}
               rightSource={rightSource}
             />

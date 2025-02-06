@@ -6,7 +6,6 @@ import type { TabProps } from './Tabs.types';
 import { StyledTabText, StyledTab } from './Tabs.styled';
 
 import type { TypographyTokens } from '../../styles';
-import { Indicator } from './Indicator';
 
 export const Tab = ({
   value,
@@ -73,7 +72,6 @@ export const Tab = ({
         {label}
       </StyledTabText>
       {rightSource}
-      {styleVar === 'INFO' && isActive && <Indicator layoutId='underline' />}
     </StyledTab>
   );
 };
