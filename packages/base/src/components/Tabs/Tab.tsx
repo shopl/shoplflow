@@ -5,18 +5,19 @@ import type { TabProps } from './Tabs.types';
 
 import { StyledTabText, StyledTab } from './Tabs.styled';
 
-import type { TypographyTokens } from '../../styles';
+import type { ColorTokens, TypographyTokens } from '../../styles';
+import { Tag } from '../Tag';
 
 export const Tab = ({
   value,
   label,
   leftSource,
-  rightSource,
   as,
   styleVar = 'NORMAL',
   sizeVar = 'L',
   onClick,
   activeColor,
+  count,
   ...args
 }: TabProps) => {
   const { activeTab, setActiveTab } = useTabs();
@@ -38,9 +39,11 @@ export const Tab = ({
   };
 
   let typography: TypographyTokens = 'title1_700';
+  let color: ColorTokens = 'neutral350';
 
   if (styleVar === 'INFO') {
     typography = 'body1_700';
+    color = isActive || isHover ? 'neutral700' : 'neutral350';
   }
 
   if (styleVar === 'NORMAL' && sizeVar === 'M') {
@@ -71,7 +74,11 @@ export const Tab = ({
       >
         {label}
       </StyledTabText>
-      {rightSource}
+      {styleVar === 'INFO' && count && (
+        <Tag style={{ padding: '0 6px' }} color={`${color}`} sizeVar='XS' radius>
+          {count}
+        </Tag>
+      )}
     </StyledTab>
   );
 };

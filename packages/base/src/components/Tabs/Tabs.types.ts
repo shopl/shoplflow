@@ -39,6 +39,7 @@ export interface TabsOptionProps extends ChildrenProps {
 export interface TabProps extends TabOptionProps {
   value: string;
   label: string;
+  count?: number;
 }
 
 export interface TabOptionProps

@@ -82,6 +82,7 @@ export const StyledTab = styled.div<TabStyledProps>`
   width: fit-content;
   cursor: pointer;
   position: relative;
+  gap: 4px;
   user-select: none;
 
   ${({ styleVar }) => styleVar && getWrapperStyleByStyleVar(styleVar)};
