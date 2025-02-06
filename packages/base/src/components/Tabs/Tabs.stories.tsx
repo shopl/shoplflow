@@ -72,7 +72,7 @@ export const Level3: StoryFn<TabsProps> = (args) => {
   const rightSource = (
     <div
       style={{
-        backgroundColor: colorTokens.primary300,
+        backgroundColor: colorTokens.neutral700,
         width: '20px',
         height: '20px',
         borderRadius: '100%',
