@@ -5,6 +5,8 @@ import { ButtonSizeVariants, ButtonStyleVariants } from './Button.types';
 import { ComponentStage } from '../../../styles/Box';
 import { Stack } from '../../Stack';
 import { colorTokens } from '../../../styles';
+import { Icon } from '../../../components/Icon';
+import { EditIcon } from '@shoplflow/shopl-assets';
 
 const meta: Meta<typeof Button> = {
   title: 'COMPONENTS/Buttons/Button',
@@ -91,6 +93,7 @@ Solid.args = {
   children: '버튼',
   color: 'neutral300',
   disabled: false,
+  leftSource: <Icon sizeVar='S' iconSource={EditIcon} />,
 };
 
 export const Ghost: StoryFn<ButtonProps> = (args) => {
@@ -108,4 +111,22 @@ Ghost.args = {
   sizeVar: 'M',
   children: '버튼',
   disabled: false,
+};
+
+export const SmallSize: StoryFn<ButtonProps> = (args) => {
+  return (
+    <Stack width={'200px'}>
+      <ComponentStage>
+        <Button {...args} />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+SmallSize.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'S',
+  children: '버튼',
+  disabled: false,
+  leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
 };
