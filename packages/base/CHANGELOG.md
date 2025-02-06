@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.30
+
+### Patch Changes
+
+- [#440](https://github.com/shopl/shoplflow/pull/440) [`e1709cb8bb98049850df969444a3049b5d555cc4`](https://github.com/shopl/shoplflow/commit/e1709cb8bb98049850df969444a3049b5d555cc4) Thanks [@ayaan0209](https://github.com/ayaan0209)! - ChipButton, ChipToggle 문서 정리 했습니다.
+
 ## 0.32.29
 
 ### Patch Changes
