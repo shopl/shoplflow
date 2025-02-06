@@ -1,17 +1,27 @@
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { useRef, useState } from 'react';
 
 import Input from './Input';
-import type { InputProps } from './Input.types';
+import { InputSizeVariants, type InputProps } from './Input.types';
 import { Stack } from '../../Stack';
 import { Button } from '../../Buttons';
 import { ComponentStage } from '../../../styles/Box';
 import { Text } from '../../Text';
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'COMPONENTS/Inputs/Input',
   component: Input,
+  argTypes: {
+    sizeVar: {
+      options: Object.values(InputSizeVariants),
+      control: { type: 'radio' },
+      description: '인풋 사이즈',
+      defaultValue: 'M',
+    },
+  },
 };
+
+export default meta;
 
 export const Playground: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
