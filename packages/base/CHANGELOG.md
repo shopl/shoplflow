@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.29
+
+### Patch Changes
+
+- [#439](https://github.com/shopl/shoplflow/pull/439) [`fa0730bbe521a5f1a66796c4738b7ff13617f401`](https://github.com/shopl/shoplflow/commit/fa0730bbe521a5f1a66796c4738b7ff13617f401) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Input, InputButton, SelectInputButton, TextArea 문서를 정리했습니다.
+
 ## 0.32.28
 
 ### Patch Changes
