@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.28
+
+### Patch Changes
+
+- [#451](https://github.com/shopl/shoplflow/pull/451) [`355c0dfabe0564efb82e6449a31a32cfaa3784fa`](https://github.com/shopl/shoplflow/commit/355c0dfabe0564efb82e6449a31a32cfaa3784fa) Thanks [@velo-kim](https://github.com/velo-kim)! - S사이즈 Button gap 변경
+
 ## 0.32.27
 
 ### Patch Changes
