@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.31
+
+### Patch Changes
+
+- [#449](https://github.com/shopl/shoplflow/pull/449) [`1bd0afd4a2b656072e55f8c7b34fa9593b02b8b8`](https://github.com/shopl/shoplflow/commit/1bd0afd4a2b656072e55f8c7b34fa9593b02b8b8) Thanks [@velo-kim](https://github.com/velo-kim)! - docs: Combobox, Inputs 문서 정리
+
 ## 0.32.30
 
 ### Patch Changes
