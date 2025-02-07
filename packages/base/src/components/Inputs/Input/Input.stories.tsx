@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { useRef, useState } from 'react';
 
 import Input from './Input';
@@ -8,20 +8,20 @@ import { Button } from '../../Buttons';
 import { ComponentStage } from '../../../styles/Box';
 import { Text } from '../../Text';
 
-export default {
+const meta: Meta<typeof Input> = {
   title: 'COMPONENTS/Inputs/Input',
   component: Input,
   argTypes: {
     sizeVar: {
-      control: {
-        type: 'select',
-      },
       options: Object.values(InputSizeVariants),
-      description: 'Size variant of the ChipToggle',
-      defaultValue: 'S',
+      control: { type: 'radio' },
+      description: '인풋 사이즈',
+      defaultValue: 'M',
     },
   },
 };
+
+export default meta;
 
 export const Playground: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -36,12 +36,20 @@ export const Playground: StoryFn<InputProps> = (args) => {
 };
 
 Playground.args = {
-  placeholder: 'input 예제입니다.',
+  placeholder: 'input 예제입니다',
   disabled: false,
   onClear: () => {
     return;
   },
 };
+
+Playground.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
+  },
+};
+
 export const Password: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -88,7 +96,7 @@ export const CheckValue: StoryFn<InputProps> = (args) => {
 };
 
 CheckValue.args = {
-  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있어요.',
+  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있습니다.',
   disabled: false,
   onClear: () => {
     return;
@@ -125,11 +133,4 @@ Number.args = {
   type: 'number',
   min: 10,
   max: 21,
-};
-
-Playground.parameters = {
-  design: {
-    type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
-  },
 };

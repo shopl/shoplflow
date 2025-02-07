@@ -26,6 +26,13 @@ Playground.args = {
   maxLength: 999,
 };
 
+Playground.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
+  },
+};
+
 export const Error: StoryFn<TextAreaProps> = (args) => {
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
@@ -69,11 +76,4 @@ export const CheckValue: StoryFn<TextAreaProps> = (args) => {
 CheckValue.args = {
   placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있어요.',
   disabled: false,
-};
-
-Playground.parameters = {
-  design: {
-    type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
-  },
 };
