@@ -3,12 +3,62 @@ import React, { useState } from 'react';
 import type { StoryFn } from '@storybook/react';
 import { Stack } from '../../Stack';
 import DropdownButton from './DropdownButton';
-import type { DropdownButtonProps } from './DropdownButton.types';
+import {
+  DropdownButtonSizeVariants,
+  DropdownButtonStyleVariants,
+  type DropdownButtonProps,
+} from './DropdownButton.types';
 import { Text } from '../../../components/Text';
 
 export default {
   title: 'COMPONENTS/Buttons/DropdownButton',
   component: DropdownButton,
+  argTypes: {
+    text: {
+      description: '버튼 내부에 들어갈 text를 입력합니다.',
+    },
+    styleVar: {
+      options: Object.values(DropdownButtonStyleVariants),
+      control: { type: 'select' },
+      defaultValue: 'primary',
+      description: '버튼의 스타일을 설정합니다',
+    },
+    sizeVar: {
+      options: Object.values(DropdownButtonSizeVariants),
+      control: { type: 'select' },
+      description: '버튼의 사이즈를 선택합니다.',
+      defaultValue: 'M',
+    },
+    disabled: {
+      description: '버튼의 비활성화 여부를 설정합니다.',
+      control: {
+        type: 'boolean',
+      },
+    },
+    placement: {
+      options: [
+        'top',
+        'right',
+        'bottom',
+        'left',
+        'top-start',
+        'top-end',
+        'right-start',
+        'right-end',
+        'bottom-start',
+        'bottom-end',
+        'left-start',
+        'left-end',
+      ],
+      description: 'option list가 노출되는 방향을 설정합니다.',
+    },
+    floatingZIndex: {
+      description: 'option list의 z-index값을 설정합니다.',
+      control: {
+        type: 'number',
+      },
+    },
+  },
 };
 
 export const Playground: StoryFn<DropdownButtonProps> = (args) => {
@@ -16,7 +66,7 @@ export const Playground: StoryFn<DropdownButtonProps> = (args) => {
 
   return (
     <Stack>
-      <DropdownButton {...args} text='Button'>
+      <DropdownButton {...args}>
         <DropdownButton.Menu
           isSelected={selectedItem === 'Shopl'}
           onClick={() => {
@@ -42,10 +92,38 @@ Playground.args = {
   text: 'Button',
 };
 
+Playground.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=8717-4817',
+  },
+};
+
+export const Primary: StoryFn<DropdownButtonProps> = (args) => {
+  return (
+    <Stack>
+      <DropdownButton {...args} styleVar='PRIMARY'>
+        <DropdownButton.Menu onClick={() => console.info('1')}>
+          <div>Shopl</div>
+        </DropdownButton.Menu>
+        <DropdownButton.Menu onClick={() => console.info('2')}>
+          <div>Hada</div>
+        </DropdownButton.Menu>
+      </DropdownButton>
+    </Stack>
+  );
+};
+
+Primary.args = {
+  text: 'Primary Button',
+  sizeVar: 'M',
+  disabled: false,
+};
+
 export const Secondary: StoryFn<DropdownButtonProps> = (args) => {
   return (
     <Stack>
-      <DropdownButton {...args} text='Button' styleVar='SECONDARY'>
+      <DropdownButton {...args} styleVar='SECONDARY'>
         <DropdownButton.Menu onClick={() => console.info('1')}>
           <div>Shopl</div>
         </DropdownButton.Menu>
@@ -58,43 +136,7 @@ export const Secondary: StoryFn<DropdownButtonProps> = (args) => {
 };
 
 Secondary.args = {
-  text: 'Button',
-};
-
-export const Small: StoryFn<DropdownButtonProps> = (args) => {
-  return (
-    <Stack>
-      <DropdownButton {...args} text='Button' sizeVar='S' styleVar='SECONDARY'>
-        <DropdownButton.Menu onClick={() => console.info('1')}>
-          <div>Shopl</div>
-        </DropdownButton.Menu>
-        <DropdownButton.Menu onClick={() => console.info('2')}>
-          <div>Hada</div>
-        </DropdownButton.Menu>
-      </DropdownButton>
-    </Stack>
-  );
-};
-
-Small.args = {
-  text: 'Button',
-};
-
-export const Disabled: StoryFn<DropdownButtonProps> = (args) => {
-  return (
-    <Stack>
-      <DropdownButton {...args} disabled aria-disabled text='Button' sizeVar='S' styleVar='SECONDARY'>
-        <DropdownButton.Menu onClick={() => console.info('1')}>
-          <div>Shopl</div>
-        </DropdownButton.Menu>
-        <DropdownButton.Menu onClick={() => console.info('2')}>
-          <div>Hada</div>
-        </DropdownButton.Menu>
-      </DropdownButton>
-    </Stack>
-  );
-};
-
-Disabled.args = {
-  text: 'Button',
+  text: 'Secondary Button',
+  sizeVar: 'M',
+  disabled: false,
 };
