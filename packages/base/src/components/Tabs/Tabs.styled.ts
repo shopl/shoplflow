@@ -12,8 +12,8 @@ export const getHoverTabStyleByStyleVar = (styleVar: TabStyleVariantType) => {
         ::after {
           content: '';
           position: absolute;
-          left: 12px;
-          right: 12px;
+          left: 0px;
+          right: 0px;
           bottom: -2px;
           height: 2px;
           background: ${colorTokens.neutral500};
@@ -46,8 +46,8 @@ export const getActiveTriggerStyleByStyleVar = (styleVar: TabStyleVariantType) =
         ::after {
           content: '';
           position: absolute;
-          left: 12px;
-          right: 12px;
+          left: 0px;
+          right: 0px;
           bottom: -2px;
           height: 2px;
           background: #000;
@@ -69,7 +69,7 @@ export const getPaddingStyleByStyleVar = (styleVar: TabStyleVariantType) => {
     }
     case 'INFO': {
       return css`
-        padding: 12px;
+        padding: 12px 0px;
       `;
     }
   }

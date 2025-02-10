@@ -86,7 +86,7 @@ export const Level3: StoryFn<TabsProps> = (args) => {
       <ComponentStage>
         <div>active tab: {activeTab}</div>
         <Tabs {...args} initialTab={activeTab} onChange={setActiveTab}>
-          <Stack.Horizontal width='100%'>
+          <Stack.Horizontal width='100%' spacing={'spacing16'}>
             <Tabs.Tab
               styleVar='INFO'
               value={'a'}
