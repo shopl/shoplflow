@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.33
+
+### Patch Changes
+
+- [#456](https://github.com/shopl/shoplflow/pull/456) [`eea935abe5a067b05f75c003a9fc806585155625`](https://github.com/shopl/shoplflow/commit/eea935abe5a067b05f75c003a9fc806585155625) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Info 탭 스타일 수정했습니다.(애니메이션 삭제 및 선 너비 수정)
+
 ## 0.32.32
 
 ### Patch Changes
