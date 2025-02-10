@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.34
+
+### Patch Changes
+
+- [#453](https://github.com/shopl/shoplflow/pull/453) [`90cb89f94e06ed0f9b6676195f659ff047e92ab4`](https://github.com/shopl/shoplflow/commit/90cb89f94e06ed0f9b6676195f659ff047e92ab4) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - docs: Checkbox, MinusButton, Radio 문서 정리
+
 ## 0.32.33
 
 ### Patch Changes
