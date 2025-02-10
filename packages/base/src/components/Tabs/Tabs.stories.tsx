@@ -72,7 +72,7 @@ export const Level3: StoryFn<TabsProps> = (args) => {
   const rightSource = (
     <div
       style={{
-        backgroundColor: colorTokens.primary300,
+        backgroundColor: colorTokens.neutral700,
         width: '20px',
         height: '20px',
         borderRadius: '100%',
@@ -86,11 +86,11 @@ export const Level3: StoryFn<TabsProps> = (args) => {
       <ComponentStage>
         <div>active tab: {activeTab}</div>
         <Tabs {...args} initialTab={activeTab} onChange={setActiveTab}>
-          <Stack.Horizontal width='100%'>
+          <Stack.Horizontal width='100%' spacing={'spacing16'}>
             <Tabs.Tab
               styleVar='INFO'
               value={'a'}
-              label={'Long label example.....'}
+              label={'Long'}
               leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}
               rightSource={rightSource}
             />
