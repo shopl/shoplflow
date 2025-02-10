@@ -61,3 +61,23 @@ turbo run build:assets
 turbo run build:docs
 turbo run build:storybook
 ```
+
+## 기여하기
+### commit convention
+작업 유형에 맞는 commit convention을 작성해주세요.
+```bash
+- feat: 새로운 기능 추가
+
+- fix : 버그 수정
+close: #SHP-00000 //연동시킬 JIRA issue number
+
+- hotfix : 핫픽스 수정
+
+- style : 코드 포맷팅, 코드 오타, 함수명 수정 등 스타일 수정
+
+- refactor : 코드 리팩토링(똑같은 기능인데 코드만 개선)
+
+- chore : 정기적인 코드 유지 관리
+
+- update : 코드 업데이트가 있을 경우 (ex: 기존 컴포넌트에 기능 추가)
+```
