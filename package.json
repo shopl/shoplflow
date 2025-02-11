@@ -24,18 +24,23 @@
     "prepare": "husky install",
     "clear:branch": "script/delete-remote-branches.sh",
     "post-checkout": "pnpm run refresh:node_modules",
-    "postinstall": "husky install && pnpm config set store-dir .pnpm-store"
+    "postinstall": "husky install && pnpm config set store-dir .pnpm-store",
+    "commit": "git-cz"
   },
   "license": "Apache-2.0",
   "version": "0.0.1",
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
     "@emotion/eslint-plugin": "^11.10.0",
     "@shoplflow/eslint-plugin": "workspace:^",
     "@turbo/gen": "^1.9.7",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.9.0",
     "@vitest/coverage-v8": "^1.2.2",
+    "commitizen": "^4.3.1",
+    "cz-customizable": "^7.4.0",
     "esbuild": "0.18.17",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
@@ -61,5 +66,13 @@
     "@changesets/cli": "^2.26.2",
     "husky": "8.0.3"
   },
-  "packageManager": "pnpm@8.9.2"
+  "packageManager": "pnpm@8.9.2",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+      "cz-customizable": {
+        "config": "./.cz-config.js"
+    }
+  }
 }
