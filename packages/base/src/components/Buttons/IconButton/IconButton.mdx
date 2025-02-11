@@ -4,14 +4,13 @@ import * as IconButtonStories from "./IconButton.stories";
 <Meta of={IconButtonStories} />
 
 # IconButton
-아이콘 버튼을 만들 때 사용합니다.
+내부에 아이콘 요소가 들어간 버튼입니다.
 
-> - Icon 컴포넌트와 같이 사용해주세요.
-> - as 속성을 이용해 HTML 태그를 변경할 수 있어요. (기본값: button)
-
+> - 자식 요소로 `<Icon>` 컴포넌트를 함께 사용해야 합니다.
+> - `hover`상태의 배경색, `border-color`는 배경색의 상위 colorToken으로 자동 설정됩니다.
 
 ## Overview
-<Canvas of={IconButtonStories.Solid} />
+<Canvas of={IconButtonStories.Playground} />
 
 ## Usage
 ```tsx
@@ -19,7 +18,7 @@ import { IconButton } from '@shoplflow/base';
 
 const Example = () => {
   return (
-     <IconButton sizeVar={'S'}>
+     <IconButton sizeVar={'S'} styleVar={'SECONDARY'}>
         <Icon iconSource={ViewOffIcon} />
      </IconButton>
   );
@@ -27,4 +26,4 @@ const Example = () => {
 ```
 
 ## Props
-<Controls of={IconButtonStories.Solid} />
+<Controls of={IconButtonStories.Playground} />

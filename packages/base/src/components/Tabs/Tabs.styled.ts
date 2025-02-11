@@ -12,8 +12,8 @@ export const getHoverTabStyleByStyleVar = (styleVar: TabStyleVariantType) => {
         ::after {
           content: '';
           position: absolute;
-          left: 0;
-          right: 0;
+          left: 0px;
+          right: 0px;
           bottom: -2px;
           height: 2px;
           background: ${colorTokens.neutral500};
@@ -46,8 +46,8 @@ export const getActiveTriggerStyleByStyleVar = (styleVar: TabStyleVariantType) =
         ::after {
           content: '';
           position: absolute;
-          left: 0;
-          right: 0;
+          left: 0px;
+          right: 0px;
           bottom: -2px;
           height: 2px;
           background: #000;
@@ -60,17 +60,33 @@ export const getActiveTriggerStyleByStyleVar = (styleVar: TabStyleVariantType) =
   }
 };
 
+export const getPaddingStyleByStyleVar = (styleVar: TabStyleVariantType) => {
+  switch (styleVar) {
+    case 'NORMAL': {
+      return css`
+        padding: 12px 16px;
+      `;
+    }
+    case 'INFO': {
+      return css`
+        padding: 12px 0px;
+      `;
+    }
+  }
+};
+
 export const StyledTab = styled.div<TabStyledProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 12px 16px;
   width: fit-content;
   cursor: pointer;
   position: relative;
+  gap: 4px;
   user-select: none;
 
   ${({ styleVar }) => styleVar && getWrapperStyleByStyleVar(styleVar)};
+  ${({ styleVar }) => styleVar && getPaddingStyleByStyleVar(styleVar)};
 
   /* hover style */
   ${({ isActive, isHover, styleVar }) => !isActive && isHover && styleVar && getHoverTabStyleByStyleVar(styleVar)}

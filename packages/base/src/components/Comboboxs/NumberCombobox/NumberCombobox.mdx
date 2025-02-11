@@ -5,7 +5,9 @@ import * as NumberComboboxStories from './NumberCombobox.stories';
 <Meta of={NumberComboboxStories} />
 
 # NumberCombobox
-넘버를 입력, 드롭다운으로 셀렉할 수 있는 컴포넌트에요. inputType을 통해 시간, 분을 선택할 수 있고 unit을 통해 단위를 정할 수 있어요
+숫자를 입력, 선택할 수 있는 컴포넌트입니다. 
+> - `{label: string; value: string}` 형태의 배열 items를 필수로 넘겨주어야 합니다.
+> - `onSelect`을 통해 선택된 `value`를 넘겨받습니다.
 
 ## Overview
 <Canvas of={NumberComboboxStories.Playground} />

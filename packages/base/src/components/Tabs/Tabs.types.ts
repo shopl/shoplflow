@@ -30,6 +30,9 @@ export interface TabsProps extends TabsOptionProps {
 }
 
 export interface TabsOptionProps extends ChildrenProps {
+  /**
+   * 처음에 선택될 탭을 설정합니다.
+   */
   initialTab: string;
 }
 
