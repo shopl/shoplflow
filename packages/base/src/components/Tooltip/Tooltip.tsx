@@ -12,6 +12,7 @@ const Tooltip = ({
   placement = 'bottom-start',
   offset = 4,
   triggerRef,
+  triggerWidth,
   portalRef,
   ...popperProps
 }: TooltipProps) => {
@@ -41,6 +42,7 @@ const Tooltip = ({
       {...popperProps}
     >
       <Popper.Trigger
+        width={triggerWidth}
         ref={triggerRef}
         isOpen={isOpen || open}
         onMouseOver={showHandler}

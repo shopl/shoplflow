@@ -23,6 +23,7 @@ import IcBackMedium from './IcBackMedium';
 import IcBadgeAdminLarge from './IcBadgeAdminLarge';
 import IcBadgeLeaderAppovalLarge from './IcBadgeLeaderAppovalLarge';
 import IcBadgeLeaderLarge from './IcBadgeLeaderLarge';
+import IcBarcode from './IcBarcode';
 import IcBellMedium from './IcBellMedium';
 import IcBmMedium from './IcBmMedium';
 import IcBoardMedium from './IcBoardMedium';
@@ -44,6 +45,7 @@ import IcCheckXlarge from './IcCheckXlarge';
 import IcCheckXsmall from './IcCheckXsmall';
 import IcCheck from './IcCheck';
 import IcCheckbox from './IcCheckbox';
+import IcChecklist from './IcChecklist';
 import IcCloseMedium from './IcCloseMedium';
 import IcCloseSmall from './IcCloseSmall';
 import IcClose from './IcClose';
@@ -52,6 +54,7 @@ import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcCopy from './IcCopy';
+import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
 import IcDeadline from './IcDeadline';
 import IcDeleteLine from './IcDeleteLine';
@@ -67,6 +70,7 @@ import IcDownload from './IcDownload';
 import IcDraftsave from './IcDraftsave';
 import IcDrag from './IcDrag';
 import IcDrawer from './IcDrawer';
+import IcDropdown from './IcDropdown';
 import IcEditLarge from './IcEditLarge';
 import IcEditLine from './IcEditLine';
 import IcEditSolid from './IcEditSolid';
@@ -191,6 +195,7 @@ import IcMother from './IcMother';
 import IcMoveSolid from './IcMoveSolid';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
+import IcMultipleChoice from './IcMultipleChoice';
 import IcNoGrade from './IcNoGrade';
 import IcNormal from './IcNormal';
 import IcNoticeMedium from './IcNoticeMedium';
@@ -227,6 +232,7 @@ import IcReturn from './IcReturn';
 import IcRightArrowXsmall from './IcRightArrowXsmall';
 import IcRightArrow from './IcRightArrow';
 import IcSalesMedium from './IcSalesMedium';
+import IcScan from './IcScan';
 import IcScheduleMedium from './IcScheduleMedium';
 import IcSearch from './IcSearch';
 import IcSend from './IcSend';
@@ -265,6 +271,7 @@ import IcWifi from './IcWifi';
 import IcWindowed from './IcWindowed';
 import IcWorkStatus from './IcWorkStatus';
 import IcWorkplaceMedium from './IcWorkplaceMedium';
+import IcYesOrNo from './IcYesOrNo';
 import IcZoomInMedium from './IcZoomInMedium';
 import IcZoomOutMedium from './IcZoomOutMedium';
 
@@ -294,6 +301,7 @@ const icons = {
   'badge-admin-large': IcBadgeAdminLarge,
   'badge-leader-appoval-large': IcBadgeLeaderAppovalLarge,
   'badge-leader-large': IcBadgeLeaderLarge,
+  barcode: IcBarcode,
   'bell-medium': IcBellMedium,
   'bm-medium': IcBmMedium,
   'board-medium': IcBoardMedium,
@@ -315,6 +323,7 @@ const icons = {
   'check-xsmall': IcCheckXsmall,
   check: IcCheck,
   checkbox: IcCheckbox,
+  checklist: IcChecklist,
   'close-medium': IcCloseMedium,
   'close-small': IcCloseSmall,
   close: IcClose,
@@ -323,6 +332,7 @@ const icons = {
   comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
   copy: IcCopy,
+  'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
   deadline: IcDeadline,
   'delete-line': IcDeleteLine,
@@ -338,6 +348,7 @@ const icons = {
   draftsave: IcDraftsave,
   drag: IcDrag,
   drawer: IcDrawer,
+  dropdown: IcDropdown,
   'edit-large': IcEditLarge,
   'edit-line': IcEditLine,
   'edit-solid': IcEditSolid,
@@ -462,6 +473,7 @@ const icons = {
   'move-solid': IcMoveSolid,
   move: IcMove,
   'movie-01': IcMovie01,
+  'multiple-choice': IcMultipleChoice,
   'no-grade': IcNoGrade,
   normal: IcNormal,
   'notice-medium': IcNoticeMedium,
@@ -498,6 +510,7 @@ const icons = {
   'right-arrow-xsmall': IcRightArrowXsmall,
   'right-arrow': IcRightArrow,
   'sales-medium': IcSalesMedium,
+  scan: IcScan,
   'schedule-medium': IcScheduleMedium,
   search: IcSearch,
   send: IcSend,
@@ -536,6 +549,7 @@ const icons = {
   windowed: IcWindowed,
   'work-status': IcWorkStatus,
   'workplace-medium': IcWorkplaceMedium,
+  'yes-or-no': IcYesOrNo,
   'zoom-in-medium': IcZoomInMedium,
   'zoom-out-medium': IcZoomOutMedium,
 };
@@ -568,6 +582,7 @@ export {
   IcBadgeAdminLarge as BadgeAdminLargeIcon,
   IcBadgeLeaderAppovalLarge as BadgeLeaderAppovalLargeIcon,
   IcBadgeLeaderLarge as BadgeLeaderLargeIcon,
+  IcBarcode as BarcodeIcon,
   IcBellMedium as BellMediumIcon,
   IcBmMedium as BmMediumIcon,
   IcBoardMedium as BoardMediumIcon,
@@ -589,6 +604,7 @@ export {
   IcCheckXsmall as CheckXsmallIcon,
   IcCheck as CheckIcon,
   IcCheckbox as CheckboxIcon,
+  IcChecklist as ChecklistIcon,
   IcCloseMedium as CloseMediumIcon,
   IcCloseSmall as CloseSmallIcon,
   IcClose as CloseIcon,
@@ -597,6 +613,7 @@ export {
   IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
   IcCopy as CopyIcon,
+  IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
   IcDeadline as DeadlineIcon,
   IcDeleteLine as DeleteLineIcon,
@@ -612,6 +629,7 @@ export {
   IcDraftsave as DraftsaveIcon,
   IcDrag as DragIcon,
   IcDrawer as DrawerIcon,
+  IcDropdown as DropdownIcon,
   IcEditLarge as EditLargeIcon,
   IcEditLine as EditLineIcon,
   IcEditSolid as EditSolidIcon,
@@ -736,6 +754,7 @@ export {
   IcMoveSolid as MoveSolidIcon,
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
+  IcMultipleChoice as MultipleChoiceIcon,
   IcNoGrade as NoGradeIcon,
   IcNormal as NormalIcon,
   IcNoticeMedium as NoticeMediumIcon,
@@ -772,6 +791,7 @@ export {
   IcRightArrowXsmall as RightArrowXsmallIcon,
   IcRightArrow as RightArrowIcon,
   IcSalesMedium as SalesMediumIcon,
+  IcScan as ScanIcon,
   IcScheduleMedium as ScheduleMediumIcon,
   IcSearch as SearchIcon,
   IcSend as SendIcon,
@@ -810,6 +830,7 @@ export {
   IcWindowed as WindowedIcon,
   IcWorkStatus as WorkStatusIcon,
   IcWorkplaceMedium as WorkplaceMediumIcon,
+  IcYesOrNo as YesOrNoIcon,
   IcZoomInMedium as ZoomInMediumIcon,
   IcZoomOutMedium as ZoomOutMediumIcon,
 };
