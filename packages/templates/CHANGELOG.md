@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.0.15
+
+### Patch Changes
+
+- [#463](https://github.com/shopl/shoplflow/pull/463) [`9eadf427cbe9e400a6fee0a04acf7b89df96cb36`](https://github.com/shopl/shoplflow/commit/9eadf427cbe9e400a6fee0a04acf7b89df96cb36) Thanks [@velo-kim](https://github.com/velo-kim)! - update: TitleGroup의 default as를 TitleGroup으로 수정했어요
+
 ## 0.0.14
 
 ### Patch Changes
