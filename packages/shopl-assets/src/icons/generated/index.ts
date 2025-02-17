@@ -29,6 +29,7 @@ import IcBmMedium from './IcBmMedium';
 import IcBoardMedium from './IcBoardMedium';
 import IcBoardProfileXlarge from './IcBoardProfileXlarge';
 import IcBoardProfile from './IcBoardProfile';
+import IcBookMedium from './IcBookMedium';
 import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
@@ -307,6 +308,7 @@ const icons = {
   'board-medium': IcBoardMedium,
   'board-profile-xlarge': IcBoardProfileXlarge,
   'board-profile': IcBoardProfile,
+  'book-medium': IcBookMedium,
   'bookmark-filled-medium': IcBookmarkFilledMedium,
   'bookmark-medium': IcBookmarkMedium,
   'by-employee-medium': IcByEmployeeMedium,
@@ -588,6 +590,7 @@ export {
   IcBoardMedium as BoardMediumIcon,
   IcBoardProfileXlarge as BoardProfileXlargeIcon,
   IcBoardProfile as BoardProfileIcon,
+  IcBookMedium as BookMediumIcon,
   IcBookmarkFilledMedium as BookmarkFilledMediumIcon,
   IcBookmarkMedium as BookmarkMediumIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
