@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.11.2
+
+### Patch Changes
+
+- [#467](https://github.com/shopl/shoplflow/pull/467) [`75c4f2557f5f867b6e1732e6145c82226966a200`](https://github.com/shopl/shoplflow/commit/75c4f2557f5f867b6e1732e6145c82226966a200) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - Icon Stroke 제거
+
 ## 0.11.1
 
 ### Patch Changes
