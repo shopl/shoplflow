@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.11.3
+
+### Patch Changes
+
+- [#470](https://github.com/shopl/shoplflow/pull/470) [`b566e65ef06aa879371577e24c0c2519c6009851`](https://github.com/shopl/shoplflow/commit/b566e65ef06aa879371577e24c0c2519c6009851) Thanks [@velo-kim](https://github.com/velo-kim)! - shopl-assets에 새로운 아이콘 추가
+
 ## 0.11.2
 
 ### Patch Changes
