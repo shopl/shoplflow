@@ -61,6 +61,7 @@ import IcDeadline from './IcDeadline';
 import IcDeleteLine from './IcDeleteLine';
 import IcDelete from './IcDelete';
 import IcDesc from './IcDesc';
+import IcDetailView from './IcDetailView';
 import IcDisplayMedium from './IcDisplayMedium';
 import IcDocMedium from './IcDocMedium';
 import IcDownArrowSolidXsmall from './IcDownArrowSolidXsmall';
@@ -90,6 +91,7 @@ import IcFeedView from './IcFeedView';
 import IcFilter from './IcFilter';
 import IcFilterdeleteXsmall from './IcFilterdeleteXsmall';
 import IcFirstPage from './IcFirstPage';
+import IcFlexibleWorking from './IcFlexibleWorking';
 import IcFullScreenMedium from './IcFullScreenMedium';
 import IcFullscreen from './IcFullscreen';
 import IcGps from './IcGps';
@@ -248,6 +250,7 @@ import IcSortingAtoz from './IcSortingAtoz';
 import IcSortingEarly from './IcSortingEarly';
 import IcSortingLate from './IcSortingLate';
 import IcSortingZtoa from './IcSortingZtoa';
+import IcStaggeredWorking from './IcStaggeredWorking';
 import IcStamp from './IcStamp';
 import IcStar from './IcStar';
 import IcSubtract from './IcSubtract';
@@ -340,6 +343,7 @@ const icons = {
   'delete-line': IcDeleteLine,
   delete: IcDelete,
   desc: IcDesc,
+  'detail-view': IcDetailView,
   'display-medium': IcDisplayMedium,
   'doc-medium': IcDocMedium,
   'down-arrow-solid-xsmall': IcDownArrowSolidXsmall,
@@ -369,6 +373,7 @@ const icons = {
   filter: IcFilter,
   'filterdelete-xsmall': IcFilterdeleteXsmall,
   'first-page': IcFirstPage,
+  'flexible-working': IcFlexibleWorking,
   'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
   gps: IcGps,
@@ -527,6 +532,7 @@ const icons = {
   'sorting-early': IcSortingEarly,
   'sorting-late': IcSortingLate,
   'sorting-ztoa': IcSortingZtoa,
+  'staggered-working': IcStaggeredWorking,
   stamp: IcStamp,
   star: IcStar,
   subtract: IcSubtract,
@@ -622,6 +628,7 @@ export {
   IcDeleteLine as DeleteLineIcon,
   IcDelete as DeleteIcon,
   IcDesc as DescIcon,
+  IcDetailView as DetailViewIcon,
   IcDisplayMedium as DisplayMediumIcon,
   IcDocMedium as DocMediumIcon,
   IcDownArrowSolidXsmall as DownArrowSolidXsmallIcon,
@@ -651,6 +658,7 @@ export {
   IcFilter as FilterIcon,
   IcFilterdeleteXsmall as FilterdeleteXsmallIcon,
   IcFirstPage as FirstPageIcon,
+  IcFlexibleWorking as FlexibleWorkingIcon,
   IcFullScreenMedium as FullScreenMediumIcon,
   IcFullscreen as FullscreenIcon,
   IcGps as GpsIcon,
@@ -809,6 +817,7 @@ export {
   IcSortingEarly as SortingEarlyIcon,
   IcSortingLate as SortingLateIcon,
   IcSortingZtoa as SortingZtoaIcon,
+  IcStaggeredWorking as StaggeredWorkingIcon,
   IcStamp as StampIcon,
   IcStar as StarIcon,
   IcSubtract as SubtractIcon,
