@@ -24,6 +24,11 @@ export interface InputButtonOptionProps
    * Clear 아이콘의 노출 유무를 설정합니다.
    */
   useClear?: boolean;
+  /**
+   * error 여부
+   */
+  isError?: boolean;
+
   onClick?: (e: MouseEvent<HTMLDivElement>) => void;
 
   /**

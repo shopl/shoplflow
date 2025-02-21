@@ -20,6 +20,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
       useClear = true,
       rightSource,
       onClear,
+      isError = false,
       width = '100%',
       ...rest
     },
@@ -86,6 +87,7 @@ const InputButton = forwardRef<HTMLInputElement, InputButtonProps>(
         minHeight={'40px'}
         maxHeight={'40px'}
         width={width}
+        isError={isError}
       >
         <StyledInputButton onClick={handleOnClick} disabled={disabled}>
           <StyledInputButtonContent className={'body1_400'} value={text} ref={ref} {...rest} />
