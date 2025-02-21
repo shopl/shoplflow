@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.38
+
+### Patch Changes
+
+- [#472](https://github.com/shopl/shoplflow/pull/472) [`2c55fee54e4475864d3d7531beb4297ebbdff55b`](https://github.com/shopl/shoplflow/commit/2c55fee54e4475864d3d7531beb4297ebbdff55b) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - input button isError props 추가
+
 ## 0.32.37
 
 ### Patch Changes
