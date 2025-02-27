@@ -1,4 +1,4 @@
-import type { TooltipProps } from '@shoplflow/base';
+import type { TextProps, TooltipProps } from '@shoplflow/base';
 import type { ChildrenProps } from '@shoplflow/base/src/utils/type/ComponentProps';
 import type { ReactNode } from 'react';
 
@@ -7,8 +7,8 @@ export type ActionsProps = {
 };
 
 export type DescriptionProps = {
-  description: string;
-};
+  description?: string;
+} & TextProps;
 
 export type TitleGroupHelpIconProps = {
   /**

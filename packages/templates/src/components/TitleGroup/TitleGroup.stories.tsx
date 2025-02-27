@@ -184,7 +184,7 @@ export const WithoutActions: StoryFn<TitleGroupProps> = () => {
             }}
           />
         </TitleGroup.HeaderBox>
-        <TitleGroup.Description description='paragraph1' />
+        <TitleGroup.Description description={'paragraph1 \n paragraph2'} />
       </TitleGroup>
     </Stack.Horizontal>
   );

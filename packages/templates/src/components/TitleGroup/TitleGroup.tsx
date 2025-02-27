@@ -61,10 +61,10 @@ const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleGroupHe
   );
 };
 
-const Description = ({ description }: DescriptionProps) => {
+const Description = ({ description, ...rest }: DescriptionProps) => {
   return (
     <StackContainer minHeight='30px' height='auto'>
-      <Text typography='paragraph1' color='neutral500' wordBreak='break-all'>
+      <Text typography='paragraph1' color='neutral500' wordBreak='break-all' whiteSpace='pre-line' {...rest}>
         {description}
       </Text>
     </StackContainer>
