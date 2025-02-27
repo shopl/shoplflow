@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.11.4
+
+### Patch Changes
+
+- [#474](https://github.com/shopl/shoplflow/pull/474) [`f4d14ea21aa6733737ab1f7c573768b4d3281d2f`](https://github.com/shopl/shoplflow/commit/f4d14ea21aa6733737ab1f7c573768b4d3281d2f) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - help center 아이콘 변경
+
 ## 0.11.3
 
 ### Patch Changes

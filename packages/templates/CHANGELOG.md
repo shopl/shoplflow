@@ -1,5 +1,15 @@
 # @shoplflow/templates
 
+## 0.0.20
+
+### Patch Changes
+
+- [#476](https://github.com/shopl/shoplflow/pull/476) [`9bfd0d41349165514fc1895b49b096e9fd98c315`](https://github.com/shopl/shoplflow/commit/9bfd0d41349165514fc1895b49b096e9fd98c315) Thanks [@velo-kim](https://github.com/velo-kim)! - TitleGroup의 Description Props를 변경했어요
+
+- Updated dependencies [[`f4d14ea21aa6733737ab1f7c573768b4d3281d2f`](https://github.com/shopl/shoplflow/commit/f4d14ea21aa6733737ab1f7c573768b4d3281d2f)]:
+  - @shoplflow/shopl-assets@0.11.4
+  - @shoplflow/base@0.32.39
+
 ## 0.0.19
 
 ### Patch Changes
