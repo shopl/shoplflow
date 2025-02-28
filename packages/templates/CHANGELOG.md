@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.0.22
+
+### Patch Changes
+
+- [#479](https://github.com/shopl/shoplflow/pull/479) [`4dd4f6bb3cc0640b3869a204e20a930a7594e2a2`](https://github.com/shopl/shoplflow/commit/4dd4f6bb3cc0640b3869a204e20a930a7594e2a2) Thanks [@velo-kim](https://github.com/velo-kim)! - TitleGroup.Description 하단 패딩 조정
+
 ## 0.0.21
 
 ### Patch Changes
