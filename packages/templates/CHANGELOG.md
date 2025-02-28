@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.0.21
+
+### Patch Changes
+
+- [#477](https://github.com/shopl/shoplflow/pull/477) [`d17d42981b58366aa8759e05e1c2734d77367167`](https://github.com/shopl/shoplflow/commit/d17d42981b58366aa8759e05e1c2734d77367167) Thanks [@velo-kim](https://github.com/velo-kim)! - templates의 Example 삭제
+
 ## 0.0.20
 
 ### Patch Changes
