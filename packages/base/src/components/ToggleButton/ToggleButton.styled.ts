@@ -52,10 +52,10 @@ export const StyledToggleInner = styled.button`
   width: fit-content;
   cursor: pointer;
 
-  & input:checked + label {
+  /* & input:checked + label {
     background-color: ${colorTokens.neutral0};
     cursor: default;
-  }
+  } */
 `;
 
 export const StyledToggleInnerLabel = styled.label<{
