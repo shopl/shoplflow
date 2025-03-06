@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.40
+
+### Patch Changes
+
+- [#481](https://github.com/shopl/shoplflow/pull/481) [`3a6c3d1c932797fd225822b8b7a17cc3080a9da3`](https://github.com/shopl/shoplflow/commit/3a6c3d1c932797fd225822b8b7a17cc3080a9da3) Thanks [@velo-kim](https://github.com/velo-kim)! - ToggleButton의 selected를 수정했어요
+
 ## 0.32.39
 
 ### Patch Changes
