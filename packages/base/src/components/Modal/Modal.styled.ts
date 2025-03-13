@@ -172,3 +172,7 @@ export const FooterContainer = styled.div`
   border-top: 1px solid ${colorTokens.neutral300};
   background: ${colorTokens.neutral0};
 `;
+
+export const BottomContainer = styled.footer`
+  width: 100%;
+`;
