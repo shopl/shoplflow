@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.11.5
+
+### Patch Changes
+
+- [#484](https://github.com/shopl/shoplflow/pull/484) [`82b7c5dbd421bace2eb5b6ae096d145e3f18bd17`](https://github.com/shopl/shoplflow/commit/82b7c5dbd421bace2eb5b6ae096d145e3f18bd17) Thanks [@velo-kim](https://github.com/velo-kim)! - ic-employee-xsmall 에셋 추가
+
 ## 0.11.4
 
 ### Patch Changes
