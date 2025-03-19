@@ -57,3 +57,6 @@ export const MODAL_FOOTER_KEY = Symbol('MODAL_FOOTER');
 export interface ModalFooterType extends React.FC<ModalBodyProps> {
   [MODAL_FOOTER_KEY]?: boolean;
 }
+
+export interface ModalTopProps extends ChildrenProps {}
+export interface ModalBottomProps extends ChildrenProps {}

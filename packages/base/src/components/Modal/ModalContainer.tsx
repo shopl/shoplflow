@@ -7,6 +7,7 @@ import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY } from './Modal.types';
 
 import { useParentElementClick, noop } from '@shoplflow/utils';
 import { useViewportSizeObserver } from '../../hooks/useViewportSizeObserver';
+import { ModalOptionContextProvider } from './providers/ModalOptionContextProvider';
 
 const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: ModalContainerProps) => {
   const ref = useParentElementClick<HTMLDivElement>(outsideClick);
@@ -53,7 +54,7 @@ const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: Moda
 
   return (
     <Container ref={ref} {...rest} height={heightWidthMargin} viewport={windowHeight} data-shoplflow={'Modal'}>
-      {addPropInChildren}
+      <ModalOptionContextProvider>{addPropInChildren}</ModalOptionContextProvider>
     </Container>
   );
 };
