@@ -8,6 +8,9 @@ import { Menu } from '../Menu';
 import { Text } from '../Text';
 import React from 'react';
 import { JSONScrollView } from '../../styles/JSONScrollView';
+import { IconButton } from '../Buttons';
+import { Icon } from '../Icon';
+import { EditIcon } from '@shoplflow/shopl-assets';
 
 export default {
   title: 'COMPONENTS/Dropdown',
@@ -105,6 +108,33 @@ Small.args = {
   isOpen: false,
   option: 'OUTSIDE_CLICK',
   trigger: <Dropdown.Button placeholder={'0'} sizeVar={'S'} />,
+  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+};
+
+export const Large: StoryFn<DropdownProps> = (args) => {
+  return (
+    <Stack width={'500px'}>
+      <ComponentStage>
+        <Dropdown {...args} width='126px' />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+Large.args = {
+  isOpen: false,
+  option: 'OUTSIDE_CLICK',
+  trigger: (
+    <Dropdown.Button
+      placeholder={'placeholder'}
+      sizeVar={'L'}
+      leftSource={
+        <IconButton sizeVar='S' styleVar='GHOST'>
+          <Icon iconSource={EditIcon} />
+        </IconButton>
+      }
+    />
+  ),
   popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
 };
 

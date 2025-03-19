@@ -45,6 +45,7 @@ export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, Ch
 const dropdownSizeVariants = {
   S: 'S',
   M: 'M',
+  L: 'L',
 } as const;
 
 export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;
