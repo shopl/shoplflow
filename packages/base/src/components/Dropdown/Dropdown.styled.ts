@@ -39,6 +39,7 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
       `;
     case 'M':
       return css`
+        gap: 4px;
         padding: 4px 4px 4px 12px;
       `;
     case 'S':
@@ -62,13 +63,6 @@ export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVariantType) => {
         width: 24px;
         min-width: 24px;
         min-height: 24px;
-      `;
-    case 'M':
-      return css`
-        height: 32px;
-        width: 32px;
-        min-width: 32px;
-        min-height: 32px;
       `;
     default:
       return css`
@@ -100,7 +94,7 @@ export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  gap: 4px;
+
   cursor: pointer;
   background-color: ${colorTokens.neutral0};
   ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
@@ -150,12 +144,6 @@ const getButtoWrapperStyleBySizeVar = (sizeVar: DropdownSizeVariantType) => {
         border-width: 2px;
         border-radius: 12px;
       `;
-    case 'M':
-    case 'S':
-      return css`
-        border-width: 1px;
-        border-radius: 6px;
-      `;
     default:
       return css`
         border-width: 1px;
@@ -199,8 +187,6 @@ export const StyledDropdownButtonWrapper = styled.label<
       width,
     })};
   justify-content: space-between;
-  border-radius: 6px;
-  gap: 8px;
   border-color: ${(props) => getBorderColorByStatus(props)};
   border-style: solid;
   ${({ sizeVar }) => getButtoWrapperStyleBySizeVar(sizeVar)};

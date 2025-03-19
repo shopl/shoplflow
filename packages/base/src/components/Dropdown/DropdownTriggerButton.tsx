@@ -57,7 +57,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         height={getDropdownHeightBySizeVar(sizeVar)}
       >
         <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
-          <Stack.Horizontal width='100%' spacing={sizeVar === 'L' ? undefined : 'spacing04'} align='center'>
+          <Stack.Horizontal width='100%' spacing={sizeVar === 'L' ? 'spacing04' : undefined} align='center'>
             {leftSource && leftSource}
             {value || (
               <Text
