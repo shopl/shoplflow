@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.42
+
+### Patch Changes
+
+- [#483](https://github.com/shopl/shoplflow/pull/483) [`091c9228bc9eb029ebe2060895680c597c72467c`](https://github.com/shopl/shoplflow/commit/091c9228bc9eb029ebe2060895680c597c72467c) Thanks [@velo-kim](https://github.com/velo-kim)! - Modal Top, Bottom 컴포넌트를 만들었어요
+
 ## 0.32.41
 
 ### Patch Changes
