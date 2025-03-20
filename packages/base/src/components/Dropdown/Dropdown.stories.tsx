@@ -6,7 +6,6 @@ import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
 import { Menu } from '../Menu';
 import { Text } from '../Text';
-import React from 'react';
 import { JSONScrollView } from '../../styles/JSONScrollView';
 import { IconButton } from '../Buttons';
 import { Icon } from '../Icon';
@@ -123,6 +122,7 @@ FillContent.args = {
   trigger: <Dropdown.Button placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
   popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
 };
+
 export const Small: StoryFn<DropdownProps> = (args) => {
   return (
     <Stack width={'500px'}>
@@ -135,6 +135,7 @@ export const Small: StoryFn<DropdownProps> = (args) => {
 
 Small.args = {
   isOpen: false,
+  width: '200px',
   option: 'OUTSIDE_CLICK',
   trigger: <Dropdown.Button placeholder={'0'} sizeVar={'S'} />,
   popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
@@ -153,6 +154,7 @@ export const Large: StoryFn<DropdownProps> = (args) => {
 Large.args = {
   isOpen: false,
   option: 'OUTSIDE_CLICK',
+  width: '200px',
   trigger: (
     <Dropdown.Button
       placeholder={'placeholder'}

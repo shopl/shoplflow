@@ -24,7 +24,7 @@ const Dropdown = ({
         height: triggerRef.offsetHeight,
       });
     }
-  }, [triggerRef]);
+  }, [triggerRef, width]);
 
   useEffect(() => {
     if (initialIsOpen === undefined) {
