@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, ReactNode } f
 import type { ChildrenProps, DisableProps, LeftElementProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 
-const DropdownOptionVariants = {
+export const DropdownOptionVariants = {
   CLICK: 'CLICK',
   OUTSIDE_CLICK: 'OUTSIDE_CLICK',
   NONE: 'NONE',
@@ -45,6 +45,7 @@ export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, Ch
 const dropdownSizeVariants = {
   S: 'S',
   M: 'M',
+  L: 'L',
 } as const;
 
 export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;

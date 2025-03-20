@@ -1,22 +1,22 @@
 import type { MouseEvent } from 'react';
-import React, { forwardRef, useState } from 'react';
+import React, { cloneElement, forwardRef, useState } from 'react';
 import type { DropdownTriggerButtonProps } from './Dropdown.types';
 import { useDropdown } from './useDropdown';
-import { InputWrapper } from '../Inputs/common/input.styled';
 import {
+  StyledDropdownButtonWrapper,
   DropdownButtonIcon,
   getDropdownFontSizeBySizeVar,
   getDropdownHeightBySizeVar,
   StyledDropdownButton,
-} from './Dropdown.styled';
+} from './DropdownTriggerButton.styled';
 import { Text } from '../Text';
 import { Icon } from '../Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
+import { Stack } from '../Stack';
 
 export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTriggerButtonProps>(
   ({ width = '100%', onClick, sizeVar = 'M', isError, placeholder, value, disabled, leftSource, ...rest }, ref) => {
     const { isOpen, setIsOpen } = useDropdown();
-
     const [isHovered, setIsHovered] = useState(false);
 
     const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
@@ -43,8 +43,10 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       return 'neutral700';
     };
 
+    const LeftSourceClone = leftSource ? cloneElement(leftSource, { ...leftSource.props, disabled }) : leftSource;
+
     return (
-      <InputWrapper
+      <StyledDropdownButtonWrapper
         onMouseEnter={handleOnMouseEnter}
         onMouseLeave={handleOnMouseLeave}
         isFocused={isOpen}
@@ -52,21 +54,23 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         disabled={disabled}
         width={width}
         isError={isError}
+        sizeVar={sizeVar}
         height={getDropdownHeightBySizeVar(sizeVar)}
       >
         <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
-          {leftSource && leftSource}
-
-          {value || (
-            <Text
-              typography={getDropdownFontSizeBySizeVar(sizeVar)}
-              color={getTextColor({ value, disabled })}
-              textOverflow={'ellipsis'}
-              lineClamp={1}
-            >
-              {placeholder}
-            </Text>
-          )}
+          <Stack.Horizontal width='100%' spacing={sizeVar === 'L' ? 'spacing04' : undefined} align='center'>
+            {LeftSourceClone && LeftSourceClone}
+            {value || (
+              <Text
+                typography={getDropdownFontSizeBySizeVar(sizeVar)}
+                color={getTextColor({ value, disabled })}
+                textOverflow={'ellipsis'}
+                lineClamp={1}
+              >
+                {placeholder}
+              </Text>
+            )}
+          </Stack.Horizontal>
 
           <DropdownButtonIcon
             sizeVar={sizeVar}
@@ -77,10 +81,14 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
               duration: 0.2,
             }}
           >
-            <Icon iconSource={DownArrowSolidXsmallIcon} color={'neutral400'} sizeVar='XS' />
+            <Icon
+              iconSource={DownArrowSolidXsmallIcon}
+              color={sizeVar === 'L' ? 'neutral700' : 'neutral400'}
+              sizeVar='XS'
+            />
           </DropdownButtonIcon>
         </StyledDropdownButton>
-      </InputWrapper>
+      </StyledDropdownButtonWrapper>
     );
   },
 );
