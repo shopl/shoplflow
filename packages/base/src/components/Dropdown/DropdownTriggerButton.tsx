@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import React, { forwardRef, useState } from 'react';
+import React, { cloneElement, forwardRef, useState } from 'react';
 import type { DropdownTriggerButtonProps } from './Dropdown.types';
 import { useDropdown } from './useDropdown';
 import {
@@ -8,7 +8,7 @@ import {
   getDropdownFontSizeBySizeVar,
   getDropdownHeightBySizeVar,
   StyledDropdownButton,
-} from './Dropdown.styled';
+} from './DropdownTriggerButton.styled';
 import { Text } from '../Text';
 import { Icon } from '../Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
@@ -17,7 +17,6 @@ import { Stack } from '../Stack';
 export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTriggerButtonProps>(
   ({ width = '100%', onClick, sizeVar = 'M', isError, placeholder, value, disabled, leftSource, ...rest }, ref) => {
     const { isOpen, setIsOpen } = useDropdown();
-
     const [isHovered, setIsHovered] = useState(false);
 
     const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
@@ -44,6 +43,8 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       return 'neutral700';
     };
 
+    const LeftSourceClone = leftSource ? cloneElement(leftSource, { ...leftSource.props, disabled }) : leftSource;
+
     return (
       <StyledDropdownButtonWrapper
         onMouseEnter={handleOnMouseEnter}
@@ -58,7 +59,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       >
         <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
           <Stack.Horizontal width='100%' spacing={sizeVar === 'L' ? 'spacing04' : undefined} align='center'>
-            {leftSource && leftSource}
+            {LeftSourceClone && LeftSourceClone}
             {value || (
               <Text
                 typography={getDropdownFontSizeBySizeVar(sizeVar)}

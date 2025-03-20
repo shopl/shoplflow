@@ -11,6 +11,7 @@ import { JSONScrollView } from '../../styles/JSONScrollView';
 import { IconButton } from '../Buttons';
 import { Icon } from '../Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
+import { StackContainer } from '../StackContainer';
 
 export default {
   title: 'COMPONENTS/Dropdown',
@@ -121,11 +122,11 @@ Small.args = {
 
 export const Large: StoryFn<DropdownProps> = (args) => {
   return (
-    <Stack width={'500px'}>
+    <StackContainer.Vertical width={'500px'} background='shopl100'>
       <ComponentStage>
         <Dropdown {...args} width='126px' />
       </ComponentStage>
-    </Stack>
+    </StackContainer.Vertical>
   );
 };
 
@@ -159,6 +160,16 @@ export const Disabled: StoryFn<DropdownProps> = (args) => {
 Disabled.args = {
   isOpen: false,
   option: 'OUTSIDE_CLICK',
-  trigger: <Dropdown.Button disabled placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
+  trigger: (
+    <Dropdown.Button
+      disabled
+      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
+      leftSource={
+        <IconButton sizeVar='S' styleVar='GHOST'>
+          <Icon iconSource={EditIcon} />
+        </IconButton>
+      }
+    />
+  ),
   popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
 };
