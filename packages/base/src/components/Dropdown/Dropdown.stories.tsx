@@ -1,6 +1,6 @@
 import Dropdown from './Dropdown';
-import type { DropdownProps } from './Dropdown.types';
-import type { StoryFn } from '@storybook/react';
+import { DropdownOptionVariants, type DropdownProps } from './Dropdown.types';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
@@ -13,10 +13,30 @@ import { Icon } from '../Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 import { StackContainer } from '../StackContainer';
 
-export default {
+const meta: Meta<typeof Dropdown> = {
   title: 'COMPONENTS/Dropdown',
   component: Dropdown,
+  argTypes: {
+    width: {
+      control: { type: 'text' },
+      description: 'Dropdown width',
+      defaultValue: '100%',
+    },
+    option: {
+      control: { type: 'select' },
+      description: 'Dropdown options',
+      options: Object.values(DropdownOptionVariants),
+    },
+    trigger: {
+      description: 'Dropdown trigger 컴포넌트',
+    },
+    popper: {
+      description: 'Dropdown popper 컴포넌트',
+    },
+  },
 };
+
+export default meta;
 
 export const Playground: StoryFn<DropdownProps> = (args) => {
   const data = new Array(10).fill(0).map((_, index) => {
@@ -124,7 +144,7 @@ export const Large: StoryFn<DropdownProps> = (args) => {
   return (
     <StackContainer.Vertical width={'500px'} background='shopl100'>
       <ComponentStage>
-        <Dropdown {...args} width='126px' />
+        <Dropdown {...args} />
       </ComponentStage>
     </StackContainer.Vertical>
   );
