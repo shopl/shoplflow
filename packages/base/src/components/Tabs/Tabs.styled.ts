@@ -14,7 +14,7 @@ export const getHoverTabStyleByStyleVar = (styleVar: TabStyleVariantType) => {
           position: absolute;
           left: 0px;
           right: 0px;
-          bottom: -2px;
+          bottom: -1px;
           height: 2px;
           background: ${colorTokens.neutral500};
         }
@@ -48,7 +48,7 @@ export const getActiveTriggerStyleByStyleVar = (styleVar: TabStyleVariantType) =
           position: absolute;
           left: 0px;
           right: 0px;
-          bottom: -2px;
+          bottom: -1px;
           height: 2px;
           background: #000;
         }
