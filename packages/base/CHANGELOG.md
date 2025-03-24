@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.44
+
+### Patch Changes
+
+- [#489](https://github.com/shopl/shoplflow/pull/489) [`d292a08bae3a51be37823bf34c29725e1603dfb6`](https://github.com/shopl/shoplflow/commit/d292a08bae3a51be37823bf34c29725e1603dfb6) Thanks [@velo-kim](https://github.com/velo-kim)! - update: Tab styleVar='Info' 스타일 조정
+
 ## 0.32.43
 
 ### Patch Changes
