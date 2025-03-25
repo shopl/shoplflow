@@ -41,7 +41,7 @@ const HeaderBox = ({ children }: ChildrenProps) => {
     </StackContainer.Horizontal>
   );
 };
-const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleGroupHeaderProps) => {
+const Header = ({ depth, title, isRequired, count, helpIconProps, rightIconButton }: TitleGroupHeaderProps) => {
   const { color, typography } = getTypographyAndColor(depth);
   return (
     <Stack.Horizontal align='center'>
@@ -56,6 +56,7 @@ const Header = ({ depth, title, isRequired, count, helpIconProps }: TitleGroupHe
           </Text>
         )}
       </Stack.Horizontal>
+      {rightIconButton}
       {helpIconProps && <TitleGroupHelpIcon {...helpIconProps} />}
     </Stack.Horizontal>
   );

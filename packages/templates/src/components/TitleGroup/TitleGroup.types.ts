@@ -1,6 +1,6 @@
-import type { TextProps, TooltipProps } from '@shoplflow/base';
+import type { IconButton, TextProps, TooltipProps, IconButtonProps } from '@shoplflow/base';
 import type { ChildrenProps } from '@shoplflow/base/src/utils/type/ComponentProps';
-import type { ReactNode } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 
 export type ActionsProps = {
   children: ReactNode;
@@ -62,6 +62,7 @@ export type TitleGroupHeaderProps = {
    */
   isRequired?: boolean;
   helpIconProps?: TitleGroupHelpIconProps;
+  rightIconButton?: ReactElement<IconButtonProps, typeof IconButton>;
 };
 
 export interface TitleGroupProps extends ChildrenProps {}
