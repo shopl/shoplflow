@@ -3,6 +3,7 @@ import { BodyContainer, ModalBodyContainerInner, ModalBodyContent } from './Moda
 import type { ModalBodyProps } from './Modal.types';
 import { ScrollArea } from '../ScrollArea';
 import { useViewportSizeObserver } from '../../hooks/useViewportSizeObserver';
+import { useModalOption } from './hooks/useModalOption';
 
 const ModalBody = ({
   children,
@@ -12,6 +13,7 @@ const ModalBody = ({
   height: modalContainerHeight,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useViewportSizeObserver();
+  const { heightToDeduct } = useModalOption();
 
   const headerHeight = 64;
   const footerHeight = 72;
@@ -37,20 +39,24 @@ const ModalBody = ({
     if (modalContainerHeight) {
       if (modalContainerHeight <= 1200) {
         if (windowHeight < modalContainerHeight) {
-          return windowHeight - topBottomMargin - headerFooterHeight;
+          return windowHeight - topBottomMargin - headerFooterHeight - heightToDeduct;
         }
-        return modalContainerHeight - topBottomMargin - headerFooterHeight;
+        return modalContainerHeight - topBottomMargin - headerFooterHeight - heightToDeduct;
       }
-      return modalContainerHeight - topBottomMargin - headerFooterHeight;
+      return modalContainerHeight - topBottomMargin - headerFooterHeight - heightToDeduct;
     } else {
       return '100%';
     }
   };
 
+  // 가능한 최고 높이
   const setAutoHeightMax = () => {
+    // 전체 화면일 경우에는 window height
     if (sizeVar === 'FULL') {
       return windowHeight;
     }
+
+    // 지정된 높이가 있는 케이스
     if (modalContainerHeight) {
       if (modalContainerHeight > 1200) {
         return 1200 - topBottomMargin - headerFooterHeight;
@@ -62,6 +68,7 @@ const ModalBody = ({
         return modalContainerHeight - topBottomMargin - headerFooterHeight;
       }
     }
+
     if (!modalContainerHeight) {
       const heightUnderMaxHeight = windowHeight - topBottomMargin - headerFooterHeight;
 
@@ -72,36 +79,39 @@ const ModalBody = ({
     return 0;
   };
 
-  const setContentHeightMax = () => {
-    let autoHeightMax = setAutoHeightMax();
+  // const setContentHeightMax = () => {
+  //   let autoHeightMax = setAutoHeightMax();
 
-    // Content top padding 빼주기
-    autoHeightMax = autoHeightMax - 24;
+  //   // Content top padding 빼주기
+  //   autoHeightMax = autoHeightMax - 24;
 
-    if (isIncludeHeader) {
-      autoHeightMax = autoHeightMax - 24;
-    }
+  //   if (isIncludeHeader) {
+  //     autoHeightMax = autoHeightMax - 24;
+  //   }
 
-    if (!isIncludeHeader) {
-      autoHeightMax = autoHeightMax - 16;
-    }
+  //   if (!isIncludeHeader) {
+  //     autoHeightMax = autoHeightMax - 16;
+  //   }
 
-    return autoHeightMax;
-  };
+  //   return autoHeightMax;
+  // };
+
+  const autoHeightMin = setAutoHeightMin();
+  const _autoHeightMin = typeof autoHeightMin === 'string' ? autoHeightMin : autoHeightMin - heightToDeduct;
 
   return (
     <BodyContainer
       isIncludeHeader={isIncludeHeader}
       sizeVar={sizeVar}
-      minHeight={setAutoHeightMin()}
-      maxHeight={setAutoHeightMax()}
+      minHeight={_autoHeightMin}
+      maxHeight={setAutoHeightMax() - heightToDeduct}
     >
       <ScrollArea
         id={`scrollbar`}
         universal
         autoHeight={!modalContainerHeight}
-        autoHeightMin={setAutoHeightMin()}
-        autoHeightMax={setContentHeightMax()}
+        autoHeightMin={_autoHeightMin}
+        autoHeightMax={'100%'}
         style={{}}
       >
         <ModalBodyContainerInner>

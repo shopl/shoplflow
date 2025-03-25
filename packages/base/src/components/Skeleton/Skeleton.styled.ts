@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import { colorTokens } from '../../../styles';
+import { colorTokens } from '../../styles';
 
 const animation = keyframes`
   0% {
