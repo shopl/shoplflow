@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.45
+
+### Patch Changes
+
+- [#494](https://github.com/shopl/shoplflow/pull/494) [`13852ced7f4a81669bd4104bc185c635cbe85784`](https://github.com/shopl/shoplflow/commit/13852ced7f4a81669bd4104bc185c635cbe85784) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ModalBody maxheigth
+
 ## 0.32.44
 
 ### Patch Changes

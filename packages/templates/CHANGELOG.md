@@ -1,5 +1,14 @@
 # @shoplflow/templates
 
+## 0.0.28
+
+### Patch Changes
+
+- [#492](https://github.com/shopl/shoplflow/pull/492) [`971483781a999a403ae53a252f6f4264e818b786`](https://github.com/shopl/shoplflow/commit/971483781a999a403ae53a252f6f4264e818b786) Thanks [@ayaan0209](https://github.com/ayaan0209)! - TitleGroup 헤더 영역에 iconButton 컴포넌트 영역 추가
+
+- Updated dependencies [[`13852ced7f4a81669bd4104bc185c635cbe85784`](https://github.com/shopl/shoplflow/commit/13852ced7f4a81669bd4104bc185c635cbe85784)]:
+  - @shoplflow/base@0.32.45
+
 ## 0.0.27
 
 ### Patch Changes
