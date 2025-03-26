@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.32.46
+
+### Patch Changes
+
+- [#495](https://github.com/shopl/shoplflow/pull/495) [`cac47bfa0aec5f4d5783f938f0b2375ab043adaa`](https://github.com/shopl/shoplflow/commit/cac47bfa0aec5f4d5783f938f0b2375ab043adaa) Thanks [@velo-kim](https://github.com/velo-kim)! - ModalBody Content MaxHeight 로직 변경
+
 ## 0.32.45
 
 ### Patch Changes
