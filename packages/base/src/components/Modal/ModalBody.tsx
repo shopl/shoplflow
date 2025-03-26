@@ -111,7 +111,7 @@ const ModalBody = ({
         universal
         autoHeight={!modalContainerHeight}
         autoHeightMin={_autoHeightMin}
-        autoHeightMax={'100%'}
+        autoHeightMax={setAutoHeightMax() - heightToDeduct}
         style={{}}
       >
         <ModalBodyContainerInner>

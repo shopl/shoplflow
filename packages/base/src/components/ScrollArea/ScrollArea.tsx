@@ -25,11 +25,11 @@ const ScrollArea = forwardRef<ScrollbarRefType, ScrollAreaProps>(({ children, ..
     <>
       {Boolean(windowWidth) && Boolean(windowHeight) && (
         <Scrollbars
+          {...rest}
           ref={mergeRef}
           autoHide
           autoHideTimeout={1000}
           autoHideDuration={200}
-          {...rest}
           data-shoplflow={'ScrollArea'}
         >
           {children}
