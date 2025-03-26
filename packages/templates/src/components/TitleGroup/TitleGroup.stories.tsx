@@ -1,9 +1,10 @@
 import React from 'react';
 
 import type { StoryFn } from '@storybook/react';
-import { Button, colorTokens, Stack, Switch } from '@shoplflow/base';
+import { Button, colorTokens, Icon, Stack, Switch, IconButton } from '@shoplflow/base';
 import TitleGroup from './TitleGroup';
 import type { TitleGroupHeaderProps, TitleGroupHelpIconProps, TitleGroupProps } from './TitleGroup.types';
+import { EditIcon } from '@shoplflow/shopl-assets';
 
 interface PlaygroundProps extends TitleGroupProps, TitleGroupHeaderProps, TitleGroupHelpIconProps {
   showActions: boolean;
@@ -47,6 +48,11 @@ export const Playground: StoryFn<PlaygroundProps> = (args) => {
             title='Title'
             count={args.count}
             isRequired={args.isRequired}
+            rightIconButton={
+              <IconButton>
+                <Icon iconSource={EditIcon} />
+              </IconButton>
+            }
             helpIconProps={{
               tooltipPlacement: args.tooltipPlacement,
               tooltipOffsetValue: 4,
