@@ -79,22 +79,22 @@ const ModalBody = ({
     return 0;
   };
 
-  // const setContentHeightMax = () => {
-  //   let autoHeightMax = setAutoHeightMax();
+  const setContentHeightMax = () => {
+    let autoHeightMax = setAutoHeightMax();
 
-  //   // Content top padding 빼주기
-  //   autoHeightMax = autoHeightMax - 24;
+    // Content top padding 빼주기
+    autoHeightMax = autoHeightMax - 24;
 
-  //   if (isIncludeHeader) {
-  //     autoHeightMax = autoHeightMax - 24;
-  //   }
+    if (isIncludeHeader) {
+      autoHeightMax = autoHeightMax - 24;
+    }
 
-  //   if (!isIncludeHeader) {
-  //     autoHeightMax = autoHeightMax - 16;
-  //   }
+    if (!isIncludeHeader) {
+      autoHeightMax = autoHeightMax - 16;
+    }
 
-  //   return autoHeightMax;
-  // };
+    return autoHeightMax;
+  };
 
   const autoHeightMin = setAutoHeightMin();
   const _autoHeightMin = typeof autoHeightMin === 'string' ? autoHeightMin : autoHeightMin - heightToDeduct;
@@ -111,7 +111,7 @@ const ModalBody = ({
         universal
         autoHeight={!modalContainerHeight}
         autoHeightMin={_autoHeightMin}
-        autoHeightMax={setAutoHeightMax() - heightToDeduct}
+        autoHeightMax={setContentHeightMax() - heightToDeduct}
         style={{}}
       >
         <ModalBodyContainerInner>
