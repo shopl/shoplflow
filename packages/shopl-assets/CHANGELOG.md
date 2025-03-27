@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.0
+
+### Minor Changes
+
+- [#497](https://github.com/shopl/shoplflow/pull/497) [`f30b09fc1b8747e23efcdb376f11ef6888b8ed15`](https://github.com/shopl/shoplflow/commit/f30b09fc1b8747e23efcdb376f11ef6888b8ed15) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Map icon 추가
+
 ## 0.11.5
 
 ### Patch Changes
