@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/extension",
-  "version": "0.0.104",
+  "version": "0.0.105",
   "license": "MIT",
   "description": "Shoplflow 점유율 확인 extension",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@shoplflow/base": "^0.32.47",
+    "@shoplflow/base": "^0.33.0",
     "chart.js": "^4.4.0",
     "construct-style-sheets-polyfill": "^3.1.0",
     "react": "18.2.0",

@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.33.0
+
+### Minor Changes
+
+- [#500](https://github.com/shopl/shoplflow/pull/500) [`6df07280d75cbbc104b1ee7bedb677f850aacefe`](https://github.com/shopl/shoplflow/commit/6df07280d75cbbc104b1ee7bedb677f850aacefe) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - ToggleButton, Dropdown, InputButton의 disabled 스타일링을 수정했어요
+
 ## 0.32.47
 
 ### Patch Changes
