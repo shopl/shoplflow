@@ -37,6 +37,13 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
       selected = true;
     }
 
+    const getLabelColor = ({ selected, disabled }: { selected: boolean; disabled: boolean }) => {
+      if (selected) {
+        return disabled ? 'neutral400' : 'neutral700';
+      }
+      return 'neutral500';
+    };
+
     return (
       <StyledToggleInner disabled={disabled} type='button'>
         <StyledToggleInnerInput
@@ -61,7 +68,7 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
         >
           <Text
             lineClamp={1}
-            color={selected ? 'neutral700' : 'neutral500'}
+            color={getLabelColor({ selected, disabled: Boolean(disabled) })}
             wordBreak='break-all'
             typography={selected ? 'body2_500' : 'body2_400'}
           >
