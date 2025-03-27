@@ -19,6 +19,7 @@ export const StyledInputButton = styled.div<{
     css`
       background-color: ${colorTokens.neutral100};
       cursor: not-allowed;
+      color: ${colorTokens.neutral350};
     `}
 `;
 
