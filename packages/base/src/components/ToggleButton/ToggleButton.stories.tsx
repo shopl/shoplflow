@@ -11,7 +11,7 @@ export default {
 };
 
 export const Playground: StoryFn<ToggleButtonProps> = (args) => {
-  const [selectedValue, setSelectedValue] = useState('test1');
+  const [selectedValue, setSelectedValue] = useState('value1');
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setSelectedValue(event.target.value);
@@ -27,9 +27,9 @@ export const Playground: StoryFn<ToggleButtonProps> = (args) => {
         sizeVar='S'
         fixedWidth={100}
       >
-        <ToggleButton.InnerRadio value='test1' label='test1' id={'1'} />
-        <ToggleButton.InnerRadio value='test2' label='test2' id={'2'} disabled />
-        <ToggleButton.InnerRadio value='test3' label='test3' id={'3'} />
+        <ToggleButton.InnerRadio value='value1' label='Toggle1' id={'1'} />
+        <ToggleButton.InnerRadio value='value2' label='Toggle2' id={'2'} />
+        <ToggleButton.InnerRadio value='value3' label='disabled' id={'3'} disabled />
       </ToggleButton>
     </Stack>
   );
