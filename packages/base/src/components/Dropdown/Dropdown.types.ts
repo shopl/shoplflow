@@ -28,6 +28,7 @@ export interface DropdownOptionProps {
    */
   option?: DropdownOptionVariantType;
   width?: CSSProperties['width'];
+  disabled?: boolean;
 }
 
 export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {

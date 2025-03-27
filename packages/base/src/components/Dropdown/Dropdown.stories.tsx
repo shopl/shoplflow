@@ -32,6 +32,9 @@ const meta: Meta<typeof Dropdown> = {
     popper: {
       description: 'Dropdown popper 컴포넌트',
     },
+    disabled: {
+      description: 'Dropdown trigger 비활성화 여부',
+    },
   },
 };
 
@@ -55,10 +58,12 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
       <ComponentStage justify={'start'}>
         <Dropdown
           {...args}
+          disabled={args.disabled}
           option={'OUTSIDE_CLICK'}
           width={'100%'}
           trigger={
             <Dropdown.Button
+              disabled={args.disabled}
               placeholder={'값이 없어요'}
               value={
                 selectedItem.length > 0 && (
@@ -97,6 +102,7 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
 
 Playground.args = {
   trigger: <Dropdown.Button placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
+  disabled: false,
 };
 
 Playground.parameters = {
