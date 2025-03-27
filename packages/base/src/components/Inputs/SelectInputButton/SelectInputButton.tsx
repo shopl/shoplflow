@@ -47,6 +47,11 @@ const SelectInputButton = ({
     setIsHovered(false);
     onMouseLeave && onMouseLeave(e);
   };
+
+  const getTextColor = (disabled) => {
+    return disabled ? 'neutral350' : 'neutral700';
+  };
+
   return (
     <InputWrapper
       onMouseEnter={handleOnMouseEnter}
@@ -62,7 +67,7 @@ const SelectInputButton = ({
     >
       <StyledSelectInputButton>
         {value && value.length > 0 && label ? (
-          <Text typography={'body1_400'} lineClamp={1}>
+          <Text typography={'body1_400'} lineClamp={1} color={getTextColor(disabled)}>
             {value[0][label] as string}
           </Text>
         ) : (
@@ -73,7 +78,7 @@ const SelectInputButton = ({
 
         <Stack.Horizontal align={'center'} spacing={'spacing04'}>
           {value && value.length > 1 && (
-            <Text typography={'body1_400'} color={'neutral700'}>
+            <Text typography={'body1_400'} color={getTextColor(disabled)}>
               +{value.length - 1}
             </Text>
           )}

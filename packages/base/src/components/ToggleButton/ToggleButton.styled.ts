@@ -4,6 +4,13 @@ import type { ToggleButtonSizeVariantType } from './ToggleButton.types';
 import { css } from '@emotion/react';
 
 const getLabelStyleByStatus = (selected: boolean, disabled: boolean) => {
+  if (disabled && selected) {
+    return css`
+      background-color: ${colorTokens.neutral0};
+      cursor: not-allowed;
+    `;
+  }
+
   if (disabled) {
     return css`
       cursor: not-allowed;

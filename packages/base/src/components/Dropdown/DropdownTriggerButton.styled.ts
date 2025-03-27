@@ -59,8 +59,8 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
 export const getDisabledStyle = (disabled?: boolean) => {
   if (disabled) {
     return css`
-      opacity: 50%;
       cursor: not-allowed;
+      background: ${colorTokens.neutral100};
     `;
   }
 };
