@@ -1,4 +1,4 @@
-import { ArgsTable, Canvas, Meta } from '@storybook/blocks';
+import { ArgsType, Canvas, Meta } from '@storybook/blocks';
 import Skeleton from './Skeleton';
 import * as SkeletonStories from './Skeleton.stories';
 
@@ -12,8 +12,23 @@ Skeleton은 데이터가 로드되는 동안 사용자에게 로딩 상태를 �
 
 ## ArgsTable
 
-<ArgsTable of={Skeleton} />
+<ArgsType of={Skeleton} />
 
 ## Usage
 
+Skeleton 컴포넌트는 다음과 같이 사용할 수 있습니다:
+
+```tsx
+import Skeleton from './Skeleton';
+
+function LoadingState() {
+  return (
+    <div>
+      <Skeleton styleVar={'circle'} width="200px" />
+      <Skeleton styleVar={'circle'} width="150px" />
+      <Skeleton styleVar={'rectangle'} width="100px" height="20px" />
+    </div>
+  );
+}
+```
 

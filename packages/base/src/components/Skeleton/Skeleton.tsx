@@ -2,8 +2,8 @@ import React from 'react';
 import * as SC from './Skeleton.styled';
 import type { SkeletonProps } from './Skeleton.types';
 
-const getSkeletonStyles = (variant: string | undefined, width: string, height: string) => {
-  switch (variant) {
+const getSkeletonStyles = (styleVar: string | undefined, width: string, height: string) => {
+  switch (styleVar) {
     case 'circle':
       return {
         width,
@@ -20,8 +20,8 @@ const getSkeletonStyles = (variant: string | undefined, width: string, height: s
   }
 };
 
-const Skeleton = ({ variant = 'default', width = '100%', height = '20px' }: SkeletonProps) => {
-  const skeletonStyle = getSkeletonStyles(variant, width, height);
+const Skeleton = ({ styleVar = 'rectangle', width = '100%', height = '20px' }: SkeletonProps) => {
+  const skeletonStyle = getSkeletonStyles(styleVar, width, height);
 
   return <SC.Container style={skeletonStyle} data-shoplflow={'Skeleton'} />;
 };

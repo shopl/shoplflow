@@ -9,7 +9,7 @@ export default {
   title: 'Components/Skeleton',
   component: Skeleton,
   argTypes: {
-    variant: {
+    styleVar: {
       control: {
         type: 'select',
         options: ['circle', 'default'],

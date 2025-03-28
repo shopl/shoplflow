@@ -1,5 +1,5 @@
 export type SkeletonProps = {
-  variant?: 'circle' | 'default';
+  styleVar?: 'circle' | 'rectangle';
   width?: string;
   height?: string;
 };
