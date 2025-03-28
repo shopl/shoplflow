@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useId } from 'react';
 import { IconWrapper, LeftElementWrapper, RightElementWrapper, StyledTree, StyledTreeItem } from './Tree.styled';
 import type { TreeItemProps, TreeProps } from './Tree.types';
 import { TREE_SYMBOL_KEY } from './Tree.types';
@@ -41,7 +41,7 @@ export const TreeItem = ({
   ...rest
 }: TreeItemProps) => {
   const [isOpened, setIsOpened] = React.useState(initialIsOpen ?? false);
-
+  const uniqueId = useId();
   const CloneChildren = React.Children.map(children, (child) => {
     if (!React.isValidElement(child)) {
       return child;
@@ -92,7 +92,7 @@ export const TreeItem = ({
         variants={fadeInOut}
         {...AnimateKey}
         layout
-        key={String(label)}
+        key={uniqueId}
         onClick={handleClickTreeItem}
         {...rest}
       >
