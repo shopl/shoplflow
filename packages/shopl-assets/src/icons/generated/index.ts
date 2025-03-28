@@ -233,6 +233,7 @@ import IcRequired from './IcRequired';
 import IcResendPushMedium from './IcResendPushMedium';
 import IcResendPush from './IcResendPush';
 import IcReturn from './IcReturn';
+import IcRightArrowSolidXsmall from './IcRightArrowSolidXsmall';
 import IcRightArrowXsmall from './IcRightArrowXsmall';
 import IcRightArrow from './IcRightArrow';
 import IcSalesMedium from './IcSalesMedium';
@@ -516,6 +517,7 @@ const icons = {
   'resend-push-medium': IcResendPushMedium,
   'resend-push': IcResendPush,
   return: IcReturn,
+  'right-arrow-solid-xsmall': IcRightArrowSolidXsmall,
   'right-arrow-xsmall': IcRightArrowXsmall,
   'right-arrow': IcRightArrow,
   'sales-medium': IcSalesMedium,
@@ -802,6 +804,7 @@ export {
   IcResendPushMedium as ResendPushMediumIcon,
   IcResendPush as ResendPushIcon,
   IcReturn as ReturnIcon,
+  IcRightArrowSolidXsmall as RightArrowSolidXsmallIcon,
   IcRightArrowXsmall as RightArrowXsmallIcon,
   IcRightArrow as RightArrowIcon,
   IcSalesMedium as SalesMediumIcon,

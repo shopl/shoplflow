@@ -4,7 +4,7 @@ import type { TreeItemProps, TreeProps } from './Tree.types';
 import { TREE_SYMBOL_KEY } from './Tree.types';
 import { Text } from '../Text';
 import { IconButton } from '../Buttons';
-import { DownArrowIcon } from '@shoplflow/shopl-assets';
+import { RightArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { Icon } from '../Icon';
 import { fadeInOut } from '../../animation/fadeInOut';
@@ -72,6 +72,7 @@ export const TreeItem = ({
         disabled,
         onClick,
         ...rest,
+        ...leftSource.props,
       })
     : leftSource;
 
@@ -80,6 +81,8 @@ export const TreeItem = ({
       setIsOpened(isOpen);
     }
   }, [isOpen]);
+
+  const isLastTree = !children && depth > 0;
 
   return (
     <>
@@ -94,6 +97,22 @@ export const TreeItem = ({
         {...rest}
       >
         <LeftElementWrapper>
+          {children && !isLastTree && (
+            <IconButton styleVar={'GHOST'} onClick={handleToggle} sizeVar='XS'>
+              <IconWrapper
+                animate={{
+                  rotate: isOpened ? 90 : 0,
+                  transition: {
+                    duration: 0.2,
+                  },
+                }}
+              >
+                <Icon iconSource={RightArrowSolidXsmallIcon} sizeVar={'XS'} color='neutral400' />
+              </IconWrapper>
+            </IconButton>
+          )}
+          {/* 마지막 Tree인 케이스 */}
+          {isLastTree && <div style={{ width: '24px', height: '24px', visibility: 'hidden' }} />}
           {LeftSourceClone && LeftSourceClone}
           <StackContainer padding={'0 0 0 4px'}>
             <Text typography={'body1_400'} lineClamp={1} color={disabled ? 'neutral350' : 'neutral700'}>
@@ -101,23 +120,7 @@ export const TreeItem = ({
             </Text>
           </StackContainer>
         </LeftElementWrapper>
-        <RightElementWrapper>
-          {rightSource}
-          {children && (
-            <IconButton styleVar={'GHOST'} onClick={handleToggle} sizeVar='S'>
-              <IconWrapper
-                animate={{
-                  rotate: isOpened ? 180 : 0,
-                  transition: {
-                    duration: 0.2,
-                  },
-                }}
-              >
-                <Icon iconSource={DownArrowIcon} sizeVar={'S'} color='neutral400' />
-              </IconWrapper>
-            </IconButton>
-          )}
-        </RightElementWrapper>
+        <RightElementWrapper>{rightSource}</RightElementWrapper>
       </StyledTreeItem>
       <AnimatePresence mode={'sync'}>
         {isOpened && children && (
