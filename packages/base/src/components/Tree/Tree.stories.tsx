@@ -91,6 +91,8 @@ export const Playground: StoryFn<TreeProps> = () => {
             <Tree.Item disabled leftSource={<Checkbox />} label={'비활성화 테스트'}>
               <Tree.Item disabled leftSource={<Checkbox />} label={'비활성화된 item'} />
             </Tree.Item>
+            <Tree.Item leftSource={<Checkbox />} label={'단독 트리 + 체크 박스'} />
+            <Tree.Item label={'단독 트리'} />
           </Tree>
         </ScrollArea>
       </ComponentStage>

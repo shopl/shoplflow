@@ -19,14 +19,14 @@ export const StyledTreeItem = styled(motion.li)<TreeItemOptionProps>`
   gap: 4px;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 8px 8px 0;
+  padding: 8px 8px 8px 0px;
   border-radius: 8px;
   background: transparent;
   cursor: ${({ onClick }) => (onClick ? 'pointer' : 'initial')};
   ${({ depth }) =>
     depth &&
     css`
-      padding-left: ${depth * 16}px;
+      padding-left: ${(depth - 1) * 24 + 12}px;
     `};
   &:hover {
     background: ${colorTokens.neutral400_5};
