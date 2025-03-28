@@ -12,27 +12,27 @@ export default {
     styleVar: {
       control: {
         type: 'select',
-        options: ['circle', 'default'],
+        options: ['circle', 'rectangle'],
       },
     },
     width: {
       control: {
         type: 'text',
       },
-      defaultValue: '100%',
+      defaultValue: '40px',
     },
     height: {
       control: {
         type: 'text',
       },
-      defaultValue: '20px',
+      defaultValue: '40px',
     },
   },
 };
 
 export const Playground: StoryFn<SkeletonProps> = (args) => {
   return (
-    <Stack width={'100px'}>
+    <Stack minWidth={'100px'} minHeight={'100px'}>
       <Skeleton {...args} />
     </Stack>
   );
