@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.33.2
+
+### Patch Changes
+
+- [#502](https://github.com/shopl/shoplflow/pull/502) [`26c6bf3efb62f538746a7fe616ba31b4f3b05027`](https://github.com/shopl/shoplflow/commit/26c6bf3efb62f538746a7fe616ba31b4f3b05027) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Skeleton 컴포넌트 생성
+
 ## 0.33.1
 
 ### Patch Changes
