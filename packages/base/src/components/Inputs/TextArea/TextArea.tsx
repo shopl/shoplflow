@@ -95,6 +95,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         height={height}
         minHeight={minHeight}
         width={width}
+        gap='0'
         data-shoplflow={'text-area'}
       >
         <StyledTextarea
