@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.33.3
+
+### Patch Changes
+
+- [#506](https://github.com/shopl/shoplflow/pull/506) [`68922977c34111576455ac383a59d0898c33a28d`](https://github.com/shopl/shoplflow/commit/68922977c34111576455ac383a59d0898c33a28d) Thanks [@ayaan0209](https://github.com/ayaan0209)! - TextArea gap 삭제 했습니다.
+
 ## 0.33.2
 
 ### Patch Changes
