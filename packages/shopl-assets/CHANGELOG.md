@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.2
+
+### Patch Changes
+
+- [#509](https://github.com/shopl/shoplflow/pull/509) [`3497f930d7f4cfe9e7ca458ea34895747dfc6dfb`](https://github.com/shopl/shoplflow/commit/3497f930d7f4cfe9e7ca458ea34895747dfc6dfb) Thanks [@velo-kim](https://github.com/velo-kim)! - update: Tree Component
+
 ## 0.12.1
 
 ### Patch Changes
