@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -39,9 +40,13 @@ jobs:
           cd packages/shopl-assets
           pnpm run build:icons
           pnpm run lint:icons
+          cd ../hada-assets
+          pnpm run build:icons
+          pnpm run lint:icons
 
       - name: Create changeset
         run: |
+          git fetch origin main:main
           pnpm changeset add --filter @shoplflow/shopl-assets --message "icon 추가"
           pnpm changeset version --filter @shoplflow/shopl-assets
 
