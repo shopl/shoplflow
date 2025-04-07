@@ -33,7 +33,7 @@ jobs:
           pnpm config set store-dir ~/.pnpm-store
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       - name: Build and lint icons
         run: |
@@ -61,9 +61,9 @@ jobs:
         run: pnpm changeset version
 
       - name: Commit and push changes
+        env:
+          HUSKY_SKIP_HOOKS: 1
         run: |
-          git checkout pnpm-lock.yaml
-          
           git add .
           git commit -m "chore: bump version for icon update"
           git push origin update/icon
