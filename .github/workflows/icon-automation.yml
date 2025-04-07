@@ -33,7 +33,7 @@ jobs:
           pnpm config set store-dir ~/.pnpm-store
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       - name: Build and lint icons
         run: |
@@ -60,9 +60,6 @@ jobs:
       - name: Add patch changeset for icons
         run: |
           node packages/shopl-assets/scripts/add-icon-changeset.js
-
-      - name: Version packages
-        run: pnpm changeset version
 
       - name: Commit and push changes
         env:
