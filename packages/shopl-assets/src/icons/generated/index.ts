@@ -1,4 +1,4 @@
-import IcAbnormalA from './IcAbnormalA';
+import IcAbnormaA from './IcAbnormaA';
 import IcAbnormalD from './IcAbnormalD';
 import IcAbnormalEarlyleave from './IcAbnormalEarlyleave';
 import IcAbnormalLate from './IcAbnormalLate';
@@ -54,6 +54,8 @@ import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
+import IcContrastMinus from './IcContrastMinus';
+import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
@@ -120,6 +122,8 @@ import IcGradientNotice from './IcGradientNotice';
 import IcGradientOvertime from './IcGradientOvertime';
 import IcGradientPrice from './IcGradientPrice';
 import IcGradientReport from './IcGradientReport';
+import IcGradientReports from './IcGradientReports';
+import IcGradientSale from './IcGradientSale';
 import IcGradientSales from './IcGradientSales';
 import IcGradientSchedule from './IcGradientSchedule';
 import IcGradientStaff from './IcGradientStaff';
@@ -205,6 +209,7 @@ import IcNormal from './IcNormal';
 import IcNoticeMedium from './IcNoticeMedium';
 import IcNoticeSolidMedium from './IcNoticeSolidMedium';
 import IcNotice from './IcNotice';
+import IcOff from './IcOff';
 import IcOnboardingAttendance from './IcOnboardingAttendance';
 import IcOnboardingBoth from './IcOnboardingBoth';
 import IcOnboardingSetting from './IcOnboardingSetting';
@@ -282,7 +287,7 @@ import IcZoomInMedium from './IcZoomInMedium';
 import IcZoomOutMedium from './IcZoomOutMedium';
 
 const icons = {
-  'abnormal-a': IcAbnormalA,
+  'abnorma-a': IcAbnormaA,
   'abnormal-d': IcAbnormalD,
   'abnormal-earlyleave': IcAbnormalEarlyleave,
   'abnormal-late': IcAbnormalLate,
@@ -338,6 +343,8 @@ const icons = {
   'cloud-medium': IcCloudMedium,
   comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
+  'contrast-minus': IcContrastMinus,
+  'contrast-plus': IcContrastPlus,
   copy: IcCopy,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
@@ -404,6 +411,8 @@ const icons = {
   'gradient-overtime': IcGradientOvertime,
   'gradient-price': IcGradientPrice,
   'gradient-report': IcGradientReport,
+  'gradient-reports': IcGradientReports,
+  'gradient-sale': IcGradientSale,
   'gradient-sales': IcGradientSales,
   'gradient-schedule': IcGradientSchedule,
   'gradient-staff': IcGradientStaff,
@@ -489,6 +498,7 @@ const icons = {
   'notice-medium': IcNoticeMedium,
   'notice-solid-medium': IcNoticeSolidMedium,
   notice: IcNotice,
+  off: IcOff,
   'onboarding-attendance': IcOnboardingAttendance,
   'onboarding-both': IcOnboardingBoth,
   'onboarding-setting': IcOnboardingSetting,
@@ -569,7 +579,7 @@ const icons = {
 export type IconNames = keyof typeof icons;
 
 export {
-  IcAbnormalA as AbnormalAIcon,
+  IcAbnormaA as AbnormaAIcon,
   IcAbnormalD as AbnormalDIcon,
   IcAbnormalEarlyleave as AbnormalEarlyleaveIcon,
   IcAbnormalLate as AbnormalLateIcon,
@@ -625,6 +635,8 @@ export {
   IcCloudMedium as CloudMediumIcon,
   IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
+  IcContrastMinus as ContrastMinusIcon,
+  IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
@@ -691,6 +703,8 @@ export {
   IcGradientOvertime as GradientOvertimeIcon,
   IcGradientPrice as GradientPriceIcon,
   IcGradientReport as GradientReportIcon,
+  IcGradientReports as GradientReportsIcon,
+  IcGradientSale as GradientSaleIcon,
   IcGradientSales as GradientSalesIcon,
   IcGradientSchedule as GradientScheduleIcon,
   IcGradientStaff as GradientStaffIcon,
@@ -776,6 +790,7 @@ export {
   IcNoticeMedium as NoticeMediumIcon,
   IcNoticeSolidMedium as NoticeSolidMediumIcon,
   IcNotice as NoticeIcon,
+  IcOff as OffIcon,
   IcOnboardingAttendance as OnboardingAttendanceIcon,
   IcOnboardingBoth as OnboardingBothIcon,
   IcOnboardingSetting as OnboardingSettingIcon,
