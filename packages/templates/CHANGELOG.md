@@ -1,5 +1,13 @@
 # @shoplflow/templates
 
+## 0.0.36
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @shoplflow/shopl-assets@0.12.3
+  - @shoplflow/base@0.33.5
+
 ## 0.0.35
 
 ### Patch Changes

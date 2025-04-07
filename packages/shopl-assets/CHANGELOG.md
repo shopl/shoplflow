@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.3
+
+### Patch Changes
+
+- icon 추가
+
 ## 0.12.2
 
 ### Patch Changes
