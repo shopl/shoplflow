@@ -46,7 +46,7 @@ jobs:
 
       - name: Create changeset
         run: |
-          git fetch origin main:main
+          git status
           pnpm changeset add --filter @shoplflow/shopl-assets --message "icon 추가"
           pnpm changeset version --filter @shoplflow/shopl-assets
 
