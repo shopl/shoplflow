@@ -5,8 +5,8 @@ import IcAbnormalLate from './IcAbnormalLate';
 import IcAbnormalM from './IcAbnormalM';
 import IcAbnormalN from './IcAbnormalN';
 import IcAbnormalW from './IcAbnormalW';
+import IcAddX from './IcAddX';
 import IcAddXsmall from './IcAddXsmall';
-import IcAdd from './IcAdd';
 import IcAdminLarge from './IcAdminLarge';
 import IcAiChatBot from './IcAiChatBot';
 import IcAlbumXlarge from './IcAlbumXlarge';
@@ -294,8 +294,8 @@ const icons = {
   'abnormal-m': IcAbnormalM,
   'abnormal-n': IcAbnormalN,
   'abnormal-w': IcAbnormalW,
+  'add-x': IcAddX,
   'add-xsmall': IcAddXsmall,
-  add: IcAdd,
   'admin-large': IcAdminLarge,
   'ai-chat-bot': IcAiChatBot,
   'album-xlarge': IcAlbumXlarge,
@@ -586,8 +586,8 @@ export {
   IcAbnormalM as AbnormalMIcon,
   IcAbnormalN as AbnormalNIcon,
   IcAbnormalW as AbnormalWIcon,
+  IcAddX as AddXIcon,
   IcAddXsmall as AddXsmallIcon,
-  IcAdd as AddIcon,
   IcAdminLarge as AdminLargeIcon,
   IcAiChatBot as AiChatBotIcon,
   IcAlbumXlarge as AlbumXlargeIcon,
