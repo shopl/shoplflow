@@ -15,22 +15,22 @@ on:
 jobs:
   process-icons:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          ref: main
+          ref: update/icon
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8.6.12
-          run_install: false
+        run: |
+          npm install -g pnpm@8.6.12
+          pnpm config set store-dir ~/.pnpm-store
 
       - name: Install dependencies
         run: pnpm install
@@ -48,28 +48,29 @@ jobs:
           pnpm run build:illustrations
           pnpm run lint:illustrations
 
-      - name: Create changeset
-        run: |
-          git status
-          echo "y" | pnpm changeset add --filter @shoplflow/shopl-assets --message "icon 추가"
-          echo "y" | pnpm changeset version --filter @shoplflow/shopl-assets
-
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit changes
+      - name: Add patch changeset for icons
+        run: |
+          node scripts/add-icon-changeset.js
+
+      - name: Version packages
+        run: pnpm changeset version
+
+      - name: Commit and push changes
         run: |
           git add .
-          git commit -m "icon 추가"
+          git commit -m "chore: bump version for icon update"
           git push origin update/icon
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
-          title: "icon 추가"
-          body: "새로운 아이콘을 추가합니다."
-          branch: "update/icon"
-          base: "main"
+          title: 'icon 추가'
+          body: '새로운 아이콘을 추가합니다.'
+          branch: 'update/icon'
+          base: 'main'
           delete-branch: true
