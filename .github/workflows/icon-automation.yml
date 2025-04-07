@@ -27,9 +27,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: |
-          npm install -g pnpm@8.6.12
-          pnpm config set store ~/.pnpm-store
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.12
+          run_install: false
 
       - name: Install dependencies
         run: pnpm install
