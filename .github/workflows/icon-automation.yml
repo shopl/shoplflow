@@ -40,15 +40,19 @@ jobs:
           cd packages/shopl-assets
           pnpm run build:icons
           pnpm run lint:icons
+          pnpm run build:illustrations
+          pnpm run lint:illustrations
           cd ../hada-assets
           pnpm run build:icons
           pnpm run lint:icons
+          pnpm run build:illustrations
+          pnpm run lint:illustrations
 
       - name: Create changeset
         run: |
           git status
-          pnpm changeset add --filter @shoplflow/shopl-assets --message "icon 추가"
-          pnpm changeset version --filter @shoplflow/shopl-assets
+          echo "y" | pnpm changeset add --filter @shoplflow/shopl-assets --message "icon 추가"
+          echo "y" | pnpm changeset version --filter @shoplflow/shopl-assets
 
       - name: Configure Git
         run: |
