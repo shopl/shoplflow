@@ -55,7 +55,7 @@ jobs:
 
       - name: Add patch changeset for icons
         run: |
-          node scripts/add-icon-changeset.js
+          node packages/shopl-assets/scripts/add-icon-changeset.js
 
       - name: Version packages
         run: pnpm changeset version
