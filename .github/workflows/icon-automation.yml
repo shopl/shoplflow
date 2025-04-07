@@ -62,6 +62,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          git checkout pnpm-lock.yaml
+          
           git add .
           git commit -m "chore: bump version for icon update"
           git push origin update/icon
