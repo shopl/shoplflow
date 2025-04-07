@@ -1,0 +1,66 @@
+name: Icon Automation
+
+on:
+  push:
+    branches:
+      - 'update/icon'
+    paths:
+      - 'packages/shopl-assets/src/icons/assets/**'
+  pull_request:
+    branches:
+      - 'update/icon'
+    paths:
+      - 'packages/shopl-assets/src/icons/assets/**'
+
+jobs:
+  process-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm@8.6.12
+          pnpm config set store ~/.pnpm-store
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build and lint icons
+        run: |
+          cd packages/shopl-assets
+          pnpm run build:icons
+          pnpm run lint:icons
+
+      - name: Create changeset
+        run: |
+          pnpm changeset add --filter @shoplflow/shopl-assets --message "icon 추가"
+          pnpm changeset version --filter @shoplflow/shopl-assets
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "icon 추가"
+          git push origin update/icon
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: "icon 추가"
+          body: "새로운 아이콘을 추가합니다."
+          branch: "update/icon"
+          base: "main"
+          delete-branch: true
