@@ -115,7 +115,7 @@ export const TreeItem = ({
           {isLastTree && <div style={{ width: '24px', height: '24px', visibility: 'hidden' }} />}
           {LeftSourceClone && LeftSourceClone}
           <StackContainer padding={'0 0 0 4px'}>
-            <Text typography={'body1_400'} lineClamp={1} color={disabled ? 'neutral350' : 'neutral700'}>
+            <Text typography={'body1_400'} wordBreak={'break-all'} color={disabled ? 'neutral350' : 'neutral700'}>
               {label}
             </Text>
           </StackContainer>

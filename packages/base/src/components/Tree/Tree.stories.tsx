@@ -39,7 +39,9 @@ export const Playground: StoryFn<TreeProps> = () => {
             >
               <Tree.Item
                 leftSource={<Checkbox />}
-                label={'프로덕트'}
+                label={
+                  '프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트'
+                }
                 initialIsOpen
                 rightSource={
                   <Tag
