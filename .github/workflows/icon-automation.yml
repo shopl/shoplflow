@@ -47,6 +47,11 @@ jobs:
           pnpm run lint:icons
           pnpm run build:illustrations
           pnpm run lint:illustrations
+          cd ../hada-assets
+          pnpm run build:icons
+          pnpm run lint:icons
+          pnpm run build:illustrations
+          pnpm run lint:illustrations
 
       - name: Configure Git
         run: |
