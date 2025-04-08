@@ -1,0 +1,76 @@
+name: Icon Automation
+
+on:
+  push:
+    branches:
+      - 'update/icon'
+    paths:
+      - 'packages/shopl-assets/src/icons/assets/**'
+  pull_request:
+    branches:
+      - 'update/icon'
+    paths:
+      - 'packages/shopl-assets/src/icons/assets/**'
+
+jobs:
+  process-icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: update/icon
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm@8.6.12
+          pnpm config set store-dir ~/.pnpm-store
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build and lint icons
+        run: |
+          cd packages/shopl-assets
+          pnpm run build:icons
+          pnpm run lint:icons
+          pnpm run build:illustrations
+          pnpm run lint:illustrations
+          cd ../hada-assets
+          pnpm run build:icons
+          pnpm run lint:icons
+          pnpm run build:illustrations
+          pnpm run lint:illustrations
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set Git merge strategy
+        run: |
+          git config --global pull.rebase false
+
+      - name: Add patch changeset for icons
+        run: |
+          node packages/shopl-assets/scripts/add-icon-changeset.js
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: 'icon 추가'
+          body: '새로운 아이콘을 추가합니다.'
+          branch: 'update/icon'
+          base: 'main'
+          delete-branch: false
