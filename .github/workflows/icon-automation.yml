@@ -62,6 +62,12 @@ jobs:
         run: |
           node packages/shopl-assets/scripts/add-icon-changeset.js
 
+      - name: Commit and force push changes
+        run: |
+          git add .
+          git commit -m "[create-pull-request] automated change" || echo "No changes to commit"
+          git push origin update/icon --force
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
