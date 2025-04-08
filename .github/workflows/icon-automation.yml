@@ -62,14 +62,6 @@ jobs:
         run: |
           node packages/shopl-assets/scripts/add-icon-changeset.js
 
-      - name: Commit and push changes
-        env:
-          HUSKY_SKIP_HOOKS: 1
-        run: |
-          git add .
-          git commit -m "chore: bump version for icon update"
-          git push origin update/icon
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
