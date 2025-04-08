@@ -1,10 +1,10 @@
 import IcAbnormalA from './IcAbnormalA';
-import IcAbnormalD from './IcAbnormalD';
 import IcAbnormalEarlyleave from './IcAbnormalEarlyleave';
 import IcAbnormalLate from './IcAbnormalLate';
 import IcAbnormalM from './IcAbnormalM';
 import IcAbnormalN from './IcAbnormalN';
 import IcAbnormalW from './IcAbnormalW';
+import IcAbnormal from './IcAbnormal';
 import IcAddXsmall from './IcAddXsmall';
 import IcAdd from './IcAdd';
 import IcAdminLarge from './IcAdminLarge';
@@ -283,12 +283,12 @@ import IcZoomOutMedium from './IcZoomOutMedium';
 
 const icons = {
   'abnormal-a': IcAbnormalA,
-  'abnormal-d': IcAbnormalD,
   'abnormal-earlyleave': IcAbnormalEarlyleave,
   'abnormal-late': IcAbnormalLate,
   'abnormal-m': IcAbnormalM,
   'abnormal-n': IcAbnormalN,
   'abnormal-w': IcAbnormalW,
+  abnormal: IcAbnormal,
   'add-xsmall': IcAddXsmall,
   add: IcAdd,
   'admin-large': IcAdminLarge,
@@ -570,12 +570,12 @@ export type IconNames = keyof typeof icons;
 
 export {
   IcAbnormalA as AbnormalAIcon,
-  IcAbnormalD as AbnormalDIcon,
   IcAbnormalEarlyleave as AbnormalEarlyleaveIcon,
   IcAbnormalLate as AbnormalLateIcon,
   IcAbnormalM as AbnormalMIcon,
   IcAbnormalN as AbnormalNIcon,
   IcAbnormalW as AbnormalWIcon,
+  IcAbnormal as AbnormalIcon,
   IcAddXsmall as AddXsmallIcon,
   IcAdd as AddIcon,
   IcAdminLarge as AdminLargeIcon,
