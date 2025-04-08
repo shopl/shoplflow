@@ -11,11 +11,16 @@ export const StyledTree = styled(motion.ul)`
   width: 100%;
 `;
 
+export const StyledTreeItemWrapper = styled.div<{ hasBackground?: boolean }>`
+  background: ${({ hasBackground }) => (hasBackground ? colorTokens.neutral100 : 'transparent')};
+  border-radius: 8px;
+`;
+
 export const StyledTreeItem = styled(motion.li)<TreeItemOptionProps>`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 48px;
+  min-height: 48px;
   gap: 4px;
   align-items: center;
   justify-content: space-between;

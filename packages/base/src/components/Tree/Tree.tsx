@@ -1,5 +1,12 @@
 import React, { useEffect, useId } from 'react';
-import { IconWrapper, LeftElementWrapper, RightElementWrapper, StyledTree, StyledTreeItem } from './Tree.styled';
+import {
+  IconWrapper,
+  LeftElementWrapper,
+  RightElementWrapper,
+  StyledTree,
+  StyledTreeItem,
+  StyledTreeItemWrapper,
+} from './Tree.styled';
 import type { TreeItemProps, TreeProps } from './Tree.types';
 import { TREE_SYMBOL_KEY } from './Tree.types';
 import { Text } from '../Text';
@@ -85,7 +92,7 @@ export const TreeItem = ({
   const isLastTree = !children && depth > 0;
 
   return (
-    <>
+    <StyledTreeItemWrapper hasBackground={isOpened || isLastTree}>
       <StyledTreeItem
         disabled={disabled}
         depth={depth}
@@ -115,7 +122,7 @@ export const TreeItem = ({
           {isLastTree && <div style={{ width: '24px', height: '24px', visibility: 'hidden' }} />}
           {LeftSourceClone && LeftSourceClone}
           <StackContainer padding={'0 0 0 4px'}>
-            <Text typography={'body1_400'} lineClamp={1} color={disabled ? 'neutral350' : 'neutral700'}>
+            <Text typography={'body1_400'} wordBreak={'break-all'} color={disabled ? 'neutral350' : 'neutral700'}>
               {label}
             </Text>
           </StackContainer>
@@ -129,7 +136,7 @@ export const TreeItem = ({
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </StyledTreeItemWrapper>
   );
 };
 TreeItem[TREE_SYMBOL_KEY] = true;

@@ -1,17 +1,14 @@
 # @shoplflow/base
 
-## 0.33.5
-
-### Patch Changes
-
-- Updated dependencies []:
-  - @shoplflow/shopl-assets@0.12.3
-
 ## 0.33.4
 
 ### Patch Changes
 
-- Updated dependencies []:
+- [#509](https://github.com/shopl/shoplflow/pull/509) [`3497f930d7f4cfe9e7ca458ea34895747dfc6dfb`](https://github.com/shopl/shoplflow/commit/3497f930d7f4cfe9e7ca458ea34895747dfc6dfb) Thanks [@velo-kim](https://github.com/velo-kim)! - update: Tree Component
+
+- [#509](https://github.com/shopl/shoplflow/pull/509) [`3497f930d7f4cfe9e7ca458ea34895747dfc6dfb`](https://github.com/shopl/shoplflow/commit/3497f930d7f4cfe9e7ca458ea34895747dfc6dfb) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: TreeItem의 isOpen 상태 스타일 변경
+
+- Updated dependencies [[`3497f930d7f4cfe9e7ca458ea34895747dfc6dfb`](https://github.com/shopl/shoplflow/commit/3497f930d7f4cfe9e7ca458ea34895747dfc6dfb)]:
   - @shoplflow/shopl-assets@0.12.2
 
 ## 0.33.3

@@ -62,18 +62,11 @@ jobs:
         run: |
           node packages/shopl-assets/scripts/add-icon-changeset.js
 
-      - name: Commit and push changes to a temporary PR branch
-        run: |
-          git checkout -b auto/icon-pr
-          git add .
-          git commit -m "[create-pull-request] automated change" || echo "No changes to commit"
-          git push origin auto/icon-pr --force
-
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
           title: 'icon 추가'
           body: '새로운 아이콘을 추가합니다.'
-          branch: 'auto/icon-pr'
+          branch: 'update/icon'
           base: 'main'
-          delete-branch: true
+          delete-branch: false
