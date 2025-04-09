@@ -1,3 +1,4 @@
+import Frame48096476 from './Frame48096476';
 import IcAbnormalA from './IcAbnormalA';
 import IcAbnormalD from './IcAbnormalD';
 import IcAbnormalEarlyleave from './IcAbnormalEarlyleave';
@@ -54,6 +55,7 @@ import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
+import IcContrastMinus from './IcContrastMinus';
 import IcCopy from './IcCopy';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
@@ -155,6 +157,7 @@ import IcInfoGrade from './IcInfoGrade';
 import IcInfoGroup from './IcInfoGroup';
 import IcInfoLeader from './IcInfoLeader';
 import IcInfoLogin from './IcInfoLogin';
+import IcInfoMedium from './IcInfoMedium';
 import IcInfoPhoneCheck from './IcInfoPhoneCheck';
 import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
 import IcInfoPhone from './IcInfoPhone';
@@ -282,6 +285,7 @@ import IcZoomInMedium from './IcZoomInMedium';
 import IcZoomOutMedium from './IcZoomOutMedium';
 
 const icons = {
+  'frame-48096476': Frame48096476,
   'abnormal-a': IcAbnormalA,
   'abnormal-d': IcAbnormalD,
   'abnormal-earlyleave': IcAbnormalEarlyleave,
@@ -338,6 +342,7 @@ const icons = {
   'cloud-medium': IcCloudMedium,
   comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
+  'contrast-minus': IcContrastMinus,
   copy: IcCopy,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
@@ -439,6 +444,7 @@ const icons = {
   'info-group': IcInfoGroup,
   'info-leader': IcInfoLeader,
   'info-login': IcInfoLogin,
+  'info-medium': IcInfoMedium,
   'info-phone-check': IcInfoPhoneCheck,
   'info-phone-no-check': IcInfoPhoneNoCheck,
   'info-phone': IcInfoPhone,
@@ -569,6 +575,7 @@ const icons = {
 export type IconNames = keyof typeof icons;
 
 export {
+  Frame48096476 as Frame48096476Icon,
   IcAbnormalA as AbnormalAIcon,
   IcAbnormalD as AbnormalDIcon,
   IcAbnormalEarlyleave as AbnormalEarlyleaveIcon,
@@ -625,6 +632,7 @@ export {
   IcCloudMedium as CloudMediumIcon,
   IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
+  IcContrastMinus as ContrastMinusIcon,
   IcCopy as CopyIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
@@ -726,6 +734,7 @@ export {
   IcInfoGroup as InfoGroupIcon,
   IcInfoLeader as InfoLeaderIcon,
   IcInfoLogin as InfoLoginIcon,
+  IcInfoMedium as InfoMediumIcon,
   IcInfoPhoneCheck as InfoPhoneCheckIcon,
   IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
   IcInfoPhone as InfoPhoneIcon,
