@@ -1,3 +1,4 @@
+import Frame48096476 from './Frame48096476';
 import IcAbnormalA from './IcAbnormalA';
 import IcAbnormalD from './IcAbnormalD';
 import IcAbnormalEarlyleave from './IcAbnormalEarlyleave';
@@ -282,6 +283,7 @@ import IcZoomInMedium from './IcZoomInMedium';
 import IcZoomOutMedium from './IcZoomOutMedium';
 
 const icons = {
+  'frame-48096476': Frame48096476,
   'abnormal-a': IcAbnormalA,
   'abnormal-d': IcAbnormalD,
   'abnormal-earlyleave': IcAbnormalEarlyleave,
@@ -569,6 +571,7 @@ const icons = {
 export type IconNames = keyof typeof icons;
 
 export {
+  Frame48096476 as Frame48096476Icon,
   IcAbnormalA as AbnormalAIcon,
   IcAbnormalD as AbnormalDIcon,
   IcAbnormalEarlyleave as AbnormalEarlyleaveIcon,
