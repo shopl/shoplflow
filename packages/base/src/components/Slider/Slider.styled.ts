@@ -20,7 +20,7 @@ export const SliderContainer = styled.div<{ isDisabled: boolean }>`
     `}
 `;
 
-// 전체 슬라이더 트랙 (회색 배경)
+// 전체 슬라이더 트랙
 export const SliderTrack = styled.div`
   width: 100%; // SliderContainer의 padding 영역 내에서 100%
   height: 24px;
@@ -29,7 +29,6 @@ export const SliderTrack = styled.div`
   margin: 0;
 `;
 
-// 선택된 영역 트랙 (파란색)
 export const SelectedTrack = styled.div<{
   selectedColor: ColorTokens;
   startPosition: string;
@@ -44,7 +43,6 @@ export const SelectedTrack = styled.div<{
   width: ${({ width }) => width};
 `;
 
-// 눈금 점들을 위한 컨테이너
 export const StepsContainer = styled.div`
   position: absolute;
   top: 0;
@@ -56,7 +54,6 @@ export const StepsContainer = styled.div`
   pointer-events: none;
 `;
 
-// 눈금 점
 export const Steps = styled.div`
   position: absolute;
   width: 8px;
@@ -70,7 +67,6 @@ export const Steps = styled.div`
   }
 `;
 
-// 썸 버튼
 export const ThumbButton = styled.button`
   position: absolute;
   top: 50%;
@@ -81,7 +77,6 @@ export const ThumbButton = styled.button`
   z-index: ${SLIDER_Z_INDEX.THUMB_BUTTON}; // thumb를 track보다 위에 위치시킴
 `;
 
-// 썸 원형
 export const ThumbCircle = styled.div<{ isDisabled: boolean; selectedColor: ColorTokens }>`
   width: 16px;
   height: 16px;

@@ -53,7 +53,7 @@ export const getValueFromPercentage = (percentage: number, bounds: SliderBounds,
  * @param maxSteps - 생성할 최대 눈금 수 (기본값: 21)
  * @returns 슬라이더에 표시할 눈금점 값의 배열
  */
-export const generateTickValues = (bounds: SliderBounds, step: number, maxSteps = 21): number[] => {
+export const generateSteps = (bounds: SliderBounds, step: number, maxSteps = 21): number[] => {
   const { min, max } = bounds;
   const totalSteps = Math.floor((max - min) / step) + 1;
   const stepInterval = totalSteps > maxSteps ? Math.ceil(totalSteps / maxSteps) : 1;
