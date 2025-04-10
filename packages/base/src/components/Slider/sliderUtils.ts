@@ -1,7 +1,7 @@
 import type { SliderBounds } from './Slider.types';
 
 /**
- * 선택값을 bounds 범위 내에서 step에 맞게 조정합니다.
+ * 선택된 값을 bounds 범위 내에서 step에 맞게 조정합니다.
  * @param value - 조정할 원본 값
  * @param bounds - 슬라이더의 최소값과 최대값
  * @param step - 값의 증분 단위
@@ -71,4 +71,46 @@ export const generateTickValues = (bounds: SliderBounds, step: number, maxSteps 
   }
 
   return tickValues;
+};
+
+/**
+ * Slider의 전체 범위와 초기 선택 범위가 유효한지 확인합니다.
+ * 범위가 유효하지 않을 경우 에러를 발생시킵니다.
+ *
+ * @param min - 슬라이더의 최소값
+ * @param max - 슬라이더의 최대값
+ * @param defaultRange - 슬라이더의 초기 선택 범위 { min, max }
+ */
+export const validateRange = ({
+  min,
+  max,
+  defaultRange,
+}: {
+  min: number;
+  max: number;
+  defaultRange: { min: number; max: number };
+}) => {
+  if (defaultRange.min < min || defaultRange.max > max) {
+    throw new Error('defaultRange가 Slider의 전체 범위를 벗어납니다.');
+  }
+  if (defaultRange.min > defaultRange.max) {
+    throw new Error('defaultRange가 올바르지 않습니다. 다시 확인해주세요.');
+  }
+};
+
+/**
+ * Slider의 step이 양수이며, Slider의 전체 범위 내에 있는지 확인합니다.
+ * 범위가 유효하지 않을 경우 에러를 발생시킵니다.
+ *
+ * @param min - 슬라이더의 최소값
+ * @param max - 슬라이더의 최대값
+ * @param step - 검증할 증분 단위
+ */
+export const validateStep = ({ min, max, step }: { min: number; max: number; step: number }) => {
+  if (step <= 0) {
+    throw new Error('step은 0보다 커야 합니다.');
+  }
+  if (step > max || step < min || step > max - min) {
+    throw new Error('step이 Slider의 전체 범위를 벗어납니다.');
+  }
 };

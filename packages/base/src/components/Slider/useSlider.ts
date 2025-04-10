@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from 'react';
-import { getPositionPercentage, getValueFromPercentage } from './sliderUtils';
+import { getPositionPercentage, getValueFromPercentage, validateRange, validateStep } from './sliderUtils';
 import type { SliderBounds } from './Slider.types';
 
 interface UseSliderProps {
@@ -12,16 +12,9 @@ interface UseSliderProps {
 
 export const useSlider = ({ bounds, step, defaultRange, handleRange, isDisabled = false }: UseSliderProps) => {
   const { min, max } = bounds;
-  // 초기값 유효성 검증
-  if (defaultRange.min < min || defaultRange.max > max) {
-    throw new Error(`초기값으로 설정된 범위가 Slider의 선택 가능한 범위를 벗어납니다.`);
-  }
-  if (defaultRange.min > defaultRange.max) {
-    throw new Error(`초기값으로 설정된 범위가 올바르지 않습니다. 최소값과 최대값을 다시 확인해주세요.`);
-  }
-  if (step > max) {
-    throw new Error(`증분 단위(step)가 Slider의 최대값보다 큽니다.`);
-  }
+  // 유효성 검증
+  validateRange({ min, max, defaultRange });
+  validateStep({ min, max, step });
 
   const [range, setRange] = useState<[number, number]>([defaultRange.min, defaultRange.max]);
   const trackRef = useRef<HTMLDivElement>(null);
