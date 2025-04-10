@@ -86,8 +86,11 @@ export const ThumbCircle = styled.div<{ isDisabled: boolean; selectedColor: Colo
   width: 16px;
   height: 16px;
   border-radius: 50%;
+  border: 0.5px solid transparent; // 자연스러운 transition을 위한 초기 border 설정
   background-color: ${colorTokens.neutral0};
-  transition: transform 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    border 0.15s ease;
   cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'grab')};
 
   ${({ isDisabled, selectedColor }) =>
