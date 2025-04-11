@@ -26,3 +26,4 @@ export * from './ToggleButton';
 export * from './Datepickers';
 export * from './Comboboxs';
 export * from './Skeleton';
+export * from './Slider';
