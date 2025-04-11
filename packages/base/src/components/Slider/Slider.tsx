@@ -36,6 +36,7 @@ const Slider: React.FC<SliderProps> = ({
           isDisabled={isDisabled}
           selectedColor={selectedColor}
           onMouseDown={handleMouseDown}
+          values={range}
         />
       </SliderTrack>
     </SliderContainer>
