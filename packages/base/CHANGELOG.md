@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.34.0
+
+### Minor Changes
+
+- [#515](https://github.com/shopl/shoplflow/pull/515) [`bb53ece55aa5d49be6bfc5a0cd2f9dd63ba4993b`](https://github.com/shopl/shoplflow/commit/bb53ece55aa5d49be6bfc5a0cd2f9dd63ba4993b) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Slider component를 추가했어요
+
 ## 0.33.4
 
 ### Patch Changes
