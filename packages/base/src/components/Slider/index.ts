@@ -1,2 +1,2 @@
-export { default } from './Slider';
-export type { SliderProps } from './Slider.types';
+export { default as Slider } from './Slider';
+export * from './Slider.types';
