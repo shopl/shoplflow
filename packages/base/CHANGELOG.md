@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.35.0
+
+### Minor Changes
+
+- [#517](https://github.com/shopl/shoplflow/pull/517) [`8bd0844fdc93c9d451e83884f574d9bbf6c934a0`](https://github.com/shopl/shoplflow/commit/8bd0844fdc93c9d451e83884f574d9bbf6c934a0) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Slider의 export 방식을 변경했어요
+
 ## 0.34.0
 
 ### Minor Changes
