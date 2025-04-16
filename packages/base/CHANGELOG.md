@@ -1,5 +1,14 @@
 # @shoplflow/base
 
+## 0.35.1
+
+### Patch Changes
+
+- [#521](https://github.com/shopl/shoplflow/pull/521) [`b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e`](https://github.com/shopl/shoplflow/commit/b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - funnel icon 추가 및 icon button iconSize 추가
+
+- Updated dependencies [[`b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e`](https://github.com/shopl/shoplflow/commit/b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e)]:
+  - @shoplflow/shopl-assets@0.12.3
+
 ## 0.35.0
 
 ### Minor Changes
