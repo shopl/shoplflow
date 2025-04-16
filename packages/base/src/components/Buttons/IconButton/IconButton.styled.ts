@@ -39,6 +39,19 @@ const getWidthAndHeightFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
   }
 };
 
+const getIconSizeFromSizeVar = (sizeVar?: IconButtonSizeVariantType) => {
+  switch (sizeVar) {
+    case 'M':
+      return '24px';
+    case 'S':
+      return '20px';
+    case 'XS':
+      return '12px';
+    default:
+      return '20px';
+  }
+};
+
 const getStyleByStyleVar = (styleVar?: IconButtonStyleVariantType, color?: ColorTokens, isHovered?: boolean) => {
   switch (styleVar) {
     case 'PRIMARY':
@@ -108,7 +121,7 @@ export const StyledIconButton = styled.button<
   ${({ sizeVar }) => getWidthAndHeightFromSizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
   & > svg {
-    width: 20px;
-    height: 20px;
+    width: ${({ iconSizeVar }) => getIconSizeFromSizeVar(iconSizeVar)};
+    height: ${({ iconSizeVar }) => getIconSizeFromSizeVar(iconSizeVar)};
   }
 `;
