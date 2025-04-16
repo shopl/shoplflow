@@ -86,6 +86,13 @@ export interface SizeVariantProps<Size> {
   sizeVar?: Size;
 }
 
+export interface IconSizeVariantProps<Size> {
+  /**
+   * 아이콘의 크기를 설정합니다.
+   */
+  iconSizeVar?: Size;
+}
+
 export interface StyleVariantProps<Style> {
   /**
    * 컴포넌트의 스타일을 설정합니다.
