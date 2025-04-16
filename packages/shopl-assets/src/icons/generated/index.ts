@@ -54,6 +54,7 @@ import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
+import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
@@ -339,6 +340,7 @@ const icons = {
   'cloud-medium': IcCloudMedium,
   comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
+  'contrast-plus': IcContrastPlus,
   copy: IcCopy,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
@@ -627,6 +629,7 @@ export {
   IcCloudMedium as CloudMediumIcon,
   IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
+  IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
