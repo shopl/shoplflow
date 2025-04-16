@@ -95,6 +95,7 @@ import IcFirstPage from './IcFirstPage';
 import IcFlexibleWorking from './IcFlexibleWorking';
 import IcFullScreenMedium from './IcFullScreenMedium';
 import IcFullscreen from './IcFullscreen';
+import IcFunnel from './IcFunnel';
 import IcGps from './IcGps';
 import IcGrade1 from './IcGrade1';
 import IcGrade2 from './IcGrade2';
@@ -379,6 +380,7 @@ const icons = {
   'flexible-working': IcFlexibleWorking,
   'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
+  funnel: IcFunnel,
   gps: IcGps,
   'grade-1': IcGrade1,
   'grade-2': IcGrade2,
@@ -666,6 +668,7 @@ export {
   IcFlexibleWorking as FlexibleWorkingIcon,
   IcFullScreenMedium as FullScreenMediumIcon,
   IcFullscreen as FullscreenIcon,
+  IcFunnel as FunnelIcon,
   IcGps as GpsIcon,
   IcGrade1 as Grade1Icon,
   IcGrade2 as Grade2Icon,
