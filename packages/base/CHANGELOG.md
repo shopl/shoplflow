@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.36.0
+
+### Minor Changes
+
+- [#523](https://github.com/shopl/shoplflow/pull/523) [`114dbd53399c979f5abccebe6546d3048f06938d`](https://github.com/shopl/shoplflow/commit/114dbd53399c979f5abccebe6546d3048f06938d) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Slider의 thumb button 속성 및 트랙 클릭 이벤트를 수정했어요
+
 ## 0.35.1
 
 ### Patch Changes
