@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.36.1
+
+### Patch Changes
+
+- [#520](https://github.com/shopl/shoplflow/pull/520) [`54e7d777357e6a7a57be0f05374b594c995d31f1`](https://github.com/shopl/shoplflow/commit/54e7d777357e6a7a57be0f05374b594c995d31f1) Thanks [@velo-kim](https://github.com/velo-kim)! - List, TooltipContent 컴포넌트 스타일 조정
+
 ## 0.36.0
 
 ### Minor Changes
