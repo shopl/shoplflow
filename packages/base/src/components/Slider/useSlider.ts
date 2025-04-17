@@ -23,7 +23,6 @@ export const useSlider = ({ bounds, step, defaultRange, handleRange, isDisabled 
     (index: number, newValue: number) => {
       setRange((prev) => {
         const newRange = [...prev] as [number, number];
-
         // 첫 번째 thumb가 두 번째 thumb를 넘어가지 않도록 처리
         if (index === 0) {
           newRange[0] = Math.min(newValue, newRange[1]);
@@ -32,14 +31,11 @@ export const useSlider = ({ bounds, step, defaultRange, handleRange, isDisabled 
         else if (index === 1) {
           newRange[1] = Math.max(newValue, newRange[0]);
         }
-
+        handleRange?.({ min: newRange[0], max: newRange[1] });
         return newRange;
       });
-
-      // 새로운 값을 사용하여 콜백 호출
-      handleRange?.({ min: range[0], max: range[1] });
     },
-    [range, handleRange],
+    [handleRange],
   );
 
   // 드래그 이벤트 처리

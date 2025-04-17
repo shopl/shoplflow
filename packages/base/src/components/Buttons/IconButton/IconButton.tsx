@@ -8,6 +8,7 @@ const IconButton = forwardRef(
   (
     {
       styleVar,
+      iconSizeVar,
       sizeVar,
       disabled,
       children,
@@ -32,6 +33,7 @@ const IconButton = forwardRef(
     return (
       <StyledIconButton
         styleVar={styleVar}
+        iconSizeVar={iconSizeVar}
         sizeVar={sizeVar}
         disabled={disabled}
         color={color}

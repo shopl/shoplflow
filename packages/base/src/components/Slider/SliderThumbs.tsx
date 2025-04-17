@@ -21,7 +21,7 @@ export const SliderThumbs: React.FC<SliderThumbsProps> = ({
   return (
     <>
       {positions.map((position, index) => (
-        <ThumbButton key={index} style={{ left: `${position}%` }} onMouseDown={onMouseDown(index)}>
+        <ThumbButton key={index} style={{ left: `${position}%` }} onMouseDown={onMouseDown(index)} type='button'>
           <Tooltip
             trigger={<ThumbCircle isDisabled={isDisabled} selectedColor={selectedColor} />}
             popper={!isDisabled && <Tooltip.Content content={Math.abs(values[index]).toString()} />}
