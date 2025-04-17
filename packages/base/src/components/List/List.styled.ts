@@ -11,11 +11,11 @@ export const StyledList = styled.li<ListOptionProps>`
   padding: 6px 8px;
   gap: 4px;
   border-radius: 8px;
-  background: ${colorTokens.neutral0};
+  background: transparent;
   cursor: pointer;
   ${({ disabled }) => disabled && getDisabledStyle(disabled)}
   &:hover {
-    background: ${colorTokens.neutral100};
+    background: ${colorTokens.neutral400_5};
   }
 `;
 
