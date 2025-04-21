@@ -7,17 +7,19 @@ import { useState } from 'react';
 import { Input } from '../Inputs';
 import { Text } from '../Text';
 import { StackContainer } from '../StackContainer';
+
 const SliderWrapper = styled.div`
   width: 500px;
 `;
 
 const SliderWithWrapper = (args: SliderProps) => {
-  const [currentRange, setCurrentRange] = useState(args.defaultRange);
+  const [currentRange, setCurrentRange] = useState(args.range);
 
   return (
     <SliderWrapper>
       <Slider
         {...args}
+        range={currentRange}
         handleRange={(range) => {
           setCurrentRange(range);
           args.handleRange?.(range);
@@ -51,9 +53,9 @@ const meta: Meta<typeof Slider> = {
       description: '증분 단위',
       defaultValue: 1,
     },
-    defaultRange: {
+    range: {
       control: 'object',
-      description: '초기 선택 범위',
+      description: '선택 범위',
     },
     isDisabled: {
       control: 'boolean',
@@ -81,7 +83,7 @@ export const Playground: Story = {
     min: 0,
     max: 100,
     step: 1,
-    defaultRange: { min: 50, max: 60 },
+    range: { min: 20, max: 60 },
     isDisabled: false,
     selectedColor: 'shopl300',
   },
