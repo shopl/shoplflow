@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.37.0
+
+### Minor Changes
+
+- [#526](https://github.com/shopl/shoplflow/pull/526) [`a0ed7137e8ac9d6910ae1279bf609f53d9bd47fa`](https://github.com/shopl/shoplflow/commit/a0ed7137e8ac9d6910ae1279bf609f53d9bd47fa) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Slider의 선택 범위를 외부에서 주입해 사용하도록 수정했어요
+
 ## 0.36.1
 
 ### Patch Changes
