@@ -9,15 +9,15 @@ const Slider: React.FC<SliderProps> = ({
   min = 0,
   max,
   step = 1,
-  defaultRange = { min: 0, max: 0 },
+  range = { min: 0, max: 0 },
   handleRange,
   isDisabled = false,
   selectedColor = 'shopl300',
 }) => {
-  const { range, trackRef, handleMouseDown, handleClickTrack, positions } = useSlider({
+  const { selectedRange, trackRef, handleMouseDown, handleClickTrack, positions } = useSlider({
     bounds: { min, max },
     step,
-    defaultRange,
+    range,
     handleRange,
     isDisabled,
   });
@@ -25,7 +25,7 @@ const Slider: React.FC<SliderProps> = ({
   return (
     <SliderContainer isDisabled={isDisabled}>
       <SliderTrack ref={trackRef} onClick={handleClickTrack}>
-        <SliderSteps bounds={{ min, max }} step={step} range={range} />
+        <SliderSteps bounds={{ min, max }} step={step} />
         <SelectedTrack
           selectedColor={selectedColor}
           startPosition={`calc(${positions.start}% - 12px)`} //thumb을 완전히 감싸는 UI 구현을 위해 -12px
@@ -36,7 +36,7 @@ const Slider: React.FC<SliderProps> = ({
           isDisabled={isDisabled}
           selectedColor={selectedColor}
           onMouseDown={handleMouseDown}
-          values={range}
+          values={selectedRange}
         />
       </SliderTrack>
     </SliderContainer>
