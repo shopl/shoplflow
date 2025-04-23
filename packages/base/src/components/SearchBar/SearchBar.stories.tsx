@@ -5,7 +5,7 @@ import { Stack } from '../Stack';
 import { SearchBar } from './SearchBar';
 import type { SearchBarProps, DropdownItem, MemoizedSearchBarComponent } from './SearchBar.types';
 
-const meta: Meta<typeof SearchBar> = {
+const meta: Meta<MemoizedSearchBarComponent> = {
   title: 'COMPONENTS/SearchBar',
   component: SearchBar as unknown as MemoizedSearchBarComponent,
   argTypes: {
@@ -24,21 +24,22 @@ const meta: Meta<typeof SearchBar> = {
       description: '유연한 너비 사용 여부',
       defaultValue: false,
     },
-    noAnimate: {
-      control: { type: 'boolean' },
-      description: '애니메이션 비활성화 여부',
-      defaultValue: false,
-    },
     debounceTime: {
       control: { type: 'number' },
       description: '디바운스 시간 (ms)',
       defaultValue: 300,
     },
+    type: {
+      control: { type: 'select' },
+      options: ['default', 'real-time'],
+      description: '검색 타입',
+      defaultValue: 'default',
+    },
   },
 } as any;
 export default meta;
 
-export const Playground: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const Playground: StoryFn<SearchBarProps & { debounceTime: number; type: 'default' | 'real-time' }> = (args) => {
   const [selectedItem, setSelectedItem] = useState<DropdownItem | undefined>({ label: '전체', value: 'all' });
   const [searchValue, setSearchValue] = useState('');
 
@@ -69,7 +70,7 @@ export const Playground: StoryFn<SearchBarProps & { debounceTime: number }> = (a
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           onSearch={handleSearch}
-          type='default'
+          type={args.type}
           placeholder='검색어를 입력하세요'
           debounceTime={args.debounceTime}
         />
@@ -82,7 +83,8 @@ Playground.args = {
   width: '100%',
   height: '32px',
   useFlexibleWidth: false,
-  noAnimate: false,
+  debounceTime: 300,
+  type: 'real-time',
 };
 
 Playground.parameters = {
@@ -130,7 +132,7 @@ export const RealTime: StoryFn<SearchBarProps & { debounceTime: number }> = (arg
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder='실시간 검색'
           type='real-time'
-          debounceTime={4000}
+          debounceTime={args.debounceTime}
         />
       </SearchBar>
     </Stack>

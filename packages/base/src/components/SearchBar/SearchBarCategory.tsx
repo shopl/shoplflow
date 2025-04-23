@@ -14,9 +14,9 @@ export const SearchBarCategory: React.FC<SearchBarCategoryProps> = ({
   selectedDropdownItem,
   onDropdownSelect,
 }) => {
-  const { isSelected, noAnimate } = useSearchBarContext();
+  const { isSelected, useFlexibleWidth } = useSearchBarContext();
 
-  if (!isSelected && !noAnimate) {
+  if (!isSelected && useFlexibleWidth) {
     return null;
   }
 

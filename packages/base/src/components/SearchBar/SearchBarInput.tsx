@@ -1,5 +1,5 @@
 import type { ChangeEvent, KeyboardEvent } from 'react';
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import { SearchIcon } from '@shoplflow/shopl-assets';
 import { debounce } from '@shoplflow/utils';
 import { Icon } from '../Icon';
@@ -24,7 +24,7 @@ export const SearchBarInput: React.FC<SearchBarInputProps> = ({
   icon = <Icon iconSource={SearchIcon} color={'neutral350'} sizeVar={'S'} />,
   ...rest
 }) => {
-  const { useFlexibleWidth, isSelected, noAnimate } = useSearchBarContext();
+  const { useFlexibleWidth, isSelected } = useSearchBarContext();
   const [text, setText] = useState('');
 
   const convertToString = useCallback((value: string | number | readonly string[]) => {
@@ -34,19 +34,21 @@ export const SearchBarInput: React.FC<SearchBarInputProps> = ({
     return String(value);
   }, []);
 
-  const debouncedOnChange = useRef(
-    debounce(
-      ((event: ChangeEvent<HTMLInputElement>) => {
-        const newValue = event.target.value;
-        setText(newValue);
-        if (type === 'real-time') {
-          onChange && onChange(event);
-          onSearch && onSearch(newValue);
-        }
-      }) as (...args: unknown[]) => void,
-      debounceTime,
-    ),
-  ).current;
+  const debouncedOnChange = useMemo(
+    () =>
+      debounce(
+        ((event: ChangeEvent<HTMLInputElement>) => {
+          const newValue = event.target.value;
+          setText(newValue);
+          if (type === 'real-time') {
+            onChange && onChange(event);
+            onSearch && onSearch(newValue);
+          }
+        }) as (...args: unknown[]) => void,
+        debounceTime,
+      ),
+    [debounceTime, type, onChange, onSearch],
+  );
 
   const handleOnChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -77,7 +79,7 @@ export const SearchBarInput: React.FC<SearchBarInputProps> = ({
 
   let _placeholder = placeholder;
 
-  if (useFlexibleWidth && !isSelected && !noAnimate) {
+  if (useFlexibleWidth && !isSelected) {
     _placeholder = DEFAULT_PLACEHOLDER;
   }
 

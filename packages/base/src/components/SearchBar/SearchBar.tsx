@@ -12,7 +12,6 @@ const DEFAULT_HEIGHT = '32px';
 const SearchBar: SearchBarComponent = ({
   width = DEFAULT_WIDTH,
   height = DEFAULT_HEIGHT,
-  noAnimate = false,
   useFlexibleWidth = false,
   children,
   ...rest
@@ -27,14 +26,14 @@ const SearchBar: SearchBarComponent = ({
   }, [setIsSelected]);
 
   const containerWidth = useMemo(() => {
-    if (!useFlexibleWidth || noAnimate) {
+    if (!useFlexibleWidth) {
       return width;
     }
     return isSelected ? width : '140px';
-  }, [useFlexibleWidth, isSelected, noAnimate, width]);
+  }, [useFlexibleWidth, isSelected, width]);
 
   return (
-    <SearchBarProvider useFlexibleWidth={useFlexibleWidth} isSelected={isSelected} noAnimate={noAnimate}>
+    <SearchBarProvider useFlexibleWidth={useFlexibleWidth} isSelected={isSelected}>
       <StyledStackContainer
         data-shoplflow={'SearchBar'}
         width={containerWidth}

@@ -17,8 +17,6 @@ export interface SearchBarBaseProps {
   width?: string;
   /** 검색바 높이 */
   height?: string;
-  /** 애니메이션 비활성화 여부 */
-  noAnimate?: boolean;
   /** 유연한 너비 사용 여부 */
   useFlexibleWidth?: boolean;
   /** 자식 요소 */
@@ -37,8 +35,6 @@ export interface SearchBarCategoryProps {
   onDropdownSelect?: (item: DropdownItem) => void;
   /** 선택 상태 */
   isSelected: boolean;
-  /** 애니메이션 비활성화 여부 */
-  noAnimate?: boolean;
 }
 
 /** 검색바 입력 props */
