@@ -1,12 +1,12 @@
 import type { ChangeEvent } from 'react';
 
 /** 드롭다운 아이템 타입 */
-export interface DropdownItem {
+export type DropdownItem = {
   /** 표시되는 라벨 */
   label: string;
   /** 실제 값 */
   value: string;
-}
+};
 
 /** 검색바 타입 */
 export type SearchType = 'default' | 'real-time';
