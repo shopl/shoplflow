@@ -1,0 +1,64 @@
+import { Controls, Canvas, Meta, Story } from '@storybook/blocks';
+import { SearchBar } from './index';
+import * as SearchBarStories from './SearchBar.stories';
+
+<Meta of={SearchBarStories} />
+
+# SearchBar
+
+검색 기능을 제공하는 컴포넌트입니다. 기본 검색과 실시간 검색을 지원하며, 카테고리 필터링 기능을 포함할 수 있습니다.
+
+- 기본 검색 및 실시간 검색 지원
+- 카테고리 필터링 기능
+- 디바운스 처리
+- 유연한 너비 조절
+- 접근성 지원
+
+## Overview
+<Canvas of={SearchBarStories.Playground} />
+
+## Props
+<Controls of={SearchBarStories.Playground} />
+
+## Usage
+
+```tsx
+import SearchBar from '@shoplflow/base';
+
+// 기본 사용
+<SearchBar>
+  <SearchBar.Input
+    placeholder="검색어를 입력하세요"
+    onSearch={(value) => console.log(value)}
+  />
+</SearchBar>
+
+// 실시간 검색
+<SearchBar>
+  <SearchBar.Input
+    type="real-time"
+    debounceTime={300}
+    onSearch={(value) => console.log(value)}
+  />
+</SearchBar>
+
+// 카테고리 검색
+<SearchBar>
+  <SearchBar.Category
+    dropdownItems={[
+      { label: '전체', value: 'all' },
+      { label: '상품', value: 'product' }
+    ]}
+    selectedDropdownItem={{ label: '전체', value: 'all' }}
+    onDropdownSelect={(item) => console.log(item)}
+    isSelected={true}
+  />
+  <SearchBar.Input
+    placeholder="검색어를 입력하세요"
+    onSearch={(value) => console.log(value)}
+  />
+</SearchBar>
+```
+
+
+
