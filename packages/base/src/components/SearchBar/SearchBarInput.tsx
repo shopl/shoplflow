@@ -1,5 +1,5 @@
 import type { ChangeEvent, KeyboardEvent } from 'react';
-import React, { useCallback, useEffect, useState, useMemo } from 'react';
+import React, { useCallback, useEffect, useState, useRef } from 'react';
 import { SearchIcon } from '@shoplflow/shopl-assets';
 import { debounce } from '@shoplflow/utils';
 import { Icon } from '../Icon';
@@ -34,28 +34,23 @@ export const SearchBarInput: React.FC<SearchBarInputProps> = ({
     return String(value);
   }, []);
 
-  const debouncedOnChange = useMemo(
-    () =>
-      debounce(
-        ((event: ChangeEvent<HTMLInputElement>) => {
-          const newValue = event.target.value;
-          setText(newValue);
-          if (type === 'real-time') {
-            onChange && onChange(event);
-            onSearch && onSearch(newValue);
-          }
-        }) as (...args: unknown[]) => void,
-        debounceTime,
-      ),
-    [debounceTime, type, onChange, onSearch],
-  );
+  const debouncedOnChange = useRef(
+    debounce(
+      ((event: ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        setText(newValue);
+        if (type === 'real-time') {
+          onChange && onChange(event);
+          onSearch && onSearch(newValue);
+        }
+      }) as (...args: unknown[]) => void,
+      debounceTime,
+    ),
+  ).current;
 
-  const handleOnChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      debouncedOnChange(event);
-    },
-    [debouncedOnChange],
-  );
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    debouncedOnChange(event);
+  };
 
   const handleOnClear = useCallback(() => {
     setText('');
