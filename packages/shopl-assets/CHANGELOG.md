@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.4
+
+### Patch Changes
+
+- [#529](https://github.com/shopl/shoplflow/pull/529) [`4377d8665d8d98c474a58a18870d98bd45f02095`](https://github.com/shopl/shoplflow/commit/4377d8665d8d98c474a58a18870d98bd45f02095) Thanks [@ayaan0209](https://github.com/ayaan0209)! - workflow추가
+
 ## 0.12.3
 
 ### Patch Changes
