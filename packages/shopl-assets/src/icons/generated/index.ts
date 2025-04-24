@@ -64,6 +64,7 @@ import IcDesc from './IcDesc';
 import IcDetailView from './IcDetailView';
 import IcDisplayMedium from './IcDisplayMedium';
 import IcDocMedium from './IcDocMedium';
+import IcDocument from './IcDocument';
 import IcDownArrowSolidXsmall from './IcDownArrowSolidXsmall';
 import IcDownArrowXsmall from './IcDownArrowXsmall';
 import IcDownArrow from './IcDownArrow';
@@ -349,6 +350,7 @@ const icons = {
   'detail-view': IcDetailView,
   'display-medium': IcDisplayMedium,
   'doc-medium': IcDocMedium,
+  document: IcDocument,
   'down-arrow-solid-xsmall': IcDownArrowSolidXsmall,
   'down-arrow-xsmall': IcDownArrowXsmall,
   'down-arrow': IcDownArrow,
@@ -637,6 +639,7 @@ export {
   IcDetailView as DetailViewIcon,
   IcDisplayMedium as DisplayMediumIcon,
   IcDocMedium as DocMediumIcon,
+  IcDocument as DocumentIcon,
   IcDownArrowSolidXsmall as DownArrowSolidXsmallIcon,
   IcDownArrowXsmall as DownArrowXsmallIcon,
   IcDownArrow as DownArrowIcon,
