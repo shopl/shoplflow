@@ -54,6 +54,7 @@ import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
+import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
@@ -198,6 +199,7 @@ import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
 import IcMore from './IcMore';
 import IcMother from './IcMother';
+import IcMove2 from './IcMove2';
 import IcMoveSolid from './IcMoveSolid';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
@@ -340,6 +342,7 @@ const icons = {
   'cloud-medium': IcCloudMedium,
   comment: IcComment,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
+  'contrast-plus': IcContrastPlus,
   copy: IcCopy,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
@@ -484,6 +487,7 @@ const icons = {
   minus: IcMinus,
   more: IcMore,
   mother: IcMother,
+  'move-2': IcMove2,
   'move-solid': IcMoveSolid,
   move: IcMove,
   'movie-01': IcMovie01,
@@ -629,6 +633,7 @@ export {
   IcCloudMedium as CloudMediumIcon,
   IcComment as CommentIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
+  IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
@@ -773,6 +778,7 @@ export {
   IcMinus as MinusIcon,
   IcMore as MoreIcon,
   IcMother as MotherIcon,
+  IcMove2 as Move2Icon,
   IcMoveSolid as MoveSolidIcon,
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
