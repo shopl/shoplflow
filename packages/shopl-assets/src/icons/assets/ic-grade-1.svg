@@ -1,14 +1,14 @@
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="4.5" y="4.5" width="16" height="16" fill="#88D4E2"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 1.5L23.5 12.5L12.5 23.5L1.5 12.5L12.5 1.5Z" fill="#AAF6FD"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M23.5 12.5L12.5 23.5L1.5 12.5H23.5Z" fill="#8BE8F4"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 1.5V12.5H1.5L12.5 1.5Z" fill="#C1FAFF"/>
-<path d="M12.9287 7.24275L12.5 6.52817L12.0713 7.24275L9.07125 12.2428L8.9169 12.5L9.07125 12.7572L12.0713 17.7572L12.5 18.4718L12.9287 17.7572L15.9287 12.7572L16.0831 12.5L15.9287 12.2428L12.9287 7.24275Z" fill="#8C4CF6" stroke="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 7.5L9.5 12.5H12.5V7.5Z" fill="white" fill-opacity="0.5"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 7.5L15.5 12.5H12.5V7.5Z" fill="white" fill-opacity="0.25"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 17.5L9.5 12.5H12.5V17.5Z" fill="white" fill-opacity="0.15"/>
-<circle cx="23.5" cy="12.5" r="1" fill="#8BE8F4"/>
-<circle cx="1.5" cy="12.5" r="1" fill="#8BE8F4"/>
-<circle cx="12.5" cy="1.5" r="1" fill="#8BE8F4"/>
-<circle cx="12.5" cy="23.5" r="1" fill="#8BE8F4"/>
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3.5" y="3.5" width="13" height="13" fill="#88D4E2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 1L19 10L10 19L1 10L10 1Z" fill="#AAF6FD"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19 10L10 19L1 10H19Z" fill="#8BE8F4"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 1V10H1L10 1Z" fill="#C1FAFF"/>
+<path d="M10.4238 5.73535L12.9238 9.73535L13.0898 10L12.9238 10.2646L10.4238 14.2646L10 14.9434L9.57617 14.2646L7.07617 10.2646L6.91016 10L7.07617 9.73535L9.57617 5.73535L10 5.05664L10.4238 5.73535Z" fill="#8C4CF6" stroke="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L7.5 10H10V6Z" fill="white" fill-opacity="0.5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 6L12.5 10H10V6Z" fill="white" fill-opacity="0.25"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 14L7.5 10H10V14Z" fill="white" fill-opacity="0.15"/>
+<circle cx="19" cy="10" r="1" fill="#8BE8F4"/>
+<circle cx="1" cy="10" r="1" fill="#8BE8F4"/>
+<circle cx="10" cy="1" r="1" fill="#8BE8F4"/>
+<circle cx="10" cy="19" r="1" fill="#8BE8F4"/>
 </svg>
