@@ -1,5 +1,50 @@
 # @shoplflow/templates
 
+## 0.0.43
+
+### Patch Changes
+
+- Updated dependencies [[`5ff3b3254f753b5aef4d377dc835d96acf5ba142`](https://github.com/shopl/shoplflow/commit/5ff3b3254f753b5aef4d377dc835d96acf5ba142)]:
+  - @shoplflow/shopl-assets@0.12.5
+  - @shoplflow/base@0.37.2
+
+## 0.0.42
+
+### Patch Changes
+
+- Updated dependencies [[`4377d8665d8d98c474a58a18870d98bd45f02095`](https://github.com/shopl/shoplflow/commit/4377d8665d8d98c474a58a18870d98bd45f02095)]:
+  - @shoplflow/shopl-assets@0.12.4
+  - @shoplflow/base@0.37.1
+
+## 0.0.41
+
+### Patch Changes
+
+- Updated dependencies [[`a0ed7137e8ac9d6910ae1279bf609f53d9bd47fa`](https://github.com/shopl/shoplflow/commit/a0ed7137e8ac9d6910ae1279bf609f53d9bd47fa)]:
+  - @shoplflow/base@0.37.0
+
+## 0.0.40
+
+### Patch Changes
+
+- Updated dependencies [[`54e7d777357e6a7a57be0f05374b594c995d31f1`](https://github.com/shopl/shoplflow/commit/54e7d777357e6a7a57be0f05374b594c995d31f1)]:
+  - @shoplflow/base@0.36.1
+
+## 0.0.39
+
+### Patch Changes
+
+- Updated dependencies [[`114dbd53399c979f5abccebe6546d3048f06938d`](https://github.com/shopl/shoplflow/commit/114dbd53399c979f5abccebe6546d3048f06938d)]:
+  - @shoplflow/base@0.36.0
+
+## 0.0.38
+
+### Patch Changes
+
+- Updated dependencies [[`b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e`](https://github.com/shopl/shoplflow/commit/b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e)]:
+  - @shoplflow/base@0.35.1
+  - @shoplflow/shopl-assets@0.12.3
+
 ## 0.0.37
 
 ### Patch Changes

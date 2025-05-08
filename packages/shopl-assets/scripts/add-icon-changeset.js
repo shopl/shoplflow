@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require('fs');
 const path = require('path');
 
@@ -12,11 +14,8 @@ if (!fs.existsSync(changesetDir)) {
 const content = `---
 "@shoplflow/shopl-assets": patch
 ---
-
 icon 추가
 `;
 
 const fileName = `${Math.random().toString(36).slice(2)}.md`;
 fs.writeFileSync(path.join(changesetDir, fileName), content);
-
-console.log(`✅ Created ${path.join('.changeset', fileName)}`);

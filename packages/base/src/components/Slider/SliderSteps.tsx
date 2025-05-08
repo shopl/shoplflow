@@ -6,7 +6,6 @@ import type { SliderBounds } from './Slider.types';
 interface SliderStepsProps {
   bounds: SliderBounds;
   step: number;
-  range: [number, number];
   maxSteps?: number;
 }
 

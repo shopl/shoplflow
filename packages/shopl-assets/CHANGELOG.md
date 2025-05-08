@@ -1,5 +1,23 @@
 # @shoplflow/shopl-assets
 
+## 0.12.5
+
+### Patch Changes
+
+- [#531](https://github.com/shopl/shoplflow/pull/531) [`5ff3b3254f753b5aef4d377dc835d96acf5ba142`](https://github.com/shopl/shoplflow/commit/5ff3b3254f753b5aef4d377dc835d96acf5ba142) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.4
+
+### Patch Changes
+
+- [#529](https://github.com/shopl/shoplflow/pull/529) [`4377d8665d8d98c474a58a18870d98bd45f02095`](https://github.com/shopl/shoplflow/commit/4377d8665d8d98c474a58a18870d98bd45f02095) Thanks [@ayaan0209](https://github.com/ayaan0209)! - workflow추가
+
+## 0.12.3
+
+### Patch Changes
+
+- [#521](https://github.com/shopl/shoplflow/pull/521) [`b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e`](https://github.com/shopl/shoplflow/commit/b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - funnel icon 추가 및 icon button iconSize 추가
+
 ## 0.12.2
 
 ### Patch Changes

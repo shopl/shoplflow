@@ -16,7 +16,7 @@ export interface SliderProps {
   /**
    * 초기 선택 범위
    */
-  defaultRange?: { min: number; max: number };
+  range?: { min: number; max: number };
   /**
    * 선택 범위가 변경될 때 실행할 함수
    */

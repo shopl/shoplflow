@@ -4,6 +4,7 @@ import type { $Values } from '@shoplflow/utils';
 import type {
   DisableProps,
   SizeVariantProps,
+  IconSizeVariantProps,
   StyleVariantProps,
   ColorTokenProps,
   ChildrenProps,
@@ -34,6 +35,7 @@ export type IconButtonOptionProps<T extends ElementType = 'button'> = Omit<
 > &
   DisableProps &
   SizeVariantProps<IconButtonSizeVariantType> &
+  IconSizeVariantProps<'XS' | 'S' | 'M'> &
   StyleVariantProps<IconButtonStyleVariantType> &
   ChildrenProps &
   ColorTokenProps &

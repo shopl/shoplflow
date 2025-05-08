@@ -3,16 +3,37 @@ import Slider from './Slider';
 import styled from '@emotion/styled';
 import type { SliderProps } from './Slider.types';
 import { colorTokens } from '../../styles';
+import { useState } from 'react';
+import { Input } from '../Inputs';
+import { Text } from '../Text';
+import { StackContainer } from '../StackContainer';
 
 const SliderWrapper = styled.div`
   width: 500px;
 `;
 
-const SliderWithWrapper = (args: SliderProps) => (
-  <SliderWrapper>
-    <Slider {...args} />
-  </SliderWrapper>
-);
+const SliderWithWrapper = (args: SliderProps) => {
+  const [currentRange, setCurrentRange] = useState(args.range);
+
+  return (
+    <SliderWrapper>
+      <Slider
+        {...args}
+        range={currentRange}
+        handleRange={(range) => {
+          setCurrentRange(range);
+          args.handleRange?.(range);
+        }}
+      />
+      <StackContainer.Horizontal justify='center' align='center' spacing='spacing06' padding={'16px'}>
+        <Text>Min : </Text>
+        <Input sizeVar='S' readOnly value={currentRange?.min} width='50px' />
+        <Text> Max : </Text>
+        <Input sizeVar='S' readOnly value={currentRange?.max} width='50px' />
+      </StackContainer.Horizontal>
+    </SliderWrapper>
+  );
+};
 
 const meta: Meta<typeof Slider> = {
   title: 'Components/Slider',
@@ -32,9 +53,9 @@ const meta: Meta<typeof Slider> = {
       description: '증분 단위',
       defaultValue: 1,
     },
-    defaultRange: {
+    range: {
       control: 'object',
-      description: '초기 선택 범위',
+      description: '선택 범위',
     },
     isDisabled: {
       control: 'boolean',
@@ -62,7 +83,7 @@ export const Playground: Story = {
     min: 0,
     max: 100,
     step: 1,
-    defaultRange: { min: 50, max: 60 },
+    range: { min: 20, max: 60 },
     isDisabled: false,
     selectedColor: 'shopl300',
   },

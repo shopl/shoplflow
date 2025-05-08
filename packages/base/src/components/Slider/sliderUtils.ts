@@ -79,22 +79,22 @@ export const generateSteps = (bounds: SliderBounds, step: number, maxSteps = 21)
  *
  * @param min - 슬라이더의 최소값
  * @param max - 슬라이더의 최대값
- * @param defaultRange - 슬라이더의 초기 선택 범위 { min, max }
+ * @param range - 슬라이더의 선택 범위 { min, max }
  */
 export const validateRange = ({
   min,
   max,
-  defaultRange,
+  range,
 }: {
   min: number;
   max: number;
-  defaultRange: { min: number; max: number };
+  range: { min: number; max: number };
 }) => {
-  if (defaultRange.min < min || defaultRange.max > max) {
-    throw new Error('defaultRange가 Slider의 전체 범위를 벗어납니다.');
+  if (range.min < min || range.max > max) {
+    throw new Error('range가 Slider의 전체 범위를 벗어납니다.');
   }
-  if (defaultRange.min > defaultRange.max) {
-    throw new Error('defaultRange가 올바르지 않습니다. 다시 확인해주세요.');
+  if (range.min > range.max) {
+    throw new Error('range가 올바르지 않습니다. 다시 확인해주세요.');
   }
 };
 

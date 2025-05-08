@@ -1,43 +1,32 @@
-import { useState, useRef, useCallback } from 'react';
+import { useRef, useCallback, useMemo } from 'react';
 import { getPositionPercentage, getValueFromPercentage, validateRange, validateStep } from './sliderUtils';
 import type { SliderBounds } from './Slider.types';
 
 interface UseSliderProps {
   bounds: SliderBounds;
   step: number;
-  defaultRange: { min: number; max: number };
+  range: { min: number; max: number };
   handleRange?: (range: { min: number; max: number }) => void;
   isDisabled?: boolean;
 }
 
-export const useSlider = ({ bounds, step, defaultRange, handleRange, isDisabled = false }: UseSliderProps) => {
+export const useSlider = ({ bounds, step, range, handleRange, isDisabled = false }: UseSliderProps) => {
   const { min, max } = bounds;
   // 유효성 검증
-  validateRange({ min, max, defaultRange });
+  validateRange({ min, max, range });
   validateStep({ min, max, step });
 
-  const [range, setRange] = useState<[number, number]>([defaultRange.min, defaultRange.max]);
   const trackRef = useRef<HTMLDivElement>(null);
 
   const updateRange = useCallback(
     (index: number, newValue: number) => {
-      setRange((prev) => {
-        const newRange = [...prev] as [number, number];
-
-        // 첫 번째 thumb가 두 번째 thumb를 넘어가지 않도록 처리
-        if (index === 0) {
-          newRange[0] = Math.min(newValue, newRange[1]);
-        }
-        // 두 번째 thumb가 첫 번째 thumb 아래로 내려가지 않도록 처리
-        else if (index === 1) {
-          newRange[1] = Math.max(newValue, newRange[0]);
-        }
-
-        return newRange;
-      });
-
-      // 새로운 값을 사용하여 콜백 호출
-      handleRange?.({ min: range[0], max: range[1] });
+      const newRange = [range.min, range.max] as [number, number];
+      if (index === 0) {
+        newRange[0] = Math.min(newValue, newRange[1]);
+      } else if (index === 1) {
+        newRange[1] = Math.max(newValue, newRange[0]);
+      }
+      handleRange?.({ min: newRange[0], max: newRange[1] });
     },
     [range, handleRange],
   );
@@ -86,8 +75,8 @@ export const useSlider = ({ bounds, step, defaultRange, handleRange, isDisabled 
       const newValue = getValueFromPercentage(percentage, { min, max }, step);
 
       // 클릭한 위치가 어떤 썸에 더 가까운지 결정
-      const distanceToStart = Math.abs(getPositionPercentage(0, range, { min, max }) - percentage);
-      const distanceToEnd = Math.abs(getPositionPercentage(1, range, { min, max }) - percentage);
+      const distanceToStart = Math.abs(getPositionPercentage(0, [range.min, range.max], { min, max }) - percentage);
+      const distanceToEnd = Math.abs(getPositionPercentage(1, [range.min, range.max], { min, max }) - percentage);
 
       if (distanceToStart <= distanceToEnd) {
         updateRange(0, newValue);
@@ -98,20 +87,24 @@ export const useSlider = ({ bounds, step, defaultRange, handleRange, isDisabled 
     [isDisabled, min, max, step, range, updateRange],
   );
 
-  // 위치 계산
-  const startPosition = getPositionPercentage(0, range, { min, max });
-  const endPosition = getPositionPercentage(1, range, { min, max });
-  const width = endPosition - startPosition;
+  // 위치 계산을 useMemo로 감싸서 range가 변경될 때마다 다시 계산되도록 수정
+  const positions = useMemo(() => {
+    const startPosition = getPositionPercentage(0, [range.min, range.max], { min, max });
+    const endPosition = getPositionPercentage(1, [range.min, range.max], { min, max });
+    const width = endPosition - startPosition;
 
-  return {
-    range,
-    trackRef,
-    handleMouseDown,
-    handleClickTrack,
-    positions: {
+    return {
       start: startPosition,
       end: endPosition,
       width,
-    },
+    };
+  }, [range, min, max]);
+
+  return {
+    selectedRange: [range.min, range.max],
+    trackRef,
+    handleMouseDown,
+    handleClickTrack,
+    positions,
   };
 };

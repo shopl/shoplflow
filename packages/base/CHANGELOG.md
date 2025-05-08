@@ -1,5 +1,46 @@
 # @shoplflow/base
 
+## 0.37.2
+
+### Patch Changes
+
+- Updated dependencies [[`5ff3b3254f753b5aef4d377dc835d96acf5ba142`](https://github.com/shopl/shoplflow/commit/5ff3b3254f753b5aef4d377dc835d96acf5ba142)]:
+  - @shoplflow/shopl-assets@0.12.5
+
+## 0.37.1
+
+### Patch Changes
+
+- Updated dependencies [[`4377d8665d8d98c474a58a18870d98bd45f02095`](https://github.com/shopl/shoplflow/commit/4377d8665d8d98c474a58a18870d98bd45f02095)]:
+  - @shoplflow/shopl-assets@0.12.4
+
+## 0.37.0
+
+### Minor Changes
+
+- [#526](https://github.com/shopl/shoplflow/pull/526) [`a0ed7137e8ac9d6910ae1279bf609f53d9bd47fa`](https://github.com/shopl/shoplflow/commit/a0ed7137e8ac9d6910ae1279bf609f53d9bd47fa) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Slider의 선택 범위를 외부에서 주입해 사용하도록 수정했어요
+
+## 0.36.1
+
+### Patch Changes
+
+- [#520](https://github.com/shopl/shoplflow/pull/520) [`54e7d777357e6a7a57be0f05374b594c995d31f1`](https://github.com/shopl/shoplflow/commit/54e7d777357e6a7a57be0f05374b594c995d31f1) Thanks [@velo-kim](https://github.com/velo-kim)! - List, TooltipContent 컴포넌트 스타일 조정
+
+## 0.36.0
+
+### Minor Changes
+
+- [#523](https://github.com/shopl/shoplflow/pull/523) [`114dbd53399c979f5abccebe6546d3048f06938d`](https://github.com/shopl/shoplflow/commit/114dbd53399c979f5abccebe6546d3048f06938d) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Slider의 thumb button 속성 및 트랙 클릭 이벤트를 수정했어요
+
+## 0.35.1
+
+### Patch Changes
+
+- [#521](https://github.com/shopl/shoplflow/pull/521) [`b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e`](https://github.com/shopl/shoplflow/commit/b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - funnel icon 추가 및 icon button iconSize 추가
+
+- Updated dependencies [[`b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e`](https://github.com/shopl/shoplflow/commit/b7d8f1fd2b0cc91bee9a7e13349c09663ec9581e)]:
+  - @shoplflow/shopl-assets@0.12.3
+
 ## 0.35.0
 
 ### Minor Changes

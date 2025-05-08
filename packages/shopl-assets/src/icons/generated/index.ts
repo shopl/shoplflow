@@ -65,6 +65,7 @@ import IcDesc from './IcDesc';
 import IcDetailView from './IcDetailView';
 import IcDisplayMedium from './IcDisplayMedium';
 import IcDocMedium from './IcDocMedium';
+import IcDocument from './IcDocument';
 import IcDownArrowSolidXsmall from './IcDownArrowSolidXsmall';
 import IcDownArrowXsmall from './IcDownArrowXsmall';
 import IcDownArrow from './IcDownArrow';
@@ -96,6 +97,7 @@ import IcFirstPage from './IcFirstPage';
 import IcFlexibleWorking from './IcFlexibleWorking';
 import IcFullScreenMedium from './IcFullScreenMedium';
 import IcFullscreen from './IcFullscreen';
+import IcFunnel from './IcFunnel';
 import IcGps from './IcGps';
 import IcGrade1 from './IcGrade1';
 import IcGrade2 from './IcGrade2';
@@ -197,6 +199,7 @@ import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
 import IcMore from './IcMore';
 import IcMother from './IcMother';
+import IcMove2 from './IcMove2';
 import IcMoveSolid from './IcMoveSolid';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
@@ -350,6 +353,7 @@ const icons = {
   'detail-view': IcDetailView,
   'display-medium': IcDisplayMedium,
   'doc-medium': IcDocMedium,
+  document: IcDocument,
   'down-arrow-solid-xsmall': IcDownArrowSolidXsmall,
   'down-arrow-xsmall': IcDownArrowXsmall,
   'down-arrow': IcDownArrow,
@@ -381,6 +385,7 @@ const icons = {
   'flexible-working': IcFlexibleWorking,
   'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
+  funnel: IcFunnel,
   gps: IcGps,
   'grade-1': IcGrade1,
   'grade-2': IcGrade2,
@@ -482,6 +487,7 @@ const icons = {
   minus: IcMinus,
   more: IcMore,
   mother: IcMother,
+  'move-2': IcMove2,
   'move-solid': IcMoveSolid,
   move: IcMove,
   'movie-01': IcMovie01,
@@ -638,6 +644,7 @@ export {
   IcDetailView as DetailViewIcon,
   IcDisplayMedium as DisplayMediumIcon,
   IcDocMedium as DocMediumIcon,
+  IcDocument as DocumentIcon,
   IcDownArrowSolidXsmall as DownArrowSolidXsmallIcon,
   IcDownArrowXsmall as DownArrowXsmallIcon,
   IcDownArrow as DownArrowIcon,
@@ -669,6 +676,7 @@ export {
   IcFlexibleWorking as FlexibleWorkingIcon,
   IcFullScreenMedium as FullScreenMediumIcon,
   IcFullscreen as FullscreenIcon,
+  IcFunnel as FunnelIcon,
   IcGps as GpsIcon,
   IcGrade1 as Grade1Icon,
   IcGrade2 as Grade2Icon,
@@ -770,6 +778,7 @@ export {
   IcMinus as MinusIcon,
   IcMore as MoreIcon,
   IcMother as MotherIcon,
+  IcMove2 as Move2Icon,
   IcMoveSolid as MoveSolidIcon,
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
