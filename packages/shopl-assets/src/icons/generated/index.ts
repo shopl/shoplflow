@@ -10,6 +10,7 @@ import IcAdd from './IcAdd';
 import IcAdminLarge from './IcAdminLarge';
 import IcAiChatBot from './IcAiChatBot';
 import IcAlbumXlarge from './IcAlbumXlarge';
+import IcAlertColored from './IcAlertColored';
 import IcAlertLine from './IcAlertLine';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
 import IcAlert from './IcAlert';
@@ -298,6 +299,7 @@ const icons = {
   'admin-large': IcAdminLarge,
   'ai-chat-bot': IcAiChatBot,
   'album-xlarge': IcAlbumXlarge,
+  'alert-colored': IcAlertColored,
   'alert-line': IcAlertLine,
   'alert-popup-xlarge': IcAlertPopupXlarge,
   alert: IcAlert,
@@ -589,6 +591,7 @@ export {
   IcAdminLarge as AdminLargeIcon,
   IcAiChatBot as AiChatBotIcon,
   IcAlbumXlarge as AlbumXlargeIcon,
+  IcAlertColored as AlertColoredIcon,
   IcAlertLine as AlertLineIcon,
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
   IcAlert as AlertIcon,
