@@ -429,7 +429,7 @@ importers:
   packages/extension:
     dependencies:
       '@shoplflow/base':
-        specifier: ^0.37.4
+        specifier: ^0.37.5
         version: link:../base
       chart.js:
         specifier: ^4.4.0
@@ -13410,7 +13410,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 3.1.3
-      ts-node: 10.9.2(@types/node@20.4.9)(typescript@4.7.4)
+      ts-node: 10.9.2(@types/node@20.4.9)(typescript@4.9.5)
       yaml: 2.7.0
     dev: true
 
