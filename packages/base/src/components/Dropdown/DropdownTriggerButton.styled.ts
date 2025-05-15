@@ -90,14 +90,18 @@ export type Status = {
   isError?: boolean;
   isHovered?: boolean;
   disabled?: boolean;
+  sizeVar: DropdownSizeVariantType;
 };
 
-const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Status) => {
+const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeVar }: Status) => {
   if (!disabled) {
     if (isError) {
       return colorTokens.red300;
     }
     if (isFocused) {
+      if (sizeVar === 'L') {
+        return colorTokens.neutral700;
+      }
       return colorTokens.primary300;
     }
     if (isHovered) {
@@ -108,13 +112,18 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Sta
   return colorTokens.neutral300;
 };
 
-const getButtoWrapperStyleBySizeVar = (sizeVar: DropdownSizeVariantType) => {
+const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused }: Status) => {
   switch (sizeVar) {
     case 'L':
       return css`
         background-color: transparent;
-        border-width: 2px;
+        border-width: ${isFocused ? '2px' : '1px'};
+        transition: border-width 0.2s ease-in-out;
         border-radius: 12px;
+
+        &:hover {
+          border-width: 2px;
+        }
       `;
     default:
       return css`
@@ -154,17 +163,17 @@ export const StyledDropdownButtonWrapper = styled.label<
   max-height: initial;
   min-width: initial;
   max-width: initial;
+  justify-content: space-between;
+  border-style: solid;
+  overflow: hidden;
+  border-color: ${(props) => getBorderColorByStatus(props)};
   ${({ height, width }) =>
     getStyleByType({
       height,
       width,
     })};
-  justify-content: space-between;
-  border-color: ${(props) => getBorderColorByStatus(props)};
-  border-style: solid;
-  ${({ sizeVar }) => getButtoWrapperStyleBySizeVar(sizeVar)};
+  ${(props) => getButtonWrapperStyleBySizeVar(props)};
 
-  overflow: hidden;
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;
 
