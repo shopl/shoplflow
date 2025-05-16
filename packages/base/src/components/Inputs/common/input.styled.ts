@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import type { BorderRadiusTokens } from '../../../styles';
+import type { BorderRadiusTokens, ColorTokens } from '../../../styles';
 import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import type { HTMLInputTypeAttribute } from 'react';
@@ -9,14 +9,18 @@ export type Status = {
   isError?: boolean;
   isHovered?: boolean;
   disabled?: boolean;
+  focusedBorderColor?: ColorTokens;
 };
 
-const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled }: Status) => {
+const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, focusedBorderColor }: Status) => {
   if (!disabled) {
     if (isError) {
       return colorTokens.red300;
     }
     if (isFocused) {
+      if (focusedBorderColor) {
+        return colorTokens[focusedBorderColor];
+      }
       return colorTokens.primary300;
     }
     if (isHovered) {
@@ -80,6 +84,7 @@ export const InputWrapper = styled.label<
     customNumberInputHeight?: string;
     gap?: CSSStyleDeclaration['gap'];
     type?: HTMLInputTypeAttribute;
+    focusedBorderColor?: ColorTokens;
   }
 >`
   position: relative;

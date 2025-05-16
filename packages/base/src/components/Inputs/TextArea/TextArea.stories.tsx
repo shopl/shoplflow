@@ -53,7 +53,7 @@ export const CheckValue: StoryFn<TextAreaProps> = (args) => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
   return (
-    <Stack width={'600px'} spacing={'spacing12'}>
+    <Stack width={'500px'} spacing={'spacing12'}>
       <ComponentStage>
         <TextArea ref={textAreaRef} placeholder={'TextArea에요'} {...args} />
       </ComponentStage>
@@ -76,4 +76,26 @@ export const CheckValue: StoryFn<TextAreaProps> = (args) => {
 CheckValue.args = {
   placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있어요.',
   disabled: false,
+};
+
+export const WithCustomToolbar: StoryFn<TextAreaProps> = (args) => {
+  return (
+    <Stack.Horizontal width={'500px'} height={'300px'} justify={'center'}>
+      <ComponentStage>
+        <TextArea maxLength={100} placeholder={'Toolbar를 커스텀한 TextArea에요'} {...args} />
+      </ComponentStage>
+    </Stack.Horizontal>
+  );
+};
+
+WithCustomToolbar.args = {
+  leftSource: <TextArea.MaxLength />,
+  rightSource: (
+    <Stack.Horizontal spacing={'spacing04'}>
+      <Button styleVar={'SECONDARY'} sizeVar='S'>
+        취소
+      </Button>
+      <Button sizeVar='S'>확인</Button>
+    </Stack.Horizontal>
+  ),
 };
