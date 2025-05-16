@@ -16,9 +16,9 @@ export const StyledTextarea = styled.textarea`
   background-color: transparent;
   resize: none;
   width: 100%;
-  height: 100%;
   flex: 1;
   word-break: break-all;
+  overflow-y: auto;
   ${({ disabled }) => getDisabledStyle(disabled)};
   &::placeholder {
     color: ${colorTokens.neutral350};
