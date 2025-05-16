@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.38.0
+
+### Minor Changes
+
+- [#541](https://github.com/shopl/shoplflow/pull/541) [`2ae21897fe334cb97253ccbbcc7000ec5cbd9549`](https://github.com/shopl/shoplflow/commit/2ae21897fe334cb97253ccbbcc7000ec5cbd9549) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - TextArea 컴포넌트에 leftSource, rightSource, focusedBorderColor 속성을 추가했어요
+
 ## 0.37.6
 
 ### Patch Changes
