@@ -158,6 +158,7 @@ import IcInfoEmployeeno from './IcInfoEmployeeno';
 import IcInfoGrade from './IcInfoGrade';
 import IcInfoGroup from './IcInfoGroup';
 import IcInfoLeader from './IcInfoLeader';
+import IcInfoLine from './IcInfoLine';
 import IcInfoLogin from './IcInfoLogin';
 import IcInfoPhoneCheck from './IcInfoPhoneCheck';
 import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
@@ -447,6 +448,7 @@ const icons = {
   'info-grade': IcInfoGrade,
   'info-group': IcInfoGroup,
   'info-leader': IcInfoLeader,
+  'info-line': IcInfoLine,
   'info-login': IcInfoLogin,
   'info-phone-check': IcInfoPhoneCheck,
   'info-phone-no-check': IcInfoPhoneNoCheck,
@@ -739,6 +741,7 @@ export {
   IcInfoGrade as InfoGradeIcon,
   IcInfoGroup as InfoGroupIcon,
   IcInfoLeader as InfoLeaderIcon,
+  IcInfoLine as InfoLineIcon,
   IcInfoLogin as InfoLoginIcon,
   IcInfoPhoneCheck as InfoPhoneCheckIcon,
   IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
