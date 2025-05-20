@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.39.0
+
+### Minor Changes
+
+- [#545](https://github.com/shopl/shoplflow/pull/545) [`b582c686ec92d9d8add0d445ec446251041ed368`](https://github.com/shopl/shoplflow/commit/b582c686ec92d9d8add0d445ec446251041ed368) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Button 컴포넌트의 disabled opacity를 수정했어요
+
 ## 0.38.1
 
 ### Patch Changes
