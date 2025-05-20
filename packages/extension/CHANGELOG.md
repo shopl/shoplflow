@@ -1,5 +1,14 @@
 # @shoplflow/extension
 
+## 0.0.125
+
+### Patch Changes
+
+- [#548](https://github.com/shopl/shoplflow/pull/548) [`9b94b8e81ed973b57b91b1d742c64e880f752173`](https://github.com/shopl/shoplflow/commit/9b94b8e81ed973b57b91b1d742c64e880f752173) Thanks [@velo-kim](https://github.com/velo-kim)! - update: Datepikckers/stepper/YearSelect 선택년도 focus 기능 추가
+
+- Updated dependencies [[`9b94b8e81ed973b57b91b1d742c64e880f752173`](https://github.com/shopl/shoplflow/commit/9b94b8e81ed973b57b91b1d742c64e880f752173)]:
+  - @shoplflow/base@0.39.1
+
 ## 0.0.124
 
 ### Patch Changes
