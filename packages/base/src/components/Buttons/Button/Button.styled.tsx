@@ -3,7 +3,6 @@ import type { ButtonOptionProps, ButtonSizeVariantType, ButtonStyleVariantType }
 import type { ColorTokens } from '../../../styles';
 import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
-import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 import { getNextColor } from '../../../utils/getNextColor';
 
 const getStyleByStyleVar = (styleVar?: ButtonStyleVariantType, color?: ColorTokens, disabled?: boolean) => {
@@ -74,6 +73,16 @@ const getStyleBySizeVar = (sizeVar?: ButtonSizeVariantType) => {
   }
 };
 
+const getDisabledButtonStyle = (disabled?: boolean) => {
+  if (!disabled) {
+    return;
+  }
+  return css`
+    opacity: 0.3;
+    cursor: not-allowed;
+  `;
+};
+
 export const StyledButton = styled.button<ButtonOptionProps>`
   display: flex;
   align-items: center;
@@ -86,5 +95,5 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   cursor: pointer;
   ${({ styleVar, color, disabled }) => getStyleByStyleVar(styleVar, color, disabled)};
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ disabled }) => getDisabledButtonStyle(disabled)};
 `;
