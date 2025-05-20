@@ -4,6 +4,11 @@ import { Container, OptionList, OptionListItem } from './Year.styled';
 import React, { useEffect, useRef, useState } from 'react';
 import { useOutsideClick } from '@shoplflow/utils';
 
+// SimpleBarReact의 타입을 가져오는 함수 > SimpleBarCore가 라이브러리에서 export 되지 않아서 해당 타입이 필요합니다.
+type GetSimpleBarCore<T> =
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  T extends React.ForwardRefExoticComponent<infer Not & React.RefAttributes<infer Core | null>> ? Core : never;
+
 export type YearSelectProps = {
   optionList: Array<{ value: number; label: string }>;
   className?: string;
@@ -16,7 +21,9 @@ export type YearSelectProps = {
 
 const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHeight, onClick }: YearSelectProps) => {
   const optionListRef = useRef<Array<null | HTMLLIElement>>([]);
+  // NOTICE: 미사용, 추후 삭제
   const parentRef = useRef<HTMLUListElement>(null);
+  const simpleBarContentRef = useRef<GetSimpleBarCore<typeof SimpleBarReact>>(null);
 
   const [isAllRefMounted, setIsAllRefMounted] = useState<boolean>(false);
   const [isOpened, setIsOpened] = useOutsideClick({
@@ -41,7 +48,7 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
     const parentHeight = optionListRef.current[selectedOptionIndex]?.closest('ul')?.clientHeight ?? 0;
 
     if (heightPerOption * (selectedOptionIndex + 1) >= parentHeight) {
-      parentRef.current?.scrollTo({ top: heightPerOption * selectedOptionIndex });
+      simpleBarContentRef.current?.getScrollElement()?.scrollTo({ top: heightPerOption * selectedOptionIndex });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAllRefMounted, activeValue, maxHeight]);
@@ -54,6 +61,7 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
             maxHeight,
             height,
           }}
+          ref={simpleBarContentRef}
           className={className}
         >
           {optionList?.map((option, index) => (
