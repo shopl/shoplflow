@@ -37,7 +37,6 @@ const YearStepper = ({
   const [isOpen, setIsOpen] = useOutsideClick({
     selector: '.react-datepicker-year-stepper',
   });
-
   const startYear = minDate ? minDate.getFullYear() : 2000;
   const endYear = maxDate ? maxDate.getFullYear() : 2100;
 
@@ -45,7 +44,8 @@ const YearStepper = ({
     () =>
       Array.from({ length: endYear - startYear + 1 })
         .fill(0)
-        .map((_, index) => ({ value: startYear + index, label: `${startYear + index}` })),
+        .map((_, index) => ({ value: startYear + index, label: `${startYear + index}` }))
+        .sort((a, b) => b.value - a.value),
     [startYear, endYear],
   );
 
