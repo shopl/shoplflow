@@ -16,7 +16,7 @@ export const Playground: StoryFn<MonthDatepickerProps> = (args) => {
 
   return (
     <Stack>
-      <MonthDatepicker {...args} handleMonthClick={setSelectedDateInfo} />
+      <MonthDatepicker {...args} handleMonthClick={setSelectedDateInfo} onlySingleMonth />
       <Stack.Vertical width='100%'>
         <Text>
           selected start :
@@ -47,6 +47,7 @@ export const OnlySingle: StoryFn<MonthDatepickerProps> = (args) => {
       <MonthDatepicker
         onlySingleMonth
         {...args}
+        initStartDate={new Date('2025-04-05')}
         handleMonthClick={(dataInfo) => {
           setSelectedDateInfo(dataInfo);
         }}
