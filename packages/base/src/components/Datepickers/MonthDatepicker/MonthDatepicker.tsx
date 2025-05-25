@@ -37,6 +37,7 @@ const MonthDatepicker = ({
     // 단일 월 선택일 경우
     if (onlySingleMonth) {
       setSelectedStartMonthAndYear([month, year]);
+      setSelectedEndMonthAndYear([month, year]);
       handleMonthClick({
         startDate: startOfMonth(new Date(year, month - 1)),
         endDate: endOfMonth(new Date(year, month - 1)),
