@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.39.2
+
+### Patch Changes
+
+- [#550](https://github.com/shopl/shoplflow/pull/550) [`31c7f73ee1deb69eb72b5a09f744e52d21b9d5af`](https://github.com/shopl/shoplflow/commit/31c7f73ee1deb69eb72b5a09f744e52d21b9d5af) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: MonthDatepicker 단일 월 선택 버그 수정
+
 ## 0.39.1
 
 ### Patch Changes
