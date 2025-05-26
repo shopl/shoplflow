@@ -144,7 +144,7 @@ const WeekDatepicker = ({
 
             // 최소년도와 현재년도가 같고, 주차가 작거나 같음
             if (currentYear === minYear) {
-              if (currentWeek <= minWeek) {
+              if (currentWeek < minWeek) {
                 disabled = true;
               }
             }
@@ -162,7 +162,7 @@ const WeekDatepicker = ({
 
             // 최대년도와 현재년도가 같고, 주차가 크거나 같음
             if (currentYear === maxYear) {
-              if (currentWeek >= maxWeek) {
+              if (currentWeek > maxWeek) {
                 disabled = true;
               }
             }
