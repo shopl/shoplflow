@@ -134,9 +134,9 @@ const MonthDatepicker = ({
               disabled = true;
             }
 
-            // 최소년도와 현재년도가 같고, 월이 작거나 같음
+            // 최소년도와 현재년도가 같고, 월이 작음
             if (currentYear === minYear) {
-              if (month <= minMonth) {
+              if (month < minMonth) {
                 disabled = true;
               }
             }
@@ -151,9 +151,9 @@ const MonthDatepicker = ({
               disabled = true;
             }
 
-            // 최대년도와 현재년도가 같고, 월이 크거나 같음
+            // 최대년도와 현재년도가 같고, 월이 큼
             if (currentYear === maxYear) {
-              if (month >= maxMonth) {
+              if (month > maxMonth) {
                 disabled = true;
               }
             }
