@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.40.0
+
+### Minor Changes
+
+- [#552](https://github.com/shopl/shoplflow/pull/552) [`f71329480089c54d657ad700e47b9da08781b633`](https://github.com/shopl/shoplflow/commit/f71329480089c54d657ad700e47b9da08781b633) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - 주별/월별 DatePicker에 maxDate가 있을 경우 선택 가능 범위를 수정했어요
+
 ## 0.39.2
 
 ### Patch Changes
