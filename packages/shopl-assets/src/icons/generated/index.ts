@@ -207,6 +207,7 @@ import IcMoveSolid from './IcMoveSolid';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
 import IcMultipleChoice from './IcMultipleChoice';
+import IcNewReport from './IcNewReport';
 import IcNoGrade from './IcNoGrade';
 import IcNormal from './IcNormal';
 import IcNoticeMedium from './IcNoticeMedium';
@@ -231,6 +232,7 @@ import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcRatioMedium from './IcRatioMedium';
+import IcReadReport from './IcReadReport';
 import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
@@ -498,6 +500,7 @@ const icons = {
   move: IcMove,
   'movie-01': IcMovie01,
   'multiple-choice': IcMultipleChoice,
+  'new-report': IcNewReport,
   'no-grade': IcNoGrade,
   normal: IcNormal,
   'notice-medium': IcNoticeMedium,
@@ -522,6 +525,7 @@ const icons = {
   push: IcPush,
   qrcode: IcQrcode,
   'ratio-medium': IcRatioMedium,
+  'read-report': IcReadReport,
   'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
@@ -792,6 +796,7 @@ export {
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
   IcMultipleChoice as MultipleChoiceIcon,
+  IcNewReport as NewReportIcon,
   IcNoGrade as NoGradeIcon,
   IcNormal as NormalIcon,
   IcNoticeMedium as NoticeMediumIcon,
@@ -816,6 +821,7 @@ export {
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcRatioMedium as RatioMediumIcon,
+  IcReadReport as ReadReportIcon,
   IcReceiverMedium as ReceiverMediumIcon,
   IcRefresh as RefreshIcon,
   IcRepeat as RepeatIcon,
