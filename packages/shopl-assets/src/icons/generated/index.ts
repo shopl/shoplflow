@@ -208,6 +208,7 @@ import IcMovie01 from './IcMovie01';
 import IcMultipleChoice from './IcMultipleChoice';
 import IcNoGrade from './IcNoGrade';
 import IcNormal from './IcNormal';
+import IcNoticeLine from './IcNoticeLine';
 import IcNoticeMedium from './IcNoticeMedium';
 import IcNoticeSolidMedium from './IcNoticeSolidMedium';
 import IcNotice from './IcNotice';
@@ -498,6 +499,7 @@ const icons = {
   'multiple-choice': IcMultipleChoice,
   'no-grade': IcNoGrade,
   normal: IcNormal,
+  'notice-line': IcNoticeLine,
   'notice-medium': IcNoticeMedium,
   'notice-solid-medium': IcNoticeSolidMedium,
   notice: IcNotice,
@@ -791,6 +793,7 @@ export {
   IcMultipleChoice as MultipleChoiceIcon,
   IcNoGrade as NoGradeIcon,
   IcNormal as NormalIcon,
+  IcNoticeLine as NoticeLineIcon,
   IcNoticeMedium as NoticeMediumIcon,
   IcNoticeSolidMedium as NoticeSolidMediumIcon,
   IcNotice as NoticeIcon,
