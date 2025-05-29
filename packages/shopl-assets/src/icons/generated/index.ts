@@ -230,6 +230,7 @@ import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcRatioMedium from './IcRatioMedium';
+import IcReadReport from './IcReadReport';
 import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
@@ -520,6 +521,7 @@ const icons = {
   push: IcPush,
   qrcode: IcQrcode,
   'ratio-medium': IcRatioMedium,
+  'read-report': IcReadReport,
   'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
@@ -813,6 +815,7 @@ export {
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcRatioMedium as RatioMediumIcon,
+  IcReadReport as ReadReportIcon,
   IcReceiverMedium as ReceiverMediumIcon,
   IcRefresh as RefreshIcon,
   IcRepeat as RepeatIcon,
