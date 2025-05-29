@@ -75,7 +75,6 @@ import IcStatisticDefault from './IcStatisticDefault';
 import IcStatistics from './IcStatistics';
 import IcText from './IcText';
 import IcTime from './IcTime';
-import IcTrash from './IcTrash';
 import IcTutorialCompleted from './IcTutorialCompleted';
 import IcTutorial from './IcTutorial';
 import IcUpArrowSolid from './IcUpArrowSolid';
@@ -164,7 +163,6 @@ const icons = {
   statistics: IcStatistics,
   text: IcText,
   time: IcTime,
-  trash: IcTrash,
   'tutorial-completed': IcTutorialCompleted,
   tutorial: IcTutorial,
   'up-arrow-solid': IcUpArrowSolid,
@@ -256,7 +254,6 @@ export {
   IcStatistics as StatisticsIcon,
   IcText as TextIcon,
   IcTime as TimeIcon,
-  IcTrash as TrashIcon,
   IcTutorialCompleted as TutorialCompletedIcon,
   IcTutorial as TutorialIcon,
   IcUpArrowSolid as UpArrowSolidIcon,
