@@ -160,6 +160,7 @@ import IcInfoGroup from './IcInfoGroup';
 import IcInfoLeader from './IcInfoLeader';
 import IcInfoLine from './IcInfoLine';
 import IcInfoLogin from './IcInfoLogin';
+import IcInfoMedium from './IcInfoMedium';
 import IcInfoPhoneCheck from './IcInfoPhoneCheck';
 import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
 import IcInfoPhone from './IcInfoPhone';
@@ -450,6 +451,7 @@ const icons = {
   'info-leader': IcInfoLeader,
   'info-line': IcInfoLine,
   'info-login': IcInfoLogin,
+  'info-medium': IcInfoMedium,
   'info-phone-check': IcInfoPhoneCheck,
   'info-phone-no-check': IcInfoPhoneNoCheck,
   'info-phone': IcInfoPhone,
@@ -743,6 +745,7 @@ export {
   IcInfoLeader as InfoLeaderIcon,
   IcInfoLine as InfoLineIcon,
   IcInfoLogin as InfoLoginIcon,
+  IcInfoMedium as InfoMediumIcon,
   IcInfoPhoneCheck as InfoPhoneCheckIcon,
   IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
   IcInfoPhone as InfoPhoneIcon,
