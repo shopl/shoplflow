@@ -60,6 +60,7 @@ import IcQrcode from './IcQrcode';
 import IcRadio from './IcRadio';
 import IcReadChecklist from './IcReadChecklist';
 import IcReadIssue from './IcReadIssue';
+import IcReadReport1 from './IcReadReport1';
 import IcReadReport from './IcReadReport';
 import IcRefresh from './IcRefresh';
 import IcRemove from './IcRemove';
@@ -148,6 +149,7 @@ const icons = {
   radio: IcRadio,
   'read-checklist': IcReadChecklist,
   'read-issue': IcReadIssue,
+  'read-report-1': IcReadReport1,
   'read-report': IcReadReport,
   refresh: IcRefresh,
   remove: IcRemove,
@@ -239,6 +241,7 @@ export {
   IcRadio as RadioIcon,
   IcReadChecklist as ReadChecklistIcon,
   IcReadIssue as ReadIssueIcon,
+  IcReadReport1 as ReadReport1Icon,
   IcReadReport as ReadReportIcon,
   IcRefresh as RefreshIcon,
   IcRemove as RemoveIcon,
