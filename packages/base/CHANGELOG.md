@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.40.1
+
+### Patch Changes
+
+- [#559](https://github.com/shopl/shoplflow/pull/559) [`e83a2f8ed5d38cf979a7b5ce24b604a87ec5ef86`](https://github.com/shopl/shoplflow/commit/e83a2f8ed5d38cf979a7b5ce24b604a87ec5ef86) Thanks [@velo-kim](https://github.com/velo-kim)! - update: DropdownTriggerButton L 사이즈 border 조정
+
 ## 0.40.0
 
 ### Minor Changes
