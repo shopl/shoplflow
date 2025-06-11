@@ -180,6 +180,16 @@
     line-height: 16px;
     font-size: 12px;
   }
+  .paragraph1 {
+    font-weight: var(--font-weight-regular);
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .paragraph2 {
+    font-weight: var(--font-weight-regular);
+    line-height: 22px;
+    font-size: 14px;
+  }
 }
 :root[data-shoplflow][data-shoplflow=shopl] {
   --coolgray300: #8092aa;
