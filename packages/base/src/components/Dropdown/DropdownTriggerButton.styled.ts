@@ -120,10 +120,7 @@ const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused }: Status) => {
         border-width: ${isFocused ? '2px' : '1px'};
         transition: border-width 0.2s ease-in-out;
         border-radius: 12px;
-
-        &:hover {
-          border-width: 2px;
-        }
+        border-width: 1.5px;
       `;
     default:
       return css`
