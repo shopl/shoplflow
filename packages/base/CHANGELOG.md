@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.40.2
+
+### Patch Changes
+
+- [#563](https://github.com/shopl/shoplflow/pull/563) [`a1db6843070805948631ab835395eeeb94132c72`](https://github.com/shopl/shoplflow/commit/a1db6843070805948631ab835395eeeb94132c72) Thanks [@velo-kim](https://github.com/velo-kim)! - ToggleButton.Radio의 스타일 변경(lineClamp 제거)
+
 ## 0.40.1
 
 ### Patch Changes
