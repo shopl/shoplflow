@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useRef } from 'react';
 import {
   StyledToggleButton,
   StyledToggleInner,
@@ -31,6 +31,8 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
   ({ label, disabled, value, id, ...rest }, ref) => {
     const { fixedWidth, onChange, targetName, selectedValue, sizeVar } = useToggleButton();
 
+    const labelRef = useRef<HTMLLabelElement>(null);
+
     let selected = false;
 
     if (selectedValue && selectedValue === value) {
@@ -45,7 +47,16 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
     };
 
     return (
-      <StyledToggleInner disabled={disabled} type='button'>
+      <StyledToggleInner
+        width={fixedWidth}
+        disabled={disabled}
+        selected={selected}
+        sizeVar={sizeVar}
+        type='button'
+        onClick={() => {
+          labelRef?.current?.click();
+        }}
+      >
         <StyledToggleInnerInput
           checked={selected}
           width={fixedWidth}
@@ -59,15 +70,8 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
           onChange={onChange}
         />
 
-        <StyledToggleInnerLabel
-          htmlFor={id}
-          width={fixedWidth}
-          disabled={disabled}
-          selected={selected}
-          sizeVar={sizeVar}
-        >
+        <StyledToggleInnerLabel ref={labelRef} htmlFor={id}>
           <Text
-            lineClamp={1}
             color={getLabelColor({ selected, disabled: Boolean(disabled) })}
             wordBreak='break-all'
             typography={selected ? 'body2_500' : 'body2_400'}
