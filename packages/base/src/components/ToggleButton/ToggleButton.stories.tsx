@@ -4,6 +4,7 @@ import type { StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import ToggleButton from './ToggleButton';
 import type { ToggleButtonProps } from './ToggleButton.types';
+import { Text } from '../Text';
 
 export default {
   title: 'COMPONENTS/ToggleButton',
@@ -27,10 +28,15 @@ export const Playground: StoryFn<ToggleButtonProps> = (args) => {
         sizeVar='S'
         fixedWidth={100}
       >
-        <ToggleButton.InnerRadio value='value1' label='Toggle1' id={'1'} />
+        <ToggleButton.InnerRadio
+          value='value1'
+          label='엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 '
+          id={'1'}
+        />
         <ToggleButton.InnerRadio value='value2' label='Toggle2' id={'2'} />
         <ToggleButton.InnerRadio value='value3' label='disabled' id={'3'} disabled />
       </ToggleButton>
+      <Text>선택된 된 값: {selectedValue}</Text>
     </Stack>
   );
 };

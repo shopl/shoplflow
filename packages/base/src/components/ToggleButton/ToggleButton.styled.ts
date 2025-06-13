@@ -49,28 +49,20 @@ const getLabelStyleBySizeVar = (sizeVar: ToggleButtonSizeVariantType) => {
 export const StyledToggleButton = styled.div`
   display: flex;
   padding: ${spacingTokens.spacing04};
-  align-items: center;
+  align-items: stretch;
   background-color: ${colorTokens.neutral150};
   border-radius: ${borderRadiusTokens.borderRadius06};
 `;
 
-export const StyledToggleInner = styled.button`
-  height: fit-content;
-  width: fit-content;
-  cursor: pointer;
-
-  /* & input:checked + label {
-    background-color: ${colorTokens.neutral0};
-    cursor: default;
-  } */
-`;
-
-export const StyledToggleInnerLabel = styled.label<{
+export const StyledToggleInner = styled.button<{
   width: number;
   disabled?: boolean;
   selected: boolean;
   sizeVar: ToggleButtonSizeVariantType;
 }>`
+  width: fit-content;
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +81,13 @@ export const StyledToggleInnerLabel = styled.label<{
         background-color: ${colorTokens.neutral400_5};
       `}
   }
+`;
+
+export const StyledToggleInnerLabel = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 `;
 
 export const StyledToggleInnerInput = styled.input`
