@@ -1,5 +1,17 @@
 # @shoplflow/templates
 
+## 0.1.0
+
+### Minor Changes
+
+- [#566](https://github.com/shopl/shoplflow/pull/566) [`5cb936024f9ad5b0ec18e1ace3ed0a6149902cf4`](https://github.com/shopl/shoplflow/commit/5cb936024f9ad5b0ec18e1ace3ed0a6149902cf4) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Table 컴포넌트 shoplflow/templates로 이관
+
+### Patch Changes
+
+- Updated dependencies [[`53dc6e08d4cd400542fbb0e01490f5ae9407e021`](https://github.com/shopl/shoplflow/commit/53dc6e08d4cd400542fbb0e01490f5ae9407e021), [`7af6f959647af1e33358258055fef0d751f13889`](https://github.com/shopl/shoplflow/commit/7af6f959647af1e33358258055fef0d751f13889)]:
+  - @shoplflow/shopl-assets@0.12.11
+  - @shoplflow/base@0.40.3
+
 ## 0.0.55
 
 ### Patch Changes
