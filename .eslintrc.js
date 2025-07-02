@@ -34,6 +34,15 @@ module.exports = {
     },
     react: {
       version: "detect"
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json',
+      },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
     }
   },
   ignorePatterns: ['.eslintrc.**', 'next.config.js', 'docs/next.config.js', 'apps/*/next.config.js', 'packages/extension/**/*'],
