@@ -160,6 +160,7 @@ import IcInfoGroup from './IcInfoGroup';
 import IcInfoLeader from './IcInfoLeader';
 import IcInfoLine from './IcInfoLine';
 import IcInfoLogin from './IcInfoLogin';
+import IcInfoOval from './IcInfoOval';
 import IcInfoPhoneCheck from './IcInfoPhoneCheck';
 import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
 import IcInfoPhone from './IcInfoPhone';
@@ -174,6 +175,7 @@ import IcInfoVisit from './IcInfoVisit';
 import IcInfoWorking from './IcInfoWorking';
 import IcInfoWorkplace from './IcInfoWorkplace';
 import IcInfo from './IcInfo';
+import IcInputLine from './IcInputLine';
 import IcInventoryMedium from './IcInventoryMedium';
 import IcInvitation from './IcInvitation';
 import IcInviteBefore from './IcInviteBefore';
@@ -274,6 +276,7 @@ import IcTrash from './IcTrash';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
+import IcUserNameLine from './IcUserNameLine';
 import IcVideo from './IcVideo';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
@@ -451,6 +454,7 @@ const icons = {
   'info-leader': IcInfoLeader,
   'info-line': IcInfoLine,
   'info-login': IcInfoLogin,
+  'info-oval': IcInfoOval,
   'info-phone-check': IcInfoPhoneCheck,
   'info-phone-no-check': IcInfoPhoneNoCheck,
   'info-phone': IcInfoPhone,
@@ -465,6 +469,7 @@ const icons = {
   'info-working': IcInfoWorking,
   'info-workplace': IcInfoWorkplace,
   info: IcInfo,
+  'input-line': IcInputLine,
   'inventory-medium': IcInventoryMedium,
   invitation: IcInvitation,
   'invite-before': IcInviteBefore,
@@ -565,6 +570,7 @@ const icons = {
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
+  'user-name-line': IcUserNameLine,
   video: IcVideo,
   'view-off': IcViewOff,
   'view-on': IcViewOn,
@@ -745,6 +751,7 @@ export {
   IcInfoLeader as InfoLeaderIcon,
   IcInfoLine as InfoLineIcon,
   IcInfoLogin as InfoLoginIcon,
+  IcInfoOval as InfoOvalIcon,
   IcInfoPhoneCheck as InfoPhoneCheckIcon,
   IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
   IcInfoPhone as InfoPhoneIcon,
@@ -759,6 +766,7 @@ export {
   IcInfoWorking as InfoWorkingIcon,
   IcInfoWorkplace as InfoWorkplaceIcon,
   IcInfo as InfoIcon,
+  IcInputLine as InputLineIcon,
   IcInventoryMedium as InventoryMediumIcon,
   IcInvitation as InvitationIcon,
   IcInviteBefore as InviteBeforeIcon,
@@ -859,6 +867,7 @@ export {
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
+  IcUserNameLine as UserNameLineIcon,
   IcVideo as VideoIcon,
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
