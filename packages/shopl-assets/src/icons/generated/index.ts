@@ -5,6 +5,7 @@ import IcAbnormalLate from './IcAbnormalLate';
 import IcAbnormalM from './IcAbnormalM';
 import IcAbnormalN from './IcAbnormalN';
 import IcAbnormalW from './IcAbnormalW';
+import IcAddSection from './IcAddSection';
 import IcAddXsmall from './IcAddXsmall';
 import IcAdd from './IcAdd';
 import IcAdminLarge from './IcAdminLarge';
@@ -296,6 +297,7 @@ const icons = {
   'abnormal-m': IcAbnormalM,
   'abnormal-n': IcAbnormalN,
   'abnormal-w': IcAbnormalW,
+  'add-section': IcAddSection,
   'add-xsmall': IcAddXsmall,
   add: IcAdd,
   'admin-large': IcAdminLarge,
@@ -590,6 +592,7 @@ export {
   IcAbnormalM as AbnormalMIcon,
   IcAbnormalN as AbnormalNIcon,
   IcAbnormalW as AbnormalWIcon,
+  IcAddSection as AddSectionIcon,
   IcAddXsmall as AddXsmallIcon,
   IcAdd as AddIcon,
   IcAdminLarge as AdminLargeIcon,
