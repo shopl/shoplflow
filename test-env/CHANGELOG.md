@@ -1,5 +1,12 @@
 # test-env
 
+## 0.0.212
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @shoplflow/base@0.40.4
+
 ## 0.0.211
 
 ### Patch Changes
