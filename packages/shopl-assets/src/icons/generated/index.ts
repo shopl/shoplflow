@@ -21,6 +21,7 @@ import IcArticleMedium from './IcArticleMedium';
 import IcAsc from './IcAsc';
 import IcAttachment from './IcAttachment';
 import IcAttendanceMedium from './IcAttendanceMedium';
+import IcAutorityLine from './IcAutorityLine';
 import IcBackMedium from './IcBackMedium';
 import IcBadgeAdminLarge from './IcBadgeAdminLarge';
 import IcBadgeLeaderAppovalLarge from './IcBadgeLeaderAppovalLarge';
@@ -36,6 +37,7 @@ import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
 import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
+import IcCalendarLine from './IcCalendarLine';
 import IcCamera from './IcCamera';
 import IcCategory from './IcCategory';
 import IcChannel from './IcChannel';
@@ -133,6 +135,7 @@ import IcGradientTodo from './IcGradientTodo';
 import IcGradientWifi from './IcGradientWifi';
 import IcGradientWorkplace from './IcGradientWorkplace';
 import IcGraph from './IcGraph';
+import IcGroupLine from './IcGroupLine';
 import IcGroupMedium from './IcGroupMedium';
 import IcGroupSolidMedium from './IcGroupSolidMedium';
 import IcHelpCenterMedium from './IcHelpCenterMedium';
@@ -202,6 +205,7 @@ import IcMemo from './IcMemo';
 import IcMention from './IcMention';
 import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
+import IcMobileLine from './IcMobileLine';
 import IcMore from './IcMore';
 import IcMother from './IcMother';
 import IcMove2 from './IcMove2';
@@ -233,6 +237,7 @@ import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcRatioMedium from './IcRatioMedium';
+import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
@@ -263,6 +268,7 @@ import IcSortingLate from './IcSortingLate';
 import IcSortingZtoa from './IcSortingZtoa';
 import IcStaggeredWorking from './IcStaggeredWorking';
 import IcStamp from './IcStamp';
+import IcStarLine from './IcStarLine';
 import IcStar from './IcStar';
 import IcSubtract from './IcSubtract';
 import IcSummeryView from './IcSummeryView';
@@ -271,6 +277,7 @@ import IcTack from './IcTack';
 import IcTag from './IcTag';
 import IcTargetMedium from './IcTargetMedium';
 import IcText from './IcText';
+import IcTimeLineLine from './IcTimeLineLine';
 import IcTodoMedium from './IcTodoMedium';
 import IcToggleMedium from './IcToggleMedium';
 import IcTrash from './IcTrash';
@@ -278,6 +285,8 @@ import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
 import IcUserNameLine from './IcUserNameLine';
+import IcUserNumberLine from './IcUserNumberLine';
+import IcUserTagLine from './IcUserTagLine';
 import IcVideo from './IcVideo';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
@@ -316,6 +325,7 @@ const icons = {
   asc: IcAsc,
   attachment: IcAttachment,
   'attendance-medium': IcAttendanceMedium,
+  'autority-line': IcAutorityLine,
   'back-medium': IcBackMedium,
   'badge-admin-large': IcBadgeAdminLarge,
   'badge-leader-appoval-large': IcBadgeLeaderAppovalLarge,
@@ -331,6 +341,7 @@ const icons = {
   'bookmark-medium': IcBookmarkMedium,
   'by-employee-medium': IcByEmployeeMedium,
   'by-place-of-work-medium': IcByPlaceOfWorkMedium,
+  'calendar-line': IcCalendarLine,
   camera: IcCamera,
   category: IcCategory,
   channel: IcChannel,
@@ -428,6 +439,7 @@ const icons = {
   'gradient-wifi': IcGradientWifi,
   'gradient-workplace': IcGradientWorkplace,
   graph: IcGraph,
+  'group-line': IcGroupLine,
   'group-medium': IcGroupMedium,
   'group-solid-medium': IcGroupSolidMedium,
   'help-center-medium': IcHelpCenterMedium,
@@ -497,6 +509,7 @@ const icons = {
   mention: IcMention,
   'minus-medium': IcMinusMedium,
   minus: IcMinus,
+  'mobile-line': IcMobileLine,
   more: IcMore,
   mother: IcMother,
   'move-2': IcMove2,
@@ -528,6 +541,7 @@ const icons = {
   push: IcPush,
   qrcode: IcQrcode,
   'ratio-medium': IcRatioMedium,
+  'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
@@ -558,6 +572,7 @@ const icons = {
   'sorting-ztoa': IcSortingZtoa,
   'staggered-working': IcStaggeredWorking,
   stamp: IcStamp,
+  'star-line': IcStarLine,
   star: IcStar,
   subtract: IcSubtract,
   'summery-view': IcSummeryView,
@@ -566,6 +581,7 @@ const icons = {
   tag: IcTag,
   'target-medium': IcTargetMedium,
   text: IcText,
+  'time-line-line': IcTimeLineLine,
   'todo-medium': IcTodoMedium,
   'toggle-medium': IcToggleMedium,
   trash: IcTrash,
@@ -573,6 +589,8 @@ const icons = {
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
   'user-name-line': IcUserNameLine,
+  'user-number-line': IcUserNumberLine,
+  'user-tag-line': IcUserTagLine,
   video: IcVideo,
   'view-off': IcViewOff,
   'view-on': IcViewOn,
@@ -614,6 +632,7 @@ export {
   IcAsc as AscIcon,
   IcAttachment as AttachmentIcon,
   IcAttendanceMedium as AttendanceMediumIcon,
+  IcAutorityLine as AutorityLineIcon,
   IcBackMedium as BackMediumIcon,
   IcBadgeAdminLarge as BadgeAdminLargeIcon,
   IcBadgeLeaderAppovalLarge as BadgeLeaderAppovalLargeIcon,
@@ -629,6 +648,7 @@ export {
   IcBookmarkMedium as BookmarkMediumIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
   IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
+  IcCalendarLine as CalendarLineIcon,
   IcCamera as CameraIcon,
   IcCategory as CategoryIcon,
   IcChannel as ChannelIcon,
@@ -726,6 +746,7 @@ export {
   IcGradientWifi as GradientWifiIcon,
   IcGradientWorkplace as GradientWorkplaceIcon,
   IcGraph as GraphIcon,
+  IcGroupLine as GroupLineIcon,
   IcGroupMedium as GroupMediumIcon,
   IcGroupSolidMedium as GroupSolidMediumIcon,
   IcHelpCenterMedium as HelpCenterMediumIcon,
@@ -795,6 +816,7 @@ export {
   IcMention as MentionIcon,
   IcMinusMedium as MinusMediumIcon,
   IcMinus as MinusIcon,
+  IcMobileLine as MobileLineIcon,
   IcMore as MoreIcon,
   IcMother as MotherIcon,
   IcMove2 as Move2Icon,
@@ -826,6 +848,7 @@ export {
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcRatioMedium as RatioMediumIcon,
+  IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
   IcRefresh as RefreshIcon,
   IcRepeat as RepeatIcon,
@@ -856,6 +879,7 @@ export {
   IcSortingZtoa as SortingZtoaIcon,
   IcStaggeredWorking as StaggeredWorkingIcon,
   IcStamp as StampIcon,
+  IcStarLine as StarLineIcon,
   IcStar as StarIcon,
   IcSubtract as SubtractIcon,
   IcSummeryView as SummeryViewIcon,
@@ -864,6 +888,7 @@ export {
   IcTag as TagIcon,
   IcTargetMedium as TargetMediumIcon,
   IcText as TextIcon,
+  IcTimeLineLine as TimeLineLineIcon,
   IcTodoMedium as TodoMediumIcon,
   IcToggleMedium as ToggleMediumIcon,
   IcTrash as TrashIcon,
@@ -871,6 +896,8 @@ export {
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
   IcUserNameLine as UserNameLineIcon,
+  IcUserNumberLine as UserNumberLineIcon,
+  IcUserTagLine as UserTagLineIcon,
   IcVideo as VideoIcon,
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
