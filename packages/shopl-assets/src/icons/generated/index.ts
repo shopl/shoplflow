@@ -37,6 +37,7 @@ import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
 import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
+import IcCalendarLine from './IcCalendarLine';
 import IcCamera from './IcCamera';
 import IcCategory from './IcCategory';
 import IcChannel from './IcChannel';
@@ -204,6 +205,7 @@ import IcMemo from './IcMemo';
 import IcMention from './IcMention';
 import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
+import IcMobileLine from './IcMobileLine';
 import IcMore from './IcMore';
 import IcMother from './IcMother';
 import IcMove2 from './IcMove2';
@@ -266,6 +268,7 @@ import IcSortingLate from './IcSortingLate';
 import IcSortingZtoa from './IcSortingZtoa';
 import IcStaggeredWorking from './IcStaggeredWorking';
 import IcStamp from './IcStamp';
+import IcStarLine from './IcStarLine';
 import IcStar from './IcStar';
 import IcSubtract from './IcSubtract';
 import IcSummeryView from './IcSummeryView';
@@ -282,6 +285,8 @@ import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
 import IcUserNameLine from './IcUserNameLine';
+import IcUserNumberLine from './IcUserNumberLine';
+import IcUserTagLine from './IcUserTagLine';
 import IcVideo from './IcVideo';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
@@ -336,6 +341,7 @@ const icons = {
   'bookmark-medium': IcBookmarkMedium,
   'by-employee-medium': IcByEmployeeMedium,
   'by-place-of-work-medium': IcByPlaceOfWorkMedium,
+  'calendar-line': IcCalendarLine,
   camera: IcCamera,
   category: IcCategory,
   channel: IcChannel,
@@ -503,6 +509,7 @@ const icons = {
   mention: IcMention,
   'minus-medium': IcMinusMedium,
   minus: IcMinus,
+  'mobile-line': IcMobileLine,
   more: IcMore,
   mother: IcMother,
   'move-2': IcMove2,
@@ -565,6 +572,7 @@ const icons = {
   'sorting-ztoa': IcSortingZtoa,
   'staggered-working': IcStaggeredWorking,
   stamp: IcStamp,
+  'star-line': IcStarLine,
   star: IcStar,
   subtract: IcSubtract,
   'summery-view': IcSummeryView,
@@ -581,6 +589,8 @@ const icons = {
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
   'user-name-line': IcUserNameLine,
+  'user-number-line': IcUserNumberLine,
+  'user-tag-line': IcUserTagLine,
   video: IcVideo,
   'view-off': IcViewOff,
   'view-on': IcViewOn,
@@ -638,6 +648,7 @@ export {
   IcBookmarkMedium as BookmarkMediumIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
   IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
+  IcCalendarLine as CalendarLineIcon,
   IcCamera as CameraIcon,
   IcCategory as CategoryIcon,
   IcChannel as ChannelIcon,
@@ -805,6 +816,7 @@ export {
   IcMention as MentionIcon,
   IcMinusMedium as MinusMediumIcon,
   IcMinus as MinusIcon,
+  IcMobileLine as MobileLineIcon,
   IcMore as MoreIcon,
   IcMother as MotherIcon,
   IcMove2 as Move2Icon,
@@ -867,6 +879,7 @@ export {
   IcSortingZtoa as SortingZtoaIcon,
   IcStaggeredWorking as StaggeredWorkingIcon,
   IcStamp as StampIcon,
+  IcStarLine as StarLineIcon,
   IcStar as StarIcon,
   IcSubtract as SubtractIcon,
   IcSummeryView as SummeryViewIcon,
@@ -883,6 +896,8 @@ export {
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
   IcUserNameLine as UserNameLineIcon,
+  IcUserNumberLine as UserNumberLineIcon,
+  IcUserTagLine as UserTagLineIcon,
   IcVideo as VideoIcon,
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
