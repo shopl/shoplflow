@@ -21,6 +21,7 @@ import IcArticleMedium from './IcArticleMedium';
 import IcAsc from './IcAsc';
 import IcAttachment from './IcAttachment';
 import IcAttendanceMedium from './IcAttendanceMedium';
+import IcAutorityLine from './IcAutorityLine';
 import IcBackMedium from './IcBackMedium';
 import IcBadgeAdminLarge from './IcBadgeAdminLarge';
 import IcBadgeLeaderAppovalLarge from './IcBadgeLeaderAppovalLarge';
@@ -133,6 +134,7 @@ import IcGradientTodo from './IcGradientTodo';
 import IcGradientWifi from './IcGradientWifi';
 import IcGradientWorkplace from './IcGradientWorkplace';
 import IcGraph from './IcGraph';
+import IcGroupLine from './IcGroupLine';
 import IcGroupMedium from './IcGroupMedium';
 import IcGroupSolidMedium from './IcGroupSolidMedium';
 import IcHelpCenterMedium from './IcHelpCenterMedium';
@@ -233,6 +235,7 @@ import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcRatioMedium from './IcRatioMedium';
+import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
 import IcRefresh from './IcRefresh';
 import IcRepeat from './IcRepeat';
@@ -271,6 +274,7 @@ import IcTack from './IcTack';
 import IcTag from './IcTag';
 import IcTargetMedium from './IcTargetMedium';
 import IcText from './IcText';
+import IcTimeLineLine from './IcTimeLineLine';
 import IcTodoMedium from './IcTodoMedium';
 import IcToggleMedium from './IcToggleMedium';
 import IcTrash from './IcTrash';
@@ -316,6 +320,7 @@ const icons = {
   asc: IcAsc,
   attachment: IcAttachment,
   'attendance-medium': IcAttendanceMedium,
+  'autority-line': IcAutorityLine,
   'back-medium': IcBackMedium,
   'badge-admin-large': IcBadgeAdminLarge,
   'badge-leader-appoval-large': IcBadgeLeaderAppovalLarge,
@@ -428,6 +433,7 @@ const icons = {
   'gradient-wifi': IcGradientWifi,
   'gradient-workplace': IcGradientWorkplace,
   graph: IcGraph,
+  'group-line': IcGroupLine,
   'group-medium': IcGroupMedium,
   'group-solid-medium': IcGroupSolidMedium,
   'help-center-medium': IcHelpCenterMedium,
@@ -528,6 +534,7 @@ const icons = {
   push: IcPush,
   qrcode: IcQrcode,
   'ratio-medium': IcRatioMedium,
+  'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
@@ -566,6 +573,7 @@ const icons = {
   tag: IcTag,
   'target-medium': IcTargetMedium,
   text: IcText,
+  'time-line-line': IcTimeLineLine,
   'todo-medium': IcTodoMedium,
   'toggle-medium': IcToggleMedium,
   trash: IcTrash,
@@ -614,6 +622,7 @@ export {
   IcAsc as AscIcon,
   IcAttachment as AttachmentIcon,
   IcAttendanceMedium as AttendanceMediumIcon,
+  IcAutorityLine as AutorityLineIcon,
   IcBackMedium as BackMediumIcon,
   IcBadgeAdminLarge as BadgeAdminLargeIcon,
   IcBadgeLeaderAppovalLarge as BadgeLeaderAppovalLargeIcon,
@@ -726,6 +735,7 @@ export {
   IcGradientWifi as GradientWifiIcon,
   IcGradientWorkplace as GradientWorkplaceIcon,
   IcGraph as GraphIcon,
+  IcGroupLine as GroupLineIcon,
   IcGroupMedium as GroupMediumIcon,
   IcGroupSolidMedium as GroupSolidMediumIcon,
   IcHelpCenterMedium as HelpCenterMediumIcon,
@@ -826,6 +836,7 @@ export {
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcRatioMedium as RatioMediumIcon,
+  IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
   IcRefresh as RefreshIcon,
   IcRepeat as RepeatIcon,
@@ -864,6 +875,7 @@ export {
   IcTag as TagIcon,
   IcTargetMedium as TargetMediumIcon,
   IcText as TextIcon,
+  IcTimeLineLine as TimeLineLineIcon,
   IcTodoMedium as TodoMediumIcon,
   IcToggleMedium as ToggleMediumIcon,
   IcTrash as TrashIcon,
