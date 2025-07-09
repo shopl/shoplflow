@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.15
+
+### Patch Changes
+
+- [#575](https://github.com/shopl/shoplflow/pull/575) [`cde570ad974fde56e68f51d1b47fabfce7630c7e`](https://github.com/shopl/shoplflow/commit/cde570ad974fde56e68f51d1b47fabfce7630c7e) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
 ## 0.12.14
 
 ### Patch Changes
