@@ -20,6 +20,7 @@ const SelectInputButton = ({
   label,
   width = '100%',
   rightSource,
+  sizeVar = 'M',
   ...rest
 }: SelectInputButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -61,7 +62,7 @@ const SelectInputButton = ({
       isFocused={isSelected}
       disabled={disabled}
       width={width}
-      minHeight={'40px'}
+      height={sizeVar === 'M' ? '40px' : '32px'}
       {...rest}
       data-shoplflow={'SelectInputButton'}
     >
