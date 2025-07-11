@@ -66,7 +66,7 @@ const SelectInputButton = ({
       {...rest}
       data-shoplflow={'SelectInputButton'}
     >
-      <StyledSelectInputButton>
+      <StyledSelectInputButton sizeVar={sizeVar}>
         {value && value.length > 0 && label ? (
           <Text typography={'body1_400'} lineClamp={1} color={getTextColor(disabled)}>
             {value[0][label] as string}

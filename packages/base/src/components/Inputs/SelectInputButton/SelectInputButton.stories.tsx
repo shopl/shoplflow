@@ -9,8 +9,7 @@ import List from '../../List/List';
 import { Checkbox } from '../../ControlButtons';
 import { Text } from '../../Text';
 import { Icon } from '../../Icon';
-import { IconButton } from '../../Buttons';
-import { RightArrowIcon } from '@shoplflow/shopl-assets';
+import { RightArrowXsmallIcon } from '@shoplflow/shopl-assets';
 import { ComponentStage } from '../../../styles/Box';
 
 const meta: Meta<typeof SelectInputButton> = {
@@ -87,13 +86,10 @@ export const Playground: StoryFn<SelectInputButtonProps> = (args) => {
           {...args}
           value={selectedItem}
           label={'title'}
-          rightSource={
-            <IconButton styleVar={'GHOST'} sizeVar={'S'}>
-              <Icon iconSource={RightArrowIcon} color={'neutral350'} />
-            </IconButton>
-          }
+          rightSource={<Icon sizeVar={'XS'} iconSource={RightArrowXsmallIcon} color={'neutral350'} />}
         />
       </ComponentStage>
+
       <Stack as={'ul'} width={'100%'}>
         {newArray.map((item, index) => {
           const isSelected = selectedItem.some((selected) => selected.title === item.title);
