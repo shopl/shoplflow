@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.41.0
+
+### Minor Changes
+
+- [#578](https://github.com/shopl/shoplflow/pull/578) [`e469df75963f369e4c8abe192168205969e6191a`](https://github.com/shopl/shoplflow/commit/e469df75963f369e4c8abe192168205969e6191a) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - SelectInputButton의 sizeVar에 따라 padding이 변경되도록 했어요
+
+- [#578](https://github.com/shopl/shoplflow/pull/578) [`6ea468b03927253d49cb7c9af0ed9fc0188feb10`](https://github.com/shopl/shoplflow/commit/6ea468b03927253d49cb7c9af0ed9fc0188feb10) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - SelectInputButton에 sizeVar 속성을 추가했어요
+
 ## 0.40.7
 
 ### Patch Changes
