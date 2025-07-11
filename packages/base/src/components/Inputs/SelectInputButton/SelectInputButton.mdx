@@ -5,14 +5,19 @@ import * as SelectInputButtonStories from './SelectInputButton.stories';
 <Meta of={SelectInputButtonStories} />
 
 # SelectInputButton
+
 SelectInputButton은 InputButton에 Multiple Select 기능을 추가한 컴포넌트입니다.
 
 > - 선택한 최초 값만 표시되며 최초 값 외의 값은 +n으로 표시됩니다.
+> - 텍스트를 기준으로 오른쪽에 위치할 요소를 자유롭게 설정할 수 있습니다.
+> - S와 M 두 가지 사이즈를 지원합니다.
 
 ## Overview
+
 <Canvas of={SelectInputButtonStories.Playground} />
 
 ## Usage
+
 ```tsx
 const Example: StoryFn<SelectInputButtonProps> = (args) => {
   const newArray: Array<{ title: string; subTitle: string; other: string }> = new Array(10)
@@ -31,12 +36,12 @@ const Example: StoryFn<SelectInputButtonProps> = (args) => {
     <Stack width={'400px'}>
       <SelectInputButton
         {...args}
+        sizeVar="M"
         value={selectedItem}
         label={'title'}
+        placeholder="항목을 선택하세요"
         rightSource={
-          <IconButton styleVar={'GHOST'} sizeVar={'S'}>
-            <Icon iconSource={RightArrowIcon} color={'neutral350'} />
-          </IconButton>
+            <Icon sizeVar='XS' iconSource={RightArrowXsmallIcon} color={'neutral350'} />
         }
       />
       <Stack as={'ul'} width={'100%'}>
@@ -64,6 +69,7 @@ const Example: StoryFn<SelectInputButtonProps> = (args) => {
 ```
 
 ## Props
+
 <Controls of={SelectInputButtonStories.Playground} />
 
 
