@@ -14,6 +14,7 @@ import IcAlbumXlarge from './IcAlbumXlarge';
 import IcAlertColored from './IcAlertColored';
 import IcAlertLine from './IcAlertLine';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
+import IcAlertTriangle from './IcAlertTriangle';
 import IcAlert from './IcAlert';
 import IcAnnualMedium from './IcAnnualMedium';
 import IcApprovalMedium from './IcApprovalMedium';
@@ -320,6 +321,7 @@ const icons = {
   'alert-colored': IcAlertColored,
   'alert-line': IcAlertLine,
   'alert-popup-xlarge': IcAlertPopupXlarge,
+  'alert-triangle': IcAlertTriangle,
   alert: IcAlert,
   'annual-medium': IcAnnualMedium,
   'approval-medium': IcApprovalMedium,
@@ -629,6 +631,7 @@ export {
   IcAlertColored as AlertColoredIcon,
   IcAlertLine as AlertLineIcon,
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
+  IcAlertTriangle as AlertTriangleIcon,
   IcAlert as AlertIcon,
   IcAnnualMedium as AnnualMediumIcon,
   IcApprovalMedium as ApprovalMediumIcon,
