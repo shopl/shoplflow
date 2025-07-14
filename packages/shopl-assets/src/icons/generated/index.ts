@@ -14,6 +14,7 @@ import IcAlbumXlarge from './IcAlbumXlarge';
 import IcAlertColored from './IcAlertColored';
 import IcAlertLine from './IcAlertLine';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
+import IcAlertTriangle from './IcAlertTriangle';
 import IcAlert from './IcAlert';
 import IcAnnualMedium from './IcAnnualMedium';
 import IcApprovalMedium from './IcApprovalMedium';
@@ -57,6 +58,7 @@ import IcClose from './IcClose';
 import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
+import IcCompanyXlarge from './IcCompanyXlarge';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
@@ -198,6 +200,7 @@ import IcListEdit from './IcListEdit';
 import IcListMove from './IcListMove';
 import IcListview from './IcListview';
 import IcLocation from './IcLocation';
+import IcLockerXlarge from './IcLockerXlarge';
 import IcMap from './IcMap';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemberSmall from './IcMemberSmall';
@@ -318,6 +321,7 @@ const icons = {
   'alert-colored': IcAlertColored,
   'alert-line': IcAlertLine,
   'alert-popup-xlarge': IcAlertPopupXlarge,
+  'alert-triangle': IcAlertTriangle,
   alert: IcAlert,
   'annual-medium': IcAnnualMedium,
   'approval-medium': IcApprovalMedium,
@@ -361,6 +365,7 @@ const icons = {
   'closing-medium': IcClosingMedium,
   'cloud-medium': IcCloudMedium,
   comment: IcComment,
+  'company-xlarge': IcCompanyXlarge,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
   'contrast-plus': IcContrastPlus,
   copy: IcCopy,
@@ -502,6 +507,7 @@ const icons = {
   'list-move': IcListMove,
   listview: IcListview,
   location: IcLocation,
+  'locker-xlarge': IcLockerXlarge,
   map: IcMap,
   'member-medium': IcMemberMedium,
   'member-small': IcMemberSmall,
@@ -625,6 +631,7 @@ export {
   IcAlertColored as AlertColoredIcon,
   IcAlertLine as AlertLineIcon,
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
+  IcAlertTriangle as AlertTriangleIcon,
   IcAlert as AlertIcon,
   IcAnnualMedium as AnnualMediumIcon,
   IcApprovalMedium as ApprovalMediumIcon,
@@ -668,6 +675,7 @@ export {
   IcClosingMedium as ClosingMediumIcon,
   IcCloudMedium as CloudMediumIcon,
   IcComment as CommentIcon,
+  IcCompanyXlarge as CompanyXlargeIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
   IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
@@ -809,6 +817,7 @@ export {
   IcListMove as ListMoveIcon,
   IcListview as ListviewIcon,
   IcLocation as LocationIcon,
+  IcLockerXlarge as LockerXlargeIcon,
   IcMap as MapIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemberSmall as MemberSmallIcon,
