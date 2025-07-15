@@ -41,6 +41,7 @@ import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
 import IcCalendarLine from './IcCalendarLine';
 import IcCamera from './IcCamera';
 import IcCategory from './IcCategory';
+import IcCautionXlarge from './IcCautionXlarge';
 import IcChannel from './IcChannel';
 import IcChanneltalkMedium from './IcChanneltalkMedium';
 import IcChatActivityMedium from './IcChatActivityMedium';
@@ -348,6 +349,7 @@ const icons = {
   'calendar-line': IcCalendarLine,
   camera: IcCamera,
   category: IcCategory,
+  'caution-xlarge': IcCautionXlarge,
   channel: IcChannel,
   'channeltalk-medium': IcChanneltalkMedium,
   'chat-activity-medium': IcChatActivityMedium,
@@ -658,6 +660,7 @@ export {
   IcCalendarLine as CalendarLineIcon,
   IcCamera as CameraIcon,
   IcCategory as CategoryIcon,
+  IcCautionXlarge as CautionXlargeIcon,
   IcChannel as ChannelIcon,
   IcChanneltalkMedium as ChanneltalkMediumIcon,
   IcChatActivityMedium as ChatActivityMediumIcon,
