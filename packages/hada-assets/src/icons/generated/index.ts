@@ -83,6 +83,7 @@ import IcUpArrow from './IcUpArrow';
 import IcUser from './IcUser';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
+import IcVocMedium from './IcVocMedium';
 import IcVoc from './IcVoc';
 import IcWorker from './IcWorker';
 import IcYesno from './IcYesno';
@@ -173,6 +174,7 @@ const icons = {
   user: IcUser,
   'view-off': IcViewOff,
   'view-on': IcViewOn,
+  'voc-medium': IcVocMedium,
   voc: IcVoc,
   worker: IcWorker,
   yesno: IcYesno,
@@ -266,6 +268,7 @@ export {
   IcUser as UserIcon,
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
+  IcVocMedium as VocMediumIcon,
   IcVoc as VocIcon,
   IcWorker as WorkerIcon,
   IcYesno as YesnoIcon,
