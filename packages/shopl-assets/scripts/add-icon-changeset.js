@@ -15,7 +15,7 @@ if (!fs.existsSync(changesetDir)) {
 // Git diff를 통해 변경된 패키지 확인
 function getChangedPackages() {
   try {
-    const diff = execSync('git diff --name-only --cached', {
+    const diff = execSync('git diff --name-only origin/main...HEAD', {
       cwd: rootDir,
       encoding: 'utf8',
     });
