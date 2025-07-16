@@ -61,6 +61,7 @@ import IcCloudMedium from './IcCloudMedium';
 import IcComment from './IcComment';
 import IcCompanyXlarge from './IcCompanyXlarge';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
+import IcContrastMinus from './IcContrastMinus';
 import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
 import IcCustomDropdown from './IcCustomDropdown';
@@ -369,6 +370,7 @@ const icons = {
   comment: IcComment,
   'company-xlarge': IcCompanyXlarge,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
+  'contrast-minus': IcContrastMinus,
   'contrast-plus': IcContrastPlus,
   copy: IcCopy,
   'custom-dropdown': IcCustomDropdown,
@@ -680,6 +682,7 @@ export {
   IcComment as CommentIcon,
   IcCompanyXlarge as CompanyXlargeIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
+  IcContrastMinus as ContrastMinusIcon,
   IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
   IcCustomDropdown as CustomDropdownIcon,
