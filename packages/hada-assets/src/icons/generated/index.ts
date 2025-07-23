@@ -4,6 +4,7 @@ import IcAdmin from './IcAdmin';
 import IcAlbum from './IcAlbum';
 import IcAlert from './IcAlert';
 import IcBell from './IcBell';
+import IcBuilding from './IcBuilding';
 import IcCalendar from './IcCalendar';
 import IcCamera from './IcCamera';
 import IcCancel from './IcCancel';
@@ -12,6 +13,7 @@ import IcCheckDefault from './IcCheckDefault';
 import IcCheck from './IcCheck';
 import IcCheckbox from './IcCheckbox';
 import IcChecklist from './IcChecklist';
+import IcCleaning from './IcCleaning';
 import IcClose from './IcClose';
 import IcCompleted from './IcCompleted';
 import IcCopy from './IcCopy';
@@ -28,6 +30,7 @@ import IcError from './IcError';
 import IcExcel from './IcExcel';
 import IcFilter from './IcFilter';
 import IcFinger from './IcFinger';
+import IcFireFighting from './IcFireFighting';
 import IcGradeBadge from './IcGradeBadge';
 import IcHelpCenter from './IcHelpCenter';
 import IcHelp from './IcHelp';
@@ -56,6 +59,7 @@ import IcOverview from './IcOverview';
 import IcPassword from './IcPassword';
 import IcPhone from './IcPhone';
 import IcPlace from './IcPlace';
+import IcPromotion from './IcPromotion';
 import IcQrcode from './IcQrcode';
 import IcRadio from './IcRadio';
 import IcReadChecklist from './IcReadChecklist';
@@ -67,6 +71,7 @@ import IcRightArrow from './IcRightArrow';
 import IcSearch from './IcSearch';
 import IcSection from './IcSection';
 import IcSettingFill from './IcSettingFill';
+import IcSettingLarge from './IcSettingLarge';
 import IcSetting from './IcSetting';
 import IcSheet from './IcSheet';
 import IcSlider from './IcSlider';
@@ -95,6 +100,7 @@ const icons = {
   album: IcAlbum,
   alert: IcAlert,
   bell: IcBell,
+  building: IcBuilding,
   calendar: IcCalendar,
   camera: IcCamera,
   cancel: IcCancel,
@@ -103,6 +109,7 @@ const icons = {
   check: IcCheck,
   checkbox: IcCheckbox,
   checklist: IcChecklist,
+  cleaning: IcCleaning,
   close: IcClose,
   completed: IcCompleted,
   copy: IcCopy,
@@ -119,6 +126,7 @@ const icons = {
   excel: IcExcel,
   filter: IcFilter,
   finger: IcFinger,
+  'fire-fighting': IcFireFighting,
   'grade-badge': IcGradeBadge,
   'help-center': IcHelpCenter,
   help: IcHelp,
@@ -147,6 +155,7 @@ const icons = {
   password: IcPassword,
   phone: IcPhone,
   place: IcPlace,
+  promotion: IcPromotion,
   qrcode: IcQrcode,
   radio: IcRadio,
   'read-checklist': IcReadChecklist,
@@ -158,6 +167,7 @@ const icons = {
   search: IcSearch,
   section: IcSection,
   'setting-fill': IcSettingFill,
+  'setting-large': IcSettingLarge,
   setting: IcSetting,
   sheet: IcSheet,
   slider: IcSlider,
@@ -189,6 +199,7 @@ export {
   IcAlbum as AlbumIcon,
   IcAlert as AlertIcon,
   IcBell as BellIcon,
+  IcBuilding as BuildingIcon,
   IcCalendar as CalendarIcon,
   IcCamera as CameraIcon,
   IcCancel as CancelIcon,
@@ -197,6 +208,7 @@ export {
   IcCheck as CheckIcon,
   IcCheckbox as CheckboxIcon,
   IcChecklist as ChecklistIcon,
+  IcCleaning as CleaningIcon,
   IcClose as CloseIcon,
   IcCompleted as CompletedIcon,
   IcCopy as CopyIcon,
@@ -213,6 +225,7 @@ export {
   IcExcel as ExcelIcon,
   IcFilter as FilterIcon,
   IcFinger as FingerIcon,
+  IcFireFighting as FireFightingIcon,
   IcGradeBadge as GradeBadgeIcon,
   IcHelpCenter as HelpCenterIcon,
   IcHelp as HelpIcon,
@@ -241,6 +254,7 @@ export {
   IcPassword as PasswordIcon,
   IcPhone as PhoneIcon,
   IcPlace as PlaceIcon,
+  IcPromotion as PromotionIcon,
   IcQrcode as QrcodeIcon,
   IcRadio as RadioIcon,
   IcReadChecklist as ReadChecklistIcon,
@@ -252,6 +266,7 @@ export {
   IcSearch as SearchIcon,
   IcSection as SectionIcon,
   IcSettingFill as SettingFillIcon,
+  IcSettingLarge as SettingLargeIcon,
   IcSetting as SettingIcon,
   IcSheet as SheetIcon,
   IcSlider as SliderIcon,
