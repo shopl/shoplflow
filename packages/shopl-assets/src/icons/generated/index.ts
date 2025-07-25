@@ -222,6 +222,8 @@ import IcNormal from './IcNormal';
 import IcNoticeMedium from './IcNoticeMedium';
 import IcNoticeSolidMedium from './IcNoticeSolidMedium';
 import IcNotice from './IcNotice';
+import IcOff from './IcOff';
+import IcOn from './IcOn';
 import IcOnboardingAttendance from './IcOnboardingAttendance';
 import IcOnboardingBoth from './IcOnboardingBoth';
 import IcOnboardingSetting from './IcOnboardingSetting';
@@ -530,6 +532,8 @@ const icons = {
   'notice-medium': IcNoticeMedium,
   'notice-solid-medium': IcNoticeSolidMedium,
   notice: IcNotice,
+  off: IcOff,
+  on: IcOn,
   'onboarding-attendance': IcOnboardingAttendance,
   'onboarding-both': IcOnboardingBoth,
   'onboarding-setting': IcOnboardingSetting,
@@ -841,6 +845,8 @@ export {
   IcNoticeMedium as NoticeMediumIcon,
   IcNoticeSolidMedium as NoticeSolidMediumIcon,
   IcNotice as NoticeIcon,
+  IcOff as OffIcon,
+  IcOn as OnIcon,
   IcOnboardingAttendance as OnboardingAttendanceIcon,
   IcOnboardingBoth as OnboardingBothIcon,
   IcOnboardingSetting as OnboardingSettingIcon,
