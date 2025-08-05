@@ -205,6 +205,7 @@ import IcLockerXlarge from './IcLockerXlarge';
 import IcMap from './IcMap';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemberSmall from './IcMemberSmall';
+import IcMemoLine from './IcMemoLine';
 import IcMemo from './IcMemo';
 import IcMention from './IcMention';
 import IcMinusMedium from './IcMinusMedium';
@@ -515,6 +516,7 @@ const icons = {
   map: IcMap,
   'member-medium': IcMemberMedium,
   'member-small': IcMemberSmall,
+  'memo-line': IcMemoLine,
   memo: IcMemo,
   mention: IcMention,
   'minus-medium': IcMinusMedium,
@@ -828,6 +830,7 @@ export {
   IcMap as MapIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemberSmall as MemberSmallIcon,
+  IcMemoLine as MemoLineIcon,
   IcMemo as MemoIcon,
   IcMention as MentionIcon,
   IcMinusMedium as MinusMediumIcon,
