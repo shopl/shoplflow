@@ -251,6 +251,7 @@ import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
+import IcQuit from './IcQuit';
 import IcRatioMedium from './IcRatioMedium';
 import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
@@ -275,6 +276,7 @@ import IcSearch from './IcSearch';
 import IcSend from './IcSend';
 import IcSettingMedium from './IcSettingMedium';
 import IcSetting from './IcSetting';
+import IcShoplLauncher from './IcShoplLauncher';
 import IcShortcutXsmall from './IcShortcutXsmall';
 import IcShowMedium from './IcShowMedium';
 import IcSign from './IcSign';
@@ -573,6 +575,7 @@ const icons = {
   proceeding: IcProceeding,
   push: IcPush,
   qrcode: IcQrcode,
+  quit: IcQuit,
   'ratio-medium': IcRatioMedium,
   'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
@@ -597,6 +600,7 @@ const icons = {
   send: IcSend,
   'setting-medium': IcSettingMedium,
   setting: IcSetting,
+  'shopl-launcher': IcShoplLauncher,
   'shortcut-xsmall': IcShortcutXsmall,
   'show-medium': IcShowMedium,
   sign: IcSign,
@@ -898,6 +902,7 @@ export {
   IcProceeding as ProceedingIcon,
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
+  IcQuit as QuitIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
@@ -922,6 +927,7 @@ export {
   IcSend as SendIcon,
   IcSettingMedium as SettingMediumIcon,
   IcSetting as SettingIcon,
+  IcShoplLauncher as ShoplLauncherIcon,
   IcShortcutXsmall as ShortcutXsmallIcon,
   IcShowMedium as ShowMediumIcon,
   IcSign as SignIcon,
