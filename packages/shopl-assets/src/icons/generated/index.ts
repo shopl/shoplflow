@@ -263,6 +263,7 @@ import IcSearch from './IcSearch';
 import IcSend from './IcSend';
 import IcSettingMedium from './IcSettingMedium';
 import IcSetting from './IcSetting';
+import IcShoplLauncher from './IcShoplLauncher';
 import IcShortcutXsmall from './IcShortcutXsmall';
 import IcShowMedium from './IcShowMedium';
 import IcSign from './IcSign';
@@ -573,6 +574,7 @@ const icons = {
   send: IcSend,
   'setting-medium': IcSettingMedium,
   setting: IcSetting,
+  'shopl-launcher': IcShoplLauncher,
   'shortcut-xsmall': IcShortcutXsmall,
   'show-medium': IcShowMedium,
   sign: IcSign,
@@ -886,6 +888,7 @@ export {
   IcSend as SendIcon,
   IcSettingMedium as SettingMediumIcon,
   IcSetting as SettingIcon,
+  IcShoplLauncher as ShoplLauncherIcon,
   IcShortcutXsmall as ShortcutXsmallIcon,
   IcShowMedium as ShowMediumIcon,
   IcSign as SignIcon,
