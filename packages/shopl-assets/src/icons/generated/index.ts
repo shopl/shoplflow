@@ -242,6 +242,7 @@ import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
+import IcQuit from './IcQuit';
 import IcRatioMedium from './IcRatioMedium';
 import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
@@ -552,6 +553,7 @@ const icons = {
   proceeding: IcProceeding,
   push: IcPush,
   qrcode: IcQrcode,
+  quit: IcQuit,
   'ratio-medium': IcRatioMedium,
   'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
@@ -865,6 +867,7 @@ export {
   IcProceeding as ProceedingIcon,
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
+  IcQuit as QuitIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
