@@ -28,6 +28,7 @@ export const TablePagination = ({
   setCurrentPage,
   notSizeOption = false,
   currentPage,
+  sizeVar = 'S',
 }: TablePaginationProps) => {
   const { table, headerRef, bodyRef, tableScrollRef, footerRef, hasFilterBar, hasToolbar } = useTable();
   const { pageSize, pageIndex } = table.getState().pagination;
@@ -132,6 +133,7 @@ export const TablePagination = ({
           totalCount={Math.ceil(total / Number(pageSize))}
           previousPage={() => handlePageChange(pageIndex - 1)}
           nextPage={() => handlePageChange(pageIndex + 1)}
+          sizeVar={sizeVar}
           style={{ paddingInline: '16px' }}
           gotoPage={handlePageChange}
           rightSource={

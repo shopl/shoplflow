@@ -58,4 +58,5 @@ export type TablePaginationProps = {
   notSizeOption?: boolean;
   resetDependencies?: any[];
   currentPage?: number;
+  sizeVar?: 'S' | 'XS';
 };

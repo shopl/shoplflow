@@ -28,6 +28,11 @@ export interface PaginationOptionProps extends LeftAndRightNodeProps {
    * 내부 로직을 사용하지 않고, 외부에서 totalCount를 받을 수 있습니다
    */
   totalCount?: number;
+  /**
+   * 페이지네이션 크기
+   * @default: 'S'
+   */
+  sizeVar?: 'S' | 'XS';
 
   previousPage: () => void;
   nextPage: () => void;
