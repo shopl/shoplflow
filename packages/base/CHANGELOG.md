@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.41.6
+
+### Patch Changes
+
+- [#592](https://github.com/shopl/shoplflow/pull/592) [`dc0006073d637701e9f18ff3bcbfc59371db41c7`](https://github.com/shopl/shoplflow/commit/dc0006073d637701e9f18ff3bcbfc59371db41c7) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Pagination sizeVar 추가
+
 ## 0.41.5
 
 ### Patch Changes
