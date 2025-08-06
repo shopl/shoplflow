@@ -27,6 +27,7 @@ import IcBackMedium from './IcBackMedium';
 import IcBadgeAdminLarge from './IcBadgeAdminLarge';
 import IcBadgeLeaderAppovalLarge from './IcBadgeLeaderAppovalLarge';
 import IcBadgeLeaderLarge from './IcBadgeLeaderLarge';
+import IcBankbook from './IcBankbook';
 import IcBarcode from './IcBarcode';
 import IcBellMedium from './IcBellMedium';
 import IcBmMedium from './IcBmMedium';
@@ -36,8 +37,10 @@ import IcBoardProfile from './IcBoardProfile';
 import IcBookMedium from './IcBookMedium';
 import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
+import IcBriefcase from './IcBriefcase';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
 import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
+import IcCake from './IcCake';
 import IcCalendarLine from './IcCalendarLine';
 import IcCamera from './IcCamera';
 import IcCategory from './IcCategory';
@@ -63,6 +66,7 @@ import IcCompanyXlarge from './IcCompanyXlarge';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
+import IcCrown from './IcCrown';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
 import IcDeadline from './IcDeadline';
@@ -88,6 +92,7 @@ import IcEditSolid from './IcEditSolid';
 import IcEditXsmall from './IcEditXsmall';
 import IcEdit from './IcEdit';
 import IcEmailXlarge from './IcEmailXlarge';
+import IcEmail from './IcEmail';
 import IcEmojiMedium from './IcEmojiMedium';
 import IcEmojiPlusMedium from './IcEmojiPlusMedium';
 import IcEmployeeXsmall from './IcEmployeeXsmall';
@@ -148,6 +153,8 @@ import IcHelp from './IcHelp';
 import IcHideMedium from './IcHideMedium';
 import IcHistory from './IcHistory';
 import IcHomeMedium from './IcHomeMedium';
+import IcHome from './IcHome';
+import IcIdCard from './IcIdCard';
 import IcImport from './IcImport';
 import IcInactiveBell from './IcInactiveBell';
 import IcInfo1 from './IcInfo1';
@@ -205,6 +212,7 @@ import IcLockerXlarge from './IcLockerXlarge';
 import IcMap from './IcMap';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemberSmall from './IcMemberSmall';
+import IcMemoLine from './IcMemoLine';
 import IcMemo from './IcMemo';
 import IcMention from './IcMention';
 import IcMinusMedium from './IcMinusMedium';
@@ -227,10 +235,12 @@ import IcOn from './IcOn';
 import IcOnboardingAttendance from './IcOnboardingAttendance';
 import IcOnboardingBoth from './IcOnboardingBoth';
 import IcOnboardingSetting from './IcOnboardingSetting';
+import IcOrganizationChart from './IcOrganizationChart';
 import IcOvertimeMedium from './IcOvertimeMedium';
 import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
 import IcPaste from './IcPaste';
 import IcPaymentMedium from './IcPaymentMedium';
+import IcPhoneLine from './IcPhoneLine';
 import IcPhoto from './IcPhoto';
 import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
@@ -242,6 +252,7 @@ import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
+import IcQuit from './IcQuit';
 import IcRatioMedium from './IcRatioMedium';
 import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
@@ -252,17 +263,21 @@ import IcReportMedium from './IcReportMedium';
 import IcRequired from './IcRequired';
 import IcResendPushMedium from './IcResendPushMedium';
 import IcResendPush from './IcResendPush';
+import IcResume from './IcResume';
 import IcReturn from './IcReturn';
 import IcRightArrowSolidXsmall from './IcRightArrowSolidXsmall';
 import IcRightArrowXsmall from './IcRightArrowXsmall';
 import IcRightArrow from './IcRightArrow';
+import IcSalary from './IcSalary';
 import IcSalesMedium from './IcSalesMedium';
 import IcScan from './IcScan';
 import IcScheduleMedium from './IcScheduleMedium';
+import IcSchool from './IcSchool';
 import IcSearch from './IcSearch';
 import IcSend from './IcSend';
 import IcSettingMedium from './IcSettingMedium';
 import IcSetting from './IcSetting';
+import IcShoplLauncher from './IcShoplLauncher';
 import IcShortcutXsmall from './IcShortcutXsmall';
 import IcShowMedium from './IcShowMedium';
 import IcSign from './IcSign';
@@ -337,6 +352,7 @@ const icons = {
   'badge-admin-large': IcBadgeAdminLarge,
   'badge-leader-appoval-large': IcBadgeLeaderAppovalLarge,
   'badge-leader-large': IcBadgeLeaderLarge,
+  bankbook: IcBankbook,
   barcode: IcBarcode,
   'bell-medium': IcBellMedium,
   'bm-medium': IcBmMedium,
@@ -346,8 +362,10 @@ const icons = {
   'book-medium': IcBookMedium,
   'bookmark-filled-medium': IcBookmarkFilledMedium,
   'bookmark-medium': IcBookmarkMedium,
+  briefcase: IcBriefcase,
   'by-employee-medium': IcByEmployeeMedium,
   'by-place-of-work-medium': IcByPlaceOfWorkMedium,
+  cake: IcCake,
   'calendar-line': IcCalendarLine,
   camera: IcCamera,
   category: IcCategory,
@@ -373,6 +391,7 @@ const icons = {
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
   'contrast-plus': IcContrastPlus,
   copy: IcCopy,
+  crown: IcCrown,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
   deadline: IcDeadline,
@@ -398,6 +417,7 @@ const icons = {
   'edit-xsmall': IcEditXsmall,
   edit: IcEdit,
   'email-xlarge': IcEmailXlarge,
+  email: IcEmail,
   'emoji-medium': IcEmojiMedium,
   'emoji-plus-medium': IcEmojiPlusMedium,
   'employee-xsmall': IcEmployeeXsmall,
@@ -458,6 +478,8 @@ const icons = {
   'hide-medium': IcHideMedium,
   history: IcHistory,
   'home-medium': IcHomeMedium,
+  home: IcHome,
+  'id-card': IcIdCard,
   import: IcImport,
   'inactive-bell': IcInactiveBell,
   'info-1': IcInfo1,
@@ -515,6 +537,7 @@ const icons = {
   map: IcMap,
   'member-medium': IcMemberMedium,
   'member-small': IcMemberSmall,
+  'memo-line': IcMemoLine,
   memo: IcMemo,
   mention: IcMention,
   'minus-medium': IcMinusMedium,
@@ -537,10 +560,12 @@ const icons = {
   'onboarding-attendance': IcOnboardingAttendance,
   'onboarding-both': IcOnboardingBoth,
   'onboarding-setting': IcOnboardingSetting,
+  'organization-chart': IcOrganizationChart,
   'overtime-medium': IcOvertimeMedium,
   'password-error-xlarge': IcPasswordErrorXlarge,
   paste: IcPaste,
   'payment-medium': IcPaymentMedium,
+  'phone-line': IcPhoneLine,
   photo: IcPhoto,
   'pin-xlarge': IcPinXlarge,
   pin: IcPin,
@@ -552,6 +577,7 @@ const icons = {
   proceeding: IcProceeding,
   push: IcPush,
   qrcode: IcQrcode,
+  quit: IcQuit,
   'ratio-medium': IcRatioMedium,
   'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
@@ -562,17 +588,21 @@ const icons = {
   required: IcRequired,
   'resend-push-medium': IcResendPushMedium,
   'resend-push': IcResendPush,
+  resume: IcResume,
   return: IcReturn,
   'right-arrow-solid-xsmall': IcRightArrowSolidXsmall,
   'right-arrow-xsmall': IcRightArrowXsmall,
   'right-arrow': IcRightArrow,
+  salary: IcSalary,
   'sales-medium': IcSalesMedium,
   scan: IcScan,
   'schedule-medium': IcScheduleMedium,
+  school: IcSchool,
   search: IcSearch,
   send: IcSend,
   'setting-medium': IcSettingMedium,
   setting: IcSetting,
+  'shopl-launcher': IcShoplLauncher,
   'shortcut-xsmall': IcShortcutXsmall,
   'show-medium': IcShowMedium,
   sign: IcSign,
@@ -650,6 +680,7 @@ export {
   IcBadgeAdminLarge as BadgeAdminLargeIcon,
   IcBadgeLeaderAppovalLarge as BadgeLeaderAppovalLargeIcon,
   IcBadgeLeaderLarge as BadgeLeaderLargeIcon,
+  IcBankbook as BankbookIcon,
   IcBarcode as BarcodeIcon,
   IcBellMedium as BellMediumIcon,
   IcBmMedium as BmMediumIcon,
@@ -659,8 +690,10 @@ export {
   IcBookMedium as BookMediumIcon,
   IcBookmarkFilledMedium as BookmarkFilledMediumIcon,
   IcBookmarkMedium as BookmarkMediumIcon,
+  IcBriefcase as BriefcaseIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
   IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
+  IcCake as CakeIcon,
   IcCalendarLine as CalendarLineIcon,
   IcCamera as CameraIcon,
   IcCategory as CategoryIcon,
@@ -686,6 +719,7 @@ export {
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
   IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
+  IcCrown as CrownIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
   IcDeadline as DeadlineIcon,
@@ -711,6 +745,7 @@ export {
   IcEditXsmall as EditXsmallIcon,
   IcEdit as EditIcon,
   IcEmailXlarge as EmailXlargeIcon,
+  IcEmail as EmailIcon,
   IcEmojiMedium as EmojiMediumIcon,
   IcEmojiPlusMedium as EmojiPlusMediumIcon,
   IcEmployeeXsmall as EmployeeXsmallIcon,
@@ -771,6 +806,8 @@ export {
   IcHideMedium as HideMediumIcon,
   IcHistory as HistoryIcon,
   IcHomeMedium as HomeMediumIcon,
+  IcHome as HomeIcon,
+  IcIdCard as IdCardIcon,
   IcImport as ImportIcon,
   IcInactiveBell as InactiveBellIcon,
   IcInfo1 as Info1Icon,
@@ -828,6 +865,7 @@ export {
   IcMap as MapIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemberSmall as MemberSmallIcon,
+  IcMemoLine as MemoLineIcon,
   IcMemo as MemoIcon,
   IcMention as MentionIcon,
   IcMinusMedium as MinusMediumIcon,
@@ -850,10 +888,12 @@ export {
   IcOnboardingAttendance as OnboardingAttendanceIcon,
   IcOnboardingBoth as OnboardingBothIcon,
   IcOnboardingSetting as OnboardingSettingIcon,
+  IcOrganizationChart as OrganizationChartIcon,
   IcOvertimeMedium as OvertimeMediumIcon,
   IcPasswordErrorXlarge as PasswordErrorXlargeIcon,
   IcPaste as PasteIcon,
   IcPaymentMedium as PaymentMediumIcon,
+  IcPhoneLine as PhoneLineIcon,
   IcPhoto as PhotoIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
@@ -865,6 +905,7 @@ export {
   IcProceeding as ProceedingIcon,
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
+  IcQuit as QuitIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
@@ -875,17 +916,21 @@ export {
   IcRequired as RequiredIcon,
   IcResendPushMedium as ResendPushMediumIcon,
   IcResendPush as ResendPushIcon,
+  IcResume as ResumeIcon,
   IcReturn as ReturnIcon,
   IcRightArrowSolidXsmall as RightArrowSolidXsmallIcon,
   IcRightArrowXsmall as RightArrowXsmallIcon,
   IcRightArrow as RightArrowIcon,
+  IcSalary as SalaryIcon,
   IcSalesMedium as SalesMediumIcon,
   IcScan as ScanIcon,
   IcScheduleMedium as ScheduleMediumIcon,
+  IcSchool as SchoolIcon,
   IcSearch as SearchIcon,
   IcSend as SendIcon,
   IcSettingMedium as SettingMediumIcon,
   IcSetting as SettingIcon,
+  IcShoplLauncher as ShoplLauncherIcon,
   IcShortcutXsmall as ShortcutXsmallIcon,
   IcShowMedium as ShowMediumIcon,
   IcSign as SignIcon,
