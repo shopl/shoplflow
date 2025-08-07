@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.41.8
+
+### Patch Changes
+
+- [#598](https://github.com/shopl/shoplflow/pull/598) [`421a2233732eb52dc6eb53f20920b91e47313256`](https://github.com/shopl/shoplflow/commit/421a2233732eb52dc6eb53f20920b91e47313256) Thanks [@velo-kim](https://github.com/velo-kim)! - update(Callout): props interface
+
 ## 0.41.7
 
 ### Patch Changes
