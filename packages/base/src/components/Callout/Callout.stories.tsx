@@ -14,7 +14,7 @@ export default {
 
 export const Playground: StoryFn<CalloutProps> = (args) => {
   return (
-    <Stack width={'400px'}>
+    <Stack width={'1000px'}>
       <ComponentStage>
         <Callout {...args}>
           <Callout.Icon iconSource={NoticeIcon} />
@@ -30,6 +30,7 @@ export const Playground: StoryFn<CalloutProps> = (args) => {
 
 Playground.args = {
   styleVar: 'INFORMATION',
+  fillWidth: true,
 };
 export const Alert: StoryFn<CalloutProps> = (args) => {
   return (
