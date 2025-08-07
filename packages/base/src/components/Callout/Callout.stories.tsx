@@ -20,7 +20,8 @@ export const Playground: StoryFn<CalloutProps> = (args) => {
           <Callout.Icon iconSource={NoticeIcon} />
           <Callout.Text>
             사용 안 함으로 설정할 경우 기존 등록된 게시물을 읽을 수도, 새로운 게시물을 포스팅할 수도 없게 됩니다. (단,
-            기존 등록된 게시물이 삭제되지는 않습니다.)
+            기존 등록된 게시물이 삭제되지는 않습니다.) 사용 안 함으로 설정할 경우 기존 등록된 게시물을 읽을 수도, 새로운
+            게시물을 포스팅할 수도 없게 됩니다.
           </Callout.Text>
         </Callout>
       </ComponentStage>
