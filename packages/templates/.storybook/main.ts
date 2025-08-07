@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-
 import { join, dirname } from "path";
 
 /**
@@ -17,6 +16,7 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-interactions"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-designs"),
+    getAbsolutePath("storybook-addon-code-editor"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),

@@ -1,5 +1,93 @@
 # @shoplflow/shopl-assets
 
+## 0.12.20
+
+### Patch Changes
+
+- [#591](https://github.com/shopl/shoplflow/pull/591) [`366c5b20bdfa0de3a032fae33ead3b0a0edfb323`](https://github.com/shopl/shoplflow/commit/366c5b20bdfa0de3a032fae33ead3b0a0edfb323) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.19
+
+### Patch Changes
+
+- [#589](https://github.com/shopl/shoplflow/pull/589) [`dbd5832487fd014820458c89a61daa07868fea2b`](https://github.com/shopl/shoplflow/commit/dbd5832487fd014820458c89a61daa07868fea2b) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.18
+
+### Patch Changes
+
+- [#585](https://github.com/shopl/shoplflow/pull/585) [`c228c8c23f7c5ca889be41f18177f0e5cd911964`](https://github.com/shopl/shoplflow/commit/c228c8c23f7c5ca889be41f18177f0e5cd911964) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#585](https://github.com/shopl/shoplflow/pull/585) [`05b0514435a129a7356b40d578f5f45af9ce3f86`](https://github.com/shopl/shoplflow/commit/05b0514435a129a7356b40d578f5f45af9ce3f86) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.17
+
+### Patch Changes
+
+- [#581](https://github.com/shopl/shoplflow/pull/581) [`0256b7b833bf5149133e493b9e8acb41d46d590e`](https://github.com/shopl/shoplflow/commit/0256b7b833bf5149133e493b9e8acb41d46d590e) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#581](https://github.com/shopl/shoplflow/pull/581) [`fbd4da852f60d14ffba00db591f2515dcb103151`](https://github.com/shopl/shoplflow/commit/fbd4da852f60d14ffba00db591f2515dcb103151) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#581](https://github.com/shopl/shoplflow/pull/581) [`51bcf855696fd14776ecde8eebc1ca5c98ba5ef5`](https://github.com/shopl/shoplflow/commit/51bcf855696fd14776ecde8eebc1ca5c98ba5ef5) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.16
+
+### Patch Changes
+
+- [#577](https://github.com/shopl/shoplflow/pull/577) [`7adc20c3550d8c0329824f22e62aaf825c213fb7`](https://github.com/shopl/shoplflow/commit/7adc20c3550d8c0329824f22e62aaf825c213fb7) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#577](https://github.com/shopl/shoplflow/pull/577) [`522735a83c355079b9bfd5008ddebbd66ff59c4f`](https://github.com/shopl/shoplflow/commit/522735a83c355079b9bfd5008ddebbd66ff59c4f) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#577](https://github.com/shopl/shoplflow/pull/577) [`f1bd991f0a6eb63dce8771a2ead4b87b23275c52`](https://github.com/shopl/shoplflow/commit/f1bd991f0a6eb63dce8771a2ead4b87b23275c52) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#577](https://github.com/shopl/shoplflow/pull/577) [`073ca79ec1da562ed95ce1b3c210e8a1e0f2b6c3`](https://github.com/shopl/shoplflow/commit/073ca79ec1da562ed95ce1b3c210e8a1e0f2b6c3) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#577](https://github.com/shopl/shoplflow/pull/577) [`4c4139a8f9ae576cebdb282fc981c2c1a11ddde3`](https://github.com/shopl/shoplflow/commit/4c4139a8f9ae576cebdb282fc981c2c1a11ddde3) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#577](https://github.com/shopl/shoplflow/pull/577) [`d892d954675e4e4bbd675dee0becb37dbe9fa0d9`](https://github.com/shopl/shoplflow/commit/d892d954675e4e4bbd675dee0becb37dbe9fa0d9) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.15
+
+### Patch Changes
+
+- [#575](https://github.com/shopl/shoplflow/pull/575) [`cde570ad974fde56e68f51d1b47fabfce7630c7e`](https://github.com/shopl/shoplflow/commit/cde570ad974fde56e68f51d1b47fabfce7630c7e) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.14
+
+### Patch Changes
+
+- [#573](https://github.com/shopl/shoplflow/pull/573) [`3e1a3b6069cceeed68e4e51b9a3d523a709d7318`](https://github.com/shopl/shoplflow/commit/3e1a3b6069cceeed68e4e51b9a3d523a709d7318) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#573](https://github.com/shopl/shoplflow/pull/573) [`181dbe10abfa0613e2708310e9a7a9d7bed7dde0`](https://github.com/shopl/shoplflow/commit/181dbe10abfa0613e2708310e9a7a9d7bed7dde0) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.13
+
+### Patch Changes
+
+- [#571](https://github.com/shopl/shoplflow/pull/571) [`f0a5c021dd7304de119387a1076daab3f879f6e8`](https://github.com/shopl/shoplflow/commit/f0a5c021dd7304de119387a1076daab3f879f6e8) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#571](https://github.com/shopl/shoplflow/pull/571) [`63a032b47b1d0cd6d34e2557e2f2cef214df5484`](https://github.com/shopl/shoplflow/commit/63a032b47b1d0cd6d34e2557e2f2cef214df5484) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#571](https://github.com/shopl/shoplflow/pull/571) [`1a19b496dd67e9561753c161e31663406224283f`](https://github.com/shopl/shoplflow/commit/1a19b496dd67e9561753c161e31663406224283f) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#571](https://github.com/shopl/shoplflow/pull/571) [`57313b12065a96b50fd838682846be5ea609a5f6`](https://github.com/shopl/shoplflow/commit/57313b12065a96b50fd838682846be5ea609a5f6) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.12
+
+### Patch Changes
+
+- [#569](https://github.com/shopl/shoplflow/pull/569) [`6056613e326a2d30c17b29b381aa9b859c3ac6d4`](https://github.com/shopl/shoplflow/commit/6056613e326a2d30c17b29b381aa9b859c3ac6d4) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#569](https://github.com/shopl/shoplflow/pull/569) [`9ceeeffc667e2594ef6f4bf750fc0ac1a4d32ba8`](https://github.com/shopl/shoplflow/commit/9ceeeffc667e2594ef6f4bf750fc0ac1a4d32ba8) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.12.11
+
+### Patch Changes
+
+- [#567](https://github.com/shopl/shoplflow/pull/567) [`53dc6e08d4cd400542fbb0e01490f5ae9407e021`](https://github.com/shopl/shoplflow/commit/53dc6e08d4cd400542fbb0e01490f5ae9407e021) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#565](https://github.com/shopl/shoplflow/pull/565) [`7af6f959647af1e33358258055fef0d751f13889`](https://github.com/shopl/shoplflow/commit/7af6f959647af1e33358258055fef0d751f13889) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
 ## 0.12.10
 
 ### Patch Changes

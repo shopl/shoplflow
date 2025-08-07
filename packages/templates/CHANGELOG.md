@@ -1,5 +1,122 @@
 # @shoplflow/templates
 
+## 0.1.12
+
+### Patch Changes
+
+- Updated dependencies [[`366c5b20bdfa0de3a032fae33ead3b0a0edfb323`](https://github.com/shopl/shoplflow/commit/366c5b20bdfa0de3a032fae33ead3b0a0edfb323)]:
+  - @shoplflow/shopl-assets@0.12.20
+  - @shoplflow/base@0.41.7
+
+## 0.1.11
+
+### Patch Changes
+
+- [#592](https://github.com/shopl/shoplflow/pull/592) [`dc0006073d637701e9f18ff3bcbfc59371db41c7`](https://github.com/shopl/shoplflow/commit/dc0006073d637701e9f18ff3bcbfc59371db41c7) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Pagination sizeVar 추가
+
+- Updated dependencies [[`dc0006073d637701e9f18ff3bcbfc59371db41c7`](https://github.com/shopl/shoplflow/commit/dc0006073d637701e9f18ff3bcbfc59371db41c7)]:
+  - @shoplflow/base@0.41.6
+
+## 0.1.10
+
+### Patch Changes
+
+- Updated dependencies [[`dbd5832487fd014820458c89a61daa07868fea2b`](https://github.com/shopl/shoplflow/commit/dbd5832487fd014820458c89a61daa07868fea2b)]:
+  - @shoplflow/shopl-assets@0.12.19
+  - @shoplflow/base@0.41.5
+
+## 0.1.9
+
+### Patch Changes
+
+- Updated dependencies [[`01f6ccd569a27d88bd08000028e6e54d380e4822`](https://github.com/shopl/shoplflow/commit/01f6ccd569a27d88bd08000028e6e54d380e4822)]:
+  - @shoplflow/hada-assets@0.1.6
+  - @shoplflow/base@0.41.4
+
+## 0.1.8
+
+### Patch Changes
+
+- Updated dependencies [[`c228c8c23f7c5ca889be41f18177f0e5cd911964`](https://github.com/shopl/shoplflow/commit/c228c8c23f7c5ca889be41f18177f0e5cd911964), [`05b0514435a129a7356b40d578f5f45af9ce3f86`](https://github.com/shopl/shoplflow/commit/05b0514435a129a7356b40d578f5f45af9ce3f86)]:
+  - @shoplflow/hada-assets@0.1.5
+  - @shoplflow/shopl-assets@0.12.18
+  - @shoplflow/base@0.41.3
+
+## 0.1.7
+
+### Patch Changes
+
+- Updated dependencies [[`0256b7b833bf5149133e493b9e8acb41d46d590e`](https://github.com/shopl/shoplflow/commit/0256b7b833bf5149133e493b9e8acb41d46d590e), [`fbd4da852f60d14ffba00db591f2515dcb103151`](https://github.com/shopl/shoplflow/commit/fbd4da852f60d14ffba00db591f2515dcb103151), [`51bcf855696fd14776ecde8eebc1ca5c98ba5ef5`](https://github.com/shopl/shoplflow/commit/51bcf855696fd14776ecde8eebc1ca5c98ba5ef5)]:
+  - @shoplflow/shopl-assets@0.12.17
+  - @shoplflow/hada-assets@0.1.4
+  - @shoplflow/base@0.41.2
+
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [[`7adc20c3550d8c0329824f22e62aaf825c213fb7`](https://github.com/shopl/shoplflow/commit/7adc20c3550d8c0329824f22e62aaf825c213fb7), [`522735a83c355079b9bfd5008ddebbd66ff59c4f`](https://github.com/shopl/shoplflow/commit/522735a83c355079b9bfd5008ddebbd66ff59c4f), [`f1bd991f0a6eb63dce8771a2ead4b87b23275c52`](https://github.com/shopl/shoplflow/commit/f1bd991f0a6eb63dce8771a2ead4b87b23275c52), [`073ca79ec1da562ed95ce1b3c210e8a1e0f2b6c3`](https://github.com/shopl/shoplflow/commit/073ca79ec1da562ed95ce1b3c210e8a1e0f2b6c3), [`4c4139a8f9ae576cebdb282fc981c2c1a11ddde3`](https://github.com/shopl/shoplflow/commit/4c4139a8f9ae576cebdb282fc981c2c1a11ddde3), [`d892d954675e4e4bbd675dee0becb37dbe9fa0d9`](https://github.com/shopl/shoplflow/commit/d892d954675e4e4bbd675dee0becb37dbe9fa0d9)]:
+  - @shoplflow/shopl-assets@0.12.16
+  - @shoplflow/base@0.41.1
+
+## 0.1.5
+
+### Patch Changes
+
+- Updated dependencies [[`e469df75963f369e4c8abe192168205969e6191a`](https://github.com/shopl/shoplflow/commit/e469df75963f369e4c8abe192168205969e6191a), [`6ea468b03927253d49cb7c9af0ed9fc0188feb10`](https://github.com/shopl/shoplflow/commit/6ea468b03927253d49cb7c9af0ed9fc0188feb10)]:
+  - @shoplflow/base@0.41.0
+
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [[`cde570ad974fde56e68f51d1b47fabfce7630c7e`](https://github.com/shopl/shoplflow/commit/cde570ad974fde56e68f51d1b47fabfce7630c7e)]:
+  - @shoplflow/shopl-assets@0.12.15
+  - @shoplflow/base@0.40.7
+
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [[`3e1a3b6069cceeed68e4e51b9a3d523a709d7318`](https://github.com/shopl/shoplflow/commit/3e1a3b6069cceeed68e4e51b9a3d523a709d7318), [`181dbe10abfa0613e2708310e9a7a9d7bed7dde0`](https://github.com/shopl/shoplflow/commit/181dbe10abfa0613e2708310e9a7a9d7bed7dde0)]:
+  - @shoplflow/shopl-assets@0.12.14
+  - @shoplflow/base@0.40.6
+
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`f0a5c021dd7304de119387a1076daab3f879f6e8`](https://github.com/shopl/shoplflow/commit/f0a5c021dd7304de119387a1076daab3f879f6e8), [`63a032b47b1d0cd6d34e2557e2f2cef214df5484`](https://github.com/shopl/shoplflow/commit/63a032b47b1d0cd6d34e2557e2f2cef214df5484), [`1a19b496dd67e9561753c161e31663406224283f`](https://github.com/shopl/shoplflow/commit/1a19b496dd67e9561753c161e31663406224283f), [`57313b12065a96b50fd838682846be5ea609a5f6`](https://github.com/shopl/shoplflow/commit/57313b12065a96b50fd838682846be5ea609a5f6)]:
+  - @shoplflow/shopl-assets@0.12.13
+  - @shoplflow/base@0.40.5
+
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [[`6056613e326a2d30c17b29b381aa9b859c3ac6d4`](https://github.com/shopl/shoplflow/commit/6056613e326a2d30c17b29b381aa9b859c3ac6d4), [`9ceeeffc667e2594ef6f4bf750fc0ac1a4d32ba8`](https://github.com/shopl/shoplflow/commit/9ceeeffc667e2594ef6f4bf750fc0ac1a4d32ba8)]:
+  - @shoplflow/shopl-assets@0.12.12
+  - @shoplflow/base@0.40.4
+
+## 0.1.0
+
+### Minor Changes
+
+- [#566](https://github.com/shopl/shoplflow/pull/566) [`5cb936024f9ad5b0ec18e1ace3ed0a6149902cf4`](https://github.com/shopl/shoplflow/commit/5cb936024f9ad5b0ec18e1ace3ed0a6149902cf4) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Table 컴포넌트 shoplflow/templates로 이관
+
+### Patch Changes
+
+- Updated dependencies [[`53dc6e08d4cd400542fbb0e01490f5ae9407e021`](https://github.com/shopl/shoplflow/commit/53dc6e08d4cd400542fbb0e01490f5ae9407e021), [`7af6f959647af1e33358258055fef0d751f13889`](https://github.com/shopl/shoplflow/commit/7af6f959647af1e33358258055fef0d751f13889)]:
+  - @shoplflow/shopl-assets@0.12.11
+  - @shoplflow/base@0.40.3
+
+## 0.0.55
+
+### Patch Changes
+
+- Updated dependencies [[`a1db6843070805948631ab835395eeeb94132c72`](https://github.com/shopl/shoplflow/commit/a1db6843070805948631ab835395eeeb94132c72)]:
+  - @shoplflow/base@0.40.2
+
 ## 0.0.54
 
 ### Patch Changes

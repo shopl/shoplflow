@@ -6,12 +6,13 @@ on:
       - 'update/icon'
     paths:
       - 'packages/shopl-assets/src/icons/assets/**'
+      - 'packages/hada-assets/src/icons/assets/**'
   pull_request:
     branches:
       - 'update/icon'
     paths:
       - 'packages/shopl-assets/src/icons/assets/**'
-
+      - 'packages/hada-assets/src/icons/assets/**'
 jobs:
   process-icons:
     runs-on: ubuntu-latest

@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { Playground } from 'storybook-addon-code-editor';
+import * as TableLib from './components';
+import * as Stories from './Table.stories';
+import * as TableMainStories from './TableMain.stories';
+import * as TableToolbarStories from './TableToolbar.stories';
+import * as TableFilterBarStories from './TableFilterBar.stories';
+import * as TablePaginationStories from './TablePagination.stories';
+import * as TableEmptyStories from './TableEmpty.stories';
+import * as TableColumnVisibilityStories from './TableColumnVisibility.stories';
+
+<Meta of={Stories} />
+
+# Table
+
+샤플 공통 테이블 컴포넌트입니다.
+
+## Props
+
+<Controls of={Stories.기본테이블} />
+
+## Table.Main Props
+<Controls of={TableMainStories.기본} />
+
+## Table.Toolbar Props
+<Controls of={TableToolbarStories.기본} />
+
+## Table.FilterBar Props
+<Controls of={TableFilterBarStories.기본} />
+
+## Table.Pagination Props
+<Controls of={TablePaginationStories.기본} />
+
+## Table.Empty Props
+<Controls of={TableEmptyStories.기본} />
+
+## Table.ColumnVisibility Props
+<Controls of={TableColumnVisibilityStories.기본} />
+
+## 사용 예시
+
+<Playground
+  availableImports={{ '@shopl/table': TableLib }}
+  code={`import React from 'react';
+import { Table } from '@shopl/table';
+
+const columns = [
+  { accessorKey: 'id', header: 'ID', size: 80 },
+  { accessorKey: 'name', header: '이름', size: 120 },
+  { accessorKey: 'email', header: '이메일', size: 200 },
+  { accessorKey: 'role', header: '권한', size: 100 },
+];
+const data = [
+  { id: 1, name: '홍길동', email: 'hong@shopl.com', role: 'admin' },
+  { id: 2, name: '김철수', email: 'kim@shopl.com', role: 'user' },
+  { id: 3, name: '이영희', email: 'lee@shopl.com', role: 'user' },
+];
+
+export default function Example() {
+  return (
+    <Table data={data} columns={columns}>
+      <Table.Main stickyHeaderTopPosition={0} />
+    </Table>
+  );
+}
+  `}
+  height="560px"
+/>

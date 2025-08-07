@@ -1,5 +1,27 @@
 # @shoplflow/hada-assets
 
+## 0.1.6
+
+### Patch Changes
+
+- [#587](https://github.com/shopl/shoplflow/pull/587) [`01f6ccd569a27d88bd08000028e6e54d380e4822`](https://github.com/shopl/shoplflow/commit/01f6ccd569a27d88bd08000028e6e54d380e4822) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.1.5
+
+### Patch Changes
+
+- [#585](https://github.com/shopl/shoplflow/pull/585) [`c228c8c23f7c5ca889be41f18177f0e5cd911964`](https://github.com/shopl/shoplflow/commit/c228c8c23f7c5ca889be41f18177f0e5cd911964) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+## 0.1.4
+
+### Patch Changes
+
+- [#581](https://github.com/shopl/shoplflow/pull/581) [`0256b7b833bf5149133e493b9e8acb41d46d590e`](https://github.com/shopl/shoplflow/commit/0256b7b833bf5149133e493b9e8acb41d46d590e) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#581](https://github.com/shopl/shoplflow/pull/581) [`fbd4da852f60d14ffba00db591f2515dcb103151`](https://github.com/shopl/shoplflow/commit/fbd4da852f60d14ffba00db591f2515dcb103151) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#581](https://github.com/shopl/shoplflow/pull/581) [`51bcf855696fd14776ecde8eebc1ca5c98ba5ef5`](https://github.com/shopl/shoplflow/commit/51bcf855696fd14776ecde8eebc1ca5c98ba5ef5) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
 ## 0.1.3
 
 ### Patch Changes
