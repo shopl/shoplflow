@@ -35,6 +35,11 @@ export const StyledCallout = styled.div<CalloutProps>`
   border-radius: ${borderRadiusTokens.borderRadius08};
   ${({ styleVar }) => styleVar === 'INFORMATION' && informationStyle}
   ${({ styleVar }) => styleVar === 'ALERT' && alertStyle}
+  ${({ fillWidth }) =>
+    fillWidth &&
+    css`
+      width: 100%;
+    `}
 `;
 
 export const StyledCalloutIcon = styled.svg`
