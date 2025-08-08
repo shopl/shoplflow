@@ -3,25 +3,30 @@ import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
 import type { CheckboxOptionProps } from './Checkbox.types';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
+import { getDomain } from '../../../hooks';
 
 const getStylesByStyleVariant = (
   styleVariant?: CheckboxOptionProps['styleVar'],
   isSelected?: CheckboxOptionProps['isSelected'],
   isHovered?: boolean,
 ) => {
+  const domain = getDomain();
+  const primaryColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary300;
+  const primaryHoverColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary400;
+
   switch (styleVariant) {
     case 'PRIMARY':
       if (isSelected) {
         return css`
-          background: ${colorTokens.primary300};
-          border: 1.5px solid ${colorTokens.primary300};
+          background: ${primaryColor};
+          border: 1.5px solid ${primaryColor};
           & > svg > path {
             fill: ${colorTokens.neutral0};
           }
           ${isHovered &&
           css`
-            border: 1.5px solid ${colorTokens.primary400};
-            background: ${colorTokens.primary400};
+            border: 1.5px solid ${primaryHoverColor};
+            background: ${primaryHoverColor};
           `}
         `;
       }
