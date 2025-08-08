@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.41.9
+
+### Patch Changes
+
+- [#600](https://github.com/shopl/shoplflow/pull/600) [`6e529c1fd4e0bd6e0fc01ffd1e2c87d9155113e6`](https://github.com/shopl/shoplflow/commit/6e529c1fd4e0bd6e0fc01ffd1e2c87d9155113e6) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - HADA에서 사용하는 button, checkbox 컴포넌트 스타일을 디자인 가이드에 맞게 수정했어요
+
 ## 0.41.8
 
 ### Patch Changes
