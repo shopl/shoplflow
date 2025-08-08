@@ -4,8 +4,14 @@ import type { ColorTokens } from '../../../styles';
 import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
 import { getNextColor } from '../../../utils/getNextColor';
+import { getDomain } from '../../../hooks';
 
 const getStyleByStyleVar = (styleVar?: ButtonStyleVariantType, color?: ColorTokens, disabled?: boolean) => {
+  const domain = getDomain();
+  const secondaryBorderColor = domain === 'hada' ? colorTokens.hada150 : colorTokens.neutral350;
+  const secondaryBackgroundColor = domain === 'hada' ? colorTokens.hada100 : colorTokens.neutral0;
+  const secondaryHoverBackgroundColor = domain === 'hada' ? colorTokens.hada150 : colorTokens.neutral100;
+
   switch (styleVar) {
     case 'PRIMARY':
       return css`
@@ -17,10 +23,10 @@ const getStyleByStyleVar = (styleVar?: ButtonStyleVariantType, color?: ColorToke
       `;
     case 'SECONDARY':
       return css`
-        border: 1px solid ${colorTokens.neutral350};
-        background-color: ${colorTokens.neutral0};
+        border: 1px solid ${secondaryBorderColor};
+        background-color: ${secondaryBackgroundColor};
         :hover {
-          background-color: ${!disabled && colorTokens.neutral100};
+          background-color: ${!disabled && secondaryHoverBackgroundColor};
         }
       `;
     case 'SOLID':
