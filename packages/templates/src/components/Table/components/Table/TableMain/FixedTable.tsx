@@ -56,7 +56,7 @@ export const FixedTable = ({ tableState }: { tableState: TableStateProps }) => {
 
   const TableColumns = () => (
     <colgroup>
-      {table.getAllColumns().map((column) => {
+      {table.getVisibleFlatColumns().map((column) => {
         // 컬럼의 크기 관련 속성
         const size = column.columnDef.size; // 기본 너비
         const minSize = column.columnDef.minSize; // 최소 너비
