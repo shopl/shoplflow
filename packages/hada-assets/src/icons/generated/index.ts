@@ -26,6 +26,7 @@ import IcDrag from './IcDrag';
 import IcDrawer from './IcDrawer';
 import IcEdit from './IcEdit';
 import IcEmail from './IcEmail';
+import IcEmojiPencil from './IcEmojiPencil';
 import IcError from './IcError';
 import IcExcel from './IcExcel';
 import IcFilter from './IcFilter';
@@ -122,6 +123,7 @@ const icons = {
   drawer: IcDrawer,
   edit: IcEdit,
   email: IcEmail,
+  'emoji-pencil': IcEmojiPencil,
   error: IcError,
   excel: IcExcel,
   filter: IcFilter,
@@ -221,6 +223,7 @@ export {
   IcDrawer as DrawerIcon,
   IcEdit as EditIcon,
   IcEmail as EmailIcon,
+  IcEmojiPencil as EmojiPencilIcon,
   IcError as ErrorIcon,
   IcExcel as ExcelIcon,
   IcFilter as FilterIcon,
