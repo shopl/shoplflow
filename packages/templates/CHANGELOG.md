@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.1.15
+
+### Patch Changes
+
+- [#603](https://github.com/shopl/shoplflow/pull/603) [`0d878f0502bc44619ce5ad43bdc07b905ae86f73`](https://github.com/shopl/shoplflow/commit/0d878f0502bc44619ce5ad43bdc07b905ae86f73) Thanks [@ayaan0209](https://github.com/ayaan0209)! - table column visibilty 기능 추가
+
 ## 0.1.14
 
 ### Patch Changes
