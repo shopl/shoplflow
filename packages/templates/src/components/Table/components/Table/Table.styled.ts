@@ -100,7 +100,7 @@ export const TableHeader = styled.thead`
     }
 
     // fixed 컬럼의 border를 별도의 가상 요소로 처리
-    &[data-pinned='left']::before,
+    /* &[data-pinned='left']::before,
     &[data-pinned='right']::before {
       content: '';
       position: absolute;
@@ -110,7 +110,7 @@ export const TableHeader = styled.thead`
       background-color: ${colorTokens.neutral200};
       pointer-events: none;
       z-index: 5;
-    }
+    } */
 
     &[data-pinned='left']::before {
       right: 0;
