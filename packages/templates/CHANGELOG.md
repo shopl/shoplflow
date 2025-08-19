@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.1.16
+
+### Patch Changes
+
+- [#605](https://github.com/shopl/shoplflow/pull/605) [`5c2573fff409361f56d72b7aef74d872b8fb5b19`](https://github.com/shopl/shoplflow/commit/5c2573fff409361f56d72b7aef74d872b8fb5b19) Thanks [@ayaan0209](https://github.com/ayaan0209)! - 고정 컬럼에 border 두 겹으로 스타일링 되는 현상 수정
+
 ## 0.1.15
 
 ### Patch Changes
