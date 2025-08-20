@@ -4,3 +4,4 @@ export * from './useParentElementClick';
 export * from './useSelect/useSelect';
 export * from './useMergeRef';
 export * from './useOutsideClick';
+export * from './usePopover';
