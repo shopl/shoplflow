@@ -1,5 +1,15 @@
 # @shoplflow/templates
 
+## 0.1.17
+
+### Patch Changes
+
+- [#608](https://github.com/shopl/shoplflow/pull/608) [`b4dc58a8024fdd151b934175f6ccf6349575dd1e`](https://github.com/shopl/shoplflow/commit/b4dc58a8024fdd151b934175f6ccf6349575dd1e) Thanks [@ayaan0209](https://github.com/ayaan0209)! - style: 테이블 툴바 높이 패딩 수정
+
+- Updated dependencies [[`77e26749e739c118b7ab884e8b87f1d5f4ab6aa5`](https://github.com/shopl/shoplflow/commit/77e26749e739c118b7ab884e8b87f1d5f4ab6aa5)]:
+  - @shoplflow/hada-assets@0.1.7
+  - @shoplflow/base@0.41.10
+
 ## 0.1.16
 
 ### Patch Changes
