@@ -1,5 +1,11 @@
 # @shoplflow/hada-assets
 
+## 0.1.7
+
+### Patch Changes
+
+- [#602](https://github.com/shopl/shoplflow/pull/602) [`77e26749e739c118b7ab884e8b87f1d5f4ab6aa5`](https://github.com/shopl/shoplflow/commit/77e26749e739c118b7ab884e8b87f1d5f4ab6aa5) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
 ## 0.1.6
 
 ### Patch Changes
