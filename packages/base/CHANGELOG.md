@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.0
+
+### Minor Changes
+
+- [#528](https://github.com/shopl/shoplflow/pull/528) [`4943c5b34d691014408b74934f5c9d6798a1815c`](https://github.com/shopl/shoplflow/commit/4943c5b34d691014408b74934f5c9d6798a1815c) Thanks [@ayaan0209](https://github.com/ayaan0209)! - SearchBar 컴포넌트 추가했습니다.
+
 ## 0.41.11
 
 ### Patch Changes
