@@ -9,14 +9,14 @@ import type { SearchBarInputProps } from './SearchBar.types';
 import { useSearchBarContext } from './SearchBarContext';
 
 const DEFAULT_DEBOUNCE_TIME = 300;
-const DEFAULT_PLACEHOLDER = '검색';
 
 export const SearchBarInput: React.FC<SearchBarInputProps> = ({
   value,
   defaultValue,
   onChange,
   onClear,
-  placeholder = DEFAULT_PLACEHOLDER,
+  placeholder,
+  flexiblePlaceholder,
   disabled,
   type = 'default',
   onSearch,
@@ -75,7 +75,7 @@ export const SearchBarInput: React.FC<SearchBarInputProps> = ({
   let _placeholder = placeholder;
 
   if (useFlexibleWidth && !isSelected) {
-    _placeholder = DEFAULT_PLACEHOLDER;
+    _placeholder = flexiblePlaceholder;
   }
 
   const getInitialValue = useCallback(() => {

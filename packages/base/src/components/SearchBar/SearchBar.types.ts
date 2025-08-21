@@ -49,6 +49,8 @@ export interface SearchBarInputProps {
   onClear?: () => void;
   /** 플레이스홀더 텍스트 */
   placeholder?: string;
+  /** 너비 변경 시 플레이스홀더 텍스트 */
+  flexiblePlaceholder?: string;
   /** 비활성화 여부 */
   disabled?: boolean;
   /** 검색 아이콘 */
