@@ -28,12 +28,18 @@ export type TableMainProps = {
 
 export type TableToolbarProps = {
   filterAccessor?: string;
+  height?: string;
+  padding?: string;
   children: (props: {
     totalCount: number;
     filterAccessor: string;
     onSearch: (value: string) => void;
     filterValue: string;
   }) => ReactNode;
+  /**
+   * 테이블 전체 데이터 갯수
+   */
+  totalCount?: number;
 };
 
 export type TableHeadCellProps = {

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { StackContainer } from '@shoplflow/base';
+
 import { useTable } from '../../context';
 import type { TableToolbarProps } from '../../types';
 
@@ -16,9 +18,20 @@ import type { TableToolbarProps } from '../../types';
  * @returns {JSX.Element} 렌더링된 툴바 컴포넌트
  */
 
-export const TableToolbar = ({ children, filterAccessor }: TableToolbarProps) => {
+export const TableToolbar = ({
+  children,
+  filterAccessor,
+  height = '56px',
+  padding = '12px 20px',
+  totalCount,
+}: TableToolbarProps) => {
   const { table, filterValue, setFilterValue } = useTable();
-  const totalCount = table.getPrePaginationRowModel().rows.length;
+
+  /**
+   * 넘겨 받은 totalCount가 없다면, table.getPrePaginationRowModel().rows.length 값을 사용
+   * totalCount는 default 0으로 설정되어 있어 || 연산자를 사용해야 함
+   */
+  const _totalCount = totalCount || table.getPrePaginationRowModel().rows.length;
 
   // TableFilterBar와 연결되어 있는 검색 이벤트 핸들러
   const onSearch = (value: string) => {
@@ -31,9 +44,9 @@ export const TableToolbar = ({ children, filterAccessor }: TableToolbarProps) =>
   };
 
   return (
-    <StackContainer.Horizontal width='100%' height='64px' align='center' padding='12px 24px' justify='space-between'>
+    <StackContainer.Horizontal width='100%' height={height} align='center' padding={padding} justify='space-between'>
       {children({
-        totalCount,
+        totalCount: _totalCount,
         filterAccessor: filterAccessor ?? '',
         onSearch,
         filterValue,
