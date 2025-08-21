@@ -1,5 +1,11 @@
 # @shoplflow/utils
 
+## 0.7.0
+
+### Minor Changes
+
+- [#607](https://github.com/shopl/shoplflow/pull/607) [`71e09637e6b2e3278c128bdb318bfe74f169ff2c`](https://github.com/shopl/shoplflow/commit/71e09637e6b2e3278c128bdb318bfe74f169ff2c) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - usePopover hook을 추가했어요
+
 ## 0.6.5
 
 ### Patch Changes
