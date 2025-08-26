@@ -268,6 +268,7 @@ import IcReturn from './IcReturn';
 import IcRightArrowSolidXsmall from './IcRightArrowSolidXsmall';
 import IcRightArrowXsmall from './IcRightArrowXsmall';
 import IcRightArrow from './IcRightArrow';
+import IcRocketMedium from './IcRocketMedium';
 import IcSalary from './IcSalary';
 import IcSalesMedium from './IcSalesMedium';
 import IcScan from './IcScan';
@@ -593,6 +594,7 @@ const icons = {
   'right-arrow-solid-xsmall': IcRightArrowSolidXsmall,
   'right-arrow-xsmall': IcRightArrowXsmall,
   'right-arrow': IcRightArrow,
+  'rocket-medium': IcRocketMedium,
   salary: IcSalary,
   'sales-medium': IcSalesMedium,
   scan: IcScan,
@@ -921,6 +923,7 @@ export {
   IcRightArrowSolidXsmall as RightArrowSolidXsmallIcon,
   IcRightArrowXsmall as RightArrowXsmallIcon,
   IcRightArrow as RightArrowIcon,
+  IcRocketMedium as RocketMediumIcon,
   IcSalary as SalaryIcon,
   IcSalesMedium as SalesMediumIcon,
   IcScan as ScanIcon,
