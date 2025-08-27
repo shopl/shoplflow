@@ -178,6 +178,7 @@ import IcInfoOval from './IcInfoOval';
 import IcInfoPhoneCheck from './IcInfoPhoneCheck';
 import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
 import IcInfoPhone from './IcInfoPhone';
+import IcInfoPolicy from './IcInfoPolicy';
 import IcInfoPosition from './IcInfoPosition';
 import IcInfoProperties from './IcInfoProperties';
 import IcInfoPunch from './IcInfoPunch';
@@ -503,6 +504,7 @@ const icons = {
   'info-phone-check': IcInfoPhoneCheck,
   'info-phone-no-check': IcInfoPhoneNoCheck,
   'info-phone': IcInfoPhone,
+  'info-policy': IcInfoPolicy,
   'info-position': IcInfoPosition,
   'info-properties': IcInfoProperties,
   'info-punch': IcInfoPunch,
@@ -831,6 +833,7 @@ export {
   IcInfoPhoneCheck as InfoPhoneCheckIcon,
   IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
   IcInfoPhone as InfoPhoneIcon,
+  IcInfoPolicy as InfoPolicyIcon,
   IcInfoPosition as InfoPositionIcon,
   IcInfoProperties as InfoPropertiesIcon,
   IcInfoPunch as InfoPunchIcon,
