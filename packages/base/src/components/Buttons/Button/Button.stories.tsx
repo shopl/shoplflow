@@ -169,3 +169,21 @@ SmallSize.args = {
   disabled: false,
   leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
 };
+
+export const ExtraSmallSize: StoryFn<ButtonProps> = (args) => {
+  return (
+    <Stack width={'200px'}>
+      <ComponentStage>
+        <Button {...args} />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+ExtraSmallSize.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'XS',
+  children: '버튼',
+  disabled: false,
+  leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
+};

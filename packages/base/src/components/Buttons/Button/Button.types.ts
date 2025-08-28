@@ -15,6 +15,7 @@ import type { TypographyTokens } from '../../../styles';
 export const ButtonSizeVariants = {
   S: 'S',
   M: 'M',
+  XS: 'XS',
 } as const;
 
 export type ButtonSizeVariantType = $Values<typeof ButtonSizeVariants>;
