@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.1
+
+### Patch Changes
+
+- [#613](https://github.com/shopl/shoplflow/pull/613) [`015b1972aaaea51748bc5fc69a18f4786756f6d6`](https://github.com/shopl/shoplflow/commit/015b1972aaaea51748bc5fc69a18f4786756f6d6) Thanks [@ayaan0209](https://github.com/ayaan0209)! - style: 버튼 sizeVar XS 추가
+
 ## 0.42.0
 
 ### Minor Changes
