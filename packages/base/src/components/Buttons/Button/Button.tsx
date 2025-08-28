@@ -22,6 +22,14 @@ const Button = forwardRef(
     }: ButtonProps<'button'>,
     ref: ComponentPropsWithRef<'button'>['ref'],
   ) => {
+    const getTypography = () => {
+      if (sizeVar === 'XS') {
+        return 'caption_400';
+      }
+
+      return sizeVar === 'M' ? 'body1_400' : 'body2_400';
+    };
+
     return (
       <StyledButton
         styleVar={styleVar}
@@ -43,7 +51,7 @@ const Button = forwardRef(
             whiteSpace={'nowrap'}
             wordBreak={'keep-all'}
             color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
-            typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
+            typography={getTypography()}
           >
             {children}
           </Text>
