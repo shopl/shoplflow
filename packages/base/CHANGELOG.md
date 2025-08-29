@@ -1,5 +1,12 @@
 # @shoplflow/base
 
+## 0.42.2
+
+### Patch Changes
+
+- Updated dependencies [[`db16621db4cbcdeff6d8bf15b617787a5e17be2c`](https://github.com/shopl/shoplflow/commit/db16621db4cbcdeff6d8bf15b617787a5e17be2c)]:
+  - @shoplflow/shopl-assets@0.12.21
+
 ## 0.42.1
 
 ### Patch Changes
