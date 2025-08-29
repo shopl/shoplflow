@@ -178,6 +178,7 @@ import IcInfoOval from './IcInfoOval';
 import IcInfoPhoneCheck from './IcInfoPhoneCheck';
 import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
 import IcInfoPhone from './IcInfoPhone';
+import IcInfoPolicy from './IcInfoPolicy';
 import IcInfoPosition from './IcInfoPosition';
 import IcInfoProperties from './IcInfoProperties';
 import IcInfoPunch from './IcInfoPunch';
@@ -268,6 +269,7 @@ import IcReturn from './IcReturn';
 import IcRightArrowSolidXsmall from './IcRightArrowSolidXsmall';
 import IcRightArrowXsmall from './IcRightArrowXsmall';
 import IcRightArrow from './IcRightArrow';
+import IcRocketMedium from './IcRocketMedium';
 import IcSalary from './IcSalary';
 import IcSalesMedium from './IcSalesMedium';
 import IcScan from './IcScan';
@@ -503,6 +505,7 @@ const icons = {
   'info-phone-check': IcInfoPhoneCheck,
   'info-phone-no-check': IcInfoPhoneNoCheck,
   'info-phone': IcInfoPhone,
+  'info-policy': IcInfoPolicy,
   'info-position': IcInfoPosition,
   'info-properties': IcInfoProperties,
   'info-punch': IcInfoPunch,
@@ -593,6 +596,7 @@ const icons = {
   'right-arrow-solid-xsmall': IcRightArrowSolidXsmall,
   'right-arrow-xsmall': IcRightArrowXsmall,
   'right-arrow': IcRightArrow,
+  'rocket-medium': IcRocketMedium,
   salary: IcSalary,
   'sales-medium': IcSalesMedium,
   scan: IcScan,
@@ -831,6 +835,7 @@ export {
   IcInfoPhoneCheck as InfoPhoneCheckIcon,
   IcInfoPhoneNoCheck as InfoPhoneNoCheckIcon,
   IcInfoPhone as InfoPhoneIcon,
+  IcInfoPolicy as InfoPolicyIcon,
   IcInfoPosition as InfoPositionIcon,
   IcInfoProperties as InfoPropertiesIcon,
   IcInfoPunch as InfoPunchIcon,
@@ -921,6 +926,7 @@ export {
   IcRightArrowSolidXsmall as RightArrowSolidXsmallIcon,
   IcRightArrowXsmall as RightArrowXsmallIcon,
   IcRightArrow as RightArrowIcon,
+  IcRocketMedium as RocketMediumIcon,
   IcSalary as SalaryIcon,
   IcSalesMedium as SalesMediumIcon,
   IcScan as ScanIcon,
