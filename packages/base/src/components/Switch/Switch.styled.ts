@@ -1,11 +1,29 @@
 import styled from '@emotion/styled';
 import type { ColorTokens } from '../../styles';
-import { colorTokens } from '../../styles';
+import { borderRadiusTokens, colorTokens } from '../../styles';
+import type { SwitchSizeVariantType } from './Switch.types';
+import { css } from '@emotion/react';
 
-export const SwitchContainer = styled.div<{ isDisabled: boolean }>`
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
+const getContainerStylesBySizeVar = (sizeVar: SwitchSizeVariantType) => {
+  switch (sizeVar) {
+    case 'S':
+      return css`
+        width: 24px;
+        height: 24px;
+        border-radius: ${borderRadiusTokens.borderRadius04};
+      `;
+    case 'M':
+      return css`
+        border-radius: ${borderRadiusTokens.borderRadius06};
+        width: 32px;
+        height: 32px;
+      `;
+  }
+};
+
+export const SwitchContainer = styled.div<{ isDisabled: boolean; sizeVar: SwitchSizeVariantType }>`
+  ${({ sizeVar }) => getContainerStylesBySizeVar(sizeVar)}
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +34,45 @@ export const SwitchContainer = styled.div<{ isDisabled: boolean }>`
   }
 `;
 
-export const StyledSwitch = styled.input<{ activeColor: ColorTokens }>`
+export const getCircleStylesBySizeVar = (sizeVar: SwitchSizeVariantType) => {
+  switch (sizeVar) {
+    case 'S':
+      return css`
+        width: 12px;
+        height: 12px;
+        aspect-ratio: 1/1;
+        border-radius: ${borderRadiusTokens.borderRadius04};
+      `;
+
+    case 'M':
+      return css`
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      `;
+  }
+};
+
+const getSwitchStylesBySizeVar = (sizeVar: SwitchSizeVariantType) => {
+  switch (sizeVar) {
+    case 'S':
+      return css`
+        border-radius: ${borderRadiusTokens.borderRadius06};
+        width: 24px;
+        height: 16px;
+      `;
+    case 'M':
+      return css`
+        border-radius: 12px;
+        width: 28px;
+        height: 18px;
+      `;
+  }
+};
+
+export const StyledSwitch = styled.input<{ activeColor: ColorTokens; sizeVar: SwitchSizeVariantType }>`
   appearance: none;
   border: none;
-  border-radius: 12px;
-  width: 28px;
-  height: 18px;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -30,16 +81,16 @@ export const StyledSwitch = styled.input<{ activeColor: ColorTokens }>`
   padding: 2px;
   margin: 0;
 
+  ${({ sizeVar }) => getSwitchStylesBySizeVar(sizeVar)}
+
   // slider
   &:before {
     content: '';
     left: 2px;
     display: block;
     position: absolute;
-    width: 14px;
-    height: 14px;
+    ${({ sizeVar }) => getCircleStylesBySizeVar(sizeVar)}
     background: ${colorTokens.neutral0};
-    border-radius: 50%;
     transition: left 0.2s ease-in-out;
   }
 
@@ -47,7 +98,7 @@ export const StyledSwitch = styled.input<{ activeColor: ColorTokens }>`
   &:checked {
     background: ${({ activeColor }) => colorTokens[activeColor]};
     &:before {
-      left: 12px;
+      left: ${({ sizeVar }) => (sizeVar === 'S' ? '10px' : '12px')};
     }
   }
 
