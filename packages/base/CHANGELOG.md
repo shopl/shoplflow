@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.4
+
+### Patch Changes
+
+- [#618](https://github.com/shopl/shoplflow/pull/618) [`9567b60fa674dd55acae8d722cba693c93f85e3a`](https://github.com/shopl/shoplflow/commit/9567b60fa674dd55acae8d722cba693c93f85e3a) Thanks [@velo-kim](https://github.com/velo-kim)! - Update(component): Switch sizeVar 추가(S, default M)
+
 ## 0.42.3
 
 ### Patch Changes
