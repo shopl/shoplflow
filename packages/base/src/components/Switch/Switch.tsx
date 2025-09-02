@@ -10,6 +10,7 @@ const Switch = ({
   disabled = false,
   activeColor = 'primary300',
   defaultSelected = false,
+  sizeVar = 'M',
   ...rest
 }: SwitchProps) => {
   const [isToggled, handleToggle] = useOnToggle(isSelected, defaultSelected);
@@ -20,13 +21,14 @@ const Switch = ({
   };
 
   return (
-    <SwitchContainer isDisabled={disabled}>
+    <SwitchContainer isDisabled={disabled} sizeVar={sizeVar}>
       <StyledSwitch
         type='checkbox'
         checked={isToggled}
         disabled={disabled}
         onChange={handleOnChange}
         activeColor={activeColor}
+        sizeVar={sizeVar}
         {...rest}
         data-shoplflow={'Switch'}
       />

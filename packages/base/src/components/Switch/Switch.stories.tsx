@@ -16,3 +16,16 @@ export const Playground: StoryFn<SwitchProps> = (args) => (
     </ComponentStage>
   </Stack>
 );
+
+export const SmallSize: StoryFn<SwitchProps> = (args) => (
+  <Stack width={'100px'} align={'center'}>
+    <ComponentStage>
+      <Switch {...args} />
+    </ComponentStage>
+  </Stack>
+);
+
+SmallSize.args = {
+  sizeVar: 'S',
+  activeColor: 'neutral600',
+};
