@@ -46,13 +46,20 @@ export const FixedTable = ({ tableState }: { tableState: TableStateProps }) => {
 
   // 스크롤 동기화 이벤트 핸들러(테이블 바디와 테이블 헤더 스크롤 동기화)
   const handleScroll = useCallback(() => {
-    if (headerRef.current && bodyRef.current && tableScrollRef.current) {
-      const scrollLeft = bodyRef.current.scrollLeft;
-      headerRef.current.scrollLeft = scrollLeft;
-      tableScrollRef.current.scrollLeft = scrollLeft;
+    if (!bodyRef.current) {
+      return;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    const bodyScrollLeft = bodyRef.current.scrollLeft;
+
+    if (headerRef.current) {
+      headerRef.current.scrollLeft = bodyScrollLeft;
+    }
+
+    if (tableScrollRef.current) {
+      tableScrollRef.current.scrollLeft = bodyScrollLeft;
+    }
+  }, [bodyRef, headerRef, tableScrollRef]);
 
   const TableColumns = () => (
     <colgroup>
