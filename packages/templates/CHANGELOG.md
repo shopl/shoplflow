@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.1.24
+
+### Patch Changes
+
+- [#620](https://github.com/shopl/shoplflow/pull/620) [`4d9d68f4d675ce1ef613b3ef91cfca37f2e68ea6`](https://github.com/shopl/shoplflow/commit/4d9d68f4d675ce1ef613b3ef91cfca37f2e68ea6) Thanks [@ayaan0209](https://github.com/ayaan0209)! - 테이블 헤더 스크롤 동기화 안되는 현상 수정
+
 ## 0.1.23
 
 ### Patch Changes
