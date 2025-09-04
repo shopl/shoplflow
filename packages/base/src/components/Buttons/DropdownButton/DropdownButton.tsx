@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import React, { useRef } from 'react';
 import { StyledPopoverContentWrapper, StyledArrowIcon } from './DropdownButton.styled';
 import type { DropdownButtonProps } from './DropdownButton.types';
@@ -9,7 +10,7 @@ import type { MenuProps } from '../../../components/Menu';
 import { Menu } from '../../../components/Menu';
 import { DropdownButtonContext, useDropdownButtonContext } from './useDropdownButton';
 import { Text } from '../../../components/Text';
-import type { ColorTokens } from '../../../styles';
+import { colorTokens, type ColorTokens } from '../../../styles';
 import { Icon } from '../../../components/Icon';
 import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
 import { shift } from '@floating-ui/core';
@@ -64,6 +65,15 @@ const DropdownButton = ({
     color = 'coolgray50';
   }
 
+  let customStyle: CSSProperties = {};
+  if (styleVar === 'SECONDARY') {
+    _styleVar = 'SOLID';
+    color = 'neutral0';
+    customStyle = {
+      border: `1px solid ${colorTokens.neutral350}`,
+    };
+  }
+
   return (
     <DropdownButtonContext.Provider value={{ isOpen, setIsOpen }} data-shoplflow={'DropdownButton'}>
       <Popper placement={placement} offset={4} middlewares={[shift({ crossAxis: true, padding: 4 })]}>
@@ -96,6 +106,7 @@ const DropdownButton = ({
               }
               setIsOpen((prev) => !prev);
             }}
+            style={customStyle}
             {...rest}
           >
             <Text typography='body2_400' color='neutral700'>
