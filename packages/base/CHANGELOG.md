@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.5
+
+### Patch Changes
+
+- [#622](https://github.com/shopl/shoplflow/pull/622) [`888643aded0eafa00199c39aa30e878543eb834e`](https://github.com/shopl/shoplflow/commit/888643aded0eafa00199c39aa30e878543eb834e) Thanks [@velo-kim](https://github.com/velo-kim)! - DropdownButton SECONDARY 스타일 변경
+
 ## 0.42.4
 
 ### Patch Changes
