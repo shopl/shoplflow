@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.6
+
+### Patch Changes
+
+- [#624](https://github.com/shopl/shoplflow/pull/624) [`f99f75f4e20da69b4e14d573946cc601ed59c7ce`](https://github.com/shopl/shoplflow/commit/f99f75f4e20da69b4e14d573946cc601ed59c7ce) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Pagination SizeVar='XS'일 때 아이콘 사이즈 제대로 반영안되는 현상 수정
+
 ## 0.42.5
 
 ### Patch Changes

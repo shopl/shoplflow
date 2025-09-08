@@ -429,7 +429,7 @@ importers:
   packages/extension:
     dependencies:
       '@shoplflow/base':
-        specifier: ^0.42.5
+        specifier: ^0.42.6
         version: link:../base
       chart.js:
         specifier: ^4.4.0
