@@ -27,6 +27,9 @@ const Pagination = ({
   const responsiveClassName = isHadaDomain ? 'hada-responsive' : '';
   const isXSSize = sizeVar === 'XS';
 
+  // XS 사이즈일 때 Icon 스타일 정의
+  const iconStyle = isXSSize ? { width: '12px', height: '12px' } : undefined;
+
   const pageTotalCount = totalCount ?? Math.ceil(itemsTotalCount / Number(pageSize));
   const showLeftEllipsis = currentPage > pageCount - 1;
   const showRightEllipsis =
@@ -45,7 +48,7 @@ const Pagination = ({
           </IconButton>
         )}
         <IconButton sizeVar={sizeVar} styleVar='GHOST' onClick={previousPage} disabled={!canPreviousPage}>
-          <Icon iconSource={LeftArrowIcon} color='neutral400' sizeVar='S' />
+          <Icon iconSource={LeftArrowIcon} color='neutral400' sizeVar={sizeVar} style={iconStyle} />
         </IconButton>
 
         {showLeftEllipsis && (
@@ -78,7 +81,7 @@ const Pagination = ({
         )}
 
         <IconButton sizeVar={sizeVar} styleVar='GHOST' onClick={nextPage} disabled={!canNextPage}>
-          <Icon iconSource={RightArrowIcon} color='neutral400' sizeVar='S' />
+          <Icon iconSource={RightArrowIcon} color='neutral400' sizeVar={sizeVar} style={iconStyle} />
         </IconButton>
 
         {!isXSSize && (
