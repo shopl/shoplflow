@@ -155,7 +155,7 @@ const NumberCombobox = ({
           <SimpleBar
             className={_className}
             style={{
-              height: '128px',
+              height: `min(calc(${items.length * 30}px + 8px), 128px)`,
               maxHeight: '128px',
               width,
               padding: '4px',
