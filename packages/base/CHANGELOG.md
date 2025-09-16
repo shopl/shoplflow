@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.7
+
+### Patch Changes
+
+- [#627](https://github.com/shopl/shoplflow/pull/627) [`c05f19391adebdc67a179ba8ffb9fb6f828a5c26`](https://github.com/shopl/shoplflow/commit/c05f19391adebdc67a179ba8ffb9fb6f828a5c26) Thanks [@velo-kim](https://github.com/velo-kim)! - Update(component): NumberCombobox Dropdown 영역 height 동적 변경
+
 ## 0.42.6
 
 ### Patch Changes
