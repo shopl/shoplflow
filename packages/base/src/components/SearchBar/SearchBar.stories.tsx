@@ -21,7 +21,7 @@ const meta: Meta<MemoizedSearchBarComponent> = {
     },
     useFlexibleWidth: {
       control: { type: 'boolean' },
-      description: '유연한 너비 사용 여부',
+      description: 'flexible width 사용 여부',
       defaultValue: false,
     },
     debounceTime: {
@@ -35,11 +35,28 @@ const meta: Meta<MemoizedSearchBarComponent> = {
       description: '검색 타입',
       defaultValue: 'default',
     },
+    maxLength: {
+      control: { type: 'number' },
+      description: '최대 입력 길이',
+      defaultValue: undefined,
+    },
+    flexiblePlaceholder: {
+      control: { type: 'text' },
+      description: '너비 변경 시 플레이스홀더 텍스트',
+      defaultValue: undefined,
+    },
   },
 } as any;
 export default meta;
 
-export const Playground: StoryFn<SearchBarProps & { debounceTime: number; type: 'default' | 'real-time' }> = (args) => {
+export const Playground: StoryFn<
+  SearchBarProps & {
+    debounceTime: number;
+    type: 'default' | 'real-time';
+    maxLength?: number;
+    flexiblePlaceholder?: string;
+  }
+> = (args) => {
   const [selectedItem, setSelectedItem] = useState<DropdownItem | undefined>({ label: '전체', value: 'all' });
   const [searchValue, setSearchValue] = useState('');
 
@@ -72,6 +89,8 @@ export const Playground: StoryFn<SearchBarProps & { debounceTime: number; type: 
           onSearch={handleSearch}
           type={args.type}
           placeholder='검색어를 입력하세요'
+          flexiblePlaceholder={args.flexiblePlaceholder}
+          maxLength={args.maxLength}
           debounceTime={args.debounceTime}
         />
       </SearchBar>
@@ -82,9 +101,11 @@ export const Playground: StoryFn<SearchBarProps & { debounceTime: number; type: 
 Playground.args = {
   width: '100%',
   height: '32px',
-  useFlexibleWidth: false,
+  useFlexibleWidth: true,
   debounceTime: 300,
   type: 'real-time',
+  maxLength: undefined,
+  flexiblePlaceholder: 'flexible',
 };
 
 Playground.parameters = {
@@ -208,7 +229,7 @@ export const FlexibleWidth: StoryFn<SearchBarProps & { debounceTime: number }> =
         <SearchBar.Input
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          placeholder='유연한 너비'
+          placeholder='flexible width'
           debounceTime={args.debounceTime}
         />
       </SearchBar>
@@ -232,4 +253,73 @@ export const Disabled: StoryFn<SearchBarProps & { debounceTime: number }> = (arg
       </SearchBar>
     </Stack>
   );
+};
+
+export const WithMaxLength: StoryFn<SearchBarProps & { debounceTime: number; maxLength: number }> = (args) => {
+  const [searchValue, setSearchValue] = useState('');
+
+  return (
+    <Stack width='500px'>
+      <SearchBar {...args}>
+        <SearchBar.Input
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          placeholder='최대 10자까지 입력 가능'
+          maxLength={args.maxLength}
+          debounceTime={args.debounceTime}
+        />
+      </SearchBar>
+    </Stack>
+  );
+};
+
+WithMaxLength.args = {
+  width: '100%',
+  height: '32px',
+  useFlexibleWidth: false,
+  debounceTime: 300,
+  maxLength: 10,
+};
+
+WithMaxLength.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const input = canvas.getByRole('textbox');
+
+  // maxLength 테스트 - 10자 초과 입력 시도
+  await userEvent.type(input, '12345678901');
+  expect(input).toHaveValue('1234567890'); // 10자까지만 입력되어야 함
+};
+
+export const WithFlexiblePlaceholder: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+  const [searchValue, setSearchValue] = useState('');
+
+  return (
+    <Stack width='500px'>
+      <SearchBar {...args} useFlexibleWidth>
+        <SearchBar.Input
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          placeholder='기본 플레이스홀더'
+          flexiblePlaceholder='축약된 플레이스홀더'
+          debounceTime={args.debounceTime}
+        />
+      </SearchBar>
+    </Stack>
+  );
+};
+
+WithFlexiblePlaceholder.args = {
+  width: '100%',
+  height: '32px',
+  useFlexibleWidth: true,
+  debounceTime: 300,
+};
+
+WithFlexiblePlaceholder.play = ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const input = canvas.getByRole('textbox');
+
+  // flexiblePlaceholder 테스트
+  // useFlexibleWidth가 true이고 isSelected가 false일 때 flexiblePlaceholder가 표시되어야 함
+  expect(input).toHaveAttribute('placeholder', '축약된 플레이스홀더');
 };
