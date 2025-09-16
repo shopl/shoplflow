@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.8
+
+### Patch Changes
+
+- [#629](https://github.com/shopl/shoplflow/pull/629) [`a6beacc57618fbd92478c4fbf52b4a5e57c3bf99`](https://github.com/shopl/shoplflow/commit/a6beacc57618fbd92478c4fbf52b4a5e57c3bf99) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(component): selectInputButton 컴포넌트 Clear 버튼 조건부 렌더링 추가했습니다
+
 ## 0.42.7
 
 ### Patch Changes
