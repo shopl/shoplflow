@@ -33,6 +33,15 @@ import IcFilter from './IcFilter';
 import IcFinger from './IcFinger';
 import IcFireFighting from './IcFireFighting';
 import IcGradeBadge from './IcGradeBadge';
+import IcHadaAssignees from './IcHadaAssignees';
+import IcHadaAverage from './IcHadaAverage';
+import IcHadaCheckedFacility from './IcHadaCheckedFacility';
+import IcHadaChecklist from './IcHadaChecklist';
+import IcHadaComplaint from './IcHadaComplaint';
+import IcHadaFacility from './IcHadaFacility';
+import IcHadaPending from './IcHadaPending';
+import IcHadaResolved from './IcHadaResolved';
+import IcHadaScheduled from './IcHadaScheduled';
 import IcHelpCenter from './IcHelpCenter';
 import IcHelp from './IcHelp';
 import IcHome from './IcHome';
@@ -130,6 +139,15 @@ const icons = {
   finger: IcFinger,
   'fire-fighting': IcFireFighting,
   'grade-badge': IcGradeBadge,
+  'hada-assignees': IcHadaAssignees,
+  'hada-average': IcHadaAverage,
+  'hada-checked-facility': IcHadaCheckedFacility,
+  'hada-checklist': IcHadaChecklist,
+  'hada-complaint': IcHadaComplaint,
+  'hada-facility': IcHadaFacility,
+  'hada-pending': IcHadaPending,
+  'hada-resolved': IcHadaResolved,
+  'hada-scheduled': IcHadaScheduled,
   'help-center': IcHelpCenter,
   help: IcHelp,
   home: IcHome,
@@ -230,6 +248,15 @@ export {
   IcFinger as FingerIcon,
   IcFireFighting as FireFightingIcon,
   IcGradeBadge as GradeBadgeIcon,
+  IcHadaAssignees as HadaAssigneesIcon,
+  IcHadaAverage as HadaAverageIcon,
+  IcHadaCheckedFacility as HadaCheckedFacilityIcon,
+  IcHadaChecklist as HadaChecklistIcon,
+  IcHadaComplaint as HadaComplaintIcon,
+  IcHadaFacility as HadaFacilityIcon,
+  IcHadaPending as HadaPendingIcon,
+  IcHadaResolved as HadaResolvedIcon,
+  IcHadaScheduled as HadaScheduledIcon,
   IcHelpCenter as HelpCenterIcon,
   IcHelp as HelpIcon,
   IcHome as HomeIcon,
