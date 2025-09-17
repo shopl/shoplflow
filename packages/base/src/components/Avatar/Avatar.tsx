@@ -3,7 +3,7 @@ import { StyledAvatar, StyledAvatarBadge, StyledAvatarContainer, StyledAvatarIma
 import type { AvatarProps } from './Avatar.types';
 import AvatarImageNone from '../../assets/mocks/AvatarNone.png';
 
-const Avatar = ({ src, badge, fallbackUrl = AvatarImageNone, ...rest }: AvatarProps): JSX.Element => {
+const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element => {
   return (
     <StyledAvatarContainer>
       <StyledAvatar data-shoplflow={'Avatar'} {...rest}>
@@ -11,7 +11,7 @@ const Avatar = ({ src, badge, fallbackUrl = AvatarImageNone, ...rest }: AvatarPr
         <StyledAvatarImage
           src={src ?? fallbackUrl}
           onError={(e) => {
-            e.currentTarget.src = fallbackUrl;
+            e.currentTarget.src = fallbackUrl ?? AvatarImageNone;
           }}
         />
       </StyledAvatar>

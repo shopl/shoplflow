@@ -7,7 +7,6 @@ import type { AvatarProps } from './Avatar.types';
 import { Icon } from '../Icon';
 import { LeaderLargeIcon } from '@shoplflow/shopl-assets';
 import { Text } from '../Text';
-import AvatarImageNone from '../../assets/mocks/AvatarNone.png';
 
 export default {
   title: 'COMPONENTS/Avatar',
@@ -63,5 +62,5 @@ export const CompareNormalAndError: StoryFn<AvatarProps> = (args) => {
 
 CompareNormalAndError.args = {
   sizeVar: 'L',
-  fallbackUrl: AvatarImageNone,
+  fallbackUrl: undefined,
 };
