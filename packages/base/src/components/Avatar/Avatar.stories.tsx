@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import type { StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
@@ -37,30 +37,30 @@ WidthBadge.args = {
   sizeVar: 'M',
 };
 
-export const WithOnError: StoryFn<AvatarProps> = (args) => {
-  const [errorMessage, setErrorMessage] = useState<string>('');
-
-  const handleError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    setErrorMessage('이미지 로드에 실패했습니다.');
-    // eslint-disable-next-line no-console
-    console.log('Avatar 이미지 로드 실패:', event);
-  };
-
+export const CompareNormalAndError: StoryFn<AvatarProps> = (args) => {
   return (
     <Stack direction='column' spacing='spacing16'>
-      <Text typography='body2_700'>onError 테스트 - 잘못된 이미지 URL 사용</Text>
-      <Stack>
-        <Avatar src='https://invalid-url-that-will-fail.com/image.jpg' onError={handleError} sizeVar='L' {...args} />
+      <Text typography='body2_700'>정상 이미지 vs 에러 이미지 비교</Text>
+      <Stack spacing='spacing16'>
+        <Stack direction='column' spacing='spacing08' align='center' width='100%'>
+          <Avatar src='https://picsum.photos/100/100' sizeVar='L' {...args} />
+          <Text typography='caption_400' color='green300'>
+            정상 이미지
+          </Text>
+        </Stack>
+
+        <Stack direction='column' spacing='spacing08' align='center' width='100%'>
+          <Avatar src='https://invalid-url-that-will-fail.com/image.jpg' sizeVar='L' {...args} />
+          <Text typography='caption_400' color='red300'>
+            에러 이미지 (fallback 표시)
+          </Text>
+        </Stack>
       </Stack>
-      {errorMessage && (
-        <Text typography='caption_400' color='red300'>
-          {errorMessage}
-        </Text>
-      )}
     </Stack>
   );
 };
 
-WithOnError.args = {
+CompareNormalAndError.args = {
   sizeVar: 'L',
+  fallbackUrl: undefined,
 };

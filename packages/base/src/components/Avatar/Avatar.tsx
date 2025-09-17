@@ -3,12 +3,18 @@ import { StyledAvatar, StyledAvatarBadge, StyledAvatarContainer, StyledAvatarIma
 import type { AvatarProps } from './Avatar.types';
 import AvatarImageNone from '../../assets/mocks/AvatarNone.png';
 
-const Avatar = ({ src, badge, onError, ...rest }: AvatarProps): JSX.Element => {
+const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element => {
   return (
     <StyledAvatarContainer>
       <StyledAvatar data-shoplflow={'Avatar'} {...rest}>
         {/*eslint-disable-next-line @typescript-eslint/no-unsafe-assignment*/}
-        <StyledAvatarImage src={(src ?? AvatarImageNone) as string} onError={onError} />
+        <StyledAvatarImage
+          src={src ?? fallbackUrl}
+          onError={(e) => {
+            // @ts-ignore: allow string | StaticImageData assignment
+            e.currentTarget.src = fallbackUrl ?? AvatarImageNone;
+          }}
+        />
       </StyledAvatar>
       <StyledAvatarBadge>{badge}</StyledAvatarBadge>
     </StyledAvatarContainer>

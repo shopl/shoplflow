@@ -12,7 +12,9 @@ export const AvatarSizeVariants = {
 
 export type AvatarSizeVariantType = $Values<typeof AvatarSizeVariants>;
 
-export interface AvatarProps extends AvatarOptionProps {}
+export interface AvatarProps extends AvatarOptionProps {
+  fallbackUrl?: string;
+}
 export interface AvatarOptionProps
   extends SizeVariantProps<AvatarSizeVariantType>,
     ImgHTMLAttributes<HTMLImageElement> {
