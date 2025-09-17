@@ -11,6 +11,7 @@ const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element 
         <StyledAvatarImage
           src={src ?? fallbackUrl}
           onError={(e) => {
+            // @ts-ignore: allow string | StaticImageData assignment
             e.currentTarget.src = fallbackUrl ?? AvatarImageNone;
           }}
         />
