@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.9
+
+### Patch Changes
+
+- [#631](https://github.com/shopl/shoplflow/pull/631) [`c49053c13a42eb84db31a401318c639959556593`](https://github.com/shopl/shoplflow/commit/c49053c13a42eb84db31a401318c639959556593) Thanks [@ayaan0209](https://github.com/ayaan0209)! - SearchBar maxLength + onChange 제대로 안되는 현상 수정
+
 ## 0.42.8
 
 ### Patch Changes
