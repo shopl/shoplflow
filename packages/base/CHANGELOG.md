@@ -1,5 +1,13 @@
 # @shoplflow/base
 
+## 0.42.10
+
+### Patch Changes
+
+- [#633](https://github.com/shopl/shoplflow/pull/633) [`68ae64580692ea14f4e5b387fde86af7d9dd34ca`](https://github.com/shopl/shoplflow/commit/68ae64580692ea14f4e5b387fde86af7d9dd34ca) Thanks [@ayaan0209](https://github.com/ayaan0209)! - update: Avatar에 onError props 추가
+
+- [#635](https://github.com/shopl/shoplflow/pull/635) [`59c2b591fb044156ce138579d9d7565ea8f91d87`](https://github.com/shopl/shoplflow/commit/59c2b591fb044156ce138579d9d7565ea8f91d87) Thanks [@ayaan0209](https://github.com/ayaan0209)! - update: onError대신 fallbackUrl 사용
+
 ## 0.42.9
 
 ### Patch Changes
