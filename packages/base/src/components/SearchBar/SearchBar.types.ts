@@ -61,6 +61,8 @@ export interface SearchBarInputProps {
   onSearch?: (value: string) => void;
   /** 디바운스 시간 (ms) */
   debounceTime?: number;
+  /** 최대 길이 */
+  maxLength?: number;
 }
 
 /** 검색바 props */

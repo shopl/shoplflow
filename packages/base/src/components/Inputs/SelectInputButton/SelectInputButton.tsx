@@ -84,7 +84,7 @@ const SelectInputButton = ({
             </Text>
           )}
           <Stack.Horizontal align={'center'}>
-            {value && value.length > 0 && (
+            {value && value.length > 0 && Boolean(onClear) && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
                 <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
               </IconButton>
