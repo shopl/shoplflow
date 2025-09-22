@@ -130,6 +130,7 @@ import IcGradientDoc from './IcGradientDoc';
 import IcGradientGps from './IcGradientGps';
 import IcGradientInventory from './IcGradientInventory';
 import IcGradientJp from './IcGradientJp';
+import IcGradientLeave from './IcGradientLeave';
 import IcGradientMobile from './IcGradientMobile';
 import IcGradientNotice from './IcGradientNotice';
 import IcGradientOvertime from './IcGradientOvertime';
@@ -457,6 +458,7 @@ const icons = {
   'gradient-gps': IcGradientGps,
   'gradient-inventory': IcGradientInventory,
   'gradient-jp': IcGradientJp,
+  'gradient-leave': IcGradientLeave,
   'gradient-mobile': IcGradientMobile,
   'gradient-notice': IcGradientNotice,
   'gradient-overtime': IcGradientOvertime,
@@ -787,6 +789,7 @@ export {
   IcGradientGps as GradientGpsIcon,
   IcGradientInventory as GradientInventoryIcon,
   IcGradientJp as GradientJpIcon,
+  IcGradientLeave as GradientLeaveIcon,
   IcGradientMobile as GradientMobileIcon,
   IcGradientNotice as GradientNoticeIcon,
   IcGradientOvertime as GradientOvertimeIcon,
