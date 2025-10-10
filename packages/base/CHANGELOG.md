@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.12
+
+### Patch Changes
+
+- [#637](https://github.com/shopl/shoplflow/pull/637) [`b750289540e080a69e20996c7266c53ca08bbd6f`](https://github.com/shopl/shoplflow/commit/b750289540e080a69e20996c7266c53ca08bbd6f) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(component): Radio 컴포넌트의 선택 상태 색상을 HADA에서 neutral700으로 변경했습니다
+
 ## 0.42.11
 
 ### Patch Changes
