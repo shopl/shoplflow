@@ -3,11 +3,15 @@ import { css } from '@emotion/react';
 import { colorTokens } from '../../../styles';
 import type { RadioOptionProps } from './Radio.types';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
+import { getDomain } from '../../../hooks';
 
 const getSelectedStyle = (isHovered: boolean) => {
+  const domain = getDomain();
+  const selectedStrokeColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary300;
+
   return css`
     & > svg > circle {
-      stroke: ${colorTokens.primary300};
+      stroke: ${selectedStrokeColor};
     }
     ${isHovered &&
     css`
