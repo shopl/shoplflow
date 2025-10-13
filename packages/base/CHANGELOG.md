@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.13
+
+### Patch Changes
+
+- [#639](https://github.com/shopl/shoplflow/pull/639) [`b1d1a462277ede0efe158623c30aa22ac660b0ca`](https://github.com/shopl/shoplflow/commit/b1d1a462277ede0efe158623c30aa22ac660b0ca) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Tag 컴포넌트 문서 sizeVar 및 styleVar select할 수 있도록 수정
+
 ## 0.42.12
 
 ### Patch Changes
