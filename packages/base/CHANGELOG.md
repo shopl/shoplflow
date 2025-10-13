@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.14
+
+### Patch Changes
+
+- [#641](https://github.com/shopl/shoplflow/pull/641) [`74eaea55d9efad4b84c654a90520aa35af4cb979`](https://github.com/shopl/shoplflow/commit/74eaea55d9efad4b84c654a90520aa35af4cb979) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Radio 컴포넌트 selected 호버 색상 변경
+
 ## 0.42.13
 
 ### Patch Changes
