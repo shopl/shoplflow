@@ -8,6 +8,7 @@ import { getDomain } from '../../../hooks';
 const getSelectedStyle = (isHovered: boolean) => {
   const domain = getDomain();
   const selectedStrokeColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary300;
+  const selectedHoverStrokeColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary400;
 
   return css`
     & > svg > circle {
@@ -16,7 +17,7 @@ const getSelectedStyle = (isHovered: boolean) => {
     ${isHovered &&
     css`
       & > svg > circle {
-        stroke: ${colorTokens.primary400};
+        stroke: ${selectedHoverStrokeColor};
       }
     `}
   `;
