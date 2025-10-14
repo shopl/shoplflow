@@ -31,6 +31,8 @@ export type DayDatepickerProps = Pick<
   | 'calendarStartDay'
   | 'fixedHeight'
   | 'className'
+  | 'onMonthChange'
+  | 'onYearChange'
 > &
   DayDatepickerOptionProps;
 
