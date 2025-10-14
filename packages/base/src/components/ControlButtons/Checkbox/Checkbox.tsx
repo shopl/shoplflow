@@ -8,7 +8,18 @@ export const CHECKBOX_SYMBOL_KEY = Symbol('SHOPLFLOW_CHECKBOX');
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   (
-    { defaultSelected, isSelected, disabled, onMouseEnter, onClick, onMouseLeave, styleVar = 'PRIMARY', id, ...rest },
+    {
+      defaultSelected,
+      isSelected,
+      disabled,
+      onMouseEnter,
+      onClick,
+      onMouseLeave,
+      readOnly,
+      styleVar = 'PRIMARY',
+      id,
+      ...rest
+    },
     ref,
   ) => {
     const [selected, toggleSelected] = useOnToggle(isSelected, defaultSelected);
@@ -40,12 +51,13 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         type='button'
         data-shoplflow={'Checkbox'}
       >
-        <StyledCheckHiddenInput type='checkbox' disabled={disabled} id={id} {...rest} ref={ref} />
+        <StyledCheckHiddenInput type='checkbox' disabled={disabled} id={id} readOnly={readOnly} {...rest} ref={ref} />
         <StyledCheckbox
           styleVar={styleVar}
           htmlFor={id}
           isHovered={isHovered}
           isSelected={selected}
+          readOnly={readOnly}
           disabled={disabled}
         >
           <svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'>
