@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.15
+
+### Patch Changes
+
+- [#643](https://github.com/shopl/shoplflow/pull/643) [`a0b52e76a5aaed54e12bf66f92f08d13e826c192`](https://github.com/shopl/shoplflow/commit/a0b52e76a5aaed54e12bf66f92f08d13e826c192) Thanks [@velo-kim](https://github.com/velo-kim)! - Daydatepicker onMonthChange, onYearChange 핸들러를 추가했어요
+
 ## 0.42.14
 
 ### Patch Changes
