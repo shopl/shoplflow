@@ -9,6 +9,7 @@ const getStylesByStyleVariant = (
   styleVariant?: CheckboxOptionProps['styleVar'],
   isSelected?: CheckboxOptionProps['isSelected'],
   isHovered?: boolean,
+  readOnly?: boolean,
 ) => {
   const domain = getDomain();
   const primaryColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary300;
@@ -24,6 +25,7 @@ const getStylesByStyleVariant = (
             fill: ${colorTokens.neutral0};
           }
           ${isHovered &&
+          !readOnly &&
           css`
             border: 1.5px solid ${primaryHoverColor};
             background: ${primaryHoverColor};
@@ -35,6 +37,7 @@ const getStylesByStyleVariant = (
         border: 1.5px solid ${colorTokens.neutral200};
         border-radius: 4px;
         ${isHovered &&
+        !readOnly &&
         css`
           border: 1.5px solid ${colorTokens.neutral300};
           background: ${colorTokens.neutral300};
@@ -54,6 +57,7 @@ const getStylesByStyleVariant = (
             fill: ${colorTokens.primary300};
           }
           ${isHovered &&
+          !readOnly &&
           css`
             border: 1.5px solid ${colorTokens.primary400};
             & > svg > path {
@@ -70,6 +74,7 @@ const getStylesByStyleVariant = (
           fill: ${colorTokens.neutral200};
         }
         ${isHovered &&
+        !readOnly &&
         css`
           border: 1.5px solid ${colorTokens.neutral300};
           & > svg > path {
@@ -93,6 +98,7 @@ export const StyledCheckHiddenInput = styled.input`
 export const StyledCheckbox = styled.label<
   CheckboxOptionProps & {
     isHovered: boolean;
+    readOnly?: boolean;
   }
 >`
   display: flex;
@@ -105,8 +111,9 @@ export const StyledCheckbox = styled.label<
   background: ${colorTokens.neutral200};
   border-radius: 4px;
   box-sizing: border-box;
-  cursor: pointer;
-  ${({ styleVar, isSelected, isHovered }) => getStylesByStyleVariant(styleVar, isSelected, isHovered)};
+  cursor: ${({ readOnly }) => (readOnly ? 'default' : 'pointer')};
+  ${({ styleVar, isSelected, isHovered, readOnly }) =>
+    getStylesByStyleVariant(styleVar, isSelected, isHovered, readOnly)};
   ${({ disabled }) => getDisabledStyle(disabled)}
 `;
 
