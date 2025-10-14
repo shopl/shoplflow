@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.16
+
+### Patch Changes
+
+- [#645](https://github.com/shopl/shoplflow/pull/645) [`7c6f779b08a3e0d6d010e7b73c6261e2959d7822`](https://github.com/shopl/shoplflow/commit/7c6f779b08a3e0d6d010e7b73c6261e2959d7822) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Checkbox ReadOnly 스타일 변경
+
 ## 0.42.15
 
 ### Patch Changes
