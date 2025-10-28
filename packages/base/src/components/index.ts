@@ -28,4 +28,3 @@ export * from './Comboboxs';
 export * from './Skeleton';
 export * from './Slider';
 export * from './SearchBar';
-export * from '../../../templates/src/components/AttachmentList';
