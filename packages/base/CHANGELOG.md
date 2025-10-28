@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.17
+
+### Patch Changes
+
+- [#647](https://github.com/shopl/shoplflow/pull/647) [`80dd637c60b8ade560657af8f6e02898de95d478`](https://github.com/shopl/shoplflow/commit/80dd637c60b8ade560657af8f6e02898de95d478) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - Attachment List shoplflow template 추가, Tab 에 clickable 옵션 추가
+
 ## 0.42.16
 
 ### Patch Changes
