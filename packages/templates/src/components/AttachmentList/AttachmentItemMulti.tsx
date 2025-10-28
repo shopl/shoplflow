@@ -3,7 +3,7 @@ import { Text, IconButton, Icon, StackContainer } from '@shoplflow/base';
 import type { AttachmentItemMultiProps } from './AttachmentList.types';
 import { DeleteIcon } from '@shoplflow/shopl-assets';
 
-const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, children, thumbnail }) => {
+const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, children, thumbnail, onDelete }) => {
   const formatFileSize = (bytes: number): string => {
     if (bytes === 0) {
       return '0 Bytes';
@@ -46,7 +46,12 @@ const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, childre
       </StackContainer.Vertical>
 
       <IconButton sizeVar='S' styleVar='GHOST'>
-        <Icon iconSource={DeleteIcon} sizeVar='S' color='neutral350' />
+        <Icon
+          iconSource={DeleteIcon}
+          sizeVar='S'
+          color='neutral350'
+          onClick={(e: React.MouseEvent<unknown>) => onDelete?.(e as React.MouseEvent<HTMLButtonElement>)}
+        />
       </IconButton>
     </StackContainer.Horizontal>
   );
