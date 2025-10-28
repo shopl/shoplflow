@@ -15,6 +15,7 @@ export const Tab = ({
   as,
   styleVar = 'NORMAL',
   sizeVar = 'L',
+  clickable = true,
   onClick,
   activeColor,
   ...args
@@ -33,8 +34,10 @@ export const Tab = ({
   }, []);
 
   const clickHandler = (event: MouseEvent<HTMLElement>) => {
-    onClick?.(event);
-    setActiveTab(value);
+    if (clickable) {
+      onClick?.(event);
+      setActiveTab(value);
+    }
   };
 
   let typography: TypographyTokens = 'title1_700';
@@ -52,8 +55,8 @@ export const Tab = ({
       isActive={isActive}
       as={as}
       onClick={clickHandler}
-      onMouseOver={hoverHandler}
-      onMouseLeave={unhoverHandler}
+      onMouseOver={clickable ? hoverHandler : undefined}
+      onMouseLeave={clickable ? unhoverHandler : undefined}
       onFocus={hoverHandler}
       onBlur={unhoverHandler}
       isHover={isHover}
@@ -68,6 +71,7 @@ export const Tab = ({
         isActive={isActive}
         activeColor={activeColor}
         styleVar={styleVar}
+        clickable={clickable}
       >
         {label}
       </StyledTabText>

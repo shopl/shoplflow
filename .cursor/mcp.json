@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "serena": {
+            "command": "docker",
+            "args": ["run", "--rm", "-i", "--network", "host", "-v","$(pwd)", "ghcr.io/oraios/serena:latest", "serena", "start-mcp-server", "--transport", "stdio", "--context", "ide-assistant"]
+        },
+        "chrome-devtools": {
+            "command": "npx",
+            "args": ["-y", "chrome-devtools-mcp@latest"]
+          }
+    }
+}

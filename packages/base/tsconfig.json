@@ -23,7 +23,7 @@
     "src/emotion.d.ts",
     "images.d.ts",
     "src"
-  ],
+, "../templates/src/components/AttachmentList"  ],
   "exclude": [
     "src/styles/tokens/shoplColors.ts",
     "src/styles/tokens/hadaColors.ts",
