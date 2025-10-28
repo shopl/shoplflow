@@ -48,12 +48,14 @@ export interface TabOptionProps
     Omit<HTMLAttributes<HTMLElement>, 'color'> {
   as?: React.ElementType;
   activeColor?: ColorTokens;
+  clickable?: boolean;
 }
 
 export interface TabStyledProps extends StyleVariantProps<TabStyleVariantType> {
   as?: React.ElementType;
   isActive: boolean;
   isHover: boolean;
+  clickable?: boolean;
 }
 
 export interface TabTextStyledProps extends TabStyledProps {

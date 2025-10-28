@@ -80,7 +80,7 @@ export const StyledTab = styled.div<TabStyledProps>`
   flex-direction: row;
   align-items: center;
   width: fit-content;
-  cursor: pointer;
+  cursor: ${({ clickable }) => (clickable ? 'pointer' : 'default')};
   position: relative;
   gap: 4px;
   user-select: none;
@@ -149,7 +149,7 @@ export const getActiveTextStyleByStyleVar = (styleVar: TabStyleVariantType, acti
 };
 
 export const StyledTabText = styled(Text)<TabTextStyledProps>`
-  cursor: pointer;
+  cursor: ${({ clickable }) => (clickable ? 'pointer' : 'default')};
 
   ${({ styleVar }) => styleVar && getTextStyleByStyleVar(styleVar)};
 

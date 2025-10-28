@@ -1,0 +1,87 @@
+import { Meta, Canvas, Story } from '@storybook/blocks';
+import * as AttachmentListStories from './AttachmentList.stories';
+import { AttachmentIcon } from '@shoplflow/shopl-assets';
+
+<Meta of={AttachmentListStories} />
+
+# AttachmentList
+
+첨부파일 목록을 표시하는 컴포넌트입니다. Compound Component 패턴을 사용하여 유연한 조합이 가능합니다.
+
+## Features
+
+- **Compound Component 패턴**: `AttachmentItem.Single`, `AttachmentItem.Multi`, `AttachmentItem.Thumbnail` 조합
+- **두 가지 레이아웃**: Single (한 줄), Multi (세로) 레이아웃 지원
+- **썸네일 지원**: 문서 아이콘 또는 이미지 썸네일 표시
+- **호버 상태**: 마우스 오버 시 배경색 변경
+- **이벤트 처리**: 삭제 이벤트 지원
+- **조건부 렌더링**: Multi에서 item이 null일 때 children 표시
+
+## Usage
+
+### Single Variant
+
+한 줄로 파일명, 확장자, 크기를 표시하는 형태입니다.
+
+<Canvas of={AttachmentListStories.SingleVariant} />
+
+```tsx
+<AttachmentList>
+  <AttachmentItem.Single item={{
+    name: 'Schedule_Bulk_20241015145927',
+    extension: 'Excel',
+    size: 1363148 // 1.3MB
+  }} />
+</AttachmentList>
+```
+
+### Multi Variant
+
+썸네일과 함께 세로로 파일 정보를 표시하는 형태입니다.
+
+<Canvas of={AttachmentListStories.MultiVariant} />
+
+```tsx
+<AttachmentList>
+  <AttachmentItem.Thumbnail iconSource={AttachmentIcon} />
+  <AttachmentItem.Multi item={{
+    name: '20220722.pdf',
+    extension: 'PDF',
+    size: 1258291 // 1.2MB
+  }} />
+</AttachmentList>
+```
+
+### With Image Thumbnail
+
+이미지 파일의 경우 실제 썸네일을 표시할 수 있습니다.
+
+<Canvas of={AttachmentListStories.WithImageThumbnail} />
+
+```tsx
+<AttachmentList>
+  <AttachmentItem.Multi
+    thumbnail={
+      <AttachmentItem.Thumbnail url='https://media.istockphoto.com/id/1973365581/ko/%EB%B2%A1%ED%84%B0/%EC%83%98%ED%94%8C-%EC%9E%89%ED%81%AC-%EA%B3%A0%EB%AC%B4-%EC%8A%A4%ED%83%AC%ED%94%84.jpg?s=612x612&w=0&k=20&c=XyLVT-DEy5Ng5gWvABamABg0CPbPHhs-XUQf6NivaBM=' />
+    }
+    item={imageItem}
+  />
+</AttachmentList>
+```
+
+### With Custom Children
+
+Multi 타입에서 item이 null일 때 커스텀 children을 표시할 수 있습니다.
+
+<Canvas of={AttachmentListStories.WithChildren} />
+
+```tsx
+<AttachmentList>
+  <AttachmentItem.Multi thumbnail={<AttachmentItem.Thumbnail iconSource={AttachmentIcon} />}>
+    <div style={{ padding: '4px 0' }}>
+      <div style={{ fontSize: '14px', color: '#333', marginBottom: '2px' }}>Custom Content</div>
+      <div style={{ fontSize: '12px', color: '#999' }}>This is custom children content</div>
+    </div>
+  </AttachmentItem.Multi>
+</AttachmentList>
+```
