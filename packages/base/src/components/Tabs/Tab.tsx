@@ -57,8 +57,8 @@ export const Tab = ({
       onClick={clickHandler}
       onMouseOver={clickable ? hoverHandler : undefined}
       onMouseLeave={clickable ? unhoverHandler : undefined}
-      onFocus={hoverHandler}
-      onBlur={unhoverHandler}
+      onFocus={clickable ? hoverHandler : undefined}
+      onBlur={clickable ? unhoverHandler : undefined}
       isHover={isHover}
       styleVar={styleVar}
       {...args}
