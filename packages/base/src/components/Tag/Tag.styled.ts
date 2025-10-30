@@ -23,7 +23,7 @@ const getTagStyleBySize = (size?: TagOptionProps['sizeVar']) => {
     case 'XS':
       return css`
         height: 20px;
-        padding: 0 4px;
+        padding: 0 6px;
         border-radius: 4px;
       `;
     case 'S':
