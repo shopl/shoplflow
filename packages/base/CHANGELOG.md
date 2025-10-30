@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.18
+
+### Patch Changes
+
+- [#649](https://github.com/shopl/shoplflow/pull/649) [`05225aaf38999b141582b8e43417b976ff5a1300`](https://github.com/shopl/shoplflow/commit/05225aaf38999b141582b8e43417b976ff5a1300) Thanks [@velo-kim](https://github.com/velo-kim)! - update(component): Tag XS size의 패딩값 변경
+
 ## 0.42.17
 
 ### Patch Changes
