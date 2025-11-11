@@ -3,6 +3,7 @@ import type { ModalContainerProps } from './Modal.types';
 import { css } from '@emotion/react';
 import { borderRadiusTokens, colorTokens } from '../../styles';
 import { boxShadowTokens } from '../../styles/tokens';
+import type { CSSProperties } from 'react';
 
 const MODAL_SIZE_XXS = 400;
 const MODAL_SIZE_XS = 500;
@@ -36,8 +37,13 @@ const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
   }
 };
 
-const getModalBodyTopBottomPadding = (isIncludeHeader: boolean, sizeVar: ModalContainerProps['sizeVar']) => {
-  if (sizeVar === 'FULL') {
+const getModalBodyTopBottomPadding = (
+  isIncludeHeader: boolean,
+  sizeVar: ModalContainerProps['sizeVar'],
+  padding?: CSSProperties['padding'],
+) => {
+  // padding이 있는 경우는 innerContainer에 padding 적용
+  if (sizeVar === 'FULL' || padding) {
     return css`
       padding-top: 0;
       padding-bottom: 0;
@@ -123,6 +129,7 @@ export const BodyContainer = styled.div<{
   minHeight: string | number;
   maxHeight: string | number;
   sizeVar: ModalContainerProps['sizeVar'];
+  padding?: CSSProperties['padding'];
 }>`
   display: flex;
   width: 100%;
@@ -134,7 +141,7 @@ export const BodyContainer = styled.div<{
   min-height: ${({ minHeight }) => minHeight}px;
   max-height: ${({ maxHeight }) => maxHeight}px;
   flex: 1;
-  ${({ isIncludeHeader, sizeVar }) => getModalBodyTopBottomPadding(isIncludeHeader, sizeVar)};
+  ${({ isIncludeHeader, sizeVar, padding }) => getModalBodyTopBottomPadding(isIncludeHeader, sizeVar, padding)};
 `;
 
 export const ModalBodyContainerInner = styled.div`
@@ -150,12 +157,13 @@ export const ModalBodyContainerInner = styled.div`
 export const ModalBodyContent = styled.div<{
   isIncludeHeader: boolean;
   sizeVar: ModalContainerProps['sizeVar'];
+  padding?: CSSProperties['padding'];
 }>`
   display: flex;
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: ${({ padding }) => padding || '0 24px'};
   ${({ sizeVar }) =>
     sizeVar === 'FULL' &&
     css`
