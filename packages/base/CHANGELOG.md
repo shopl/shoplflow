@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.20
+
+### Patch Changes
+
+- [#654](https://github.com/shopl/shoplflow/pull/654) [`821be7180ec1b1a27928a742ee72a283518e9a9f`](https://github.com/shopl/shoplflow/commit/821be7180ec1b1a27928a742ee72a283518e9a9f) Thanks [@velo-kim](https://github.com/velo-kim)! - update(component): 모달 style 조정(Body padding 가능, 사이즈 변경 시 애니메이션)
+
 ## 0.42.19
 
 ### Patch Changes
