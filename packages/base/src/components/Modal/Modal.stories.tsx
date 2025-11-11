@@ -3,7 +3,7 @@ import { Box, ComponentStage } from '../../styles/Box';
 import { Modal, useHandleModal } from './index';
 import type { ModalContainerProps } from './Modal.types';
 import ModalContainer from './ModalContainer';
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
 import { Button } from '../Buttons';
@@ -19,8 +19,9 @@ const mockBoxs: ReactNode[] = new Array(20)
 
 const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
+  const [size, setSize] = useState<ModalContainerProps['sizeVar']>('L');
   return (
-    <Modal.Container {...args} outsideClick={removeModal} height={900}>
+    <Modal.Container {...args} sizeVar={size} outsideClick={removeModal} height={900}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
@@ -29,7 +30,18 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
 
       <Modal.Footer>
         <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
-        <Button styleVar={'SECONDARY'}>버튼</Button>
+        <Button
+          styleVar={'SECONDARY'}
+          onClick={() => {
+            if (size === 'L') {
+              setSize('XL');
+            } else {
+              setSize('L');
+            }
+          }}
+        >
+          사이즈 변경
+        </Button>
         <Button>버튼</Button>
       </Modal.Footer>
     </Modal.Container>

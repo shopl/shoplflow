@@ -82,6 +82,9 @@ export const Container = styled.div<
     viewport: number;
   }
 >`
+  transition:
+    width 0.3s ease-in-out,
+    max-width 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   border-radius: ${borderRadiusTokens.borderRadius08};
