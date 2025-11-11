@@ -11,6 +11,7 @@ const ModalBody = ({
   isIncludeFooter = false,
   sizeVar,
   height: modalContainerHeight,
+  padding,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useViewportSizeObserver();
   const { heightToDeduct } = useModalOption();
@@ -82,14 +83,16 @@ const ModalBody = ({
   const setContentHeightMax = () => {
     let autoHeightMax = setAutoHeightMax();
 
-    // Content top padding 빼주기
-    autoHeightMax = autoHeightMax - 24;
+    if (padding) {
+      return autoHeightMax;
+    }
 
+    // Content top padding 빼주기
     if (isIncludeHeader) {
       autoHeightMax = autoHeightMax - 24;
     }
 
-    if (!isIncludeHeader) {
+    if (isIncludeFooter) {
       autoHeightMax = autoHeightMax - 16;
     }
 
@@ -105,6 +108,7 @@ const ModalBody = ({
       sizeVar={sizeVar}
       minHeight={_autoHeightMin}
       maxHeight={setAutoHeightMax() - heightToDeduct}
+      padding={padding}
     >
       <ScrollArea
         id={`scrollbar`}
@@ -115,7 +119,7 @@ const ModalBody = ({
         style={{}}
       >
         <ModalBodyContainerInner>
-          <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar}>
+          <ModalBodyContent isIncludeHeader={isIncludeHeader} sizeVar={sizeVar} padding={padding}>
             {children}
           </ModalBodyContent>
         </ModalBodyContainerInner>

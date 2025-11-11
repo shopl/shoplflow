@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import type { ChildrenProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 export const ModalSize = {
@@ -49,6 +50,7 @@ export interface ModalBodyOptionProps {
   isIncludeFooter?: boolean;
   height?: number;
   sizeVar?: ModalSizeType;
+  padding?: CSSProperties['padding'];
 }
 // Modal Footer
 export interface ModalFooterProps extends ModalFooterOptionProps, ChildrenProps {}

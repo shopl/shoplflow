@@ -119,7 +119,7 @@ export const TreeItem = ({
             </IconButton>
           )}
           {/* 마지막 Tree인 케이스 */}
-          {isLastTree && <div style={{ width: '24px', height: '24px', visibility: 'hidden' }} />}
+          {isLastTree && <div style={{ width: '24px', height: '24px', visibility: 'hidden', flexShrink: 0 }} />}
           {LeftSourceClone && LeftSourceClone}
           <StackContainer padding={'0 0 0 4px'}>
             <Text typography={'body1_400'} wordBreak={'break-all'} color={disabled ? 'neutral350' : 'neutral700'}>
