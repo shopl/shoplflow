@@ -33,7 +33,7 @@ personas: [architect]
 
 ## Context Trigger Pattern
 ```
-/implement [feature-description] [--type component|template] [--scope base|templates|utils|extension|assets|all] [--pkg <workspace-pkg>] [--with-tests] [--safe] [--dry-run] [--refactor] [--playwright] [--figma <figma-link>]
+/implement [feature-description] [--type component|template] [--scope base|templates|utils|extension|assets|all] [--pkg <workspace-pkg>] [--with-tests] [--safe] [--dry-run] [--refactor] [--playwright] [--figma <figma-link>] [--interactive] [--plan]
 ```
 
 ## Behavioral Flow
@@ -43,6 +43,47 @@ personas: [architect]
 4. **Generate**: 프레임워크별 모범 사례 적용한 구현 코드 생성
 5. **Validate**: 보안 및 품질 검증 적용
 6. **Integrate**: 문서 업데이트 및 테스트 권장사항 제공
+7. **Documentation Update**: 관련 문서 업데이트 여부 사용자 확인 및 실행
+
+### --interactive 모드
+- 각 주요 단계(Plan, Generate, Validate, Integrate)에서 사용자 승인 필수
+- 승인 없이 파일 작성/수정 절대 금지
+- 단계별 진행 상황을 명확히 제시하고 사용자 확인 후 다음 단계 진행
+- 각 단계 완료 후 다음 단계 진행 전 반드시 사용자 승인 요청
+
+### --plan 모드
+- Analyze → Agent Activation → Plan 단계까지만 수행
+- Generate, Validate, Integrate 단계는 건너뜀
+- 계획서만 생성하고 실제 코드 변경 없음
+- 구현 계획을 상세히 문서화하여 제시
+
+### Documentation Update 플로우
+- **Generate 단계 완료 후 자동 실행**
+- 관련 문서 파일 자동 감지:
+  - 컴포넌트의 `.mdx` 파일 (Storybook 문서)
+  - 컴포넌트의 `.stories.tsx` 파일 (Story 예제)
+  - README 파일 (해당되는 경우)
+- 사용자에게 문서 업데이트 여부 확인 요청:
+  ```
+  구현이 완료되었습니다. 관련 문서를 업데이트할까요?
+  
+  감지된 문서 파일:
+  - packages/base/src/components/Modal/Modal.mdx
+  - packages/base/src/components/Modal/Modal.stories.tsx
+  
+  업데이트할 내용:
+  - 새로운 padding prop 설명 추가
+  - Story 예제 추가
+  
+  진행할까요? (yes/no)
+  ```
+- 사용자가 승인하면:
+  - `.mdx` 파일에 새로운 props 설명 추가
+  - `.stories.tsx` 파일에 새로운 props 예제 Story 추가
+  - 변경 사항 요약 제공
+- 사용자가 거부하면:
+  - 문서 업데이트 단계 건너뛰기
+  - 구현 완료 메시지와 함께 문서 업데이트는 수동으로 진행하도록 안내
 
 ## MCP Integration
 - **Context7 MCP**: React, Vue, Angular 프레임워크 패턴 및 공식 문서
@@ -82,6 +123,30 @@ personas: [architect]
 # 5. Sequential MCP가 복잡한 구현 단계를 분해
 ```
 
+### Interactive 모드
+```
+/implement button component --type component --scope base --interactive
+# 각 단계(Plan, Generate, Validate, Integrate)마다 사용자 승인 요청
+# 승인 없이 파일 작성/수정 절대 금지
+# 단계별 진행 상황 명확히 제시
+```
+
+### Plan 모드
+```
+/implement attachment list --type template --scope templates --plan
+# Analyze → Agent Activation → Plan 단계까지만 수행
+# 구현 계획서만 생성하고 실제 코드 변경 없음
+# Generate, Validate, Integrate 단계는 건너뜀
+```
+
+### Interactive + Plan 조합
+```
+/implement button component --type component --scope base --interactive --plan
+# Plan 모드가 우선 적용되어 계획만 수립
+# Interactive 모드는 계획 수립 과정에서만 적용
+# 실제 구현 단계는 수행하지 않음
+```
+
 ## Boundaries
 
 **Will:**
@@ -91,5 +156,8 @@ personas: [architect]
 - **에이전트 활성화 없이 구현 시작 (절대 금지)**
 - **기존 컴포넌트 검토 없이 새 컴포넌트 작성 (절대 금지)**
 - **사용자 승인 없이 구현 진행 (절대 금지)**
+- **--interactive 모드에서 승인 없이 파일 작성/수정 (절대 금지)**
+- **--plan 모드에서 실제 코드 변경 (절대 금지)**
+- **사용자 승인 없이 문서 업데이트 진행 (절대 금지)**
 - 적절한 페르소나 상담 없이 아키텍처 결정
 - 디자인 시스템 정책이나 아키텍처 제약과 충돌하는 기능 구현
