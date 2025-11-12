@@ -1,7 +1,7 @@
 import type { StoryFn } from '@storybook/react';
 import { Box, ComponentStage } from '../../styles/Box';
 import { Modal, useHandleModal } from './index';
-import type { ModalContainerProps } from './Modal.types';
+import type { ModalContainerProps, ModalBodyProps } from './Modal.types';
 import ModalContainer from './ModalContainer';
 import { useState, type ReactNode } from 'react';
 import { Text } from '../Text';
@@ -11,6 +11,12 @@ import { Button } from '../Buttons';
 export default {
   title: 'COMPONENTS/Modal',
   component: ModalContainer,
+  argTypes: {
+    padding: {
+      control: { type: 'text' },
+      description: 'Modal Body의 padding을 설정합니다. CSS padding 속성 값을 직접 지정할 수 있습니다.',
+    },
+  },
 };
 
 const mockBoxs: ReactNode[] = new Array(20)
@@ -57,15 +63,15 @@ export const Playground: StoryFn<ModalContainerProps> = (args) => {
   );
 };
 
-export const Primary = () => {
+export const Primary: StoryFn<ModalContainerProps> = () => {
   return <PrimaryComponent />;
 };
 
-export const Body: StoryFn<ModalContainerProps> = (args) => (
+export const Body: StoryFn<ModalContainerProps & { padding?: ModalBodyProps['padding'] }> = ({ padding, ...args }) => (
   <Stack height={'500px'}>
     <ComponentStage>
       <Modal.Container {...args} height={500}>
-        <Modal.Body>
+        <Modal.Body padding={padding}>
           <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
         </Modal.Body>
       </Modal.Container>
