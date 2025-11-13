@@ -69,6 +69,7 @@ import IcCopy from './IcCopy';
 import IcCrown from './IcCrown';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
+import IcDayOff from './IcDayOff';
 import IcDeadline from './IcDeadline';
 import IcDeleteLine from './IcDeleteLine';
 import IcDelete from './IcDelete';
@@ -397,6 +398,7 @@ const icons = {
   crown: IcCrown,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
+  'day-off': IcDayOff,
   deadline: IcDeadline,
   'delete-line': IcDeleteLine,
   delete: IcDelete,
@@ -728,6 +730,7 @@ export {
   IcCrown as CrownIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
+  IcDayOff as DayOffIcon,
   IcDeadline as DeadlineIcon,
   IcDeleteLine as DeleteLineIcon,
   IcDelete as DeleteIcon,
