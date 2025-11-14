@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.42.22
+
+### Patch Changes
+
+- [#659](https://github.com/shopl/shoplflow/pull/659) [`47720b2755d314b4a771df3468045b093cf283a0`](https://github.com/shopl/shoplflow/commit/47720b2755d314b4a771df3468045b093cf283a0) Thanks [@velo-kim](https://github.com/velo-kim)! - update: Modal 사이즈 애니메이션 flag prop 추가
+
 ## 0.42.21
 
 ### Patch Changes
