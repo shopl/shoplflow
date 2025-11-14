@@ -27,7 +27,7 @@ const PrimaryComponent: StoryFn<ModalContainerProps> = (args) => {
   const { removeModal } = useHandleModal();
   const [size, setSize] = useState<ModalContainerProps['sizeVar']>('L');
   return (
-    <Modal.Container {...args} sizeVar={size} outsideClick={removeModal} height={900}>
+    <Modal.Container {...args} sizeVar={size} outsideClick={removeModal} height={900} hasChangeAnimation={true}>
       <Modal.Header>
         <Text typography={'title1_700'}>모달 헤더 영역</Text>
       </Modal.Header>
