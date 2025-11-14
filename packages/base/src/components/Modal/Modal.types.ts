@@ -19,6 +19,7 @@ export type ModalSizeType = $Values<typeof ModalSize>;
 
 export interface ModalContainerProps extends ModalContainerOptionProps, SizeVariantProps<ModalSizeType> {
   children?: React.ReactNode | React.ReactNode[];
+  hasChangeAnimation?: boolean;
 }
 
 export interface ModalContainerOptionProps {
