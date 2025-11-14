@@ -317,6 +317,7 @@ import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
 import IcWaitingMedium from './IcWaitingMedium';
 import IcWhatsappLarge from './IcWhatsappLarge';
+import IcWhatsapp from './IcWhatsapp';
 import IcWifi from './IcWifi';
 import IcWindowed from './IcWindowed';
 import IcWorkStatus from './IcWorkStatus';
@@ -646,6 +647,7 @@ const icons = {
   'view-on': IcViewOn,
   'waiting-medium': IcWaitingMedium,
   'whatsapp-large': IcWhatsappLarge,
+  whatsapp: IcWhatsapp,
   wifi: IcWifi,
   windowed: IcWindowed,
   'work-status': IcWorkStatus,
@@ -978,6 +980,7 @@ export {
   IcViewOn as ViewOnIcon,
   IcWaitingMedium as WaitingMediumIcon,
   IcWhatsappLarge as WhatsappLargeIcon,
+  IcWhatsapp as WhatsappIcon,
   IcWifi as WifiIcon,
   IcWindowed as WindowedIcon,
   IcWorkStatus as WorkStatusIcon,
