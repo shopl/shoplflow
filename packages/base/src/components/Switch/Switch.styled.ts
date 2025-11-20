@@ -77,7 +77,7 @@ export const StyledSwitch = styled.input<{ activeColor: ColorTokens; sizeVar: Sw
   position: relative;
   display: flex;
   align-items: center;
-  background: ${colorTokens.neutral350};
+  background: ${({ sizeVar }) => (sizeVar === 'M' ? colorTokens.neutral350 : colorTokens.neutral400)};
   padding: 2px;
   margin: 0;
 
