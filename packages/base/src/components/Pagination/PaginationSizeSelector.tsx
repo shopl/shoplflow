@@ -15,6 +15,10 @@ const PaginationSizeSelector = ({ data, pageSize, setPageSize }: PaginationSizeS
     setPageSize(value);
   };
 
+  // pageSize에 해당하는 아이템 찾기
+  const currentItem = selectedItem || data.find((item) => item.value === pageSize);
+  const displayLabel = currentItem ? currentItem.label : String(pageSize);
+
   return (
     <Dropdown
       option={'CLICK'}
@@ -24,11 +28,9 @@ const PaginationSizeSelector = ({ data, pageSize, setPageSize }: PaginationSizeS
           placeholder={String(pageSize)}
           sizeVar='S'
           value={
-            selectedItem && (
-              <Text typography='body1_400' color={'neutral400'}>
-                {selectedItem.label}
-              </Text>
-            )
+            <Text typography='body1_400' color={'neutral400'}>
+              {displayLabel}
+            </Text>
           }
         />
       }
