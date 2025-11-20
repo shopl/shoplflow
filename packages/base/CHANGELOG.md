@@ -1,5 +1,14 @@
 # @shoplflow/base
 
+## 0.42.23
+
+### Patch Changes
+
+- [#663](https://github.com/shopl/shoplflow/pull/663) [`134bcc9fe726ac54164b05a5ce033e7b7233aeda`](https://github.com/shopl/shoplflow/commit/134bcc9fe726ac54164b05a5ce033e7b7233aeda) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Switch sizeVar defatul 색 변경, Pagination SizeSelector ...표시 수정
+
+- Updated dependencies [[`22a75fc18f88ccd0780944652ce88619e24d30b0`](https://github.com/shopl/shoplflow/commit/22a75fc18f88ccd0780944652ce88619e24d30b0)]:
+  - @shoplflow/shopl-assets@0.12.26
+
 ## 0.42.22
 
 ### Patch Changes
