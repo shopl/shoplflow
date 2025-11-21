@@ -15,8 +15,60 @@ const meta: Meta<typeof Input> = {
     sizeVar: {
       options: Object.values(InputSizeVariants),
       control: { type: 'radio' },
-      description: '인풋 사이즈',
+      description: '인풋의 사이즈를 설정합니다.',
       defaultValue: 'M',
+    },
+    type: {
+      options: ['text', 'password', 'number', 'email', 'tel', 'url'],
+      control: { type: 'select' },
+      description: '인풋의 타입을 설정합니다.',
+      defaultValue: 'text',
+    },
+    placeholder: {
+      control: { type: 'text' },
+      description: '인풋의 플레이스홀더를 설정합니다.',
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: '인풋의 비활성화 여부를 설정합니다.',
+      defaultValue: false,
+    },
+    isError: {
+      control: { type: 'boolean' },
+      description: '인풋의 에러 상태 여부를 설정합니다.',
+      defaultValue: false,
+    },
+    maxLength: {
+      control: { type: 'number' },
+      description: '인풋의 최대 입력 길이를 설정합니다.',
+    },
+    min: {
+      control: { type: 'number' },
+      description: '숫자 타입일 때 최소값을 설정합니다.',
+    },
+    max: {
+      control: { type: 'number' },
+      description: '숫자 타입일 때 최대값을 설정합니다.',
+    },
+    width: {
+      control: { type: 'text' },
+      description: '인풋의 너비를 설정합니다.',
+    },
+    onClear: {
+      action: 'cleared',
+      description: '클리어 버튼을 클릭했을 때 실행되는 동작을 설정합니다.',
+    },
+    onChange: {
+      action: 'changed',
+      description: '인풋 값이 변경될 때 실행되는 동작을 설정합니다.',
+    },
+    onFocus: {
+      action: 'focused',
+      description: '인풋이 포커스될 때 실행되는 동작을 설정합니다.',
+    },
+    onBlur: {
+      action: 'blurred',
+      description: '인풋이 블러될 때 실행되는 동작을 설정합니다.',
     },
   },
 };
@@ -29,24 +81,25 @@ export const Playground: StoryFn<InputProps> = (args) => {
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
-        <Input maxLength={50} ref={inputRef} {...args} />
+        <Input ref={inputRef} {...args} />
       </ComponentStage>
     </Stack>
   );
 };
 
 Playground.args = {
-  placeholder: 'input 예제입니다',
+  sizeVar: 'M',
+  type: 'text',
+  placeholder: '입력해주세요',
   disabled: false,
-  onClear: () => {
-    return;
-  },
+  isError: false,
+  maxLength: 50,
 };
 
 Playground.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/Shopl-Flow?node-id=13640-7295&m=dev',
   },
 };
 
@@ -56,19 +109,57 @@ export const Password: StoryFn<InputProps> = (args) => {
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
-        <Input maxLength={50} ref={inputRef} {...args} />
+        <Input ref={inputRef} {...args} />
       </ComponentStage>
     </Stack>
   );
 };
 
 Password.args = {
+  sizeVar: 'M',
   type: 'password',
-  placeholder: '타입이 password인 경우입니다.',
+  placeholder: '비밀번호를 입력해주세요',
   disabled: false,
-  onClear: () => {
-    return;
-  },
+};
+export const Number: StoryFn<InputProps> = (args) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <ComponentStage>
+        <Input ref={inputRef} {...args} />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+Number.args = {
+  sizeVar: 'M',
+  type: 'number',
+  placeholder: '10부터 100까지 입력 가능합니다',
+  min: 10,
+  max: 100,
+  disabled: false,
+};
+
+export const Error: StoryFn<InputProps> = (args) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <ComponentStage>
+        <Input ref={inputRef} {...args} />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+Error.args = {
+  sizeVar: 'M',
+  type: 'text',
+  placeholder: '에러 상태입니다',
+  isError: true,
+  disabled: false,
 };
 export const CheckValue: StoryFn<InputProps> = (args) => {
   const [value, setValue] = useState('');
@@ -96,41 +187,8 @@ export const CheckValue: StoryFn<InputProps> = (args) => {
 };
 
 CheckValue.args = {
-  placeholder: '버튼을 눌렀을 때 input 값을 확인할 수 있습니다.',
+  sizeVar: 'M',
+  type: 'text',
+  placeholder: '버튼을 눌러서 입력값을 확인해보세요',
   disabled: false,
-  onClear: () => {
-    return;
-  },
-};
-
-export const Error: StoryFn<InputProps> = (args) => {
-  return (
-    <Stack width={'500px'}>
-      <ComponentStage>
-        <Input maxLength={50} {...args} />
-      </ComponentStage>
-    </Stack>
-  );
-};
-
-Error.args = {
-  disabled: false,
-  isError: true,
-  placeholder: '에러 상태입니다.',
-};
-export const Number: StoryFn<InputProps> = (args) => {
-  const [t, sT] = useState(false);
-  return (
-    <Stack width={'300px'} height={'300px'}>
-      <button onClick={() => sT(!t)}>aaa</button>
-      <ComponentStage>{t && <Input borderRadius='borderRadius12' value={0} {...args} />}</ComponentStage>
-    </Stack>
-  );
-};
-
-Number.args = {
-  disabled: false,
-  type: 'number',
-  min: 10,
-  max: 21,
 };

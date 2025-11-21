@@ -51,7 +51,7 @@ export const getStyleByType = ({
   maxHeight?: CSSStyleDeclaration['maxHeight'];
   borderRadius?: BorderRadiusTokens;
   customNumberInputHeight?: string;
-}) => {
+}): ReturnType<typeof css> => {
   if (type === 'number') {
     return css`
       width: ${width || '64px'};
@@ -85,6 +85,7 @@ export const InputWrapper = styled.label<
     gap?: CSSStyleDeclaration['gap'];
     type?: HTMLInputTypeAttribute;
     focusedBorderColor?: ColorTokens;
+    sizeVar?: 'S' | 'M';
   }
 >`
   position: relative;
@@ -105,7 +106,7 @@ export const InputWrapper = styled.label<
       borderRadius,
     })};
   justify-content: space-between;
-  gap: ${({ gap }) => gap || '8px'};
+  gap: ${({ gap, sizeVar }) => gap || (sizeVar === 'S' ? '4px' : '8px')};
   border: 1px solid ${(props) => getBorderColorByStatus(props)};
   background-color: ${colorTokens.neutral0};
   overflow: hidden;

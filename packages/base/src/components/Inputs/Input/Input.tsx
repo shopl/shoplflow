@@ -170,6 +170,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         borderRadius={borderRadius}
         customNumberInputHeight={customNumberInputHeight}
         gap={gap}
+        sizeVar={sizeVar}
       >
         <StyledInput
           onFocus={handleOnFocus}
@@ -183,6 +184,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           id={uniqueId}
           ref={refs}
           minWidth={minWidth}
+          sizeVar={sizeVar}
           className={'body1_400' + (className ? ` ${className}` : '')}
           {...rest}
         />
