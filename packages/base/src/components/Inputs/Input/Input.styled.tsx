@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
 import { css } from '@emotion/react';
+import type { InputSizeVariantType } from './Input.types';
 
 export const StyledInput = styled.input<{
   disabled?: boolean;
   minWidth?: string;
+  sizeVar?: InputSizeVariantType;
 }>`
-  padding: 4px 0 4px 12px;
+  padding: ${({ sizeVar }) => (sizeVar === 'S' ? '0 0 0 8px' : '4px 0 4px 12px')};
   background-color: transparent;
   display: flex;
   min-width: ${({ minWidth }) => minWidth || '64px'};

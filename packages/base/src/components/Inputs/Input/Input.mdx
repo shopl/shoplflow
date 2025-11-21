@@ -1,33 +1,31 @@
-import Input from './Input'
-import * as InputStories from './Input.stories'
+import * as InputStories from "./Input.stories";
 import { Canvas, Meta, Controls} from '@storybook/blocks';
 
 <Meta of={InputStories} />
 
 # Input
-html의 `input`과 동일하게 사용할 수 있습니다.
+사용자로부터 텍스트, 숫자, 패스워드 등의 입력을 받는 기본적인 입력 컴포넌트입니다.
 
-> - 최대 글자수가 지정될 경우에만 포커싱할 때 글자수 카운터가 표시됩니다.
-> - 만약 글자가 입력된 경우 우측에 X 버튼이 노출되며 클릭 시 입력된 글자가 모두 삭제됩니다.
-
+> - `focus` 상태에서 텍스트 카운터와 클리어 버튼이 자동으로 표시됩니다.
+> - `password` 타입의 경우 비밀번호 표시/숨김 토글 버튼이 제공됩니다.
+> - `number` 타입의 경우 min/max 값으로 범위를 제한할 수 있습니다.
 
 ## Overview
 <Canvas of={InputStories.Playground} />
 
 ## Usage
 ```tsx
-import { StackContainer, Input } from "@shoplflow/base";
+import { Input } from '@shoplflow/base';
 
 const Example = () => {
-
-  const inputRef = useRef<HTMLInputElement>(null);
-
   return (
-    <StackContainer width={'500px'} height={'300px'} justify={'center'}>
-      <Input maxLength={50} ref={inputRef} />
-    </StackContainer>
+    <Input
+      sizeVar="M"
+      placeholder="입력해주세요"
+      maxLength={50}
+    />
   );
-}
+};
 ```
 
 ## Props
