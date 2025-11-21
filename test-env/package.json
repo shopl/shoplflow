@@ -1,7 +1,7 @@
 {
   "name": "test-env",
   "private": true,
-  "version": "0.0.251",
+  "version": "0.0.252",
   "type": "module",
   "scripts": {
     "dev": "vite",

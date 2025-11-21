@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.43.0
+
+### Minor Changes
+
+- [#664](https://github.com/shopl/shoplflow/pull/664) [`537d504b63655043739982d8a73244b63d7e18d1`](https://github.com/shopl/shoplflow/commit/537d504b63655043739982d8a73244b63d7e18d1) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - Input S size의 padding, gap을 수정했어요
+
 ## 0.42.23
 
 ### Patch Changes
