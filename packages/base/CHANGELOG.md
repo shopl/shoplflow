@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.43.1
+
+### Patch Changes
+
+- [#666](https://github.com/shopl/shoplflow/pull/666) [`dda54bcfeeb30afe2ab0b85e54e9ad7a0e79428c`](https://github.com/shopl/shoplflow/commit/dda54bcfeeb30afe2ab0b85e54e9ad7a0e79428c) Thanks [@velo-kim](https://github.com/velo-kim)! - fix: ModalBody 높이 계산로직을 변경했어요
+
 ## 0.43.0
 
 ### Minor Changes
