@@ -81,7 +81,7 @@ const ModalBody = ({
   };
 
   const setContentHeightMax = () => {
-    let autoHeightMax = setAutoHeightMax();
+    let autoHeightMax = setAutoHeightMax() - 24;
 
     if (padding) {
       return autoHeightMax;
