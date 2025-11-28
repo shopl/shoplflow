@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.43.2
+
+### Patch Changes
+
+- [#668](https://github.com/shopl/shoplflow/pull/668) [`2a8ce3566995d8ce40be368188cba42d3f069e27`](https://github.com/shopl/shoplflow/commit/2a8ce3566995d8ce40be368188cba42d3f069e27) Thanks [@ayaan0209](https://github.com/ayaan0209)! - StyledInput 우측 패딩 12px로 수정
+
 ## 0.43.1
 
 ### Patch Changes
