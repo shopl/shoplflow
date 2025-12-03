@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.44.0
+
+### Minor Changes
+
+- [#670](https://github.com/shopl/shoplflow/pull/670) [`f172b53f421af9b0a1107ac7e281a509a5487d5d`](https://github.com/shopl/shoplflow/commit/f172b53f421af9b0a1107ac7e281a509a5487d5d) Thanks [@dev-bomdong](https://github.com/dev-bomdong)! - SelectInputButton이 disabled 상태일 때 background가 변경되지 않는 문제를 수정했어요
+
 ## 0.43.2
 
 ### Patch Changes
