@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.1.51
+
+### Patch Changes
+
+- [#678](https://github.com/shopl/shoplflow/pull/678) [`02097e72f5d393171811a581d4b82707fea99fa1`](https://github.com/shopl/shoplflow/commit/02097e72f5d393171811a581d4b82707fea99fa1) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - attashlist seperator 중복 제거
+
 ## 0.1.50
 
 ### Patch Changes
