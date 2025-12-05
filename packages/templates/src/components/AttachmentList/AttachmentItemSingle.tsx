@@ -33,7 +33,7 @@ const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDel
           <>
             <StyledSeparator />
             <Text typography='body2_400' color='neutral400'>
-              {formatFileSize(item.size)} adsfasdf
+              {formatFileSize(item.size)}
             </Text>
           </>
         )}
