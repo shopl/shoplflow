@@ -21,7 +21,6 @@ const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDel
         <Text typography='body2_400' color='neutral700' lineClamp={1} textOverflow='ellipsis' whiteSpace='nowrap'>
           {item.name}
         </Text>
-        <StyledSeparator />
         {item.extension && (
           <>
             <StyledSeparator />
