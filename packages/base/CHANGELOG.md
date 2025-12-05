@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.45.2
+
+### Patch Changes
+
+- [#676](https://github.com/shopl/shoplflow/pull/676) [`b99c6cca78fe6411e745060d89797556f13d055a`](https://github.com/shopl/shoplflow/commit/b99c6cca78fe6411e745060d89797556f13d055a) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - Attachlist Single extension, size props optional 처리
+
 ## 0.45.1
 
 ### Patch Changes
