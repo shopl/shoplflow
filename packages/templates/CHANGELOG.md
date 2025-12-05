@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.1.52
+
+### Patch Changes
+
+- [#680](https://github.com/shopl/shoplflow/pull/680) [`72ea89c9a58e4176b498dafada57c7d4579b906b`](https://github.com/shopl/shoplflow/commit/72ea89c9a58e4176b498dafada57c7d4579b906b) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - 테스트 코드 삭제
+
 ## 0.1.51
 
 ### Patch Changes
