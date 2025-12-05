@@ -2,8 +2,8 @@ import type { IconSource } from '@shoplflow/shopl-assets';
 
 export interface AttachmentItemData {
   name: string;
-  extension: string;
-  size: number; // bytes
+  extension?: string;
+  size?: number; // bytes
 }
 
 export interface AttachmentListProps {

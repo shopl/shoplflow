@@ -36,9 +36,11 @@ const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, childre
             <Text typography='body1_400' color='neutral700' lineClamp={1} textOverflow='ellipsis' whiteSpace='nowrap'>
               {item.name}
             </Text>
-            <Text typography='caption_400' color='neutral400'>
-              {formatFileSize(item.size)}
-            </Text>
+            {item.size && (
+              <Text typography='caption_400' color='neutral400'>
+                {formatFileSize(item.size ?? 0)}
+              </Text>
+            )}
           </>
         ) : (
           children

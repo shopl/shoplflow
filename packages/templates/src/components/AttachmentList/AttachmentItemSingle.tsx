@@ -22,13 +22,22 @@ const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDel
           {item.name}
         </Text>
         <StyledSeparator />
-        <Text typography='body2_400' color='neutral400'>
-          {item.extension}
-        </Text>
-        <StyledSeparator />
-        <Text typography='body2_400' color='neutral400'>
-          {formatFileSize(item.size)}
-        </Text>
+        {item.extension && (
+          <>
+            <StyledSeparator />
+            <Text typography='body2_400' color='neutral400'>
+              {item.extension}
+            </Text>
+          </>
+        )}
+        {item.size && (
+          <>
+            <StyledSeparator />
+            <Text typography='body2_400' color='neutral400'>
+              {formatFileSize(item.size)} adsfasdf
+            </Text>
+          </>
+        )}
       </StackContainer.Horizontal>
       <IconButton sizeVar='S' styleVar='GHOST'>
         <Icon
