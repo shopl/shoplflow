@@ -7,6 +7,7 @@ export interface AttachmentItemData {
 }
 
 export interface AttachmentListProps {
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   children: React.ReactNode;
@@ -14,6 +15,7 @@ export interface AttachmentListProps {
 
 export interface AttachmentItemSingleProps {
   item: AttachmentItemData;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -22,6 +24,7 @@ export interface AttachmentItemMultiProps {
   thumbnail?: React.ReactNode;
   children?: React.ReactNode;
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export interface AttachmentThumbnailProps {
