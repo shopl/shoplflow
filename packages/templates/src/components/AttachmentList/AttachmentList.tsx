@@ -17,11 +17,13 @@ export const useAttachmentListContext = () => {
 };
 
 const AttachmentList: React.FC<AttachmentListProps & Pick<StackContainerOptionProps, 'width'>> = ({
+  onClick,
   onDelete,
   children,
   ...rest
 }) => {
   const contextValue: AttachmentListContextValue = {
+    onClick,
     onDelete,
   };
 
