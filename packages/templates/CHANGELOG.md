@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.1.53
+
+### Patch Changes
+
+- [#682](https://github.com/shopl/shoplflow/pull/682) [`da334e5d92b46436a5af48b79b09e28e285ccedb`](https://github.com/shopl/shoplflow/commit/da334e5d92b46436a5af48b79b09e28e285ccedb) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - onClick props 추가 및 삭제 버튼 조건부 노출
+
 ## 0.1.52
 
 ### Patch Changes
