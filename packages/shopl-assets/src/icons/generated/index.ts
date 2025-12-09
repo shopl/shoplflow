@@ -159,6 +159,7 @@ import IcHome from './IcHome';
 import IcIdCard from './IcIdCard';
 import IcImport from './IcImport';
 import IcInactiveBell from './IcInactiveBell';
+import IcIncentiveMedium from './IcIncentiveMedium';
 import IcInfo1 from './IcInfo1';
 import IcInfoAlbum from './IcInfoAlbum';
 import IcInfoApp from './IcInfoApp';
@@ -489,6 +490,7 @@ const icons = {
   'id-card': IcIdCard,
   import: IcImport,
   'inactive-bell': IcInactiveBell,
+  'incentive-medium': IcIncentiveMedium,
   'info-1': IcInfo1,
   'info-album': IcInfoAlbum,
   'info-app': IcInfoApp,
@@ -822,6 +824,7 @@ export {
   IcIdCard as IdCardIcon,
   IcImport as ImportIcon,
   IcInactiveBell as InactiveBellIcon,
+  IcIncentiveMedium as IncentiveMediumIcon,
   IcInfo1 as Info1Icon,
   IcInfoAlbum as InfoAlbumIcon,
   IcInfoApp as InfoAppIcon,
