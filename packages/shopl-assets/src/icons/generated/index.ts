@@ -250,6 +250,7 @@ import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
 import IcPlusMedium from './IcPlusMedium';
 import IcPopup from './IcPopup';
+import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
 import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
@@ -580,6 +581,7 @@ const icons = {
   'play-xlarge': IcPlayXlarge,
   'plus-medium': IcPlusMedium,
   popup: IcPopup,
+  'preorder-medium': IcPreorderMedium,
   preview: IcPreview,
   'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
@@ -913,6 +915,7 @@ export {
   IcPlayXlarge as PlayXlargeIcon,
   IcPlusMedium as PlusMediumIcon,
   IcPopup as PopupIcon,
+  IcPreorderMedium as PreorderMediumIcon,
   IcPreview as PreviewIcon,
   IcPriceMedium as PriceMediumIcon,
   IcProceeding as ProceedingIcon,
