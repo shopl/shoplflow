@@ -159,6 +159,7 @@ import IcHome from './IcHome';
 import IcIdCard from './IcIdCard';
 import IcImport from './IcImport';
 import IcInactiveBell from './IcInactiveBell';
+import IcIncentiveMedium from './IcIncentiveMedium';
 import IcInfo1 from './IcInfo1';
 import IcInfoAlbum from './IcInfoAlbum';
 import IcInfoApp from './IcInfoApp';
@@ -250,6 +251,7 @@ import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
 import IcPlusMedium from './IcPlusMedium';
 import IcPopup from './IcPopup';
+import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
 import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
@@ -489,6 +491,7 @@ const icons = {
   'id-card': IcIdCard,
   import: IcImport,
   'inactive-bell': IcInactiveBell,
+  'incentive-medium': IcIncentiveMedium,
   'info-1': IcInfo1,
   'info-album': IcInfoAlbum,
   'info-app': IcInfoApp,
@@ -580,6 +583,7 @@ const icons = {
   'play-xlarge': IcPlayXlarge,
   'plus-medium': IcPlusMedium,
   popup: IcPopup,
+  'preorder-medium': IcPreorderMedium,
   preview: IcPreview,
   'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
@@ -822,6 +826,7 @@ export {
   IcIdCard as IdCardIcon,
   IcImport as ImportIcon,
   IcInactiveBell as InactiveBellIcon,
+  IcIncentiveMedium as IncentiveMediumIcon,
   IcInfo1 as Info1Icon,
   IcInfoAlbum as InfoAlbumIcon,
   IcInfoApp as InfoAppIcon,
@@ -913,6 +918,7 @@ export {
   IcPlayXlarge as PlayXlargeIcon,
   IcPlusMedium as PlusMediumIcon,
   IcPopup as PopupIcon,
+  IcPreorderMedium as PreorderMediumIcon,
   IcPreview as PreviewIcon,
   IcPriceMedium as PriceMediumIcon,
   IcProceeding as ProceedingIcon,
