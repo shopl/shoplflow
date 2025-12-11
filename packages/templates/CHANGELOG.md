@@ -1,5 +1,30 @@
 # @shoplflow/templates
 
+## 0.1.53
+
+### Patch Changes
+
+- [#682](https://github.com/shopl/shoplflow/pull/682) [`da334e5d92b46436a5af48b79b09e28e285ccedb`](https://github.com/shopl/shoplflow/commit/da334e5d92b46436a5af48b79b09e28e285ccedb) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - onClick props 추가 및 삭제 버튼 조건부 노출
+
+## 0.1.52
+
+### Patch Changes
+
+- [#680](https://github.com/shopl/shoplflow/pull/680) [`72ea89c9a58e4176b498dafada57c7d4579b906b`](https://github.com/shopl/shoplflow/commit/72ea89c9a58e4176b498dafada57c7d4579b906b) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - 테스트 코드 삭제
+
+## 0.1.51
+
+### Patch Changes
+
+- [#678](https://github.com/shopl/shoplflow/pull/678) [`02097e72f5d393171811a581d4b82707fea99fa1`](https://github.com/shopl/shoplflow/commit/02097e72f5d393171811a581d4b82707fea99fa1) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - attashlist seperator 중복 제거
+
+## 0.1.50
+
+### Patch Changes
+
+- Updated dependencies [[`b99c6cca78fe6411e745060d89797556f13d055a`](https://github.com/shopl/shoplflow/commit/b99c6cca78fe6411e745060d89797556f13d055a)]:
+  - @shoplflow/base@0.45.2
+
 ## 0.1.49
 
 ### Patch Changes
