@@ -31,11 +31,52 @@ const Template: StoryFn<typeof AttachmentList> = (args) => (
 
 export const Playground: StoryFn<typeof AttachmentList> = Template.bind({});
 
-export const SingleVariant: StoryFn<typeof AttachmentList> = () => (
-  <AttachmentList>
-    <AttachmentItem.Single item={mockItem} />
-  </AttachmentList>
-);
+export const SingleVariant: StoryFn<typeof AttachmentList> = (args) => {
+  const { filename, lineClamp, extension, size } = args as any;
+  const item = {
+    name: filename || mockItem.name,
+    extension: extension || mockItem.extension,
+    size: size || mockItem.size,
+  };
+
+  return (
+    <div style={{ width: '500px', margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+      <AttachmentList>
+        <AttachmentItem.Single item={item} lineClamp={lineClamp} />
+      </AttachmentList>
+    </div>
+  );
+};
+
+SingleVariant.argTypes = {
+  filename: {
+    control: { type: 'text' },
+    description: '파일명을 설정합니다.',
+    defaultValue: 'Schedule_Bulk_20241015145927',
+  },
+  lineClamp: {
+    control: { type: 'number', min: 1, max: 5, step: 1 },
+    description: '파일명을 표시할 최대 줄 수를 설정합니다.',
+    defaultValue: 1,
+  },
+  extension: {
+    control: { type: 'text' },
+    description: '파일 확장자를 설정합니다.',
+    defaultValue: 'Excel',
+  },
+  size: {
+    control: { type: 'number' },
+    description: '파일 크기를 바이트 단위로 설정합니다.',
+    defaultValue: 1363148,
+  },
+} as any;
+
+SingleVariant.args = {
+  filename: 'Schedule_Bulk_20241015145927',
+  lineClamp: 1,
+  extension: 'Excel',
+  size: 1363148,
+} as any;
 
 export const MultiVariant: StoryFn<typeof AttachmentList> = () => (
   <AttachmentList>

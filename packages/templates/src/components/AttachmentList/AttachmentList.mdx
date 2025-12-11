@@ -35,6 +35,25 @@ import { AttachmentIcon } from '@shoplflow/shopl-assets';
 </AttachmentList>
 ```
 
+#### LineClamp 옵션
+
+파일명이 길 경우 `lineClamp` 옵션을 사용하여 표시할 줄 수를 제한할 수 있습니다. 기본값은 `1`입니다.
+
+위의 Canvas에서 Controls 패널을 통해 `filename`과 `lineClamp` 값을 직접 조정하여 테스트할 수 있습니다.
+
+```tsx
+<AttachmentList>
+  {/* 기본값: lineClamp={1} */}
+  <AttachmentItem.Single item={item} />
+  
+  {/* 2줄까지 표시 */}
+  <AttachmentItem.Single item={item} lineClamp={2} />
+  
+  {/* 3줄까지 표시 */}
+  <AttachmentItem.Single item={item} lineClamp={3} />
+</AttachmentList>
+```
+
 ### Multi Variant
 
 썸네일과 함께 세로로 파일 정보를 표시하는 형태입니다.

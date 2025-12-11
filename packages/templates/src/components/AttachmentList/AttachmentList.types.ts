@@ -15,6 +15,7 @@ export interface AttachmentListProps {
 export interface AttachmentItemSingleProps {
   item: AttachmentItemData;
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  lineClamp?: number;
 }
 
 export interface AttachmentItemMultiProps {

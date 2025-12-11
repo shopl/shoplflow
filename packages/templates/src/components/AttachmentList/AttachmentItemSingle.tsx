@@ -4,7 +4,7 @@ import type { AttachmentItemSingleProps } from './AttachmentList.types';
 import { DeleteIcon } from '@shoplflow/shopl-assets';
 import { StyledSeparator } from './AttachmentList.styled';
 
-const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDelete }) => {
+const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDelete, lineClamp = 1 }) => {
   const formatFileSize = (bytes: number): string => {
     if (bytes === 0) {
       return '0 Bytes';
@@ -18,7 +18,7 @@ const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDel
   return (
     <StackContainer.Horizontal width='inherit' align='center' padding='0'>
       <StackContainer.Horizontal align='center' spacing='spacing04'>
-        <Text typography='body2_400' color='neutral700' lineClamp={1} textOverflow='ellipsis' whiteSpace='nowrap'>
+        <Text typography='body2_400' color='neutral700' lineClamp={lineClamp} textOverflow='ellipsis'>
           {item.name}
         </Text>
         {item.extension && (
@@ -32,7 +32,7 @@ const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onDel
         {item.size && (
           <>
             <StyledSeparator />
-            <Text typography='body2_400' color='neutral400'>
+            <Text typography='body2_400' color='neutral400' whiteSpace='nowrap'>
               {formatFileSize(item.size)}
             </Text>
           </>
