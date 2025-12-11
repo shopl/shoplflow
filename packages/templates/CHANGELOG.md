@@ -1,5 +1,15 @@
 # @shoplflow/templates
 
+## 0.1.54
+
+### Patch Changes
+
+- [#685](https://github.com/shopl/shoplflow/pull/685) [`35574b003e67ad3592116e1f1808a5d8efcb75f3`](https://github.com/shopl/shoplflow/commit/35574b003e67ad3592116e1f1808a5d8efcb75f3) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - Single AttachmentItem lineClamp 적용
+
+- Updated dependencies [[`a31e2fd6ca9e34d038588b5c3c562e0b0a635c06`](https://github.com/shopl/shoplflow/commit/a31e2fd6ca9e34d038588b5c3c562e0b0a635c06)]:
+  - @shoplflow/shopl-assets@0.12.28
+  - @shoplflow/base@0.45.3
+
 ## 0.1.53
 
 ### Patch Changes
