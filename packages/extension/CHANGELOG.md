@@ -1,5 +1,12 @@
 # @shoplflow/extension
 
+## 0.0.179
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @shoplflow/base@0.45.4
+
 ## 0.0.178
 
 ### Patch Changes
