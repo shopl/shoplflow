@@ -14,14 +14,22 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+
+    # ✅ (필수) Trusted Publisher(OIDC) 인증에 필요
+    # ✅ changesets/action이 PR/커밋/릴리즈를 만들면 contents/pull-requests 권한도 필요할 수 있음
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write # ← OIDC 토큰 발급 권한 (Trusted Publisher 핵심)
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      NPM_CONFIG_PROVENANCE: "true"
 
     steps:
       # 레포지토리에 체크아웃하여 소스를 가져온다.
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -29,6 +37,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
+      # ✅ (필수) npm CLI 11.5.1+ 보장
+      - name: Ensure npm >= 11.5.1 for Trusted Publishing
+        run: npm i -g npm@^11.5.1
 
       - name: pnpm을 설정하고 있어요.
         run: |
@@ -50,15 +61,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: NPM 토큰을 설정하고 있어요.
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
       - name: 패키지를 빌드하고 있어요.
@@ -71,5 +73,5 @@ jobs:
           publish: pnpm run release
           commit: "ci(changesets): version packages"
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
