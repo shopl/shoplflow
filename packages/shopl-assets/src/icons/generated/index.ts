@@ -45,6 +45,7 @@ import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
 import IcCake from './IcCake';
 import IcCalendarLine from './IcCalendarLine';
 import IcCamera from './IcCamera';
+import IcCart from './IcCart';
 import IcCategory from './IcCategory';
 import IcCautionXlarge from './IcCautionXlarge';
 import IcChannel from './IcChannel';
@@ -380,6 +381,7 @@ const icons = {
   cake: IcCake,
   'calendar-line': IcCalendarLine,
   camera: IcCamera,
+  cart: IcCart,
   category: IcCategory,
   'caution-xlarge': IcCautionXlarge,
   channel: IcChannel,
@@ -718,6 +720,7 @@ export {
   IcCake as CakeIcon,
   IcCalendarLine as CalendarLineIcon,
   IcCamera as CameraIcon,
+  IcCart as CartIcon,
   IcCategory as CategoryIcon,
   IcCautionXlarge as CautionXlargeIcon,
   IcChannel as ChannelIcon,
