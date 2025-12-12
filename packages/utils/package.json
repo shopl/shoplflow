@@ -61,5 +61,14 @@
   },
   "dependencies": {
     "lodash-es": "^4.17.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopl/shoplflow",
+    "directory": "packages/utils"
+  },
+  "homepage": "https://github.com/shopl/shoplflow#readme",
+  "bugs": {
+    "url": "https://github.com/shopl/shoplflow/issues"
   }
 }

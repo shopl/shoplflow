@@ -3,6 +3,14 @@
   "version": "0.45.5",
   "type": "module",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopl/shoplflow",
+    "directory": "packages/base"
+  },
+  "bugs": {
+    "url": "https://github.com/shopl/shoplflow/issues"
+  },
   "scripts": {
     "type-check": "tsc --noEmit",
     "build:tokens": "node scripts/generate-tokens.cjs",
@@ -116,5 +124,6 @@
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.2.0",
     "simplebar-react": "^3.2.6"
-  }
+  },
+  "homepage": "https://github.com/shopl/shoplflow#readme"
 }
