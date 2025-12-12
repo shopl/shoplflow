@@ -1,5 +1,14 @@
 # @shoplflow/extension
 
+## 0.0.181
+
+### Patch Changes
+
+- [#691](https://github.com/shopl/shoplflow/pull/691) [`d7b6d3cabf5d4c3e2982fa3c81594ee71716f256`](https://github.com/shopl/shoplflow/commit/d7b6d3cabf5d4c3e2982fa3c81594ee71716f256) Thanks [@velo-kim](https://github.com/velo-kim)! - update(all packages): package.json
+
+- Updated dependencies [[`d7b6d3cabf5d4c3e2982fa3c81594ee71716f256`](https://github.com/shopl/shoplflow/commit/d7b6d3cabf5d4c3e2982fa3c81594ee71716f256)]:
+  - @shoplflow/base@0.45.6
+
 ## 0.0.180
 
 ### Patch Changes
