@@ -23,6 +23,7 @@ import IcAsc from './IcAsc';
 import IcAttachment from './IcAttachment';
 import IcAttendanceMedium from './IcAttendanceMedium';
 import IcAutorityLine from './IcAutorityLine';
+import IcAverage from './IcAverage';
 import IcBackMedium from './IcBackMedium';
 import IcBadgeAdminLarge from './IcBadgeAdminLarge';
 import IcBadgeLeaderAppovalLarge from './IcBadgeLeaderAppovalLarge';
@@ -37,6 +38,7 @@ import IcBoardProfile from './IcBoardProfile';
 import IcBookMedium from './IcBookMedium';
 import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
+import IcBox from './IcBox';
 import IcBriefcase from './IcBriefcase';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
 import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
@@ -160,6 +162,7 @@ import IcIdCard from './IcIdCard';
 import IcImport from './IcImport';
 import IcInactiveBell from './IcInactiveBell';
 import IcIncentiveMedium from './IcIncentiveMedium';
+import IcIncentive from './IcIncentive';
 import IcInfo1 from './IcInfo1';
 import IcInfoAlbum from './IcInfoAlbum';
 import IcInfoApp from './IcInfoApp';
@@ -355,6 +358,7 @@ const icons = {
   attachment: IcAttachment,
   'attendance-medium': IcAttendanceMedium,
   'autority-line': IcAutorityLine,
+  average: IcAverage,
   'back-medium': IcBackMedium,
   'badge-admin-large': IcBadgeAdminLarge,
   'badge-leader-appoval-large': IcBadgeLeaderAppovalLarge,
@@ -369,6 +373,7 @@ const icons = {
   'book-medium': IcBookMedium,
   'bookmark-filled-medium': IcBookmarkFilledMedium,
   'bookmark-medium': IcBookmarkMedium,
+  box: IcBox,
   briefcase: IcBriefcase,
   'by-employee-medium': IcByEmployeeMedium,
   'by-place-of-work-medium': IcByPlaceOfWorkMedium,
@@ -492,6 +497,7 @@ const icons = {
   import: IcImport,
   'inactive-bell': IcInactiveBell,
   'incentive-medium': IcIncentiveMedium,
+  incentive: IcIncentive,
   'info-1': IcInfo1,
   'info-album': IcInfoAlbum,
   'info-app': IcInfoApp,
@@ -690,6 +696,7 @@ export {
   IcAttachment as AttachmentIcon,
   IcAttendanceMedium as AttendanceMediumIcon,
   IcAutorityLine as AutorityLineIcon,
+  IcAverage as AverageIcon,
   IcBackMedium as BackMediumIcon,
   IcBadgeAdminLarge as BadgeAdminLargeIcon,
   IcBadgeLeaderAppovalLarge as BadgeLeaderAppovalLargeIcon,
@@ -704,6 +711,7 @@ export {
   IcBookMedium as BookMediumIcon,
   IcBookmarkFilledMedium as BookmarkFilledMediumIcon,
   IcBookmarkMedium as BookmarkMediumIcon,
+  IcBox as BoxIcon,
   IcBriefcase as BriefcaseIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
   IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
@@ -827,6 +835,7 @@ export {
   IcImport as ImportIcon,
   IcInactiveBell as InactiveBellIcon,
   IcIncentiveMedium as IncentiveMediumIcon,
+  IcIncentive as IncentiveIcon,
   IcInfo1 as Info1Icon,
   IcInfoAlbum as InfoAlbumIcon,
   IcInfoApp as InfoAppIcon,
