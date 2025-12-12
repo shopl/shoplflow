@@ -115,5 +115,14 @@
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.2.0",
     "simplebar-react": "^3.2.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopl/shoplflow",
+    "directory": "packages/templates"
+  },
+  "homepage": "https://github.com/shopl/shoplflow#readme",
+  "bugs": {
+    "url": "https://github.com/shopl/shoplflow/issues"
   }
 }
