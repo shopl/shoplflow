@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.45.5
+
+### Patch Changes
+
+- [#689](https://github.com/shopl/shoplflow/pull/689) [`674de810bb9cf0e6a053d56f802d087928e74c02`](https://github.com/shopl/shoplflow/commit/674de810bb9cf0e6a053d56f802d087928e74c02) Thanks [@velo-kim](https://github.com/velo-kim)! - update(action): changeset-workflow.yml
+
+- Updated dependencies [[`674de810bb9cf0e6a053d56f802d087928e74c02`](https://github.com/shopl/shoplflow/commit/674de810bb9cf0e6a053d56f802d087928e74c02)]:
+  - @shoplflow/hada-assets@0.1.9
+  - @shoplflow/shopl-assets@0.12.30
+  - @shoplflow/utils@0.7.1
+
 ## 0.45.4
 
 ### Patch Changes
