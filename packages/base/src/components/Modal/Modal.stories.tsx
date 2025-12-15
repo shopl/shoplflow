@@ -7,6 +7,7 @@ import { useState, type ReactNode } from 'react';
 import { Text } from '../Text';
 import { Stack } from '../Stack';
 import { Button } from '../Buttons';
+import { colorTokens } from '../../styles';
 
 export default {
   title: 'COMPONENTS/Modal',
@@ -111,31 +112,43 @@ export const BodyFooter: StoryFn<ModalContainerProps> = (args) => (
   </Stack>
 );
 
-export const AllComponents: StoryFn<ModalContainerProps> = (args) => (
-  <Stack height={'500px'}>
-    <ComponentStage>
+export const AllComponents: StoryFn<ModalContainerProps> = (args) => {
+  const { addModal, removeModal } = useHandleModal();
+
+  const handleOpenModal = () => {
+    addModal(
       <Modal.Container {...args}>
         <Modal.Header>
           <Text typography={'title1_700'}>모달 해더 영역</Text>
         </Modal.Header>
         <Modal.Top>
-          <div style={{ height: '100px', width: '100%', backgroundColor: 'yellow' }}>상단</div>
+          <div style={{ height: '100px', width: '100%', backgroundColor: colorTokens.primary100 }}>Modal.Top</div>
         </Modal.Top>
         <Modal.Body>
           <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
         </Modal.Body>
         <Modal.Bottom>
-          <div style={{ height: '100px', width: '100%', backgroundColor: 'green' }}>하단</div>
+          <div style={{ height: '100px', width: '100%', backgroundColor: colorTokens.primary100 }}>Modal.Bottom</div>
         </Modal.Bottom>
         <Modal.Footer>
           <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>
-          <Button styleVar={'SECONDARY'}>버튼</Button>
+          <Button styleVar={'SECONDARY'} onClick={() => removeModal()}>
+            닫기
+          </Button>
           <Button>버튼</Button>
         </Modal.Footer>
-      </Modal.Container>
-    </ComponentStage>
-  </Stack>
-);
+      </Modal.Container>,
+    );
+  };
+
+  return (
+    <Stack height={'500px'}>
+      <ComponentStage>
+        <Button onClick={handleOpenModal}>open Modal</Button>
+      </ComponentStage>
+    </Stack>
+  );
+};
 
 export const FullScreen: StoryFn<ModalContainerProps> = () => (
   <Stack

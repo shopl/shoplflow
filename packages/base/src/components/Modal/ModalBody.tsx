@@ -100,13 +100,12 @@ const ModalBody = ({
   };
 
   const autoHeightMin = setAutoHeightMin();
-  const _autoHeightMin = typeof autoHeightMin === 'string' ? autoHeightMin : autoHeightMin - heightToDeduct;
 
   return (
     <BodyContainer
       isIncludeHeader={isIncludeHeader}
       sizeVar={sizeVar}
-      minHeight={_autoHeightMin}
+      minHeight={autoHeightMin}
       maxHeight={setAutoHeightMax() - heightToDeduct}
       padding={padding}
     >
@@ -114,7 +113,7 @@ const ModalBody = ({
         id={`scrollbar`}
         universal
         autoHeight={!modalContainerHeight}
-        autoHeightMin={_autoHeightMin}
+        autoHeightMin={autoHeightMin}
         autoHeightMax={setContentHeightMax() - heightToDeduct}
         style={{}}
       >
