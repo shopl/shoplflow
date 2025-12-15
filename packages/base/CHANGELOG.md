@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.45.8
+
+### Patch Changes
+
+- [#695](https://github.com/shopl/shoplflow/pull/695) [`a7c9fe6cf2d6c5a95fb3548034853f6752fd7c32`](https://github.com/shopl/shoplflow/commit/a7c9fe6cf2d6c5a95fb3548034853f6752fd7c32) Thanks [@velo-kim](https://github.com/velo-kim)! - Modal.Top 사용 시, Modal.Body 최소 높이 계산 로직 변경
+
 ## 0.45.7
 
 ### Patch Changes
