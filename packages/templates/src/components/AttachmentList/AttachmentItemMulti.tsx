@@ -3,7 +3,15 @@ import { Text, IconButton, Icon, StackContainer } from '@shoplflow/base';
 import type { AttachmentItemMultiProps } from './AttachmentList.types';
 import { DeleteIcon } from '@shoplflow/shopl-assets';
 
-const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, children, thumbnail, onClick, onDelete }) => {
+const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({
+  item,
+  children,
+  thumbnail,
+  onClick,
+  onDelete,
+  padding = '8px',
+  lineClamp = 1,
+}) => {
   const formatFileSize = (bytes: number): string => {
     if (bytes === 0) {
       return '0 Bytes';
@@ -19,7 +27,7 @@ const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, childre
       align='center'
       width='inherit'
       minHeight='48px'
-      padding='8px'
+      padding={padding}
       spacing='spacing08'
       radius='borderRadius08'
       onClick={onClick}
@@ -35,7 +43,13 @@ const AttachmentItemMulti: React.FC<AttachmentItemMultiProps> = ({ item, childre
       <StackContainer.Vertical flex='1' align='flex-start' height='100%'>
         {item ? (
           <>
-            <Text typography='body1_400' color='neutral700' lineClamp={1} textOverflow='ellipsis' whiteSpace='nowrap'>
+            <Text
+              typography='body1_400'
+              color='neutral700'
+              lineClamp={lineClamp}
+              textOverflow='ellipsis'
+              whiteSpace='nowrap'
+            >
               {item.name}
             </Text>
             {item.size && (

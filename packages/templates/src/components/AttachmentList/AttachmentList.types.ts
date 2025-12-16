@@ -1,4 +1,5 @@
 import type { IconSource } from '@shoplflow/shopl-assets';
+import type { CSSProperties } from 'react';
 
 export interface AttachmentItemData {
   name: string;
@@ -26,6 +27,8 @@ export interface AttachmentItemMultiProps {
   children?: React.ReactNode;
   onDelete?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  padding?: CSSProperties['padding'];
+  lineClamp?: number;
 }
 
 export interface AttachmentThumbnailProps {
