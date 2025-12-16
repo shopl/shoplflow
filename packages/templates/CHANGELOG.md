@@ -1,5 +1,14 @@
 # @shoplflow/templates
 
+## 0.1.60
+
+### Patch Changes
+
+- [#697](https://github.com/shopl/shoplflow/pull/697) [`97d2126df3038b7539ced0397adc81449e1743ae`](https://github.com/shopl/shoplflow/commit/97d2126df3038b7539ced0397adc81449e1743ae) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - attachmentlist multi item padding 추가, input clear icon 표시 조건 추가
+
+- Updated dependencies [[`97d2126df3038b7539ced0397adc81449e1743ae`](https://github.com/shopl/shoplflow/commit/97d2126df3038b7539ced0397adc81449e1743ae)]:
+  - @shoplflow/base@0.45.9
+
 ## 0.1.59
 
 ### Patch Changes
