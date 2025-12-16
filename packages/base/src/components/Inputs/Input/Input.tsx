@@ -191,7 +191,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {!(type === 'number') && (
           <RightElementWrapper>
             {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
-            {isFocused && Boolean(String(text).length > 0) && (
+            {onClear && isFocused && Boolean(String(text).length > 0) && (
               <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
                 <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
               </IconButton>
