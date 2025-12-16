@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.45.10
+
+### Patch Changes
+
+- [#699](https://github.com/shopl/shoplflow/pull/699) [`84156fdbdecb41aef4fd6283ae73567052e39b5e`](https://github.com/shopl/shoplflow/commit/84156fdbdecb41aef4fd6283ae73567052e39b5e) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - modal body heightToDeduct 적용
+
 ## 0.45.9
 
 ### Patch Changes
