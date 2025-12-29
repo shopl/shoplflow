@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.45.11
+
+### Patch Changes
+
+- [#701](https://github.com/shopl/shoplflow/pull/701) [`55327cb88defcece188895b7b5142582eefde7ae`](https://github.com/shopl/shoplflow/commit/55327cb88defcece188895b7b5142582eefde7ae) Thanks [@ayaan0209](https://github.com/ayaan0209)! - SelectInputButton x버튼 호버 시 노출로 동작 수정
+
 ## 0.45.10
 
 ### Patch Changes
