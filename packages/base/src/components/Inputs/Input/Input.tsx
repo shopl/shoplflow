@@ -189,7 +189,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             className={'body1_400' + (className ? ` ${className}` : '')}
             {...rest}
           />
-          {onClear && Boolean(String(text).length > 0) && (
+          {onClear && isHovered && Boolean(String(text).length > 0) && (
             <ClearIconButton sizeVar={sizeVar} onClick={handleOnClear} styleVar={'GHOST'} isHovered={false}>
               <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
             </ClearIconButton>
