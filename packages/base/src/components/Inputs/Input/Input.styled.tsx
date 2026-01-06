@@ -46,13 +46,17 @@ export const StyledInput = styled.input<{
   }
 `;
 
-export const RightElementWrapper = styled.div<{ sizeVar?: InputSizeVariantType; type?: HTMLInputTypeAttribute }>`
-  padding: ${({ sizeVar, type }) => {
-    if (type === 'password') {
+export const RightElementWrapper = styled.div<{
+  sizeVar?: InputSizeVariantType;
+  type?: HTMLInputTypeAttribute;
+  initialType?: HTMLInputTypeAttribute;
+}>`
+  padding: ${({ sizeVar, type, initialType }) => {
+    if (initialType === 'password' || type === 'password') {
       return '0';
     }
 
-    return sizeVar === 'S' ? '0 8px' : '0 12px';
+    return sizeVar === 'S' ? '0 8px 0 0' : '0 12px 0 0';
   }};
   display: flex;
   flex-direction: row;
@@ -62,7 +66,7 @@ export const RightElementWrapper = styled.div<{ sizeVar?: InputSizeVariantType; 
 
 export const ClearIconButton = styled(StyledIconButton)`
   position: absolute;
-  right: 0;
+  right: 2px;
   top: 50%;
   transform: translateY(-50%);
   background-color: ${colorTokens.neutral0} !important;

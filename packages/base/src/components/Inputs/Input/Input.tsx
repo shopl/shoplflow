@@ -198,7 +198,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
         {!(type === 'number') &&
           (Boolean(maxLength && isFocused) || Boolean(initialType === 'password') || Boolean(rightSource)) && (
-            <RightElementWrapper type={type} sizeVar={sizeVar}>
+            <RightElementWrapper type={type} sizeVar={sizeVar} initialType={initialType}>
               {maxLength && isFocused && (
                 <TextCounter currentLength={String(text).length} maxLength={maxLength} isError={isError} />
               )}
