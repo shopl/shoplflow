@@ -197,9 +197,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {!(type === 'number') &&
-          (Boolean(maxLength) || Boolean(initialType === 'password') || Boolean(rightSource)) && (
+          (Boolean(maxLength && isFocused) || Boolean(initialType === 'password') || Boolean(rightSource)) && (
             <RightElementWrapper type={type} sizeVar={sizeVar}>
-              {maxLength && <TextCounter currentLength={String(text).length} maxLength={maxLength} isError={isError} />}
+              {maxLength && isFocused && (
+                <TextCounter currentLength={String(text).length} maxLength={maxLength} isError={isError} />
+              )}
               {initialType === 'password' && (
                 <IconButton sizeVar={sizeVar} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
                   <Icon
