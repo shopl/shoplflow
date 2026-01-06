@@ -93,7 +93,7 @@ Playground.args = {
   placeholder: '입력해주세요',
   disabled: false,
   isError: false,
-  maxLength: 50,
+  maxLength: 200,
 };
 
 Playground.parameters = {
@@ -191,4 +191,42 @@ CheckValue.args = {
   type: 'text',
   placeholder: '버튼을 눌러서 입력값을 확인해보세요',
   disabled: false,
+};
+
+export const WithClearButton: StoryFn<InputProps & { textAlign?: 'left' | 'center' | 'right' }> = (args) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { textAlign, ...inputProps } = args;
+
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <ComponentStage>
+        <Input ref={inputRef} {...inputProps} style={textAlign ? { textAlign } : inputProps.style} />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+WithClearButton.args = {
+  sizeVar: 'M',
+  type: 'text',
+  placeholder: '텍스트를 입력하면 클리어 버튼이 나타납니다',
+  disabled: false,
+  isError: false,
+  maxLength: 50,
+  textAlign: 'right',
+  onClear: () => {
+    console.debug('clear');
+  },
+};
+
+WithClearButton.argTypes = {
+  maxLength: {
+    control: { type: 'number' },
+    description: '인풋의 최대 입력 길이를 설정합니다.',
+  },
+  textAlign: {
+    options: ['left', 'center', 'right'],
+    control: { type: 'select' },
+    description: '인풋 텍스트의 정렬 방식을 설정합니다.',
+  },
 };

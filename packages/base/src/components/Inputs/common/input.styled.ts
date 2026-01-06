@@ -106,7 +106,6 @@ export const InputWrapper = styled.label<
       borderRadius,
     })};
   justify-content: space-between;
-  gap: ${({ gap, sizeVar }) => gap || (sizeVar === 'S' ? '4px' : '8px')};
   border: 1px solid ${(props) => getBorderColorByStatus(props)};
   background-color: ${colorTokens.neutral0};
   overflow: hidden;
