@@ -7,6 +7,7 @@ import { Stack } from '../../Stack';
 import { Button } from '../../Buttons';
 import { ComponentStage } from '../../../styles/Box';
 import { Text } from '../../Text';
+import { Tag } from '../../Tag';
 
 const meta: Meta<typeof Input> = {
   title: 'COMPONENTS/Inputs/Input',
@@ -220,6 +221,54 @@ WithClearButton.args = {
 };
 
 WithClearButton.argTypes = {
+  maxLength: {
+    control: { type: 'number' },
+    description: '인풋의 최대 입력 길이를 설정합니다.',
+  },
+  textAlign: {
+    options: ['left', 'center', 'right'],
+    control: { type: 'select' },
+    description: '인풋 텍스트의 정렬 방식을 설정합니다.',
+  },
+};
+
+export const WithClearButtonAndRightSource: StoryFn<InputProps & { textAlign?: 'left' | 'center' | 'right' }> = (
+  args,
+) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { textAlign, ...inputProps } = args;
+
+  return (
+    <Stack width={'500px'} height={'300px'} justify={'center'}>
+      <ComponentStage>
+        <Input
+          ref={inputRef}
+          {...inputProps}
+          sizeVar={inputProps.sizeVar}
+          rightSource={
+            <Tag styleVar='TINT' sizeVar='XS' color='neutral300'>
+              <Text typography='caption_400' color='neutral700'>
+                KRW
+              </Text>
+            </Tag>
+          }
+          style={textAlign ? { textAlign } : inputProps.style}
+        />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+WithClearButtonAndRightSource.args = {
+  sizeVar: 'S',
+  type: 'text',
+  placeholder: '텍스트를 입력하면 클리어 버튼이 나타납니다',
+  disabled: false,
+  isError: false,
+  textAlign: 'right',
+};
+
+WithClearButtonAndRightSource.argTypes = {
   maxLength: {
     control: { type: 'number' },
     description: '인풋의 최대 입력 길이를 설정합니다.',
