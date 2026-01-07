@@ -1,6 +1,6 @@
 import type { ChangeEvent, FocusEvent, HTMLInputTypeAttribute } from 'react';
 import React, { forwardRef, useCallback, useEffect, useId, useState } from 'react';
-import { RightElementWrapper, StyledInput } from './Input.styled';
+import { RightElementWrapper, StyledInput, ClearIconButton } from './Input.styled';
 import TextCounter from '../common/TextCounter';
 import type { InputProps } from './Input.types';
 import { IconButton } from '../../Buttons';
@@ -172,42 +172,47 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         gap={gap}
         sizeVar={sizeVar}
       >
-        <StyledInput
-          onFocus={handleOnFocus}
-          onBlur={handleOnBlur}
-          onChange={handleOnChange}
-          onKeyDown={handleOnKeyDown}
-          maxLength={maxLength}
-          disabled={disabled}
-          value={text}
-          type={type}
-          id={uniqueId}
-          ref={refs}
-          minWidth={minWidth}
-          sizeVar={sizeVar}
-          className={'body1_400' + (className ? ` ${className}` : '')}
-          {...rest}
-        />
-        {!(type === 'number') && (
-          <RightElementWrapper>
-            {maxLength && isFocused && <TextCounter currentLength={String(text).length} maxLength={maxLength} />}
-            {onClear && isFocused && Boolean(String(text).length > 0) && (
-              <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'}>
-                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
-              </IconButton>
-            )}
-            {initialType === 'password' && (
-              <IconButton sizeVar={'S'} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
-                <Icon
-                  color={'neutral600'}
-                  iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
-                />
-              </IconButton>
-            )}
-          </RightElementWrapper>
-        )}
+        <div style={{ position: 'relative', width: '100%' }}>
+          <StyledInput
+            onFocus={handleOnFocus}
+            onBlur={handleOnBlur}
+            onChange={handleOnChange}
+            onKeyDown={handleOnKeyDown}
+            maxLength={maxLength}
+            disabled={disabled}
+            value={text}
+            type={type}
+            id={uniqueId}
+            ref={refs}
+            minWidth={minWidth}
+            sizeVar={sizeVar}
+            className={'body1_400' + (className ? ` ${className}` : '')}
+            {...rest}
+          />
+          {onClear && isHovered && Boolean(String(text).length > 0) && (
+            <ClearIconButton sizeVar={sizeVar} onClick={handleOnClear} styleVar={'GHOST'} isHovered={false}>
+              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
+            </ClearIconButton>
+          )}
+        </div>
 
-        {rightSource && rightSource}
+        {!(type === 'number') &&
+          (Boolean(maxLength && isFocused) || Boolean(initialType === 'password') || Boolean(rightSource)) && (
+            <RightElementWrapper type={type} sizeVar={sizeVar} initialType={initialType}>
+              {maxLength && isFocused && (
+                <TextCounter currentLength={String(text).length} maxLength={maxLength} isError={isError} />
+              )}
+              {initialType === 'password' && (
+                <IconButton sizeVar={sizeVar} onClick={handleTogglePasswordType} styleVar={'GHOST'}>
+                  <Icon
+                    color={'neutral600'}
+                    iconSource={assetFunction(type === 'password' ? 'ViewOffIcon' : 'ViewOnIcon')}
+                  />
+                </IconButton>
+              )}
+              {rightSource && rightSource}
+            </RightElementWrapper>
+          )}
       </InputWrapper>
     );
   },

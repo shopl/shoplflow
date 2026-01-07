@@ -13,12 +13,13 @@ const Wrapper = styled.div`
 export type TextCounterProps = {
   maxLength: number;
   currentLength: number;
+  isError?: boolean;
 };
 
-const TextCounter = ({ currentLength, maxLength }: TextCounterProps) => {
+const TextCounter = ({ currentLength, maxLength, isError }: TextCounterProps) => {
   return (
     <Wrapper>
-      <Text typography='caption_400' color='neutral400'>
+      <Text typography='caption_400' color={isError ? 'red300' : 'neutral400'}>
         {currentLength}
       </Text>
       <Text typography='caption_400' color='neutral350'>
