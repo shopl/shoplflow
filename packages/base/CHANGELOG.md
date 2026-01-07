@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.45.13
+
+### Patch Changes
+
+- [#705](https://github.com/shopl/shoplflow/pull/705) [`cc9d003e326add400273395a960b6bf25fc5e9e7`](https://github.com/shopl/shoplflow/commit/cc9d003e326add400273395a960b6bf25fc5e9e7) Thanks [@ayaan0209](https://github.com/ayaan0209)! - input 레이아웃 수정
+
 ## 0.45.12
 
 ### Patch Changes
