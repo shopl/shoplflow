@@ -124,7 +124,9 @@ const spacing02 = 'var(--spacing02)';
 const spacing04 = 'var(--spacing04)';
 const spacing06 = 'var(--spacing06)';
 const spacing08 = 'var(--spacing08)';
+const spacing10 = 'var(--spacing10)';
 const spacing12 = 'var(--spacing12)';
+const spacing14 = 'var(--spacing14)';
 const spacing16 = 'var(--spacing16)';
 const spacing20 = 'var(--spacing20)';
 const spacing24 = 'var(--spacing24)';
@@ -136,7 +138,9 @@ export const spacingTokens = {
  spacing04,
  spacing06,
  spacing08,
+ spacing10,
  spacing12,
+ spacing14,
  spacing16,
  spacing20,
  spacing24,
