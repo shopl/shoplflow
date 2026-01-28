@@ -1,6 +1,7 @@
 import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import type { ChildrenProps, DisableProps, LeftElementProps, SizeVariantProps } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
+import type { OffsetOptions, Placement } from '@floating-ui/core';
 
 export const DropdownOptionVariants = {
   CLICK: 'CLICK',
@@ -29,6 +30,8 @@ export interface DropdownOptionProps {
   option?: DropdownOptionVariantType;
   width?: CSSProperties['width'];
   disabled?: boolean;
+  placement?: Placement;
+  offset?: OffsetOptions;
 }
 
 export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {
