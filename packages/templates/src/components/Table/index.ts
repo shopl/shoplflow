@@ -1,3 +1,3 @@
 export * from './components';
-export type * from './types';
+export * from './types';
 export { createColumnHelper } from '@tanstack/react-table';
