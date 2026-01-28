@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ElementType, ReactElement, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, CSSProperties, ElementType, ReactElement, ReactNode } from 'react';
 import type React from 'react';
 import type { IconSource as ShoplIconSource } from '@shoplflow/shopl-assets';
 import type { IconSource as HadaIconSource } from '@shoplflow/hada-assets';
@@ -167,5 +167,6 @@ export interface RightElementProps {
    * 텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다.
    */
   rightSource?: ReactElement;
+  rightSourceStyle?: CSSProperties;
 }
 export interface LeftAndRightElementProps extends RightElementProps, LeftElementProps {}

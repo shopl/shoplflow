@@ -52,13 +52,21 @@ const NumberCombobox = ({
             sizeVar={sizeVar}
             width={width}
             ref={inputRef}
-            type='number'
+            type='text'
+            inputMode='numeric'
             style={{ textAlign: 'left', paddingRight: '0px' }}
             className={_className}
             gap='4px'
             initIsFocused={isOpen}
             value={value}
-            onChange={onChange}
+            onChange={(e) => {
+              // 숫자만 허용 (한글 등 다른 문자 제거)
+              const numericValue = e.target.value.replace(/[^\d]/g, '');
+              if (e.target.value !== numericValue) {
+                e.target.value = numericValue;
+              }
+              onChange?.(e);
+            }}
             onFocus={() => {
               setIsOpen(true);
             }}
@@ -116,8 +124,9 @@ const NumberCombobox = ({
               }
               onBlur?.(event);
             }}
+            rightSourceStyle={{ padding: '4px' }}
             rightSource={
-              <StackContainer.Horizontal padding='0px 4px 0px 0px'>
+              <StackContainer.Horizontal>
                 <IconButton
                   sizeVar='XS'
                   styleVar='GHOST'
