@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.45.14
+
+### Patch Changes
+
+- [#708](https://github.com/shopl/shoplflow/pull/708) [`70028232b658a80cad261e5d8c32ca6a95ae6330`](https://github.com/shopl/shoplflow/commit/70028232b658a80cad261e5d8c32ca6a95ae6330) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - Dropdown placement, offset prop 추가
+
+- [#710](https://github.com/shopl/shoplflow/pull/710) [`dc9abe14c1a1fd51c95b69eb8526c64972170c30`](https://github.com/shopl/shoplflow/commit/dc9abe14c1a1fd51c95b69eb8526c64972170c30) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - numbercombox type 및 right source 변경
+  - number -> text type 변경
+  - rightsource 표시 및 style prop 추가
+
 ## 0.45.13
 
 ### Patch Changes
