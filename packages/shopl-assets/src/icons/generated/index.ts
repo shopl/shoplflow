@@ -249,6 +249,7 @@ import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
 import IcPaste from './IcPaste';
 import IcPaymentMedium from './IcPaymentMedium';
 import IcPhoneLine from './IcPhoneLine';
+import IcPhotoMedium from './IcPhotoMedium';
 import IcPhoto from './IcPhoto';
 import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
@@ -586,6 +587,7 @@ const icons = {
   paste: IcPaste,
   'payment-medium': IcPaymentMedium,
   'phone-line': IcPhoneLine,
+  'photo-medium': IcPhotoMedium,
   photo: IcPhoto,
   'pin-xlarge': IcPinXlarge,
   pin: IcPin,
@@ -926,6 +928,7 @@ export {
   IcPaste as PasteIcon,
   IcPaymentMedium as PaymentMediumIcon,
   IcPhoneLine as PhoneLineIcon,
+  IcPhotoMedium as PhotoMediumIcon,
   IcPhoto as PhotoIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
