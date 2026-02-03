@@ -5,17 +5,27 @@ import { useModalOption } from './hooks/useModalOption';
 
 export const ModalBottom = ({ children }: ModalBottomProps) => {
   const [bottomRef, setBottomRef] = useState<HTMLElement | null>(null);
-  const { setHeightToDeduct, clearHeightToDeduct } = useModalOption();
+  const { setBottomHeight, clearBottomHeight } = useModalOption();
   useEffect(() => {
-    if (!bottomRef) {
+    if (!bottomRef || !setBottomHeight) {
       return;
     }
 
-    const { height } = bottomRef.getBoundingClientRect();
-    setHeightToDeduct?.(height);
+    const updateHeight = () => {
+      const { height } = bottomRef.getBoundingClientRect();
+      setBottomHeight(height);
+    };
 
-    return () => clearHeightToDeduct();
-  }, [bottomRef, setHeightToDeduct, clearHeightToDeduct]);
+    updateHeight();
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(bottomRef);
+
+    return () => {
+      resizeObserver.disconnect();
+      clearBottomHeight();
+    };
+  }, [bottomRef, setBottomHeight, clearBottomHeight]);
 
   return <BottomContainer ref={setBottomRef}>{children}</BottomContainer>;
 };

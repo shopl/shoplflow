@@ -6,19 +6,27 @@ interface ModalOptionProviderProps {
 }
 
 export const ModalOptionContextProvider = ({ children }: ModalOptionProviderProps) => {
-  const [heightToDeduct, setHeightToDeduct] = useState<number>(0);
+  const [topHeight, setTopHeight] = useState<number>(0);
+  const [bottomHeight, setBottomHeight] = useState<number>(0);
 
-  const controlHeightToDeduct = useCallback((heightToAdd: number) => {
-    setHeightToDeduct((prev) => prev + heightToAdd);
+  const clearTopHeight = useCallback(() => {
+    setTopHeight(0);
   }, []);
 
-  const clearHeightToDeduct = useCallback(() => {
-    setHeightToDeduct(0);
+  const clearBottomHeight = useCallback(() => {
+    setBottomHeight(0);
   }, []);
 
   return (
     <ModalOptionContext.Provider
-      value={{ heightToDeduct, setHeightToDeduct: controlHeightToDeduct, clearHeightToDeduct }}
+      value={{
+        topHeight,
+        bottomHeight,
+        setTopHeight,
+        setBottomHeight,
+        clearTopHeight,
+        clearBottomHeight,
+      }}
     >
       {children}
     </ModalOptionContext.Provider>
