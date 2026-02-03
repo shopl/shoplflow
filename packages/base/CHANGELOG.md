@@ -1,5 +1,14 @@
 # @shoplflow/base
 
+## 0.45.16
+
+### Patch Changes
+
+- [#716](https://github.com/shopl/shoplflow/pull/716) [`47371a78b23a3969e256918c4fecd0740c84f524`](https://github.com/shopl/shoplflow/commit/47371a78b23a3969e256918c4fecd0740c84f524) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): Modal Top, Bottom의 높이 변경 ResizeObserver 추가
+
+- Updated dependencies [[`47371a78b23a3969e256918c4fecd0740c84f524`](https://github.com/shopl/shoplflow/commit/47371a78b23a3969e256918c4fecd0740c84f524)]:
+  - @shoplflow/shopl-assets@0.12.35
+
 ## 0.45.15
 
 ### Patch Changes
