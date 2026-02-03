@@ -93,7 +93,9 @@ export const Container = styled.div<
     css`
       transition:
         width 0.3s ease-in-out,
-        max-width 0.3s ease-in-out;
+        max-width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        max-height 0.3s ease-in-out;
     `}
   display: flex;
   flex-direction: column;
