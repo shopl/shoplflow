@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.45.15
+
+### Patch Changes
+
+- [#715](https://github.com/shopl/shoplflow/pull/715) [`1e16cf193adff5ef44b5a64c9cf787a194f3f2f3`](https://github.com/shopl/shoplflow/commit/1e16cf193adff5ef44b5a64c9cf787a194f3f2f3) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - input leftsource 추가
+
+- [#713](https://github.com/shopl/shoplflow/pull/713) [`18c026569b3fb9c17968595abe85d0929c434f05`](https://github.com/shopl/shoplflow/commit/18c026569b3fb9c17968595abe85d0929c434f05) Thanks [@shopl-kevin](https://github.com/shopl-kevin)! - modal container hasChangeAnimation 시 height 애니메이션도 적용
+
+- Updated dependencies [[`774c1ebe97137327c6f934c7f5cda02b165e147f`](https://github.com/shopl/shoplflow/commit/774c1ebe97137327c6f934c7f5cda02b165e147f)]:
+  - @shoplflow/shopl-assets@0.12.34
+
 ## 0.45.14
 
 ### Patch Changes
