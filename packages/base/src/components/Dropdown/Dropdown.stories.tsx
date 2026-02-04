@@ -1,5 +1,5 @@
 import Dropdown from './Dropdown';
-import { DropdownOptionVariants, type DropdownProps } from './Dropdown.types';
+import { DropdownOptionVariants, type DropdownProps, type DropdownSizeVariantType } from './Dropdown.types';
 import type { Meta, StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
@@ -11,6 +11,31 @@ import { IconButton } from '../Buttons';
 import { Icon } from '../Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 import { StackContainer } from '../StackContainer';
+import { Tag } from '../Tag';
+
+type DropdownMenuOption = { label: string; value: string };
+
+const createDropdownMenuOptions = (count: number, labelFn?: (index: number) => string): DropdownMenuOption[] =>
+  Array.from({ length: count }, (_, index) => ({
+    label: labelFn ? labelFn(index) : `label${index}`,
+    value: `value${index}`,
+  }));
+
+type DropdownMenuListProps = {
+  data: DropdownMenuOption[];
+  isItemSelected: (item: DropdownMenuOption) => boolean;
+  onItemClick: (value: string) => void;
+};
+
+const DropdownMenuList = ({ data, isItemSelected, onItemClick }: DropdownMenuListProps) => (
+  <Dropdown.Content type={'FILL'}>
+    {data.map((item) => (
+      <Menu key={item.value} isSelected={isItemSelected(item)} onClick={() => onItemClick(item.value)}>
+        {item.label}
+      </Menu>
+    ))}
+  </Dropdown.Content>
+);
 
 const meta: Meta<typeof Dropdown> = {
   title: 'COMPONENTS/Dropdown',
@@ -18,37 +43,66 @@ const meta: Meta<typeof Dropdown> = {
   argTypes: {
     width: {
       control: { type: 'text' },
-      description: 'Dropdown width',
       defaultValue: '100%',
+      description: 'Dropdown 너비',
     },
     option: {
       control: { type: 'select' },
-      description: 'Dropdown options',
       options: Object.values(DropdownOptionVariants),
+      description: 'Dropdown 클릭 옵션',
     },
-    trigger: {
-      description: 'Dropdown trigger 컴포넌트',
+    trigger: { description: 'Dropdown Trigger Button' },
+    popper: { description: 'Dropdown Popper' },
+    offset: {
+      control: { type: 'number' },
+      defaultValue: 4,
+      description: 'Dropdown 오프셋',
     },
-    popper: {
-      description: 'Dropdown popper 컴포넌트',
+    placement: {
+      control: { type: 'select' },
+      options: [
+        'top',
+        'right',
+        'bottom',
+        'left',
+        'top-start',
+        'top-end',
+        'right-start',
+        'right-end',
+        'bottom-start',
+        'bottom-end',
+        'left-start',
+        'left-end',
+      ],
+      defaultValue: 'bottom-start',
+      description: 'Dropdown Content 위치',
+    },
+    isOpen: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: '외부에서 Dropdown 열림 여부 제어',
     },
     disabled: {
-      description: 'Dropdown trigger 비활성화 여부',
+      control: { type: 'boolean' },
+      description: 'Dropdown Button 비활성화 여부',
     },
   },
 };
 
 export default meta;
 
-export const Playground: StoryFn<DropdownProps> = (args) => {
-  const data = new Array(10).fill(0).map((_, index) => {
-    return {
-      label: `label${index}`,
-      value: `value${index}`,
-    };
-  });
+type PlaygroundArgs = DropdownProps & {
+  sizeVar?: DropdownSizeVariantType;
+  isError?: boolean;
+  showRightSource?: boolean;
+  showLeftSource?: boolean;
+  hasOnClear?: boolean;
+};
 
-  const { selectedItem, handleToggleSelect } = useSelect('MULTI', data, {
+export const Playground: StoryFn<PlaygroundArgs> = (args) => {
+  const data = createDropdownMenuOptions(10);
+
+  const { selectedItem, handleToggleSelect, handleReset } = useSelect('MULTI', data, {
     key: 'value',
     max: 3,
   });
@@ -59,12 +113,28 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
         <Dropdown
           {...args}
           disabled={args.disabled}
-          option={'OUTSIDE_CLICK'}
-          width={'100%'}
+          option={args.option}
+          width={args.width ?? '100%'}
+          offset={args.offset}
           trigger={
             <Dropdown.Button
               disabled={args.disabled}
-              placeholder={'값이 없어요'}
+              sizeVar={args.sizeVar ?? 'M'}
+              isError={args.isError}
+              onClear={args.hasOnClear ? handleReset : undefined}
+              placeholder={'값이 없어서 보이는 placeholder'}
+              leftSource={
+                args.showLeftSource ? (
+                  <div style={{ width: '24px', height: '24px', background: '#FFEFEF' }} />
+                ) : undefined
+              }
+              rightSource={
+                args.showRightSource ? (
+                  <Tag styleVar='TINT' sizeVar='XS' background='neutral150'>
+                    +999
+                  </Tag>
+                ) : undefined
+              }
               value={
                 selectedItem.length > 0 && (
                   <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
@@ -75,16 +145,11 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
             />
           }
           popper={
-            <Dropdown.Content type={'FILL'}>
-              {data.map((item) => {
-                const isSelected = selectedItem.some((selected) => selected.value === item.value);
-                return (
-                  <Menu key={item.value} isSelected={isSelected} onClick={() => handleToggleSelect(item.value)}>
-                    {item.label}
-                  </Menu>
-                );
-              })}
-            </Dropdown.Content>
+            <DropdownMenuList
+              data={data}
+              isItemSelected={(item) => selectedItem.some((selected) => selected.value === item.value)}
+              onItemClick={handleToggleSelect}
+            />
           }
         />
       </ComponentStage>
@@ -101,50 +166,138 @@ export const Playground: StoryFn<DropdownProps> = (args) => {
 };
 
 Playground.args = {
-  trigger: <Dropdown.Button placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
+  isOpen: false,
+  option: 'OUTSIDE_CLICK',
+  width: '100%',
+  placement: 'bottom-start',
+  offset: 4,
+
+  sizeVar: 'M' as DropdownSizeVariantType,
   disabled: false,
+  isError: false,
+  showRightSource: false,
+  showLeftSource: false,
+  hasOnClear: true,
+};
+
+Playground.argTypes = {
+  sizeVar: {
+    control: { type: 'select' },
+    options: ['S', 'M', 'L'],
+  },
+  isError: {
+    control: { type: 'boolean' },
+    description: 'Dropdown Button 에러 상태',
+  },
+  showRightSource: {
+    control: { type: 'boolean' },
+    description:
+      'Playground 전용: rightSource(ReactElement) 표시 여부를 토글합니다. 실제 Dropdown.Button prop은 rightSource입니다.',
+    table: {
+      category: 'Playground (Trigger Button 데모)',
+    },
+  },
+  showLeftSource: {
+    control: { type: 'boolean' },
+    description:
+      'Playground 전용: leftSource(ReactElement) 표시 여부를 토글합니다. 실제 Dropdown.Button prop은 leftSource입니다.',
+    table: {
+      category: 'Playground (Trigger Button 데모)',
+    },
+  },
+  hasOnClear: {
+    control: { type: 'boolean' },
+    description:
+      'Playground 전용: onClear(() => void) 핸들러 표시 여부를 토글합니다. 실제 Dropdown.Button prop은 onClear입니다.',
+    table: {
+      category: 'Playground (Trigger Button 데모)',
+    },
+  },
 };
 
 Playground.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-4435&m=dev',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/-v2.0--Shopl-Flow?node-id=407-5154&m=dev',
   },
 };
 
-export const FillContent: StoryFn<DropdownProps> = (args) => {
+type SmallMediumArgs = DropdownProps & {
+  sizeVar?: DropdownSizeVariantType;
+  isError?: boolean;
+  showRightSource?: boolean;
+};
+
+export const SmallMedium: StoryFn<SmallMediumArgs> = (args) => {
+  const data = createDropdownMenuOptions(5, (i) => `Option ${i + 1}`);
+  const { selectedItem, handleToggleSelect } = useSelect('SINGLE', data, { key: 'value' });
+
   return (
     <Stack width={'500px'}>
       <ComponentStage>
-        <Dropdown {...args} />
+        <Dropdown
+          {...args}
+          width={args.width ?? '200px'}
+          option={args.option}
+          disabled={args.disabled}
+          trigger={
+            <Dropdown.Button
+              placeholder={'placeholder'}
+              sizeVar={args.sizeVar ?? 'S'}
+              isError={args.isError}
+              disabled={args.disabled}
+              value={
+                selectedItem && (
+                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
+                    {selectedItem.label}
+                  </Text>
+                )
+              }
+            />
+          }
+          popper={
+            <DropdownMenuList
+              data={data}
+              isItemSelected={(item) => selectedItem?.value === item.value}
+              onItemClick={handleToggleSelect}
+            />
+          }
+        />
       </ComponentStage>
     </Stack>
   );
 };
 
-FillContent.args = {
-  isOpen: false,
-  option: 'OUTSIDE_CLICK',
-  trigger: <Dropdown.Button placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
-};
-
-export const Small: StoryFn<DropdownProps> = (args) => {
-  return (
-    <Stack width={'500px'}>
-      <ComponentStage>
-        <Dropdown {...args} />
-      </ComponentStage>
-    </Stack>
-  );
-};
-
-Small.args = {
+SmallMedium.args = {
   isOpen: false,
   width: '200px',
   option: 'OUTSIDE_CLICK',
-  trigger: <Dropdown.Button placeholder={'0'} sizeVar={'S'} />,
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+  disabled: false,
+  sizeVar: 'S' as DropdownSizeVariantType,
+  isError: false,
+};
+
+SmallMedium.argTypes = {
+  option: {
+    control: { type: 'select' },
+    options: Object.values(DropdownOptionVariants),
+  },
+  sizeVar: {
+    control: { type: 'select' },
+    options: ['S', 'M'],
+  },
+  isError: {
+    control: { type: 'boolean' },
+  },
+  showRightSource: {
+    control: { type: 'boolean' },
+  },
+};
+
+SmallMedium.parameters = {
+  controls: {
+    include: ['isOpen', 'width', 'sizeVar', 'option', 'disabled', 'isError'],
+  },
 };
 
 export const Large: StoryFn<DropdownProps> = (args) => {
@@ -175,29 +328,98 @@ Large.args = {
   popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
 };
 
-export const Disabled: StoryFn<DropdownProps> = (args) => {
+type WithClearButtonArgs = DropdownProps & {
+  sizeVar?: DropdownSizeVariantType;
+  isError?: boolean;
+  showRightSource?: boolean;
+};
+
+export const WithClearButton: StoryFn<WithClearButtonArgs> = (args) => {
+  const data = createDropdownMenuOptions(5, (i) => `Option ${i + 1}`);
+
+  const { selectedItem, handleToggleSelect, handleReset } = useSelect('SINGLE', data, {
+    key: 'value',
+  });
+
   return (
-    <Stack width={'500px'}>
-      <ComponentStage>
-        <Dropdown {...args} />
+    <Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>
+      <ComponentStage justify={'start'}>
+        <Dropdown
+          {...args}
+          disabled={args.disabled}
+          option={args.option}
+          width={'300px'}
+          trigger={
+            <Dropdown.Button
+              disabled={args.disabled}
+              sizeVar={args.sizeVar ?? 'S'}
+              isError={args.isError}
+              placeholder={'옵션을 선택하세요'}
+              onClear={handleReset}
+              rightSource={
+                args.showRightSource ? (
+                  <Tag styleVar='TINT' sizeVar='XS' background='neutral150'>
+                    +999
+                  </Tag>
+                ) : undefined
+              }
+              value={
+                selectedItem && (
+                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
+                    {selectedItem.label}
+                  </Text>
+                )
+              }
+            />
+          }
+          popper={
+            <DropdownMenuList
+              data={data}
+              isItemSelected={(item) => selectedItem?.value === item.value}
+              onItemClick={handleToggleSelect}
+            />
+          }
+        />
       </ComponentStage>
-    </Stack>
+      <Stack.Vertical width={'400px'} height={'100%'} justify={'start'} align={'start'} spacing={'spacing12'}>
+        <ComponentStage align={'start'} justify={'start'}>
+          <Stack height={'24px'}>
+            <Text typography={'body1_700'}>선택된 데이터</Text>
+          </Stack>
+          <JSONScrollView items={selectedItem ? [selectedItem] : []} />
+        </ComponentStage>
+      </Stack.Vertical>
+    </Stack.Horizontal>
   );
 };
 
-Disabled.args = {
-  isOpen: false,
+WithClearButton.args = {
+  sizeVar: 'S' as DropdownSizeVariantType,
   option: 'OUTSIDE_CLICK',
-  trigger: (
-    <Dropdown.Button
-      disabled
-      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
-      leftSource={
-        <IconButton sizeVar='S' styleVar='GHOST'>
-          <Icon iconSource={EditIcon} />
-        </IconButton>
-      }
-    />
-  ),
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+  disabled: false,
+  isError: false,
+  showRightSource: false,
+};
+
+WithClearButton.argTypes = {
+  sizeVar: {
+    control: { type: 'select' },
+    options: ['S', 'M', 'L'],
+  },
+  option: {
+    control: { type: 'select' },
+    options: Object.values(DropdownOptionVariants),
+  },
+  isError: {
+    control: { type: 'boolean' },
+  },
+  showRightSource: {
+    control: { type: 'boolean' },
+  },
+};
+
+WithClearButton.parameters = {
+  controls: {
+    include: ['sizeVar', 'option', 'disabled', 'isError', 'showRightSource'],
+  },
 };

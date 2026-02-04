@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import type { TypographyTokens } from '../../styles';
 import { colorTokens } from '../../styles';
 import type { DropdownTriggerButtonProps, DropdownSizeVariantType } from './Dropdown.types';
-import { motion } from 'framer-motion';
 import { css } from '@emotion/react';
 
 export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
@@ -35,19 +34,18 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
     case 'L':
       return css`
         background-color: transparent;
-        padding: 8px 4px 8px 12px;
+        padding: 8px 0 8px 12px;
       `;
     case 'M':
       return css`
         background-color: ${colorTokens.neutral0};
         gap: 4px;
-        padding: 4px 4px 4px 12px;
+        padding: 4px 0 4px 12px;
       `;
     case 'S':
       return css`
         background-color: ${colorTokens.neutral0};
-        padding: 4px 4px 4px 8px;
-        gap: 4px;
+        padding: 4px 0 4px 8px;
       `;
     default:
       return css`
@@ -68,6 +66,13 @@ export const getDisabledStyle = (disabled?: boolean) => {
 export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
     case 'S':
+      return css`
+        height: 32px;
+        width: 22px;
+        min-height: 32px;
+        min-width: 22px;
+        justify-content: flex-start;
+      `;
     case 'L':
       return css`
         height: 24px;
@@ -144,12 +149,25 @@ export const getStyleByType = ({
   `;
 };
 
-export const StyledDropdownButtonWrapper = styled.label<
+export const getClearIconHoverStyle = (hasValue: boolean) => {
+  if (!hasValue) {
+    return;
+  }
+
+  return css`
+    &:hover .dropdown-clear-icon {
+      display: flex;
+    }
+  `;
+};
+
+export const StyledDropdownButtonWrapper = styled.div<
   Status & {
     height?: CSSStyleDeclaration['height'];
     width?: CSSStyleDeclaration['width'];
     gap?: CSSStyleDeclaration['gap'];
     sizeVar: DropdownSizeVariantType;
+    hasValue: boolean;
   }
 >`
   position: relative;
@@ -170,8 +188,18 @@ export const StyledDropdownButtonWrapper = styled.label<
       width,
     })};
   ${(props) => getButtonWrapperStyleBySizeVar(props)};
-
   ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ sizeVar }) =>
+    sizeVar === 'M' &&
+    css`
+      gap: 4px;
+    `}
+
+  .dropdown-clear-icon {
+    display: none;
+  }
+
+  ${({ hasValue }) => getClearIconHoverStyle(hasValue)}
 `;
 
 export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
@@ -186,7 +214,7 @@ export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
   ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;
-export const DropdownButtonIcon = styled(motion.div)<DropdownTriggerButtonProps>`
+export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
