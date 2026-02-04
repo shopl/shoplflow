@@ -11,11 +11,29 @@ import {
 } from './DropdownTriggerButton.styled';
 import { Text } from '../Text';
 import { Icon } from '../Icon';
-import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
+import { DeleteIcon, DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
 import { Stack } from '../Stack';
+import { StackContainer } from '../StackContainer';
+import { motion } from 'framer-motion';
+import { IconButton } from '../Buttons';
 
 export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTriggerButtonProps>(
-  ({ width = '100%', onClick, sizeVar = 'M', isError, placeholder, value, disabled, leftSource, ...rest }, ref) => {
+  (
+    {
+      width = '100%',
+      onClick,
+      sizeVar = 'M',
+      isError,
+      placeholder,
+      value,
+      disabled,
+      leftSource,
+      rightSource,
+      onClear,
+      ...rest
+    },
+    ref,
+  ) => {
     const { isOpen, setIsOpen } = useDropdown();
     const [isHovered, setIsHovered] = useState(false);
 
@@ -29,8 +47,14 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
     const handleOnMouseEnter = () => {
       setIsHovered(true);
     };
+
     const handleOnMouseLeave = () => {
       setIsHovered(false);
+    };
+
+    const handleOnClear = (e: MouseEvent<HTMLButtonElement>) => {
+      e.stopPropagation();
+      onClear && onClear();
     };
 
     const getTextColor = ({ value, disabled }: { value?: React.ReactNode | null; disabled?: boolean }) => {
@@ -44,6 +68,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
     };
 
     const LeftSourceClone = leftSource ? cloneElement(leftSource, { ...leftSource.props, disabled }) : leftSource;
+    const RightSourceClone = rightSource ? cloneElement(rightSource, { ...rightSource.props, disabled }) : rightSource;
 
     return (
       <StyledDropdownButtonWrapper
@@ -56,9 +81,10 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         isError={isError}
         sizeVar={sizeVar}
         height={getDropdownHeightBySizeVar(sizeVar)}
+        hasValue={Boolean(value)}
       >
         <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
-          <Stack.Horizontal width='100%' spacing={sizeVar === 'L' ? 'spacing04' : undefined} align='center'>
+          <Stack.Horizontal width='100%' spacing={'spacing04'} align='center'>
             {LeftSourceClone && LeftSourceClone}
             {value || (
               <Text
@@ -72,8 +98,17 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             )}
           </Stack.Horizontal>
 
-          <DropdownButtonIcon
-            sizeVar={sizeVar}
+          {onClear && (
+            <IconButton sizeVar='S' styleVar='GHOST' onClick={handleOnClear} className='dropdown-clear-icon'>
+              <Icon iconSource={DeleteIcon} color='neutral350' sizeVar='S' />
+            </IconButton>
+          )}
+
+          {RightSourceClone && <StackContainer padding='0 6px 0 0'>{RightSourceClone}</StackContainer>}
+        </StyledDropdownButton>
+
+        <DropdownButtonIcon sizeVar={sizeVar}>
+          <motion.div
             animate={{
               rotate: isOpen ? 180 : 0,
             }}
@@ -86,8 +121,8 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
               color={sizeVar === 'L' ? 'neutral700' : 'neutral400'}
               sizeVar='XS'
             />
-          </DropdownButtonIcon>
-        </StyledDropdownButton>
+          </motion.div>
+        </DropdownButtonIcon>
       </StyledDropdownButtonWrapper>
     );
   },
