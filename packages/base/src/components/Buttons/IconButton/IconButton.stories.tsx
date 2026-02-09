@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import IconButton from './IconButton';
 import type { IconButtonProps } from './IconButton.types';
 import { IconButtonSizeVariants, IconButtonStyleVariants } from './IconButton.types';

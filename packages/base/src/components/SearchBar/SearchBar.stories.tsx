@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import type { Meta, StoryFn } from '@storybook/react';
-import { expect, within, userEvent } from '@storybook/test';
+import type { Meta, StoryFn } from '@storybook/react-vite';
+import { expect, within, userEvent } from 'storybook/test';
 import { Stack } from '../Stack';
 import { SearchBar } from './SearchBar';
 import type { SearchBarProps, DropdownItem, MemoizedSearchBarComponent } from './SearchBar.types';

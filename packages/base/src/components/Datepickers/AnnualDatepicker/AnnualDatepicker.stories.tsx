@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { StoryFn, Meta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import AnnualDatepicker from './AnnualDatepicker';
 import type { AnnualDatepickerProps } from './AnnualDatepicker.types';

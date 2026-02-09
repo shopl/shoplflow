@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Callout from './Callout';
 import type { CalloutProps } from './Callout.types';

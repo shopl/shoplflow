@@ -1,6 +1,6 @@
 import Tooltip from './Tooltip';
 import type { TooltipProps } from './Tooltip.types';
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
 import { Text } from '../Text';

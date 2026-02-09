@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Popper from './Popper';
 import type { PopperProps } from './Popper.types';

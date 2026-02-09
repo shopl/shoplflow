@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import List from './List';
 import type { ListProps } from './List.types';

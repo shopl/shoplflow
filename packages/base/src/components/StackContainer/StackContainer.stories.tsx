@@ -1,4 +1,4 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 
 import { Box, ComponentStage } from '../../styles/Box';
 import { MotionStackContainer, StackContainer } from './StackContainer';

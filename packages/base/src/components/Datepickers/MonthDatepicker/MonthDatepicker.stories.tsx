@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import MonthDatepicker from './MonthDatepicker';
 import type { MonthClickDateInfo, MonthDatepickerProps } from './MonthDatepicker.types';

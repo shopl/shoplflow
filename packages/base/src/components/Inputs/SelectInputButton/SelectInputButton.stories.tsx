@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn, Meta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import SelectInputButton from './SelectInputButton';
 import type { SelectInputButtonProps } from './SelectInputButton.types';

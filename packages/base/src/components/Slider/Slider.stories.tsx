@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Slider from './Slider';
 import styled from '@emotion/styled';
 import type { SliderProps } from './Slider.types';

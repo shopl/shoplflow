@@ -61,3 +61,6 @@ docs/pages/utils/**/_meta.json
 !docs/pages/_app.mdx
 !docs/pages/_document.mdx
 !docs/pages/index.mdx
+
+CLAUDE.md
+.cursor

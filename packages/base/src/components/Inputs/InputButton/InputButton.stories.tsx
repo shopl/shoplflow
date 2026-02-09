@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import InputButton from './InputButton';
 import type { InputButtonProps } from './InputButton.types';

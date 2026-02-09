@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Tag from './Tag';
 import { TagSizeVariants, TagStyleVariants } from './Tag.types';

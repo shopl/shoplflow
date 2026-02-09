@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Tabs from './Tabs';
 import type { TabsProps } from './Tabs.types';

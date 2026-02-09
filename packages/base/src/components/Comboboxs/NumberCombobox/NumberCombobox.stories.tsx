@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import NumberCombobox from './NumberCombobox';
 import { NumberComboboxSizeVariants, type NumberComboboxProps } from './NumberCombobox.types';

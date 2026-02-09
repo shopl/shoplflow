@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import WeekDatepicker from './WeekDatepicker';
 import type { WeekClickDateInfo, WeekDatepickerProps } from './WeekDatepicker.types';

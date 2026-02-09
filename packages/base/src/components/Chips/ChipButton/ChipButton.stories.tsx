@@ -1,6 +1,6 @@
 import ChipButton from './ChipButton';
 import { Stack } from '../../Stack';
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { ChipButtonSizeVariants, ChipButtonStyleVariants, type ChipButtonProps } from './ChipButton.types';
 import { ComponentStage } from '../../../styles/Box';
 

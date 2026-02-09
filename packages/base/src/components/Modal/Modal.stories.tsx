@@ -1,4 +1,4 @@
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Box, ComponentStage } from '../../styles/Box';
 import { Modal, useHandleModal } from './index';
 import type { ModalContainerProps, ModalBodyProps } from './Modal.types';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import Radio from './Radio';
 import type { RadioProps } from './Radio.types';
 import { ComponentStage } from '../../../styles/Box';

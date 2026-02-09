@@ -7,7 +7,7 @@ import '../src/styles/global.css';
 import '../src/styles/reset.css';
 // Simplebar css 설정, 사용하는 컨슈머에도 해당 css import가 필요함
 import 'simplebar-react/dist/simplebar.min.css';
-import { Preview } from '@storybook/react';
+import { Preview } from '@storybook/react-vite';
 import { StoryDomainContext, useStoryDomain } from './useStoryDomain';
 
 const ThemeButton  = styled.div`
