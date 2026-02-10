@@ -306,6 +306,7 @@ import IcStar from './IcStar';
 import IcSubtract from './IcSubtract';
 import IcSummeryView from './IcSummeryView';
 import IcSympathyMedium from './IcSympathyMedium';
+import IcTable from './IcTable';
 import IcTack from './IcTack';
 import IcTag from './IcTag';
 import IcTargetMedium from './IcTargetMedium';
@@ -644,6 +645,7 @@ const icons = {
   subtract: IcSubtract,
   'summery-view': IcSummeryView,
   'sympathy-medium': IcSympathyMedium,
+  table: IcTable,
   tack: IcTack,
   tag: IcTag,
   'target-medium': IcTargetMedium,
@@ -985,6 +987,7 @@ export {
   IcSubtract as SubtractIcon,
   IcSummeryView as SummeryViewIcon,
   IcSympathyMedium as SympathyMediumIcon,
+  IcTable as TableIcon,
   IcTack as TackIcon,
   IcTag as TagIcon,
   IcTargetMedium as TargetMediumIcon,
