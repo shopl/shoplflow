@@ -5,7 +5,10 @@ import * as MonthDatepickerStories from './MonthDatepicker.stories';
 <Meta of={MonthDatepickerStories} />
 
 # MonthDatepicker
+### v2.1
+
 월을 선택하는 데이트피커에요.
+
 > - 시작월과 마지막월을 시작하면 해당 기간 안에 존재하는 모든 날짜를 호출하는 컴포넌트에서 받을 수 있어요.
 > - onlySingleMonth 프롭을 전달하면 한달만 선택 가능해요.
 
@@ -14,8 +17,7 @@ import * as MonthDatepickerStories from './MonthDatepicker.stories';
 
 ## Usage
 ```tsx
-import { MonthDatepicker} from '@shoplflow/base'
-import type { MonthClickDateInfo } from '@shopflow/base';
+import { MonthDatepicker, type MonthClickDateInfo} from '@shoplflow/base'
 
 const Example = () => {
   const [selectedDateInfo, setSelectedDateInfo] = useState<MonthClickDateInfo | null>(null);
