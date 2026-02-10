@@ -85,12 +85,12 @@ export const getEachMonthAreaStyle = (props: MonthDatepickerStyleType & { isRead
   }
 };
 
-export const MonthContainer = styled.div`
+export const MonthContainer = styled.div<{ sizeVar: 'S' | 'M' }>`
   display: flex;
   flex-direction: column;
-  width: 400px;
-  max-width: 400px;
-  gap: 16px;
+  width: ${({ sizeVar }) => (sizeVar === 'S' ? '280px' : '400px')};
+  max-width: ${({ sizeVar }) => (sizeVar === 'S' ? '280px' : '400px')};
+  gap: ${({ sizeVar }) => (sizeVar === 'S' ? '8px' : '16px')};
   padding: 16px 24px 24px;
 `;
 
@@ -123,6 +123,7 @@ export const EachMonthDate = styled.div<MonthDatepickerStyleType>`
   cursor: pointer;
   position: absolute;
   z-index: 10;
+  flex-shrink: 0;
 
   ${(props) => getEachDateStyle(props)}
 `;
