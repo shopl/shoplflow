@@ -28,6 +28,7 @@ justify-content: center;
 
 
 const preview: Preview = {
+  tags: ['autodocs'],
   decorators: [
     (Story) => {
       const domainContext = useStoryDomain();
