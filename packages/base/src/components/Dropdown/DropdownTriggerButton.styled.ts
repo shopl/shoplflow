@@ -30,28 +30,15 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
 };
 
 export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
-  switch (size) {
-    case 'L':
-      return css`
-        background-color: transparent;
-        padding: 8px 0 8px 12px;
-      `;
-    case 'M':
-      return css`
-        background-color: ${colorTokens.neutral0};
-        gap: 4px;
-        padding: 4px 0 4px 12px;
-      `;
-    case 'S':
-      return css`
-        background-color: ${colorTokens.neutral0};
-        padding: 4px 0 4px 8px;
-      `;
-    default:
-      return css`
-        padding: 4px 4px 4px 12px;
-      `;
+  if (size === 'L') {
+    return css`
+      background-color: transparent;
+    `;
   }
+
+  return css`
+    background-color: ${colorTokens.neutral0};
+  `;
 };
 
 export const getDisabledStyle = (disabled?: boolean) => {
@@ -60,33 +47,6 @@ export const getDisabledStyle = (disabled?: boolean) => {
       cursor: not-allowed;
       background: ${colorTokens.neutral100};
     `;
-  }
-};
-
-export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVariantType) => {
-  switch (size) {
-    case 'S':
-      return css`
-        height: 32px;
-        width: 22px;
-        min-height: 32px;
-        min-width: 22px;
-        justify-content: flex-start;
-      `;
-    case 'L':
-      return css`
-        height: 24px;
-        width: 24px;
-        min-width: 24px;
-        min-height: 24px;
-      `;
-    default:
-      return css`
-        height: 32px;
-        width: 32px;
-        min-width: 32px;
-        min-height: 32px;
-      `;
   }
 };
 
@@ -189,11 +149,6 @@ export const StyledDropdownButtonWrapper = styled.div<
     })};
   ${(props) => getButtonWrapperStyleBySizeVar(props)};
   ${({ disabled }) => getDisabledStyle(disabled)};
-  ${({ sizeVar }) =>
-    sizeVar === 'M' &&
-    css`
-      gap: 4px;
-    `}
 
   .dropdown-clear-icon {
     display: none;
@@ -209,17 +164,18 @@ export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-
+  padding: 0 8px;
   cursor: pointer;
+
   ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;
 export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-shrink: 0;
+  min-width: 22px;
+  height: 100%;
 
-  ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;

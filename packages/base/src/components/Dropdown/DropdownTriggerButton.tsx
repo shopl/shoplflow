@@ -83,8 +83,15 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         height={getDropdownHeightBySizeVar(sizeVar)}
         hasValue={Boolean(value)}
       >
-        <StyledDropdownButton ref={ref} onClick={handleOnClick} disabled={disabled} {...rest} sizeVar={sizeVar}>
-          <Stack.Horizontal width='100%' spacing={'spacing04'} align='center'>
+        <StyledDropdownButton
+          ref={ref}
+          onClick={handleOnClick}
+          disabled={disabled}
+          {...rest}
+          sizeVar={sizeVar}
+          data-shoplflow={'Dropdown-Content-Area'}
+        >
+          <Stack.Horizontal width='100%' spacing='spacing04' align='center'>
             {LeftSourceClone && LeftSourceClone}
             {value || (
               <Text
@@ -103,11 +110,11 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
               <Icon iconSource={DeleteIcon} color='neutral350' sizeVar='S' />
             </IconButton>
           )}
-
-          {RightSourceClone && <StackContainer padding='0 6px 0 0'>{RightSourceClone}</StackContainer>}
         </StyledDropdownButton>
 
-        <DropdownButtonIcon sizeVar={sizeVar}>
+        {RightSourceClone && <StackContainer padding='0 6px 0 0'>{RightSourceClone}</StackContainer>}
+
+        <DropdownButtonIcon sizeVar={sizeVar} data-shoplflow={'Dropdown-Button-Icon-Area'}>
           <motion.div
             animate={{
               rotate: isOpen ? 180 : 0,
