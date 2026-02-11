@@ -167,7 +167,7 @@ importers:
         specifier: ^11.1.1
         version: 11.1.1(@storybook/addon-docs@10.2.4)(@types/react@18.2.29)(react-dom@18.2.0)(react@18.2.0)(storybook@10.2.4)
       '@storybook/addon-docs':
-        specifier: ^10.2.1
+        specifier: ^10.2.4
         version: 10.2.4(@types/react@18.2.29)(esbuild@0.18.17)(rollup@2.79.1)(storybook@10.2.4)(vite@7.3.1)
       '@storybook/addon-links':
         specifier: ^10.2.1
@@ -539,19 +539,16 @@ importers:
         version: 9.1.17(storybook@9.1.17)
       '@storybook/addon-designs':
         specifier: ^10.0.0
-        version: 10.0.2(@storybook/addon-docs@9.1.17)(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17)
+        version: 10.0.2(@storybook/addon-docs@10.2.4)(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17)
       '@storybook/addon-docs':
-        specifier: 9.1.17
-        version: 9.1.17(@types/react@18.2.29)(storybook@9.1.17)
+        specifier: ^10.2.4
+        version: 10.2.4(@types/react@18.2.29)(esbuild@0.18.17)(storybook@9.1.17)(vite@7.3.1)
       '@storybook/addon-links':
         specifier: 9.1.17
         version: 9.1.17(react@18.2.0)(storybook@9.1.17)
       '@storybook/addon-mcp':
         specifier: ^0.2.2
         version: 0.2.2(storybook@9.1.17)(typescript@4.7.4)
-      '@storybook/blocks':
-        specifier: 8.6.15
-        version: 8.6.15(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17)
       '@storybook/react-vite':
         specifier: 9.1.17
         version: 9.1.17(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17)(typescript@4.7.4)(vite@7.3.1)
@@ -4388,7 +4385,7 @@ packages:
       storybook: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1)
     dev: true
 
-  /@storybook/addon-designs@10.0.2(@storybook/addon-docs@9.1.17)(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17):
+  /@storybook/addon-designs@10.0.2(@storybook/addon-docs@10.2.4)(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17):
     resolution: {integrity: sha512-MP7av/of6QMPH7bRjwjTC34GySy2bfyh3WwLWeztQOuNWMEFUOWzjh9iIyCiOBl7VADSXeL4SOJGIiGzQznFZw==}
     peerDependencies:
       '@storybook/addon-docs': ^0.0.0-0 || ^9.0.0 || ^9.1.0-0
@@ -4404,7 +4401,7 @@ packages:
         optional: true
     dependencies:
       '@figspec/react': 1.0.4(react@18.2.0)
-      '@storybook/addon-docs': 9.1.17(@types/react@18.2.29)(storybook@9.1.17)
+      '@storybook/addon-docs': 10.2.4(@types/react@18.2.29)(esbuild@0.18.17)(storybook@9.1.17)(vite@7.3.1)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       storybook: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1)
@@ -4455,21 +4452,25 @@ packages:
       - webpack
     dev: true
 
-  /@storybook/addon-docs@9.1.17(@types/react@18.2.29)(storybook@9.1.17):
-    resolution: {integrity: sha512-yc4hlgkrwNi045qk210dRuIMijkgbLmo3ft6F4lOdpPRn4IUnPDj7FfZR8syGzUzKidxRfNtLx5m0yHIz83xtA==}
+  /@storybook/addon-docs@10.2.4(@types/react@18.2.29)(esbuild@0.18.17)(storybook@9.1.17)(vite@7.3.1):
+    resolution: {integrity: sha512-FzscAmdBiOGnGrxiEM+8eTg43kjqgjLfObg+lbJVRR/a0DmZ3xfAPNB0+VKYQbN0FacNcWLM9LZ/7U0hRBPBnQ==}
     peerDependencies:
-      storybook: ^9.1.17
+      storybook: ^10.2.4
     dependencies:
       '@mdx-js/react': 3.1.1(@types/react@18.2.29)(react@18.2.0)
-      '@storybook/csf-plugin': 9.1.17(storybook@9.1.17)
-      '@storybook/icons': 1.6.0(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/react-dom-shim': 9.1.17(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17)
+      '@storybook/csf-plugin': 10.2.4(esbuild@0.18.17)(storybook@9.1.17)(vite@7.3.1)
+      '@storybook/icons': 2.0.1(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/react-dom-shim': 10.2.4(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       storybook: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1)
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
+      - esbuild
+      - rollup
+      - vite
+      - webpack
     dev: true
 
   /@storybook/addon-links@10.2.4(react@18.2.0)(storybook@10.2.4):
@@ -4534,25 +4535,6 @@ packages:
       - typescript
     dev: true
 
-  /@storybook/blocks@8.6.15(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17):
-    resolution: {integrity: sha512-nc5jQkvPo0EirteHsrmcx9on/0lGQ8F4lUNky7kN2I5WM8Frr3cPTeRoAvzjUkOwrqt/vm3g+T4zSbmDq/OEDA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      storybook: ^8.6.15
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@storybook/icons': 1.6.0(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      storybook: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1)
-      ts-dedent: 2.2.0
-    dev: true
-
   /@storybook/builder-vite@10.2.4(esbuild@0.18.17)(rollup@2.79.1)(storybook@10.2.4)(vite@7.3.1):
     resolution: {integrity: sha512-/hcT1xj3CL5GkJ5v5/EguZdttDwNE6weNXK7vKzp034tnGcLycOossDsTiUQkBowSL+Ylc8aKj+ZgvddPNfOig==}
     peerDependencies:
@@ -4614,6 +4596,30 @@ packages:
       vite: 7.3.1(@types/node@20.4.9)
     dev: true
 
+  /@storybook/csf-plugin@10.2.4(esbuild@0.18.17)(storybook@9.1.17)(vite@7.3.1):
+    resolution: {integrity: sha512-kupPQEV+4N9mzsZHYaokvhO/KHBjYdWda9PNmPQwy0TR7r2mzthgaNH72TjmgN1L6DIbsuyOG1wtczcPJn4+Jg==}
+    peerDependencies:
+      esbuild: '*'
+      rollup: '*'
+      storybook: ^10.2.4
+      vite: '*'
+      webpack: '*'
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      esbuild: 0.18.17
+      storybook: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1)
+      unplugin: 2.3.11
+      vite: 7.3.1(@types/node@20.4.9)
+    dev: true
+
   /@storybook/csf-plugin@9.1.17(storybook@9.1.17):
     resolution: {integrity: sha512-o+ebQDdSfZHDRDhu2hNDGhCLIazEB4vEAqJcHgz1VsURq+l++bgZUcKojPMCAbeblptSEz2bwS0eYAOvG7aSXg==}
     peerDependencies:
@@ -4631,17 +4637,6 @@ packages:
 
   /@storybook/global@5.0.0:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
-    dev: true
-
-  /@storybook/icons@1.6.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-hcFZIjW8yQz8O8//2WTIXylm5Xsgc+lW9ISLgUk1xGmptIJQRdlhVIXCpSyLrQaaRiyhQRaVg7l3BD9S216BHw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: true
 
   /@storybook/icons@2.0.1(react-dom@18.2.0)(react@18.2.0):
@@ -4684,6 +4679,18 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       storybook: 10.2.4(@testing-library/dom@10.4.1)(prettier@3.8.1)(react-dom@18.2.0)(react@18.2.0)
+    dev: true
+
+  /@storybook/react-dom-shim@10.2.4(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17):
+    resolution: {integrity: sha512-i22OtrZ7GeZPt/odLf0vqyDhRSKyaLsHkkKSBcANQfzRRnBZmiz2FchOtWm9uvoDWybQsTruZq7kTdtpEhwyGw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      storybook: ^10.2.4
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      storybook: 9.1.17(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@7.3.1)
     dev: true
 
   /@storybook/react-dom-shim@9.1.17(react-dom@18.2.0)(react@18.2.0)(storybook@9.1.17):

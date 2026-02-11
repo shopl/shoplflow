@@ -1,8 +1,10 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const require = createRequire(import.meta.url);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -49,7 +51,9 @@ const config: StorybookConfig = {
         dedupe: ['react', 'react-dom'],
         alias: {
           ...config.resolve?.alias,
-          '@storybook/blocks': require.resolve('@storybook/blocks'),
+          // Node 전용 isatty가 브라우저 번들에서 호출될 때 에러 방지 (Storybook 10 + Vite)
+          'tty': join(__dirname, 'stubs', 'tty.js'),
+          'node:tty': join(__dirname, 'stubs', 'tty.js'),
         },
       },
       plugins: [
@@ -80,7 +84,6 @@ const config: StorybookConfig = {
         include: [
           '@shoplflow/shopl-assets',
           '@shoplflow/hada-assets',
-          '@storybook/blocks',
           '@storybook/addon-docs',
         ],
       },
@@ -93,9 +96,10 @@ const config: StorybookConfig = {
       },
     };
   },
-  docs: {
-    autodocs: "tag",
-  },
+  // Storybook 10부터 autodocs는 main이 아닌 tags로 제어합니다.
+  // - 전체 자동 문서: preview.tsx에 tags: ['autodocs'] 추가
+  // - 파일별 opt-in: 각 *.stories.tsx meta에 tags: ['autodocs'] 추가
+  docs: {},
   features: {
     experimentalComponentsManifest: true,
   },
