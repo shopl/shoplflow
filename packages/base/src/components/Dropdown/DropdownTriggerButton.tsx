@@ -105,7 +105,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             )}
           </Stack.Horizontal>
 
-          {onClear && (
+          {onClear && sizeVar !== 'L' && (
             <IconButton sizeVar='S' styleVar='GHOST' onClick={handleOnClear} className='dropdown-clear-icon'>
               <Icon iconSource={DeleteIcon} color='neutral350' sizeVar='S' />
             </IconButton>

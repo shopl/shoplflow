@@ -9,7 +9,7 @@ import { Text } from '../Text';
 import { JSONScrollView } from '../../styles/JSONScrollView';
 import { IconButton } from '../Buttons';
 import { Icon } from '../Icon';
-import { EditIcon } from '@shoplflow/shopl-assets';
+import { EditIcon, SearchIcon } from '@shoplflow/shopl-assets';
 import { StackContainer } from '../StackContainer';
 import { Tag } from '../Tag';
 
@@ -104,7 +104,6 @@ export const Playground: StoryFn<PlaygroundArgs> = (args) => {
 
   const { selectedItem, handleToggleSelect, handleReset } = useSelect('MULTI', data, {
     key: 'value',
-    max: 3,
   });
 
   return (
@@ -123,11 +122,7 @@ export const Playground: StoryFn<PlaygroundArgs> = (args) => {
               isError={args.isError}
               onClear={args.hasOnClear ? handleReset : undefined}
               placeholder={'값이 없어서 보이는 placeholder'}
-              leftSource={
-                args.showLeftSource ? (
-                  <div style={{ width: '24px', height: '24px', background: '#FFEFEF' }} />
-                ) : undefined
-              }
+              leftSource={args.showLeftSource ? <Icon iconSource={SearchIcon} sizeVar='S' /> : undefined}
               rightSource={
                 args.showRightSource ? (
                   <Tag styleVar='TINT' sizeVar='XS' background='neutral150'>

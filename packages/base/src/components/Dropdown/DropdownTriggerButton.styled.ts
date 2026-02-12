@@ -23,22 +23,34 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
     case 'M':
       return 'body1_400';
     case 'S':
-      return 'body2_400';
+      return 'body1_400';
     default:
       return 'body1_400';
   }
 };
 
 export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
-  if (size === 'L') {
-    return css`
-      background-color: transparent;
-    `;
+  switch (size) {
+    case 'S':
+      return css`
+        padding: 0 8px;
+      `;
+    case 'M':
+      return css`
+        padding: 0 12px;
+      `;
+    case 'L':
+      return css`
+        background-color: transparent;
+        padding-left: 12px;
+        padding-right: 8px;
+      `;
+    default:
+      return css`
+        background-color: ${colorTokens.neutral0};
+        padding: 0 8px;
+      `;
   }
-
-  return css`
-    background-color: ${colorTokens.neutral0};
-  `;
 };
 
 export const getDisabledStyle = (disabled?: boolean) => {
@@ -46,6 +58,9 @@ export const getDisabledStyle = (disabled?: boolean) => {
     return css`
       cursor: not-allowed;
       background: ${colorTokens.neutral100};
+      svg > path {
+        fill: ${colorTokens.neutral400} !important;
+      }
     `;
   }
 };
@@ -150,25 +165,28 @@ export const StyledDropdownButtonWrapper = styled.div<
   ${(props) => getButtonWrapperStyleBySizeVar(props)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 
-  .dropdown-clear-icon {
-    display: none;
-  }
-
   ${({ hasValue }) => getClearIconHoverStyle(hasValue)}
 `;
 
 export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 0 8px;
   cursor: pointer;
 
   ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
+
+  .dropdown-clear-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: ${colorTokens.neutral0};
+  }
 `;
 export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
