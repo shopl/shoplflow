@@ -1,5 +1,16 @@
 # @shoplflow/base
 
+## 0.46.0
+
+### Minor Changes
+
+- [#725](https://github.com/shopl/shoplflow/pull/725) [`853b2d7d62ea683351db4571b04b79e096084858`](https://github.com/shopl/shoplflow/commit/853b2d7d62ea683351db4571b04b79e096084858) Thanks [@velo-kim](https://github.com/velo-kim)! - storybook version up(10)에 업데이트
+
+### Patch Changes
+
+- Updated dependencies [[`853b2d7d62ea683351db4571b04b79e096084858`](https://github.com/shopl/shoplflow/commit/853b2d7d62ea683351db4571b04b79e096084858)]:
+  - @shoplflow/utils@0.8.0
+
 ## 0.45.17
 
 ### Patch Changes
