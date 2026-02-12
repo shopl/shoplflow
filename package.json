@@ -3,13 +3,11 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "build:docs": "turbo run build:docs",
     "build:package": "turbo run build:package",
     "build:assets": "turbo run build:assets",
     "build:storybook": "turbo run build:storybook",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "dev:docs": "turbo run dev:docs",
     "dev:storybook": "turbo run dev:storybook",
     "dev:stories": "turbo run dev:stories",
     "dev": "turbo run dev",
@@ -49,7 +47,7 @@
     "lint-staged": "13.2.3",
     "prettier": "^3.0.0",
     "turbo": "^1.10.12",
-    "typescript": "^4.9.0",
+    "typescript": "^5.9.0",
     "vitest": "^1.2.2"
   },
   "lint-staged": {

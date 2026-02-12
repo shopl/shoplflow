@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Slider from './Slider';
 import styled from '@emotion/styled';
 import type { SliderProps } from './Slider.types';
@@ -35,7 +35,7 @@ const SliderWithWrapper = (args: SliderProps) => {
   );
 };
 
-const meta: Meta<typeof Slider> = {
+const meta = {
   title: 'Components/Slider',
   component: Slider,
   argTypes: {
@@ -73,10 +73,11 @@ const meta: Meta<typeof Slider> = {
     },
   },
   render: (args) => <SliderWithWrapper {...args} />,
-};
+} satisfies Meta<typeof Slider>;
 
 export default meta;
-type Story = StoryObj<typeof Slider>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   args: {

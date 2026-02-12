@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import InputButton from './InputButton';
 import type { InputButtonProps } from './InputButton.types';
@@ -10,11 +10,16 @@ import { ComponentStage } from '../../../styles/Box';
 import { Icon } from '../../Icon';
 import { CalendarIcon } from '@shoplflow/hada-assets';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Inputs/InputButton',
   component: InputButton,
-  argTypes: { onClick: { action: 'clicked' }, onChange: { action: 'changed' } },
-};
+  argTypes: {
+    onClick: { action: 'clicked' },
+    onChange: { action: 'changed' },
+  },
+} satisfies Meta<typeof InputButton>;
+
+export default meta;
 
 export const Playground: StoryFn<InputButtonProps> = (args) => {
   const [value, setValue] = React.useState<string | undefined>(undefined);
@@ -50,6 +55,7 @@ export const Playground: StoryFn<InputButtonProps> = (args) => {
     </Stack>
   );
 };
+
 Playground.args = {
   placeholder: 'placeholder',
   rightSource: (

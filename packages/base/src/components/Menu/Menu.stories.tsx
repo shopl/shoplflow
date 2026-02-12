@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import Menu from './Menu';
@@ -11,10 +11,12 @@ import { Checkbox } from '../ControlButtons';
 import { JSONScrollView } from '../../styles/JSONScrollView';
 import { ScrollArea } from '../ScrollArea';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Menu',
   component: Menu,
-};
+} satisfies Meta<typeof Menu>;
+
+export default meta;
 
 export const Playground: StoryFn<MenuProps> = (args) => {
   const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
@@ -96,6 +98,7 @@ WithControls.args = {
   disabled: false,
   sizeVar: 'XS',
 };
+
 export const WithCheckbox: StoryFn<MenuProps> = (args) => {
   const newArray: Array<{ name: string }> = new Array(10).fill(0).map((item, index) => {
     return {

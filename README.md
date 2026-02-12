@@ -59,6 +59,5 @@ pnpm dev:dev
 turbo run build
 turbo run build:package
 turbo run build:assets
-turbo run build:docs
 turbo run build:storybook
 ```

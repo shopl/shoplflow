@@ -1,15 +1,17 @@
 import { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import WeekDatepicker from './WeekDatepicker';
 import type { WeekClickDateInfo, WeekDatepickerProps } from './WeekDatepicker.types';
 import { Text } from '../../Text';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Datepickers/WeekDatepicker',
   component: WeekDatepicker,
-};
+} satisfies Meta<typeof WeekDatepicker>;
+
+export default meta;
 
 export const Playground: StoryFn<WeekDatepickerProps> = (args) => {
   const [selectedWeek, setSelectedWeek] = useState<WeekClickDateInfo | null>(null);

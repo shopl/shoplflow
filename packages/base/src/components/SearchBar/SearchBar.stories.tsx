@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import type { Meta, StoryFn } from '@storybook/react';
-import { expect, within, userEvent } from '@storybook/test';
+import { expect } from '@storybook/jest';
+
+import type { Meta, StoryFn } from '@storybook/react-vite';
+import { within, userEvent } from 'storybook/test';
 import { Stack } from '../Stack';
 import { SearchBar } from './SearchBar';
-import type { SearchBarProps, DropdownItem, MemoizedSearchBarComponent } from './SearchBar.types';
+import type { SearchBarProps, DropdownItem, MemoizedSearchBarComponent, SearchBarInputProps } from './SearchBar.types';
+import { useState } from 'react';
 
-const meta: Meta<MemoizedSearchBarComponent> = {
+const meta = {
   title: 'COMPONENTS/SearchBar',
   component: SearchBar as unknown as MemoizedSearchBarComponent,
   argTypes: {
@@ -46,17 +48,11 @@ const meta: Meta<MemoizedSearchBarComponent> = {
       defaultValue: undefined,
     },
   },
-} as any;
+} satisfies Meta<MemoizedSearchBarComponent>;
+
 export default meta;
 
-export const Playground: StoryFn<
-  SearchBarProps & {
-    debounceTime: number;
-    type: 'default' | 'real-time';
-    maxLength?: number;
-    flexiblePlaceholder?: string;
-  }
-> = (args) => {
+export const Playground: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [selectedItem, setSelectedItem] = useState<DropdownItem | undefined>({ label: '전체', value: 'all' });
   const [searchValue, setSearchValue] = useState('');
 
@@ -118,13 +114,11 @@ Playground.parameters = {
 Playground.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   const input = canvas.getByRole('textbox');
-
-  // 기본 입력 테스트
   await userEvent.type(input, '테스트 검색어');
   expect(input).toHaveValue('테스트 검색어');
 };
 
-export const Default: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const Default: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -142,7 +136,7 @@ export const Default: StoryFn<SearchBarProps & { debounceTime: number }> = (args
   );
 };
 
-export const RealTime: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const RealTime: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -160,7 +154,7 @@ export const RealTime: StoryFn<SearchBarProps & { debounceTime: number }> = (arg
   );
 };
 
-export const WithCategory: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const WithCategory: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [selectedItem, setSelectedItem] = useState<DropdownItem>({ label: '전체', value: 'all' });
   const [searchValue, setSearchValue] = useState('');
 
@@ -196,11 +190,7 @@ export const WithCategory: StoryFn<SearchBarProps & { debounceTime: number }> = 
 WithCategory.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   const input = canvas.getByRole('textbox');
-
-  // 검색창 클릭하여 카테고리 버튼이 나타나도록 함
   await userEvent.click(input);
-
-  // 카테고리 버튼이 나타날 때까지 기다림
   const categoryButton = await canvas.findByText('전체').then((text) => {
     const button = text.closest('button');
     if (!button) {
@@ -208,19 +198,15 @@ WithCategory.play = async ({ canvasElement }) => {
     }
     return button;
   });
-
-  // 카테고리 선택 테스트
   await userEvent.click(categoryButton);
   const productOption = within(document.body).getByText('상품');
   await userEvent.click(productOption);
   expect(categoryButton).toHaveTextContent('상품');
-
-  // 검색어 입력 테스트
   await userEvent.type(input, '상품');
   expect(input).toHaveValue('상품');
 };
 
-export const FlexibleWidth: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const FlexibleWidth: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -237,7 +223,7 @@ export const FlexibleWidth: StoryFn<SearchBarProps & { debounceTime: number }> =
   );
 };
 
-export const Disabled: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const Disabled: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -255,7 +241,7 @@ export const Disabled: StoryFn<SearchBarProps & { debounceTime: number }> = (arg
   );
 };
 
-export const WithMaxLength: StoryFn<SearchBarProps & { debounceTime: number; maxLength: number }> = (args) => {
+export const WithMaxLength: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [searchValue, setSearchValue] = useState('');
 
   return (
@@ -284,13 +270,11 @@ WithMaxLength.args = {
 WithMaxLength.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   const input = canvas.getByRole('textbox');
-
-  // maxLength 테스트 - 10자 초과 입력 시도
   await userEvent.type(input, '12345678901');
-  expect(input).toHaveValue('1234567890'); // 10자까지만 입력되어야 함
+  expect(input).toHaveValue('1234567890');
 };
 
-export const WithFlexiblePlaceholder: StoryFn<SearchBarProps & { debounceTime: number }> = (args) => {
+export const WithFlexiblePlaceholder: StoryFn<SearchBarProps & SearchBarInputProps> = (args) => {
   const [searchValue, setSearchValue] = useState('');
 
   return (

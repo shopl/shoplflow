@@ -1,5 +1,8 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import { createRequire } from "node:module";
 import { join, dirname } from "path";
+
+const require = createRequire(import.meta.url);
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -12,27 +15,32 @@ const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions"),
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-designs"),
+    getAbsolutePath("@storybook/addon-docs"),
     getAbsolutePath("storybook-addon-code-editor"),
+    {
+      name: getAbsolutePath("@storybook/addon-mcp"),
+      options: {
+        toolsets: {
+          dev: true,
+          docs: false, // requires Storybook 10.1.0+
+        },
+      },
+    },
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
-    options: {
-    },
+    options: {},
   },
   viteFinal: async (config) => {
     return {
       ...config,
       optimizeDeps: {
-        include:['@shoplflow/shopl-assets', '@shoplflow/hada-assets'],
-      }
+        ...config.optimizeDeps,
+        include: ['@shoplflow/shopl-assets', '@shoplflow/hada-assets'],
+      },
     };
-  },
-  docs: {
-    autodocs: "tag",
   },
 };
 export default config;

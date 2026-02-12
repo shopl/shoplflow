@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import NumberCombobox from './NumberCombobox';
 import { NumberComboboxSizeVariants, type NumberComboboxProps } from './NumberCombobox.types';
 import { HOURS, MINUTES } from './NumberComboboxLists';
 
-const meta: Meta<typeof NumberCombobox> = {
+const meta = {
   title: 'COMPONENTS/Comboboxs/NumberCombobox',
   component: NumberCombobox,
   argTypes: {
@@ -25,9 +25,11 @@ const meta: Meta<typeof NumberCombobox> = {
       defaultValue: 'M',
     },
   },
-};
+} satisfies Meta<typeof NumberCombobox>;
 
 export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Playground: StoryFn<NumberComboboxProps> = (args) => {
   const [value, setValue] = useState(args.value);
@@ -43,7 +45,6 @@ export const Playground: StoryFn<NumberComboboxProps> = (args) => {
         }}
         onSelect={(value) => {
           setValue(value);
-
           return;
         }}
       />
@@ -67,16 +68,15 @@ Playground.parameters = {
   },
 };
 
-export const Disabled: StoryFn<NumberComboboxProps> = (args) => {
-  return (
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+  render: (args) => (
     <Stack>
       <NumberCombobox {...args} items={HOURS} />
     </Stack>
-  );
-};
-
-Disabled.args = {
-  disabled: true,
+  ),
 };
 
 export const Minutes: StoryFn<NumberComboboxProps> = (args) => {
@@ -94,15 +94,12 @@ export const Minutes: StoryFn<NumberComboboxProps> = (args) => {
           if (!isError) {
             return;
           }
-
           setIsError(false);
         }}
         maxLength={99}
         onSelect={(value) => {
-          // Check if the input value is a number
           if (/^\d*$/.test(value)) {
             const numberValue = parseInt(value, 10);
-
             if (numberValue <= 60) {
               setValue(String(numberValue).padStart(2, '0'));
               return;
@@ -132,15 +129,12 @@ export const Just2Dropdown: StoryFn<NumberComboboxProps> = (args) => {
           if (!isError) {
             return;
           }
-
           setIsError(false);
         }}
         maxLength={99}
         onSelect={(value) => {
-          // Check if the input value is a number
           if (/^\d*$/.test(value)) {
             const numberValue = parseInt(value, 10);
-
             if (numberValue <= 60) {
               setValue(String(numberValue).padStart(2, '0'));
               return;

@@ -17,7 +17,8 @@ export const InputSizeVariants = {
 export type InputSizeVariantType = $Values<typeof InputSizeVariants>;
 
 export interface InputProps
-  extends InputOptionProps,
+  extends
+    InputOptionProps,
     Omit<InputHTMLAttributes<HTMLInputElement>, 'width'>,
     DisableProps,
     LeftElementProps,

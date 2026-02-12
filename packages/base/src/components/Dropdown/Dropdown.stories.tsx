@@ -1,6 +1,6 @@
+import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import Dropdown from './Dropdown';
 import { DropdownOptionVariants, type DropdownProps } from './Dropdown.types';
-import type { Meta, StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
@@ -12,7 +12,7 @@ import { Icon } from '../Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 import { StackContainer } from '../StackContainer';
 
-const meta: Meta<typeof Dropdown> = {
+const meta = {
   title: 'COMPONENTS/Dropdown',
   component: Dropdown,
   argTypes: {
@@ -36,9 +36,11 @@ const meta: Meta<typeof Dropdown> = {
       description: 'Dropdown trigger 비활성화 여부',
     },
   },
-};
+} satisfies Meta<typeof Dropdown>;
 
 export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Playground: StoryFn<DropdownProps> = (args) => {
   const data = new Array(10).fill(0).map((_, index) => {
@@ -112,92 +114,88 @@ Playground.parameters = {
   },
 };
 
-export const FillContent: StoryFn<DropdownProps> = (args) => {
-  return (
+export const FillContent: Story = {
+  args: {
+    isOpen: false,
+    option: 'OUTSIDE_CLICK',
+    trigger: <Dropdown.Button placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
+    popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+  },
+  render: (args) => (
     <Stack width={'500px'}>
       <ComponentStage>
         <Dropdown {...args} />
       </ComponentStage>
     </Stack>
-  );
+  ),
 };
 
-FillContent.args = {
-  isOpen: false,
-  option: 'OUTSIDE_CLICK',
-  trigger: <Dropdown.Button placeholder={'Dropdown 안에 InputButton을 넣었어요.'} />,
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
-};
-
-export const Small: StoryFn<DropdownProps> = (args) => {
-  return (
+export const Small: Story = {
+  args: {
+    isOpen: false,
+    width: '200px',
+    option: 'OUTSIDE_CLICK',
+    trigger: <Dropdown.Button placeholder={'0'} sizeVar={'S'} />,
+    popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+  },
+  render: (args) => (
     <Stack width={'500px'}>
       <ComponentStage>
         <Dropdown {...args} />
       </ComponentStage>
     </Stack>
-  );
+  ),
 };
 
-Small.args = {
-  isOpen: false,
-  width: '200px',
-  option: 'OUTSIDE_CLICK',
-  trigger: <Dropdown.Button placeholder={'0'} sizeVar={'S'} />,
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
-};
-
-export const Large: StoryFn<DropdownProps> = (args) => {
-  return (
+export const Large: Story = {
+  args: {
+    isOpen: false,
+    option: 'OUTSIDE_CLICK',
+    width: '200px',
+    trigger: (
+      <Dropdown.Button
+        placeholder={'placeholder'}
+        sizeVar={'L'}
+        leftSource={
+          <IconButton sizeVar='S' styleVar='GHOST'>
+            <Icon iconSource={EditIcon} />
+          </IconButton>
+        }
+      />
+    ),
+    popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+  },
+  render: (args) => (
     <StackContainer.Vertical width={'500px'} background='shopl100'>
       <ComponentStage>
         <Dropdown {...args} />
       </ComponentStage>
     </StackContainer.Vertical>
-  );
-};
-
-Large.args = {
-  isOpen: false,
-  option: 'OUTSIDE_CLICK',
-  width: '200px',
-  trigger: (
-    <Dropdown.Button
-      placeholder={'placeholder'}
-      sizeVar={'L'}
-      leftSource={
-        <IconButton sizeVar='S' styleVar='GHOST'>
-          <Icon iconSource={EditIcon} />
-        </IconButton>
-      }
-    />
   ),
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
 };
 
-export const Disabled: StoryFn<DropdownProps> = (args) => {
-  return (
+export const Disabled: Story = {
+  args: {
+    isOpen: false,
+    option: 'OUTSIDE_CLICK',
+    trigger: (
+      <Dropdown.Button
+        disabled
+        placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
+        leftSource={
+          <IconButton sizeVar='S' styleVar='GHOST'>
+            <Icon iconSource={EditIcon} />
+          </IconButton>
+        }
+      />
+    ),
+    popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
+  },
+  render: (args) => (
     <Stack width={'500px'}>
       <ComponentStage>
         <Dropdown {...args} />
       </ComponentStage>
     </Stack>
-  );
-};
-
-Disabled.args = {
-  isOpen: false,
-  option: 'OUTSIDE_CLICK',
-  trigger: (
-    <Dropdown.Button
-      disabled
-      placeholder={'Dropdown 안에 InputButton을 넣었어요.'}
-      leftSource={
-        <IconButton sizeVar='S' styleVar='GHOST'>
-          <Icon iconSource={EditIcon} />
-        </IconButton>
-      }
-    />
   ),
-  popper: <Dropdown.Content type={'FILL'}>Content</Dropdown.Content>,
 };
