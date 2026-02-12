@@ -1,25 +1,31 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Stack } from '../Stack';
 
 import Text from './Text';
 
-import type { TextProps } from './Text.types';
 import type { TypographyTokens } from '../../styles';
 import { typographyTokens } from '../../styles';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Text',
   component: Text,
-};
+} satisfies Meta<typeof Text>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const allTypographyValues = Object.values(typographyTokens);
 const allTypographyKeys = Object.keys(typographyTokens) as TypographyTokens[];
 
-export const AllTexts: StoryFn<TextProps> = (args) => {
-  return (
+export const AllTexts: Story = {
+  args: {
+    children: 'The quick brown fox jumps over the lazy dog',
+  },
+  render: (args) => (
     <Stack.Vertical>
       {allTypographyValues.map((typo, index) => (
         <Stack.Vertical key={index}>
@@ -30,9 +36,5 @@ export const AllTexts: StoryFn<TextProps> = (args) => {
         </Stack.Vertical>
       ))}
     </Stack.Vertical>
-  );
-};
-
-AllTexts.args = {
-  children: 'The quick brown fox jumps over the lazy dog',
+  ),
 };

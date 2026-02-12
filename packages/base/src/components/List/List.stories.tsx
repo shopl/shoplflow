@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import List from './List';
 import type { ListProps } from './List.types';
@@ -10,10 +10,14 @@ import { Checkbox, Radio } from '../ControlButtons';
 import { useSelect } from '@shoplflow/utils';
 import { JSONScrollView } from '../../styles/JSONScrollView';
 
-export default {
+const meta = {
   title: 'COMPONENTS/List',
   component: List,
-};
+} satisfies Meta<typeof List>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Playground: StoryFn<ListProps> = (args) => {
   const newArray: Array<{ title: string; subTitle: string; other: string }> = new Array(10)
@@ -69,8 +73,11 @@ Playground.args = {
   disabled: false,
 };
 
-export const With2Rows: StoryFn<ListProps> = (args) => {
-  return (
+export const With2Rows: Story = {
+  args: {
+    disabled: false,
+  },
+  render: (args) => (
     <Stack width={'500px'}>
       <ComponentStage>
         <List {...args} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
@@ -79,14 +86,14 @@ export const With2Rows: StoryFn<ListProps> = (args) => {
         </List>
       </ComponentStage>
     </Stack>
-  );
-};
-With2Rows.args = {
-  disabled: false,
+  ),
 };
 
-export const WithAllSource: StoryFn<ListProps> = (args) => {
-  return (
+export const WithAllSource: Story = {
+  args: {
+    disabled: false,
+  },
+  render: (args) => (
     <Stack width={'500px'}>
       <ComponentStage>
         <List {...args} leftSource={<Checkbox />} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>
@@ -99,8 +106,5 @@ export const WithAllSource: StoryFn<ListProps> = (args) => {
         </List>
       </ComponentStage>
     </Stack>
-  );
-};
-WithAllSource.args = {
-  disabled: false,
+  ),
 };

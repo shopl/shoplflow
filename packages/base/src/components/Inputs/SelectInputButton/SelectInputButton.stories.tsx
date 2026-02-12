@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn, Meta } from '@storybook/react-vite';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import SelectInputButton from './SelectInputButton';
 import type { SelectInputButtonProps } from './SelectInputButton.types';
@@ -12,7 +12,7 @@ import { Icon } from '../../Icon';
 import { RightArrowXsmallIcon } from '@shoplflow/shopl-assets';
 import { ComponentStage } from '../../../styles/Box';
 
-const meta: Meta<typeof SelectInputButton> = {
+const meta = {
   title: 'COMPONENTS/Inputs/SelectInputButton',
   component: SelectInputButton,
   argTypes: {
@@ -62,7 +62,7 @@ const meta: Meta<typeof SelectInputButton> = {
       description: '마우스가 컴포넌트에서 벗어났을 때 실행되는 함수를 설정합니다.',
     },
   },
-};
+} satisfies Meta<typeof SelectInputButton>;
 
 export default meta;
 

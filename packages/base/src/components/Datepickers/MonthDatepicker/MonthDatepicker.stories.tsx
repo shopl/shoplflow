@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import MonthDatepicker from './MonthDatepicker';
 import type { MonthClickDateInfo, MonthDatepickerProps } from './MonthDatepicker.types';
 import { Text } from '../../Text';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Datepickers/MonthDatepicker',
   component: MonthDatepicker,
-};
+} satisfies Meta<typeof MonthDatepicker>;
+
+export default meta;
 
 export const Playground: StoryFn<MonthDatepickerProps> = (args) => {
   const [selectedDateInfo, setSelectedDateInfo] = useState<MonthClickDateInfo | null>(null);

@@ -7,11 +7,9 @@ const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element 
   return (
     <StyledAvatarContainer>
       <StyledAvatar data-shoplflow={'Avatar'} {...rest}>
-        {/*eslint-disable-next-line @typescript-eslint/no-unsafe-assignment*/}
         <StyledAvatarImage
           src={src ?? fallbackUrl}
           onError={(e) => {
-            // @ts-ignore: allow string | StaticImageData assignment
             e.currentTarget.src = fallbackUrl ?? AvatarImageNone;
           }}
         />

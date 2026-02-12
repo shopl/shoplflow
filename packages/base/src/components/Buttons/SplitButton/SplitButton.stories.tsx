@@ -1,12 +1,13 @@
-import type { StoryFn } from '@storybook/react-vite';
+import { useState } from 'react';
+
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import SplitButton from './SplitButton';
 import { SplitButtonSizeVariants, SplitButtonStyleVariants, type SplitButtonProps } from './SplitButton.types';
 import { Text } from '../../../components/Text';
-import { useState } from 'react';
 import { colorTokens } from '../../../styles';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Buttons/SplitButton',
   component: SplitButton,
   argTypes: {
@@ -25,9 +26,7 @@ export default {
     },
     disabled: {
       description: '버튼의 비활성화 여부를 설정합니다.',
-      control: {
-        type: 'boolean',
-      },
+      control: { type: 'boolean' },
     },
     placement: {
       options: [
@@ -44,20 +43,21 @@ export default {
         'left-start',
         'left-end',
       ],
+      control: { type: 'select' },
       description: 'option list가 노출되는 방향을 설정합니다.',
     },
     floatingZIndex: {
       description: 'option list의 z-index값을 설정합니다.',
-      control: {
-        type: 'number',
-      },
+      control: { type: 'number' },
     },
     lineClamp: {
       description: '버튼 내부의 콘텐츠를 지정한 줄 수만큼 제한합니다.',
       control: { type: 'number' },
     },
   },
-};
+} satisfies Meta<typeof SplitButton>;
+
+export default meta;
 
 export const Playground: StoryFn<SplitButtonProps> = (args) => {
   const [selectedItem, setSelectedItem] = useState<'Shopl' | 'Hada'>('Shopl');
@@ -68,18 +68,14 @@ export const Playground: StoryFn<SplitButtonProps> = (args) => {
         <SplitButton.Menu
           isSelected={selectedItem === 'Shopl'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Shopl');
-          }}
+          onClick={() => setSelectedItem('Shopl')}
         >
           <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
         </SplitButton.Menu>
         <SplitButton.Menu
           isSelected={selectedItem === 'Hada'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Hada');
-          }}
+          onClick={() => setSelectedItem('Hada')}
         >
           <Text>Hada</Text>
         </SplitButton.Menu>
@@ -111,18 +107,14 @@ export const Primary: StoryFn<SplitButtonProps> = (args) => {
         <SplitButton.Menu
           isSelected={selectedItem === 'Shopl'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Shopl');
-          }}
+          onClick={() => setSelectedItem('Shopl')}
         >
           <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
         </SplitButton.Menu>
         <SplitButton.Menu
           isSelected={selectedItem === 'Hada'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Hada');
-          }}
+          onClick={() => setSelectedItem('Hada')}
         >
           <Text>Hada</Text>
         </SplitButton.Menu>
@@ -151,18 +143,14 @@ export const Secondary: StoryFn<SplitButtonProps> = (args) => {
         <SplitButton.Menu
           isSelected={selectedItem === 'Shopl'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Shopl');
-          }}
+          onClick={() => setSelectedItem('Shopl')}
         >
           <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
         </SplitButton.Menu>
         <SplitButton.Menu
           isSelected={selectedItem === 'Hada'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Hada');
-          }}
+          onClick={() => setSelectedItem('Hada')}
         >
           <Text>Hada</Text>
         </SplitButton.Menu>
@@ -170,6 +158,7 @@ export const Secondary: StoryFn<SplitButtonProps> = (args) => {
     </Stack>
   );
 };
+
 Secondary.args = {
   styleVar: 'SECONDARY',
   sizeVar: 'M',
@@ -184,18 +173,14 @@ export const WithLeftAndRightSource: StoryFn<SplitButtonProps> = (args) => {
         <SplitButton.Menu
           isSelected={selectedItem === 'Shopl'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Shopl');
-          }}
+          onClick={() => setSelectedItem('Shopl')}
         >
           <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
         </SplitButton.Menu>
         <SplitButton.Menu
           isSelected={selectedItem === 'Hada'}
           leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}
-          onClick={() => {
-            setSelectedItem('Hada');
-          }}
+          onClick={() => setSelectedItem('Hada')}
         >
           <Text>Hada</Text>
         </SplitButton.Menu>

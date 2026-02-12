@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Popper from './Popper';
 import type { PopperProps } from './Popper.types';
@@ -8,10 +8,12 @@ import { Button } from '../Buttons';
 import { Modal } from '../Modal';
 import { ComponentStage } from '../../styles/Box';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Popper',
   component: Popper,
-};
+} satisfies Meta<typeof Popper>;
+
+export default meta;
 
 export const Playground: StoryFn<PopperProps> = (args) => {
   const [isOpen, setIsOpen] = React.useState(false);

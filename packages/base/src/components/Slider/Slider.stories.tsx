@@ -35,7 +35,7 @@ const SliderWithWrapper = (args: SliderProps) => {
   );
 };
 
-const meta: Meta<typeof Slider> = {
+const meta = {
   title: 'Components/Slider',
   component: Slider,
   argTypes: {
@@ -73,10 +73,11 @@ const meta: Meta<typeof Slider> = {
     },
   },
   render: (args) => <SliderWithWrapper {...args} />,
-};
+} satisfies Meta<typeof Slider>;
 
 export default meta;
-type Story = StoryObj<typeof Slider>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
   args: {

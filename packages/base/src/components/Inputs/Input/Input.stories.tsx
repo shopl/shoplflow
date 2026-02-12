@@ -9,7 +9,7 @@ import { ComponentStage } from '../../../styles/Box';
 import { Text } from '../../Text';
 import { Tag } from '../../Tag';
 
-const meta: Meta<typeof Input> = {
+const meta = {
   title: 'COMPONENTS/Inputs/Input',
   component: Input,
   argTypes: {
@@ -72,13 +72,12 @@ const meta: Meta<typeof Input> = {
       description: '인풋이 블러될 때 실행되는 동작을 설정합니다.',
     },
   },
-};
+} satisfies Meta<typeof Input>;
 
 export default meta;
 
 export const Playground: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
-
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
@@ -106,7 +105,6 @@ Playground.parameters = {
 
 export const Password: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
-
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
@@ -122,9 +120,9 @@ Password.args = {
   placeholder: '비밀번호를 입력해주세요',
   disabled: false,
 };
+
 export const Number: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
-
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
@@ -145,7 +143,6 @@ Number.args = {
 
 export const Error: StoryFn<InputProps> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
-
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
@@ -162,10 +159,10 @@ Error.args = {
   isError: true,
   disabled: false,
 };
+
 export const CheckValue: StoryFn<InputProps> = (args) => {
   const [value, setValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
-
   return (
     <Stack width={'600px'} spacing={'spacing12'}>
       <ComponentStage>
@@ -197,7 +194,6 @@ CheckValue.args = {
 export const WithClearButton: StoryFn<InputProps & { textAlign?: 'left' | 'center' | 'right' }> = (args) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { textAlign, ...inputProps } = args;
-
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
@@ -237,7 +233,6 @@ export const WithClearButtonAndRightSource: StoryFn<InputProps & { textAlign?: '
 ) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { textAlign, ...inputProps } = args;
-
   return (
     <Stack width={'500px'} height={'300px'} justify={'center'}>
       <ComponentStage>
