@@ -1,29 +1,31 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Tooltip from './Tooltip';
-import type { TooltipProps } from './Tooltip.types';
-import type { StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
 import { Text } from '../Text';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Tooltip',
   component: Tooltip,
-};
+} satisfies Meta<typeof Tooltip>;
 
-export const Playground: StoryFn<TooltipProps> = ({ trigger, popper, ...args }) => {
-  return (
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Playground: Story = {
+  args: {
+    trigger: <Text typography='body1_400'>호버 해보세요</Text>,
+    popper: (
+      <Tooltip.Content content='안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~' />
+    ),
+    placement: 'bottom-start',
+  },
+  render: ({ trigger, popper, ...args }) => (
     <Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>
       <ComponentStage justify={'start'}>
         <Tooltip trigger={trigger} popper={popper} {...args} />
       </ComponentStage>
     </Stack.Horizontal>
-  );
-};
-
-Playground.args = {
-  trigger: <Text typography='body1_400'>호버 해보세요</Text>,
-  popper: (
-    <Tooltip.Content content='안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~' />
   ),
-  placement: 'bottom-start',
 };

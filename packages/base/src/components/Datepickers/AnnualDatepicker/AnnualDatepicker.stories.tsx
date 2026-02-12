@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import type { StoryFn, Meta } from '@storybook/react-vite';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import AnnualDatepicker from './AnnualDatepicker';
 import type { AnnualDatepickerProps } from './AnnualDatepicker.types';
 
-const meta: Meta = {
+const meta = {
   title: 'COMPONENTS/Datepickers/AnnualDatepicker',
   component: AnnualDatepicker,
   argTypes: {
@@ -25,7 +25,7 @@ const meta: Meta = {
       defaultValue: new Date().getFullYear() + 10,
     },
   },
-};
+} satisfies Meta<typeof AnnualDatepicker>;
 
 export default meta;
 

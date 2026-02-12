@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react-vite';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import DayDatepicker from './DayDatepicker';
 import type { DayDatepickerProps, DayDatepickerSizeVariantType } from './DayDatepicker.types';
-import { ko, ja } from 'date-fns/locale';
+import { ko } from 'date-fns/locale';
 import { Button } from '../../Buttons';
 import { useOutsideClick } from '@shoplflow/utils';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Datepickers/DayDatepicker',
   component: DayDatepicker,
-};
+} satisfies Meta<typeof DayDatepicker>;
+
+export default meta;
 
 export const Playground: StoryFn<DayDatepickerProps> = () => {
   const [startDate, setStartDate] = React.useState<Date | null>(new Date());
@@ -146,7 +148,7 @@ export const Range: StoryFn<DayDatepickerProps> = () => {
         startDate={startDate || undefined}
         endDate={endDate || undefined}
         sizeVar={'M'}
-        locale={ja}
+        locale={ko}
       />
     </Stack>
   );

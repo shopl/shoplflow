@@ -1,14 +1,11 @@
-import type { StoryFn, Meta } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Button from './Button';
-import type { ButtonProps } from './Button.types';
 import { ButtonSizeVariants, ButtonStyleVariants } from './Button.types';
-import { ComponentStage } from '../../../styles/Box';
-import { Stack } from '../../Stack';
 import { colorTokens } from '../../../styles';
 import { Icon } from '../../../components/Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 
-const meta: Meta<typeof Button> = {
+const meta = {
   title: 'COMPONENTS/Buttons/Button',
   component: Button,
   argTypes: {
@@ -16,7 +13,7 @@ const meta: Meta<typeof Button> = {
       options: Object.values(ButtonStyleVariants),
       control: { type: 'select' },
       description: '버튼의 스타일을 설정합니다. SOLID를 선택할 경우 color 속성도 지정해주셔야 합니다.',
-      defaultValue: 'primary',
+      defaultValue: 'PRIMARY',
     },
     sizeVar: {
       options: Object.values(ButtonSizeVariants),
@@ -54,136 +51,98 @@ const meta: Meta<typeof Button> = {
       control: { type: 'number' },
     },
   },
-};
-
+} satisfies Meta<typeof Button>;
 export default meta;
 
-export const Playground: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
-};
+type Story = StoryObj<typeof meta>;
 
-Playground.args = {
-  styleVar: 'PRIMARY',
-  sizeVar: 'M',
-  children: 'Button',
-  disabled: false,
-};
-
-Playground.parameters = {
-  design: {
-    type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-3568',
+export const Playground: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'M',
+    children: 'Button',
+    disabled: false,
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-3568',
+    },
   },
 };
 
-export const Primary: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
+export const Primary: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'M',
+    children: 'Primary Button',
+    disabled: false,
+  },
 };
 
-Primary.args = {
-  styleVar: 'PRIMARY',
-  sizeVar: 'M',
-  children: 'Primary Button',
-  disabled: false,
+export const Secondary: Story = {
+  args: {
+    styleVar: 'SECONDARY',
+    sizeVar: 'M',
+    children: 'Secondary Button',
+    disabled: false,
+  },
 };
 
-export const Secondary: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
+export const Solid: Story = {
+  args: {
+    styleVar: 'SOLID',
+    sizeVar: 'M',
+    children: 'Solid Button',
+    color: 'neutral300',
+    disabled: false,
+    leftSource: <Icon sizeVar='S' iconSource={EditIcon} />,
+  },
 };
 
-Secondary.args = {
-  styleVar: 'SECONDARY',
-  sizeVar: 'M',
-  children: 'Secondary Button',
-  disabled: false,
+export const Ghost: Story = {
+  args: {
+    styleVar: 'GHOST',
+    sizeVar: 'M',
+    children: 'Ghost Button',
+    disabled: false,
+  },
 };
 
-export const Solid: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
+export const SmallSize: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'S',
+    children: 'Small Button',
+    disabled: false,
+  },
 };
 
-Solid.args = {
-  styleVar: 'SOLID',
-  sizeVar: 'M',
-  children: 'Solid Button',
-  color: 'neutral300',
-  disabled: false,
-  leftSource: <Icon sizeVar='S' iconSource={EditIcon} />,
+export const ExtraSmallSize: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'XS',
+    children: '버튼',
+    disabled: false,
+    leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
+  },
 };
 
-export const Ghost: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
+export const Loading: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'M',
+    children: 'Loading',
+    isLoading: true,
+    disabled: false,
+  },
 };
 
-Ghost.args = {
-  styleVar: 'GHOST',
-  sizeVar: 'M',
-  children: 'Ghost Button',
-  disabled: false,
-};
-
-export const SmallSize: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
-};
-
-SmallSize.args = {
-  styleVar: 'PRIMARY',
-  sizeVar: 'S',
-  children: '버튼',
-  disabled: false,
-  leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
-};
-
-export const ExtraSmallSize: StoryFn<ButtonProps> = (args) => {
-  return (
-    <Stack width={'200px'}>
-      <ComponentStage>
-        <Button {...args} />
-      </ComponentStage>
-    </Stack>
-  );
-};
-
-ExtraSmallSize.args = {
-  styleVar: 'PRIMARY',
-  sizeVar: 'XS',
-  children: '버튼',
-  disabled: false,
-  leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
+export const Disabled: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'M',
+    children: 'Disabled',
+    disabled: true,
+  },
 };
