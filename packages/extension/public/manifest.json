@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "@shoplflow/extension",
-  "version": "0.0.64",
+  "version": "0.0.192",
   "description": "Shoplflow 점유율 확인 extension",
   "permissions": [
     "storage"
@@ -24,7 +24,7 @@
         "src/pages/content/index.js"
       ],
       "css": [
-        "assets/css/contentStyle17290622005.chunk.css"
+        "assets/css/contentStyle17708747712.chunk.css"
       ]
     }
   ],

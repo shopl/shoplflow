@@ -21,16 +21,6 @@
       ]
     },
     "build:mdx": {},
-    "build:docs": {
-      "cache": false,
-      "dependsOn": [
-        "^build:docs",
-        "build:mdx",
-        "build:assets",
-        "build:package"
-      ],
-      "outputs": [".next/**", "!.next/cache/**"]
-    },
     "build:package": {
       "cache": false,
       "dependsOn": [
