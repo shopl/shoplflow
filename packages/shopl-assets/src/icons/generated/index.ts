@@ -1,675 +1,679 @@
-import IcAbnormalA from "./IcAbnormalA";
-import IcAbnormalD from "./IcAbnormalD";
-import IcAbnormalEarlyleave from "./IcAbnormalEarlyleave";
-import IcAbnormalLate from "./IcAbnormalLate";
-import IcAbnormalM from "./IcAbnormalM";
-import IcAbnormalN from "./IcAbnormalN";
-import IcAbnormalW from "./IcAbnormalW";
-import IcAddSection from "./IcAddSection";
-import IcAddXsmall from "./IcAddXsmall";
-import IcAdd from "./IcAdd";
-import IcAdminLarge from "./IcAdminLarge";
-import IcAiChatBot from "./IcAiChatBot";
-import IcAlbumXlarge from "./IcAlbumXlarge";
-import IcAlertColored from "./IcAlertColored";
-import IcAlertLine from "./IcAlertLine";
-import IcAlertPopupXlarge from "./IcAlertPopupXlarge";
-import IcAlertTriangle from "./IcAlertTriangle";
-import IcAlert from "./IcAlert";
-import IcAnnualMedium from "./IcAnnualMedium";
-import IcApprovalMedium from "./IcApprovalMedium";
-import IcArticleMedium from "./IcArticleMedium";
-import IcAsc from "./IcAsc";
-import IcAttachment from "./IcAttachment";
-import IcAttendanceMedium from "./IcAttendanceMedium";
-import IcAutorityLine from "./IcAutorityLine";
-import IcAverage from "./IcAverage";
-import IcBackMedium from "./IcBackMedium";
-import IcBadgeAdminLarge from "./IcBadgeAdminLarge";
-import IcBadgeLeaderAppovalLarge from "./IcBadgeLeaderAppovalLarge";
-import IcBadgeLeaderLarge from "./IcBadgeLeaderLarge";
-import IcBankbook from "./IcBankbook";
-import IcBarcode from "./IcBarcode";
-import IcBellMedium from "./IcBellMedium";
-import IcBmMedium from "./IcBmMedium";
-import IcBoardMedium from "./IcBoardMedium";
-import IcBoardProfileXlarge from "./IcBoardProfileXlarge";
-import IcBoardProfile from "./IcBoardProfile";
-import IcBookMedium from "./IcBookMedium";
-import IcBookmarkFilledMedium from "./IcBookmarkFilledMedium";
-import IcBookmarkMedium from "./IcBookmarkMedium";
-import IcBox from "./IcBox";
-import IcBriefcase from "./IcBriefcase";
-import IcByEmployeeMedium from "./IcByEmployeeMedium";
-import IcByPlaceOfWorkMedium from "./IcByPlaceOfWorkMedium";
-import IcCake from "./IcCake";
-import IcCalendarLine from "./IcCalendarLine";
-import IcCamera from "./IcCamera";
-import IcCart from "./IcCart";
-import IcCategory from "./IcCategory";
-import IcCautionXlarge from "./IcCautionXlarge";
-import IcChannel from "./IcChannel";
-import IcChanneltalkMedium from "./IcChanneltalkMedium";
-import IcChatActivityMedium from "./IcChatActivityMedium";
-import IcChatLarge from "./IcChatLarge";
-import IcChattingMedium from "./IcChattingMedium";
-import IcChattingSolidMedium from "./IcChattingSolidMedium";
-import IcCheckXlarge from "./IcCheckXlarge";
-import IcCheckXsmall from "./IcCheckXsmall";
-import IcCheck from "./IcCheck";
-import IcCheckbox from "./IcCheckbox";
-import IcChecklist from "./IcChecklist";
-import IcCloseMedium from "./IcCloseMedium";
-import IcCloseSmall from "./IcCloseSmall";
-import IcClose from "./IcClose";
-import IcClosingMedium from "./IcClosingMedium";
-import IcCloudMedium from "./IcCloudMedium";
-import IcComment from "./IcComment";
-import IcCompanyXlarge from "./IcCompanyXlarge";
-import IcConfirmPopupXlarge from "./IcConfirmPopupXlarge";
-import IcContrastPlus from "./IcContrastPlus";
-import IcCopy from "./IcCopy";
-import IcCrown from "./IcCrown";
-import IcCustomDropdown from "./IcCustomDropdown";
-import IcCustomText from "./IcCustomText";
-import IcDayOff from "./IcDayOff";
-import IcDeadline from "./IcDeadline";
-import IcDeleteLine from "./IcDeleteLine";
-import IcDelete from "./IcDelete";
-import IcDesc from "./IcDesc";
-import IcDetailView from "./IcDetailView";
-import IcDisplayMedium from "./IcDisplayMedium";
-import IcDocMedium from "./IcDocMedium";
-import IcDocument from "./IcDocument";
-import IcDownArrowSolidXsmall from "./IcDownArrowSolidXsmall";
-import IcDownArrowXsmall from "./IcDownArrowXsmall";
-import IcDownArrow from "./IcDownArrow";
-import IcDownloadMedium from "./IcDownloadMedium";
-import IcDownload from "./IcDownload";
-import IcDraftsave from "./IcDraftsave";
-import IcDrag from "./IcDrag";
-import IcDrawer from "./IcDrawer";
-import IcDropdown from "./IcDropdown";
-import IcEditLarge from "./IcEditLarge";
-import IcEditLine from "./IcEditLine";
-import IcEditSolid from "./IcEditSolid";
-import IcEditXsmall from "./IcEditXsmall";
-import IcEdit from "./IcEdit";
-import IcEmailXlarge from "./IcEmailXlarge";
-import IcEmail from "./IcEmail";
-import IcEmojiMedium from "./IcEmojiMedium";
-import IcEmojiPlusMedium from "./IcEmojiPlusMedium";
-import IcEmployeeXsmall from "./IcEmployeeXsmall";
-import IcEndPage from "./IcEndPage";
-import IcExcel from "./IcExcel";
-import IcExclamationXlarge from "./IcExclamationXlarge";
-import IcExitFullScreenMedium from "./IcExitFullScreenMedium";
-import IcExpected from "./IcExpected";
-import IcExpenseMedium from "./IcExpenseMedium";
-import IcFeedView from "./IcFeedView";
-import IcFilter from "./IcFilter";
-import IcFilterdeleteXsmall from "./IcFilterdeleteXsmall";
-import IcFirstPage from "./IcFirstPage";
-import IcFlexibleWorking from "./IcFlexibleWorking";
-import IcFullScreenMedium from "./IcFullScreenMedium";
-import IcFullscreen from "./IcFullscreen";
-import IcFunnel from "./IcFunnel";
-import IcGps from "./IcGps";
-import IcGrade1 from "./IcGrade1";
-import IcGrade2 from "./IcGrade2";
-import IcGrade31 from "./IcGrade31";
-import IcGrade32 from "./IcGrade32";
-import IcGrade3 from "./IcGrade3";
-import IcGrade41 from "./IcGrade41";
-import IcGrade42 from "./IcGrade42";
-import IcGrade4 from "./IcGrade4";
-import IcGrade51 from "./IcGrade51";
-import IcGrade52 from "./IcGrade52";
-import IcGrade5 from "./IcGrade5";
-import IcGradeBadge from "./IcGradeBadge";
-import IcGradientAttendance from "./IcGradientAttendance";
-import IcGradientBoard from "./IcGradientBoard";
-import IcGradientDisplay from "./IcGradientDisplay";
-import IcGradientDoc from "./IcGradientDoc";
-import IcGradientGps from "./IcGradientGps";
-import IcGradientInventory from "./IcGradientInventory";
-import IcGradientJp from "./IcGradientJp";
-import IcGradientLeave from "./IcGradientLeave";
-import IcGradientMobile from "./IcGradientMobile";
-import IcGradientNotice from "./IcGradientNotice";
-import IcGradientOvertime from "./IcGradientOvertime";
-import IcGradientPrice from "./IcGradientPrice";
-import IcGradientReport from "./IcGradientReport";
-import IcGradientSales from "./IcGradientSales";
-import IcGradientSchedule from "./IcGradientSchedule";
-import IcGradientStaff from "./IcGradientStaff";
-import IcGradientTarget from "./IcGradientTarget";
-import IcGradientTodo from "./IcGradientTodo";
-import IcGradientWifi from "./IcGradientWifi";
-import IcGradientWorkplace from "./IcGradientWorkplace";
-import IcGraph from "./IcGraph";
-import IcGroupLine from "./IcGroupLine";
-import IcGroupMedium from "./IcGroupMedium";
-import IcGroupSolidMedium from "./IcGroupSolidMedium";
-import IcHelpCenterMedium from "./IcHelpCenterMedium";
-import IcHelpLine from "./IcHelpLine";
-import IcHelpMedium from "./IcHelpMedium";
-import IcHelp from "./IcHelp";
-import IcHideMedium from "./IcHideMedium";
-import IcHistory from "./IcHistory";
-import IcHomeMedium from "./IcHomeMedium";
-import IcHome from "./IcHome";
-import IcIdCard from "./IcIdCard";
-import IcImport from "./IcImport";
-import IcInactiveBell from "./IcInactiveBell";
-import IcIncentiveMedium from "./IcIncentiveMedium";
-import IcIncentive from "./IcIncentive";
-import IcInfo1 from "./IcInfo1";
-import IcInfoAlbum from "./IcInfoAlbum";
-import IcInfoApp from "./IcInfoApp";
-import IcInfoBreaktime from "./IcInfoBreaktime";
-import IcInfoCity from "./IcInfoCity";
-import IcInfoDate from "./IcInfoDate";
-import IcInfoDaysoff from "./IcInfoDaysoff";
-import IcInfoDistributor from "./IcInfoDistributor";
-import IcInfoDocs from "./IcInfoDocs";
-import IcInfoEmail from "./IcInfoEmail";
-import IcInfoEmployee from "./IcInfoEmployee";
-import IcInfoEmployeeno from "./IcInfoEmployeeno";
-import IcInfoGrade from "./IcInfoGrade";
-import IcInfoGroup from "./IcInfoGroup";
-import IcInfoLeader from "./IcInfoLeader";
-import IcInfoLine from "./IcInfoLine";
-import IcInfoLogin from "./IcInfoLogin";
-import IcInfoOval from "./IcInfoOval";
-import IcInfoPhoneCheck from "./IcInfoPhoneCheck";
-import IcInfoPhoneNoCheck from "./IcInfoPhoneNoCheck";
-import IcInfoPhone from "./IcInfoPhone";
-import IcInfoPolicy from "./IcInfoPolicy";
-import IcInfoPosition from "./IcInfoPosition";
-import IcInfoProperties from "./IcInfoProperties";
-import IcInfoPunch from "./IcInfoPunch";
-import IcInfoRadius from "./IcInfoRadius";
-import IcInfoRegion from "./IcInfoRegion";
-import IcInfoStarBadge from "./IcInfoStarBadge";
-import IcInfoState from "./IcInfoState";
-import IcInfoVisit from "./IcInfoVisit";
-import IcInfoWorking from "./IcInfoWorking";
-import IcInfoWorkplace from "./IcInfoWorkplace";
-import IcInfo from "./IcInfo";
-import IcInputLine from "./IcInputLine";
-import IcInventoryMedium from "./IcInventoryMedium";
-import IcInvitation from "./IcInvitation";
-import IcInviteBefore from "./IcInviteBefore";
-import IcInviteCompleted from "./IcInviteCompleted";
-import IcIssue from "./IcIssue";
-import IcJpMedium from "./IcJpMedium";
-import IcLanguageMedium from "./IcLanguageMedium";
-import IcLeaderAppovalLarge from "./IcLeaderAppovalLarge";
-import IcLeaderLarge from "./IcLeaderLarge";
-import IcLeaveMedium from "./IcLeaveMedium";
-import IcLeave from "./IcLeave";
-import IcLeftArrowXsmall from "./IcLeftArrowXsmall";
-import IcLeftArrow from "./IcLeftArrow";
-import IcLink from "./IcLink";
-import IcListEdit from "./IcListEdit";
-import IcListMove from "./IcListMove";
-import IcListview from "./IcListview";
-import IcLocation from "./IcLocation";
-import IcLockerXlarge from "./IcLockerXlarge";
-import IcMap from "./IcMap";
-import IcMemberMedium from "./IcMemberMedium";
-import IcMemberSmall from "./IcMemberSmall";
-import IcMemoLine from "./IcMemoLine";
-import IcMemo from "./IcMemo";
-import IcMention from "./IcMention";
-import IcMinusMedium from "./IcMinusMedium";
-import IcMinus from "./IcMinus";
-import IcMobileLine from "./IcMobileLine";
-import IcMore from "./IcMore";
-import IcMother from "./IcMother";
-import IcMove2 from "./IcMove2";
-import IcMoveSolid from "./IcMoveSolid";
-import IcMove from "./IcMove";
-import IcMovie01 from "./IcMovie01";
-import IcMultipleChoice from "./IcMultipleChoice";
-import IcNoGrade from "./IcNoGrade";
-import IcNormal from "./IcNormal";
-import IcNoticeMedium from "./IcNoticeMedium";
-import IcNoticeSolidMedium from "./IcNoticeSolidMedium";
-import IcNotice from "./IcNotice";
-import IcOff from "./IcOff";
-import IcOn from "./IcOn";
-import IcOnboardingAttendance from "./IcOnboardingAttendance";
-import IcOnboardingBoth from "./IcOnboardingBoth";
-import IcOnboardingSetting from "./IcOnboardingSetting";
-import IcOrganizationChart from "./IcOrganizationChart";
-import IcOvertimeMedium from "./IcOvertimeMedium";
-import IcPasswordErrorXlarge from "./IcPasswordErrorXlarge";
-import IcPaste from "./IcPaste";
-import IcPaymentMedium from "./IcPaymentMedium";
-import IcPhoneLine from "./IcPhoneLine";
-import IcPhoto from "./IcPhoto";
-import IcPinXlarge from "./IcPinXlarge";
-import IcPin from "./IcPin";
-import IcPlayXlarge from "./IcPlayXlarge";
-import IcPlusMedium from "./IcPlusMedium";
-import IcPopup from "./IcPopup";
-import IcPreorderMedium from "./IcPreorderMedium";
-import IcPreview from "./IcPreview";
-import IcPriceMedium from "./IcPriceMedium";
-import IcProceeding from "./IcProceeding";
-import IcPush from "./IcPush";
-import IcQrcode from "./IcQrcode";
-import IcQuit from "./IcQuit";
-import IcRatioMedium from "./IcRatioMedium";
-import IcReadingGlassCheckLine from "./IcReadingGlassCheckLine";
-import IcReceiverMedium from "./IcReceiverMedium";
-import IcRefresh from "./IcRefresh";
-import IcRepeat from "./IcRepeat";
-import IcReply from "./IcReply";
-import IcReportMedium from "./IcReportMedium";
-import IcRequestDemo from "./IcRequestDemo";
-import IcRequired from "./IcRequired";
-import IcResendPushMedium from "./IcResendPushMedium";
-import IcResendPush from "./IcResendPush";
-import IcResume from "./IcResume";
-import IcReturn from "./IcReturn";
-import IcRightArrowSolidXsmall from "./IcRightArrowSolidXsmall";
-import IcRightArrowXsmall from "./IcRightArrowXsmall";
-import IcRightArrow from "./IcRightArrow";
-import IcRocketMedium from "./IcRocketMedium";
-import IcSalary from "./IcSalary";
-import IcSalesMedium from "./IcSalesMedium";
-import IcScan from "./IcScan";
-import IcScheduleMedium from "./IcScheduleMedium";
-import IcSchool from "./IcSchool";
-import IcSearch from "./IcSearch";
-import IcSend from "./IcSend";
-import IcSettingMedium from "./IcSettingMedium";
-import IcSetting from "./IcSetting";
-import IcShoplLauncher from "./IcShoplLauncher";
-import IcShortcutXsmall from "./IcShortcutXsmall";
-import IcShowMedium from "./IcShowMedium";
-import IcSign from "./IcSign";
-import IcSignature from "./IcSignature";
-import IcSolved from "./IcSolved";
-import IcSortingAtoz from "./IcSortingAtoz";
-import IcSortingEarly from "./IcSortingEarly";
-import IcSortingLate from "./IcSortingLate";
-import IcSortingZtoa from "./IcSortingZtoa";
-import IcStaggeredWorking from "./IcStaggeredWorking";
-import IcStamp from "./IcStamp";
-import IcStarLine from "./IcStarLine";
-import IcStar from "./IcStar";
-import IcSubtract from "./IcSubtract";
-import IcSummeryView from "./IcSummeryView";
-import IcSympathyMedium from "./IcSympathyMedium";
-import IcTack from "./IcTack";
-import IcTag from "./IcTag";
-import IcTargetMedium from "./IcTargetMedium";
-import IcText from "./IcText";
-import IcTimeLineLine from "./IcTimeLineLine";
-import IcTodoMedium from "./IcTodoMedium";
-import IcToggleMedium from "./IcToggleMedium";
-import IcTrash from "./IcTrash";
-import IcUpArrowSolidXsmall from "./IcUpArrowSolidXsmall";
-import IcUpArrowXsmall from "./IcUpArrowXsmall";
-import IcUpArrow from "./IcUpArrow";
-import IcUserNameLine from "./IcUserNameLine";
-import IcUserNumberLine from "./IcUserNumberLine";
-import IcUserTagLine from "./IcUserTagLine";
-import IcVideo from "./IcVideo";
-import IcViewOff from "./IcViewOff";
-import IcViewOn from "./IcViewOn";
-import IcWaitingMedium from "./IcWaitingMedium";
-import IcWhatsappLarge from "./IcWhatsappLarge";
-import IcWhatsapp from "./IcWhatsapp";
-import IcWifi from "./IcWifi";
-import IcWindowed from "./IcWindowed";
-import IcWorkStatus from "./IcWorkStatus";
-import IcWorkplaceMedium from "./IcWorkplaceMedium";
-import IcWorkplaceSmall from "./IcWorkplaceSmall";
-import IcYesOrNo from "./IcYesOrNo";
-import IcZoomInMedium from "./IcZoomInMedium";
-import IcZoomOutMedium from "./IcZoomOutMedium";
+import IcAbnormalA from './IcAbnormalA';
+import IcAbnormalD from './IcAbnormalD';
+import IcAbnormalEarlyleave from './IcAbnormalEarlyleave';
+import IcAbnormalLate from './IcAbnormalLate';
+import IcAbnormalM from './IcAbnormalM';
+import IcAbnormalN from './IcAbnormalN';
+import IcAbnormalW from './IcAbnormalW';
+import IcAddSection from './IcAddSection';
+import IcAddXsmall from './IcAddXsmall';
+import IcAdd from './IcAdd';
+import IcAdminLarge from './IcAdminLarge';
+import IcAiChatBot from './IcAiChatBot';
+import IcAlbumXlarge from './IcAlbumXlarge';
+import IcAlertColored from './IcAlertColored';
+import IcAlertLine from './IcAlertLine';
+import IcAlertPopupXlarge from './IcAlertPopupXlarge';
+import IcAlertTriangle from './IcAlertTriangle';
+import IcAlert from './IcAlert';
+import IcAnnualMedium from './IcAnnualMedium';
+import IcApprovalMedium from './IcApprovalMedium';
+import IcArticleMedium from './IcArticleMedium';
+import IcAsc from './IcAsc';
+import IcAttachment from './IcAttachment';
+import IcAttendanceMedium from './IcAttendanceMedium';
+import IcAutorityLine from './IcAutorityLine';
+import IcAverage from './IcAverage';
+import IcBackMedium from './IcBackMedium';
+import IcBadgeAdminLarge from './IcBadgeAdminLarge';
+import IcBadgeLeaderAppovalLarge from './IcBadgeLeaderAppovalLarge';
+import IcBadgeLeaderLarge from './IcBadgeLeaderLarge';
+import IcBankbook from './IcBankbook';
+import IcBarcode from './IcBarcode';
+import IcBellMedium from './IcBellMedium';
+import IcBmMedium from './IcBmMedium';
+import IcBoardMedium from './IcBoardMedium';
+import IcBoardProfileXlarge from './IcBoardProfileXlarge';
+import IcBoardProfile from './IcBoardProfile';
+import IcBookMedium from './IcBookMedium';
+import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
+import IcBookmarkMedium from './IcBookmarkMedium';
+import IcBox from './IcBox';
+import IcBriefcase from './IcBriefcase';
+import IcByEmployeeMedium from './IcByEmployeeMedium';
+import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
+import IcCake from './IcCake';
+import IcCalendarLine from './IcCalendarLine';
+import IcCamera from './IcCamera';
+import IcCart from './IcCart';
+import IcCategory from './IcCategory';
+import IcCautionXlarge from './IcCautionXlarge';
+import IcChannel from './IcChannel';
+import IcChanneltalkMedium from './IcChanneltalkMedium';
+import IcChatActivityMedium from './IcChatActivityMedium';
+import IcChatLarge from './IcChatLarge';
+import IcChattingMedium from './IcChattingMedium';
+import IcChattingSolidMedium from './IcChattingSolidMedium';
+import IcCheckXlarge from './IcCheckXlarge';
+import IcCheckXsmall from './IcCheckXsmall';
+import IcCheck from './IcCheck';
+import IcCheckbox from './IcCheckbox';
+import IcChecklist from './IcChecklist';
+import IcCloseMedium from './IcCloseMedium';
+import IcCloseSmall from './IcCloseSmall';
+import IcClose from './IcClose';
+import IcClosingMedium from './IcClosingMedium';
+import IcCloudMedium from './IcCloudMedium';
+import IcComment from './IcComment';
+import IcCompanyXlarge from './IcCompanyXlarge';
+import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
+import IcContrastPlus from './IcContrastPlus';
+import IcCopy from './IcCopy';
+import IcCrown from './IcCrown';
+import IcCustomDropdown from './IcCustomDropdown';
+import IcCustomText from './IcCustomText';
+import IcDayOff from './IcDayOff';
+import IcDeadline from './IcDeadline';
+import IcDeleteLine from './IcDeleteLine';
+import IcDelete from './IcDelete';
+import IcDesc from './IcDesc';
+import IcDetailView from './IcDetailView';
+import IcDisplayMedium from './IcDisplayMedium';
+import IcDocMedium from './IcDocMedium';
+import IcDocument from './IcDocument';
+import IcDownArrowSolidXsmall from './IcDownArrowSolidXsmall';
+import IcDownArrowXsmall from './IcDownArrowXsmall';
+import IcDownArrow from './IcDownArrow';
+import IcDownloadMedium from './IcDownloadMedium';
+import IcDownload from './IcDownload';
+import IcDraftsave from './IcDraftsave';
+import IcDrag from './IcDrag';
+import IcDrawer from './IcDrawer';
+import IcDropdown from './IcDropdown';
+import IcEditLarge from './IcEditLarge';
+import IcEditLine from './IcEditLine';
+import IcEditSolid from './IcEditSolid';
+import IcEditXsmall from './IcEditXsmall';
+import IcEdit from './IcEdit';
+import IcEmailXlarge from './IcEmailXlarge';
+import IcEmail from './IcEmail';
+import IcEmojiMedium from './IcEmojiMedium';
+import IcEmojiPlusMedium from './IcEmojiPlusMedium';
+import IcEmployeeXsmall from './IcEmployeeXsmall';
+import IcEndPage from './IcEndPage';
+import IcExcel from './IcExcel';
+import IcExclamationXlarge from './IcExclamationXlarge';
+import IcExitFullScreenMedium from './IcExitFullScreenMedium';
+import IcExpected from './IcExpected';
+import IcExpenseMedium from './IcExpenseMedium';
+import IcFeedView from './IcFeedView';
+import IcFilter from './IcFilter';
+import IcFilterdeleteXsmall from './IcFilterdeleteXsmall';
+import IcFirstPage from './IcFirstPage';
+import IcFlexibleWorking from './IcFlexibleWorking';
+import IcFullScreenMedium from './IcFullScreenMedium';
+import IcFullscreen from './IcFullscreen';
+import IcFunnel from './IcFunnel';
+import IcGps from './IcGps';
+import IcGrade1 from './IcGrade1';
+import IcGrade2 from './IcGrade2';
+import IcGrade31 from './IcGrade31';
+import IcGrade32 from './IcGrade32';
+import IcGrade3 from './IcGrade3';
+import IcGrade41 from './IcGrade41';
+import IcGrade42 from './IcGrade42';
+import IcGrade4 from './IcGrade4';
+import IcGrade51 from './IcGrade51';
+import IcGrade52 from './IcGrade52';
+import IcGrade5 from './IcGrade5';
+import IcGradeBadge from './IcGradeBadge';
+import IcGradientAttendance from './IcGradientAttendance';
+import IcGradientBoard from './IcGradientBoard';
+import IcGradientDisplay from './IcGradientDisplay';
+import IcGradientDoc from './IcGradientDoc';
+import IcGradientGps from './IcGradientGps';
+import IcGradientInventory from './IcGradientInventory';
+import IcGradientJp from './IcGradientJp';
+import IcGradientLeave from './IcGradientLeave';
+import IcGradientMobile from './IcGradientMobile';
+import IcGradientNotice from './IcGradientNotice';
+import IcGradientOvertime from './IcGradientOvertime';
+import IcGradientPrice from './IcGradientPrice';
+import IcGradientReport from './IcGradientReport';
+import IcGradientSales from './IcGradientSales';
+import IcGradientSchedule from './IcGradientSchedule';
+import IcGradientStaff from './IcGradientStaff';
+import IcGradientTarget from './IcGradientTarget';
+import IcGradientTodo from './IcGradientTodo';
+import IcGradientWifi from './IcGradientWifi';
+import IcGradientWorkplace from './IcGradientWorkplace';
+import IcGraph from './IcGraph';
+import IcGroupLine from './IcGroupLine';
+import IcGroupMedium from './IcGroupMedium';
+import IcGroupSolidMedium from './IcGroupSolidMedium';
+import IcHelpCenterMedium from './IcHelpCenterMedium';
+import IcHelpLine from './IcHelpLine';
+import IcHelpMedium from './IcHelpMedium';
+import IcHelp from './IcHelp';
+import IcHideMedium from './IcHideMedium';
+import IcHistory from './IcHistory';
+import IcHomeMedium from './IcHomeMedium';
+import IcHome from './IcHome';
+import IcIdCard from './IcIdCard';
+import IcImport from './IcImport';
+import IcInactiveBell from './IcInactiveBell';
+import IcIncentiveMedium from './IcIncentiveMedium';
+import IcIncentive from './IcIncentive';
+import IcInfo1 from './IcInfo1';
+import IcInfoAlbum from './IcInfoAlbum';
+import IcInfoApp from './IcInfoApp';
+import IcInfoBreaktime from './IcInfoBreaktime';
+import IcInfoCity from './IcInfoCity';
+import IcInfoDate from './IcInfoDate';
+import IcInfoDaysoff from './IcInfoDaysoff';
+import IcInfoDistributor from './IcInfoDistributor';
+import IcInfoDocs from './IcInfoDocs';
+import IcInfoEmail from './IcInfoEmail';
+import IcInfoEmployee from './IcInfoEmployee';
+import IcInfoEmployeeno from './IcInfoEmployeeno';
+import IcInfoGrade from './IcInfoGrade';
+import IcInfoGroup from './IcInfoGroup';
+import IcInfoLeader from './IcInfoLeader';
+import IcInfoLine from './IcInfoLine';
+import IcInfoLogin from './IcInfoLogin';
+import IcInfoOval from './IcInfoOval';
+import IcInfoPhoneCheck from './IcInfoPhoneCheck';
+import IcInfoPhoneNoCheck from './IcInfoPhoneNoCheck';
+import IcInfoPhone from './IcInfoPhone';
+import IcInfoPolicy from './IcInfoPolicy';
+import IcInfoPosition from './IcInfoPosition';
+import IcInfoProperties from './IcInfoProperties';
+import IcInfoPunch from './IcInfoPunch';
+import IcInfoRadius from './IcInfoRadius';
+import IcInfoRegion from './IcInfoRegion';
+import IcInfoStarBadge from './IcInfoStarBadge';
+import IcInfoState from './IcInfoState';
+import IcInfoVisit from './IcInfoVisit';
+import IcInfoWorking from './IcInfoWorking';
+import IcInfoWorkplace from './IcInfoWorkplace';
+import IcInfo from './IcInfo';
+import IcInputLine from './IcInputLine';
+import IcInventoryMedium from './IcInventoryMedium';
+import IcInvitation from './IcInvitation';
+import IcInviteBefore from './IcInviteBefore';
+import IcInviteCompleted from './IcInviteCompleted';
+import IcIssue from './IcIssue';
+import IcJpMedium from './IcJpMedium';
+import IcLanguageMedium from './IcLanguageMedium';
+import IcLeaderAppovalLarge from './IcLeaderAppovalLarge';
+import IcLeaderLarge from './IcLeaderLarge';
+import IcLeaveMedium from './IcLeaveMedium';
+import IcLeave from './IcLeave';
+import IcLeftArrowXsmall from './IcLeftArrowXsmall';
+import IcLeftArrow from './IcLeftArrow';
+import IcLink from './IcLink';
+import IcListEdit from './IcListEdit';
+import IcListMove from './IcListMove';
+import IcListview from './IcListview';
+import IcLocation from './IcLocation';
+import IcLockerXlarge from './IcLockerXlarge';
+import IcMap from './IcMap';
+import IcMemberMedium from './IcMemberMedium';
+import IcMemberSmall from './IcMemberSmall';
+import IcMemoLine from './IcMemoLine';
+import IcMemo from './IcMemo';
+import IcMention from './IcMention';
+import IcMinusMedium from './IcMinusMedium';
+import IcMinus from './IcMinus';
+import IcMobileLine from './IcMobileLine';
+import IcMore from './IcMore';
+import IcMother from './IcMother';
+import IcMove2 from './IcMove2';
+import IcMoveSolid from './IcMoveSolid';
+import IcMove from './IcMove';
+import IcMovie01 from './IcMovie01';
+import IcMultipleChoice from './IcMultipleChoice';
+import IcNoGrade from './IcNoGrade';
+import IcNormal from './IcNormal';
+import IcNoticeMedium from './IcNoticeMedium';
+import IcNoticeSolidMedium from './IcNoticeSolidMedium';
+import IcNotice from './IcNotice';
+import IcOff from './IcOff';
+import IcOn from './IcOn';
+import IcOnboardingAttendance from './IcOnboardingAttendance';
+import IcOnboardingBoth from './IcOnboardingBoth';
+import IcOnboardingSetting from './IcOnboardingSetting';
+import IcOrganizationChart from './IcOrganizationChart';
+import IcOvertimeMedium from './IcOvertimeMedium';
+import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
+import IcPaste from './IcPaste';
+import IcPaymentMedium from './IcPaymentMedium';
+import IcPhoneLine from './IcPhoneLine';
+import IcPhotoMedium from './IcPhotoMedium';
+import IcPhoto from './IcPhoto';
+import IcPinXlarge from './IcPinXlarge';
+import IcPin from './IcPin';
+import IcPlayXlarge from './IcPlayXlarge';
+import IcPlusMedium from './IcPlusMedium';
+import IcPopup from './IcPopup';
+import IcPreorderMedium from './IcPreorderMedium';
+import IcPreview from './IcPreview';
+import IcPriceMedium from './IcPriceMedium';
+import IcProceeding from './IcProceeding';
+import IcPush from './IcPush';
+import IcQrcode from './IcQrcode';
+import IcQuit from './IcQuit';
+import IcRatioMedium from './IcRatioMedium';
+import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
+import IcReceiverMedium from './IcReceiverMedium';
+import IcRefresh from './IcRefresh';
+import IcRepeat from './IcRepeat';
+import IcReply from './IcReply';
+import IcReportMedium from './IcReportMedium';
+import IcRequestDemo from './IcRequestDemo';
+import IcRequired from './IcRequired';
+import IcResendPushMedium from './IcResendPushMedium';
+import IcResendPush from './IcResendPush';
+import IcResume from './IcResume';
+import IcReturn from './IcReturn';
+import IcRightArrowSolidXsmall from './IcRightArrowSolidXsmall';
+import IcRightArrowXsmall from './IcRightArrowXsmall';
+import IcRightArrow from './IcRightArrow';
+import IcRocketMedium from './IcRocketMedium';
+import IcSalary from './IcSalary';
+import IcSalesMedium from './IcSalesMedium';
+import IcScan from './IcScan';
+import IcScheduleMedium from './IcScheduleMedium';
+import IcSchool from './IcSchool';
+import IcSearch from './IcSearch';
+import IcSend from './IcSend';
+import IcSettingMedium from './IcSettingMedium';
+import IcSetting from './IcSetting';
+import IcShoplLauncher from './IcShoplLauncher';
+import IcShortcutXsmall from './IcShortcutXsmall';
+import IcShowMedium from './IcShowMedium';
+import IcSign from './IcSign';
+import IcSignature from './IcSignature';
+import IcSolved from './IcSolved';
+import IcSortingAtoz from './IcSortingAtoz';
+import IcSortingEarly from './IcSortingEarly';
+import IcSortingLate from './IcSortingLate';
+import IcSortingZtoa from './IcSortingZtoa';
+import IcStaggeredWorking from './IcStaggeredWorking';
+import IcStamp from './IcStamp';
+import IcStarLine from './IcStarLine';
+import IcStar from './IcStar';
+import IcSubtract from './IcSubtract';
+import IcSummeryView from './IcSummeryView';
+import IcSympathyMedium from './IcSympathyMedium';
+import IcTable from './IcTable';
+import IcTack from './IcTack';
+import IcTag from './IcTag';
+import IcTargetMedium from './IcTargetMedium';
+import IcText from './IcText';
+import IcTimeLineLine from './IcTimeLineLine';
+import IcTodoMedium from './IcTodoMedium';
+import IcToggleMedium from './IcToggleMedium';
+import IcTrash from './IcTrash';
+import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
+import IcUpArrowXsmall from './IcUpArrowXsmall';
+import IcUpArrow from './IcUpArrow';
+import IcUserNameLine from './IcUserNameLine';
+import IcUserNumberLine from './IcUserNumberLine';
+import IcUserTagLine from './IcUserTagLine';
+import IcVideo from './IcVideo';
+import IcViewOff from './IcViewOff';
+import IcViewOn from './IcViewOn';
+import IcWaitingMedium from './IcWaitingMedium';
+import IcWhatsappLarge from './IcWhatsappLarge';
+import IcWhatsapp from './IcWhatsapp';
+import IcWifi from './IcWifi';
+import IcWindowed from './IcWindowed';
+import IcWorkStatus from './IcWorkStatus';
+import IcWorkplaceMedium from './IcWorkplaceMedium';
+import IcWorkplaceSmall from './IcWorkplaceSmall';
+import IcYesOrNo from './IcYesOrNo';
+import IcZoomInMedium from './IcZoomInMedium';
+import IcZoomOutMedium from './IcZoomOutMedium';
 
 const icons = {
-  "abnormal-a": IcAbnormalA,
-  "abnormal-d": IcAbnormalD,
-  "abnormal-earlyleave": IcAbnormalEarlyleave,
-  "abnormal-late": IcAbnormalLate,
-  "abnormal-m": IcAbnormalM,
-  "abnormal-n": IcAbnormalN,
-  "abnormal-w": IcAbnormalW,
-  "add-section": IcAddSection,
-  "add-xsmall": IcAddXsmall,
+  'abnormal-a': IcAbnormalA,
+  'abnormal-d': IcAbnormalD,
+  'abnormal-earlyleave': IcAbnormalEarlyleave,
+  'abnormal-late': IcAbnormalLate,
+  'abnormal-m': IcAbnormalM,
+  'abnormal-n': IcAbnormalN,
+  'abnormal-w': IcAbnormalW,
+  'add-section': IcAddSection,
+  'add-xsmall': IcAddXsmall,
   add: IcAdd,
-  "admin-large": IcAdminLarge,
-  "ai-chat-bot": IcAiChatBot,
-  "album-xlarge": IcAlbumXlarge,
-  "alert-colored": IcAlertColored,
-  "alert-line": IcAlertLine,
-  "alert-popup-xlarge": IcAlertPopupXlarge,
-  "alert-triangle": IcAlertTriangle,
+  'admin-large': IcAdminLarge,
+  'ai-chat-bot': IcAiChatBot,
+  'album-xlarge': IcAlbumXlarge,
+  'alert-colored': IcAlertColored,
+  'alert-line': IcAlertLine,
+  'alert-popup-xlarge': IcAlertPopupXlarge,
+  'alert-triangle': IcAlertTriangle,
   alert: IcAlert,
-  "annual-medium": IcAnnualMedium,
-  "approval-medium": IcApprovalMedium,
-  "article-medium": IcArticleMedium,
+  'annual-medium': IcAnnualMedium,
+  'approval-medium': IcApprovalMedium,
+  'article-medium': IcArticleMedium,
   asc: IcAsc,
   attachment: IcAttachment,
-  "attendance-medium": IcAttendanceMedium,
-  "autority-line": IcAutorityLine,
+  'attendance-medium': IcAttendanceMedium,
+  'autority-line': IcAutorityLine,
   average: IcAverage,
-  "back-medium": IcBackMedium,
-  "badge-admin-large": IcBadgeAdminLarge,
-  "badge-leader-appoval-large": IcBadgeLeaderAppovalLarge,
-  "badge-leader-large": IcBadgeLeaderLarge,
+  'back-medium': IcBackMedium,
+  'badge-admin-large': IcBadgeAdminLarge,
+  'badge-leader-appoval-large': IcBadgeLeaderAppovalLarge,
+  'badge-leader-large': IcBadgeLeaderLarge,
   bankbook: IcBankbook,
   barcode: IcBarcode,
-  "bell-medium": IcBellMedium,
-  "bm-medium": IcBmMedium,
-  "board-medium": IcBoardMedium,
-  "board-profile-xlarge": IcBoardProfileXlarge,
-  "board-profile": IcBoardProfile,
-  "book-medium": IcBookMedium,
-  "bookmark-filled-medium": IcBookmarkFilledMedium,
-  "bookmark-medium": IcBookmarkMedium,
+  'bell-medium': IcBellMedium,
+  'bm-medium': IcBmMedium,
+  'board-medium': IcBoardMedium,
+  'board-profile-xlarge': IcBoardProfileXlarge,
+  'board-profile': IcBoardProfile,
+  'book-medium': IcBookMedium,
+  'bookmark-filled-medium': IcBookmarkFilledMedium,
+  'bookmark-medium': IcBookmarkMedium,
   box: IcBox,
   briefcase: IcBriefcase,
-  "by-employee-medium": IcByEmployeeMedium,
-  "by-place-of-work-medium": IcByPlaceOfWorkMedium,
+  'by-employee-medium': IcByEmployeeMedium,
+  'by-place-of-work-medium': IcByPlaceOfWorkMedium,
   cake: IcCake,
-  "calendar-line": IcCalendarLine,
+  'calendar-line': IcCalendarLine,
   camera: IcCamera,
   cart: IcCart,
   category: IcCategory,
-  "caution-xlarge": IcCautionXlarge,
+  'caution-xlarge': IcCautionXlarge,
   channel: IcChannel,
-  "channeltalk-medium": IcChanneltalkMedium,
-  "chat-activity-medium": IcChatActivityMedium,
-  "chat-large": IcChatLarge,
-  "chatting-medium": IcChattingMedium,
-  "chatting-solid-medium": IcChattingSolidMedium,
-  "check-xlarge": IcCheckXlarge,
-  "check-xsmall": IcCheckXsmall,
+  'channeltalk-medium': IcChanneltalkMedium,
+  'chat-activity-medium': IcChatActivityMedium,
+  'chat-large': IcChatLarge,
+  'chatting-medium': IcChattingMedium,
+  'chatting-solid-medium': IcChattingSolidMedium,
+  'check-xlarge': IcCheckXlarge,
+  'check-xsmall': IcCheckXsmall,
   check: IcCheck,
   checkbox: IcCheckbox,
   checklist: IcChecklist,
-  "close-medium": IcCloseMedium,
-  "close-small": IcCloseSmall,
+  'close-medium': IcCloseMedium,
+  'close-small': IcCloseSmall,
   close: IcClose,
-  "closing-medium": IcClosingMedium,
-  "cloud-medium": IcCloudMedium,
+  'closing-medium': IcClosingMedium,
+  'cloud-medium': IcCloudMedium,
   comment: IcComment,
-  "company-xlarge": IcCompanyXlarge,
-  "confirm-popup-xlarge": IcConfirmPopupXlarge,
-  "contrast-plus": IcContrastPlus,
+  'company-xlarge': IcCompanyXlarge,
+  'confirm-popup-xlarge': IcConfirmPopupXlarge,
+  'contrast-plus': IcContrastPlus,
   copy: IcCopy,
   crown: IcCrown,
-  "custom-dropdown": IcCustomDropdown,
-  "custom-text": IcCustomText,
-  "day-off": IcDayOff,
+  'custom-dropdown': IcCustomDropdown,
+  'custom-text': IcCustomText,
+  'day-off': IcDayOff,
   deadline: IcDeadline,
-  "delete-line": IcDeleteLine,
+  'delete-line': IcDeleteLine,
   delete: IcDelete,
   desc: IcDesc,
-  "detail-view": IcDetailView,
-  "display-medium": IcDisplayMedium,
-  "doc-medium": IcDocMedium,
+  'detail-view': IcDetailView,
+  'display-medium': IcDisplayMedium,
+  'doc-medium': IcDocMedium,
   document: IcDocument,
-  "down-arrow-solid-xsmall": IcDownArrowSolidXsmall,
-  "down-arrow-xsmall": IcDownArrowXsmall,
-  "down-arrow": IcDownArrow,
-  "download-medium": IcDownloadMedium,
+  'down-arrow-solid-xsmall': IcDownArrowSolidXsmall,
+  'down-arrow-xsmall': IcDownArrowXsmall,
+  'down-arrow': IcDownArrow,
+  'download-medium': IcDownloadMedium,
   download: IcDownload,
   draftsave: IcDraftsave,
   drag: IcDrag,
   drawer: IcDrawer,
   dropdown: IcDropdown,
-  "edit-large": IcEditLarge,
-  "edit-line": IcEditLine,
-  "edit-solid": IcEditSolid,
-  "edit-xsmall": IcEditXsmall,
+  'edit-large': IcEditLarge,
+  'edit-line': IcEditLine,
+  'edit-solid': IcEditSolid,
+  'edit-xsmall': IcEditXsmall,
   edit: IcEdit,
-  "email-xlarge": IcEmailXlarge,
+  'email-xlarge': IcEmailXlarge,
   email: IcEmail,
-  "emoji-medium": IcEmojiMedium,
-  "emoji-plus-medium": IcEmojiPlusMedium,
-  "employee-xsmall": IcEmployeeXsmall,
-  "end-page": IcEndPage,
+  'emoji-medium': IcEmojiMedium,
+  'emoji-plus-medium': IcEmojiPlusMedium,
+  'employee-xsmall': IcEmployeeXsmall,
+  'end-page': IcEndPage,
   excel: IcExcel,
-  "exclamation-xlarge": IcExclamationXlarge,
-  "exit-full-screen-medium": IcExitFullScreenMedium,
+  'exclamation-xlarge': IcExclamationXlarge,
+  'exit-full-screen-medium': IcExitFullScreenMedium,
   expected: IcExpected,
-  "expense-medium": IcExpenseMedium,
-  "feed-view": IcFeedView,
+  'expense-medium': IcExpenseMedium,
+  'feed-view': IcFeedView,
   filter: IcFilter,
-  "filterdelete-xsmall": IcFilterdeleteXsmall,
-  "first-page": IcFirstPage,
-  "flexible-working": IcFlexibleWorking,
-  "full-screen-medium": IcFullScreenMedium,
+  'filterdelete-xsmall': IcFilterdeleteXsmall,
+  'first-page': IcFirstPage,
+  'flexible-working': IcFlexibleWorking,
+  'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
   funnel: IcFunnel,
   gps: IcGps,
-  "grade-1": IcGrade1,
-  "grade-2": IcGrade2,
-  "grade-31": IcGrade31,
-  "grade-32": IcGrade32,
-  "grade-3": IcGrade3,
-  "grade-41": IcGrade41,
-  "grade-42": IcGrade42,
-  "grade-4": IcGrade4,
-  "grade-51": IcGrade51,
-  "grade-52": IcGrade52,
-  "grade-5": IcGrade5,
-  "grade-badge": IcGradeBadge,
-  "gradient-attendance": IcGradientAttendance,
-  "gradient-board": IcGradientBoard,
-  "gradient-display": IcGradientDisplay,
-  "gradient-doc": IcGradientDoc,
-  "gradient-gps": IcGradientGps,
-  "gradient-inventory": IcGradientInventory,
-  "gradient-jp": IcGradientJp,
-  "gradient-leave": IcGradientLeave,
-  "gradient-mobile": IcGradientMobile,
-  "gradient-notice": IcGradientNotice,
-  "gradient-overtime": IcGradientOvertime,
-  "gradient-price": IcGradientPrice,
-  "gradient-report": IcGradientReport,
-  "gradient-sales": IcGradientSales,
-  "gradient-schedule": IcGradientSchedule,
-  "gradient-staff": IcGradientStaff,
-  "gradient-target": IcGradientTarget,
-  "gradient-todo": IcGradientTodo,
-  "gradient-wifi": IcGradientWifi,
-  "gradient-workplace": IcGradientWorkplace,
+  'grade-1': IcGrade1,
+  'grade-2': IcGrade2,
+  'grade-31': IcGrade31,
+  'grade-32': IcGrade32,
+  'grade-3': IcGrade3,
+  'grade-41': IcGrade41,
+  'grade-42': IcGrade42,
+  'grade-4': IcGrade4,
+  'grade-51': IcGrade51,
+  'grade-52': IcGrade52,
+  'grade-5': IcGrade5,
+  'grade-badge': IcGradeBadge,
+  'gradient-attendance': IcGradientAttendance,
+  'gradient-board': IcGradientBoard,
+  'gradient-display': IcGradientDisplay,
+  'gradient-doc': IcGradientDoc,
+  'gradient-gps': IcGradientGps,
+  'gradient-inventory': IcGradientInventory,
+  'gradient-jp': IcGradientJp,
+  'gradient-leave': IcGradientLeave,
+  'gradient-mobile': IcGradientMobile,
+  'gradient-notice': IcGradientNotice,
+  'gradient-overtime': IcGradientOvertime,
+  'gradient-price': IcGradientPrice,
+  'gradient-report': IcGradientReport,
+  'gradient-sales': IcGradientSales,
+  'gradient-schedule': IcGradientSchedule,
+  'gradient-staff': IcGradientStaff,
+  'gradient-target': IcGradientTarget,
+  'gradient-todo': IcGradientTodo,
+  'gradient-wifi': IcGradientWifi,
+  'gradient-workplace': IcGradientWorkplace,
   graph: IcGraph,
-  "group-line": IcGroupLine,
-  "group-medium": IcGroupMedium,
-  "group-solid-medium": IcGroupSolidMedium,
-  "help-center-medium": IcHelpCenterMedium,
-  "help-line": IcHelpLine,
-  "help-medium": IcHelpMedium,
+  'group-line': IcGroupLine,
+  'group-medium': IcGroupMedium,
+  'group-solid-medium': IcGroupSolidMedium,
+  'help-center-medium': IcHelpCenterMedium,
+  'help-line': IcHelpLine,
+  'help-medium': IcHelpMedium,
   help: IcHelp,
-  "hide-medium": IcHideMedium,
+  'hide-medium': IcHideMedium,
   history: IcHistory,
-  "home-medium": IcHomeMedium,
+  'home-medium': IcHomeMedium,
   home: IcHome,
-  "id-card": IcIdCard,
+  'id-card': IcIdCard,
   import: IcImport,
-  "inactive-bell": IcInactiveBell,
-  "incentive-medium": IcIncentiveMedium,
+  'inactive-bell': IcInactiveBell,
+  'incentive-medium': IcIncentiveMedium,
   incentive: IcIncentive,
-  "info-1": IcInfo1,
-  "info-album": IcInfoAlbum,
-  "info-app": IcInfoApp,
-  "info-breaktime": IcInfoBreaktime,
-  "info-city": IcInfoCity,
-  "info-date": IcInfoDate,
-  "info-daysoff": IcInfoDaysoff,
-  "info-distributor": IcInfoDistributor,
-  "info-docs": IcInfoDocs,
-  "info-email": IcInfoEmail,
-  "info-employee": IcInfoEmployee,
-  "info-employeeno": IcInfoEmployeeno,
-  "info-grade": IcInfoGrade,
-  "info-group": IcInfoGroup,
-  "info-leader": IcInfoLeader,
-  "info-line": IcInfoLine,
-  "info-login": IcInfoLogin,
-  "info-oval": IcInfoOval,
-  "info-phone-check": IcInfoPhoneCheck,
-  "info-phone-no-check": IcInfoPhoneNoCheck,
-  "info-phone": IcInfoPhone,
-  "info-policy": IcInfoPolicy,
-  "info-position": IcInfoPosition,
-  "info-properties": IcInfoProperties,
-  "info-punch": IcInfoPunch,
-  "info-radius": IcInfoRadius,
-  "info-region": IcInfoRegion,
-  "info-star-badge": IcInfoStarBadge,
-  "info-state": IcInfoState,
-  "info-visit": IcInfoVisit,
-  "info-working": IcInfoWorking,
-  "info-workplace": IcInfoWorkplace,
+  'info-1': IcInfo1,
+  'info-album': IcInfoAlbum,
+  'info-app': IcInfoApp,
+  'info-breaktime': IcInfoBreaktime,
+  'info-city': IcInfoCity,
+  'info-date': IcInfoDate,
+  'info-daysoff': IcInfoDaysoff,
+  'info-distributor': IcInfoDistributor,
+  'info-docs': IcInfoDocs,
+  'info-email': IcInfoEmail,
+  'info-employee': IcInfoEmployee,
+  'info-employeeno': IcInfoEmployeeno,
+  'info-grade': IcInfoGrade,
+  'info-group': IcInfoGroup,
+  'info-leader': IcInfoLeader,
+  'info-line': IcInfoLine,
+  'info-login': IcInfoLogin,
+  'info-oval': IcInfoOval,
+  'info-phone-check': IcInfoPhoneCheck,
+  'info-phone-no-check': IcInfoPhoneNoCheck,
+  'info-phone': IcInfoPhone,
+  'info-policy': IcInfoPolicy,
+  'info-position': IcInfoPosition,
+  'info-properties': IcInfoProperties,
+  'info-punch': IcInfoPunch,
+  'info-radius': IcInfoRadius,
+  'info-region': IcInfoRegion,
+  'info-star-badge': IcInfoStarBadge,
+  'info-state': IcInfoState,
+  'info-visit': IcInfoVisit,
+  'info-working': IcInfoWorking,
+  'info-workplace': IcInfoWorkplace,
   info: IcInfo,
-  "input-line": IcInputLine,
-  "inventory-medium": IcInventoryMedium,
+  'input-line': IcInputLine,
+  'inventory-medium': IcInventoryMedium,
   invitation: IcInvitation,
-  "invite-before": IcInviteBefore,
-  "invite-completed": IcInviteCompleted,
+  'invite-before': IcInviteBefore,
+  'invite-completed': IcInviteCompleted,
   issue: IcIssue,
-  "jp-medium": IcJpMedium,
-  "language-medium": IcLanguageMedium,
-  "leader-appoval-large": IcLeaderAppovalLarge,
-  "leader-large": IcLeaderLarge,
-  "leave-medium": IcLeaveMedium,
+  'jp-medium': IcJpMedium,
+  'language-medium': IcLanguageMedium,
+  'leader-appoval-large': IcLeaderAppovalLarge,
+  'leader-large': IcLeaderLarge,
+  'leave-medium': IcLeaveMedium,
   leave: IcLeave,
-  "left-arrow-xsmall": IcLeftArrowXsmall,
-  "left-arrow": IcLeftArrow,
+  'left-arrow-xsmall': IcLeftArrowXsmall,
+  'left-arrow': IcLeftArrow,
   link: IcLink,
-  "list-edit": IcListEdit,
-  "list-move": IcListMove,
+  'list-edit': IcListEdit,
+  'list-move': IcListMove,
   listview: IcListview,
   location: IcLocation,
-  "locker-xlarge": IcLockerXlarge,
+  'locker-xlarge': IcLockerXlarge,
   map: IcMap,
-  "member-medium": IcMemberMedium,
-  "member-small": IcMemberSmall,
-  "memo-line": IcMemoLine,
+  'member-medium': IcMemberMedium,
+  'member-small': IcMemberSmall,
+  'memo-line': IcMemoLine,
   memo: IcMemo,
   mention: IcMention,
-  "minus-medium": IcMinusMedium,
+  'minus-medium': IcMinusMedium,
   minus: IcMinus,
-  "mobile-line": IcMobileLine,
+  'mobile-line': IcMobileLine,
   more: IcMore,
   mother: IcMother,
-  "move-2": IcMove2,
-  "move-solid": IcMoveSolid,
+  'move-2': IcMove2,
+  'move-solid': IcMoveSolid,
   move: IcMove,
-  "movie-01": IcMovie01,
-  "multiple-choice": IcMultipleChoice,
-  "no-grade": IcNoGrade,
+  'movie-01': IcMovie01,
+  'multiple-choice': IcMultipleChoice,
+  'no-grade': IcNoGrade,
   normal: IcNormal,
-  "notice-medium": IcNoticeMedium,
-  "notice-solid-medium": IcNoticeSolidMedium,
+  'notice-medium': IcNoticeMedium,
+  'notice-solid-medium': IcNoticeSolidMedium,
   notice: IcNotice,
   off: IcOff,
   on: IcOn,
-  "onboarding-attendance": IcOnboardingAttendance,
-  "onboarding-both": IcOnboardingBoth,
-  "onboarding-setting": IcOnboardingSetting,
-  "organization-chart": IcOrganizationChart,
-  "overtime-medium": IcOvertimeMedium,
-  "password-error-xlarge": IcPasswordErrorXlarge,
+  'onboarding-attendance': IcOnboardingAttendance,
+  'onboarding-both': IcOnboardingBoth,
+  'onboarding-setting': IcOnboardingSetting,
+  'organization-chart': IcOrganizationChart,
+  'overtime-medium': IcOvertimeMedium,
+  'password-error-xlarge': IcPasswordErrorXlarge,
   paste: IcPaste,
-  "payment-medium": IcPaymentMedium,
-  "phone-line": IcPhoneLine,
+  'payment-medium': IcPaymentMedium,
+  'phone-line': IcPhoneLine,
+  'photo-medium': IcPhotoMedium,
   photo: IcPhoto,
-  "pin-xlarge": IcPinXlarge,
+  'pin-xlarge': IcPinXlarge,
   pin: IcPin,
-  "play-xlarge": IcPlayXlarge,
-  "plus-medium": IcPlusMedium,
+  'play-xlarge': IcPlayXlarge,
+  'plus-medium': IcPlusMedium,
   popup: IcPopup,
-  "preorder-medium": IcPreorderMedium,
+  'preorder-medium': IcPreorderMedium,
   preview: IcPreview,
-  "price-medium": IcPriceMedium,
+  'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
   push: IcPush,
   qrcode: IcQrcode,
   quit: IcQuit,
-  "ratio-medium": IcRatioMedium,
-  "reading-glass-check-line": IcReadingGlassCheckLine,
-  "receiver-medium": IcReceiverMedium,
+  'ratio-medium': IcRatioMedium,
+  'reading-glass-check-line': IcReadingGlassCheckLine,
+  'receiver-medium': IcReceiverMedium,
   refresh: IcRefresh,
   repeat: IcRepeat,
   reply: IcReply,
-  "report-medium": IcReportMedium,
-  "request-demo": IcRequestDemo,
+  'report-medium': IcReportMedium,
+  'request-demo': IcRequestDemo,
   required: IcRequired,
-  "resend-push-medium": IcResendPushMedium,
-  "resend-push": IcResendPush,
+  'resend-push-medium': IcResendPushMedium,
+  'resend-push': IcResendPush,
   resume: IcResume,
   return: IcReturn,
-  "right-arrow-solid-xsmall": IcRightArrowSolidXsmall,
-  "right-arrow-xsmall": IcRightArrowXsmall,
-  "right-arrow": IcRightArrow,
-  "rocket-medium": IcRocketMedium,
+  'right-arrow-solid-xsmall': IcRightArrowSolidXsmall,
+  'right-arrow-xsmall': IcRightArrowXsmall,
+  'right-arrow': IcRightArrow,
+  'rocket-medium': IcRocketMedium,
   salary: IcSalary,
-  "sales-medium": IcSalesMedium,
+  'sales-medium': IcSalesMedium,
   scan: IcScan,
-  "schedule-medium": IcScheduleMedium,
+  'schedule-medium': IcScheduleMedium,
   school: IcSchool,
   search: IcSearch,
   send: IcSend,
-  "setting-medium": IcSettingMedium,
+  'setting-medium': IcSettingMedium,
   setting: IcSetting,
-  "shopl-launcher": IcShoplLauncher,
-  "shortcut-xsmall": IcShortcutXsmall,
-  "show-medium": IcShowMedium,
+  'shopl-launcher': IcShoplLauncher,
+  'shortcut-xsmall': IcShortcutXsmall,
+  'show-medium': IcShowMedium,
   sign: IcSign,
   signature: IcSignature,
   solved: IcSolved,
-  "sorting-atoz": IcSortingAtoz,
-  "sorting-early": IcSortingEarly,
-  "sorting-late": IcSortingLate,
-  "sorting-ztoa": IcSortingZtoa,
-  "staggered-working": IcStaggeredWorking,
+  'sorting-atoz': IcSortingAtoz,
+  'sorting-early': IcSortingEarly,
+  'sorting-late': IcSortingLate,
+  'sorting-ztoa': IcSortingZtoa,
+  'staggered-working': IcStaggeredWorking,
   stamp: IcStamp,
-  "star-line": IcStarLine,
+  'star-line': IcStarLine,
   star: IcStar,
   subtract: IcSubtract,
-  "summery-view": IcSummeryView,
-  "sympathy-medium": IcSympathyMedium,
+  'summery-view': IcSummeryView,
+  'sympathy-medium': IcSympathyMedium,
+  table: IcTable,
   tack: IcTack,
   tag: IcTag,
-  "target-medium": IcTargetMedium,
+  'target-medium': IcTargetMedium,
   text: IcText,
-  "time-line-line": IcTimeLineLine,
-  "todo-medium": IcTodoMedium,
-  "toggle-medium": IcToggleMedium,
+  'time-line-line': IcTimeLineLine,
+  'todo-medium': IcTodoMedium,
+  'toggle-medium': IcToggleMedium,
   trash: IcTrash,
-  "up-arrow-solid-xsmall": IcUpArrowSolidXsmall,
-  "up-arrow-xsmall": IcUpArrowXsmall,
-  "up-arrow": IcUpArrow,
-  "user-name-line": IcUserNameLine,
-  "user-number-line": IcUserNumberLine,
-  "user-tag-line": IcUserTagLine,
+  'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
+  'up-arrow-xsmall': IcUpArrowXsmall,
+  'up-arrow': IcUpArrow,
+  'user-name-line': IcUserNameLine,
+  'user-number-line': IcUserNumberLine,
+  'user-tag-line': IcUserTagLine,
   video: IcVideo,
-  "view-off": IcViewOff,
-  "view-on": IcViewOn,
-  "waiting-medium": IcWaitingMedium,
-  "whatsapp-large": IcWhatsappLarge,
+  'view-off': IcViewOff,
+  'view-on': IcViewOn,
+  'waiting-medium': IcWaitingMedium,
+  'whatsapp-large': IcWhatsappLarge,
   whatsapp: IcWhatsapp,
   wifi: IcWifi,
   windowed: IcWindowed,
-  "work-status": IcWorkStatus,
-  "workplace-medium": IcWorkplaceMedium,
-  "workplace-small": IcWorkplaceSmall,
-  "yes-or-no": IcYesOrNo,
-  "zoom-in-medium": IcZoomInMedium,
-  "zoom-out-medium": IcZoomOutMedium,
+  'work-status': IcWorkStatus,
+  'workplace-medium': IcWorkplaceMedium,
+  'workplace-small': IcWorkplaceSmall,
+  'yes-or-no': IcYesOrNo,
+  'zoom-in-medium': IcZoomInMedium,
+  'zoom-out-medium': IcZoomOutMedium,
 };
 
 export type IconNames = keyof typeof icons;
@@ -926,6 +930,7 @@ export {
   IcPaste as PasteIcon,
   IcPaymentMedium as PaymentMediumIcon,
   IcPhoneLine as PhoneLineIcon,
+  IcPhotoMedium as PhotoMediumIcon,
   IcPhoto as PhotoIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
@@ -982,6 +987,7 @@ export {
   IcSubtract as SubtractIcon,
   IcSummeryView as SummeryViewIcon,
   IcSympathyMedium as SympathyMediumIcon,
+  IcTable as TableIcon,
   IcTack as TackIcon,
   IcTag as TagIcon,
   IcTargetMedium as TargetMediumIcon,

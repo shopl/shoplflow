@@ -122,23 +122,42 @@ export const BodyFooter: Story = {
   ),
 };
 
+const TestModalTopComponent = () => {
+  const [topHeight, setTopHeight] = useState<number>(80);
+  return (
+    <Modal.Top>
+      <div style={{ height: `${topHeight}px`, width: '100%', backgroundColor: colorTokens.primary100 }}>Modal.Top</div>
+      <Button
+        sizeVar={'XS'}
+        onClick={() => {
+          if (topHeight === 80) {
+            setTopHeight(160);
+          } else {
+            setTopHeight(80);
+          }
+        }}
+      >
+        Top Height: {topHeight}px
+      </Button>
+    </Modal.Top>
+  );
+};
+
 export const AllComponents: StoryFn<ModalContainerProps> = (args) => {
   const { addModal, removeModal } = useHandleModal();
 
   const handleOpenModal = () => {
     addModal(
-      <Modal.Container {...args}>
+      <Modal.Container {...args} height={720}>
         <Modal.Header>
           <Text typography={'title1_700'}>모달 해더 영역</Text>
         </Modal.Header>
-        <Modal.Top>
-          <div style={{ height: '100px', width: '100%', backgroundColor: colorTokens.primary100 }}>Modal.Top</div>
-        </Modal.Top>
+        <TestModalTopComponent />
         <Modal.Body>
           <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>
         </Modal.Body>
         <Modal.Bottom>
-          <div style={{ height: '100px', width: '100%', backgroundColor: colorTokens.primary100 }}>Modal.Bottom</div>
+          <div style={{ height: '100px', width: '100%', backgroundColor: colorTokens.primary100 }}></div>
         </Modal.Bottom>
         <Modal.Footer>
           <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>

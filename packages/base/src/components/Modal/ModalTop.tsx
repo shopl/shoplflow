@@ -4,19 +4,28 @@ import type { ModalTopProps } from './Modal.types';
 
 const ModalTop = ({ children }: ModalTopProps) => {
   const [topRef, setTopRef] = useState<HTMLElement | null>(null);
-  const { setHeightToDeduct, clearHeightToDeduct } = useModalOption();
+  const { setTopHeight, clearTopHeight } = useModalOption();
 
   useEffect(() => {
-    if (!topRef) {
+    if (!topRef || !setTopHeight) {
       return;
     }
 
-    const { height } = topRef.getBoundingClientRect();
+    const updateHeight = () => {
+      const { height } = topRef.getBoundingClientRect();
+      setTopHeight(height);
+    };
 
-    setHeightToDeduct?.(height);
+    updateHeight();
 
-    return () => clearHeightToDeduct();
-  }, [topRef, setHeightToDeduct, clearHeightToDeduct]);
+    const resizeObserver = new ResizeObserver(updateHeight);
+    resizeObserver.observe(topRef);
+
+    return () => {
+      resizeObserver.disconnect();
+      clearTopHeight();
+    };
+  }, [topRef, setTopHeight, clearTopHeight]);
 
   return <div ref={setTopRef}>{children}</div>;
 };

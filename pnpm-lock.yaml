@@ -251,8 +251,8 @@ importers:
   packages/extension:
     dependencies:
       '@shoplflow/base':
-        specifier: ^0.45.14
-        version: 0.45.16(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.45.17
+        version: link:../base
       chart.js:
         specifier: ^4.4.0
         version: 4.5.1
@@ -4300,68 +4300,6 @@ packages:
 
   /@rtsao/scc@1.1.0:
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
-
-  /@shoplflow/base@0.45.16(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-a4M0vqN4nF48QVdvpU9umlw4egzlCVs01ihNK9v2qEMf4ncEVD+XAPJT8PjpASYTyCWf8DLfmvK1JKtTHdtbsg==}
-    peerDependencies:
-      '@emotion/react': ^11
-      '@emotion/styled': ^11
-      react: ^18
-      react-dom: ^18
-    dependencies:
-      '@emotion/react': 11.14.0(@types/react@18.2.29)(react@18.2.0)
-      '@emotion/styled': 11.14.1(@emotion/react@11.14.0)(@types/react@18.2.29)(react@18.2.0)
-      '@floating-ui/core': 1.7.4
-      '@floating-ui/react': 0.26.28(react-dom@18.2.0)(react@18.2.0)
-      '@floating-ui/react-dom': 2.1.7(react-dom@18.2.0)(react@18.2.0)
-      '@shoplflow/hada-assets': 0.1.10(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(react-dom@18.2.0)(react@18.2.0)
-      '@shoplflow/shopl-assets': 0.12.35(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(react-dom@18.2.0)(react@18.2.0)
-      '@shoplflow/utils': 0.7.2(react@18.2.0)
-      date-fns: 3.6.0
-      framer-motion: 10.12.6(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-      react-custom-scrollbars-2: 4.5.0(react-dom@18.2.0)(react@18.2.0)
-      react-datepicker: 7.6.0(react-dom@18.2.0)(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      simplebar-react: 3.3.2(react@18.2.0)
-    dev: false
-
-  /@shoplflow/hada-assets@0.1.10(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-IZnSbFIa4KQDx6on5AxvmCf208c03hRUjaBkR1yiwvDzhtqe5wWnSufEHC3s5SNcRgnPNtWmzIesU2ZyT76DDA==}
-    peerDependencies:
-      '@emotion/react': '*'
-      '@emotion/styled': '*'
-      react: '*'
-      react-dom: '*'
-    dependencies:
-      '@emotion/react': 11.14.0(@types/react@18.2.29)(react@18.2.0)
-      '@emotion/styled': 11.14.1(@emotion/react@11.14.0)(@types/react@18.2.29)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@shoplflow/shopl-assets@0.12.35(@emotion/react@11.14.0)(@emotion/styled@11.14.1)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-rUcQM9ppfAeoxVk1PppsEWlb2F+rmr4o9qfrocBsJZigyTBBCVHq17tOL7afjEe3irHZ1gE10xAKGWeYdFnluQ==}
-    peerDependencies:
-      '@emotion/react': '*'
-      '@emotion/styled': '*'
-      react: '*'
-      react-dom: '*'
-    dependencies:
-      '@emotion/react': 11.14.0(@types/react@18.2.29)(react@18.2.0)
-      '@emotion/styled': 11.14.1(@emotion/react@11.14.0)(@types/react@18.2.29)(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@shoplflow/utils@0.7.2(react@18.2.0):
-    resolution: {integrity: sha512-25GG1mTRwccDg+P15oupD61PJjtrGC4qB3+bXAMUbszfKrbCt3oIA5hMZgcultE0N9GNI4VUna8HuC+XMKFehw==}
-    peerDependencies:
-      react: '*'
-    dependencies:
-      lodash-es: 4.17.21
-      react: 18.2.0
-    dev: false
 
   /@sinclair/typebox@0.24.51:
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}

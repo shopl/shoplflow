@@ -46,6 +46,16 @@ export const StyledInput = styled.input<{
   }
 `;
 
+export const LeftElementWrapper = styled.div<{
+  sizeVar?: InputSizeVariantType;
+  initialType?: HTMLInputTypeAttribute;
+}>`
+  padding: ${({ sizeVar }) => (sizeVar === 'S' ? '0 0 0 8px' : '0 0 0 12px')};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const RightElementWrapper = styled.div<{
   sizeVar?: InputSizeVariantType;
   type?: HTMLInputTypeAttribute;

@@ -1,6 +1,6 @@
 import type { ChangeEvent, FocusEvent, HTMLInputTypeAttribute } from 'react';
 import React, { forwardRef, useCallback, useEffect, useId, useState } from 'react';
-import { RightElementWrapper, StyledInput, ClearIconButton } from './Input.styled';
+import { RightElementWrapper, StyledInput, ClearIconButton, LeftElementWrapper } from './Input.styled';
 import TextCounter from '../common/TextCounter';
 import type { InputProps } from './Input.types';
 import { IconButton } from '../../Buttons';
@@ -36,6 +36,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       gap,
       initIsFocused,
       rightSourceStyle,
+      leftSource,
       ...rest
     },
     ref,
@@ -139,7 +140,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         setText(slicedText);
       }
     }, [convertToString, maxLength, sliceText, value]);
-
+    8;
     useEffect(() => {
       setType(initialType);
     }, [initialType]);
@@ -173,6 +174,12 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         gap={gap}
         sizeVar={sizeVar}
       >
+        {leftSource && (
+          <LeftElementWrapper sizeVar={sizeVar} initialType={initialType} style={rightSourceStyle}>
+            {leftSource}
+          </LeftElementWrapper>
+        )}
+
         <div style={{ position: 'relative', width: '100%' }}>
           <StyledInput
             onFocus={handleOnFocus}

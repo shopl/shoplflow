@@ -14,7 +14,8 @@ const ModalBody = ({
   padding,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useViewportSizeObserver();
-  const { heightToDeduct } = useModalOption();
+  const { topHeight, bottomHeight } = useModalOption();
+  const heightToDeduct = topHeight + bottomHeight;
 
   const headerHeight = 64;
   const footerHeight = 72;

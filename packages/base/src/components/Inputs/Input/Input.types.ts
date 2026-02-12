@@ -1,5 +1,11 @@
 import type { InputHTMLAttributes } from 'react';
-import type { DisableProps, RightElementProps, ErrorProps, SizeVariantProps } from '../../../utils/type/ComponentProps';
+import type {
+  DisableProps,
+  RightElementProps,
+  ErrorProps,
+  SizeVariantProps,
+  LeftElementProps,
+} from '../../../utils/type/ComponentProps';
 import type { BorderRadiusTokens } from '../../../styles';
 import type { $Values } from '@shoplflow/utils';
 
@@ -11,9 +17,11 @@ export const InputSizeVariants = {
 export type InputSizeVariantType = $Values<typeof InputSizeVariants>;
 
 export interface InputProps
-  extends InputOptionProps,
+  extends
+    InputOptionProps,
     Omit<InputHTMLAttributes<HTMLInputElement>, 'width'>,
     DisableProps,
+    LeftElementProps,
     RightElementProps {}
 
 export interface InputOptionProps extends ErrorProps, SizeVariantProps<InputSizeVariantType> {
