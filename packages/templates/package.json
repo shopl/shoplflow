@@ -10,8 +10,7 @@
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
     "dev:stories": "storybook dev -p 6008",
-    "dev": "tsup --watch",
-    "build-storybook": "storybook build"
+    "dev": "tsup --watch"
   },
   "main": "./src/index.ts",
   "exports": {

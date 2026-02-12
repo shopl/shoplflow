@@ -64,10 +64,6 @@
     "dev:storybook": {
       "persistent": true,
       "cache": false
-    },
-    "dev:docs": {
-      "persistent": true,
-      "cache": false
     }
   }
 }
