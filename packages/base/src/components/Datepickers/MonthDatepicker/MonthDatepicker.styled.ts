@@ -51,7 +51,7 @@ export const getEachMonthAreaStyle = (props: MonthDatepickerStyleType & { isRead
         right: 0;
         top: 0;
         bottom: 0;
-        width: 48px;
+        width: 50%;
         background: ${colorTokens.primary100};
       }
     `;
@@ -65,7 +65,7 @@ export const getEachMonthAreaStyle = (props: MonthDatepickerStyleType & { isRead
         left: 0;
         top: 0;
         bottom: 0;
-        width: 48px;
+        width: 50%;
         background: ${colorTokens.primary100};
       }
     `;
