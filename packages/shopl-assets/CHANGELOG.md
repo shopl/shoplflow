@@ -1,5 +1,13 @@
 # @shoplflow/shopl-assets
 
+## 0.12.37
+
+### Patch Changes
+
+- [#727](https://github.com/shopl/shoplflow/pull/727) [`5d4066e3f396c470f9c133b61027ec347f7f28d7`](https://github.com/shopl/shoplflow/commit/5d4066e3f396c470f9c133b61027ec347f7f28d7) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
+- [#727](https://github.com/shopl/shoplflow/pull/727) [`137bc680096f56d2fb682d744fcde1d45eae3f4b`](https://github.com/shopl/shoplflow/commit/137bc680096f56d2fb682d744fcde1d45eae3f4b) Thanks [@github-actions](https://github.com/apps/github-actions)! - icon 추가
+
 ## 0.12.36
 
 ### Patch Changes
@@ -393,7 +401,6 @@
 ### Minor Changes
 
 - [#178](https://github.com/shopl/shoplflow/pull/178) [`afaef60`](https://github.com/shopl/shoplflow/commit/afaef602ffc6bdec0a5dc2c353923f60047f454a) Thanks [@Jason-Jeong-Dev](https://github.com/Jason-Jeong-Dev)! - 아이콘 업데이트
-
   - ic-close-small.svg
   - ic-edit-line.svg
   - ic-edit-solid.svg

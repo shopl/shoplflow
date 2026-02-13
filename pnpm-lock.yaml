@@ -251,8 +251,8 @@ importers:
   packages/extension:
     dependencies:
       '@shoplflow/base':
-        specifier: ^0.46.0
-        version: 0.46.0(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^0.46.1
+        version: 0.46.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       chart.js:
         specifier: ^4.4.0
         version: 4.5.1
@@ -2342,8 +2342,8 @@ packages:
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
-  '@shoplflow/base@0.46.0':
-    resolution: {integrity: sha512-BRugWhBzLygWT1R1+H1+UQIu7RRQgRq5MI8pwpzmI6Q3VnMyT5YbrShvzk4fmB4PH4US1/axQevJaAeJomLruA==}
+  '@shoplflow/base@0.46.1':
+    resolution: {integrity: sha512-WnBxXp7REtskFBTXP4D3Nyx7s/KY2nUyPFBu9dSNfBWMDZTp2xY9Lf8wXInn6ERNvG9sIyeZxT9AjQ0C6HwZRA==}
     peerDependencies:
       '@emotion/react': ^11
       '@emotion/styled': ^11
@@ -2358,8 +2358,8 @@ packages:
       react: '*'
       react-dom: '*'
 
-  '@shoplflow/shopl-assets@0.12.36':
-    resolution: {integrity: sha512-/RgwxSb4aw9negmQgIBqDyeN9IcN2jCtp9Zqcd9gz8vcGnBjU7PJZzaimoyBMJ1GrBDfJMMEcB9PeQNwuUPvsA==}
+  '@shoplflow/shopl-assets@0.12.37':
+    resolution: {integrity: sha512-LqWak4iampLQFmF0JnsiXVE2fqUHyY6I6e8eQb+SrvitYCkj/OvnXX6ayQWtpLwEU6p9avZuS0g/+P5Hnp3jMg==}
     peerDependencies:
       '@emotion/react': '*'
       '@emotion/styled': '*'
@@ -9750,7 +9750,7 @@ snapshots:
 
   '@rtsao/scc@1.1.0': {}
 
-  '@shoplflow/base@0.46.0(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@shoplflow/base@0.46.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@emotion/react': 11.14.0(@types/react@18.2.29)(react@18.2.0)
       '@emotion/styled': 11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0)
@@ -9758,7 +9758,7 @@ snapshots:
       '@floating-ui/react': 0.26.28(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@floating-ui/react-dom': 2.1.7(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@shoplflow/hada-assets': 0.1.10(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@shoplflow/shopl-assets': 0.12.36(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@shoplflow/shopl-assets': 0.12.37(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@shoplflow/utils': 0.8.0(react@18.2.0)
       date-fns: 3.6.0
       framer-motion: 10.12.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -9775,7 +9775,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@shoplflow/shopl-assets@0.12.36(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@shoplflow/shopl-assets@0.12.37(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@emotion/react': 11.14.0(@types/react@18.2.29)(react@18.2.0)
       '@emotion/styled': 11.14.1(@emotion/react@11.14.0(@types/react@18.2.29)(react@18.2.0))(@types/react@18.2.29)(react@18.2.0)
