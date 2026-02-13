@@ -40,6 +40,7 @@ import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
 import IcBox from './IcBox';
 import IcBriefcase from './IcBriefcase';
+import IcBuilding from './IcBuilding';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
 import IcByPlaceOfWorkMedium from './IcByPlaceOfWorkMedium';
 import IcCake from './IcCake';
@@ -217,6 +218,8 @@ import IcListMove from './IcListMove';
 import IcListview from './IcListview';
 import IcLocation from './IcLocation';
 import IcLockerXlarge from './IcLockerXlarge';
+import IcMailbox from './IcMailbox';
+import IcMapPin from './IcMapPin';
 import IcMap from './IcMap';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemberSmall from './IcMemberSmall';
@@ -251,6 +254,7 @@ import IcPaymentMedium from './IcPaymentMedium';
 import IcPhoneLine from './IcPhoneLine';
 import IcPhotoMedium from './IcPhotoMedium';
 import IcPhoto from './IcPhoto';
+import IcPinCheck from './IcPinCheck';
 import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
@@ -315,6 +319,7 @@ import IcTimeLineLine from './IcTimeLineLine';
 import IcTodoMedium from './IcTodoMedium';
 import IcToggleMedium from './IcToggleMedium';
 import IcTrash from './IcTrash';
+import IcTruck from './IcTruck';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
@@ -379,6 +384,7 @@ const icons = {
   'bookmark-medium': IcBookmarkMedium,
   box: IcBox,
   briefcase: IcBriefcase,
+  building: IcBuilding,
   'by-employee-medium': IcByEmployeeMedium,
   'by-place-of-work-medium': IcByPlaceOfWorkMedium,
   cake: IcCake,
@@ -556,6 +562,8 @@ const icons = {
   listview: IcListview,
   location: IcLocation,
   'locker-xlarge': IcLockerXlarge,
+  mailbox: IcMailbox,
+  'map-pin': IcMapPin,
   map: IcMap,
   'member-medium': IcMemberMedium,
   'member-small': IcMemberSmall,
@@ -590,6 +598,7 @@ const icons = {
   'phone-line': IcPhoneLine,
   'photo-medium': IcPhotoMedium,
   photo: IcPhoto,
+  'pin-check': IcPinCheck,
   'pin-xlarge': IcPinXlarge,
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
@@ -654,6 +663,7 @@ const icons = {
   'todo-medium': IcTodoMedium,
   'toggle-medium': IcToggleMedium,
   trash: IcTrash,
+  truck: IcTruck,
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
@@ -721,6 +731,7 @@ export {
   IcBookmarkMedium as BookmarkMediumIcon,
   IcBox as BoxIcon,
   IcBriefcase as BriefcaseIcon,
+  IcBuilding as BuildingIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
   IcByPlaceOfWorkMedium as ByPlaceOfWorkMediumIcon,
   IcCake as CakeIcon,
@@ -898,6 +909,8 @@ export {
   IcListview as ListviewIcon,
   IcLocation as LocationIcon,
   IcLockerXlarge as LockerXlargeIcon,
+  IcMailbox as MailboxIcon,
+  IcMapPin as MapPinIcon,
   IcMap as MapIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemberSmall as MemberSmallIcon,
@@ -932,6 +945,7 @@ export {
   IcPhoneLine as PhoneLineIcon,
   IcPhotoMedium as PhotoMediumIcon,
   IcPhoto as PhotoIcon,
+  IcPinCheck as PinCheckIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
@@ -996,6 +1010,7 @@ export {
   IcTodoMedium as TodoMediumIcon,
   IcToggleMedium as ToggleMediumIcon,
   IcTrash as TrashIcon,
+  IcTruck as TruckIcon,
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
