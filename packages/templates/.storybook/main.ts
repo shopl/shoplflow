@@ -12,15 +12,20 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
 }
 const config: StorybookConfig = {
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
+  },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-a11y"),
-    getAbsolutePath("@storybook/addon-designs"),
-    getAbsolutePath("@storybook/addon-docs"),
-    getAbsolutePath("storybook-addon-code-editor"),
+    "@storybook/addon-links",
+    "@storybook/addon-a11y",
+    "@storybook/addon-designs",
+    "@storybook/addon-docs",
+    "storybook-addon-code-editor",
+    "@storybook/addon-themes",
     {
-      name: getAbsolutePath("@storybook/addon-mcp"),
+      name: "@storybook/addon-mcp",
       options: {
         toolsets: {
           dev: true,
@@ -29,16 +34,32 @@ const config: StorybookConfig = {
       },
     },
   ],
-  framework: {
-    name: getAbsolutePath("@storybook/react-vite"),
-    options: {},
-  },
+  
   viteFinal: async (config) => {
     return {
       ...config,
+      plugins: [
+        ...(config.plugins || []),
+        // MDX/addon-docs가 file:// 절대 경로로 mdx-react-shim 등을 불러올 때 Vite가 해석하도록 변환
+        {
+          name: "resolve-file-protocol",
+          enforce: "pre",
+          resolveId(source: string) {
+            if (source.startsWith("file://")) {
+              return source.replace("file://", "");
+            }
+            return null;
+          },
+        },
+      ],
       optimizeDeps: {
         ...config.optimizeDeps,
-        include: ['@shoplflow/shopl-assets', '@shoplflow/hada-assets'],
+        include: [
+          ...(config.optimizeDeps?.include ?? []),
+          '@shoplflow/shopl-assets',
+          '@shoplflow/hada-assets',
+          '@storybook/addon-docs',
+        ],
       },
     };
   },

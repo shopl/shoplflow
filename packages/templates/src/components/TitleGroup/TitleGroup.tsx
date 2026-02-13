@@ -1,4 +1,5 @@
 import { Icon, IconButton, Stack, StackContainer, Text, Tooltip } from '@shoplflow/base';
+import type { ChildrenProps } from '@shoplflow/base';
 import { StyledRequired, getTypographyAndColor } from './TitleGroup.styled';
 import type {
   ActionsProps,
@@ -7,7 +8,6 @@ import type {
   TitleGroupProps,
   TitleGroupHelpIconProps,
 } from './TitleGroup.types';
-import type { ChildrenProps } from '@shoplflow/base/src/utils/type/ComponentProps';
 import { HelpLineIcon } from '@shoplflow/shopl-assets';
 
 const TitleGroupHelpIcon = ({

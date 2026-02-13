@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import Menu from './Menu';
-import type { MenuProps } from './Menu.types';
+import { MenuSizeVariants, type MenuProps } from './Menu.types';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';
 import { Checkbox } from '../ControlButtons';
@@ -14,6 +14,12 @@ import { ScrollArea } from '../ScrollArea';
 const meta = {
   title: 'COMPONENTS/Menu',
   component: Menu,
+  argTypes: {
+    sizeVar: {
+      control: 'select',
+      options: Object.values(MenuSizeVariants),
+    },
+  },
 } satisfies Meta<typeof Menu>;
 
 export default meta;

@@ -79,7 +79,7 @@
     "@storybook/addon-docs": "^10.2.4",
     "@storybook/addon-links": "^10.2.1",
     "@storybook/addon-mcp": "^0.2.2",
-    "@storybook/jest": "^0.2.3",
+    "@storybook/addon-themes": "^10.2.8",
     "@storybook/react-vite": "^10.2.1",
     "@types/node": "20.4.9",
     "@types/react": "^18.2.0",
