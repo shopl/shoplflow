@@ -1,4 +1,9 @@
 packages:
-  - "packages/**"
+  - packages/**
   - '!**/test/**'
-  - 'test-env'
+  - test-env
+
+ignoredBuiltDependencies:
+  - '@swc/core'
+  - core-js-pure
+  - unrs-resolver

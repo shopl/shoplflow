@@ -1,7 +1,6 @@
-import { expect } from '@storybook/jest';
-
+/* eslint-disable storybook/use-storybook-expect -- Storybook 10: expect from storybook/test (@storybook/jest deprecated) */
 import type { Meta, StoryFn } from '@storybook/react-vite';
-import { within, userEvent } from 'storybook/test';
+import { expect, within, userEvent } from 'storybook/test';
 import { Stack } from '../Stack';
 import { SearchBar } from './SearchBar';
 import type { SearchBarProps, DropdownItem, MemoizedSearchBarComponent, SearchBarInputProps } from './SearchBar.types';
