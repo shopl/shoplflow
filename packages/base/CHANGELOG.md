@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.46.2
+
+### Patch Changes
+
+- [#732](https://github.com/shopl/shoplflow/pull/732) [`5758ccf895e18ebd421dd12c1b9e04a6734d1be3`](https://github.com/shopl/shoplflow/commit/5758ccf895e18ebd421dd12c1b9e04a6734d1be3) Thanks [@velo-kim](https://github.com/velo-kim)! - Changesets Workflow 배포 액션 확인
+
+- [#733](https://github.com/shopl/shoplflow/pull/733) [`7dd65c897154e18598d558f13ffeab858d93f409`](https://github.com/shopl/shoplflow/commit/7dd65c897154e18598d558f13ffeab858d93f409) Thanks [@velo-kim](https://github.com/velo-kim)! - changesets-workflow action 확인
+
+- [#730](https://github.com/shopl/shoplflow/pull/730) [`8bfbde05e5e6ed8b38cfe4cc768e6011c0958961`](https://github.com/shopl/shoplflow/commit/8bfbde05e5e6ed8b38cfe4cc768e6011c0958961) Thanks [@velo-kim](https://github.com/velo-kim)! - update: turbo version update (v1 -> v2)
+
 ## 0.46.1
 
 ### Patch Changes
