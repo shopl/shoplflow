@@ -3,7 +3,7 @@
   "globalDependencies": [
     "**/.env.*local"
   ],
-  "pipeline": {
+  "tasks": {
     "build:illustrations": {
       "cache": false
     },
@@ -15,14 +15,11 @@
         "build:illustrations",
         "build:icons"
       ],
-      "cache": false,
       "outputs": [
         "dist/**"
       ]
     },
-    "build:mdx": {},
     "build:package": {
-      "cache": false,
       "dependsOn": [
         "^build:package",
         "build:illustrations",
@@ -34,7 +31,6 @@
       ]
     },
     "build:storybook": {
-      "cache": false,
       "dependsOn": [
         "build:package"
       ],
@@ -43,13 +39,16 @@
       ]
     },
     "build": {
-      "cache": false,
       "dependsOn": [
         "^build",
         "build:package"
       ],
-      "outputs": ["dist/**", "storybook-static/**", ".next"]
+      "outputs": [
+        "dist/**",
+        "storybook-static/**"
+      ]
     },
+    "build:mdx": {},
     "lint": {},
     "test": {},
     "type-check": {},
@@ -58,12 +57,12 @@
       "persistent": true
     },
     "dev:stories": {
-      "persistent": true,
-      "cache": false
+      "cache": false,
+      "persistent": true
     },
     "dev:storybook": {
-      "persistent": true,
-      "cache": false
+      "cache": false,
+      "persistent": true
     }
   }
 }
