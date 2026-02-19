@@ -3,9 +3,12 @@
  * 컴포넌트 버전 자동 관리 (version.ts 단일 소스)
  * - sync: 각 컴포넌트 version.ts를 읽어 VERSIONING.md 테이블의 샤플플로우 버전을 갱신
  * - bump [Category...]: 지정 카테고리의 version.ts 패치만 올린 뒤, VERSIONING.md 동기화
+ * - validate [Category...]: 수동 변경된 version.ts의 버전이 올바른지 검증 후 CLI 확인
  */
 import fs from 'fs';
 import path from 'path';
+import readline from 'readline';
+import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,7 +18,6 @@ const COMPONENTS_DIR = path.join(BASE, 'src', 'components');
 
 const VERSION_RE = /export\s+const\s+\w+\s+=\s+'(\d+\.\d+\.\d+)'/;
 
-/** 카테고리(폴더명) → version.ts 상수명 */
 const CATEGORY_TO_CONST = {
   Avatar: 'AVATAR_VERSION',
   BackDrop: 'BACK_DROP_VERSION',
@@ -48,7 +50,8 @@ const CATEGORY_TO_CONST = {
   Tree: 'TREE_VERSION',
 };
 
-/** version.ts 파일에서 버전 문자열 추출 */
+// ─── 유틸 ───
+
 function getVersionFromVersionTs(category) {
   const versionPath = path.join(COMPONENTS_DIR, category, 'version.ts');
   if (!fs.existsSync(versionPath)) return null;
@@ -57,7 +60,40 @@ function getVersionFromVersionTs(category) {
   return m ? m[1] : null;
 }
 
-/** 모든 카테고리의 version.ts에서 버전 수집 */
+/** git HEAD의 version.ts에서 이전 버전 추출 */
+function getOldVersionFromGit(category) {
+  const relPath = `packages/base/src/components/${category}/version.ts`;
+  try {
+    const content = execSync(`git show HEAD:${relPath}`, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] });
+    const m = content.match(VERSION_RE);
+    return m ? m[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+function parseSemver(v) {
+  const [major, minor, patch] = v.split('.').map(Number);
+  return { major, minor, patch };
+}
+
+function semverGt(a, b) {
+  const pa = parseSemver(a);
+  const pb = parseSemver(b);
+  if (pa.major !== pb.major) return pa.major > pb.major;
+  if (pa.minor !== pb.minor) return pa.minor > pb.minor;
+  return pa.patch > pb.patch;
+}
+
+function describeChange(oldV, newV) {
+  const o = parseSemver(oldV);
+  const n = parseSemver(newV);
+  if (n.major !== o.major) return '메이저 변경';
+  if (n.minor !== o.minor) return '마이너 변경';
+  if (n.patch !== o.patch) return '패치 변경';
+  return '변경 없음';
+}
+
 function getAllVersionsFromVersionTs() {
   const map = new Map();
   for (const category of Object.keys(CATEGORY_TO_CONST)) {
@@ -91,21 +127,29 @@ function parseVersioningMd(content) {
   return rows;
 }
 
-/** VERSIONING.md의 샤플플로우 버전 컬럼을 version.ts 값으로 치환 */
+/** 샤플플로우 메이저.마이너 vs 디자인 메이저.마이너 비교하여 현황 반환 */
+function computeStatus(shoplflowVersion, designVersion) {
+  const [sMajor, sMinor] = shoplflowVersion.split('.').map(Number);
+  const [dMajor, dMinor] = designVersion.split('.').map(Number);
+  if (sMajor === dMajor && sMinor === dMinor) return '🟢';
+  if (sMajor > dMajor || (sMajor === dMajor && sMinor > dMinor)) return '🔵';
+  return '🔴';
+}
+
 function updateVersioningMdFromVersionTs(content, versionByCategory) {
   const rows = parseVersioningMd(content);
   let out = content;
   for (const row of rows) {
-    const newVersion = versionByCategory.get(row.category);
-    if (newVersion == null || newVersion === row.version) continue;
+    const newVersion = versionByCategory.get(row.category) ?? row.version;
+    const newStatus = computeStatus(newVersion, row.design);
+    if (newVersion === row.version && newStatus === row.status) continue;
     const oldRow = `| ${row.category} | ${row.component} | ${row.version} | ${row.design} | ${row.status} |`;
-    const newRow = `| ${row.category} | ${row.component} | ${newVersion} | ${row.design} | ${row.status} |`;
+    const newRow = `| ${row.category} | ${row.component} | ${newVersion} | ${row.design} | ${newStatus} |`;
     out = out.replace(oldRow, newRow);
   }
   return out;
 }
 
-/** version.ts 기준으로 VERSIONING.md 테이블 갱신 */
 function syncDoc() {
   const versionByCategory = getAllVersionsFromVersionTs();
   const raw = fs.readFileSync(VERSIONING_PATH, 'utf8');
@@ -116,6 +160,7 @@ function syncDoc() {
   } else {
     console.log('VERSIONING.md is already up to date');
   }
+  // 위 두 경우 모두 성공 — pre-commit은 계속 진행되어 커밋 가능
 }
 
 function bumpPatch(version) {
@@ -132,7 +177,78 @@ function writeVersionTs(category, version) {
   fs.writeFileSync(versionPath, content, 'utf8');
 }
 
-function main() {
+// ─── validate ───
+
+function openTtyInput() {
+  try {
+    const fd = fs.openSync('/dev/tty', 'r');
+    return fs.createReadStream(null, { fd });
+  } catch {
+    return process.stdin;
+  }
+}
+
+function promptYesNo(question) {
+  return new Promise((resolve) => {
+    const input = openTtyInput();
+    const rl = readline.createInterface({ input, output: process.stdout });
+    rl.question(question, (answer) => {
+      rl.close();
+      resolve(answer.trim().toLowerCase() === 'y');
+    });
+  });
+}
+
+async function validateCategories(categories) {
+  const errors = [];
+  const changes = [];
+
+  for (const category of categories) {
+    const newVersion = getVersionFromVersionTs(category);
+    const oldVersion = getOldVersionFromGit(category);
+
+    if (!newVersion) {
+      errors.push(`  ❌ ${category}: version.ts에서 버전을 읽을 수 없습니다.`);
+      continue;
+    }
+
+    if (!oldVersion) {
+      changes.push({ category, oldVersion: '(신규)', newVersion, type: '신규 추가' });
+      continue;
+    }
+
+    if (newVersion === oldVersion) continue;
+
+    changes.push({ category, oldVersion, newVersion, type: describeChange(oldVersion, newVersion) });
+  }
+
+  if (errors.length > 0) {
+    console.log('\n🚫 버전 검증 실패:\n');
+    errors.forEach((e) => console.log(e));
+    console.log('\n버전을 수정한 뒤 다시 커밋해주세요.');
+    process.exit(1);
+  }
+
+  if (changes.length === 0) return;
+
+  console.log('\n📦 수동 버전 변경 감지:\n');
+  for (const c of changes) {
+    console.log(`  ${c.category}: ${c.oldVersion} → ${c.newVersion} (${c.type})`);
+  }
+  console.log();
+
+  const confirmed = await promptYesNo('이 변경을 적용하시겠습니까? (y/n) ');
+  if (!confirmed) {
+    console.log('\n커밋이 취소되었습니다.');
+    process.exit(1);
+  }
+
+  console.log();
+}
+
+// ─── main ───
+
+async function main() {
   const args = process.argv.slice(2);
   const cmd = args[0];
 
@@ -163,7 +279,18 @@ function main() {
     return;
   }
 
-  console.log('Usage: node component-version.mjs sync | bump Category1 Category2 ...');
+  if (cmd === 'validate') {
+    const categories = args.slice(1).filter(Boolean);
+    if (categories.length === 0) {
+      console.log('Usage: node component-version.mjs validate Avatar Buttons ...');
+      process.exit(1);
+    }
+    await validateCategories(categories);
+    syncDoc();
+    process.exit(0);
+  }
+
+  console.log('Usage: node component-version.mjs sync | bump Category1 ... | validate Category1 ...');
   process.exit(1);
 }
 
