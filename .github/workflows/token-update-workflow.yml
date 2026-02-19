@@ -62,7 +62,7 @@ jobs:
         if: env.PATH_UPDATED == 'true'
         run: |
           pnpm build:assets
-          pnpm --filter base build:tokens
+          pnpm --filter @shoplflow/base build:tokens
 
       - name: Checkout to PR branch
         if: env.PATH_UPDATED == 'true'

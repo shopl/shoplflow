@@ -6,10 +6,9 @@ on:
     paths:
       - ".changeset/**"
       - "packages/**"
-      - "docs/**"
     branches:
       - main
-      
+
 jobs:
   release:
     name: Release
@@ -21,6 +20,7 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write # ← OIDC 토큰 발급 권한 (Trusted Publisher 핵심)
+
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
@@ -33,35 +33,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v4
+
       - name: 노드를 설정하고 있어요.
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-      # ✅ (필수) npm CLI 11.5.1+ 보장
+          cache: "pnpm"
+
+      # ✅ (필수) npm CLI 11.5.1+ 보장 (Trusted Publishing용)
       - name: Ensure npm >= 11.5.1 for Trusted Publishing
         run: npm i -g npm@^11.5.1
 
-      - name: pnpm을 설정하고 있어요.
-        run: |
-          npm install -g pnpm@8.6.12
-          pnpm config set store ~/.pnpm-store
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-#      - uses: actions/cache@v3
-#        name: Setup pnpm cache
-#        with:
-#          path: ${{ env.STORE_PATH }}
-#          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-pnpm-store-
-
       - name: Install dependencies
         run: pnpm install
-      - uses: dtinth/setup-github-actions-caching-for-turbo@v1
 
       - name: 패키지를 빌드하고 있어요.
         run: pnpm build
@@ -74,4 +60,3 @@ jobs:
           commit: "ci(changesets): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
