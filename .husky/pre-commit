@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+node scripts/component-version-precommit.mjs
 npx lint-staged && pnpm install && git add . pnpm-lock.yaml **/package.json && pnpm type-check

@@ -13,6 +13,8 @@
   },
   "scripts": {
     "type-check": "tsc --noEmit",
+    "version:sync": "node scripts/component-version.mjs sync",
+    "version:bump": "node scripts/component-version.mjs bump",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
     "generate:component": "scripts/generate-component.sh",
