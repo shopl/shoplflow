@@ -7,17 +7,13 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@changesets/cli':
-        specifier: ^2.29.8
-        version: 2.29.8(@types/node@20.19.33)
-      husky:
-        specifier: 8.0.3
-        version: 8.0.3
     devDependencies:
       '@changesets/changelog-github':
         specifier: ^0.4.8
         version: 0.4.8
+      '@changesets/cli':
+        specifier: ^2.29.8
+        version: 2.29.8(@types/node@20.19.33)
       '@emotion/eslint-plugin':
         specifier: ^11.10.0
         version: 11.12.0(eslint@8.57.1)(typescript@5.9.3)
@@ -63,6 +59,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ^3.0.0
         version: 3.2.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)
+      husky:
+        specifier: 8.0.3
+        version: 8.0.3
       lint-staged:
         specifier: 13.2.3
         version: 13.2.3(enquirer@2.4.1)

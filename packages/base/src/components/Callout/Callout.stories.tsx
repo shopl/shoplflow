@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Callout from './Callout';
 import { CalloutTypes } from './Callout.types';
-import { AlertIcon, NoticeIcon } from '@shoplflow/shopl-assets';
+import { AlertIcon, AlertTriangleIcon, NoticeIcon } from '@shoplflow/shopl-assets';
 import { ComponentStage } from '../../styles/Box';
 
 const meta = {
@@ -50,6 +50,23 @@ export const Playground: Story = {
   ),
 };
 
+export const Caution: Story = {
+  args: {
+    styleVar: 'CAUTION',
+    fillWidth: true,
+  },
+  render: (args) => (
+    <Stack width='500px'>
+      <ComponentStage>
+        <Callout {...args}>
+          <Callout.Icon iconSource={AlertTriangleIcon} />
+          <Callout.Text>주의가 필요한 내용입니다. 변경 전에 입력 내용을 한 번 더 확인해주세요.</Callout.Text>
+        </Callout>
+      </ComponentStage>
+    </Stack>
+  ),
+};
+
 export const Alert: Story = {
   args: {
     styleVar: 'ALERT',
@@ -59,7 +76,10 @@ export const Alert: Story = {
       <ComponentStage>
         <Callout {...args}>
           <Callout.Icon iconSource={AlertIcon} />
-          <Callout.Text>삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.</Callout.Text>
+          <Callout.Text>
+            삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요. 삭제 시 기존의 모든 게시물이
+            삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.
+          </Callout.Text>
         </Callout>
       </ComponentStage>
     </Stack>
@@ -76,6 +96,32 @@ export const WithoutIcon: Story = {
       <ComponentStage>
         <Callout {...args}>
           <Callout.Text>삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.</Callout.Text>
+        </Callout>
+      </ComponentStage>
+    </Stack>
+  ),
+};
+
+export const BulletList: Story = {
+  args: {
+    styleVar: 'ALERT',
+    fillWidth: true,
+  },
+  render: (args) => (
+    <Stack width='500px'>
+      <ComponentStage>
+        <Callout {...args}>
+          <Callout.Icon iconSource={AlertTriangleIcon} />
+          <Stack.Vertical spacing='spacing04'>
+            <Callout.Text>BulletList children은 Callout.Text 컴포넌트를 사용합니다.</Callout.Text>
+
+            <Callout.BulletList>
+              <Callout.Text>두 번째 불릿 항목입니다.</Callout.Text>
+            </Callout.BulletList>
+            <Callout.BulletList>
+              <Callout.Text>세 번째 불릿 항목입니다.</Callout.Text>
+            </Callout.BulletList>
+          </Stack.Vertical>
         </Callout>
       </ComponentStage>
     </Stack>

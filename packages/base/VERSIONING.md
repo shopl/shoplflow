@@ -14,7 +14,7 @@
 | Buttons | DropdownButton | 2.0.0 | 2.0 | 🟢 |
 | Buttons | IconButton | 2.0.0 | 2.0 | 🟢 |
 | Buttons | SplitButton | 2.0.0 | 2.0 | 🟢 |
-| Callout | Callout | 2.0.0 | 2.0 | 🟢 |
+| Callout | Callout | 2.1.1 | 2.0 | 🔵 |
 | Chips | ChipButton | 2.0.0 | 2.0 | 🟢 |
 | Chips | ChipToggle | 2.0.0 | 2.0 | 🟢 |
 | Comboboxs | NumberCombobox | 2.0.0 | 2.0 | 🟢 |
@@ -45,7 +45,7 @@
 | Switch | Switch | 2.0.0 | 2.0 | 🟢 |
 | Tabs | Tabs | 2.0.0 | 2.0 | 🟢 |
 | Tag | Tag | 2.0.0 | 2.0 | 🟢 |
-| Text | Text | 2.0.0 | 2.0 | 🟢 |
+| Text | Text | 2.0.1 | 2.0 | 🟢 |
 | ToggleButton | ToggleButton | 2.0.0 | 2.0 | 🟢 |
 | Tooltip | Tooltip | 2.0.0 | 2.0 | 🟢 |
 | Tree | Tree | 2.0.0 | 2.0 | 🟢 |
