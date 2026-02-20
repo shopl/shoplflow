@@ -3,3 +3,4 @@ export { default as StackContainer } from './StackContainer';
 export * from './StackContainer';
 export * from './StackContainer.types';
 export * from './StackContainer.styled';
+export * from './version';

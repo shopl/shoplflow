@@ -3,6 +3,8 @@ import { StyledAvatar, StyledAvatarBadge, StyledAvatarContainer, StyledAvatarIma
 import type { AvatarProps } from './Avatar.types';
 import AvatarImageNone from '../../assets/mocks/AvatarNone.png';
 
+// TEST, version 올라가는지 확인 중2
+
 const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element => {
   return (
     <StyledAvatarContainer>
