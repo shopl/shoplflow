@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.3
+
+### Patch Changes
+
+- [#737](https://github.com/shopl/shoplflow/pull/737) [`c3fbd1bc48a5ffb02fa656ef0717bd4a989b1120`](https://github.com/shopl/shoplflow/commit/c3fbd1bc48a5ffb02fa656ef0717bd4a989b1120) Thanks [@velo-kim](https://github.com/velo-kim)! - update(dashboard): Callout 2.1.1
+
 ## 0.46.2
 
 ### Patch Changes
