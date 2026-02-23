@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.4
+
+### Patch Changes
+
+- [#739](https://github.com/shopl/shoplflow/pull/739) [`4770d75125407e9db2540c21304c3d2d5cfc2f2f`](https://github.com/shopl/shoplflow/commit/4770d75125407e9db2540c21304c3d2d5cfc2f2f) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): List 컴포넌트 leftSource에 style prop 제거
+
 ## 0.46.3
 
 ### Patch Changes
