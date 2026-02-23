@@ -36,7 +36,7 @@ export const StyledCallout = styled.div<CalloutProps>`
   justify-content: flex-start;
   align-items: start;
   padding: 12px;
-  gap: 4px;
+  gap: 6px;
   border-radius: ${borderRadiusTokens.borderRadius08};
   ${({ styleVar }) => styleVar === 'INFORMATION' && informationStyle}
   ${({ styleVar }) => styleVar === 'CAUTION' && cautionStyle}
