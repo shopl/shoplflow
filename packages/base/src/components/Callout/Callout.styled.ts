@@ -35,7 +35,7 @@ export const StyledCallout = styled.div<CalloutProps>`
   display: flex;
   justify-content: flex-start;
   align-items: start;
-  padding: 6px 8px;
+  padding: 12px;
   gap: 4px;
   border-radius: ${borderRadiusTokens.borderRadius08};
   ${({ styleVar }) => styleVar === 'INFORMATION' && informationStyle}
