@@ -92,6 +92,9 @@ export const With2Rows: Story = {
 export const WithAllSource: Story = {
   args: {
     disabled: false,
+    style: {
+      padding: '8px 0px',
+    },
   },
   render: (args) => (
     <Stack width={'500px'}>
