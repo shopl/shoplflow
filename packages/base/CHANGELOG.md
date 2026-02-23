@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.5
+
+### Patch Changes
+
+- [#741](https://github.com/shopl/shoplflow/pull/741) [`e720eaa922777952e402ef777c3dde0a22a91bd3`](https://github.com/shopl/shoplflow/commit/e720eaa922777952e402ef777c3dde0a22a91bd3) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): Callout gap 변경 4 -> 6px
+
 ## 0.46.4
 
 ### Patch Changes
