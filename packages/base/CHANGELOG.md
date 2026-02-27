@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.6
+
+### Patch Changes
+
+- [#721](https://github.com/shopl/shoplflow/pull/721) [`3dceea73d6a947b58def9b0e507904814c5a76bf`](https://github.com/shopl/shoplflow/commit/3dceea73d6a947b58def9b0e507904814c5a76bf) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(MonthDatepicker): sizeVar props 추
+
 ## 0.46.5
 
 ### Patch Changes
