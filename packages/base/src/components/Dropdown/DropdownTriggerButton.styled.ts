@@ -43,7 +43,7 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
       return css`
         background-color: transparent;
         padding-left: 12px;
-        padding-right: 8px;
+        padding-right: 6px;
       `;
     default:
       return css`
