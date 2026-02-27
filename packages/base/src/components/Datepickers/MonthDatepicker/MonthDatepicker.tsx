@@ -4,6 +4,11 @@ import type { MonthDatepickerProps } from './MonthDatepicker.types';
 import YearStepper from '../stepper/YearStepper';
 import { differenceInCalendarMonths, endOfMonth, startOfMonth } from 'date-fns';
 
+/**
+ * MonthDatepicker 컴포넌트
+ * @version 2.1
+ */
+
 const MonthDatepicker = ({
   handleMonthClick,
   initStartDate,
@@ -11,6 +16,7 @@ const MonthDatepicker = ({
   minDate,
   maxDate,
   onlySingleMonth,
+  sizeVar = 'M',
 }: MonthDatepickerProps) => {
   // 연차 이동에 기준이 되는 날짜
   const [currentDate, setCurrentDate] = useState(initStartDate || new Date());
@@ -97,7 +103,7 @@ const MonthDatepicker = ({
   };
 
   return (
-    <MonthContainer data-shoplflow={'MonthDatepicker'}>
+    <MonthContainer data-shoplflow={'MonthDatepicker'} sizeVar={sizeVar}>
       <YearStepper
         date={currentDate}
         decreaseYear={() => {
