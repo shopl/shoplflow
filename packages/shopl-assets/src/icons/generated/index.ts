@@ -65,6 +65,7 @@ import IcCloseSmall from './IcCloseSmall';
 import IcClose from './IcClose';
 import IcClosingMedium from './IcClosingMedium';
 import IcCloudMedium from './IcCloudMedium';
+import IcCoffeeMedium from './IcCoffeeMedium';
 import IcComment from './IcComment';
 import IcCompanyXlarge from './IcCompanyXlarge';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
@@ -409,6 +410,7 @@ const icons = {
   close: IcClose,
   'closing-medium': IcClosingMedium,
   'cloud-medium': IcCloudMedium,
+  'coffee-medium': IcCoffeeMedium,
   comment: IcComment,
   'company-xlarge': IcCompanyXlarge,
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
@@ -756,6 +758,7 @@ export {
   IcClose as CloseIcon,
   IcClosingMedium as ClosingMediumIcon,
   IcCloudMedium as CloudMediumIcon,
+  IcCoffeeMedium as CoffeeMediumIcon,
   IcComment as CommentIcon,
   IcCompanyXlarge as CompanyXlargeIcon,
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
