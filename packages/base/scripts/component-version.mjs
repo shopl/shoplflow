@@ -194,6 +194,8 @@ function promptYesNo(question) {
     const rl = readline.createInterface({ input, output: process.stdout });
     rl.question(question, (answer) => {
       rl.close();
+      // /dev/tty 스트림은 닫아서 이후 입력 대기를 막음 (process.stdin은 destroy 안 함)
+      if (input !== process.stdin && typeof input.destroy === 'function') input.destroy();
       resolve(answer.trim().toLowerCase() === 'y');
     });
   });
