@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.7
+
+### Patch Changes
+
+- [#746](https://github.com/shopl/shoplflow/pull/746) [`7a717a7c9799e10f1624c54e0ab6f1bf733f35ae`](https://github.com/shopl/shoplflow/commit/7a717a7c9799e10f1624c54e0ab6f1bf733f35ae) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): WeekDatepicker의 year 초기값 로직 변경
+
 ## 0.46.6
 
 ### Patch Changes
