@@ -14,7 +14,7 @@ const WeekDatepicker = ({
   maxDate,
   onlySingleWeek,
 }: WeekDatepickerProps) => {
-  const year = initStartDate?.getFullYear() || new Date().getFullYear();
+  const year = initStartDate ? getISOWeekYear(initStartDate) : getISOWeekYear(new Date());
   const [currentDate, setCurrentDate] = useState(new Date(year, 5, 5));
 
   /**
