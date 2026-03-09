@@ -44,7 +44,7 @@ const NormalHelperText = ({ color, position, children, ...rest }: HelperTextProp
   const getChildren = () => {
     if (typeof children === 'string') {
       return (
-        <Text color={color} typography={'caption_400'} {...rest}>
+        <Text color={color} typography={'paragraph2'} {...rest}>
           {children}
         </Text>
       );
