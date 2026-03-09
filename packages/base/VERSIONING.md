@@ -26,7 +26,7 @@
 | Datepickers | MonthDatepicker | 2.0.2 | 2.0 | 🟢 |
 | Datepickers | WeekDatepicker | 2.0.2 | 2.0 | 🟢 |
 | Dropdown | Dropdown | 2.0.0 | 2.0 | 🟢 |
-| HelperText | HelperText | 2.1.0 | 2.1 | 🟢 |
+| HelperText | HelperText | 2.1.1 | 2.1 | 🟢 |
 | Icon | Icon | 2.0.0 | 2.0 | 🟢 |
 | Inputs | Input | 2.0.0 | 2.0 | 🟢 |
 | Inputs | InputButton | 2.0.0 | 2.0 | 🟢 |
