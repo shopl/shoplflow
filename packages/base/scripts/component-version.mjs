@@ -28,6 +28,7 @@ const CATEGORY_TO_CONST = {
   ControlButtons: 'CONTROL_BUTTONS_VERSION',
   Datepickers: 'DATEPICKERS_VERSION',
   Dropdown: 'DROPDOWN_VERSION',
+  HelperText: 'HELPER_TEXT_VERSION',
   Icon: 'ICON_VERSION',
   Inputs: 'INPUTS_VERSION',
   List: 'LIST_VERSION',

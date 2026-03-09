@@ -4,8 +4,8 @@ import type { TextProps } from '../Text';
 import { Text } from '../Text';
 import type { CalloutIconProps, CalloutProps } from './Callout.types';
 import type { ChildrenProps } from '../../utils/type/ComponentProps';
-import { StackContainer } from '../StackContainer';
-import { colorTokens } from '../../styles';
+import type { ColorTokens } from '../../styles';
+import { HelperText } from '../HelperText';
 
 const Callout = ({ children, styleVar = 'INFORMATION', fillWidth, ...rest }: CalloutProps) => {
   return (
@@ -23,21 +23,11 @@ const CalloutText = ({ children, ...rest }: TextProps) => {
   );
 };
 
-const CalloutBulletList = ({ children }: ChildrenProps) => {
+const CalloutBulletList = ({ children, color = 'neutral700' }: ChildrenProps & { color?: ColorTokens }) => {
   return (
-    <StackContainer.Horizontal spacing='spacing06' width='100%' justify='flex-start' minHeight='20px'>
-      <div
-        style={{
-          marginTop: '8px',
-          backgroundColor: colorTokens.neutral700,
-          width: '3px',
-          height: '3px',
-          borderRadius: '50%',
-          flexShrink: 0,
-        }}
-      />
+    <HelperText type='BULLET' color={color}>
       {children}
-    </StackContainer.Horizontal>
+    </HelperText>
   );
 };
 
