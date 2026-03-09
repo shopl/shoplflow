@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.8
+
+### Patch Changes
+
+- [#748](https://github.com/shopl/shoplflow/pull/748) [`07b06fcd7b4af285afb199bcb929136048147c7f`](https://github.com/shopl/shoplflow/commit/07b06fcd7b4af285afb199bcb929136048147c7f) Thanks [@velo-kim](https://github.com/velo-kim)! - HelperText component 생성
+
 ## 0.46.7
 
 ### Patch Changes
