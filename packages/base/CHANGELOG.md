@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.9
+
+### Patch Changes
+
+- [#750](https://github.com/shopl/shoplflow/pull/750) [`5510aac8f609fdf6335eda6dcb58261a3e3d6cb9`](https://github.com/shopl/shoplflow/commit/5510aac8f609fdf6335eda6dcb58261a3e3d6cb9) Thanks [@velo-kim](https://github.com/velo-kim)! - HelperText typograhpy [paragraph2] 적용
+
 ## 0.46.8
 
 ### Patch Changes
