@@ -118,7 +118,21 @@ export const SmallSize: Story = {
   },
 };
 
-export const ExtraSmallSize: Story = {
+/** Figma Button / Shopl (styleVar=primary, status=default, sizeVar=S) */
+export const ShoplPrimaryS: Story = {
+  args: {
+    styleVar: 'PRIMARY',
+    sizeVar: 'S',
+    children: 'Button',
+    disabled: false,
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=310-5124',
+    },
+  },
+};
   args: {
     styleVar: 'PRIMARY',
     sizeVar: 'XS',
