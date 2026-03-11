@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.10
+
+### Patch Changes
+
+- [#718](https://github.com/shopl/shoplflow/pull/718) [`8328272a8d2abb57b2bc2aeaa7729207bbbbd16c`](https://github.com/shopl/shoplflow/commit/8328272a8d2abb57b2bc2aeaa7729207bbbbd16c) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(dropdown): Dropdown.Button rightSource, onClear props 추가
+
 ## 0.46.9
 
 ### Patch Changes
