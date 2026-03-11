@@ -1,5 +1,91 @@
 # @shoplflow/templates
 
+## 0.2.9
+
+### Patch Changes
+
+- Updated dependencies [[`5510aac8f609fdf6335eda6dcb58261a3e3d6cb9`](https://github.com/shopl/shoplflow/commit/5510aac8f609fdf6335eda6dcb58261a3e3d6cb9)]:
+  - @shoplflow/base@0.46.9
+
+## 0.2.8
+
+### Patch Changes
+
+- Updated dependencies [[`07b06fcd7b4af285afb199bcb929136048147c7f`](https://github.com/shopl/shoplflow/commit/07b06fcd7b4af285afb199bcb929136048147c7f)]:
+  - @shoplflow/base@0.46.8
+
+## 0.2.7
+
+### Patch Changes
+
+- Updated dependencies [[`7a717a7c9799e10f1624c54e0ab6f1bf733f35ae`](https://github.com/shopl/shoplflow/commit/7a717a7c9799e10f1624c54e0ab6f1bf733f35ae)]:
+  - @shoplflow/base@0.46.7
+
+## 0.2.6
+
+### Patch Changes
+
+- Updated dependencies [[`3dceea73d6a947b58def9b0e507904814c5a76bf`](https://github.com/shopl/shoplflow/commit/3dceea73d6a947b58def9b0e507904814c5a76bf)]:
+  - @shoplflow/base@0.46.6
+
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies [[`e720eaa922777952e402ef777c3dde0a22a91bd3`](https://github.com/shopl/shoplflow/commit/e720eaa922777952e402ef777c3dde0a22a91bd3)]:
+  - @shoplflow/base@0.46.5
+
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [[`4770d75125407e9db2540c21304c3d2d5cfc2f2f`](https://github.com/shopl/shoplflow/commit/4770d75125407e9db2540c21304c3d2d5cfc2f2f)]:
+  - @shoplflow/base@0.46.4
+
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies [[`c3fbd1bc48a5ffb02fa656ef0717bd4a989b1120`](https://github.com/shopl/shoplflow/commit/c3fbd1bc48a5ffb02fa656ef0717bd4a989b1120)]:
+  - @shoplflow/base@0.46.3
+
+## 0.2.2
+
+### Patch Changes
+
+- [#730](https://github.com/shopl/shoplflow/pull/730) [`8bfbde05e5e6ed8b38cfe4cc768e6011c0958961`](https://github.com/shopl/shoplflow/commit/8bfbde05e5e6ed8b38cfe4cc768e6011c0958961) Thanks [@velo-kim](https://github.com/velo-kim)! - update: turbo version update (v1 -> v2)
+
+- Updated dependencies [[`5758ccf895e18ebd421dd12c1b9e04a6734d1be3`](https://github.com/shopl/shoplflow/commit/5758ccf895e18ebd421dd12c1b9e04a6734d1be3), [`7dd65c897154e18598d558f13ffeab858d93f409`](https://github.com/shopl/shoplflow/commit/7dd65c897154e18598d558f13ffeab858d93f409), [`8bfbde05e5e6ed8b38cfe4cc768e6011c0958961`](https://github.com/shopl/shoplflow/commit/8bfbde05e5e6ed8b38cfe4cc768e6011c0958961)]:
+  - @shoplflow/base@0.46.2
+
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [[`5d4066e3f396c470f9c133b61027ec347f7f28d7`](https://github.com/shopl/shoplflow/commit/5d4066e3f396c470f9c133b61027ec347f7f28d7), [`137bc680096f56d2fb682d744fcde1d45eae3f4b`](https://github.com/shopl/shoplflow/commit/137bc680096f56d2fb682d744fcde1d45eae3f4b)]:
+  - @shoplflow/shopl-assets@0.12.37
+  - @shoplflow/base@0.46.1
+
+## 0.2.0
+
+### Minor Changes
+
+- [#725](https://github.com/shopl/shoplflow/pull/725) [`853b2d7d62ea683351db4571b04b79e096084858`](https://github.com/shopl/shoplflow/commit/853b2d7d62ea683351db4571b04b79e096084858) Thanks [@velo-kim](https://github.com/velo-kim)! - storybook version up(10)에 업데이트
+
+### Patch Changes
+
+- Updated dependencies [[`853b2d7d62ea683351db4571b04b79e096084858`](https://github.com/shopl/shoplflow/commit/853b2d7d62ea683351db4571b04b79e096084858)]:
+  - @shoplflow/utils@0.8.0
+  - @shoplflow/base@0.46.0
+
+## 0.1.68
+
+### Patch Changes
+
+- Updated dependencies [[`d121c7ae2df2b79aaf069229603c35ed5e8af8fe`](https://github.com/shopl/shoplflow/commit/d121c7ae2df2b79aaf069229603c35ed5e8af8fe)]:
+  - @shoplflow/shopl-assets@0.12.36
+  - @shoplflow/base@0.45.17
+
 ## 0.1.67
 
 ### Patch Changes

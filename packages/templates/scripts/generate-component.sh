@@ -66,7 +66,7 @@ export const Playground: StoryFn<${prefix}Props> = (args) => {
 
 " >> ${prefix}.stories.tsx
 
-echo "import { Controls, Canvas, Meta } from '@storybook/blocks';
+echo "import { Controls, Canvas, Meta } from '@storybook/addon-docs/blocks';
 import ${prefix} from './${prefix}';
 import * as ${prefix}Stories from './${prefix}.stories';
 

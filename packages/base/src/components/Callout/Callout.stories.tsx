@@ -1,20 +1,41 @@
 import React from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Callout from './Callout';
-import type { CalloutProps } from './Callout.types';
-import { AlertIcon, NoticeIcon } from '@shoplflow/shopl-assets';
+import { CalloutTypes } from './Callout.types';
+import { AlertIcon, AlertTriangleIcon, NoticeIcon } from '@shoplflow/shopl-assets';
 import { ComponentStage } from '../../styles/Box';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Callout',
   component: Callout,
-};
+  argTypes: {
+    styleVar: {
+      options: Object.values(CalloutTypes),
+      control: { type: 'select' },
+      description: '캘아웃 스타일(정보/알림)을 설정합니다.',
+      defaultValue: 'INFORMATION',
+    },
+    fillWidth: {
+      control: { type: 'boolean' },
+      description: '캘아웃 너비를 100%로 채울지 설정합니다.',
+      defaultValue: true,
+    },
+  },
+} satisfies Meta<typeof Callout>;
 
-export const Playground: StoryFn<CalloutProps> = (args) => {
-  return (
-    <Stack width={'1000px'}>
+export default meta;
+
+type Story = StoryObj<typeof Callout>;
+
+export const Playground: Story = {
+  args: {
+    styleVar: 'INFORMATION',
+    fillWidth: true,
+  },
+  render: (args) => (
+    <Stack width='1000px'>
       <ComponentStage>
         <Callout {...args}>
           <Callout.Icon iconSource={NoticeIcon} />
@@ -26,38 +47,83 @@ export const Playground: StoryFn<CalloutProps> = (args) => {
         </Callout>
       </ComponentStage>
     </Stack>
-  );
+  ),
 };
 
-Playground.args = {
-  styleVar: 'INFORMATION',
-  fillWidth: true,
+export const Caution: Story = {
+  args: {
+    styleVar: 'CAUTION',
+    fillWidth: true,
+  },
+  render: (args) => (
+    <Stack width='500px'>
+      <ComponentStage>
+        <Callout {...args}>
+          <Callout.Icon iconSource={AlertTriangleIcon} />
+          <Callout.Text>주의가 필요한 내용입니다. 변경 전에 입력 내용을 한 번 더 확인해주세요.</Callout.Text>
+        </Callout>
+      </ComponentStage>
+    </Stack>
+  ),
 };
-export const Alert: StoryFn<CalloutProps> = (args) => {
-  return (
-    <Stack width={'500px'}>
+
+export const Alert: Story = {
+  args: {
+    styleVar: 'ALERT',
+  },
+  render: (args) => (
+    <Stack width='500px'>
       <ComponentStage>
         <Callout {...args}>
           <Callout.Icon iconSource={AlertIcon} />
-          <Callout.Text>삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.</Callout.Text>
+          <Callout.Text>
+            삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요. 삭제 시 기존의 모든 게시물이
+            삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.
+          </Callout.Text>
         </Callout>
       </ComponentStage>
     </Stack>
-  );
+  ),
 };
 
-Alert.args = {
-  styleVar: 'ALERT',
-};
-
-export const WithoutIcon: StoryFn<CalloutProps> = (args) => {
-  return (
-    <Stack width={'500px'}>
+export const WithoutIcon: Story = {
+  args: {
+    styleVar: 'INFORMATION',
+    fillWidth: false,
+  },
+  render: (args) => (
+    <Stack width='500px'>
       <ComponentStage>
         <Callout {...args}>
           <Callout.Text>삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.</Callout.Text>
         </Callout>
       </ComponentStage>
     </Stack>
-  );
+  ),
+};
+
+export const BulletList: Story = {
+  args: {
+    styleVar: 'ALERT',
+    fillWidth: true,
+  },
+  render: (args) => (
+    <Stack width='500px'>
+      <ComponentStage>
+        <Callout {...args}>
+          <Callout.Icon iconSource={AlertTriangleIcon} />
+          <Stack.Vertical spacing='spacing04'>
+            <Callout.Text>BulletList children은 Callout.Text 컴포넌트를 사용합니다.</Callout.Text>
+
+            <Callout.BulletList>
+              <Callout.Text>두 번째 불릿 항목입니다.</Callout.Text>
+            </Callout.BulletList>
+            <Callout.BulletList>
+              <Callout.Text>세 번째 불릿 항목입니다.</Callout.Text>
+            </Callout.BulletList>
+          </Stack.Vertical>
+        </Callout>
+      </ComponentStage>
+    </Stack>
+  ),
 };

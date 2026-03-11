@@ -1,5 +1,82 @@
 # @shoplflow/base
 
+## 0.46.9
+
+### Patch Changes
+
+- [#750](https://github.com/shopl/shoplflow/pull/750) [`5510aac8f609fdf6335eda6dcb58261a3e3d6cb9`](https://github.com/shopl/shoplflow/commit/5510aac8f609fdf6335eda6dcb58261a3e3d6cb9) Thanks [@velo-kim](https://github.com/velo-kim)! - HelperText typograhpy [paragraph2] 적용
+
+## 0.46.8
+
+### Patch Changes
+
+- [#748](https://github.com/shopl/shoplflow/pull/748) [`07b06fcd7b4af285afb199bcb929136048147c7f`](https://github.com/shopl/shoplflow/commit/07b06fcd7b4af285afb199bcb929136048147c7f) Thanks [@velo-kim](https://github.com/velo-kim)! - HelperText component 생성
+
+## 0.46.7
+
+### Patch Changes
+
+- [#746](https://github.com/shopl/shoplflow/pull/746) [`7a717a7c9799e10f1624c54e0ab6f1bf733f35ae`](https://github.com/shopl/shoplflow/commit/7a717a7c9799e10f1624c54e0ab6f1bf733f35ae) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): WeekDatepicker의 year 초기값 로직 변경
+
+## 0.46.6
+
+### Patch Changes
+
+- [#721](https://github.com/shopl/shoplflow/pull/721) [`3dceea73d6a947b58def9b0e507904814c5a76bf`](https://github.com/shopl/shoplflow/commit/3dceea73d6a947b58def9b0e507904814c5a76bf) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(MonthDatepicker): sizeVar props 추
+
+## 0.46.5
+
+### Patch Changes
+
+- [#741](https://github.com/shopl/shoplflow/pull/741) [`e720eaa922777952e402ef777c3dde0a22a91bd3`](https://github.com/shopl/shoplflow/commit/e720eaa922777952e402ef777c3dde0a22a91bd3) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): Callout gap 변경 4 -> 6px
+
+## 0.46.4
+
+### Patch Changes
+
+- [#739](https://github.com/shopl/shoplflow/pull/739) [`4770d75125407e9db2540c21304c3d2d5cfc2f2f`](https://github.com/shopl/shoplflow/commit/4770d75125407e9db2540c21304c3d2d5cfc2f2f) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): List 컴포넌트 leftSource에 style prop 제거
+
+## 0.46.3
+
+### Patch Changes
+
+- [#737](https://github.com/shopl/shoplflow/pull/737) [`c3fbd1bc48a5ffb02fa656ef0717bd4a989b1120`](https://github.com/shopl/shoplflow/commit/c3fbd1bc48a5ffb02fa656ef0717bd4a989b1120) Thanks [@velo-kim](https://github.com/velo-kim)! - update(dashboard): Callout 2.1.1
+
+## 0.46.2
+
+### Patch Changes
+
+- [#732](https://github.com/shopl/shoplflow/pull/732) [`5758ccf895e18ebd421dd12c1b9e04a6734d1be3`](https://github.com/shopl/shoplflow/commit/5758ccf895e18ebd421dd12c1b9e04a6734d1be3) Thanks [@velo-kim](https://github.com/velo-kim)! - Changesets Workflow 배포 액션 확인
+
+- [#733](https://github.com/shopl/shoplflow/pull/733) [`7dd65c897154e18598d558f13ffeab858d93f409`](https://github.com/shopl/shoplflow/commit/7dd65c897154e18598d558f13ffeab858d93f409) Thanks [@velo-kim](https://github.com/velo-kim)! - changesets-workflow action 확인
+
+- [#730](https://github.com/shopl/shoplflow/pull/730) [`8bfbde05e5e6ed8b38cfe4cc768e6011c0958961`](https://github.com/shopl/shoplflow/commit/8bfbde05e5e6ed8b38cfe4cc768e6011c0958961) Thanks [@velo-kim](https://github.com/velo-kim)! - update: turbo version update (v1 -> v2)
+
+## 0.46.1
+
+### Patch Changes
+
+- Updated dependencies [[`5d4066e3f396c470f9c133b61027ec347f7f28d7`](https://github.com/shopl/shoplflow/commit/5d4066e3f396c470f9c133b61027ec347f7f28d7), [`137bc680096f56d2fb682d744fcde1d45eae3f4b`](https://github.com/shopl/shoplflow/commit/137bc680096f56d2fb682d744fcde1d45eae3f4b)]:
+  - @shoplflow/shopl-assets@0.12.37
+
+## 0.46.0
+
+### Minor Changes
+
+- [#725](https://github.com/shopl/shoplflow/pull/725) [`853b2d7d62ea683351db4571b04b79e096084858`](https://github.com/shopl/shoplflow/commit/853b2d7d62ea683351db4571b04b79e096084858) Thanks [@velo-kim](https://github.com/velo-kim)! - storybook version up(10)에 업데이트
+
+### Patch Changes
+
+- Updated dependencies [[`853b2d7d62ea683351db4571b04b79e096084858`](https://github.com/shopl/shoplflow/commit/853b2d7d62ea683351db4571b04b79e096084858)]:
+  - @shoplflow/utils@0.8.0
+
+## 0.45.17
+
+### Patch Changes
+
+- Updated dependencies [[`d121c7ae2df2b79aaf069229603c35ed5e8af8fe`](https://github.com/shopl/shoplflow/commit/d121c7ae2df2b79aaf069229603c35ed5e8af8fe)]:
+  - @shoplflow/shopl-assets@0.12.36
+
 ## 0.45.16
 
 ### Patch Changes

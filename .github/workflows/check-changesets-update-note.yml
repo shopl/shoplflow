@@ -7,38 +7,25 @@ on:
       - synchronize
       - labeled
       - unlabeled
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - name: 코드를 체크아웃하고 있어요.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v4
+
       - name: 노드를 설정하고 있어요.
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-
-      - name: pnpm을 설정하고 있어요.
-        run: |
-          npm install -g pnpm@8.6.12
-          pnpm config set store ~/.pnpm-store
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install

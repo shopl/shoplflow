@@ -7,7 +7,6 @@ on:
       - synchronize
   workflow_dispatch:
 
-
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -17,87 +16,37 @@ jobs:
 
     steps:
       - name: 코드를 체크아웃하고 있어요.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
 
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v4
+
       - name: 노드를 설정하고 있어요.
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-
-      - name: pnpm을 설정하고 있어요.
-        run: |
-          npm install -g pnpm@8.6.12
-          pnpm config set store ~/.pnpm-store
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-#      - uses: actions/cache@v3
-#        name: Setup pnpm cache
-#        with:
-#          path: ${{ env.STORE_PATH }}
-#          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-#          restore-keys: |
-#            ${{ runner.os }}-pnpm-store-
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
 
-      - uses: dtinth/setup-github-actions-caching-for-turbo@v1
-
       - name: 전체패키지를 빌드하고 있어요.
         run: pnpm build
 
-      - name: 테스트 Status를 확인하고 있어요.
-        id: set_status
-        run: |
-          echo "::set-output name=status::${{ job.status }}"
-
       - name: 테스트 Status와 Color를 설정하고 있어요.
         id: set_status_and_color
+        if: always()
         run: |
           if [ "${{ job.status }}" == "success" ]; then
-          echo "::set-output name=status_text::빌드 테스트가 완료되었어요."
-          echo "::set-output name=color::good"
+            echo "status_text=빌드 테스트가 완료되었어요." >> $GITHUB_OUTPUT
+            echo "color=good" >> $GITHUB_OUTPUT
           elif [ "${{ job.status }}" == "failure" ]; then
-          echo "::set-output name=status_text::빌드 테스트가 실패했어요."
-          echo "::set-output name=color::danger"
+            echo "status_text=빌드 테스트가 실패했어요." >> $GITHUB_OUTPUT
+            echo "color=danger" >> $GITHUB_OUTPUT
           else
-          echo "::set-output name=status_text::빌드 테스트 상태를 확인하세요."
-          echo "::set-output name=color::warning"
+            echo "status_text=빌드 테스트 상태를 확인하세요." >> $GITHUB_OUTPUT
+            echo "color=warning" >> $GITHUB_OUTPUT
           fi
-
-#      - name: Slack에 알림을 보내고 있어요.
-#        uses: 8398a7/action-slack@v3
-#        with:
-#          status: custom
-#          fields: workflow,job,commit,repo,ref,author,took
-#          custom_payload: |
-#            {
-#              attachments: [{
-#              title: "${{ steps.set_status_and_color.outputs.status_text }}",
-#              color: "${{ steps.set_status_and_color.outputs.color }}",
-#              text: `
-#                ${{ github.event.pull_request.title }}\n${process.env.AS_COMMIT} in ${process.env.AS_TOOK}
-#                `,
-#                actions: [
-#                  {
-#                    type: "button",
-#                    text: "빌드 액션 확인하기",
-#                    url: "https://github.com/shopl/shoplflow/actions/runs/${{ github.run_id }}"
-#                  },
-#                  {
-#                    type: "button",
-#                    text: "PR 확인하기",
-#                    url: "${{ github.event.pull_request.html_url }}"
-#                  }
-#                ]
-#              }]
-#            }
-#        env:
-#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

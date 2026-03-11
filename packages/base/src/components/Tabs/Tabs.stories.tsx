@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Tabs from './Tabs';
 import type { TabsProps } from './Tabs.types';
@@ -9,10 +9,12 @@ import { Icon } from '../Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 import { colorTokens } from '../../styles';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Tabs',
   component: Tabs,
-};
+} satisfies Meta<typeof Tabs>;
+
+export default meta;
 
 export const Playground: StoryFn<TabsProps> = (args) => {
   const [activeTab, setActiveTab] = useState('a');

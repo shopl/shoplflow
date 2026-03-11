@@ -1,5 +1,4 @@
-import type { IconButton, TextProps, TooltipProps, IconButtonProps } from '@shoplflow/base';
-import type { ChildrenProps } from '@shoplflow/base/src/utils/type/ComponentProps';
+import type { IconButton, TextProps, TooltipProps, IconButtonProps, ChildrenProps } from '@shoplflow/base';
 import type { ReactNode, ReactElement } from 'react';
 
 export type ActionsProps = {

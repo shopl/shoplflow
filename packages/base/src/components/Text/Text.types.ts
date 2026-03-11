@@ -24,7 +24,4 @@ export interface TextOptionProps {
 }
 
 export interface TextProps
-  extends TextOptionProps,
-    ChildrenProps,
-    RenderConfigProps,
-    Omit<HTMLAttributes<HTMLSpanElement>, 'color'> {}
+  extends TextOptionProps, ChildrenProps, RenderConfigProps, Omit<HTMLAttributes<HTMLSpanElement>, 'color'> {}

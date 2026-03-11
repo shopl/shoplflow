@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import ToggleButton from './ToggleButton';
 import type { ToggleButtonProps } from './ToggleButton.types';
 import { Text } from '../Text';
 
-export default {
+const meta = {
   title: 'COMPONENTS/ToggleButton',
   component: ToggleButton,
-};
+} satisfies Meta<typeof ToggleButton>;
+
+export default meta;
 
 export const Playground: StoryFn<ToggleButtonProps> = (args) => {
   const [selectedValue, setSelectedValue] = useState('value1');
@@ -30,7 +32,7 @@ export const Playground: StoryFn<ToggleButtonProps> = (args) => {
       >
         <ToggleButton.InnerRadio
           value='value1'
-          label='엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 '
+          label='엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 엄청긴 라벨 '
           id={'1'}
         />
         <ToggleButton.InnerRadio value='value2' label='Toggle2' id={'2'} />

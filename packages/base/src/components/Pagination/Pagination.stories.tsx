@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Pagination from './Pagination';
 import type { PaginationProps } from './Pagination.types';
 import { Button } from '../Buttons';
 import PaginationSizeSelector from './PaginationSizeSelector';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Pagination',
   component: Pagination,
-};
+} satisfies Meta<typeof Pagination>;
+
+export default meta;
 
 export const Playground: StoryFn<PaginationProps> = (args) => {
   const itemsTotalCount = 86;
@@ -30,18 +32,12 @@ export const Playground: StoryFn<PaginationProps> = (args) => {
       <Pagination
         {...args}
         currentPage={currentPage}
-        previousPage={() => {
-          setCurrentPage((prev) => prev - 1);
-        }}
+        previousPage={() => setCurrentPage((prev) => prev - 1)}
         pageSize={pageSize}
         pageCount={5}
-        nextPage={() => {
-          setCurrentPage((prev) => prev + 1);
-        }}
+        nextPage={() => setCurrentPage((prev) => prev + 1)}
         itemsTotalCount={itemsTotalCount}
-        gotoPage={(page) => {
-          setCurrentPage(page);
-        }}
+        gotoPage={(page) => setCurrentPage(page)}
         leftSource={
           <Stack.Horizontal>
             <Button styleVar='GHOST' sizeVar='S'>

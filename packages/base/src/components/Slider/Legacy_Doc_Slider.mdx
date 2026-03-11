@@ -1,0 +1,38 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as SliderStories from './Slider.stories';
+import Slider from './Slider.tsx';
+
+<Meta of={SliderStories} />
+
+# Slider
+
+지정된 단위에서 범위를 선택할 수 있는 슬라이더 컴포넌트입니다.
+
+> - `step`으로 증분 단위를 설정할 수 있으며, Slider의 최대값(`max`)을 벗어나면 에러가 발생합니다.
+> - 선택 범위(`range`)와 핸들러 함수(`handleRange`)를 외부에서 주입해 사용합니다. <br/>이 때 `range`가 Slider의 범위(`min` ~ `max`)를 벗어나면 에러가 발생합니다.
+> - thumb Button 위에 마우스 커서를 놓으면 현재 선택된 값의 절댓값이 tooltip으로 노출됩니다.
+
+## Overview
+
+<Canvas of={SliderStories.Playground} />
+
+## Usage
+
+```tsx
+import { Slider } from '@shoplflow/base';
+
+const Example = () => {
+  const [selectedRange, setSelectedRange] = useState({ min: 20, max: 60 });
+
+  const handleChange = (range) => {
+    setSelectedRange(range);
+    console.log('Selected range:', range);
+  };
+
+  return <Slider max={100} range={selectedRange} handleRange={handleChange} />;
+};
+```
+
+## Props
+
+<Controls />

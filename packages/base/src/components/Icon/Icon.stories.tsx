@@ -1,6 +1,6 @@
 import React, { forwardRef, useContext } from 'react';
 
-import type { StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';
 import Icon from './Icon';
 import type { DangerouslySetInnerHTML, IconProps } from './Icon.types';
@@ -13,17 +13,18 @@ import { StoryDomainContext } from '../../../.storybook/useStoryDomain';
 import { IconStage } from '../../styles/Box';
 import { StyledIcon } from './Icon.styled';
 
-export default {
+const meta = {
   title: 'COMPONENTS/Icon',
   component: Icon,
   argTypes: {
     dangerouslySetInnerHTML: {
-      control: {
-        type: 'text',
-      },
+      control: { type: 'text' },
+      description: 'dangerouslySetInnerHTML을 설정합니다.',
     },
   },
-};
+} satisfies Meta<typeof Icon>;
+
+export default meta;
 
 const assetFilter = (assets: Record<string, unknown>, type: 'Icon' | 'illust') => {
   return Object.keys(assets)

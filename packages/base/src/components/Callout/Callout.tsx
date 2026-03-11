@@ -2,8 +2,10 @@ import React from 'react';
 import { StyledCallout, StyledCalloutIcon } from './Callout.styled';
 import type { TextProps } from '../Text';
 import { Text } from '../Text';
-import type { CalloutProps } from './Callout.types';
-import type { IconSourceProps } from '../../utils/type/ComponentProps';
+import type { CalloutIconProps, CalloutProps } from './Callout.types';
+import type { ChildrenProps } from '../../utils/type/ComponentProps';
+import type { ColorTokens } from '../../styles';
+import { HelperText } from '../HelperText';
 
 const Callout = ({ children, styleVar = 'INFORMATION', fillWidth, ...rest }: CalloutProps) => {
   return (
@@ -21,10 +23,19 @@ const CalloutText = ({ children, ...rest }: TextProps) => {
   );
 };
 
-const CalloutIcon = ({ iconSource }: IconSourceProps) => {
-  return <StyledCalloutIcon as={iconSource} />;
+const CalloutBulletList = ({ children, color = 'neutral700' }: ChildrenProps & { color?: ColorTokens }) => {
+  return (
+    <HelperText type='BULLET' color={color}>
+      {children}
+    </HelperText>
+  );
+};
+
+const CalloutIcon = ({ iconSource, color }: CalloutIconProps) => {
+  return <StyledCalloutIcon as={iconSource} color={color} />;
 };
 
 Callout.Text = CalloutText;
 Callout.Icon = CalloutIcon;
+Callout.BulletList = CalloutBulletList;
 export default Callout;

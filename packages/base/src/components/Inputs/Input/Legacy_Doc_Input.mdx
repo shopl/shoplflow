@@ -1,0 +1,32 @@
+import * as InputStories from "./Input.stories";
+import { Canvas, Meta, Controls} from '@storybook/addon-docs/blocks';
+
+<Meta of={InputStories} />
+
+# Input
+사용자로부터 텍스트, 숫자, 패스워드 등의 입력을 받는 기본적인 입력 컴포넌트입니다.
+
+> - `focus` 상태에서 텍스트 카운터와 클리어 버튼이 자동으로 표시됩니다.
+> - `password` 타입의 경우 비밀번호 표시/숨김 토글 버튼이 제공됩니다.
+> - `number` 타입의 경우 min/max 값으로 범위를 제한할 수 있습니다.
+
+## Overview
+<Canvas of={InputStories.Playground} />
+
+## Usage
+```tsx
+import { Input } from '@shoplflow/base';
+
+const Example = () => {
+  return (
+    <Input
+      sizeVar="M"
+      placeholder="입력해주세요"
+      maxLength={50}
+    />
+  );
+};
+```
+
+## Props
+<Controls of={InputStories.Playground} />

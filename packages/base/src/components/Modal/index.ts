@@ -22,3 +22,4 @@ export * from './hooks/useHandleModal';
 
 export * from './providers/ModalContext';
 export * from './providers/ModalProvider';
+export * from './version';

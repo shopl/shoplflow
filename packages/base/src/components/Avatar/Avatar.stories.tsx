@@ -1,66 +1,81 @@
-import React from 'react';
-
-import type { StoryFn } from '@storybook/react';
-import { Stack } from '../Stack';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import Avatar from './Avatar';
-import type { AvatarProps } from './Avatar.types';
 import { Icon } from '../Icon';
 import { LeaderLargeIcon } from '@shoplflow/shopl-assets';
-import { Text } from '../Text';
+import { AvatarSizeVariants } from './Avatar.types';
 
-export default {
+/** GitHub에서 제공하는 무료 아바타 이미지 (https://github.com/{username}.png) */
+const MOCK_AVATAR_SRC = 'https://github.com/octocat.png';
+const MOCK_AVATAR_SRC_ALT = 'https://avatars.githubusercontent.com/u/583231';
+
+const meta = {
   title: 'COMPONENTS/Avatar',
   component: Avatar,
+  argTypes: {
+    src: {
+      control: { type: 'text' },
+      description: '아바타 이미지 URL을 설정합니다. (예: GitHub https://github.com/username.png)',
+    },
+    sizeVar: {
+      options: Object.values(AvatarSizeVariants),
+      control: { type: 'select' },
+      description: '아바타의 사이즈를 설정합니다.',
+      defaultValue: 'M',
+    },
+    badge: {
+      control: { type: 'object' },
+      description: '아바타의 배지를 설정합니다.',
+    },
+    fallbackUrl: {
+      description: '아바타의 대체 이미지를 설정합니다.',
+    },
+  },
+} satisfies Meta<typeof Avatar>;
+
+export default meta;
+
+type Story = StoryObj<typeof Avatar>;
+
+export const Playground: Story = {
+  args: {
+    src: MOCK_AVATAR_SRC,
+    sizeVar: 'M',
+    badge: <Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />,
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=2864-4798',
+    },
+  },
 };
 
-export const Playground: StoryFn<AvatarProps> = (args) => {
-  return (
-    <Stack>
-      <Avatar {...args} />
-    </Stack>
-  );
+export const WidthBadge: Story = {
+  args: {
+    src: MOCK_AVATAR_SRC,
+    sizeVar: 'M',
+    badge: <Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />,
+  },
 };
 
-Playground.args = {
-  sizeVar: 'M',
+export const CompareNormalAndError: Story = {
+  args: {
+    src: MOCK_AVATAR_SRC_ALT,
+    sizeVar: 'L',
+    fallbackUrl: undefined,
+  },
 };
 
-export const WidthBadge: StoryFn<AvatarProps> = (args) => {
-  return (
-    <Stack>
-      <Avatar badge={<Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />} {...args} />
-    </Stack>
-  );
+export const SizeS: Story = {
+  args: {
+    src: MOCK_AVATAR_SRC,
+    sizeVar: 'S',
+  },
 };
 
-WidthBadge.args = {
-  sizeVar: 'M',
-};
-
-export const CompareNormalAndError: StoryFn<AvatarProps> = (args) => {
-  return (
-    <Stack direction='column' spacing='spacing16'>
-      <Text typography='body2_700'>정상 이미지 vs 에러 이미지 비교</Text>
-      <Stack spacing='spacing16'>
-        <Stack direction='column' spacing='spacing08' align='center' width='100%'>
-          <Avatar src='https://picsum.photos/100/100' sizeVar='L' {...args} />
-          <Text typography='caption_400' color='green300'>
-            정상 이미지
-          </Text>
-        </Stack>
-
-        <Stack direction='column' spacing='spacing08' align='center' width='100%'>
-          <Avatar src='https://invalid-url-that-will-fail.com/image.jpg' sizeVar='L' {...args} />
-          <Text typography='caption_400' color='red300'>
-            에러 이미지 (fallback 표시)
-          </Text>
-        </Stack>
-      </Stack>
-    </Stack>
-  );
-};
-
-CompareNormalAndError.args = {
-  sizeVar: 'L',
-  fallbackUrl: undefined,
+export const SizeL: Story = {
+  args: {
+    src: MOCK_AVATAR_SRC_ALT,
+    sizeVar: 'L',
+  },
 };

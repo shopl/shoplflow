@@ -15,19 +15,17 @@ touch $prefix.tsx
 touch $prefix.styled.ts
 touch $prefix.types.ts
 touch $prefix.stories.tsx
-touch $prefix.mdx
 touch index.ts
 
-echo "import React from 'react';
-import { Styled${prefix} } from './${prefix}.styled';
+echo "import { Styled${prefix} } from './${prefix}.styled';
 import type { ${prefix}Props } from './${prefix}.types';
 
-const $prefix = ({ ...rest }: ${prefix}Props) => {
-    return (
-        <Styled${prefix} data-shoplflow={'${prefix}'}>
-          $prefix
-        </Styled${prefix}>
-    );
+const ${prefix} = ({ children, ...rest }: ${prefix}Props) => {
+  return (
+    <Styled${prefix} data-shoplflow=\"${prefix}\" {...rest}>
+      {children}
+    </Styled${prefix}>
+  );
 };
 
 export default ${prefix};" >> ${prefix}.tsx
@@ -36,57 +34,32 @@ echo "import styled from '@emotion/styled';
 
 export const Styled${prefix} = styled.div\`\`;" >> ${prefix}.styled.ts
 
-echo "export interface ${prefix}Props extends ${prefix}OptionProps {
+echo "import type { ReactNode } from 'react';
 
-}
+export interface ${prefix}Props extends ${prefix}OptionProps {}
+
 export interface ${prefix}OptionProps {
-
+  children?: ReactNode;
 }" >> ${prefix}.types.ts
 
-echo "import React from 'react';
-
-import type { StoryFn } from '@storybook/react';
-import { Stack } from '../Stack';
+echo "import type { Meta, StoryObj } from '@storybook/react-vite';
 import ${prefix} from './${prefix}';
-import type { ${prefix}Props } from './${prefix}.types';
 
-
-export default {
+const meta = {
   title: 'COMPONENTS/${prefix}',
   component: ${prefix},
-};
+} satisfies Meta<typeof ${prefix}>;
 
-export const Playground: StoryFn<${prefix}Props> = (args) => {
-  return (
-    <Stack>
-      <${prefix} {...args} />
-    </Stack>
-  );
-};
+export default meta;
 
+type Story = StoryObj<typeof meta>;
+
+export const Playground: Story = {
+  args: {
+    children: '${prefix}',
+  },
+};
 " >> ${prefix}.stories.tsx
-
-echo "import { Controls, Canvas, Meta } from '@storybook/blocks';
-import ${prefix} from './${prefix}';
-import * as ${prefix}Stories from './${prefix}.stories';
-
-<Meta of={${prefix}Stories} />
-
-# $prefix
-
-$prefix 컴포넌트 설명을 적어주세요.
-
-<Canvas of={${prefix}Stories.Playground} />
-
-
-## Props
-<Controls of={${prefix}Stories.Playground} />
-
-## Usage
-```tsx
-```
-
-" >> ${prefix}.mdx
 
 echo "export { default as ${prefix} } from './${prefix}';
 export * from './${prefix}';

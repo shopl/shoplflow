@@ -16,8 +16,7 @@ export interface AvatarProps extends AvatarOptionProps {
   fallbackUrl?: string;
 }
 export interface AvatarOptionProps
-  extends SizeVariantProps<AvatarSizeVariantType>,
-    ImgHTMLAttributes<HTMLImageElement> {
+  extends SizeVariantProps<AvatarSizeVariantType>, ImgHTMLAttributes<HTMLImageElement> {
   /**
    * 아바타 우측 하단에 배지를 표시합니다.
    */

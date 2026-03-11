@@ -4,7 +4,7 @@ import type { ListProps, ListText2RowsProps } from './List.types';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 
-const List = ({ children, leftSource, rightSource, ...rest }: ListProps) => {
+const List = ({ children, leftSource, rightSource, style, ...rest }: ListProps) => {
   const LeftSourceClone = leftSource
     ? React.cloneElement(leftSource as React.ReactElement, {
         ...rest,
@@ -16,7 +16,7 @@ const List = ({ children, leftSource, rightSource, ...rest }: ListProps) => {
   }
 
   return (
-    <StyledList data-shoplflow={'List'} {...rest}>
+    <StyledList data-shoplflow={'List'} style={style} {...rest}>
       {LeftSourceClone && LeftSourceClone}
       <Stack.Horizontal minHeight={'36px'} width={'100%'} spacing={'spacing08'} align={'center'}>
         {children}

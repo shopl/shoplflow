@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { useSelect } from '../useSelect';
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react';
 
 describe('useSelect:Single', () => {
   const data = [

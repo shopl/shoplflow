@@ -16,7 +16,8 @@ export type CheckboxStyleVariantType = $Values<typeof CheckboxStyleVariants>;
 
 export interface CheckboxProps extends CheckboxOptionProps {}
 export interface CheckboxOptionProps
-  extends StyleVariantProps<CheckboxStyleVariantType>,
+  extends
+    StyleVariantProps<CheckboxStyleVariantType>,
     SelectedProps,
     DefaultSelectedProps,
     DisableProps,

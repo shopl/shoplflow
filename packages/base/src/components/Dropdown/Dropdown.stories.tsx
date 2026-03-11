@@ -1,6 +1,6 @@
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import Dropdown from './Dropdown';
 import { DropdownOptionVariants, type DropdownProps, type DropdownSizeVariantType } from './Dropdown.types';
-import type { Meta, StoryFn } from '@storybook/react';
 import { Stack } from '../Stack';
 import { ComponentStage } from '../../styles/Box';
 import { useSelect } from '@shoplflow/utils';

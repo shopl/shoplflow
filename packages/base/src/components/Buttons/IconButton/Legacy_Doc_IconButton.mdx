@@ -1,0 +1,29 @@
+import {Controls, Canvas, Meta} from '@storybook/addon-docs/blocks';
+import * as IconButtonStories from "./IconButton.stories";
+
+<Meta of={IconButtonStories} />
+
+# IconButton
+내부에 아이콘 요소가 들어간 버튼입니다.
+
+> - 자식 요소로 `<Icon>` 컴포넌트를 함께 사용해야 합니다.
+> - `hover`상태의 배경색, `border-color`는 배경색의 상위 colorToken으로 자동 설정됩니다.
+
+## Overview
+<Canvas of={IconButtonStories.Playground} />
+
+## Usage
+```tsx
+import { IconButton } from '@shoplflow/base';
+
+const Example = () => {
+  return (
+     <IconButton sizeVar={'S'} styleVar={'SECONDARY'}>
+        <Icon iconSource={ViewOffIcon} />
+     </IconButton>
+  );
+};
+```
+
+## Props
+<Controls of={IconButtonStories.Playground} />
