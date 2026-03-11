@@ -185,7 +185,6 @@ export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
     display: none;
     position: absolute;
     right: 0;
-    background-color: ${colorTokens.neutral0};
   }
 `;
 export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
