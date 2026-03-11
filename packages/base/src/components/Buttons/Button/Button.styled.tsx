@@ -61,12 +61,14 @@ const getStyleBySizeVar = (sizeVar?: ButtonSizeVariantType) => {
     case 'M':
       return css`
         gap: 4px;
+        padding: 10px 12px;
         min-width: 72px;
         min-height: 40px;
       `;
     case 'S':
       return css`
         gap: 2px;
+        padding: 8px 10px;
         min-width: 54px;
         min-height: 32px;
       `;
@@ -79,6 +81,7 @@ const getStyleBySizeVar = (sizeVar?: ButtonSizeVariantType) => {
     default:
       return css`
         gap: 4px;
+        padding: 10px 12px;
         min-width: 72px;
         min-height: 40px;
       `;
@@ -101,8 +104,6 @@ export const StyledButton = styled.button<ButtonOptionProps>`
   justify-content: center;
   height: fit-content;
   width: fit-content;
-  /* gap: 4px; */
-  padding: 0 12px;
   border-radius: 6px;
   cursor: pointer;
   ${({ styleVar, color, disabled }) => getStyleByStyleVar(styleVar, color, disabled)};
