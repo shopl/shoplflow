@@ -14,13 +14,13 @@ export interface ToggleButtonProps extends ToggleButtonOptionProps, HTMLAttribut
   fixedWidth: number;
   selectedValue?: string;
   sizeVar?: ToggleButtonSizeVariantType;
+  disabled?: boolean;
 }
 
 export interface ToggleButtonOptionProps {}
 
 export interface ToggleButtonInnerRadioProps
-  extends ToggleButtonInnerRadioOptionProps,
-    InputHTMLAttributes<HTMLInputElement> {
+  extends ToggleButtonInnerRadioOptionProps, InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 

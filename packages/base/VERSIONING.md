@@ -47,7 +47,7 @@
 | Tabs | Tabs | 2.0.0 | 2.0 | 🟢 |
 | Tag | Tag | 2.0.0 | 2.0 | 🟢 |
 | Text | Text | 2.0.1 | 2.0 | 🟢 |
-| ToggleButton | ToggleButton | 2.0.0 | 2.0 | 🟢 |
+| ToggleButton | ToggleButton | 2.0.1 | 2.0 | 🟢 |
 | Tooltip | Tooltip | 2.0.0 | 2.0 | 🟢 |
 | Tree | Tree | 2.0.0 | 2.0 | 🟢 |
 
