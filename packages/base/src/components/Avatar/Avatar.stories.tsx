@@ -1,81 +1,69 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import Avatar from './Avatar';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Icon } from '../Icon';
 import { LeaderLargeIcon } from '@shoplflow/shopl-assets';
+import Avatar from './Avatar';
 import { AvatarSizeVariants } from './Avatar.types';
+import type { AvatarProps } from './Avatar.types';
 
-/** GitHub에서 제공하는 무료 아바타 이미지 (https://github.com/{username}.png) */
+const FIGMA_URL = 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=2864-4798';
+
 const MOCK_AVATAR_SRC = 'https://github.com/octocat.png';
-const MOCK_AVATAR_SRC_ALT = 'https://avatars.githubusercontent.com/u/583231';
 
-const meta = {
+const meta: Meta<typeof Avatar> = {
   title: 'COMPONENTS/Avatar',
   component: Avatar,
   argTypes: {
     src: {
       control: { type: 'text' },
-      description: '아바타 이미지 URL을 설정합니다. (예: GitHub https://github.com/username.png)',
+      description: '아바타 이미지 URL을 설정합니다.',
     },
     sizeVar: {
-      options: Object.values(AvatarSizeVariants),
       control: { type: 'select' },
+      options: Object.values(AvatarSizeVariants),
       description: '아바타의 사이즈를 설정합니다.',
-      defaultValue: 'M',
-    },
-    badge: {
-      control: { type: 'object' },
-      description: '아바타의 배지를 설정합니다.',
+      table: { type: { summary: Object.values(AvatarSizeVariants).join(' | ') } },
     },
     fallbackUrl: {
-      description: '아바타의 대체 이미지를 설정합니다.',
+      control: { type: 'text' },
+      description: 'src 로드 실패 시 표시할 대체 이미지 URL을 설정합니다.',
+    },
+    badge: {
+      description: '아바타 우측 하단에 표시할 배지 ReactNode입니다.',
     },
   },
-} satisfies Meta<typeof Avatar>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof Avatar>;
+type PlaygroundArgs = AvatarProps & {
+  showBadge?: boolean;
+};
 
-export const Playground: Story = {
-  args: {
-    src: MOCK_AVATAR_SRC,
-    sizeVar: 'M',
-    badge: <Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />,
-  },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=2864-4798',
-    },
+export const Playground: StoryFn<PlaygroundArgs> = (args) => {
+  const { showBadge, ...componentProps } = args;
+  return <Avatar {...componentProps} badge={showBadge ? <Icon iconSource={LeaderLargeIcon} /> : undefined} />;
+};
+
+Playground.args = {
+  src: MOCK_AVATAR_SRC,
+  sizeVar: 'M',
+  showBadge: false,
+};
+
+Playground.argTypes = {
+  showBadge: {
+    control: { type: 'boolean' },
+    description: 'Playground 전용: badge(ReactNode) 표시 여부를 토글합니다. 실제 prop은 badge입니다.',
+    table: { category: 'Playground (데모 전용)' },
   },
 };
 
-export const WidthBadge: Story = {
-  args: {
-    src: MOCK_AVATAR_SRC,
-    sizeVar: 'M',
-    badge: <Icon sizeVar={'XS'} iconSource={LeaderLargeIcon} />,
+Playground.parameters = {
+  controls: {
+    include: ['src', 'sizeVar', 'fallbackUrl', 'showBadge'],
   },
-};
-
-export const CompareNormalAndError: Story = {
-  args: {
-    src: MOCK_AVATAR_SRC_ALT,
-    sizeVar: 'L',
-    fallbackUrl: undefined,
-  },
-};
-
-export const SizeS: Story = {
-  args: {
-    src: MOCK_AVATAR_SRC,
-    sizeVar: 'S',
-  },
-};
-
-export const SizeL: Story = {
-  args: {
-    src: MOCK_AVATAR_SRC_ALT,
-    sizeVar: 'L',
+  design: {
+    type: 'figma',
+    url: FIGMA_URL,
   },
 };

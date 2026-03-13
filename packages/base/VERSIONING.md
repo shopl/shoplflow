@@ -8,12 +8,12 @@
 
 | 카테고리 | 컴포넌트 | 샤플플로우 버전 | 디자인 버전 | 현황 |
 |----------|----------|-----------------|-------------|------|
-| Avatar | Avatar | 2.0.0 | 2.0 | 🟢 |
+| Avatar | Avatar | 2.1.0 | 2.1 | 🟢 |
 | BackDrop | BackDrop | 2.0.0 | 2.0 | 🟢 |
-| Buttons | Button | 2.0.0 | 2.0 | 🟢 |
-| Buttons | DropdownButton | 2.0.0 | 2.0 | 🟢 |
-| Buttons | IconButton | 2.0.0 | 2.0 | 🟢 |
-| Buttons | SplitButton | 2.0.0 | 2.0 | 🟢 |
+| Buttons | Button | 2.1.0 | 2.1 | 🟢 |
+| Buttons | DropdownButton | 2.0.3 | 2.0 | 🟢 |
+| Buttons | IconButton | 2.0.3 | 2.0 | 🟢 |
+| Buttons | SplitButton | 2.0.3 | 2.0 | 🟢 |
 | Callout | Callout | 2.1.4 | 2.1 | 🟢 |
 | Chips | ChipButton | 2.0.0 | 2.0 | 🟢 |
 | Chips | ChipToggle | 2.0.0 | 2.0 | 🟢 |
@@ -25,7 +25,7 @@
 | Datepickers | DayDatepicker | 2.0.2 | 2.0 | 🟢 |
 | Datepickers | MonthDatepicker | 2.0.2 | 2.0 | 🟢 |
 | Datepickers | WeekDatepicker | 2.0.2 | 2.0 | 🟢 |
-| Dropdown | Dropdown | 2.0.0 | 2.0 | 🟢 |
+| Dropdown | Dropdown | 2.1.0 | 2.1 | 🟢 |
 | HelperText | HelperText | 2.1.1 | 2.1 | 🟢 |
 | Icon | Icon | 2.0.0 | 2.0 | 🟢 |
 | Inputs | Input | 2.0.0 | 2.0 | 🟢 |
@@ -47,7 +47,7 @@
 | Tabs | Tabs | 2.0.0 | 2.0 | 🟢 |
 | Tag | Tag | 2.0.0 | 2.0 | 🟢 |
 | Text | Text | 2.0.1 | 2.0 | 🟢 |
-| ToggleButton | ToggleButton | 2.0.0 | 2.0 | 🟢 |
+| ToggleButton | ToggleButton | 2.1.0 | 2.1 | 🟢 |
 | Tooltip | Tooltip | 2.0.0 | 2.0 | 🟢 |
 | Tree | Tree | 2.0.0 | 2.0 | 🟢 |
 

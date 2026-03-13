@@ -3,29 +3,6 @@ import { borderRadiusTokens, colorTokens, spacingTokens } from '../../styles';
 import type { ToggleButtonSizeVariantType } from './ToggleButton.types';
 import { css } from '@emotion/react';
 
-const getLabelStyleByStatus = (selected: boolean, disabled: boolean) => {
-  if (disabled && selected) {
-    return css`
-      background-color: ${colorTokens.neutral0};
-      cursor: not-allowed;
-    `;
-  }
-
-  if (disabled) {
-    return css`
-      cursor: not-allowed;
-      opacity: 0.5;
-    `;
-  }
-
-  if (selected) {
-    return css`
-      cursor: default;
-      background-color: ${colorTokens.neutral0};
-    `;
-  }
-};
-
 const getLabelStyleBySizeVar = (sizeVar: ToggleButtonSizeVariantType) => {
   switch (sizeVar) {
     case 'S': {
@@ -56,8 +33,6 @@ export const StyledToggleButton = styled.div`
 
 export const StyledToggleInner = styled.button<{
   width: number;
-  disabled?: boolean;
-  selected: boolean;
   sizeVar: ToggleButtonSizeVariantType;
 }>`
   width: fit-content;
@@ -70,16 +45,26 @@ export const StyledToggleInner = styled.button<{
   padding: 0 12px;
   border-radius: 6px;
   background-color: transparent;
-  ${({ disabled, selected }) => getLabelStyleByStatus(selected, Boolean(disabled))}
   ${({ sizeVar }) => getLabelStyleBySizeVar(sizeVar)}
 
-  &:hover {
-    ${({ disabled }) =>
-      !disabled &&
-      css`
-        cursor: pointer;
-        background-color: ${colorTokens.neutral400_5};
-      `}
+  &[data-selected='true'] {
+    cursor: default;
+    background-color: ${colorTokens.neutral0};
+  }
+
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &[aria-disabled='true'][data-selected='true'] {
+    opacity: 1;
+    background-color: ${colorTokens.neutral0};
+  }
+
+  &:hover:not([aria-disabled='true']):not([data-selected='true']) {
+    cursor: pointer;
+    background-color: ${colorTokens.neutral400_5};
   }
 `;
 

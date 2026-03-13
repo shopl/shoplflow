@@ -1,148 +1,201 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import React from 'react';
+
+import type { Meta, StoryFn } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import Button from './Button';
+import type { ButtonProps } from './Button.types';
 import { ButtonSizeVariants, ButtonStyleVariants } from './Button.types';
 import { colorTokens } from '../../../styles';
 import { Icon } from '../../../components/Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 
-const meta = {
+const FIGMA_URL = 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=13719-16537&m=dev';
+
+const meta: Meta<typeof Button> = {
   title: 'COMPONENTS/Buttons/Button',
   component: Button,
+  args: {
+    onClick: action('on-click'),
+  },
   argTypes: {
     styleVar: {
-      options: Object.values(ButtonStyleVariants),
       control: { type: 'select' },
+      options: Object.values(ButtonStyleVariants),
       description: '버튼의 스타일을 설정합니다. SOLID를 선택할 경우 color 속성도 지정해주셔야 합니다.',
-      defaultValue: 'PRIMARY',
+      table: { type: { summary: Object.values(ButtonStyleVariants).join(' | ') } },
     },
     sizeVar: {
-      options: Object.values(ButtonSizeVariants),
       control: { type: 'select' },
+      options: Object.values(ButtonSizeVariants),
       description: '버튼의 사이즈를 선택합니다.',
-      defaultValue: 'M',
+      table: { type: { summary: Object.values(ButtonSizeVariants).join(' | ') } },
     },
     color: {
-      description: 'styleVar가 SOLID일 때의 버튼의 배경 색상을 선택합니다.',
-      options: Object.keys(colorTokens),
       control: { type: 'select' },
-      defaultValue: 'coolgray200',
-    },
-    as: {
-      description: '컴포넌트의 HTML 요소를 변경할 수 있습니다. (기본값: button)',
+      options: Object.keys(colorTokens),
+      description: 'styleVar가 SOLID일 때의 버튼의 배경 색상을 선택합니다.',
+      table: { type: { summary: 'colorTokens' } },
     },
     isLoading: {
       control: { type: 'boolean' },
       description: 'Spinner가 노출되는 로딩 상태 여부를 설정합니다.',
-      defaultValue: false,
+    },
+    disabled: {
+      control: { type: 'boolean' },
+      description: '버튼의 비활성화 여부를 설정합니다.',
+    },
+    lineClamp: {
+      control: { type: 'number' },
+      description: '버튼 내부의 콘텐츠를 지정한 줄 수만큼 제한합니다.',
+    },
+    as: {
+      description: '컴포넌트의 HTML 요소를 변경할 수 있습니다. (기본값: button)',
     },
     children: {
+      control: { type: 'text' },
       description:
         '버튼 내부에 들어가는 요소로, 기본적으로 `string` 타입을 지원하나 필요에 따라 `React.ReactNode` 타입의 요소를 자유롭게 넣을 수 있습니다.',
     },
-    disabled: {
-      description: '버튼의 비활성화 여부를 설정합니다.',
+    leftSource: {
+      description: '버튼 좌측에 렌더링할 ReactElement입니다.',
     },
-    onClick: {
-      description: '버튼을 클릭했을 때 실행되는 동작을 설정합니다.',
-      action: 'clicked',
-    },
-    lineClamp: {
-      description: '버튼 내부의 콘텐츠를 지정한 줄 수만큼 제한합니다.',
-      control: { type: 'number' },
+    rightSource: {
+      description: '버튼 우측에 렌더링할 ReactElement입니다.',
     },
   },
-} satisfies Meta<typeof Button>;
+};
+
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+type PlaygroundArgs = ButtonProps & {
+  showLeftSource?: boolean;
+  showRightSource?: boolean;
+};
 
-export const Playground: Story = {
-  args: {
-    styleVar: 'PRIMARY',
-    sizeVar: 'M',
-    children: 'Button',
-    disabled: false,
+export const Playground: StoryFn<PlaygroundArgs> = (args) => {
+  const { showLeftSource, showRightSource, ...componentProps } = args;
+  const ICON_AREA_SIZE = componentProps.sizeVar === 'M' ? 20 : 12;
+  const resolvedColor =
+    componentProps.styleVar === 'SOLID' ? (componentProps.color ?? 'coolgray100') : componentProps.color;
+
+  return (
+    <Button
+      {...componentProps}
+      color={resolvedColor}
+      leftSource={
+        showLeftSource ? (
+          <div style={{ width: ICON_AREA_SIZE, height: ICON_AREA_SIZE, backgroundColor: '#FFEFEF' }} />
+        ) : undefined
+      }
+      rightSource={
+        showRightSource ? (
+          <div style={{ width: ICON_AREA_SIZE, height: ICON_AREA_SIZE, backgroundColor: '#FFEFEF' }} />
+        ) : undefined
+      }
+    />
+  );
+};
+
+Playground.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'M',
+  children: 'Button',
+  disabled: false,
+  isLoading: false,
+  showLeftSource: false,
+  showRightSource: false,
+};
+
+Playground.argTypes = {
+  children: {
+    control: { type: 'text' },
   },
-  parameters: {
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=407-3568',
-    },
+  showLeftSource: {
+    control: { type: 'boolean' },
+    description: 'Playground 전용: leftSource(ReactElement) 표시 여부를 토글합니다. 실제 prop은 leftSource입니다.',
+    table: { category: 'Playground (데모 전용)' },
+  },
+  showRightSource: {
+    control: { type: 'boolean' },
+    description: 'Playground 전용: rightSource(ReactElement) 표시 여부를 토글합니다. 실제 prop은 rightSource입니다.',
+    table: { category: 'Playground (데모 전용)' },
   },
 };
 
-export const Primary: Story = {
-  args: {
-    styleVar: 'PRIMARY',
-    sizeVar: 'M',
-    children: 'Primary Button',
-    disabled: false,
+Playground.parameters = {
+  controls: {
+    include: [
+      'children',
+      'styleVar',
+      'sizeVar',
+      'color',
+      'disabled',
+      'isLoading',
+      'lineClamp',
+      'showLeftSource',
+      'showRightSource',
+    ],
+  },
+  design: {
+    type: 'figma',
+    url: FIGMA_URL,
   },
 };
 
-export const Secondary: Story = {
-  args: {
-    styleVar: 'SECONDARY',
-    sizeVar: 'M',
-    children: 'Secondary Button',
-    disabled: false,
+export const Loading: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+
+Loading.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'M',
+  children: 'Loading',
+  isLoading: true,
+  disabled: false,
+};
+
+Loading.parameters = {
+  controls: {
+    include: ['styleVar', 'sizeVar'],
+  },
+  design: {
+    type: 'figma',
+    url: FIGMA_URL,
   },
 };
 
-export const Solid: Story = {
-  args: {
-    styleVar: 'SOLID',
-    sizeVar: 'M',
-    children: 'Solid Button',
-    color: 'neutral300',
-    disabled: false,
-    leftSource: <Icon sizeVar='S' iconSource={EditIcon} />,
+export const Disabled: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+
+Disabled.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'M',
+  children: 'Disabled',
+  disabled: true,
+};
+
+Disabled.parameters = {
+  controls: {
+    include: ['styleVar', 'sizeVar'],
+  },
+  design: {
+    type: 'figma',
+    url: FIGMA_URL,
   },
 };
 
-export const Ghost: Story = {
-  args: {
-    styleVar: 'GHOST',
-    sizeVar: 'M',
-    children: 'Ghost Button',
-    disabled: false,
-  },
+export const WithIcon: StoryFn<ButtonProps> = (args) => <Button {...args} />;
+
+WithIcon.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'M',
+  children: 'Button',
+  leftSource: <Icon iconSource={EditIcon} sizeVar='S' color='neutral0' />,
 };
 
-export const SmallSize: Story = {
-  args: {
-    styleVar: 'PRIMARY',
-    sizeVar: 'S',
-    children: 'Small Button',
-    disabled: false,
+WithIcon.parameters = {
+  controls: {
+    include: ['styleVar', 'sizeVar', 'color'],
   },
-};
-
-export const ExtraSmallSize: Story = {
-  args: {
-    styleVar: 'PRIMARY',
-    sizeVar: 'XS',
-    children: '버튼',
-    disabled: false,
-    leftSource: <Icon sizeVar='XS' iconSource={EditIcon} />,
-  },
-};
-
-export const Loading: Story = {
-  args: {
-    styleVar: 'PRIMARY',
-    sizeVar: 'M',
-    children: 'Loading',
-    isLoading: true,
-    disabled: false,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    styleVar: 'PRIMARY',
-    sizeVar: 'M',
-    children: 'Disabled',
-    disabled: true,
+  design: {
+    type: 'figma',
+    url: FIGMA_URL,
   },
 };
