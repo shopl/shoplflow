@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.11
+
+### Patch Changes
+
+- [#754](https://github.com/shopl/shoplflow/pull/754) [`afd67b823e17c3862f2b144b4abaa258432628d2`](https://github.com/shopl/shoplflow/commit/afd67b823e17c3862f2b144b4abaa258432628d2) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - avatar ML 사이즈 추가, button small padding 변경, toggleButton 전체 disabled 추가
+
 ## 0.46.10
 
 ### Patch Changes
