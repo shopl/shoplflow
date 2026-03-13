@@ -10,10 +10,10 @@
 |----------|----------|-----------------|-------------|------|
 | Avatar | Avatar | 2.0.0 | 2.0 | 🟢 |
 | BackDrop | BackDrop | 2.0.0 | 2.0 | 🟢 |
-| Buttons | Button | 2.0.2 | 2.0 | 🟢 |
-| Buttons | DropdownButton | 2.0.2 | 2.0 | 🟢 |
-| Buttons | IconButton | 2.0.2 | 2.0 | 🟢 |
-| Buttons | SplitButton | 2.0.2 | 2.0 | 🟢 |
+| Buttons | Button | 2.0.3 | 2.0 | 🟢 |
+| Buttons | DropdownButton | 2.0.3 | 2.0 | 🟢 |
+| Buttons | IconButton | 2.0.3 | 2.0 | 🟢 |
+| Buttons | SplitButton | 2.0.3 | 2.0 | 🟢 |
 | Callout | Callout | 2.1.4 | 2.1 | 🟢 |
 | Chips | ChipButton | 2.0.0 | 2.0 | 🟢 |
 | Chips | ChipToggle | 2.0.0 | 2.0 | 🟢 |
