@@ -16,7 +16,7 @@ const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element 
           }}
         />
       </StyledAvatar>
-      <StyledAvatarBadge>{badge}</StyledAvatarBadge>
+      <StyledAvatarBadge size={rest.sizeVar}>{badge}</StyledAvatarBadge>
     </StyledAvatarContainer>
   );
 };

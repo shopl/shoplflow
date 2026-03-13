@@ -20,6 +20,25 @@ const getSizeBySizeVariant = (size: AvatarOptionProps['sizeVar']) => {
   }
 };
 
+const getIconSizeBySizeVariant = (size: AvatarOptionProps['sizeVar']) => {
+  switch (size) {
+    case 'XS':
+      return '8px';
+    case 'S':
+      return '12px';
+    case 'M':
+      return '16px';
+    case 'ML':
+      return '16px';
+    case 'L':
+      return '20px';
+    case 'XL':
+      return '24px';
+    default:
+      return '16px';
+  }
+};
+
 export const StyledAvatar = styled.picture<AvatarOptionProps>`
   display: flex;
   align-items: center;
@@ -45,7 +64,7 @@ export const StyledAvatarImage = styled.img`
   height: 100%;
 `;
 
-export const StyledAvatarBadge = styled.div`
+export const StyledAvatarBadge = styled.div<{ size: AvatarOptionProps['sizeVar'] }>`
   position: absolute;
   display: flex;
   align-items: center;
@@ -54,4 +73,10 @@ export const StyledAvatarBadge = styled.div`
   height: fit-content;
   bottom: 0;
   right: 0;
+  > svg {
+    min-width: ${({ size }) => getIconSizeBySizeVariant(size)};
+    min-height: ${({ size }) => getIconSizeBySizeVariant(size)};
+    width: ${({ size }) => getIconSizeBySizeVariant(size)};
+    height: ${({ size }) => getIconSizeBySizeVariant(size)};
+  }
 `;
