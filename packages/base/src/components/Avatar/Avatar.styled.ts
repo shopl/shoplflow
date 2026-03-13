@@ -9,6 +9,8 @@ const getSizeBySizeVariant = (size: AvatarOptionProps['sizeVar']) => {
       return '24px';
     case 'M':
       return '32px';
+    case 'ML':
+      return '40px';
     case 'L':
       return '48px';
     case 'XL':

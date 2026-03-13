@@ -6,6 +6,7 @@ export const AvatarSizeVariants = {
   XS: 'XS',
   S: 'S',
   M: 'M',
+  ML: 'ML',
   L: 'L',
   XL: 'XL',
 } as const;
