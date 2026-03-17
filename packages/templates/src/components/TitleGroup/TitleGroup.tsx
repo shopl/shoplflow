@@ -1,6 +1,6 @@
 import { Icon, IconButton, Stack, StackContainer, Text, Tooltip } from '@shoplflow/base';
 import type { ChildrenProps } from '@shoplflow/base';
-import { createContext, useContext, useLayoutEffect, useState } from 'react';
+import { createContext, useContext } from 'react';
 import { StyledRequired, getTypographyAndColor } from './TitleGroup.styled';
 import type {
   ActionsProps,
@@ -13,7 +13,6 @@ import { HelpLineIcon } from '@shoplflow/shopl-assets';
 
 interface TitleGroupContextValue {
   depth: 1 | 2 | 3;
-  setDepth: (depth: 1 | 2 | 3) => void;
 }
 
 const TitleGroupContext = createContext<TitleGroupContextValue | null>(null);
@@ -58,23 +57,9 @@ const HeaderBox = ({ children }: ChildrenProps) => {
   );
 };
 
-const Header = ({
-  depth: depthProp,
-  title,
-  isRequired,
-  count,
-  helpIconProps,
-  rightIconButton,
-}: TitleGroupHeaderProps) => {
-  const { depth: contextDepth, setDepth } = useTitleGroupContext();
-  const depth = depthProp ?? contextDepth;
+const Header = ({ title, isRequired, count, helpIconProps, rightIconButton }: TitleGroupHeaderProps) => {
+  const { depth } = useTitleGroupContext();
   const { color, typography } = getTypographyAndColor(depth);
-
-  useLayoutEffect(() => {
-    if (depthProp !== undefined) {
-      setDepth(depthProp);
-    }
-  }, [depthProp, setDepth]);
 
   return (
     <Stack.Horizontal align='center'>
@@ -108,11 +93,9 @@ const Description = ({ description, ...rest }: DescriptionProps) => {
   );
 };
 
-const TitleGroup = ({ children, depth: depthProp }: TitleGroupProps) => {
-  const [depth, setDepth] = useState<1 | 2 | 3>(depthProp ?? 1);
-
+const TitleGroup = ({ children, depth = 1 }: TitleGroupProps) => {
   return (
-    <TitleGroupContext.Provider value={{ depth, setDepth }}>
+    <TitleGroupContext.Provider value={{ depth }}>
       <Stack.Vertical width='100%' data-shoplflow={'Title'}>
         {children}
       </Stack.Vertical>
