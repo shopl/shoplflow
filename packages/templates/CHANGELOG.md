@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.2.13
+
+### Patch Changes
+
+- [#758](https://github.com/shopl/shoplflow/pull/758) [`ccf8f788d7c836d7ec519ac769e60f29d883516b`](https://github.com/shopl/shoplflow/commit/ccf8f788d7c836d7ec519ac769e60f29d883516b) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - TitleGroup - HeaderBox 단독 사용 시 context 오류 방지
+
 ## 0.2.12
 
 ### Patch Changes
