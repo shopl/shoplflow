@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.2.12
+
+### Patch Changes
+
+- [#756](https://github.com/shopl/shoplflow/pull/756) [`0f6f06df9190e1b7c6aab7eaf551b0163ade6ee5`](https://github.com/shopl/shoplflow/commit/0f6f06df9190e1b7c6aab7eaf551b0163ade6ee5) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Depth 2, 3의 description typography 변경
+
 ## 0.2.11
 
 ### Patch Changes
