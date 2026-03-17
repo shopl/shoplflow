@@ -19,10 +19,7 @@ const TitleGroupContext = createContext<TitleGroupContextValue | null>(null);
 
 const useTitleGroupContext = () => {
   const context = useContext(TitleGroupContext);
-  if (!context) {
-    throw new Error('useTitleGroupContext must be used within a TitleGroup');
-  }
-  return context;
+  return context ?? { depth: 1 as const };
 };
 
 const TitleGroupHelpIcon = ({
@@ -57,8 +54,16 @@ const HeaderBox = ({ children }: ChildrenProps) => {
   );
 };
 
-const Header = ({ title, isRequired, count, helpIconProps, rightIconButton }: TitleGroupHeaderProps) => {
-  const { depth } = useTitleGroupContext();
+const Header = ({
+  title,
+  isRequired,
+  count,
+  helpIconProps,
+  rightIconButton,
+  depth: depthProp,
+}: TitleGroupHeaderProps) => {
+  const { depth: contextDepth } = useTitleGroupContext();
+  const depth = depthProp ?? contextDepth;
   const { color, typography } = getTypographyAndColor(depth);
 
   return (

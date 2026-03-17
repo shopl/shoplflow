@@ -42,6 +42,12 @@ export type TitleGroupHeaderProps = {
   title: string;
 
   /**
+   * 제목의 타이포그래피 스타일.
+   * @deprecated TitleGroup의 depth prop을 사용하세요.
+   */
+  depth?: 1 | 2 | 3;
+
+  /**
    * 아이템의 총 갯수
    */
   count?: string;
