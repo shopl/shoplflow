@@ -1,6 +1,4 @@
-import React from 'react';
-
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/react-vite';
 import { Button, colorTokens, Icon, Stack, Switch, IconButton } from '@shoplflow/base';
 import TitleGroup from './TitleGroup';
 import type { TitleGroupHeaderProps, TitleGroupHelpIconProps, TitleGroupProps } from './TitleGroup.types';
@@ -129,7 +127,7 @@ export const Depth2: StoryFn<TitleGroupProps> = () => {
             <Switch activeColor='primary300' />
           </TitleGroup.Actions>
         </TitleGroup.HeaderBox>
-        <TitleGroup.Description description='paragraph1' />
+        <TitleGroup.Description description='paragraph2' />
       </TitleGroup>
     </Stack.Horizontal>
   );
@@ -164,7 +162,7 @@ export const Depth3: StoryFn<TitleGroupProps> = () => {
             <Switch activeColor='primary300' />
           </TitleGroup.Actions>
         </TitleGroup.HeaderBox>
-        <TitleGroup.Description description='paragraph1' />
+        <TitleGroup.Description description='paragraph2' />
       </TitleGroup>
     </Stack.Horizontal>
   );
@@ -190,7 +188,7 @@ export const WithoutActions: StoryFn<TitleGroupProps> = () => {
             }}
           />
         </TitleGroup.HeaderBox>
-        <TitleGroup.Description description={'paragraph1 \n paragraph2'} />
+        <TitleGroup.Description description={'paragraph1'} />
       </TitleGroup>
     </Stack.Horizontal>
   );

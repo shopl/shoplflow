@@ -1,5 +1,6 @@
 import { Icon, IconButton, Stack, StackContainer, Text, Tooltip } from '@shoplflow/base';
 import type { ChildrenProps } from '@shoplflow/base';
+import { createContext, useContext, useLayoutEffect, useState } from 'react';
 import { StyledRequired, getTypographyAndColor } from './TitleGroup.styled';
 import type {
   ActionsProps,
@@ -9,6 +10,21 @@ import type {
   TitleGroupHelpIconProps,
 } from './TitleGroup.types';
 import { HelpLineIcon } from '@shoplflow/shopl-assets';
+
+interface TitleGroupContextValue {
+  depth: 1 | 2 | 3;
+  setDepth: (depth: 1 | 2 | 3) => void;
+}
+
+const TitleGroupContext = createContext<TitleGroupContextValue | null>(null);
+
+const useTitleGroupContext = () => {
+  const context = useContext(TitleGroupContext);
+  if (!context) {
+    throw new Error('useTitleGroupContext must be used within a TitleGroup');
+  }
+  return context;
+};
 
 const TitleGroupHelpIcon = ({
   tooltipPlacement,
@@ -41,8 +57,25 @@ const HeaderBox = ({ children }: ChildrenProps) => {
     </StackContainer.Horizontal>
   );
 };
-const Header = ({ depth, title, isRequired, count, helpIconProps, rightIconButton }: TitleGroupHeaderProps) => {
+
+const Header = ({
+  depth: depthProp,
+  title,
+  isRequired,
+  count,
+  helpIconProps,
+  rightIconButton,
+}: TitleGroupHeaderProps) => {
+  const { depth: contextDepth, setDepth } = useTitleGroupContext();
+  const depth = depthProp ?? contextDepth;
   const { color, typography } = getTypographyAndColor(depth);
+
+  useLayoutEffect(() => {
+    if (depthProp !== undefined) {
+      setDepth(depthProp);
+    }
+  }, [depthProp, setDepth]);
+
   return (
     <Stack.Horizontal align='center'>
       <Stack.Horizontal spacing='spacing04' align='center' justify='center'>
@@ -63,20 +96,27 @@ const Header = ({ depth, title, isRequired, count, helpIconProps, rightIconButto
 };
 
 const Description = ({ description, ...rest }: DescriptionProps) => {
+  const { depth } = useTitleGroupContext();
+  const typography = depth === 1 ? 'paragraph1' : 'paragraph2';
+
   return (
     <StackContainer.Vertical padding='0px 0px 12px' height='auto'>
-      <Text typography='paragraph1' color='neutral500' wordBreak='break-all' whiteSpace='pre-line' {...rest}>
+      <Text typography={typography} color='neutral500' wordBreak='break-all' whiteSpace='pre-line' {...rest}>
         {description}
       </Text>
     </StackContainer.Vertical>
   );
 };
 
-const TitleGroup = ({ children }: TitleGroupProps) => {
+const TitleGroup = ({ children, depth: depthProp }: TitleGroupProps) => {
+  const [depth, setDepth] = useState<1 | 2 | 3>(depthProp ?? 1);
+
   return (
-    <Stack.Vertical width='100%' data-shoplflow={'Title'}>
-      {children}
-    </Stack.Vertical>
+    <TitleGroupContext.Provider value={{ depth, setDepth }}>
+      <Stack.Vertical width='100%' data-shoplflow={'Title'}>
+        {children}
+      </Stack.Vertical>
+    </TitleGroupContext.Provider>
   );
 };
 
