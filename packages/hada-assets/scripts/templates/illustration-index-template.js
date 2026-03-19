@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const makeEntries = require('./makeEntries');
 
 function defaultIndexTemplate(filePaths) {

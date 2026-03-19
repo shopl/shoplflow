@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react';
-import React, { cloneElement, forwardRef, useState } from 'react';
+import type React from 'react';
+import { cloneElement, forwardRef, useState } from 'react';
 import type { DropdownTriggerButtonProps } from './Dropdown.types';
 import { useDropdown } from './useDropdown';
 import {

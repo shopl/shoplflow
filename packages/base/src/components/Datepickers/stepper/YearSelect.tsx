@@ -1,7 +1,8 @@
 import SimpleBarReact from 'simplebar-react';
 import { Container, OptionList, OptionListItem } from './Year.styled';
 
-import React, { useEffect, useRef, useState } from 'react';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useOutsideClick } from '@shoplflow/utils';
 
 // SimpleBarReact의 타입을 가져오는 함수 > SimpleBarCore가 라이브러리에서 export 되지 않아서 해당 타입이 필요합니다.

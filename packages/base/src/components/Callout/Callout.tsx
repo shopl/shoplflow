@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledCallout, StyledCalloutIcon } from './Callout.styled';
 import type { TextProps } from '../Text';
 import { Text } from '../Text';

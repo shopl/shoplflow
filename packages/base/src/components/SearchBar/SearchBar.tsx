@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useOutsideClick } from '@shoplflow/utils';
 import { StyledStackContainer } from './SearchBar.styled';
 import type { SearchBarBaseProps, SearchBarComponent } from './SearchBar.types';

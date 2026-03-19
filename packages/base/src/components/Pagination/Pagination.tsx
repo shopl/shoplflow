@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledPagination, PageItem, PaginationWrapper, Ellipsis, RightSourceWrapper } from './Pagination.styled';
 import type { PaginationProps } from './Pagination.types';
 import { Icon } from '../Icon';

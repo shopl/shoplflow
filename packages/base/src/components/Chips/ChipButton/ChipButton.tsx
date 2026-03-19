@@ -1,5 +1,4 @@
 import type { MouseEvent } from 'react';
-import React from 'react';
 
 import { getLineTypographyBySizeVar, StyledChipButton } from './ChipButton.styled';
 import type { ChipButtonProps } from './ChipButton.types';

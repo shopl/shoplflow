@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ColorTokens } from '../styles';
 import { colorTokens } from '../styles';
 

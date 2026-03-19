@@ -1,4 +1,4 @@
-import React, { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
+import { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import type { ScrollAreaProps, ScrollbarRefType } from './ScrollArea.types';
 import Scrollbars from 'react-custom-scrollbars-2';
 import { useMergeRefs } from '@shoplflow/utils';

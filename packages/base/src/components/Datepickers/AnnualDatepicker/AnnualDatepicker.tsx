@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { YearContainer, YearArea, EachYearArea, EachYearDate } from './AnnualDatepicker.styled';
 import type { AnnualDatepickerProps } from './AnnualDatepicker.types';
 

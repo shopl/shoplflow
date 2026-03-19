@@ -17,9 +17,7 @@ for (const dir of fs.readdirSync(packagesDir)) {
 
   // ✅ repository가 없거나 url이 비어있으면 고쳐준다
   const nextRepo =
-    typeof pkg.repository === "object"
-      ? { ...pkg.repository }
-      : { ...repo };
+    typeof pkg.repository === "object" ? { ...pkg.repository } : { ...repo };
 
   nextRepo.url = repo.url;
   nextRepo.type ??= repo.type;

@@ -42,7 +42,8 @@ export interface TabProps extends TabOptionProps {
 }
 
 export interface TabOptionProps
-  extends LeftAndRightNodeProps,
+  extends
+    LeftAndRightNodeProps,
     StyleVariantProps<TabStyleVariantType>,
     SizeVariantProps<TabSizeVariantType>,
     Omit<HTMLAttributes<HTMLElement>, 'color'> {

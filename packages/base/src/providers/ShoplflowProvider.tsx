@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 
 import { useDomain } from '../hooks/useDomain';
 import type { DomainType } from '../types/Domain';

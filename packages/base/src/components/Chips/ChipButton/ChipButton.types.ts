@@ -22,7 +22,8 @@ export type ChipButtonStyleVariantType = $Values<typeof ChipButtonStyleVariants>
 export type ChipButtonSizeVariantType = $Values<typeof ChipButtonSizeVariants>;
 
 export interface ChipButtonProps
-  extends ChipButtonOptionProps,
+  extends
+    ChipButtonOptionProps,
     Omit<HTMLAttributes<HTMLButtonElement>, 'color'>,
     TextProps,
     DisableProps,

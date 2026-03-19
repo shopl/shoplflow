@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Header } from '@tanstack/react-table';
 import { Icon, Menu, StackContainer } from '@shoplflow/base';
 import { AscIcon, DescIcon, MoreIcon } from '@shoplflow/shopl-assets';

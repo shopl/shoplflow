@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledTooltipContent } from './Tooltip.styled';
 import type { TooltipContentProps } from './Tooltip.types';
 import { Text } from '../Text';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FooterContainer } from './Modal.styled';
 import type { ModalFooterProps, ModalFooterType } from './Modal.types';
 import { MODAL_FOOTER_KEY } from './Modal.types';

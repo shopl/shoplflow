@@ -1,4 +1,5 @@
-import React, { Fragment, useCallback } from 'react';
+import type React from 'react';
+import { Fragment, useCallback } from 'react';
 import {
   BodyTableContainer,
   HeaderTableContainer,
