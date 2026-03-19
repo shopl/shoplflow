@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Icon, StackContainer } from '@shoplflow/base';
 import type { AttachmentThumbnailProps } from './AttachmentList.types';
 

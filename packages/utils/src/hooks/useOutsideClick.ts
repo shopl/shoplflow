@@ -64,7 +64,6 @@ export const useOutsideClick = ({
         document.removeEventListener('wheel', handleOutClick);
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selector, useOutsideScroll, onClose]);
 
   useEffect(() => {

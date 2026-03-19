@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Steps, StepsContainer } from './Slider.styled';
 import { generateSteps } from './sliderUtils';
 import type { SliderBounds } from './Slider.types';

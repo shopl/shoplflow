@@ -1,4 +1,5 @@
-import React, { createContext, useContext } from 'react';
+import type React from 'react';
+import { createContext, useContext } from 'react';
 import type { StackContainerOptionProps } from '@shoplflow/base';
 import { StackContainer } from '@shoplflow/base';
 import type { AttachmentListProps } from './AttachmentList.types';

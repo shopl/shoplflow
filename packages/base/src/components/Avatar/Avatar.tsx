@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledAvatar, StyledAvatarBadge, StyledAvatarContainer, StyledAvatarImage } from './Avatar.styled';
 import type { AvatarProps } from './Avatar.types';
 import AvatarImageNone from '../../assets/mocks/AvatarNone.png';

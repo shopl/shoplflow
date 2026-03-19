@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import BackDrop from '../components/BackDrop/BackDrop';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';

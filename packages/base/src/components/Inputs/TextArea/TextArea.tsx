@@ -1,5 +1,6 @@
 import type { ChangeEvent, FocusEvent } from 'react';
-import React, { forwardRef, useEffect, useId, useState, createContext, useContext } from 'react';
+import type React from 'react';
+import { forwardRef, useEffect, useId, useState, createContext, useContext } from 'react';
 
 import type { TextAreaProps } from './TextArea.types';
 

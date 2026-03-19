@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { StyledNumberCombobox, IconWrapper } from './NumberCombobox.styled';
 import type { NumberComboboxProps } from './NumberCombobox.types';
 import { Input } from '../../Inputs';

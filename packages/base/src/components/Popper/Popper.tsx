@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { StyledPopper } from './Popper.styled';
 import type { PopperProps, PopperTriggerProps, PopperPortalProps } from './Popper.types';
 import { AnimatePresence, motion } from 'framer-motion';

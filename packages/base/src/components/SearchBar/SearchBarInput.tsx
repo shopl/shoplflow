@@ -1,5 +1,6 @@
 import type { ChangeEvent, KeyboardEvent } from 'react';
-import React, { useCallback, useState, useRef } from 'react';
+import type React from 'react';
+import { useCallback, useState, useRef } from 'react';
 import { SearchIcon } from '@shoplflow/shopl-assets';
 import { debounce } from '@shoplflow/utils';
 import { Icon } from '../Icon';

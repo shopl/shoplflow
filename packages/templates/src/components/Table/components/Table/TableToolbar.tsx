@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { StackContainer } from '@shoplflow/base';
 
 import { useTable } from '../../context';

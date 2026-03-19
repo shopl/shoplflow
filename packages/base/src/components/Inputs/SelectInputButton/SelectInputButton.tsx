@@ -1,4 +1,4 @@
-import React, { type MouseEvent, useState } from 'react';
+import { type MouseEvent, useState } from 'react';
 import { StyledSelectInputButton } from './SelectInputButton.styled';
 import type { SelectInputButtonProps } from './SelectInputButton.types';
 import { IconButton } from '../../Buttons';

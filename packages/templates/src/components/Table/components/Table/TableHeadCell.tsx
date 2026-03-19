@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { colorTokens, Popper } from '@shoplflow/base';
 import { useOutsideClick } from '@shoplflow/utils';
 import { FilterMenu, SortMenu } from '../TableMenu';

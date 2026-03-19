@@ -14,7 +14,7 @@ export function assignRef<T = unknown>(ref: ReactRef<T> | null | undefined, valu
 
   try {
     ref.current = value;
-  } catch (error) {
+  } catch (_error) {
     throw new Error(`Cannot assign value '${String(value)}' to ref '${String(ref)}'`);
   }
 }

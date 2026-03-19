@@ -165,7 +165,6 @@ export function useSelect<T>(
   handleRemove: (id: string) => void;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function useSelect<T extends { [key: string]: any }, Mode extends 'SINGLE' | 'MULTI'>(
   mode: Mode,
   data: T[],

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useModalOption } from './hooks/useModalOption';
 import type { ModalTopProps } from './Modal.types';
 

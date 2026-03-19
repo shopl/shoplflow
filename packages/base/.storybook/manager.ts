@@ -1,6 +1,5 @@
 import { addons } from 'storybook/manager-api';
 
-
 import theme from './theme';
 
 addons.setConfig({
@@ -14,8 +13,4 @@ link.setAttribute('rel', 'shortcut icon');
 document.head.appendChild(link);
 
 const viewport = document.querySelector('meta[name="viewport"]');
-viewport!.setAttribute(
-  'content',
-  'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0',
-);
-
+viewport!.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');

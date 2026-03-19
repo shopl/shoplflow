@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { EachMonthArea, EachMonthDate, MonthArea, MonthContainer } from './MonthDatepicker.styled';
 import type { MonthDatepickerProps } from './MonthDatepicker.types';
 import YearStepper from '../stepper/YearStepper';

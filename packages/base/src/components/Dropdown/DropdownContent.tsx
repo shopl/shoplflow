@@ -1,5 +1,4 @@
 import type { MouseEvent } from 'react';
-import React from 'react';
 import { useDropdown } from './useDropdown';
 import { noop, OutSideClick } from '@shoplflow/utils';
 import { StyledDropdownContent } from './Dropdown.styled';

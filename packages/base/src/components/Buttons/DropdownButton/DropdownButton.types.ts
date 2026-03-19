@@ -18,8 +18,7 @@ export const DropdownButtonStyleVariants = {
 export type DropdownButtonStyleVariantType = $Values<typeof DropdownButtonStyleVariants>;
 
 export interface DropdownButtonProps
-  extends DropdownButtonOptionProps,
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
+  extends DropdownButtonOptionProps, Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {}
 
 export type DropdownButtonOptionProps = SizeVariantProps<DropdownButtonSizeVariantType> &
   StyleVariantProps<DropdownButtonStyleVariantType> & { text: string } & {

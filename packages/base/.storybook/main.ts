@@ -5,13 +5,13 @@
  * - 이 파일은 Node에서만 로드되며, 상대 경로는 .storybook 디렉터리 기준입니다.
  * @see https://storybook.js.org/docs/configure#main-configuration-file
  */
-import type { StorybookConfig } from "@storybook/react-vite";
-import { createRequire } from "node:module";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import type { StorybookConfig } from '@storybook/react-vite';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // ESM 환경에서 require.resolve를 쓰기 위해 createRequire 사용
-const require = createRequire(import.meta.url);
+const _require = createRequire(import.meta.url);
 // ESM에서 __dirname 대체 (import.meta.url → 디렉터리 경로)
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -22,7 +22,7 @@ const config: StorybookConfig = {
   // - options: 프레임워크별 옵션 (react-vite는 보통 빈 객체)
   // -------------------------------------------------------------------------
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite',
     options: {},
   },
 
@@ -31,10 +31,7 @@ const config: StorybookConfig = {
   // - *.stories.@(js|jsx|mjs|ts|tsx): CSF(Component Story Format) 스토리
   // - *.mdx: MDX 문서(레거시 Docs 등). 상대 경로는 프로젝트 루트가 아니라 이 설정 파일 기준
   // -------------------------------------------------------------------------
-  stories: [
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../src/**/*.mdx",
-  ],
+  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)', '../src/**/*.mdx'],
 
   // -------------------------------------------------------------------------
   // addons: Storybook UI/기능 확장
@@ -45,13 +42,13 @@ const config: StorybookConfig = {
   // - addon-mcp: MCP 도구셋(dev/docs) 노출
   // -------------------------------------------------------------------------
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-docs",
-    "@storybook/addon-a11y",
-    "@storybook/addon-designs",
-    "@storybook/addon-themes",
+    '@storybook/addon-links',
+    '@storybook/addon-docs',
+    '@storybook/addon-a11y',
+    '@storybook/addon-designs',
+    '@storybook/addon-themes',
     {
-      name: "@storybook/addon-mcp",
+      name: '@storybook/addon-mcp',
       options: {
         toolsets: {
           dev: true,
@@ -72,19 +69,19 @@ const config: StorybookConfig = {
       // 브라우저 환경에서 process.env를 참조하는 코드 대체 (Node 전용 변수 제거)
       define: {
         ...config.define,
-        "process.env": {},
-        "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development"),
+        'process.env': {},
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
       },
 
       resolve: {
         ...config.resolve,
         // React/React-DOM이 여러 번 번들에 들어가지 않도록 단일 인스턴스로 통일
-        dedupe: ["react", "react-dom"],
+        dedupe: ['react', 'react-dom'],
         alias: {
           ...config.resolve?.alias,
           // Node 전용 'tty' 모듈이 브라우저 번들에서 import될 때 에러 방지 (Storybook 10 + Vite)
-          tty: join(__dirname, "stubs", "tty.js"),
-          "node:tty": join(__dirname, "stubs", "tty.js"),
+          tty: join(__dirname, 'stubs', 'tty.js'),
+          'node:tty': join(__dirname, 'stubs', 'tty.js'),
         },
       },
 
@@ -92,11 +89,11 @@ const config: StorybookConfig = {
         ...(config.plugins || []),
         // file:// 프로토콜로 들어오는 경로를 로컬 파일 경로로 변환 (일부 애드온/의존성 대응)
         {
-          name: "resolve-file-protocol",
-          enforce: "pre",
+          name: 'resolve-file-protocol',
+          enforce: 'pre',
           resolveId(source) {
-            if (source.startsWith("file://")) {
-              return source.replace("file://", "");
+            if (source.startsWith('file://')) {
+              return source.replace('file://', '');
             }
             return null;
           },
@@ -109,7 +106,7 @@ const config: StorybookConfig = {
           ...config.build?.rollupOptions,
           // UNRESOLVED_IMPORT 경고는 의도적으로 무시 (모노레포/심볼릭 링크 등에서 자주 발생)
           onwarn(warning, warn) {
-            if (warning.code === "UNRESOLVED_IMPORT") return;
+            if (warning.code === 'UNRESOLVED_IMPORT') return;
             warn(warning);
           },
         },
@@ -120,9 +117,9 @@ const config: StorybookConfig = {
         ...config.optimizeDeps,
         include: [
           ...(config.optimizeDeps?.include ?? []),
-          "@shoplflow/shopl-assets",
-          "@shoplflow/hada-assets",
-          "@storybook/addon-docs",
+          '@shoplflow/shopl-assets',
+          '@shoplflow/hada-assets',
+          '@storybook/addon-docs',
           // CJS 전용 패키지. pre-bundle로 ESM 변환해 "export named 'default'" 에러 방지
           // "semver",
         ],

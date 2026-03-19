@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Dropdown } from '../Dropdown';
 import { Text } from '../Text';
 import { Menu } from '../Menu';

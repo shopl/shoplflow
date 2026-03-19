@@ -1,4 +1,3 @@
-import React from 'react';
 import * as SC from './Skeleton.styled';
 import type { SkeletonProps } from './Skeleton.types';
 

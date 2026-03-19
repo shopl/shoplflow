@@ -25,7 +25,8 @@ export type ChipToggleStyleVariantType = $Values<typeof ChipToggleStyleVariants>
 export type ChipToggleSizeVariantType = $Values<typeof ChipToggleSizeVariants>;
 
 export interface ChipToggleProps
-  extends ChipToggleOptionProps,
+  extends
+    ChipToggleOptionProps,
     SelectedProps,
     DefaultSelectedProps,
     ColorTokenProps,

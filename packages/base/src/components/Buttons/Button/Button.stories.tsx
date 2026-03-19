@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
 import Button from './Button';

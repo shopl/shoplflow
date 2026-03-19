@@ -1,4 +1,3 @@
-/* eslint-disable storybook/use-storybook-expect -- Storybook 10: expect from storybook/test (@storybook/jest deprecated) */
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { expect, within, userEvent } from 'storybook/test';
 import { Stack } from '../Stack';

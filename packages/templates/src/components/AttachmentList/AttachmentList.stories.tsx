@@ -1,4 +1,3 @@
-import React from 'react';
 import type { StoryFn } from '@storybook/react';
 import { AttachmentList, AttachmentItem } from './index';
 import { AttachmentIcon as AttachmentIcon } from '@shoplflow/shopl-assets';

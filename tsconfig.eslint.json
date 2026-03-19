@@ -1,5 +1,12 @@
 {
-  "extends": "./tsconfig.base.json",
-  "include": ["./.eslintrc.js", "./**/*.ts", "./**/*.tsx", "./docs/**/*.(ts|tsx|mdx)"],
-  "exclude": ["**/dist/*", "**/node_modules/**", "**/.next/**", "**/storybook-static/**", ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["eslint.config.ts"]
 }

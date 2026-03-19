@@ -1,4 +1,3 @@
-import React from 'react';
 import { TableButton } from './components/TableElement';
 import { Icon } from '@shoplflow/base';
 import { EditIcon, RefreshIcon } from '@shoplflow/shopl-assets';

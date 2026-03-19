@@ -23,7 +23,7 @@ export interface ScrollAreaOptionProps {
   /**
    * (Function) 스크롤 이벤트 핸들러
    */
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
   onScroll?: React.UIEventHandler<any>;
   /**
    * (Function) 애니메이션 프레임 내에서 실행됩니다.
@@ -44,27 +44,27 @@ export interface ScrollAreaOptionProps {
   /**
    * 콘텐츠가 렌더링될 요소
    */
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
   renderView?: React.ComponentType<any>;
   /**
    * 수평 트랙 요소
    */
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
   renderTrackHorizontal?: React.ComponentType<any>;
   /**
    * 수직 트랙 요소
    */
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
   renderTrackVertical?: React.ComponentType<any>;
   /**
    * 수평 스크롤 바 요소
    */
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
   renderThumbHorizontal?: React.ComponentType<any>;
   /**
    * 수직 스크롤 바 요소
    */
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+
   renderThumbVertical?: React.ComponentType<any>;
 
   tagName?: string;

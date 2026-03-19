@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from 'react';
+import { forwardRef, useContext } from 'react';
 
 import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../Stack';

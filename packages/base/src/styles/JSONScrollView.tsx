@@ -1,10 +1,8 @@
 import { ScrollArea, Stack, Text } from '../components';
 import { Code } from './Box';
-import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 interface JSONViewerProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   items: Array<Record<string, any>>;
 }
 

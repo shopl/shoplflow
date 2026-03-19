@@ -1,2 +1,2 @@
-export * from './TableContextTypes';
-export * from './TableTypes';
+export type * from './TableContextTypes';
+export type * from './TableTypes';

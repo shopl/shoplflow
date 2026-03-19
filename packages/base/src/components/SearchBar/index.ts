@@ -8,5 +8,5 @@ SearchBar.Category = SearchBarCategory;
 SearchBar.Input = SearchBarInput;
 
 export { SearchBar };
-export * from './SearchBar.types';
+export type * from './SearchBar.types';
 export * from './version';

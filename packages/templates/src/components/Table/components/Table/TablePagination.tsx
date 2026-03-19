@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Pagination } from '@shoplflow/base';
 import { PAGE_SIZE } from '../../utils';
 import { useTable } from '../../context';

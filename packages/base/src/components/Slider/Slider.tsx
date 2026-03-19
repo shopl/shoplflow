@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import type { SliderProps } from './Slider.types';
 import { SliderContainer, SliderTrack, SelectedTrack } from './Slider.styled';
 import { SliderSteps } from './SliderSteps';

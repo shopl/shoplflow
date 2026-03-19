@@ -51,16 +51,17 @@ export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, Ch
   width?: string;
 }
 
-const dropdownSizeVariants = {
+const _dropdownSizeVariants = {
   S: 'S',
   M: 'M',
   L: 'L',
 } as const;
 
-export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;
+export type DropdownSizeVariantType = $Values<typeof _dropdownSizeVariants>;
 
 export interface DropdownTriggerButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
+  extends
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
     DisableProps,
     LeftAndRightElementProps,
     SizeVariantProps<DropdownSizeVariantType> {

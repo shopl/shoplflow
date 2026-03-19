@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import AttachmentItemSingle from './AttachmentItemSingle';
 import AttachmentItemMulti from './AttachmentItemMulti';
 import AttachmentThumbnail from './AttachmentThumbnail';

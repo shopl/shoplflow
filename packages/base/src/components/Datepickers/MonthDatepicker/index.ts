@@ -1,2 +1,2 @@
 export { default as MonthDatepicker } from './MonthDatepicker';
-export * from './MonthDatepicker.types';
+export type * from './MonthDatepicker.types';

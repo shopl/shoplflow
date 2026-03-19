@@ -3,7 +3,4 @@ import type { ButtonHTMLAttributes } from 'react';
 
 export interface RadioProps extends RadioOptionProps {}
 export interface RadioOptionProps
-  extends SelectedProps,
-    DefaultSelectedProps,
-    DisableProps,
-    ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends SelectedProps, DefaultSelectedProps, DisableProps, ButtonHTMLAttributes<HTMLButtonElement> {}
