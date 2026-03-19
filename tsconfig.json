@@ -1,3 +1,7 @@
 {
     "extends": "./tsconfig.base.json",
+    "exclude": ["eslint.config.ts"],
+    "references": [
+        { "path": "./tsconfig.eslint.json" }
+    ]
 }
