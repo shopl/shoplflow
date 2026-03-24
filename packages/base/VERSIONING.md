@@ -18,9 +18,9 @@
 | Chips | ChipButton | 2.0.1 | 2.0 | 🟢 |
 | Chips | ChipToggle | 2.0.1 | 2.0 | 🟢 |
 | Comboboxs | NumberCombobox | 2.0.1 | 2.0 | 🟢 |
-| ControlButtons | Checkbox | 2.0.2 | 2.0 | 🟢 |
-| ControlButtons | MinusButton | 2.0.2 | 2.0 | 🟢 |
-| ControlButtons | Radio | 2.0.2 | 2.0 | 🟢 |
+| ControlButtons | Checkbox | 2.0.3 | 2.0 | 🟢 |
+| ControlButtons | MinusButton | 2.0.3 | 2.0 | 🟢 |
+| ControlButtons | Radio | 2.0.3 | 2.0 | 🟢 |
 | Datepickers | AnnualDatepicker | 2.0.3 | 2.0 | 🟢 |
 | Datepickers | DayDatepicker | 2.0.3 | 2.0 | 🟢 |
 | Datepickers | MonthDatepicker | 2.0.3 | 2.0 | 🟢 |
