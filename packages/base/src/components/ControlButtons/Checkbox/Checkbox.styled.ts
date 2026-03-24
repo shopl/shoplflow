@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { colorTokens } from '../../../styles';
 import type { CheckboxOptionProps } from './Checkbox.types';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
-import { getDomain } from '../../../hooks';
 
 const getStylesByStyleVariant = (
   styleVariant?: CheckboxOptionProps['styleVar'],
@@ -11,9 +10,8 @@ const getStylesByStyleVariant = (
   isHovered?: boolean,
   readOnly?: boolean,
 ) => {
-  const domain = getDomain();
-  const primaryColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary300;
-  const primaryHoverColor = domain === 'hada' ? colorTokens.neutral700 : colorTokens.primary400;
+  const primaryColor = colorTokens.primary300;
+  const primaryHoverColor = colorTokens.primary400;
 
   switch (styleVariant) {
     case 'PRIMARY':
