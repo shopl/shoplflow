@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.14
+
+### Patch Changes
+
+- [#764](https://github.com/shopl/shoplflow/pull/764) [`59727c565fccec84f818aa036123103456124c62`](https://github.com/shopl/shoplflow/commit/59727c565fccec84f818aa036123103456124c62) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(checkbox): hada 선택 색상 변경
+
 ## 0.46.13
 
 ### Patch Changes
