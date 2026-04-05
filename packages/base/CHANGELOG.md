@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.15
+
+### Patch Changes
+
+- [#766](https://github.com/shopl/shoplflow/pull/766) [`285a80165238935ee537c4fc0052b602955490d7`](https://github.com/shopl/shoplflow/commit/285a80165238935ee537c4fc0052b602955490d7) Thanks [@velo-kim](https://github.com/velo-kim)! - HelperText export 추가
+
 ## 0.46.14
 
 ### Patch Changes
