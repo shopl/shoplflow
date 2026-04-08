@@ -5,6 +5,9 @@ import { Stack } from '../../Stack';
 import { ChipButtonSizeVariants, ChipButtonStyleVariants } from './ChipButton.types';
 import { ComponentStage } from '../../../styles/Box';
 import { colorTokens } from '../../../styles';
+import { Text } from '../../Text';
+import { Icon } from '../../Icon';
+import { SearchIcon, EditIcon } from '@shoplflow/shopl-assets';
 
 /** 스토리 컨트롤용 플레이스홀더(실제 토큰 키 아님). ChipButton에는 `undefined`로 넘김. */
 const SELECT_COLOR_TOKEN_DEFAULT = '— 기본값 —' as const;
@@ -204,6 +207,38 @@ export const SelectedCustomColors: Story = {
   render: (args) => (
     <WithStage>
       <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
+    </WithStage>
+  ),
+};
+
+export const WithCustomChildren: Story = {
+  args: {
+    styleVar: 'LINE',
+    sizeVar: 'S',
+    isSelected: false,
+  },
+  render: (args) => (
+    <WithStage>
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)}>
+        <Text typography='body2_400'>커스텀 children</Text>
+      </ChipButton>
+    </WithStage>
+  ),
+};
+
+export const WithLeftRightSource: Story = {
+  args: {
+    styleVar: 'LINE',
+    sizeVar: 'S',
+    text: '아이콘 포함',
+  },
+  render: (args) => (
+    <WithStage>
+      <ChipButton
+        {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)}
+        leftSource={<Icon iconSource={SearchIcon} sizeVar='S' />}
+        rightSource={<Icon iconSource={EditIcon} sizeVar='XS' />}
+      />
     </WithStage>
   ),
 };

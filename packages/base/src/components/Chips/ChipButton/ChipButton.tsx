@@ -11,6 +11,9 @@ const ChipButton = ({
   color = 'neutral200',
   sizeVar = ChipButtonSizeVariants.S,
   text,
+  children,
+  leftSource,
+  rightSource,
   onClick = noop,
   disabled = false,
   isSelected = false,
@@ -34,7 +37,9 @@ const ChipButton = ({
       disabled={disabled}
       data-shoplflow={'ChipButton'}
     >
-      <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>
+      {leftSource}
+      {children || <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>}
+      {rightSource}
     </StyledChipButton>
   );
 };

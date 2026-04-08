@@ -33,11 +33,18 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
   }
 };
 
-export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
+export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType, styleVar?: DropdownStyleVariantType) => {
+  if (styleVar === 'GHOST' && size === 'S') {
+    return css`
+      padding-left: 8px;
+      padding-right: 4px;
+    `;
+  }
+
   switch (size) {
     case 'XS':
       return css`
-        padding: 0 6px;
+        padding: 0 2px 0 6px;
       `;
     case 'S':
       return css`
@@ -61,11 +68,17 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
   }
 };
 
-export const getDisabledStyle = (disabled?: boolean) => {
+export const getDisabledStyle = ({
+  disabled,
+  styleVar,
+}: {
+  disabled?: boolean;
+  styleVar?: DropdownStyleVariantType;
+}) => {
   if (disabled) {
     return css`
       cursor: not-allowed;
-      background: ${colorTokens.neutral100};
+      background: ${styleVar === 'GHOST' ? 'transparent' : colorTokens.neutral100};
       svg > path {
         fill: ${colorTokens.neutral400} !important;
       }
@@ -104,10 +117,10 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeV
   return colorTokens.neutral300;
 };
 
-const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused, styleVar }: Status) => {
+const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused, isHovered, styleVar }: Status) => {
   if (styleVar === 'GHOST') {
     return css`
-      background-color: transparent;
+      background-color: ${isHovered || isFocused ? colorTokens.neutral400_5 : 'transparent'};
       border-width: 0;
       border-radius: 6px;
     `;
@@ -183,7 +196,7 @@ export const StyledDropdownButtonWrapper = styled.div<
       width,
     })};
   ${(props) => getButtonWrapperStyleBySizeVar(props)};
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ disabled, styleVar }) => getDisabledStyle({ disabled, styleVar })};
 
   ${({ hasValue }) => getClearIconHoverStyle(hasValue)}
 `;
@@ -198,8 +211,8 @@ export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
   height: 100%;
   cursor: pointer;
 
-  ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ sizeVar, styleVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar, styleVar)};
+  ${({ disabled, styleVar }) => getDisabledStyle({ disabled, styleVar })};
 
   .dropdown-clear-icon {
     display: none;
@@ -211,8 +224,16 @@ export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  min-width: ${({ sizeVar }) => (sizeVar === 'XS' ? '18px' : '22px')};
+  ${({ sizeVar, styleVar }) =>
+    styleVar === 'GHOST'
+      ? css`
+          width: 18px;
+          min-width: 18px;
+        `
+      : css`
+          min-width: ${sizeVar === 'XS' ? '18px' : '22px'};
+        `}
   height: 100%;
 
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ disabled, styleVar }) => getDisabledStyle({ disabled, styleVar })};
 `;

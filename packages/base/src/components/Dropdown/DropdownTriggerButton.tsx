@@ -110,12 +110,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
           </Stack.Horizontal>
 
           {onClear && sizeVar !== 'L' && sizeVar !== 'XS' && (
-            <IconButton
-              sizeVar={sizeVar}
-              styleVar='GHOST'
-              onClick={handleOnClear}
-              className='dropdown-clear-icon'
-            >
+            <IconButton sizeVar={sizeVar} styleVar='GHOST' onClick={handleOnClear} className='dropdown-clear-icon'>
               <Icon iconSource={DeleteIcon} color='neutral350' sizeVar='S' />
             </IconButton>
           )}
@@ -123,7 +118,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
 
         {RightSourceClone && <StackContainer padding='0 6px 0 0'>{RightSourceClone}</StackContainer>}
 
-        <DropdownButtonIcon sizeVar={sizeVar} data-shoplflow={'Dropdown-Button-Icon-Area'}>
+        <DropdownButtonIcon sizeVar={sizeVar} styleVar={styleVar} data-shoplflow={'Dropdown-Button-Icon-Area'}>
           <motion.div
             animate={{
               rotate: isOpen ? 180 : 0,

@@ -10,7 +10,7 @@ import type {
 } from '../../../utils/type/ComponentProps';
 import type { ColorTokens } from '../../../styles';
 import type { $Values } from '@shoplflow/utils';
-import type { HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 export const ChipButtonStyleVariants = {
   LINE: 'LINE',
 } as const;
@@ -36,6 +36,10 @@ export interface ChipButtonProps
     ColorTokenProps,
     BackgroundColorProps {}
 export interface ChipButtonOptionProps {
+  /**
+   * 내부 컨텐츠를 직접 렌더링합니다. 설정 시 `text`보다 우선합니다.
+   */
+  children?: ReactNode;
   /**
    * 선택 상태에서 기본 배경 대신 사용할 토큰입니다.
    */

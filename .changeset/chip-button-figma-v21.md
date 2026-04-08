@@ -9,3 +9,5 @@ ChipButton 스토리북: 선택 색상 토큰을 `select` 드롭다운으로 선
 ModalFooter: `padding` prop으로 푸터 영역 패딩 커스텀 가능(미지정 시 기존 16px 24px 유지).
 
 Dropdown.Button: `sizeVar='XS'`(24px, caption, normal)과 `styleVar='GHOST'`(투명 배경/보더 없는 트리거) 추가.
+
+DropdownTriggerButton: `styleVar='GHOST'`일 때 아이콘 영역 너비 18px 고정.

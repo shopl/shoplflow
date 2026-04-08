@@ -87,6 +87,7 @@ export const StyledChipButton = styled.button<ChipButtonStyledProps>`
   width: fit-content;
   gap: 2px;
   box-sizing: border-box;
+  overflow: hidden;
   cursor: pointer;
   ${({ sizeVar }) => getStyleBySizeVar(sizeVar)};
   ${(props) => props.styleVar === 'LINE' && lineStyle(props)};
