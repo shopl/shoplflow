@@ -260,6 +260,7 @@ import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
 import IcPlusMedium from './IcPlusMedium';
+import IcPodium from './IcPodium';
 import IcPopup from './IcPopup';
 import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
@@ -605,6 +606,7 @@ const icons = {
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
   'plus-medium': IcPlusMedium,
+  podium: IcPodium,
   popup: IcPopup,
   'preorder-medium': IcPreorderMedium,
   preview: IcPreview,
@@ -953,6 +955,7 @@ export {
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
   IcPlusMedium as PlusMediumIcon,
+  IcPodium as PodiumIcon,
   IcPopup as PopupIcon,
   IcPreorderMedium as PreorderMediumIcon,
   IcPreview as PreviewIcon,
