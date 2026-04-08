@@ -4,6 +4,7 @@ import type {
   DisableProps,
   LeftAndRightElementProps,
   SizeVariantProps,
+  StyleVariantProps,
 } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 import type { OffsetOptions, Placement } from '@floating-ui/core';
@@ -52,6 +53,7 @@ export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, Ch
 }
 
 const _dropdownSizeVariants = {
+  XS: 'XS',
   S: 'S',
   M: 'M',
   L: 'L',
@@ -59,12 +61,20 @@ const _dropdownSizeVariants = {
 
 export type DropdownSizeVariantType = $Values<typeof _dropdownSizeVariants>;
 
+const _dropdownStyleVariants = {
+  NORMAL: 'NORMAL',
+  GHOST: 'GHOST',
+} as const;
+
+export type DropdownStyleVariantType = $Values<typeof _dropdownStyleVariants>;
+
 export interface DropdownTriggerButtonProps
   extends
     Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
     DisableProps,
     LeftAndRightElementProps,
-    SizeVariantProps<DropdownSizeVariantType> {
+    SizeVariantProps<DropdownSizeVariantType>,
+    StyleVariantProps<DropdownStyleVariantType> {
   /**
    * placeholder를 설정합니다.
    */

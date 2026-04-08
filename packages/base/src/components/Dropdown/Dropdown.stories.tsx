@@ -93,6 +93,7 @@ export default meta;
 
 type PlaygroundArgs = DropdownProps & {
   sizeVar?: DropdownSizeVariantType;
+  styleVar?: 'NORMAL' | 'GHOST';
   isError?: boolean;
   showRightSource?: boolean;
   showLeftSource?: boolean;
@@ -119,6 +120,7 @@ export const Playground: StoryFn<PlaygroundArgs> = (args) => {
             <Dropdown.Button
               disabled={args.disabled}
               sizeVar={args.sizeVar ?? 'M'}
+              styleVar={args.styleVar ?? 'NORMAL'}
               isError={args.isError}
               onClear={args.hasOnClear ? handleReset : undefined}
               placeholder={'값이 없어서 보이는 placeholder'}
@@ -168,6 +170,7 @@ Playground.args = {
   offset: 4,
 
   sizeVar: 'M' as DropdownSizeVariantType,
+  styleVar: 'NORMAL' as const,
   disabled: false,
   isError: false,
   showRightSource: false,
@@ -178,7 +181,11 @@ Playground.args = {
 Playground.argTypes = {
   sizeVar: {
     control: { type: 'select' },
-    options: ['S', 'M', 'L'],
+    options: ['XS', 'S', 'M', 'L'],
+  },
+  styleVar: {
+    control: { type: 'select' },
+    options: ['NORMAL', 'GHOST'],
   },
   isError: {
     control: { type: 'boolean' },
@@ -219,6 +226,7 @@ Playground.parameters = {
 
 type SmallMediumArgs = DropdownProps & {
   sizeVar?: DropdownSizeVariantType;
+  styleVar?: 'NORMAL' | 'GHOST';
   isError?: boolean;
   showRightSource?: boolean;
 };
@@ -239,6 +247,7 @@ export const SmallMedium: StoryFn<SmallMediumArgs> = (args) => {
             <Dropdown.Button
               placeholder={'placeholder'}
               sizeVar={args.sizeVar ?? 'S'}
+              styleVar={args.styleVar ?? 'NORMAL'}
               isError={args.isError}
               disabled={args.disabled}
               value={
@@ -269,6 +278,7 @@ SmallMedium.args = {
   option: 'OUTSIDE_CLICK',
   disabled: false,
   sizeVar: 'S' as DropdownSizeVariantType,
+  styleVar: 'NORMAL' as const,
   isError: false,
 };
 
@@ -279,7 +289,11 @@ SmallMedium.argTypes = {
   },
   sizeVar: {
     control: { type: 'select' },
-    options: ['S', 'M'],
+    options: ['XS', 'S', 'M'],
+  },
+  styleVar: {
+    control: { type: 'select' },
+    options: ['NORMAL', 'GHOST'],
   },
   isError: {
     control: { type: 'boolean' },
@@ -291,7 +305,7 @@ SmallMedium.argTypes = {
 
 SmallMedium.parameters = {
   controls: {
-    include: ['isOpen', 'width', 'sizeVar', 'option', 'disabled', 'isError'],
+    include: ['isOpen', 'width', 'sizeVar', 'styleVar', 'option', 'disabled', 'isError'],
   },
 };
 
@@ -325,6 +339,7 @@ Large.args = {
 
 type WithClearButtonArgs = DropdownProps & {
   sizeVar?: DropdownSizeVariantType;
+  styleVar?: 'NORMAL' | 'GHOST';
   isError?: boolean;
   showRightSource?: boolean;
 };
@@ -348,6 +363,7 @@ export const WithClearButton: StoryFn<WithClearButtonArgs> = (args) => {
             <Dropdown.Button
               disabled={args.disabled}
               sizeVar={args.sizeVar ?? 'S'}
+              styleVar={args.styleVar ?? 'NORMAL'}
               isError={args.isError}
               placeholder={'옵션을 선택하세요'}
               onClear={handleReset}
@@ -390,6 +406,7 @@ export const WithClearButton: StoryFn<WithClearButtonArgs> = (args) => {
 
 WithClearButton.args = {
   sizeVar: 'S' as DropdownSizeVariantType,
+  styleVar: 'NORMAL' as const,
   option: 'OUTSIDE_CLICK',
   disabled: false,
   isError: false,
@@ -399,7 +416,11 @@ WithClearButton.args = {
 WithClearButton.argTypes = {
   sizeVar: {
     control: { type: 'select' },
-    options: ['S', 'M', 'L'],
+    options: ['XS', 'S', 'M', 'L'],
+  },
+  styleVar: {
+    control: { type: 'select' },
+    options: ['NORMAL', 'GHOST'],
   },
   option: {
     control: { type: 'select' },
@@ -415,6 +436,6 @@ WithClearButton.argTypes = {
 
 WithClearButton.parameters = {
   controls: {
-    include: ['sizeVar', 'option', 'disabled', 'isError', 'showRightSource'],
+    include: ['sizeVar', 'styleVar', 'option', 'disabled', 'isError', 'showRightSource'],
   },
 };

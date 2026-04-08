@@ -24,6 +24,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       width = '100%',
       onClick,
       sizeVar = 'M',
+      styleVar = 'NORMAL',
       isError,
       placeholder,
       value,
@@ -81,6 +82,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         width={width}
         isError={isError}
         sizeVar={sizeVar}
+        styleVar={styleVar}
         height={getDropdownHeightBySizeVar(sizeVar)}
         hasValue={Boolean(value)}
       >
@@ -90,6 +92,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
           disabled={disabled}
           {...rest}
           sizeVar={sizeVar}
+          styleVar={styleVar}
           data-shoplflow={'Dropdown-Content-Area'}
         >
           <Stack.Horizontal width='100%' spacing='spacing04' align='center'>
@@ -106,8 +109,13 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             )}
           </Stack.Horizontal>
 
-          {onClear && sizeVar !== 'L' && (
-            <IconButton sizeVar={sizeVar} styleVar='GHOST' onClick={handleOnClear} className='dropdown-clear-icon'>
+          {onClear && sizeVar !== 'L' && sizeVar !== 'XS' && (
+            <IconButton
+              sizeVar={sizeVar}
+              styleVar='GHOST'
+              onClick={handleOnClear}
+              className='dropdown-clear-icon'
+            >
               <Icon iconSource={DeleteIcon} color='neutral350' sizeVar='S' />
             </IconButton>
           )}

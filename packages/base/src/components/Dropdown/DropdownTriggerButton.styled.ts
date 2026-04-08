@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import type { TypographyTokens } from '../../styles';
 import { colorTokens } from '../../styles';
-import type { DropdownTriggerButtonProps, DropdownSizeVariantType } from './Dropdown.types';
+import type { DropdownTriggerButtonProps, DropdownSizeVariantType, DropdownStyleVariantType } from './Dropdown.types';
 import { css } from '@emotion/react';
 
 export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
+    case 'XS':
+      return '24px';
     case 'M':
     case 'L':
       return '40px';
@@ -18,6 +20,8 @@ export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
 
 export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): TypographyTokens => {
   switch (size) {
+    case 'XS':
+      return 'caption_400';
     case 'L':
       return 'body2_700';
     case 'M':
@@ -31,6 +35,10 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
 
 export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
+    case 'XS':
+      return css`
+        padding: 0 6px;
+      `;
     case 'S':
       return css`
         padding: 0 8px;
@@ -71,9 +79,13 @@ export type Status = {
   isHovered?: boolean;
   disabled?: boolean;
   sizeVar: DropdownSizeVariantType;
+  styleVar?: DropdownStyleVariantType;
 };
 
-const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeVar }: Status) => {
+const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeVar, styleVar }: Status) => {
+  if (styleVar === 'GHOST') {
+    return 'transparent';
+  }
   if (!disabled) {
     if (isError) {
       return colorTokens.red300;
@@ -92,7 +104,15 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeV
   return colorTokens.neutral300;
 };
 
-const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused }: Status) => {
+const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused, styleVar }: Status) => {
+  if (styleVar === 'GHOST') {
+    return css`
+      background-color: transparent;
+      border-width: 0;
+      border-radius: 6px;
+    `;
+  }
+
   switch (sizeVar) {
     case 'L':
       return css`
@@ -191,7 +211,7 @@ export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  min-width: 22px;
+  min-width: ${({ sizeVar }) => (sizeVar === 'XS' ? '18px' : '22px')};
   height: 100%;
 
   ${({ disabled }) => getDisabledStyle(disabled)};
