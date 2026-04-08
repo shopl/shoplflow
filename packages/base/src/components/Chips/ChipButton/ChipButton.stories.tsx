@@ -1,8 +1,45 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import ChipButton from './ChipButton';
+import type { ChipButtonProps } from './ChipButton.types';
 import { Stack } from '../../Stack';
 import { ChipButtonSizeVariants, ChipButtonStyleVariants } from './ChipButton.types';
 import { ComponentStage } from '../../../styles/Box';
+import { colorTokens } from '../../../styles';
+
+/** 스토리 컨트롤용 플레이스홀더(실제 토큰 키 아님). ChipButton에는 `undefined`로 넘김. */
+const SELECT_COLOR_TOKEN_DEFAULT = '— 기본값 —' as const;
+
+const chipButtonColorTokenSelectOptions = [
+  SELECT_COLOR_TOKEN_DEFAULT,
+  ...Object.keys(colorTokens).slice().sort(),
+] as const;
+
+type ChipButtonStoryArgs = Omit<ChipButtonProps, 'selectedBackground' | 'selectedBorderColor'> & {
+  selectedBackground?: ChipButtonProps['selectedBackground'] | typeof SELECT_COLOR_TOKEN_DEFAULT;
+  selectedBorderColor?: ChipButtonProps['selectedBorderColor'] | typeof SELECT_COLOR_TOKEN_DEFAULT;
+};
+
+function resolveChipButtonColorStoryArgs(args: ChipButtonStoryArgs): ChipButtonProps {
+  const toBackground = (v: ChipButtonStoryArgs['selectedBackground']): ChipButtonProps['selectedBackground'] => {
+    if (v === undefined || v === SELECT_COLOR_TOKEN_DEFAULT) {
+      return undefined;
+    }
+    return v;
+  };
+
+  const toBorder = (v: ChipButtonStoryArgs['selectedBorderColor']): ChipButtonProps['selectedBorderColor'] => {
+    if (v === undefined || v === SELECT_COLOR_TOKEN_DEFAULT) {
+      return undefined;
+    }
+    return v;
+  };
+
+  return {
+    ...args,
+    selectedBackground: toBackground(args.selectedBackground),
+    selectedBorderColor: toBorder(args.selectedBorderColor),
+  } as ChipButtonProps;
+}
 
 const meta = {
   title: 'COMPONENTS/Chips/ChipButton',
@@ -19,13 +56,13 @@ const meta = {
     },
     styleVar: {
       options: Object.values(ChipButtonStyleVariants),
-      control: { type: 'select' },
+      control: 'select',
       description: '칩 버튼 스타일을 설정합니다. styleVar에 따라 기준 속성이 변경됩니다.',
       defaultValue: ChipButtonStyleVariants.LINE,
     },
     sizeVar: {
       options: Object.values(ChipButtonSizeVariants),
-      control: { type: 'select' },
+      control: 'select',
       description: '칩 버튼 사이즈를 설정합니다.',
       defaultValue: ChipButtonSizeVariants.S,
     },
@@ -40,12 +77,15 @@ const meta = {
       defaultValue: false,
     },
     selectedBackground: {
-      control: { type: 'text' },
-      description: '선택 상태 배경색 토큰(예: ocean100). 미설정 시 사이즈별 기본값.',
+      options: [...chipButtonColorTokenSelectOptions],
+      control: 'select',
+      description:
+        '선택 상태 배경색 토큰. 「기본값」이면 사이즈별 디자인 토큰. `isSelected`가 true일 때만 화면에 반영됩니다.',
     },
     selectedBorderColor: {
-      control: { type: 'text' },
-      description: '선택 상태 테두리 색 토큰(예: ocean300). 미설정 시 neutral300.',
+      options: [...chipButtonColorTokenSelectOptions],
+      control: 'select',
+      description: '선택 상태 테두리 색 토큰. 「기본값」이면 neutral300. `isSelected`가 true일 때만 화면에 반영됩니다.',
     },
   },
 } satisfies Meta<typeof ChipButton>;
@@ -66,7 +106,9 @@ export const Playground: Story = {
     disabled: false,
     styleVar: 'LINE',
     sizeVar: 'S',
-  },
+    selectedBackground: SELECT_COLOR_TOKEN_DEFAULT,
+    selectedBorderColor: SELECT_COLOR_TOKEN_DEFAULT,
+  } as Story['args'],
   parameters: {
     design: {
       type: 'figma',
@@ -75,7 +117,7 @@ export const Playground: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };
@@ -89,7 +131,7 @@ export const Line: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };
@@ -103,7 +145,7 @@ export const SizeXS: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };
@@ -117,7 +159,7 @@ export const Disabled: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };
@@ -131,7 +173,7 @@ export const Selected: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };
@@ -145,7 +187,7 @@ export const SelectedXS: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };
@@ -161,7 +203,7 @@ export const SelectedCustomColors: Story = {
   },
   render: (args) => (
     <WithStage>
-      <ChipButton {...args} />
+      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
     </WithStage>
   ),
 };

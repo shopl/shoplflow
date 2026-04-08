@@ -178,13 +178,13 @@ export const ModalBodyContent = styled.div<{
   background: ${colorTokens.neutral0};
 `;
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.div<{ padding?: CSSProperties['padding'] }>`
   display: flex;
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding: 16px 24px;
+  padding: ${({ padding }) => padding || '16px 24px'};
   gap: 12px;
   border-top: 1px solid ${colorTokens.neutral300};
   background: ${colorTokens.neutral0};
