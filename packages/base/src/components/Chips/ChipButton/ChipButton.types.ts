@@ -6,7 +6,9 @@ import type {
   TextProps,
   DisableProps,
   BackgroundColorProps,
+  SelectedProps,
 } from '../../../utils/type/ComponentProps';
+import type { ColorTokens } from '../../../styles';
 import type { $Values } from '@shoplflow/utils';
 import type { HTMLAttributes } from 'react';
 export const ChipButtonStyleVariants = {
@@ -27,9 +29,19 @@ export interface ChipButtonProps
     Omit<HTMLAttributes<HTMLButtonElement>, 'color'>,
     TextProps,
     DisableProps,
+    SelectedProps,
     LeftAndRightElementProps,
     SizeVariantProps<ChipButtonSizeVariantType>,
     StyleVariantProps<ChipButtonStyleVariantType>,
     ColorTokenProps,
     BackgroundColorProps {}
-export interface ChipButtonOptionProps {}
+export interface ChipButtonOptionProps {
+  /**
+   * 선택 상태에서 기본 배경 대신 사용할 토큰입니다.
+   */
+  selectedBackground?: ColorTokens;
+  /**
+   * 선택 상태에서 기본 테두리 색 대신 사용할 토큰입니다.
+   */
+  selectedBorderColor?: ColorTokens;
+}
