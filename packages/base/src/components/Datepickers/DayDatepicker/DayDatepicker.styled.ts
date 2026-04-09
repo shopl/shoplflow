@@ -92,7 +92,7 @@ export const SmallStyledDayDatepickerWrapper = styled.div`
     &__day-names {
       width: 100%;
       height: 18px;
-      margin: 8px 0 0;
+      margin: 8px 0 8px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
