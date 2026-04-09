@@ -1,12 +1,17 @@
 {
-    "mcpServers": {
-        "serena": {
-            "command": "docker",
-            "args": ["run", "--rm", "-i", "--network", "host", "-v","$(pwd)", "ghcr.io/oraios/serena:latest", "serena", "start-mcp-server", "--transport", "stdio", "--context", "ide-assistant"]
-        },
-        "chrome-devtools": {
-            "command": "npx",
-            "args": ["-y", "chrome-devtools-mcp@latest"]
-          }
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "Figma Developer": {
+        "url": "http://127.0.0.1:3845/mcp"
+    },
+    "shopl-github-mcp": {
+      "url": "http://192.168.31.151:5099/mcp"
     }
+  }
 }

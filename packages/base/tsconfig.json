@@ -28,6 +28,7 @@
     "src/styles/tokens/shoplColors.ts",
     "src/styles/tokens/hadaColors.ts",
     "**/*.test.ts",
+    "**/*.test.tsx",
     "*.json"
   ]
 }

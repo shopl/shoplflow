@@ -8,13 +8,13 @@
 
 | 카테고리 | 컴포넌트 | 샤플플로우 버전 | 디자인 버전 | 현황 |
 |----------|----------|-----------------|-------------|------|
-| Avatar | Avatar | 2.0.0 | 2.0 | 🟢 |
+| Avatar | Avatar | 2.0.1 | 2.0 | 🟢 |
 | BackDrop | BackDrop | 2.0.0 | 2.0 | 🟢 |
-| Buttons | Button | 2.0.0 | 2.0 | 🟢 |
-| Buttons | DropdownButton | 2.0.0 | 2.0 | 🟢 |
-| Buttons | IconButton | 2.0.0 | 2.0 | 🟢 |
-| Buttons | SplitButton | 2.0.0 | 2.0 | 🟢 |
-| Callout | Callout | 2.1.4 | 2.1 | 🟢 |
+| Buttons | Button | 2.0.1 | 2.0 | 🟢 |
+| Buttons | DropdownButton | 2.0.1 | 2.0 | 🟢 |
+| Buttons | IconButton | 2.0.1 | 2.0 | 🟢 |
+| Buttons | SplitButton | 2.0.1 | 2.0 | 🟢 |
+| Callout | Callout | 2.1.5 | 2.1 | 🟢 |
 | Chips | ChipButton | 2.0.0 | 2.0 | 🟢 |
 | Chips | ChipToggle | 2.0.0 | 2.0 | 🟢 |
 | Comboboxs | NumberCombobox | 2.0.0 | 2.0 | 🟢 |
@@ -43,7 +43,7 @@
 | Slider | Slider | 2.0.0 | 2.0 | 🟢 |
 | Stack | Stack | 2.0.0 | 2.0 | 🟢 |
 | StackContainer | StackContainer | 2.0.0 | 2.0 | 🟢 |
-| Switch | Switch | 2.0.0 | 2.0 | 🟢 |
+| Switch | Switch | 2.0.1 | 2.0 | 🟢 |
 | Tabs | Tabs | 2.0.0 | 2.0 | 🟢 |
 | Tag | Tag | 2.0.0 | 2.0 | 🟢 |
 | Text | Text | 2.0.1 | 2.0 | 🟢 |

@@ -80,3 +80,29 @@ parameters에서 버전을 읽어오려면 Storybook 7+ 기준으로는 **커스
 - **변경 이력 중심**: CHANGELOG를 컴포넌트/영역별로 나누어 관리하고, MDX에 “Last updated” 또는 “Since x.y.z”만 표시.
 
 패키지 자체는 하나의 버전(`@shoplflow/base`)을 유지하고, **문서/스토리 레벨에서만** 컴포넌트별 버전을 쓰는 구성을 추천합니다.
+
+---
+
+## 적용 예: Button (Docs 버전 + Changelog)
+
+Button 스토리에서는 아래를 사용합니다. **CSF는 동적 title을 지원하지 않으므로** 사이드바에는 "Button"만 표시하고, 버전/Changelog는 Docs 탭에서만 표시합니다.
+
+1. **parameters.version**: `version.ts`에서 상수 import 후 `parameters.version`에 설정
+2. **Docs 버전 + Changelog**: `parameters.docs.description.component`에 마크다운으로 "Version: x.y.z"와 "### Changelog" 섹션 추가
+
+```ts
+// Button.stories.tsx
+import { BUTTONS_VERSION } from '../version';
+
+const meta = {
+  title: 'COMPONENTS/Buttons/Button',  // 정적 문자열만 가능
+  parameters: {
+    version: BUTTONS_VERSION,
+    docs: { description: { component: `**Version:** \`${BUTTONS_VERSION}\`\n\n### Changelog\n...` } },
+  },
+  // ...
+};
+```
+
+- 버전은 **단일 소스** `version.ts`만 수정하면 되고, `version:sync`로 `VERSIONING.md`와 동기화합니다.
+- Changelog는 스토리 파일의 상수 배열로 두고, 버전 업 시 항목만 추가하면 Docs에 자동 반영됩니다.
