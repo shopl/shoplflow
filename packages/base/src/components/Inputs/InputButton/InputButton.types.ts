@@ -3,7 +3,8 @@ import type { DisableProps, RightElementProps, SelectedProps } from '../../../ut
 
 export interface InputButtonProps extends InputButtonOptionProps {}
 export interface InputButtonOptionProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'onClick'>,
+  extends
+    Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'onClick'>,
     RightElementProps,
     DisableProps,
     SelectedProps {

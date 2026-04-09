@@ -1,5 +1,49 @@
 # @shoplflow/base
 
+## 0.46.16
+
+### Patch Changes
+
+- Updated dependencies [[`5ffcf3943ca26fa92ade65cc04e04824c6d48d72`](https://github.com/shopl/shoplflow/commit/5ffcf3943ca26fa92ade65cc04e04824c6d48d72)]:
+  - @shoplflow/shopl-assets@0.12.39
+
+## 0.46.15
+
+### Patch Changes
+
+- [#766](https://github.com/shopl/shoplflow/pull/766) [`285a80165238935ee537c4fc0052b602955490d7`](https://github.com/shopl/shoplflow/commit/285a80165238935ee537c4fc0052b602955490d7) Thanks [@velo-kim](https://github.com/velo-kim)! - HelperText export 추가
+
+## 0.46.14
+
+### Patch Changes
+
+- [#764](https://github.com/shopl/shoplflow/pull/764) [`59727c565fccec84f818aa036123103456124c62`](https://github.com/shopl/shoplflow/commit/59727c565fccec84f818aa036123103456124c62) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(checkbox): hada 선택 색상 변경
+
+## 0.46.13
+
+### Patch Changes
+
+- [#762](https://github.com/shopl/shoplflow/pull/762) [`b5ff1d5cf011753c392cef90717120435a03f0ff`](https://github.com/shopl/shoplflow/commit/b5ff1d5cf011753c392cef90717120435a03f0ff) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(radio): hada 선택 색상 변경
+
+## 0.46.12
+
+### Patch Changes
+
+- Updated dependencies [[`84cec035bf17408cec4d4f385f05d703d1fd44af`](https://github.com/shopl/shoplflow/commit/84cec035bf17408cec4d4f385f05d703d1fd44af)]:
+  - @shoplflow/shopl-assets@0.12.38
+
+## 0.46.11
+
+### Patch Changes
+
+- [#754](https://github.com/shopl/shoplflow/pull/754) [`afd67b823e17c3862f2b144b4abaa258432628d2`](https://github.com/shopl/shoplflow/commit/afd67b823e17c3862f2b144b4abaa258432628d2) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - avatar ML 사이즈 추가, button small padding 변경, toggleButton 전체 disabled 추가
+
+## 0.46.10
+
+### Patch Changes
+
+- [#718](https://github.com/shopl/shoplflow/pull/718) [`8328272a8d2abb57b2bc2aeaa7729207bbbbd16c`](https://github.com/shopl/shoplflow/commit/8328272a8d2abb57b2bc2aeaa7729207bbbbd16c) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - update(dropdown): Dropdown.Button rightSource, onClear props 추가
+
 ## 0.46.9
 
 ### Patch Changes

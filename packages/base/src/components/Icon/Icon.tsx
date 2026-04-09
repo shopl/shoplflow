@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import { StyledIcon } from './Icon.styled';
 import type { IconProps } from './Icon.types';
 

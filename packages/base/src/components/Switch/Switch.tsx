@@ -1,5 +1,4 @@
 import type { ChangeEvent } from 'react';
-import React from 'react';
 import { StyledSwitch, SwitchContainer } from './Switch.styled';
 import type { SwitchProps } from './Switch.types';
 import { useOnToggle } from '../../hooks/useOnToggle';

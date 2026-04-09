@@ -1,5 +1,68 @@
 # @shoplflow/templates
 
+## 0.2.18
+
+### Patch Changes
+
+- Updated dependencies [[`5ffcf3943ca26fa92ade65cc04e04824c6d48d72`](https://github.com/shopl/shoplflow/commit/5ffcf3943ca26fa92ade65cc04e04824c6d48d72)]:
+  - @shoplflow/shopl-assets@0.12.39
+  - @shoplflow/base@0.46.16
+
+## 0.2.17
+
+### Patch Changes
+
+- Updated dependencies [[`285a80165238935ee537c4fc0052b602955490d7`](https://github.com/shopl/shoplflow/commit/285a80165238935ee537c4fc0052b602955490d7)]:
+  - @shoplflow/base@0.46.15
+
+## 0.2.16
+
+### Patch Changes
+
+- Updated dependencies [[`59727c565fccec84f818aa036123103456124c62`](https://github.com/shopl/shoplflow/commit/59727c565fccec84f818aa036123103456124c62)]:
+  - @shoplflow/base@0.46.14
+
+## 0.2.15
+
+### Patch Changes
+
+- Updated dependencies [[`b5ff1d5cf011753c392cef90717120435a03f0ff`](https://github.com/shopl/shoplflow/commit/b5ff1d5cf011753c392cef90717120435a03f0ff)]:
+  - @shoplflow/base@0.46.13
+
+## 0.2.14
+
+### Patch Changes
+
+- Updated dependencies [[`84cec035bf17408cec4d4f385f05d703d1fd44af`](https://github.com/shopl/shoplflow/commit/84cec035bf17408cec4d4f385f05d703d1fd44af)]:
+  - @shoplflow/shopl-assets@0.12.38
+  - @shoplflow/base@0.46.12
+
+## 0.2.13
+
+### Patch Changes
+
+- [#758](https://github.com/shopl/shoplflow/pull/758) [`ccf8f788d7c836d7ec519ac769e60f29d883516b`](https://github.com/shopl/shoplflow/commit/ccf8f788d7c836d7ec519ac769e60f29d883516b) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - TitleGroup - HeaderBox 단독 사용 시 context 오류 방지
+
+## 0.2.12
+
+### Patch Changes
+
+- [#756](https://github.com/shopl/shoplflow/pull/756) [`0f6f06df9190e1b7c6aab7eaf551b0163ade6ee5`](https://github.com/shopl/shoplflow/commit/0f6f06df9190e1b7c6aab7eaf551b0163ade6ee5) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Depth 2, 3의 description typography 변경
+
+## 0.2.11
+
+### Patch Changes
+
+- Updated dependencies [[`afd67b823e17c3862f2b144b4abaa258432628d2`](https://github.com/shopl/shoplflow/commit/afd67b823e17c3862f2b144b4abaa258432628d2)]:
+  - @shoplflow/base@0.46.11
+
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [[`8328272a8d2abb57b2bc2aeaa7729207bbbbd16c`](https://github.com/shopl/shoplflow/commit/8328272a8d2abb57b2bc2aeaa7729207bbbbd16c)]:
+  - @shoplflow/base@0.46.10
+
 ## 0.2.9
 
 ### Patch Changes

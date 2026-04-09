@@ -14,7 +14,8 @@ export type IconSizeVariantsType = $Values<typeof IconSizeVariants>;
 
 export interface IconProps extends IconOptionProps {}
 export interface IconOptionProps
-  extends SizeVariantProps<IconSizeVariantsType>,
+  extends
+    SizeVariantProps<IconSizeVariantsType>,
     IconSourceProps,
     ColorTokenProps,
     Omit<HTMLAttributes<SVGSVGElement>, 'color'> {}

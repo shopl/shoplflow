@@ -1,64 +1,67 @@
-import React, { useState } from 'react';
-
-import type { Meta, StoryFn, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
+import type { Meta, StoryFn } from '@storybook/react-vite';
 import { Stack } from '../../Stack';
 import DropdownButton from './DropdownButton';
-import {
-  DropdownButtonSizeVariants,
-  DropdownButtonStyleVariants,
-  type DropdownButtonProps,
-} from './DropdownButton.types';
+import { DropdownButtonSizeVariants, DropdownButtonStyleVariants } from './DropdownButton.types';
+import type { DropdownButtonProps } from './DropdownButton.types';
 import { Text } from '../../../components/Text';
 
-const meta = {
+const FIGMA_URL =
+  'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=8717-4817';
+
+const PLACEMENT_OPTIONS = [
+  'top',
+  'right',
+  'bottom',
+  'left',
+  'top-start',
+  'top-end',
+  'right-start',
+  'right-end',
+  'bottom-start',
+  'bottom-end',
+  'left-start',
+  'left-end',
+] as const;
+
+const meta: Meta<typeof DropdownButton> = {
   title: 'COMPONENTS/Buttons/DropdownButton',
   component: DropdownButton,
   argTypes: {
     text: {
+      control: { type: 'text' },
       description: '버튼 내부에 들어갈 text를 입력합니다.',
     },
     styleVar: {
-      options: Object.values(DropdownButtonStyleVariants),
       control: { type: 'select' },
+      options: Object.values(DropdownButtonStyleVariants),
       description: '버튼의 스타일을 설정합니다.',
+      table: { type: { summary: Object.values(DropdownButtonStyleVariants).join(' | ') } },
     },
     sizeVar: {
-      options: Object.values(DropdownButtonSizeVariants),
       control: { type: 'select' },
+      options: Object.values(DropdownButtonSizeVariants),
       description: '버튼의 사이즈를 선택합니다.',
+      table: { type: { summary: Object.values(DropdownButtonSizeVariants).join(' | ') } },
     },
     disabled: {
-      description: '버튼의 비활성화 여부를 설정합니다.',
       control: { type: 'boolean' },
+      description: '버튼의 비활성화 여부를 설정합니다.',
     },
     placement: {
-      options: [
-        'top',
-        'right',
-        'bottom',
-        'left',
-        'top-start',
-        'top-end',
-        'right-start',
-        'right-end',
-        'bottom-start',
-        'bottom-end',
-        'left-start',
-        'left-end',
-      ],
       control: { type: 'select' },
+      options: [...PLACEMENT_OPTIONS],
       description: 'option list가 노출되는 방향을 설정합니다.',
+      table: { type: { summary: PLACEMENT_OPTIONS.join(' | ') } },
     },
     floatingZIndex: {
-      description: 'option list의 z-index값을 설정합니다.',
       control: { type: 'number' },
+      description: 'option list의 z-index값을 설정합니다.',
     },
   },
-} satisfies Meta<typeof DropdownButton>;
+};
 
 export default meta;
-
-type Story = StoryObj<typeof meta>;
 
 export const Playground: StoryFn<DropdownButtonProps> = (args) => {
   const [selectedItem, setSelectedItem] = useState<'Shopl' | 'Hada'>('Shopl');
@@ -70,7 +73,7 @@ export const Playground: StoryFn<DropdownButtonProps> = (args) => {
           <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>
         </DropdownButton.Menu>
         <DropdownButton.Menu isSelected={selectedItem === 'Hada'} onClick={() => setSelectedItem('Hada')}>
-          <div>Hada</div>
+          <Text>Hada</Text>
         </DropdownButton.Menu>
       </DropdownButton>
     </Stack>
@@ -79,51 +82,49 @@ export const Playground: StoryFn<DropdownButtonProps> = (args) => {
 
 Playground.args = {
   text: 'Button',
+  styleVar: 'PRIMARY',
+  sizeVar: 'M',
+  disabled: false,
 };
+
+Playground.argTypes = {};
 
 Playground.parameters = {
+  controls: {
+    include: ['text', 'styleVar', 'sizeVar', 'placement', 'disabled', 'floatingZIndex'],
+  },
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=8717-4817',
+    url: FIGMA_URL,
   },
 };
 
-export const Primary: Story = {
-  args: {
-    text: 'Primary Button',
-    sizeVar: 'M',
-    disabled: false,
-  },
-  render: (args) => (
-    <Stack>
-      <DropdownButton {...args} styleVar='PRIMARY'>
-        <DropdownButton.Menu onClick={() => console.info('1')}>
-          <div>Shopl</div>
-        </DropdownButton.Menu>
-        <DropdownButton.Menu onClick={() => console.info('2')}>
-          <div>Hada</div>
-        </DropdownButton.Menu>
-      </DropdownButton>
-    </Stack>
-  ),
+export const Disabled: StoryFn<DropdownButtonProps> = (args) => (
+  <Stack>
+    <DropdownButton {...args}>
+      <DropdownButton.Menu>
+        <Text>Shopl</Text>
+      </DropdownButton.Menu>
+      <DropdownButton.Menu>
+        <Text>Hada</Text>
+      </DropdownButton.Menu>
+    </DropdownButton>
+  </Stack>
+);
+
+Disabled.args = {
+  text: 'Button',
+  styleVar: 'PRIMARY',
+  sizeVar: 'M',
+  disabled: true,
 };
 
-export const Secondary: Story = {
-  args: {
-    text: 'Secondary Button',
-    sizeVar: 'M',
-    disabled: false,
+Disabled.parameters = {
+  controls: {
+    include: ['styleVar', 'sizeVar'],
   },
-  render: (args) => (
-    <Stack>
-      <DropdownButton {...args} styleVar='SECONDARY'>
-        <DropdownButton.Menu onClick={() => console.info('1')}>
-          <div>Shopl</div>
-        </DropdownButton.Menu>
-        <DropdownButton.Menu onClick={() => console.info('2')}>
-          <div>Hada</div>
-        </DropdownButton.Menu>
-      </DropdownButton>
-    </Stack>
-  ),
+  design: {
+    type: 'figma',
+    url: FIGMA_URL,
+  },
 };

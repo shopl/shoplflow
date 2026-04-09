@@ -1,4 +1,3 @@
-import React from 'react';
 import { getTypographyBySize, StyledTag } from './Tag.styled';
 import type { TagProps } from './Tag.types';
 import classNames from 'classnames';

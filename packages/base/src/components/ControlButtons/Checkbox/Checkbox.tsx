@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import React, { forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { Container, StyledCheckbox, StyledCheckHiddenInput } from './Checkbox.styled';
 import type { CheckboxProps } from './Checkbox.types';
 import { useOnToggle } from '../../../hooks/useOnToggle';

@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Container, StyledRadio } from './Radio.styled';
 import type { RadioProps } from './Radio.types';
 import { useOnToggle } from '../../../hooks/useOnToggle';

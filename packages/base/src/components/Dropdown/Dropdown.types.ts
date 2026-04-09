@@ -1,5 +1,10 @@
 import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, ReactNode } from 'react';
-import type { ChildrenProps, DisableProps, LeftElementProps, SizeVariantProps } from '../../utils/type/ComponentProps';
+import type {
+  ChildrenProps,
+  DisableProps,
+  LeftAndRightElementProps,
+  SizeVariantProps,
+} from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 import type { OffsetOptions, Placement } from '@floating-ui/core';
 
@@ -46,18 +51,19 @@ export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, Ch
   width?: string;
 }
 
-const dropdownSizeVariants = {
+const _dropdownSizeVariants = {
   S: 'S',
   M: 'M',
   L: 'L',
 } as const;
 
-export type DropdownSizeVariantType = $Values<typeof dropdownSizeVariants>;
+export type DropdownSizeVariantType = $Values<typeof _dropdownSizeVariants>;
 
 export interface DropdownTriggerButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
+  extends
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
     DisableProps,
-    LeftElementProps,
+    LeftAndRightElementProps,
     SizeVariantProps<DropdownSizeVariantType> {
   /**
    * placeholder를 설정합니다.
@@ -69,4 +75,5 @@ export interface DropdownTriggerButtonProps
    * width를 설정합니다.
    */
   width?: string;
+  onClear?: () => void;
 }

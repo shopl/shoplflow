@@ -1,5 +1,4 @@
 import { useSelect } from '@shoplflow/utils';
-import React from 'react';
 import { Dropdown } from '../Dropdown';
 import { Text } from '../Text';
 import { Menu } from '../Menu';

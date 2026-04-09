@@ -1,3 +1,3 @@
 export { default as Skeleton } from './Skeleton';
-export * from './Skeleton.types';
+export type * from './Skeleton.types';
 export * from './version';

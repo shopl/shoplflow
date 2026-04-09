@@ -26,7 +26,8 @@ export type TagSizeVariantType = $Values<typeof TagSizeVariants>;
 
 export interface TagProps extends TagOptionProps {}
 export interface TagOptionProps
-  extends SizeVariantProps<TagSizeVariantType>,
+  extends
+    SizeVariantProps<TagSizeVariantType>,
     StyleVariantProps<TagStyleVariantType>,
     ColorTokenProps,
     LeftAndRightElementProps,

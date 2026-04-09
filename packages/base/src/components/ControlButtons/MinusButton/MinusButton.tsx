@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import * as StyledMinusBox from './MinusButton.styled';
 import type { MinusBoxProps } from './MinusButton.types';
 

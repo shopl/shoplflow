@@ -1,12 +1,13 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, type ChangeEventHandler } from 'react';
 import type { ToggleButtonSizeVariantType } from './ToggleButton.types';
 
 export type ToggleButtonContextType = {
   fixedWidth: number;
   targetName: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
-  selectedValue?: string;
   sizeVar: ToggleButtonSizeVariantType;
+  disabled: boolean;
+  selectedValue?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
 export const ToggleButtonContext = createContext<ToggleButtonContextType | null>(null);

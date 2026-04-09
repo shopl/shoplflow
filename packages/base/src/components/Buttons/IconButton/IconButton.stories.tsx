@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import IconButton from './IconButton';
 import { IconButtonSizeVariants, IconButtonStyleVariants, type IconButtonProps } from './IconButton.types';

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import type { ColumnMeta, Header } from '@tanstack/react-table';
 import { Menu, ScrollArea, StackContainer, Text } from '@shoplflow/base';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Table } from './components';
 import type { ColumnDef } from '@tanstack/react-table';
 // import SearchBar from '@/version2/shared/components/SearchBar';

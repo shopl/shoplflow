@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { StyledPopoverContentWrapper, StyledArrowIcon } from './DropdownButton.styled';
 import type { DropdownButtonProps } from './DropdownButton.types';
 import { Popper } from '../../../components/Popper';

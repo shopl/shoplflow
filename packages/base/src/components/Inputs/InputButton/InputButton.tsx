@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react';
-import React, { useRef, forwardRef, useCallback, useEffect, useState } from 'react';
+import { useRef, forwardRef, useCallback, useEffect, useState } from 'react';
 import { StyledInputButton, StyledInputButtonContent } from './InputButton.styled';
 import { InputWrapper } from '../common/input.styled';
 import { Stack } from '../../Stack';

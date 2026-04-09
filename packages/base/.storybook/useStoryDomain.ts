@@ -1,15 +1,17 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import { DomainType } from '../src/types/Domain';
+import { createContext, useEffect, useState } from 'react';
+import type { DomainType } from '../src/types/Domain';
 
 export type StoryDomainType = {
   domain: DomainType | undefined;
   handleToggleTheme: () => void;
-}
+};
 
 export const StoryDomainContext = createContext<StoryDomainType>({
   domain: 'SHOPL',
-  handleToggleTheme: () => {}
-})
+  handleToggleTheme: () => {
+    // noop
+  },
+});
 
 export const useStoryDomain = () => {
   const [domain, setDomain] = useState<DomainType | undefined>();
@@ -21,18 +23,18 @@ export const useStoryDomain = () => {
     } else {
       setDomain('HADA');
     }
-  }, [])
+  }, []);
   useEffect(() => {
     if (domain) {
       localStorage.setItem('domain', domain);
     }
   }, [domain]);
   const handleToggleTheme = () => {
-    setDomain(domain === 'HADA' ? 'SHOPL' : 'HADA')
-  }
+    setDomain(domain === 'HADA' ? 'SHOPL' : 'HADA');
+  };
 
   return {
     domain,
-    handleToggleTheme
-  }
-}
+    handleToggleTheme,
+  };
+};

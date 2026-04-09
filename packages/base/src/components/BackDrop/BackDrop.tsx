@@ -1,4 +1,3 @@
-import React from 'react';
 import type { BackDropProps } from './BackDrop.types';
 import { fadeInOut } from '../../animation/fadeInOut';
 import { BackDropStyled } from './BackDrop.styled';

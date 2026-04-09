@@ -1,2 +1,2 @@
 export { default as AnnualDatepicker } from './AnnualDatepicker';
-export * from './AnnualDatepicker.types';
+export type * from './AnnualDatepicker.types';

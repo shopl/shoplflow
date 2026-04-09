@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react';
+import { forwardRef, useRef } from 'react';
 import {
   StyledToggleButton,
   StyledToggleInner,
@@ -16,11 +16,12 @@ const ToggleButton = ({
   onChange,
   selectedValue,
   sizeVar = 'S',
+  disabled = false,
   ...rest
 }: ToggleButtonProps) => {
   return (
-    <ToggleButtonContext.Provider value={{ fixedWidth, targetName, onChange, selectedValue, sizeVar }}>
-      <StyledToggleButton data-shoplflow={'ToggleButton'} {...rest}>
+    <ToggleButtonContext.Provider value={{ fixedWidth, targetName, onChange, selectedValue, sizeVar, disabled }}>
+      <StyledToggleButton data-shoplflow={'ToggleButton'} aria-disabled={disabled} {...rest}>
         {children}
       </StyledToggleButton>
     </ToggleButtonContext.Provider>
@@ -28,8 +29,10 @@ const ToggleButton = ({
 };
 
 const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProps>(
-  ({ label, disabled, value, id, ...rest }, ref) => {
-    const { fixedWidth, onChange, targetName, selectedValue, sizeVar } = useToggleButton();
+  ({ label, disabled: itemDisabled, value, id, ...rest }, ref) => {
+    const { fixedWidth, onChange, targetName, selectedValue, sizeVar, disabled: groupDisabled } = useToggleButton();
+
+    const disabled = groupDisabled || itemDisabled;
 
     const labelRef = useRef<HTMLLabelElement>(null);
 
@@ -49,11 +52,14 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
     return (
       <StyledToggleInner
         width={fixedWidth}
-        disabled={disabled}
-        selected={selected}
         sizeVar={sizeVar}
         type='button'
+        aria-disabled={disabled}
+        data-selected={selected}
         onClick={() => {
+          if (disabled) {
+            return;
+          }
           labelRef?.current?.click();
         }}
       >
@@ -61,6 +67,7 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
           checked={selected}
           width={fixedWidth}
           disabled={disabled}
+          aria-disabled={disabled}
           value={value}
           id={id}
           type='radio'

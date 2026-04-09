@@ -9,12 +9,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 export interface ListProps extends ListOptionProps {}
 export interface ListOptionProps
-  extends ChildrenProps,
-    DisableProps,
-    SelectedProps,
-    LeftNodeProps,
-    RightNodeProps,
-    HTMLAttributes<HTMLLIElement> {}
+  extends ChildrenProps, DisableProps, SelectedProps, LeftNodeProps, RightNodeProps, HTMLAttributes<HTMLLIElement> {}
 
 export interface ListContent2ColumnsProps extends ChildrenProps {}
 

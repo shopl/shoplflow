@@ -16,7 +16,8 @@ export const SwitchSizeVariants = {
 export type SwitchSizeVariantType = $Values<typeof SwitchSizeVariants>;
 
 export interface SwitchProps
-  extends SwitchOptionProps,
+  extends
+    SwitchOptionProps,
     DisableProps,
     SelectedProps,
     DefaultSelectedProps,

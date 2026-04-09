@@ -8,7 +8,8 @@ import type {
 
 export interface SelectInputButtonProps extends SelectInputButtonOptionProps {}
 export interface SelectInputButtonOptionProps
-  extends Omit<HTMLAttributes<HTMLLabelElement>, 'onChange' | 'onClick'>,
+  extends
+    Omit<HTMLAttributes<HTMLLabelElement>, 'onChange' | 'onClick'>,
     DisableProps,
     RightElementProps,
     SizeVariantProps<'S' | 'M'>,
@@ -27,7 +28,6 @@ export interface SelectInputButtonOptionProps
    * 선택한 값을 받습니다.
    */
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value?: Array<Record<string, any>>;
   /**
    * 받은 value 중 label로 보여줄 값을 받습니다.

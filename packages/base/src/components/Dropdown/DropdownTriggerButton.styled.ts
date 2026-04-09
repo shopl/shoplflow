@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import type { TypographyTokens } from '../../styles';
 import { colorTokens } from '../../styles';
 import type { DropdownTriggerButtonProps, DropdownSizeVariantType } from './Dropdown.types';
-import { motion } from 'framer-motion';
 import { css } from '@emotion/react';
 
 export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
@@ -24,7 +23,7 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
     case 'M':
       return 'body1_400';
     case 'S':
-      return 'body2_400';
+      return 'body1_400';
     default:
       return 'body1_400';
   }
@@ -32,26 +31,24 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
 
 export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
-    case 'L':
+    case 'S':
       return css`
-        background-color: transparent;
-        padding: 8px 4px 8px 12px;
+        padding: 0 8px;
       `;
     case 'M':
       return css`
-        background-color: ${colorTokens.neutral0};
-        gap: 4px;
-        padding: 4px 4px 4px 12px;
+        padding: 0 12px;
       `;
-    case 'S':
+    case 'L':
       return css`
-        background-color: ${colorTokens.neutral0};
-        padding: 4px 4px 4px 8px;
-        gap: 4px;
+        background-color: transparent;
+        padding-left: 12px;
+        padding-right: 6px;
       `;
     default:
       return css`
-        padding: 4px 4px 4px 12px;
+        background-color: ${colorTokens.neutral0};
+        padding: 0 8px;
       `;
   }
 };
@@ -61,27 +58,10 @@ export const getDisabledStyle = (disabled?: boolean) => {
     return css`
       cursor: not-allowed;
       background: ${colorTokens.neutral100};
+      svg > path {
+        fill: ${colorTokens.neutral400} !important;
+      }
     `;
-  }
-};
-
-export const getDropdownIconSizeBySizeVar = (size: DropdownSizeVariantType) => {
-  switch (size) {
-    case 'S':
-    case 'L':
-      return css`
-        height: 24px;
-        width: 24px;
-        min-width: 24px;
-        min-height: 24px;
-      `;
-    default:
-      return css`
-        height: 32px;
-        width: 32px;
-        min-width: 32px;
-        min-height: 32px;
-      `;
   }
 };
 
@@ -144,12 +124,25 @@ export const getStyleByType = ({
   `;
 };
 
-export const StyledDropdownButtonWrapper = styled.label<
+export const getClearIconHoverStyle = (hasValue: boolean) => {
+  if (!hasValue) {
+    return;
+  }
+
+  return css`
+    &:hover .dropdown-clear-icon {
+      display: flex;
+    }
+  `;
+};
+
+export const StyledDropdownButtonWrapper = styled.div<
   Status & {
     height?: CSSStyleDeclaration['height'];
     width?: CSSStyleDeclaration['width'];
     gap?: CSSStyleDeclaration['gap'];
     sizeVar: DropdownSizeVariantType;
+    hasValue: boolean;
   }
 >`
   position: relative;
@@ -170,28 +163,36 @@ export const StyledDropdownButtonWrapper = styled.label<
       width,
     })};
   ${(props) => getButtonWrapperStyleBySizeVar(props)};
-
   ${({ disabled }) => getDisabledStyle(disabled)};
+
+  ${({ hasValue }) => getClearIconHoverStyle(hasValue)}
 `;
 
 export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-
   cursor: pointer;
+
   ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
+
+  .dropdown-clear-icon {
+    display: none;
+    position: absolute;
+    right: 0;
+  }
 `;
-export const DropdownButtonIcon = styled(motion.div)<DropdownTriggerButtonProps>`
+export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-shrink: 0;
+  min-width: 22px;
+  height: 100%;
 
-  ${({ sizeVar }) => sizeVar && getDropdownIconSizeBySizeVar(sizeVar)};
   ${({ disabled }) => getDisabledStyle(disabled)};
 `;

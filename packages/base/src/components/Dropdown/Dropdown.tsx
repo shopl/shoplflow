@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyledDropdown } from './Dropdown.styled';
 import { Popper } from '../Popper';
 import type { DropdownProps } from './Dropdown.types';

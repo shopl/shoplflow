@@ -20,7 +20,8 @@ export type MenuSizeVariantType = $Values<typeof MenuSizeVariants>;
 
 export interface MenuProps extends MenuOptionProps, HTMLAttributes<HTMLLIElement> {}
 export interface MenuOptionProps
-  extends ChildrenProps,
+  extends
+    ChildrenProps,
     DisableProps,
     RightElementProps,
     LeftElementProps,

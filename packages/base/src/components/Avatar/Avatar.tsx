@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyledAvatar, StyledAvatarBadge, StyledAvatarContainer, StyledAvatarImage } from './Avatar.styled';
 import type { AvatarProps } from './Avatar.types';
 import AvatarImageNone from '../../assets/mocks/AvatarNone.png';
@@ -16,7 +15,7 @@ const Avatar = ({ src, badge, fallbackUrl, ...rest }: AvatarProps): JSX.Element 
           }}
         />
       </StyledAvatar>
-      <StyledAvatarBadge>{badge}</StyledAvatarBadge>
+      <StyledAvatarBadge size={rest.sizeVar}>{badge}</StyledAvatarBadge>
     </StyledAvatarContainer>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { Text, IconButton, Icon, StackContainer } from '@shoplflow/base';
 import type { AttachmentItemSingleProps } from './AttachmentList.types';
 import { DeleteIcon } from '@shoplflow/shopl-assets';

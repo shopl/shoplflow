@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { BodyContainer, ModalBodyContainerInner, ModalBodyContent } from './Modal.styled';
 import type { ModalBodyProps } from './Modal.types';
 import { ScrollArea } from '../ScrollArea';

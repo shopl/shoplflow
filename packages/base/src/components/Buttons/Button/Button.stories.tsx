@@ -5,6 +5,8 @@ import { colorTokens } from '../../../styles';
 import { Icon } from '../../../components/Icon';
 import { EditIcon } from '@shoplflow/shopl-assets';
 
+const FIGMA_URL = 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=13719-16537&m=dev';
+
 /** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
 const BUTTON_CHANGELOG: Array<{ version: string; date: string; changes: string[] }> = [
   {
@@ -26,6 +28,10 @@ const meta = {
   component: Button,
   parameters: {
     version: latestVersion,
+    design: {
+      type: 'figma',
+      url: FIGMA_URL,
+    },
     docs: {
       description: {
         component: [

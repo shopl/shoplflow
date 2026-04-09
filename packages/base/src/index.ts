@@ -4,4 +4,4 @@ export * from './hooks';
 export * from './styles';
 export * from './providers';
 export * from './components';
-export * from './types';
+export type * from './types';
