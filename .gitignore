@@ -65,3 +65,5 @@ docs/pages/utils/**/_meta.json
 
 CLAUDE.md
 .cursor
+
+local-env

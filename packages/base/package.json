@@ -23,6 +23,8 @@
     "chromatic": "chromatic --build-script-name=build:storybook",
     "dev:stories": "storybook dev -p 6007",
     "dev": "tsup --watch",
+    "figma:parse": "npx figma connect parse",
+    "figma:publish": "npx figma connect publish",
     "test": "vitest",
     "install:playwright": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers pnpm exec playwright install chromium",
     "test-storybook": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers test-storybook --url http://localhost:6007",
@@ -116,7 +118,7 @@
     ]
   },
   "dependencies": {
-    "@figma/code-connect": "^1.4.1",
+    "@figma/code-connect": "^1.4.3",
     "@floating-ui/core": "^1.5.0",
     "@floating-ui/react": "^0.26.2",
     "@floating-ui/react-dom": "^2.0.3",

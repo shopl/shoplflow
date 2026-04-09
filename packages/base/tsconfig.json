@@ -29,6 +29,7 @@
     "src/styles/tokens/hadaColors.ts",
     "**/*.test.ts",
     "**/*.test.tsx",
+    "**/*.figma.tsx",
     "*.json"
   ]
 }

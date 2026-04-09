@@ -63,5 +63,8 @@
       "playwright-core": "1.58.2",
       "playwright": "1.58.2"
     }
+  },
+  "dependencies": {
+    "@figma/code-connect": "^1.4.3"
   }
 }
