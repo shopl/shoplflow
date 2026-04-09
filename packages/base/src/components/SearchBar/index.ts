@@ -9,4 +9,3 @@ SearchBar.Input = SearchBarInput;
 
 export { SearchBar };
 export type * from './SearchBar.types';
-export * from './version';
