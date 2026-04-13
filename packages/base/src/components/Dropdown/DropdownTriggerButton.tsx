@@ -39,9 +39,9 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
     const { isOpen, setIsOpen } = useDropdown();
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = (e: MouseEvent<HTMLElement>) => {
       if (!disabled) {
-        onClick && onClick(e);
+        onClick?.(e);
         setIsOpen(!isOpen);
       }
     };
@@ -85,10 +85,10 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         styleVar={styleVar}
         height={getDropdownHeightBySizeVar(sizeVar)}
         hasValue={Boolean(value)}
+        onClick={handleOnClick}
       >
         <StyledDropdownButton
           ref={ref}
-          onClick={handleOnClick}
           disabled={disabled}
           {...rest}
           sizeVar={sizeVar}
@@ -126,6 +126,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             transition={{
               duration: 0.2,
             }}
+            style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
           >
             <Icon
               iconSource={DownArrowSolidXsmallIcon}

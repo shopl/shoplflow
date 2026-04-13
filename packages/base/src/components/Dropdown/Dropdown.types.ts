@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, CSSProperties, HTMLAttributes, MouseEvent, ReactNode } from 'react';
 import type {
   ChildrenProps,
   DisableProps,
@@ -70,7 +70,7 @@ export type DropdownStyleVariantType = $Values<typeof _dropdownStyleVariants>;
 
 export interface DropdownTriggerButtonProps
   extends
-    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value'>,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'value' | 'onClick'>,
     DisableProps,
     LeftAndRightElementProps,
     SizeVariantProps<DropdownSizeVariantType>,
@@ -85,5 +85,6 @@ export interface DropdownTriggerButtonProps
    * width를 설정합니다.
    */
   width?: string;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
   onClear?: () => void;
 }

@@ -1,0 +1,70 @@
+name: 디자인 검수 완료 배포
+
+# Slack "디자인 검수 완료" 버튼 클릭 시 Cloudflare Worker가
+# GitHub repository_dispatch 이벤트를 발송하면 이 워크플로가 실행된다.
+on:
+  repository_dispatch:
+    types: [design-approved]
+
+jobs:
+  deploy:
+    name: feature 브랜치 → main 머지
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 코드 체크아웃
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
+
+      - name: pnpm 설정
+        uses: pnpm/action-setup@v4
+
+      - name: Node 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: 의존성 설치
+        run: pnpm install
+
+      - name: 빌드 검증
+        run: pnpm build
+
+      - name: feature 브랜치를 main에 머지하고 푸시
+        run: |
+          BRANCH="${{ github.event.client_payload.branch }}"
+          echo "배포 대상 브랜치: $BRANCH"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin
+
+          git checkout main
+          git pull origin main
+
+          git merge "origin/$BRANCH" --no-ff -m "디자인 검수 완료: $BRANCH 머지"
+
+          git push origin main
+
+      - name: 머지 완료 Slack 알림
+        if: success()
+        run: |
+          BRANCH="${{ github.event.client_payload.branch }}"
+          curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"text\": \"🚀 *배포 시작* — \`$BRANCH\` 브랜치가 main에 머지됐습니다. changesets 워크플로가 npm 배포를 처리합니다.\"}"
+
+      - name: 실패 시 Slack 알림
+        if: failure()
+        run: |
+          BRANCH="${{ github.event.client_payload.branch }}"
+          curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"text\": \"❌ *배포 실패* — \`$BRANCH\` 브랜치 머지 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"
