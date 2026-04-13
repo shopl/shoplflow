@@ -3,7 +3,7 @@
 Slack 메시지의 인터랙션을 처리하는 Cloudflare Worker.
 
 - **디자인 검수 완료**(초록): 검수 완료 안내 메시지만 채널에 표시 (배포 없음)
-- **배포**(빨강): GitHub `repository_dispatch` → `design-approved-deploy` 워크플로(브랜치 직접 빌드·배포)
+- **배포**(빨강): GitHub `workflow_dispatch(ref=브랜치)` → `design-approved-deploy` 워크플로(브랜치 직접 빌드·배포)
 
 ## 배포 방법
 

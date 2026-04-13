@@ -1,0 +1,338 @@
+
+> @shoplflow/base@0.46.16 build:storybook /Users/ayaan/shoplflow/packages/base
+> storybook build --output-dir=/var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB
+
+
+┌  Building storybook v10.2.8
+│
+◇  Cleaning outputDir:
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB
+│
+◇  Loading presets
+│
+◇  Building manager..
+│
+●  Building preview..
+│  Vite vite v5.4.21 building for production...
+│  Vite transforming...
+│  Vite ✓ 2266 modules transformed.
+│  Vite rendering chunks...
+│  Vite computing gzip size...
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/list-DQV6x_at.png
+│  4.51 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/iframe.html
+│  18.64 kB │ gzip:   5.26 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/iframe-CKGOUZoo.css
+│  34.76 kB │ gzip:   5.33 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/index-Cm1Dk_ua.js
+│  0.15 kB │ gzip:   0.15 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/formatter-EIJCOSYU-B0UWuFQo.js
+│  0.21 kB │ gzip:   0.19 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/index-mrLk0Joy.js
+│  0.46 kB │ gzip:   0.30 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/JSONScrollView-DoFVejsX.js
+│  0.74 kB │ gzip:   0.45 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/react-18-DkhocsNZ.js
+│  0.80 kB │ gzip:   0.48 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Box-C2IKKtVu.js
+│  0.88 kB │ gzip:   0.42 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Avatar-BkGB1ntO.js
+│  1.03 kB │ gzip:   0.63 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/preload-helper-C1FmrZbK.js
+│  1.14 kB │ gzip:   0.68 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Switch-CJIJwi_L.js
+│  1.15 kB │ gzip:   0.73 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Text-DxaI8mf8.js
+│  1.15 kB │ gzip:   0.72 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Tree-DYxBXjF0.js
+│  1.19 kB │ gzip:   0.70 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Text.stories-DIWdl5Zl.js
+│  1.22 kB │ gzip:   0.62 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Radio-C0A5LeXX.js
+│  1.22 kB │ gzip:   0.73 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/DocsRenderer-LL677BLK-DSrVWqGt.js
+│  1.26 kB │ gzip:   0.69 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Checkbox-eSQd5gwD.js
+│  1.28 kB │ gzip:   0.75 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Skeleton-oIZZGvUH.js
+│  1.29 kB │ gzip:   0.81 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_AnnualDatepicker-Cguo-Uph.js
+│  1.32 kB │ gzip:   0.74 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Tooltip-CrhFZP5j.js
+│  1.34 kB │ gzip:   0.86 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_ChipButton-CnqG0JVB.js
+│  1.36 kB │ gzip:   0.78 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Callout-6B_W-4l-.js
+│  1.37 kB │ gzip:   0.88 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_MinusButton-MJssf9BK.js
+│  1.37 kB │ gzip:   0.79 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_ChipToggle-ykwymS0p.js
+│  1.40 kB │ gzip:   0.75 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Menu-BcJX-rh7.js
+│  1.40 kB │ gzip:   0.83 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Tag-B-epeFMc.js
+│  1.43 kB │ gzip:   0.88 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_WeekDatepicker-C-gAbK0D.js
+│  1.45 kB │ gzip:   0.88 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Tooltip.stories-D-ZRXJNA.js
+│  1.48 kB │ gzip:   0.78 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_IconButton-DLp8-NM_.js
+│  1.50 kB │ gzip:   0.87 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Input-CP9qGoX4.js
+│  1.53 kB │ gzip:   0.94 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_DropdownButton-BysG5Iuo.js
+│  1.55 kB │ gzip:   0.76 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/colors-CelORDOW.js
+│  1.56 kB │ gzip:   0.57 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_ToggleButton-BE0cBaoI.js
+│  1.58 kB │ gzip:   0.81 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Tabs-C4Y72N3B.js
+│  1.59 kB │ gzip:   0.89 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_InputButton-DYDVNmln.js
+│  1.59 kB │ gzip:   0.94 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_MonthDatepicker-BujBzNN-.js
+│  1.59 kB │ gzip:   0.91 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Popper-ufqU9Fke.js
+│  1.65 kB │ gzip:   0.96 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Avatar.stories-zjBqW9Zi.js
+│  1.66 kB │ gzip:   1.06 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/MinusButton.stories-Cry0tIe3.js
+│  1.69 kB │ gzip:   0.88 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_SplitButton-Wt8Wr2mu.js
+│  1.74 kB │ gzip:   0.91 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/ScrollArea.stories-BvUiFcjE.js
+│  1.88 kB │ gzip:   0.96 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_ScrollArea-DKUmTuER.js
+│  1.89 kB │ gzip:   0.87 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Slider-BSKk_txQ.js
+│  1.90 kB │ gzip:   1.06 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Slider.stories-B-6UGPIq.js
+│  1.90 kB │ gzip:   1.10 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_SearchBar-i01I4mOm.js
+│  1.91 kB │ gzip:   0.98 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_List-v7xig0gY.js
+│  1.95 kB │ gzip:   1.16 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_StackContainer-CWssIarX.js
+│  1.95 kB │ gzip:   1.07 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Switch.stories-CDffIsax.js
+│  2.02 kB │ gzip:   0.91 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Stack-B1Z4lUam.js
+│  2.03 kB │ gzip:   1.09 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Skeleton.stories-BQh8kImF.js
+│  2.04 kB │ gzip:   0.80 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/AnnualDatepicker.stories-DJChOJ3v.js
+│  2.06 kB │ gzip:   0.83 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_NumberCombobox-qwNjpAsI.js
+│  2.13 kB │ gzip:   1.04 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Pagination.stories-BCJX3Uul.js
+│  2.14 kB │ gzip:   0.98 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Icon-Bb2W2aVQ.js
+│  2.24 kB │ gzip:   1.19 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Pagination-DkdrZxsQ.js
+│  2.27 kB │ gzip:   0.95 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Radio.stories-DjkwV4eW.js
+│  2.32 kB │ gzip:   1.01 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Dropdown-C_wob_yP.js
+│  2.38 kB │ gzip:   1.22 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Icon.stories-CLJ9CKzu.js
+│  2.40 kB │ gzip:   1.24 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_TextArea-8_gLerHQ.js
+│  2.49 kB │ gzip:   1.09 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Checkbox.stories-D50SPEJs.js
+│  2.50 kB │ gzip:   1.06 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_Modal-DA9wE-GW.js
+│  2.52 kB │ gzip:   1.19 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_DayDatepicker-yiJ5vkAh.js
+│  2.53 kB │ gzip:   1.14 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/ChipToggle.stories-DzwjCs9I.js
+│  2.64 kB │ gzip:   1.05 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/InputButton.stories-xJuTWbCS.js
+│  2.79 kB │ gzip:   1.42 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Legacy_Doc_SelectInputButton-Dwoz3zQz.js
+│  2.80 kB │ gzip:   1.43 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Popper.stories-CJZj30g-.js
+│  3.06 kB │ gzip:   1.03 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/WeekDatepicker.stories-BpsQ4xFZ.js
+│  3.24 kB │ gzip:   1.02 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Tag.stories-CbVBX2AG.js
+│  3.41 kB │ gzip:   1.02 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Stack.stories-Bg5xUX97.js
+│  3.41 kB │ gzip:   0.78 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/DropdownButton.stories-CJUdkZr6.js
+│  3.49 kB │ gzip:   1.50 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/StackContainer.stories-DCmAfvkH.js
+│  3.50 kB │ gzip:   0.79 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/HelperText.stories-dB0nZ1So.js
+│  3.54 kB │ gzip:   1.10 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/SelectInputButton.stories-DFXN7_j7.js
+│  3.66 kB │ gzip:   1.85 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/TextArea.stories-D_C0ngM9.js
+│  4.40 kB │ gzip:   1.58 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/IconButton.stories-ZhwC183f.js
+│  4.85 kB │ gzip:   1.61 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/NumberCombobox.stories-CvhZfAh9.js
+│  5.12 kB │ gzip:   1.70 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Callout.stories-SMsspQ8f.js
+│  5.36 kB │ gzip:   1.57 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Tabs.stories-CzZBsQLA.js
+│  5.45 kB │ gzip:   1.31 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Menu.stories-wXjejGkw.js
+│  5.63 kB │ gzip:   1.61 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/List.stories-CEPs_-nN.js
+│  5.68 kB │ gzip:   1.76 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/MonthDatepicker.stories-BmUCaXce.js
+│  5.84 kB │ gzip:   1.62 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/DayDatepicker.stories-DpcjaIfq.js
+│  5.85 kB │ gzip:   1.60 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/ToggleButton.stories-ClaBwkX9.js
+│  5.87 kB │ gzip:   1.95 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/ChipButton.stories-iSj9n0lm.js
+│  7.45 kB │ gzip:   2.14 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/SplitButton.stories-DLZUXib5.js
+│  8.33 kB │ gzip:   1.76 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Modal.stories-Bai-5yYw.js
+│  8.45 kB │ gzip:   2.29 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Input.stories-CeW7hEQx.js
+│  8.53 kB │ gzip:   2.42 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Tree.stories-BgZdCjET.js
+│  9.18 kB │ gzip:   1.82 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/SearchBar.stories-eHPt982c.js
+│  11.29 kB │ gzip:   2.63 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Dropdown.stories-DdimDa3K.js
+│  16.10 kB │ gzip:   3.49 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Button.stories-DE9LRxHU.js
+│  21.82 kB │ gzip:   5.31 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/vite-inject-mocker-entry.js
+│  28.53 kB │ gzip:   9.89 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/matchers-5TDFFDYO-BEZorklP.js
+│  29.35 kB │ gzip:  10.00 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/Color-6BZIO3FS-BmrhQzZt.js
+│  30.12 kB │ gzip:  11.25 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/WithTooltip-65CFNBJE-CjGXNWwl.js
+│  33.13 kB │ gzip:  11.61 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/syntaxhighlighter-ED5Y7EFY-Bl2Wysp5.js
+│  77.86 kB │ gzip:  27.02 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/changeLog-D3H_4G9T.js
+│  105.06 kB │ gzip:  21.80 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/axe-CCNyVZfs.js
+│  580.35 kB │ gzip: 159.52 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/blocks-k25WpcF9.js
+│  811.73 kB │ gzip: 257.96 kB
+│  Vite
+│  ../../../../../var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB/assets/iframe-BOm_lyhO.js
+│  2,428.88 kB │ gzip: 686.20 kB
+│
+▲  Vite
+│  (!) Some chunks are larger than 500 kB after minification. Consider:
+│  - Using dynamic import() to code-split the application
+│  - Use build.rollupOptions.output.manualChunks to improve chunking:
+│  ]8;;https://rollupjs.org/configuration-options/#output-manualchunkshttps://rollupjs.org/configuration-options/#output-manualchunks]8;;
+│  - Adjust chunk size limit for this warning via
+│  build.chunkSizeWarningLimit.
+│  Vite ✓ built in 9.42s
+│
+◇  Output directory:
+│  /var/folders/s5/zjdyqcg93s15bwtzxqwb8ql00000gn/T/chromatic--45692-8CWMCxVxP2lB
+│
+└  Storybook build completed successfully
+

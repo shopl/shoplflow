@@ -1,10 +1,14 @@
 name: 디자인 검수 완료 배포
 
-# Slack "디자인 검수 완료" 버튼 클릭 시 Cloudflare Worker가
-# GitHub repository_dispatch 이벤트를 발송하면 이 워크플로가 실행된다.
+# Slack "배포" 버튼 클릭 시 Cloudflare Worker가
+# GitHub workflow_dispatch(ref=브랜치)를 호출하면 이 워크플로가 실행된다.
 on:
-  repository_dispatch:
-    types: [design-approved]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: '배포할 브랜치명'
+        required: true
+        type: string
 
 jobs:
   deploy:
@@ -17,9 +21,9 @@ jobs:
     steps:
       - name: 배포 대상 브랜치 확인
         run: |
-          BRANCH="${{ github.event.client_payload.branch }}"
+          BRANCH="${{ inputs.branch }}"
           if [ -z "$BRANCH" ]; then
-            echo "client_payload.branch 값이 없습니다."
+            echo "inputs.branch 값이 없습니다."
             exit 1
           fi
           echo "배포 대상 브랜치: $BRANCH"
@@ -28,7 +32,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event.client_payload.branch }}
+          ref: ${{ inputs.branch }}
 
       - name: pnpm 설정
         uses: pnpm/action-setup@v4
@@ -53,7 +57,7 @@ jobs:
       - name: 배포 완료 Slack 알림
         if: success()
         run: |
-          BRANCH="${{ github.event.client_payload.branch }}"
+          BRANCH="${{ inputs.branch }}"
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d "{\"text\": \"🚀 *배포 완료* — \`$BRANCH\` 브랜치를 기준으로 빌드 및 npm 배포를 마쳤습니다.\"}"
@@ -61,7 +65,7 @@ jobs:
       - name: 실패 시 Slack 알림
         if: failure()
         run: |
-          BRANCH="${{ github.event.client_payload.branch }}"
+          BRANCH="${{ inputs.branch }}"
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d "{\"text\": \"❌ *배포 실패* — \`$BRANCH\` 브랜치의 빌드/배포 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"

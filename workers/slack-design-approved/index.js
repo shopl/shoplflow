@@ -1,9 +1,9 @@
 /**
- * Slack Interactivity Webhook → GitHub repository_dispatch
+ * Slack Interactivity Webhook → GitHub workflow_dispatch
  *
  * 디자이너가 Slack에서 버튼을 누르면 이 Worker가:
  * - "디자인 검수 완료": 채널에 검수 완료 안내 메시지 (배포 없음)
- * - "배포": GitHub repository_dispatch → design-approved-deploy 워크플로(브랜치 직접 빌드·배포)
+ * - "배포": GitHub workflow_dispatch(ref=브랜치) → design-approved-deploy 워크플로(브랜치 직접 빌드·배포)
  *
  * 필요 Worker Secrets:
  *   SLACK_SIGNING_SECRET  - Slack App의 Signing Secret
@@ -16,10 +16,10 @@
 const GITHUB_API = 'https://api.github.com';
 
 /**
- * GitHub repository_dispatch 이벤트 발송
+ * GitHub workflow_dispatch 이벤트 발송
  */
-async function triggerGitHubDispatch(branch, env) {
-  const url = `${GITHUB_API}/repos/${env.GH_OWNER}/${env.GH_REPO}/dispatches`;
+async function triggerGitHubWorkflowDispatch(branch, env) {
+  const url = `${GITHUB_API}/repos/${env.GH_OWNER}/${env.GH_REPO}/actions/workflows/design-approved-deploy.yml/dispatches`;
 
   const response = await fetch(url, {
     method: 'POST',
@@ -31,14 +31,14 @@ async function triggerGitHubDispatch(branch, env) {
       'User-Agent': 'Shoplflow-Design-Approved-Worker/1.0',
     },
     body: JSON.stringify({
-      event_type: 'design-approved',
-      client_payload: { branch },
+      ref: branch,
+      inputs: { branch },
     }),
   });
 
   if (!response.ok) {
     const text = await response.text();
-    const err = new Error(`GitHub dispatch failed: ${response.status} ${text}`);
+    const err = new Error(`GitHub workflow_dispatch failed: ${response.status} ${text}`);
     err.status = response.status;
     err.body = text;
     throw err;
@@ -140,16 +140,16 @@ export default {
 
     let messageText;
     try {
-      await triggerGitHubDispatch(branch, env);
+      await triggerGitHubWorkflowDispatch(branch, env);
       messageText = `🚀 *배포 시작* — \`${branch}\` 브랜치 기준 빌드·배포 워크플로가 실행됩니다.`;
     } catch (e) {
-      console.error('triggerGitHubDispatch failed', e?.message || e, e?.body);
+      console.error('triggerGitHubWorkflowDispatch failed', e?.message || e, e?.body);
       const status = e?.status;
       let hint = 'GitHub 시크릿(GH_PAT, GH_OWNER, GH_REPO) 확인';
       if (status === 401 || status === 403) {
-        hint = 'GH_PAT 권한 확인 (repo scope 필요)';
+        hint = 'GH_PAT 권한 확인 (repo + workflow scope 필요)';
       } else if (status === 404) {
-        hint = 'GH_OWNER/GH_REPO 저장소 경로 확인';
+        hint = '브랜치명 또는 워크플로 파일 경로 확인';
       }
       messageText = `❌ *배포 요청 실패* — \`${branch}\` (${status || '오류'}) ${hint}`;
     }
