@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/base",
-  "version": "0.46.15",
+  "version": "0.46.16",
   "type": "module",
   "license": "Apache-2.0",
   "repository": {
@@ -13,15 +13,20 @@
   },
   "scripts": {
     "type-check": "tsc --noEmit",
-    "version:sync": "node scripts/component-version.mjs sync",
-    "version:bump": "node scripts/component-version.mjs bump",
     "build:tokens": "node scripts/generate-tokens.cjs",
     "build:package": "rm -rf dist/ && tsup",
     "generate:component": "scripts/generate-component.sh",
     "build:storybook": "storybook build",
     "build": "pnpm run build:package && pnpm run build:storybook",
+    "chromatic": "chromatic --build-script-name=build:storybook",
     "dev:stories": "storybook dev -p 6007",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "figma:parse": "npx figma connect parse",
+    "figma:publish": "npx figma connect publish",
+    "test": "vitest",
+    "install:playwright": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers pnpm exec playwright install chromium",
+    "test-storybook": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers test-storybook --url http://localhost:6007",
+    "test-storybook:ci": "pnpm run build:storybook && npx concurrently -k -s first -n SB,TEST -c magenta,blue \"npx serve storybook-static --listen 6007\" \"npx wait-on tcp:127.0.0.1:6007 && pnpm run test-storybook\""
   },
   "main": "./src/index.ts",
   "exports": {
@@ -86,14 +91,26 @@
     "@types/node": "20.4.9",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "chromatic": "^15.2.0",
     "classnames": "^2.3.2",
     "storybook": "^10.2.1",
+    "@storybook/test-runner": "^0.24.2",
+    "playwright": "1.58.2",
+    "concurrently": "^9.1.0",
+    "serve": "^14.2.4",
+    "wait-on": "^8.0.1",
     "ts-node": "^10.9.1",
+    "vitest": "^1.2.2",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/user-event": "^14.5.1",
+    "jsdom": "^24.0.0",
     "tslib": "^2.6.2",
     "tsup": "7.2.0",
     "typescript": "^5.9.0"
   },
   "dependencies": {
+    "@figma/code-connect": "^1.4.3",
     "@floating-ui/core": "^1.5.0",
     "@floating-ui/react": "^0.26.2",
     "@floating-ui/react-dom": "^2.0.3",

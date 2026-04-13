@@ -3,4 +3,3 @@ export * from './MonthDatepicker';
 export * from './AnnualDatepicker';
 export * from './WeekDatepicker';
 export type * from './stepper';
-export * from './version';

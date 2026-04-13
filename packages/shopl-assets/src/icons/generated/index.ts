@@ -71,6 +71,7 @@ import IcCompanyXlarge from './IcCompanyXlarge';
 import IcConfirmPopupXlarge from './IcConfirmPopupXlarge';
 import IcContrastPlus from './IcContrastPlus';
 import IcCopy from './IcCopy';
+import IcCover from './IcCover';
 import IcCrown from './IcCrown';
 import IcCustomDropdown from './IcCustomDropdown';
 import IcCustomText from './IcCustomText';
@@ -230,6 +231,7 @@ import IcMention from './IcMention';
 import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
 import IcMobileLine from './IcMobileLine';
+import IcMoreSolid from './IcMoreSolid';
 import IcMore from './IcMore';
 import IcMother from './IcMother';
 import IcMove2 from './IcMove2';
@@ -260,6 +262,7 @@ import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
 import IcPlusMedium from './IcPlusMedium';
+import IcPodium from './IcPodium';
 import IcPopup from './IcPopup';
 import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
@@ -319,6 +322,7 @@ import IcText from './IcText';
 import IcTimeLineLine from './IcTimeLineLine';
 import IcTodoMedium from './IcTodoMedium';
 import IcToggleMedium from './IcToggleMedium';
+import IcTrashLine from './IcTrashLine';
 import IcTrash from './IcTrash';
 import IcTruck from './IcTruck';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
@@ -416,6 +420,7 @@ const icons = {
   'confirm-popup-xlarge': IcConfirmPopupXlarge,
   'contrast-plus': IcContrastPlus,
   copy: IcCopy,
+  cover: IcCover,
   crown: IcCrown,
   'custom-dropdown': IcCustomDropdown,
   'custom-text': IcCustomText,
@@ -575,6 +580,7 @@ const icons = {
   'minus-medium': IcMinusMedium,
   minus: IcMinus,
   'mobile-line': IcMobileLine,
+  'more-solid': IcMoreSolid,
   more: IcMore,
   mother: IcMother,
   'move-2': IcMove2,
@@ -605,6 +611,7 @@ const icons = {
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
   'plus-medium': IcPlusMedium,
+  podium: IcPodium,
   popup: IcPopup,
   'preorder-medium': IcPreorderMedium,
   preview: IcPreview,
@@ -664,6 +671,7 @@ const icons = {
   'time-line-line': IcTimeLineLine,
   'todo-medium': IcTodoMedium,
   'toggle-medium': IcToggleMedium,
+  'trash-line': IcTrashLine,
   trash: IcTrash,
   truck: IcTruck,
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
@@ -764,6 +772,7 @@ export {
   IcConfirmPopupXlarge as ConfirmPopupXlargeIcon,
   IcContrastPlus as ContrastPlusIcon,
   IcCopy as CopyIcon,
+  IcCover as CoverIcon,
   IcCrown as CrownIcon,
   IcCustomDropdown as CustomDropdownIcon,
   IcCustomText as CustomTextIcon,
@@ -923,6 +932,7 @@ export {
   IcMinusMedium as MinusMediumIcon,
   IcMinus as MinusIcon,
   IcMobileLine as MobileLineIcon,
+  IcMoreSolid as MoreSolidIcon,
   IcMore as MoreIcon,
   IcMother as MotherIcon,
   IcMove2 as Move2Icon,
@@ -953,6 +963,7 @@ export {
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
   IcPlusMedium as PlusMediumIcon,
+  IcPodium as PodiumIcon,
   IcPopup as PopupIcon,
   IcPreorderMedium as PreorderMediumIcon,
   IcPreview as PreviewIcon,
@@ -1012,6 +1023,7 @@ export {
   IcTimeLineLine as TimeLineLineIcon,
   IcTodoMedium as TodoMediumIcon,
   IcToggleMedium as ToggleMediumIcon,
+  IcTrashLine as TrashLineIcon,
   IcTrash as TrashIcon,
   IcTruck as TruckIcon,
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,

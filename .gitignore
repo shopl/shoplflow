@@ -13,6 +13,7 @@ node_modules
 
 # testing
 coverage
+.playwright-browsers
 
 # next.js
 .next/
@@ -64,3 +65,5 @@ docs/pages/utils/**/_meta.json
 
 CLAUDE.md
 .cursor
+
+local-env

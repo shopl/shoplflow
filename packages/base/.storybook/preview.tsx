@@ -27,6 +27,13 @@ const Container = styled.div`
 
 const preview: Preview = {
   tags: ['autodocs'],
+  parameters: {
+    // test-runner에서 a11y 검사 비활성화 (위반 시 메시지만 출력되고 테스트는 통과).
+    // 접근성 검사를 실패로 막으려면 'error'로 변경하세요.
+    a11y: { test: 'off' },
+    // iframe 내 스토리 실행 시 test-runner가 Window 직렬화(toJSON) 시도 시 cross-origin 오류가 발생함. 해당 미처리 오류 무시.
+    test: { dangerouslyIgnoreUnhandledErrors: true },
+  },
   decorators: [
     (Story) => {
       const domainContext = useStoryDomain();
