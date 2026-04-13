@@ -21,10 +21,10 @@
 | ControlButtons | Checkbox | 2.0.3 | 2.0 | 🟢 |
 | ControlButtons | MinusButton | 2.0.3 | 2.0 | 🟢 |
 | ControlButtons | Radio | 2.0.3 | 2.0 | 🟢 |
-| Datepickers | AnnualDatepicker | 2.0.4 | 2.0 | 🟢 |
-| Datepickers | DayDatepicker | 2.0.4 | 2.0 | 🟢 |
-| Datepickers | MonthDatepicker | 2.0.4 | 2.0 | 🟢 |
-| Datepickers | WeekDatepicker | 2.0.4 | 2.0 | 🟢 |
+| Datepickers | AnnualDatepicker | 2.0.5 | 2.0 | 🟢 |
+| Datepickers | DayDatepicker | 2.0.5 | 2.0 | 🟢 |
+| Datepickers | MonthDatepicker | 2.0.5 | 2.0 | 🟢 |
+| Datepickers | WeekDatepicker | 2.0.5 | 2.0 | 🟢 |
 | Dropdown | Dropdown | 2.0.1 | 2.1 | 🔴 |
 | HelperText | HelperText | 2.1.2 | 2.1 | 🟢 |
 | Icon | Icon | 2.0.1 | 2.0 | 🟢 |

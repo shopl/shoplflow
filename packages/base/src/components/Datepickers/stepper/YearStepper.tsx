@@ -21,7 +21,9 @@ type YearStepperProps = Pick<
   | 'minDate'
   | 'maxDate'
   | 'className'
->;
+> & {
+  sizeVar?: 'S' | 'M';
+};
 
 const YearStepper = ({
   date,
@@ -32,6 +34,7 @@ const YearStepper = ({
   changeYear,
   minDate,
   maxDate,
+  sizeVar = 'M',
   className,
 }: YearStepperProps) => {
   const [isOpen, setIsOpen] = useOutsideClick({
@@ -68,7 +71,7 @@ const YearStepper = ({
               setIsOpen((prev) => !prev);
             }}
           >
-            <Text typography='title1_700'>{`${date.getFullYear()}`}</Text>
+            <Text typography={sizeVar === 'M' ? 'title1_700' : 'body1_700'}>{`${date.getFullYear()}`}</Text>
           </Month>
         </Popper.Trigger>
         <Popper.Portal>
