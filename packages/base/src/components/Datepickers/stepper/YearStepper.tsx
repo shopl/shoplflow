@@ -1,7 +1,7 @@
 import { Month, Header } from './Stepper.styled';
 import type { DayDatepickerHeaderCustomProps } from '../DayDatepicker/DayDatepicker.types';
 import { Icon } from '../../Icon';
-import { LeftArrowIcon, RightArrowIcon } from '@shoplflow/shopl-assets';
+import { LeftArrowIcon, RightArrowIcon, LeftArrowXsmallIcon, RightArrowXsmallIcon } from '@shoplflow/shopl-assets';
 import { IconButton } from '../../Buttons';
 import { useOutsideClick } from '@shoplflow/utils';
 import { Popper } from '../../Popper';
@@ -56,11 +56,15 @@ const YearStepper = ({
     <Header className={`calendarHeader ${className}`}>
       <IconButton
         styleVar='GHOST'
-        sizeVar='S'
+        sizeVar={sizeVar === 'S' ? 'XS' : 'S'}
         onClick={decreaseYear}
         disabled={prevYearButtonDisabled || date.getFullYear() === startYear}
+        iconSizeVar={sizeVar === 'S' ? 'XS' : 'S'}
       >
-        <Icon iconSource={LeftArrowIcon} sizeVar='XS' color={prevYearButtonDisabled ? 'neutral200' : 'neutral700'} />
+        <Icon
+          iconSource={sizeVar === 'S' ? LeftArrowXsmallIcon : LeftArrowIcon}
+          color={prevYearButtonDisabled ? 'neutral200' : 'neutral700'}
+        />
       </IconButton>
       <Popper placement='bottom' middlewares={[flip(), shift({ padding: 5 })]}>
         <Popper.Trigger isOpen={isOpen}>
@@ -91,11 +95,15 @@ const YearStepper = ({
 
       <IconButton
         styleVar='GHOST'
-        sizeVar='S'
+        sizeVar={sizeVar === 'S' ? 'XS' : 'S'}
         onClick={increaseYear}
         disabled={nextYearButtonDisabled || date.getFullYear() === endYear}
+        iconSizeVar={sizeVar === 'S' ? 'XS' : 'S'}
       >
-        <Icon iconSource={RightArrowIcon} sizeVar='XS' color={nextYearButtonDisabled ? 'neutral200' : 'neutral700'} />
+        <Icon
+          iconSource={sizeVar === 'S' ? RightArrowXsmallIcon : RightArrowIcon}
+          color={nextYearButtonDisabled ? 'neutral200' : 'neutral700'}
+        />
       </IconButton>
     </Header>
   );

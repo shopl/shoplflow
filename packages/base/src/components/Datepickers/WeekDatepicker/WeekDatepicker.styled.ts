@@ -164,6 +164,7 @@ export const WeekArea = styled.div<{ sizeVar: 'S' | 'M' }>`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   border-radius: 4px;
+  overflow: hidden;
 
   ${({ sizeVar }) => getWeekAreaStyleBySizeVar(sizeVar)}
 `;
