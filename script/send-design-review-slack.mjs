@@ -2,7 +2,7 @@
 /**
  * Chromatic 스토리북 URL과 버튼 2개(디자인 검수 완료 / 배포)가 있는 메시지를 Slack에 전송한다.
  * - 디자인 검수 완료: 검수 완료 안내 메시지만 표시 (배포 없음)
- * - 배포: GitHub repository_dispatch → main 머지·배포 워크플로
+ * - 배포: GitHub repository_dispatch → 브랜치 직접 빌드·배포 워크플로
  * 환경변수: SLACK_BOT_TOKEN, SLACK_CHANNEL_ID, CHROMATIC_URL(또는 첫 번째 인자)
  * 사용: pnpm send-design-review [chromatic_url]
  *      또는 dotenv -e .env.local -- node script/send-design-review-slack.mjs [chromatic_url]

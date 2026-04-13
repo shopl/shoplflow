@@ -8,18 +8,27 @@ on:
 
 jobs:
   deploy:
-    name: feature 브랜치 → main 머지
+    name: feature 브랜치 직접 빌드·배포
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: read
 
     steps:
+      - name: 배포 대상 브랜치 확인
+        run: |
+          BRANCH="${{ github.event.client_payload.branch }}"
+          if [ -z "$BRANCH" ]; then
+            echo "client_payload.branch 값이 없습니다."
+            exit 1
+          fi
+          echo "배포 대상 브랜치: $BRANCH"
+
       - name: 코드 체크아웃
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_PAT }}
+          ref: ${{ github.event.client_payload.branch }}
 
       - name: pnpm 설정
         uses: pnpm/action-setup@v4
@@ -33,33 +42,21 @@ jobs:
       - name: 의존성 설치
         run: pnpm install
 
-      - name: 빌드 검증
+      - name: 빌드
         run: pnpm build
 
-      - name: feature 브랜치를 main에 머지하고 푸시
-        run: |
-          BRANCH="${{ github.event.client_payload.branch }}"
-          echo "배포 대상 브랜치: $BRANCH"
+      - name: npm 배포
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm release
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git fetch origin
-
-          git checkout main
-          git pull origin main
-
-          git merge "origin/$BRANCH" --no-ff -m "디자인 검수 완료: $BRANCH 머지"
-
-          git push origin main
-
-      - name: 머지 완료 Slack 알림
+      - name: 배포 완료 Slack 알림
         if: success()
         run: |
           BRANCH="${{ github.event.client_payload.branch }}"
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
-            -d "{\"text\": \"🚀 *배포 시작* — \`$BRANCH\` 브랜치가 main에 머지됐습니다. changesets 워크플로가 npm 배포를 처리합니다.\"}"
+            -d "{\"text\": \"🚀 *배포 완료* — \`$BRANCH\` 브랜치를 기준으로 빌드 및 npm 배포를 마쳤습니다.\"}"
 
       - name: 실패 시 Slack 알림
         if: failure()
@@ -67,4 +64,4 @@ jobs:
           BRANCH="${{ github.event.client_payload.branch }}"
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
-            -d "{\"text\": \"❌ *배포 실패* — \`$BRANCH\` 브랜치 머지 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"
+            -d "{\"text\": \"❌ *배포 실패* — \`$BRANCH\` 브랜치의 빌드/배포 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"
