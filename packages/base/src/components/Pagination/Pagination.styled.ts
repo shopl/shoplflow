@@ -1,11 +1,47 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { borderRadiusTokens, colorTokens } from '../../styles';
 
-export const PaginationWrapper = styled.div`
+export const PaginationWrapper = styled.div<{ $centerNav?: boolean }>`
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
+
+  /* Shopl: Figma pagenation bar — 양끝은 흐름 배치, 네비는 바 전체 기준 absolute 중앙 (node 13760:25910) */
+  ${({ $centerNav }) =>
+    $centerNav &&
+    css`
+      position: relative;
+      justify-content: space-between;
+
+      /* div → nav → div 이므로 nth-of-type(2)는 두 번째 div(우측)만 잡힘 → 반드시 nth-child */
+      & > *:nth-child(1) {
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      & > *:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        max-width: 100%;
+      }
+      & > *:nth-child(3) {
+        position: relative;
+        z-index: 2;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    `}
 
   &.hada-responsive {
     @media (max-width: 720px) {
