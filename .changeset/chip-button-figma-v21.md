@@ -2,12 +2,10 @@
 '@shoplflow/base': patch
 ---
 
-ChipButton LINE 변형을 Figma v2.1 스펙에 맞춤: pill 모양·padding/gap·body2/caption 타이포·neutral 테두리, `isSelected` 및 선택 시 `selectedBackground` / `selectedBorderColor` 옵션 추가.
+ChipButton: `children`가 있으면 `count`를 렌더하지 않음. 스토리 Playground에서 `count`·`showLeftSource`·`showRightSource` 조작 가능.
 
-ChipButton 스토리북: 선택 색상 토큰을 `select` 드롭다운으로 선택하고 「기본값」은 렌더에서 해석.
+Dropdown: Figma Code Connect(`Dropdown.figma.tsx`) 추가.
 
-ModalFooter: `padding` prop으로 푸터 영역 패딩 커스텀 가능(미지정 시 기존 16px 24px 유지).
+DropdownTriggerButton: GHOST/비활성 시 화살표·비활성 아이콘 색 토큰 정리, `getTextColor`/`getChevronColor` 형태로 가독성 개선. 비활성 시 SVG fill을 `neutral350`으로 텍스트와 맞춤.
 
-Dropdown.Button: `sizeVar='XS'`(24px, caption, normal)과 `styleVar='GHOST'`(투명 배경/보더 없는 트리거) 추가.
-
-DropdownTriggerButton: `styleVar='GHOST'`일 때 아이콘 영역 너비 18px 고정.
+Dropdown 스토리 소폭 조정.

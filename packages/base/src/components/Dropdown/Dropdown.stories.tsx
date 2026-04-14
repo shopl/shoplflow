@@ -134,7 +134,12 @@ export const Playground: StoryFn<PlaygroundArgs> = (args) => {
               }
               value={
                 selectedItem.length > 0 && (
-                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
+                  <Text
+                    typography='body1_400'
+                    color={args.disabled ? 'neutral350' : 'neutral700'}
+                    textOverflow={'ellipsis'}
+                    lineClamp={1}
+                  >
                     {selectedItem.map((data) => data.value).join(',')}
                   </Text>
                 )

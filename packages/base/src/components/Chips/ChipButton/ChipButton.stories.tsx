@@ -20,6 +20,8 @@ const chipButtonColorTokenSelectOptions = [
 type ChipButtonStoryArgs = Omit<ChipButtonProps, 'selectedBackground' | 'selectedBorderColor'> & {
   selectedBackground?: ChipButtonProps['selectedBackground'] | typeof SELECT_COLOR_TOKEN_DEFAULT;
   selectedBorderColor?: ChipButtonProps['selectedBorderColor'] | typeof SELECT_COLOR_TOKEN_DEFAULT;
+  showLeftSource?: boolean;
+  showRightSource?: boolean;
 };
 
 function resolveChipButtonColorStoryArgs(args: ChipButtonStoryArgs): ChipButtonProps {
@@ -79,6 +81,11 @@ const meta = {
       description: '선택(pressed) 상태 스타일을 적용합니다.',
       defaultValue: false,
     },
+    count: {
+      control: { type: 'text' },
+      description:
+        '칩 옆에 표시할 카운트(숫자·문자열). 비우면 미표시. `children`이 있으면 ChipButton에서 카운트는 렌더되지 않습니다.',
+    },
     selectedBackground: {
       options: [...chipButtonColorTokenSelectOptions],
       control: 'select',
@@ -89,6 +96,18 @@ const meta = {
       options: [...chipButtonColorTokenSelectOptions],
       control: 'select',
       description: '선택 상태 테두리 색 토큰. 「기본값」이면 neutral300. `isSelected`가 true일 때만 화면에 반영됩니다.',
+    },
+    showLeftSource: {
+      control: { type: 'boolean' },
+      description:
+        'Playground 전용: leftSource(ReactElement) 표시 여부를 토글합니다. 실제 ChipButton prop은 leftSource입니다.',
+      table: { category: 'Playground (데모)' },
+    },
+    showRightSource: {
+      control: { type: 'boolean' },
+      description:
+        'Playground 전용: rightSource(ReactElement) 표시 여부를 토글합니다. 실제 ChipButton prop은 rightSource입니다.',
+      table: { category: 'Playground (데모)' },
     },
   },
 } satisfies Meta<typeof ChipButton>;
@@ -111,6 +130,9 @@ export const Playground: Story = {
     sizeVar: 'S',
     selectedBackground: SELECT_COLOR_TOKEN_DEFAULT,
     selectedBorderColor: SELECT_COLOR_TOKEN_DEFAULT,
+    showLeftSource: false,
+    showRightSource: false,
+    count: '',
   } as Story['args'],
   parameters: {
     design: {
@@ -118,11 +140,18 @@ export const Playground: Story = {
       url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=14505-5698&m=dev',
     },
   },
-  render: (args) => (
-    <WithStage>
-      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />
-    </WithStage>
-  ),
+  render: (args) => {
+    const { showLeftSource, showRightSource, ...rest } = args as ChipButtonStoryArgs;
+    return (
+      <WithStage>
+        <ChipButton
+          {...resolveChipButtonColorStoryArgs(rest)}
+          leftSource={showLeftSource ? <Icon iconSource={SearchIcon} sizeVar='S' /> : undefined}
+          rightSource={showRightSource ? <Icon iconSource={EditIcon} sizeVar='XS' /> : undefined}
+        />
+      </WithStage>
+    );
+  },
 };
 
 export const Line: Story = {

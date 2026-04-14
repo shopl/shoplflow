@@ -48,4 +48,8 @@ export interface ChipButtonOptionProps {
    * 선택 상태에서 기본 테두리 색 대신 사용할 토큰입니다.
    */
   selectedBorderColor?: ColorTokens;
+  /**
+   * 칩 버튼에 표시할 카운트 수입니다.
+   */
+  count?: string | number;
 }

@@ -80,7 +80,7 @@ export const getDisabledStyle = ({
       cursor: not-allowed;
       background: ${styleVar === 'GHOST' ? 'transparent' : colorTokens.neutral100};
       svg > path {
-        fill: ${colorTokens.neutral400} !important;
+        fill: ${colorTokens.neutral350} !important;
       }
     `;
   }

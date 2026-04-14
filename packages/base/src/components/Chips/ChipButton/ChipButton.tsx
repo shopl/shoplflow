@@ -19,6 +19,7 @@ const ChipButton = ({
   isSelected = false,
   selectedBackground,
   selectedBorderColor,
+  count,
   ...rest
 }: ChipButtonProps): ReactElement => {
   const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
@@ -39,6 +40,7 @@ const ChipButton = ({
     >
       {leftSource}
       {children || <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>}
+      {!children && count && <Text typography={getLineTypographyBySizeVar(sizeVar)}>{count}</Text>}
       {rightSource}
     </StyledChipButton>
   );

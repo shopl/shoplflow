@@ -1,5 +1,4 @@
 import type { MouseEvent } from 'react';
-import type React from 'react';
 import { cloneElement, forwardRef, useState } from 'react';
 import type { DropdownTriggerButtonProps } from './Dropdown.types';
 import { useDropdown } from './useDropdown';
@@ -59,14 +58,16 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       onClear && onClear();
     };
 
-    const getTextColor = ({ value, disabled }: { value?: React.ReactNode | null; disabled?: boolean }) => {
-      if (disabled) {
-        return 'neutral350';
-      }
-      if (!value) {
-        return 'neutral400';
-      }
+    const getTextColor = () => {
+      if (disabled) return 'neutral350';
+      if (!value) return 'neutral400';
       return 'neutral700';
+    };
+
+    const getChevronColor = () => {
+      if (styleVar === 'GHOST') return disabled ? 'neutral350' : 'neutral600';
+      if (sizeVar === 'L') return 'neutral700';
+      return 'neutral350';
     };
 
     const LeftSourceClone = leftSource ? cloneElement(leftSource, { ...leftSource.props, disabled }) : leftSource;
@@ -100,7 +101,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             {value || (
               <Text
                 typography={getDropdownFontSizeBySizeVar(sizeVar)}
-                color={getTextColor({ value, disabled })}
+                color={getTextColor()}
                 textOverflow={'ellipsis'}
                 lineClamp={1}
               >
@@ -128,11 +129,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             }}
             style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
           >
-            <Icon
-              iconSource={DownArrowSolidXsmallIcon}
-              color={sizeVar === 'L' ? 'neutral700' : 'neutral400'}
-              sizeVar='XS'
-            />
+            <Icon iconSource={DownArrowSolidXsmallIcon} color={getChevronColor()} sizeVar='XS' />
           </motion.div>
         </DropdownButtonIcon>
       </StyledDropdownButtonWrapper>
