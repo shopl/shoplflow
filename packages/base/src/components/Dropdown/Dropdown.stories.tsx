@@ -93,6 +93,7 @@ export default meta;
 
 type PlaygroundArgs = DropdownProps & {
   sizeVar?: DropdownSizeVariantType;
+  styleVar?: 'NORMAL' | 'GHOST';
   isError?: boolean;
   showRightSource?: boolean;
   showLeftSource?: boolean;
@@ -119,6 +120,7 @@ export const Playground: StoryFn<PlaygroundArgs> = (args) => {
             <Dropdown.Button
               disabled={args.disabled}
               sizeVar={args.sizeVar ?? 'M'}
+              styleVar={args.styleVar ?? 'NORMAL'}
               isError={args.isError}
               onClear={args.hasOnClear ? handleReset : undefined}
               placeholder={'값이 없어서 보이는 placeholder'}
@@ -132,7 +134,12 @@ export const Playground: StoryFn<PlaygroundArgs> = (args) => {
               }
               value={
                 selectedItem.length > 0 && (
-                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
+                  <Text
+                    typography='body1_400'
+                    color={args.disabled ? 'neutral350' : 'neutral700'}
+                    textOverflow={'ellipsis'}
+                    lineClamp={1}
+                  >
                     {selectedItem.map((data) => data.value).join(',')}
                   </Text>
                 )
@@ -168,6 +175,7 @@ Playground.args = {
   offset: 4,
 
   sizeVar: 'M' as DropdownSizeVariantType,
+  styleVar: 'NORMAL' as const,
   disabled: false,
   isError: false,
   showRightSource: false,
@@ -178,7 +186,11 @@ Playground.args = {
 Playground.argTypes = {
   sizeVar: {
     control: { type: 'select' },
-    options: ['S', 'M', 'L'],
+    options: ['XS', 'S', 'M', 'L'],
+  },
+  styleVar: {
+    control: { type: 'select' },
+    options: ['NORMAL', 'GHOST'],
   },
   isError: {
     control: { type: 'boolean' },
@@ -219,6 +231,7 @@ Playground.parameters = {
 
 type SmallMediumArgs = DropdownProps & {
   sizeVar?: DropdownSizeVariantType;
+  styleVar?: 'NORMAL' | 'GHOST';
   isError?: boolean;
   showRightSource?: boolean;
 };
@@ -239,6 +252,7 @@ export const SmallMedium: StoryFn<SmallMediumArgs> = (args) => {
             <Dropdown.Button
               placeholder={'placeholder'}
               sizeVar={args.sizeVar ?? 'S'}
+              styleVar={args.styleVar ?? 'NORMAL'}
               isError={args.isError}
               disabled={args.disabled}
               value={
@@ -269,6 +283,7 @@ SmallMedium.args = {
   option: 'OUTSIDE_CLICK',
   disabled: false,
   sizeVar: 'S' as DropdownSizeVariantType,
+  styleVar: 'NORMAL' as const,
   isError: false,
 };
 
@@ -279,7 +294,11 @@ SmallMedium.argTypes = {
   },
   sizeVar: {
     control: { type: 'select' },
-    options: ['S', 'M'],
+    options: ['XS', 'S', 'M'],
+  },
+  styleVar: {
+    control: { type: 'select' },
+    options: ['NORMAL', 'GHOST'],
   },
   isError: {
     control: { type: 'boolean' },
@@ -291,7 +310,7 @@ SmallMedium.argTypes = {
 
 SmallMedium.parameters = {
   controls: {
-    include: ['isOpen', 'width', 'sizeVar', 'option', 'disabled', 'isError'],
+    include: ['isOpen', 'width', 'sizeVar', 'styleVar', 'option', 'disabled', 'isError'],
   },
 };
 
@@ -325,6 +344,7 @@ Large.args = {
 
 type WithClearButtonArgs = DropdownProps & {
   sizeVar?: DropdownSizeVariantType;
+  styleVar?: 'NORMAL' | 'GHOST';
   isError?: boolean;
   showRightSource?: boolean;
 };
@@ -348,6 +368,7 @@ export const WithClearButton: StoryFn<WithClearButtonArgs> = (args) => {
             <Dropdown.Button
               disabled={args.disabled}
               sizeVar={args.sizeVar ?? 'S'}
+              styleVar={args.styleVar ?? 'NORMAL'}
               isError={args.isError}
               placeholder={'옵션을 선택하세요'}
               onClear={handleReset}
@@ -390,6 +411,7 @@ export const WithClearButton: StoryFn<WithClearButtonArgs> = (args) => {
 
 WithClearButton.args = {
   sizeVar: 'S' as DropdownSizeVariantType,
+  styleVar: 'NORMAL' as const,
   option: 'OUTSIDE_CLICK',
   disabled: false,
   isError: false,
@@ -399,7 +421,11 @@ WithClearButton.args = {
 WithClearButton.argTypes = {
   sizeVar: {
     control: { type: 'select' },
-    options: ['S', 'M', 'L'],
+    options: ['XS', 'S', 'M', 'L'],
+  },
+  styleVar: {
+    control: { type: 'select' },
+    options: ['NORMAL', 'GHOST'],
   },
   option: {
     control: { type: 'select' },
@@ -415,6 +441,132 @@ WithClearButton.argTypes = {
 
 WithClearButton.parameters = {
   controls: {
-    include: ['sizeVar', 'option', 'disabled', 'isError', 'showRightSource'],
+    include: ['sizeVar', 'styleVar', 'option', 'disabled', 'isError', 'showRightSource'],
+  },
+};
+
+type XsNormalArgs = DropdownProps & {
+  isError?: boolean;
+};
+
+export const XsNormal: StoryFn<XsNormalArgs> = (args) => {
+  const data = createDropdownMenuOptions(5, (i) => `Option ${i + 1}`);
+  const { selectedItem, handleToggleSelect } = useSelect('SINGLE', data, { key: 'value' });
+
+  return (
+    <Stack width={'500px'}>
+      <ComponentStage>
+        <Dropdown
+          {...args}
+          width={args.width ?? '240px'}
+          option={args.option}
+          disabled={args.disabled}
+          trigger={
+            <Dropdown.Button
+              placeholder={'Placeholder'}
+              sizeVar={'XS'}
+              styleVar={'NORMAL'}
+              isError={args.isError}
+              disabled={args.disabled}
+              value={
+                selectedItem && (
+                  <Text typography='caption_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>
+                    {selectedItem.label}
+                  </Text>
+                )
+              }
+            />
+          }
+          popper={
+            <DropdownMenuList
+              data={data}
+              isItemSelected={(item) => selectedItem?.value === item.value}
+              onItemClick={handleToggleSelect}
+            />
+          }
+        />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+XsNormal.args = {
+  isOpen: false,
+  width: '240px',
+  option: 'OUTSIDE_CLICK',
+  disabled: false,
+  isError: false,
+};
+
+XsNormal.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=17269-3215&m=dev',
+  },
+};
+
+type SmallGhostArgs = DropdownProps & {
+  isError?: boolean;
+};
+
+//hasValue상태에서 disabled면 직접 color조정 필요
+export const SmallGhost: StoryFn<SmallGhostArgs> = (args) => {
+  const data = createDropdownMenuOptions(5, (i) => `Option ${i + 1}`);
+  const { selectedItem, handleToggleSelect } = useSelect('SINGLE', data, { key: 'value' });
+
+  return (
+    <Stack width={'500px'}>
+      <ComponentStage>
+        <Dropdown
+          {...args}
+          width={args.width ?? '240px'}
+          option={args.option}
+          disabled={args.disabled}
+          trigger={
+            <Dropdown.Button
+              placeholder={'Label'}
+              sizeVar={'S'}
+              styleVar={'GHOST'}
+              isError={args.isError}
+              disabled={args.disabled}
+              value={
+                selectedItem && (
+                  <Text
+                    typography='body1_400'
+                    color={args.disabled ? 'neutral350' : 'neutral700'}
+                    textOverflow={'ellipsis'}
+                    lineClamp={1}
+                  >
+                    {selectedItem.label}
+                  </Text>
+                )
+              }
+            />
+          }
+          popper={
+            <DropdownMenuList
+              data={data}
+              isItemSelected={(item) => selectedItem?.value === item.value}
+              onItemClick={handleToggleSelect}
+            />
+          }
+        />
+      </ComponentStage>
+    </Stack>
+  );
+};
+
+SmallGhost.args = {
+  isOpen: false,
+  width: '240px',
+  option: 'OUTSIDE_CLICK',
+  disabled: false,
+  isError: false,
+};
+
+SmallGhost.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=17384-3004&m=dev',
   },
 };

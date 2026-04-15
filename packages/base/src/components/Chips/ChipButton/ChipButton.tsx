@@ -1,4 +1,4 @@
-import type { MouseEvent } from 'react';
+import type { MouseEvent, ReactElement } from 'react';
 
 import { getLineTypographyBySizeVar, StyledChipButton } from './ChipButton.styled';
 import type { ChipButtonProps } from './ChipButton.types';
@@ -11,10 +11,17 @@ const ChipButton = ({
   color = 'neutral200',
   sizeVar = ChipButtonSizeVariants.S,
   text,
+  children,
+  leftSource,
+  rightSource,
   onClick = noop,
   disabled = false,
+  isSelected = false,
+  selectedBackground,
+  selectedBorderColor,
+  count,
   ...rest
-}: ChipButtonProps) => {
+}: ChipButtonProps): ReactElement => {
   const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
     !disabled && onClick(e);
   };
@@ -24,11 +31,17 @@ const ChipButton = ({
       styleVar={styleVar}
       color={color}
       {...rest}
+      $isSelected={isSelected}
+      $selectedBackground={selectedBackground}
+      $selectedBorderColor={selectedBorderColor}
       onClick={handleOnClick}
       disabled={disabled}
       data-shoplflow={'ChipButton'}
     >
-      <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>
+      {leftSource}
+      {children || <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>}
+      {!children && count && <Text typography={getLineTypographyBySizeVar(sizeVar)}>{count}</Text>}
+      {rightSource}
     </StyledChipButton>
   );
 };

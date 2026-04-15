@@ -38,7 +38,7 @@ const Pagination = ({
   const canNextPage = currentPage < pageTotalCount - 1;
 
   return (
-    <PaginationWrapper className={responsiveClassName} {...rest}>
+    <PaginationWrapper $centerNav={!isHadaDomain} className={responsiveClassName} {...rest}>
       {leftSource ? leftSource : <div />}
       <StyledPagination className={responsiveClassName} data-shoplflow={'Pagination'}>
         {!isXSSize && (

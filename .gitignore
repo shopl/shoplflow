@@ -45,6 +45,7 @@ yarn-error.log*
 # vercel
 .vercel
 **/storybook-static
+**/build-storybook.log
 junit.xml
 
 # pnpm-store가 꼬이는 경우가 있어 제외

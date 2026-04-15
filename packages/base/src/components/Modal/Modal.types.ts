@@ -54,7 +54,9 @@ export interface ModalBodyOptionProps {
   padding?: CSSProperties['padding'];
 }
 // Modal Footer
-export interface ModalFooterProps extends ModalFooterOptionProps, ChildrenProps {}
+export interface ModalFooterProps extends ModalFooterOptionProps, ChildrenProps {
+  padding?: CSSProperties['padding'];
+}
 export interface ModalFooterOptionProps {}
 export const MODAL_FOOTER_KEY = Symbol('MODAL_FOOTER');
 export interface ModalFooterType extends React.FC<ModalBodyProps> {

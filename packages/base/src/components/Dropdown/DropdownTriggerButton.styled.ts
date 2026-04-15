@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 import type { TypographyTokens } from '../../styles';
 import { colorTokens } from '../../styles';
-import type { DropdownTriggerButtonProps, DropdownSizeVariantType } from './Dropdown.types';
+import type { DropdownTriggerButtonProps, DropdownSizeVariantType, DropdownStyleVariantType } from './Dropdown.types';
 import { css } from '@emotion/react';
 
 export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
   switch (size) {
+    case 'XS':
+      return '24px';
     case 'M':
     case 'L':
       return '40px';
@@ -18,6 +20,8 @@ export const getDropdownHeightBySizeVar = (size: DropdownSizeVariantType) => {
 
 export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): TypographyTokens => {
   switch (size) {
+    case 'XS':
+      return 'caption_400';
     case 'L':
       return 'body2_700';
     case 'M':
@@ -29,8 +33,19 @@ export const getDropdownFontSizeBySizeVar = (size: DropdownSizeVariantType): Typ
   }
 };
 
-export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
+export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType, styleVar?: DropdownStyleVariantType) => {
+  if (styleVar === 'GHOST' && size === 'S') {
+    return css`
+      padding-left: 8px;
+      padding-right: 4px;
+    `;
+  }
+
   switch (size) {
+    case 'XS':
+      return css`
+        padding: 0 2px 0 6px;
+      `;
     case 'S':
       return css`
         padding: 0 8px;
@@ -53,13 +68,19 @@ export const getDropdownStyleBySizeVar = (size: DropdownSizeVariantType) => {
   }
 };
 
-export const getDisabledStyle = (disabled?: boolean) => {
+export const getDisabledStyle = ({
+  disabled,
+  styleVar,
+}: {
+  disabled?: boolean;
+  styleVar?: DropdownStyleVariantType;
+}) => {
   if (disabled) {
     return css`
       cursor: not-allowed;
-      background: ${colorTokens.neutral100};
+      background: ${styleVar === 'GHOST' ? 'transparent' : colorTokens.neutral100};
       svg > path {
-        fill: ${colorTokens.neutral400} !important;
+        fill: ${colorTokens.neutral350} !important;
       }
     `;
   }
@@ -71,9 +92,13 @@ export type Status = {
   isHovered?: boolean;
   disabled?: boolean;
   sizeVar: DropdownSizeVariantType;
+  styleVar?: DropdownStyleVariantType;
 };
 
-const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeVar }: Status) => {
+const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeVar, styleVar }: Status) => {
+  if (styleVar === 'GHOST') {
+    return 'transparent';
+  }
   if (!disabled) {
     if (isError) {
       return colorTokens.red300;
@@ -92,7 +117,15 @@ const getBorderColorByStatus = ({ isFocused, isError, isHovered, disabled, sizeV
   return colorTokens.neutral300;
 };
 
-const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused }: Status) => {
+const getButtonWrapperStyleBySizeVar = ({ sizeVar, isFocused, isHovered, styleVar }: Status) => {
+  if (styleVar === 'GHOST') {
+    return css`
+      background-color: ${isHovered || isFocused ? colorTokens.neutral400_5 : 'transparent'};
+      border-width: 0;
+      border-radius: 6px;
+    `;
+  }
+
   switch (sizeVar) {
     case 'L':
       return css`
@@ -163,7 +196,7 @@ export const StyledDropdownButtonWrapper = styled.div<
       width,
     })};
   ${(props) => getButtonWrapperStyleBySizeVar(props)};
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ disabled, styleVar }) => getDisabledStyle({ disabled, styleVar })};
 
   ${({ hasValue }) => getClearIconHoverStyle(hasValue)}
 `;
@@ -178,8 +211,8 @@ export const StyledDropdownButton = styled.button<DropdownTriggerButtonProps>`
   height: 100%;
   cursor: pointer;
 
-  ${({ sizeVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar)};
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ sizeVar, styleVar }) => sizeVar && getDropdownStyleBySizeVar(sizeVar, styleVar)};
+  ${({ disabled, styleVar }) => getDisabledStyle({ disabled, styleVar })};
 
   .dropdown-clear-icon {
     display: none;
@@ -191,8 +224,16 @@ export const DropdownButtonIcon = styled.div<DropdownTriggerButtonProps>`
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  min-width: 22px;
+  ${({ sizeVar, styleVar }) =>
+    styleVar === 'GHOST'
+      ? css`
+          width: 18px;
+          min-width: 18px;
+        `
+      : css`
+          min-width: ${sizeVar === 'XS' ? '18px' : '22px'};
+        `}
   height: 100%;
 
-  ${({ disabled }) => getDisabledStyle(disabled)};
+  ${({ disabled, styleVar }) => getDisabledStyle({ disabled, styleVar })};
 `;

@@ -1,5 +1,4 @@
 import type { MouseEvent } from 'react';
-import type React from 'react';
 import { cloneElement, forwardRef, useState } from 'react';
 import type { DropdownTriggerButtonProps } from './Dropdown.types';
 import { useDropdown } from './useDropdown';
@@ -24,6 +23,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       width = '100%',
       onClick,
       sizeVar = 'M',
+      styleVar = 'NORMAL',
       isError,
       placeholder,
       value,
@@ -38,9 +38,9 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
     const { isOpen, setIsOpen } = useDropdown();
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleOnClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleOnClick = (e: MouseEvent<HTMLElement>) => {
       if (!disabled) {
-        onClick && onClick(e);
+        onClick?.(e);
         setIsOpen(!isOpen);
       }
     };
@@ -58,14 +58,16 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
       onClear && onClear();
     };
 
-    const getTextColor = ({ value, disabled }: { value?: React.ReactNode | null; disabled?: boolean }) => {
-      if (disabled) {
-        return 'neutral350';
-      }
-      if (!value) {
-        return 'neutral400';
-      }
+    const getTextColor = () => {
+      if (disabled) return 'neutral350';
+      if (!value) return 'neutral400';
       return 'neutral700';
+    };
+
+    const getChevronColor = () => {
+      if (styleVar === 'GHOST') return disabled ? 'neutral350' : 'neutral600';
+      if (sizeVar === 'L') return 'neutral700';
+      return 'neutral350';
     };
 
     const LeftSourceClone = leftSource ? cloneElement(leftSource, { ...leftSource.props, disabled }) : leftSource;
@@ -81,15 +83,17 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         width={width}
         isError={isError}
         sizeVar={sizeVar}
+        styleVar={styleVar}
         height={getDropdownHeightBySizeVar(sizeVar)}
         hasValue={Boolean(value)}
+        onClick={handleOnClick}
       >
         <StyledDropdownButton
           ref={ref}
-          onClick={handleOnClick}
           disabled={disabled}
           {...rest}
           sizeVar={sizeVar}
+          styleVar={styleVar}
           data-shoplflow={'Dropdown-Content-Area'}
         >
           <Stack.Horizontal width='100%' spacing='spacing04' align='center'>
@@ -97,7 +101,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             {value || (
               <Text
                 typography={getDropdownFontSizeBySizeVar(sizeVar)}
-                color={getTextColor({ value, disabled })}
+                color={getTextColor()}
                 textOverflow={'ellipsis'}
                 lineClamp={1}
               >
@@ -106,7 +110,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             )}
           </Stack.Horizontal>
 
-          {onClear && sizeVar !== 'L' && (
+          {onClear && sizeVar !== 'L' && sizeVar !== 'XS' && (
             <IconButton sizeVar={sizeVar} styleVar='GHOST' onClick={handleOnClear} className='dropdown-clear-icon'>
               <Icon iconSource={DeleteIcon} color='neutral350' sizeVar='S' />
             </IconButton>
@@ -115,7 +119,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
 
         {RightSourceClone && <StackContainer padding='0 6px 0 0'>{RightSourceClone}</StackContainer>}
 
-        <DropdownButtonIcon sizeVar={sizeVar} data-shoplflow={'Dropdown-Button-Icon-Area'}>
+        <DropdownButtonIcon sizeVar={sizeVar} styleVar={styleVar} data-shoplflow={'Dropdown-Button-Icon-Area'}>
           <motion.div
             animate={{
               rotate: isOpen ? 180 : 0,
@@ -123,12 +127,9 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             transition={{
               duration: 0.2,
             }}
+            style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
           >
-            <Icon
-              iconSource={DownArrowSolidXsmallIcon}
-              color={sizeVar === 'L' ? 'neutral700' : 'neutral400'}
-              sizeVar='XS'
-            />
+            <Icon iconSource={DownArrowSolidXsmallIcon} color={getChevronColor()} sizeVar='XS' />
           </motion.div>
         </DropdownButtonIcon>
       </StyledDropdownButtonWrapper>

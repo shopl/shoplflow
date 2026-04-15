@@ -1,0 +1,109 @@
+name: 디자인 검수 완료 배포
+
+# API·Worker에서 workflow_dispatch 할 때:
+#   - ref 는 반드시 main (워크플로 정의는 main 기준)
+#   - inputs.branch 에 머지할 feature 브랜치명
+# 동작: feature → main 머지 → changeset version(버전 범프) → push
+#        → Changesets Workflow가 남은 changeset 없으므로 바로 npm publish
+# Slack "배포" 버튼 → Cloudflare Worker가 위 규칙으로 호출
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'main에 머지할 브랜치명'
+        required: true
+        type: string
+
+concurrency:
+  group: design-approved-deploy-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: feature → main 머지 + 버전 범프 → push → npm 자동 배포
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: workflow_dispatch ref 검증
+        run: |
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "::error::이 워크플로는 ref=main 으로만 디스패치해야 합니다. (현재: ${{ github.ref }})"
+            exit 1
+          fi
+
+      - name: 머지 대상 브랜치 확인
+        run: |
+          BRANCH="${{ inputs.branch }}"
+          if [ -z "$BRANCH" ]; then
+            echo "inputs.branch 값이 없습니다."
+            exit 1
+          fi
+          if [ "$BRANCH" = "main" ]; then
+            echo "::error::inputs.branch는 main이 아닌 feature 브랜치여야 합니다."
+            exit 1
+          fi
+          echo "머지할 브랜치: $BRANCH"
+
+      # main 보호 규칙으로 GITHUB_TOKEN 푸시가 막히면 DESIGN_APPROVED_PUSH_PAT(repo) 등록
+      - name: main 체크아웃
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+          token: ${{ secrets.DESIGN_APPROVED_PUSH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: feature 브랜치를 main에 머지
+        env:
+          FEATURE: ${{ inputs.branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$FEATURE"
+          git merge "origin/$FEATURE" -m "Merge branch '$FEATURE' (디자인 승인 배포)"
+
+      - name: pnpm 설정
+        uses: pnpm/action-setup@v4
+
+      - name: Node 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - name: 의존성 설치
+        run: pnpm install
+
+      - name: changeset version (버전 범프 + changeset 소비)
+        run: |
+          if ls .changeset/*.md 1>/dev/null 2>&1; then
+            pnpm run version
+            git add -A
+            git commit -m "ci(changesets): version packages (디자인 승인 배포)"
+          else
+            echo "소비할 changeset 파일이 없습니다. 버전 범프를 건너뜁니다."
+          fi
+
+      - name: 빌드 (머지 + 버전 범프 결과 검증)
+        run: pnpm build
+
+      - name: main에 푸시
+        run: git push origin HEAD:main
+
+      - name: 배포 완료 Slack 알림
+        if: success()
+        run: |
+          FEATURE="${{ inputs.branch }}"
+          curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"text\": \"🚀 *배포 진행 중* — \`$FEATURE\` → \`main\` 머지 + 버전 범프 완료. npm 배포가 자동으로 진행됩니다.\"}"
+
+      - name: 실패 시 Slack 알림
+        if: failure()
+        run: |
+          FEATURE="${{ inputs.branch }}"
+          curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"text\": \"❌ *머지/푸시 실패* — \`$FEATURE\` → \`main\` 처리 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"
