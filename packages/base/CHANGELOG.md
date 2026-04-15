@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.18
+
+### Patch Changes
+
+- [#773](https://github.com/shopl/shoplflow/pull/773) [`47d7c544c9e38ac3020c12e4029a5d01c2651b39`](https://github.com/shopl/shoplflow/commit/47d7c544c9e38ac3020c12e4029a5d01c2651b39) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - dayDatePicker 하단 마진 추가 및 WeekDatePicker sizeVar 추가
+
 ## 0.46.17
 
 ### Patch Changes
