@@ -3,7 +3,8 @@
  *
  * 디자이너가 Slack에서 버튼을 누르면 이 Worker가:
  * - "디자인 검수 완료": 채널에 검수 완료 안내 메시지 (배포 없음)
- * - "배포": GitHub workflow_dispatch(ref=브랜치) → design-approved-deploy 워크플로(브랜치 직접 빌드·배포)
+ * - "배포": workflow_dispatch(ref=main, inputs.branch=기능브랜치) → design-approved-deploy가
+ *   기능 브랜치를 main에 머지·푸시 → Changesets 워크플로가 npm 배포
  *
  * 필요 Worker Secrets:
  *   SLACK_SIGNING_SECRET  - Slack App의 Signing Secret
@@ -15,8 +16,13 @@
 
 const GITHUB_API = 'https://api.github.com';
 
+/** workflow_dispatch 의 ref — 워크플로 YAML은 항상 default 브랜치(main) 기준으로 실행 */
+const WORKFLOW_DISPATCH_REF = 'main';
+
 /**
  * GitHub workflow_dispatch 이벤트 발송
+ * - ref: main → main에 있는 워크플로 정의로 실행
+ * - inputs.branch → main에 머지할 기능 브랜치
  */
 async function triggerGitHubWorkflowDispatch(branch, env) {
   const url = `${GITHUB_API}/repos/${env.GH_OWNER}/${env.GH_REPO}/actions/workflows/design-approved-deploy.yml/dispatches`;
@@ -31,7 +37,7 @@ async function triggerGitHubWorkflowDispatch(branch, env) {
       'User-Agent': 'Shoplflow-Design-Approved-Worker/1.0',
     },
     body: JSON.stringify({
-      ref: branch,
+      ref: WORKFLOW_DISPATCH_REF,
       inputs: { branch },
     }),
   });
@@ -141,7 +147,7 @@ export default {
     let messageText;
     try {
       await triggerGitHubWorkflowDispatch(branch, env);
-      messageText = `🚀 *배포 시작* — \`${branch}\` 브랜치 기준 빌드·배포 워크플로가 실행됩니다.`;
+      messageText = `🚀 *배포 시작* — \`${branch}\` → \`main\` 머지·푸시 워크플로가 실행됩니다. (npm은 Changesets 워크플로가 이어서 처리)`;
     } catch (e) {
       console.error('triggerGitHubWorkflowDispatch failed', e?.message || e, e?.body);
       const status = e?.status;

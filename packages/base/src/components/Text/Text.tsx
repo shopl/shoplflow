@@ -18,6 +18,7 @@ const Text = forwardRef(
       textOverflow,
       className,
       as,
+      wordBreak = 'keep-all',
       ...rest
     }: TextProps,
     ref: ComponentPropsWithRef<StringElementType>['ref'],
@@ -31,6 +32,7 @@ const Text = forwardRef(
         display={display}
         textAlign={textAlign}
         textOverflow={textOverflow}
+        wordBreak={wordBreak}
         as={as}
         {...rest}
         data-shoplflow={'Text'}
