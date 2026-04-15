@@ -13,6 +13,7 @@ const WeekDatepicker = ({
   minDate,
   maxDate,
   onlySingleWeek,
+  sizeVar = 'M',
 }: WeekDatepickerProps) => {
   const year = initStartDate ? getISOWeekYear(initStartDate) : getISOWeekYear(new Date());
   const [currentDate, setCurrentDate] = useState(new Date(year, 5, 5));
@@ -100,8 +101,9 @@ const WeekDatepicker = ({
   };
 
   return (
-    <WeekContainer>
+    <WeekContainer sizeVar={sizeVar}>
       <YearStepper
+        sizeVar={sizeVar}
         date={currentDate}
         decreaseYear={() => {
           setCurrentDate(new Date(currentDate.getFullYear() - 1, currentDate.getMonth(), currentDate.getDate()));
@@ -119,7 +121,7 @@ const WeekDatepicker = ({
       />
 
       {/* 주차 그리드 */}
-      <WeekArea>
+      <WeekArea sizeVar={sizeVar}>
         {Years.map((each, index) => {
           const currentYear = currentDate.getFullYear();
           const currentWeek = Number(each);
@@ -202,6 +204,7 @@ const WeekDatepicker = ({
 
           return (
             <EachWeekArea
+              sizeVar={sizeVar}
               inRange={inRange}
               isStart={isStart}
               isReady={isReady}
@@ -215,7 +218,7 @@ const WeekDatepicker = ({
                 clickWeek(Number(each), currentDate.getFullYear());
               }}
             >
-              <EachWeekDate inRange={inRange} isStart={isStart} isEnd={isEnd} disabled={disabled}>
+              <EachWeekDate sizeVar={sizeVar} inRange={inRange} isStart={isStart} isEnd={isEnd} disabled={disabled}>
                 W{each}
               </EachWeekDate>
             </EachWeekArea>

@@ -40,6 +40,11 @@ export type WeekDatepickerProps = {
    * 하나의 주만 선택 여부
    */
   onlySingleWeek?: boolean;
+
+  /**
+   * 사이즈 - 기본값: M
+   */
+  sizeVar?: 'S' | 'M';
 };
 
 export type WeekDatepickerStyleType = { inRange: boolean; isStart: boolean; isEnd: boolean; disabled: boolean };

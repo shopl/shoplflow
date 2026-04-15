@@ -12,8 +12,7 @@ export const Header = styled.div`
 `;
 
 export const Month = styled.p`
-  font-size: 18px;
-  color: ${colorTokens.neutral700};
+  display: flex;
   cursor: pointer;
 `;
 
