@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.20
+
+### Patch Changes
+
+- [#778](https://github.com/shopl/shoplflow/pull/778) [`a6933b431264288460976e6b3185d1df3d795dba`](https://github.com/shopl/shoplflow/commit/a6933b431264288460976e6b3185d1df3d795dba) Thanks [@github-actions](https://github.com/apps/github-actions)! - Pagination: Shopl 중앙 정렬 레이아웃에서 leftSource/rightSource 클릭 불가 수정 (pointer-events)
+
 ## 0.46.19
 
 ### Patch Changes
