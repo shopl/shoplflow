@@ -83,7 +83,7 @@ jobs:
           if ls .changeset/*.md 1>/dev/null 2>&1; then
             pnpm run version
             git add -A
-            git commit -m "ci(changesets): version packages (디자인 승인 배포)"
+            git commit --no-verify -m "ci(changesets): version packages (디자인 승인 배포)"
           else
             echo "소비할 changeset 파일이 없습니다. 버전 범프를 건너뜁니다."
           fi
