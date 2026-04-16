@@ -59,6 +59,14 @@ jobs:
           fetch-depth: 0
           ref: ${{ inputs.branch }}
 
+      - name: main을 feature 브랜치에 머지 (충돌 방지)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge origin/main -m "Merge main into ${{ inputs.branch }} (디자인 승인 배포 준비)"
+          git push origin ${{ inputs.branch }}
+
       - name: pnpm 설정
         uses: pnpm/action-setup@v4
 
