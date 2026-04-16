@@ -2,8 +2,8 @@
 
 Slack 메시지의 인터랙션을 처리하는 Cloudflare Worker.
 
-- **디자인 검수 완료**(초록): 검수 완료 안내 메시지만 채널에 표시 (배포 없음)
-- **배포**(빨강): `workflow_dispatch(ref=main, inputs.branch=기능브랜치)` → `design-approved-deploy`가 기능 브랜치를 `main`에 머지·푸시 → `changesets-workflow.yml`가 main push 시 npm 배포
+- **디자인 검수 완료**(`action_id: design_approved`): 검수 완료 안내 메시지 표시 (배포 없음)
+- **배포**(`action_id: design_deploy`): `workflow_dispatch(ref=main, inputs.branch=기능브랜치)` → `design-approved-deploy`가 기능 브랜치를 `main`에 머지·버전 범프·푸시 → `changesets-workflow.yml`가 npm 배포
 
 ## 배포 방법
 
@@ -54,4 +54,4 @@ pnpm send-design-review https://xxx-xxxxx.chromatic.com/
 ```
 
 위 URL은 Chromatic 실행 시 터미널에 나오는 "View your Storybook at ..." 주소를 사용한다.  
-디자이너는 먼저 **디자인 검수 완료**로 검수를 기록한 뒤, 배포를 진행할 때만 **배포**를 누른다.
+디자이너가 **디자인 검수 완료**로 검수를 기록한 뒤, **배포** 버튼을 누르면 main 머지 + npm 배포까지 자동 진행된다.
