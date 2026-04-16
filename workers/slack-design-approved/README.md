@@ -3,7 +3,7 @@
 Slack 메시지의 인터랙션을 처리하는 Cloudflare Worker.
 
 - **디자인 검수 완료**(`action_id: design_approved`): 검수 완료 안내 메시지 표시 (배포 없음)
-- **배포**(`action_id: design_deploy`): `workflow_dispatch(ref=main, inputs.branch=기능브랜치)` → `design-approved-deploy`가 기능 브랜치를 `main`에 머지·버전 범프·푸시 → `changesets-workflow.yml`가 npm 배포
+- **배포**(`action_id: design_deploy`): `workflow_dispatch(ref=main, inputs.branch=기능브랜치)` → `design-approved-deploy`가 버전 범프 → PR 머지 → npm 배포까지 한 번에 처리
 
 ## 배포 방법
 
