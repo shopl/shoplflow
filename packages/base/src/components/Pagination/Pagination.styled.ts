@@ -32,6 +32,11 @@ export const PaginationWrapper = styled.div<{ $centerNav?: boolean }>`
         transform: translate(-50%, -50%);
         width: max-content;
         max-width: 100%;
+        pointer-events: none;
+
+        & > * {
+          pointer-events: auto;
+        }
       }
       & > *:nth-child(3) {
         position: relative;
