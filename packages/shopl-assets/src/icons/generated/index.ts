@@ -272,6 +272,7 @@ import IcProcessingXsmall from './IcProcessingXsmall';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcQuit from './IcQuit';
+import IcRactangleXsmall from './IcRactangleXsmall';
 import IcRatioMedium from './IcRatioMedium';
 import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
@@ -622,6 +623,7 @@ const icons = {
   push: IcPush,
   qrcode: IcQrcode,
   quit: IcQuit,
+  'ractangle-xsmall': IcRactangleXsmall,
   'ratio-medium': IcRatioMedium,
   'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
@@ -975,6 +977,7 @@ export {
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcQuit as QuitIcon,
+  IcRactangleXsmall as RactangleXsmallIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
