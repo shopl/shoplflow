@@ -121,7 +121,11 @@ jobs:
           gh pr merge "$PR_NUMBER" --merge --admin
 
       - name: npm 배포
-        run: pnpm run release
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 배포 완료 Slack 알림
         if: success()
