@@ -120,10 +120,12 @@ jobs:
           fi
           gh pr merge "$PR_NUMBER" --merge --admin
 
-      - name: npm 배포
+      - name: 버전 업데이트 + npm 배포
         uses: changesets/action@v1
         with:
+          version: pnpm run version
           publish: pnpm run release
+          commit: "ci(changesets): version packages (디자인 승인 배포)"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
