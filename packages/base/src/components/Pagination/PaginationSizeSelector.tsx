@@ -27,7 +27,7 @@ const PaginationSizeSelector = ({ data, pageSize, setPageSize }: PaginationSizeS
           placeholder={String(pageSize)}
           sizeVar='S'
           value={
-            <Text typography='body1_400' color={'neutral400'}>
+            <Text typography='body1_400' color={'neutral700'}>
               {displayLabel}
             </Text>
           }
