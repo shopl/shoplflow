@@ -268,6 +268,7 @@ import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
 import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
+import IcProcessingXsmall from './IcProcessingXsmall';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcQuit from './IcQuit';
@@ -617,6 +618,7 @@ const icons = {
   preview: IcPreview,
   'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
+  'processing-xsmall': IcProcessingXsmall,
   push: IcPush,
   qrcode: IcQrcode,
   quit: IcQuit,
@@ -969,6 +971,7 @@ export {
   IcPreview as PreviewIcon,
   IcPriceMedium as PriceMediumIcon,
   IcProceeding as ProceedingIcon,
+  IcProcessingXsmall as ProcessingXsmallIcon,
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcQuit as QuitIcon,

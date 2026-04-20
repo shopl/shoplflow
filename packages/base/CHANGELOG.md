@@ -1,5 +1,18 @@
 # @shoplflow/base
 
+## 0.46.22
+
+### Patch Changes
+
+- Updated dependencies [[`2bb89364defcfe60d2924c2bf46a539968dec125`](https://github.com/shopl/shoplflow/commit/2bb89364defcfe60d2924c2bf46a539968dec125)]:
+  - @shoplflow/shopl-assets@0.12.40
+
+## 0.46.21
+
+### Patch Changes
+
+- [`c63291fe0220be3f9a73cc0c9aaf89d75aa9a809`](https://github.com/shopl/shoplflow/commit/c63291fe0220be3f9a73cc0c9aaf89d75aa9a809) Thanks [@ayaan0209](https://github.com/ayaan0209)! - PaginationSizeSelector: 선택된 페이지 크기 텍스트 색상을 neutral400에서 neutral700으로 조정해 가독성을 개선합니다.
+
 ## 0.46.20
 
 ### Patch Changes
