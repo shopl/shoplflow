@@ -7,6 +7,7 @@ import type {
   DisableProps,
   BackgroundColorProps,
   SelectedProps,
+  RadiusProps,
 } from '../../../utils/type/ComponentProps';
 import type { ColorTokens } from '../../../styles';
 import type { $Values } from '@shoplflow/utils';
@@ -34,7 +35,8 @@ export interface ChipButtonProps
     SizeVariantProps<ChipButtonSizeVariantType>,
     StyleVariantProps<ChipButtonStyleVariantType>,
     ColorTokenProps,
-    BackgroundColorProps {}
+    BackgroundColorProps,
+    RadiusProps {}
 export interface ChipButtonOptionProps {
   /**
    * 내부 컨텐츠를 직접 렌더링합니다. 설정 시 `text`보다 우선합니다.

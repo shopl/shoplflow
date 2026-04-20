@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.23
+
+### Patch Changes
+
+- [`dee652f36f8296947975923fb3853aea835ee0b9`](https://github.com/shopl/shoplflow/commit/dee652f36f8296947975923fb3853aea835ee0b9) Thanks [@ayaan0209](https://github.com/ayaan0209)! - ChipButton: `radius` prop으로 모서리 둥글기(BorderRadius 토큰)를 지정할 수 있게 하고, Storybook Playground에 해당 컨트롤을 추가합니다.
+
 ## 0.46.22
 
 ### Patch Changes

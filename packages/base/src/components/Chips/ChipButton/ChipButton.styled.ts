@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { TypographyTokens } from '../../../styles';
 import type { ChipButtonProps } from './ChipButton.types';
 import { css } from '@emotion/react';
-import { colorTokens } from '../../../styles';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { getDisabledStyle } from '../../../styles/utils/getDisabledStyle';
 
 export const getLineTypographyBySizeVar = (sizeVar: ChipButtonProps['sizeVar']): TypographyTokens => {
@@ -20,18 +20,25 @@ type ChipButtonStyledProps = ChipButtonProps & {
   $isSelected?: boolean;
   $selectedBackground?: ChipButtonProps['selectedBackground'];
   $selectedBorderColor?: ChipButtonProps['selectedBorderColor'];
+  $radius?: ChipButtonProps['radius'];
 };
 
 const defaultSelectedBackground = (sizeVar: ChipButtonProps['sizeVar']) =>
   sizeVar === 'XS' ? colorTokens.neutral400_5 : colorTokens.neutral150;
 
-const lineStyle = ({ sizeVar, $isSelected, $selectedBackground, $selectedBorderColor }: ChipButtonStyledProps) => {
+const lineStyle = ({
+  sizeVar,
+  $isSelected,
+  $selectedBackground,
+  $selectedBorderColor,
+  $radius,
+}: ChipButtonStyledProps) => {
   const selectedBg = $selectedBackground ? colorTokens[$selectedBackground] : defaultSelectedBackground(sizeVar);
   const selectedBorder = $selectedBorderColor ? colorTokens[$selectedBorderColor] : colorTokens.neutral300;
 
   return css`
     border: 1px solid ${colorTokens.neutral300};
-    border-radius: 999px;
+    border-radius: ${$radius ? borderRadiusTokens[$radius] : '999px'};
     background: ${colorTokens.neutral0};
 
     & > span {

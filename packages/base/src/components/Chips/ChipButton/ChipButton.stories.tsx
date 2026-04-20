@@ -4,7 +4,7 @@ import type { ChipButtonProps } from './ChipButton.types';
 import { Stack } from '../../Stack';
 import { ChipButtonSizeVariants, ChipButtonStyleVariants } from './ChipButton.types';
 import { ComponentStage } from '../../../styles/Box';
-import { colorTokens } from '../../../styles';
+import { borderRadiusTokens, colorTokens } from '../../../styles';
 import { Text } from '../../Text';
 import { Icon } from '../../Icon';
 import { SearchIcon, EditIcon } from '@shoplflow/shopl-assets';
@@ -12,14 +12,23 @@ import { SearchIcon, EditIcon } from '@shoplflow/shopl-assets';
 /** 스토리 컨트롤용 플레이스홀더(실제 토큰 키 아님). ChipButton에는 `undefined`로 넘김. */
 const SELECT_COLOR_TOKEN_DEFAULT = '— 기본값 —' as const;
 
+/** radius 미지정 시 LINE 스타일 기본(999px 알약형)과 동일하게 `undefined`로 넘김. */
+const SELECT_RADIUS_DEFAULT = '— 기본 (999px) —' as const;
+
 const chipButtonColorTokenSelectOptions = [
   SELECT_COLOR_TOKEN_DEFAULT,
   ...Object.keys(colorTokens).slice().sort(),
 ] as const;
 
-type ChipButtonStoryArgs = Omit<ChipButtonProps, 'selectedBackground' | 'selectedBorderColor'> & {
+const chipButtonRadiusSelectOptions = [
+  SELECT_RADIUS_DEFAULT,
+  ...Object.keys(borderRadiusTokens).slice().sort(),
+] as const;
+
+type ChipButtonStoryArgs = Omit<ChipButtonProps, 'selectedBackground' | 'selectedBorderColor' | 'radius'> & {
   selectedBackground?: ChipButtonProps['selectedBackground'] | typeof SELECT_COLOR_TOKEN_DEFAULT;
   selectedBorderColor?: ChipButtonProps['selectedBorderColor'] | typeof SELECT_COLOR_TOKEN_DEFAULT;
+  radius?: ChipButtonProps['radius'] | typeof SELECT_RADIUS_DEFAULT;
   showLeftSource?: boolean;
   showRightSource?: boolean;
 };
@@ -39,10 +48,18 @@ function resolveChipButtonColorStoryArgs(args: ChipButtonStoryArgs): ChipButtonP
     return v;
   };
 
+  const toRadius = (v: ChipButtonStoryArgs['radius']): ChipButtonProps['radius'] => {
+    if (v === undefined || v === SELECT_RADIUS_DEFAULT) {
+      return undefined;
+    }
+    return v;
+  };
+
   return {
     ...args,
     selectedBackground: toBackground(args.selectedBackground),
     selectedBorderColor: toBorder(args.selectedBorderColor),
+    radius: toRadius(args.radius),
   } as ChipButtonProps;
 }
 
@@ -70,6 +87,11 @@ const meta = {
       control: 'select',
       description: '칩 버튼 사이즈를 설정합니다.',
       defaultValue: ChipButtonSizeVariants.S,
+    },
+    radius: {
+      options: [...chipButtonRadiusSelectOptions],
+      control: 'select',
+      description: '모서리 둥글기(`borderRadius` 토큰). 「기본」이면 999px(알약형). `styleVar`가 LINE일 때 적용됩니다.',
     },
     disabled: {
       control: { type: 'boolean' },
@@ -128,6 +150,7 @@ export const Playground: Story = {
     disabled: false,
     styleVar: 'LINE',
     sizeVar: 'S',
+    radius: SELECT_RADIUS_DEFAULT,
     selectedBackground: SELECT_COLOR_TOKEN_DEFAULT,
     selectedBorderColor: SELECT_COLOR_TOKEN_DEFAULT,
     showLeftSource: false,

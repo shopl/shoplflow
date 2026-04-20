@@ -10,6 +10,7 @@ const ChipButton = ({
   styleVar = ChipButtonStyleVariants.LINE,
   color = 'neutral200',
   sizeVar = ChipButtonSizeVariants.S,
+  radius,
   text,
   children,
   leftSource,
@@ -31,6 +32,7 @@ const ChipButton = ({
       styleVar={styleVar}
       color={color}
       {...rest}
+      $radius={radius}
       $isSelected={isSelected}
       $selectedBackground={selectedBackground}
       $selectedBorderColor={selectedBorderColor}
