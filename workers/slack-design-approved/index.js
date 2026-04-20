@@ -2,7 +2,7 @@
  * Slack Interactivity Webhook → GitHub workflow_dispatch
  *
  * 디자이너가 Slack에서 버튼을 누르면 이 Worker가:
- * - "디자인 검수 완료"(action_id: design_approved): 검수 완료 안내 메시지 표시 (배포 없음)
+ * - "디자인 검수 완료"(action_id: design_approved | design_review_complete): 검수 완료 안내 메시지 표시 (배포 없음)
  * - "배포"(action_id: design_deploy): workflow_dispatch(ref=main, inputs.branch=기능브랜치)
  *   → design-approved-deploy가 버전 범프 → PR 머지 → npm 배포까지 한 번에 처리
  *
@@ -126,7 +126,7 @@ export default {
 
     const actionId = action.action_id;
 
-    if (actionId === 'design_approved') {
+    if (actionId === 'design_approved' || actionId === 'design_review_complete') {
       const text = `✅ ${mention ? `${mention} ` : ''}*디자인 검수 완료* — \`${branch}\` 브랜치의 디자인 검수가 완료되었습니다. 배포하려면 *배포* 버튼을 눌러주세요.`;
       const messagePayload = {
         replace_original: false,
