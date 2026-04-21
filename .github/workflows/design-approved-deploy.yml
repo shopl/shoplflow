@@ -3,7 +3,8 @@ name: 디자인 검수 완료 배포
 # API·Worker에서 workflow_dispatch 할 때:
 #   - ref 는 반드시 main (워크플로 정의는 main 기준)
 #   - inputs.branch 에 머지할 feature 브랜치명
-# 동작: feature에서 changeset version → PR 생성·머지 → 빌드 → npm publish (한 워크플로에서 전부 처리)
+# 동작: feature에서 changeset version → PR 생성·머지 → 빌드
+# 이후 main push를 감지한 changesets-workflow가 npm publish를 수행
 # Slack "배포" 버튼 → Cloudflare Worker가 위 규칙으로 호출
 on:
   workflow_dispatch:
@@ -19,18 +20,15 @@ concurrency:
 
 jobs:
   deploy:
-    name: 버전 범프 → PR 머지 → npm 배포
+    name: 버전 범프 → PR 머지
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
       pull-requests: write
-      id-token: write
-
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-      NPM_CONFIG_PROVENANCE: "true"
 
     steps:
       - name: workflow_dispatch ref 검증
@@ -76,9 +74,6 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
 
-      - name: npm CLI 업그레이드 (Trusted Publishing)
-        run: npm i -g npm@^11.5.1
-
       - name: 의존성 설치
         run: pnpm install
 
@@ -120,22 +115,13 @@ jobs:
           fi
           gh pr merge "$PR_NUMBER" --merge --admin
 
-      - name: 버전 업데이트 + npm 배포
-        uses: changesets/action@v1
-        with:
-          version: pnpm run version
-          publish: pnpm run release
-          commit: "ci(changesets): version packages (디자인 승인 배포)"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 배포 완료 Slack 알림
+      - name: 머지 완료 Slack 알림
         if: success()
         run: |
           FEATURE="${{ inputs.branch }}"
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
-            -d "{\"text\": \"🚀 *배포 완료* — \`$FEATURE\` → \`main\` PR 머지 + npm 배포까지 완료되었습니다.\"}"
+            -d "{\"text\": \"✅ *PR 머지 완료* — \`$FEATURE\` → \`main\` 머지가 완료되었습니다. 이제 changesets-workflow가 npm 배포를 진행합니다.\"}"
 
       - name: 실패 시 Slack 알림
         if: failure()
