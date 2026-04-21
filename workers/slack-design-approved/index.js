@@ -4,7 +4,7 @@
  * 디자이너가 Slack에서 버튼을 누르면 이 Worker가:
  * - "디자인 검수 완료"(action_id: design_approved | design_review_complete): 검수 완료 안내 메시지 표시 (배포 없음)
  * - "배포"(action_id: design_deploy): workflow_dispatch(ref=main, inputs.branch=기능브랜치)
- *   → design-approved-deploy가 버전 범프 → PR 머지 → npm 배포까지 한 번에 처리
+ *   → changesets-workflow.yml (design-approved-merge job) → main push 후 release job에서 npm publish
  *
  * 필요 Worker Secrets:
  *   SLACK_SIGNING_SECRET  - Slack App의 Signing Secret
@@ -25,7 +25,7 @@ const WORKFLOW_DISPATCH_REF = 'main';
  * - inputs.branch → main에 머지할 기능 브랜치
  */
 async function triggerGitHubWorkflowDispatch(branch, env) {
-  const url = `${GITHUB_API}/repos/${env.GH_OWNER}/${env.GH_REPO}/actions/workflows/design-approved-deploy.yml/dispatches`;
+  const url = `${GITHUB_API}/repos/${env.GH_OWNER}/${env.GH_REPO}/actions/workflows/changesets-workflow.yml/dispatches`;
 
   const response = await fetch(url, {
     method: 'POST',
