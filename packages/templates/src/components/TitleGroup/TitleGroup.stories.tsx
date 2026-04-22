@@ -3,6 +3,7 @@ import { Button, colorTokens, Icon, Stack, Switch, IconButton } from '@shoplflow
 import TitleGroup from './TitleGroup';
 import type { TitleGroupHelpIconProps, TitleGroupProps } from './TitleGroup.types';
 import { EditIcon } from '@shoplflow/shopl-assets';
+import { buildComponentDocsMarkdown, getLatestComponentVersion, type ComponentChangelogEntry } from '@shoplflow/utils';
 
 const FIGMA_URL =
   'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=5699-10352&m=dev';
@@ -13,9 +14,25 @@ interface PlaygroundProps extends TitleGroupProps, TitleGroupHelpIconProps {
   count: string;
 }
 
+/** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
+const COMPONENT_CHANGELOG: ComponentChangelogEntry[] = [
+  { version: '1.0', date: '2026-04-22', changes: ['Storybook Docs에 버전·Changelog 섹션 추가'] },
+];
+
 export default {
   title: 'COMPONENTS/TitleGroup',
   component: TitleGroup,
+  parameters: {
+    version: getLatestComponentVersion(COMPONENT_CHANGELOG),
+    docs: {
+      description: {
+        component: buildComponentDocsMarkdown({
+          summary: 'TitleGroup 컴포넌트입니다.',
+          changelog: COMPONENT_CHANGELOG,
+        }),
+      },
+    },
+  },
   argTypes: {
     depth: {
       control: { type: 'select' },

@@ -8,6 +8,7 @@ import Pagination from './Pagination';
 import type { PaginationProps } from './Pagination.types';
 import { Button } from '../Buttons';
 import PaginationSizeSelector from './PaginationSizeSelector';
+import { buildComponentDocsMarkdown, getLatestComponentVersion, type ComponentChangelogEntry } from '@shoplflow/utils';
 
 /**
  * 스토리에서만 `getDomain()`이 읽는 dataset을 고정한다.
@@ -40,9 +41,25 @@ const ShoplDomainForStory = ({ children }: { children: ReactNode }) => {
   return <>{children}</>;
 };
 
+/** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
+const COMPONENT_CHANGELOG: ComponentChangelogEntry[] = [
+  { version: '1.0', date: '2026-04-22', changes: ['Storybook Docs에 버전·Changelog 섹션 추가'] },
+];
+
 const meta = {
   title: 'COMPONENTS/Pagination',
   component: Pagination,
+  parameters: {
+    version: getLatestComponentVersion(COMPONENT_CHANGELOG),
+    docs: {
+      description: {
+        component: buildComponentDocsMarkdown({
+          summary: 'Pagination 컴포넌트입니다.',
+          changelog: COMPONENT_CHANGELOG,
+        }),
+      },
+    },
+  },
   argTypes: {
     sizeVar: {
       control: { type: 'select' },
