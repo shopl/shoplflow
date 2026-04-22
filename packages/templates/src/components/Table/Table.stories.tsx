@@ -10,8 +10,14 @@ import * as ReactTableLib from '@tanstack/react-table';
 // @ts-expect-error 타입 추론 오류
 import SelectRowExampleCode from './SelectRowExample.tsx?raw';
 import * as BaseLib from '@shoplflow/base';
+import { buildComponentDocsMarkdown, getLatestComponentVersion, type ComponentChangelogEntry } from '@shoplflow/utils';
 // @ts-expect-error 타입 추론 오류
 import EmptyTableExampleCode from './EmptyTableExample.tsx?raw';
+
+/** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
+const COMPONENT_CHANGELOG: ComponentChangelogEntry[] = [
+  { version: '1.0', date: '2026-04-22', changes: ['Storybook Docs에 버전·Changelog 섹션 추가'] },
+];
 
 // 샘플 데이터 및 컬럼 정의
 const columns: Array<ColumnDef<any>> = [
@@ -54,6 +60,17 @@ const data = [
 const meta = {
   title: 'Components/Table',
   component: Table,
+  parameters: {
+    version: getLatestComponentVersion(COMPONENT_CHANGELOG),
+    docs: {
+      description: {
+        component: buildComponentDocsMarkdown({
+          summary: 'Table 컴포넌트입니다.',
+          changelog: COMPONENT_CHANGELOG,
+        }),
+      },
+    },
+  },
 };
 
 export default meta;

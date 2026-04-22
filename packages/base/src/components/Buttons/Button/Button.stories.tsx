@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { buildComponentDocsMarkdown, getLatestComponentVersion, type ComponentChangelogEntry } from '@shoplflow/utils';
 import Button from './Button';
 import { ButtonSizeVariants, ButtonStyleVariants } from './Button.types';
 import { colorTokens } from '../../../styles';
@@ -8,7 +9,7 @@ import { EditIcon } from '@shoplflow/shopl-assets';
 const FIGMA_URL = 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=13719-16537&m=dev';
 
 /** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
-const BUTTON_CHANGELOG: Array<{ version: string; date: string; changes: string[] }> = [
+const BUTTON_CHANGELOG: ComponentChangelogEntry[] = [
   {
     version: '2.1',
     date: '2026-03-10',
@@ -21,7 +22,7 @@ const BUTTON_CHANGELOG: Array<{ version: string; date: string; changes: string[]
   },
 ];
 
-const latestVersion = BUTTON_CHANGELOG?.[0]?.version;
+const latestVersion = getLatestComponentVersion(BUTTON_CHANGELOG);
 
 const meta = {
   title: 'COMPONENTS/Buttons/Button',
@@ -34,17 +35,10 @@ const meta = {
     },
     docs: {
       description: {
-        component: [
-          `**Version:** \`${latestVersion}\``,
-          '',
-          '기본 버튼 컴포넌트입니다. 스타일 변형(styleVar), 사이즈(sizeVar), 로딩/비활성 상태를 지원합니다.',
-          '',
-          '### Changelog',
-          ...BUTTON_CHANGELOG.flatMap(({ version, date, changes }) => [
-            `- **${version}** (${date})`,
-            ...changes.map((c) => `  - ${c}`),
-          ]),
-        ].join('\n'),
+        component: buildComponentDocsMarkdown({
+          summary: '기본 버튼 컴포넌트입니다. 스타일 변형(styleVar), 사이즈(sizeVar), 로딩/비활성 상태를 지원합니다.',
+          changelog: BUTTON_CHANGELOG,
+        }),
       },
     },
   },
