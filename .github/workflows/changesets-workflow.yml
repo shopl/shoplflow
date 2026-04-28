@@ -91,8 +91,12 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit --no-verify -m "ci(changesets): version packages (디자인 승인 배포)"
-            git push origin ${{ inputs.branch }}
+            if git diff --cached --quiet; then
+              echo "changeset 처리 결과 커밋할 변경이 없습니다. 커밋/푸시를 건너뜁니다."
+            else
+              git commit --no-verify -m "ci(changesets): version packages (디자인 승인 배포)"
+              git push origin ${{ inputs.branch }}
+            fi
           else
             echo "소비할 changeset 파일이 없습니다. 버전 범프를 건너뜁니다."
           fi
