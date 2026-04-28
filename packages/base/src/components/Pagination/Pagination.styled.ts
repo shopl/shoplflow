@@ -8,43 +8,31 @@ export const PaginationWrapper = styled.div<{ $centerNav?: boolean }>`
   width: 100%;
   justify-content: space-between;
 
-  /* Shopl: Figma pagenation bar — 양끝은 흐름 배치, 네비는 바 전체 기준 absolute 중앙 (node 13760:25910) */
+  /* Shopl: 좌/우 아이템 폭과 개수와 무관하게 네비를 고정 중앙에 둔다. */
   ${({ $centerNav }) =>
     $centerNav &&
     css`
-      position: relative;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      column-gap: 8px;
 
-      /* div → nav → div 이므로 nth-of-type(2)는 두 번째 div(우측)만 잡힘 → 반드시 nth-child */
       & > *:nth-child(1) {
-        position: relative;
-        z-index: 2;
-        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        min-width: 0;
+        overflow: hidden;
       }
       & > *:nth-child(2) {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        z-index: 1;
-        transform: translate(-50%, -50%);
-        width: max-content;
-        max-width: 100%;
-        pointer-events: none;
-
-        & > * {
-          pointer-events: auto;
-        }
+        justify-self: center;
       }
       & > *:nth-child(3) {
-        position: relative;
-        z-index: 2;
-        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        min-width: 0;
+        overflow: hidden;
       }
     `}
 
