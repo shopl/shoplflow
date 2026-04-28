@@ -99,14 +99,9 @@ export const Playground: StoryFn<PaginationProps> = (args) => {
         itemsTotalCount={itemsTotalCount}
         gotoPage={(page) => setCurrentPage(page)}
         leftSource={
-          <Stack.Horizontal>
-            <Button styleVar='GHOST' sizeVar='S'>
-              leftSource
-            </Button>
-            <Button styleVar='PRIMARY' sizeVar='S'>
-              leftSource
-            </Button>
-          </Stack.Horizontal>
+          <Button styleVar='SECONDARY' sizeVar='S'>
+            leftSource
+          </Button>
         }
         rightSource={
           <PaginationSizeSelector

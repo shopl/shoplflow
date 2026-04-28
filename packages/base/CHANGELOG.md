@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.27
+
+### Patch Changes
+
+- [`4965016e1398fc4b69ea5202f0b026a1fce9169c`](https://github.com/shopl/shoplflow/commit/4965016e1398fc4b69ea5202f0b026a1fce9169c) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Pagination에서 좌우 소스 영역의 아이템 개수와 폭이 달라져도 가운데 네비게이션 위치가 흔들리거나 겹치지 않도록 레이아웃을 개선했습니다.
+
 ## 0.46.26
 
 ### Patch Changes
