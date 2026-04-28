@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'main에 머지할 브랜치명'
+        description: "main에 머지할 브랜치명"
         required: true
         type: string
   push:
@@ -76,8 +76,8 @@ jobs:
       - name: Node 설정
         uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
 
       - name: 의존성 설치
         run: pnpm install
@@ -135,6 +135,60 @@ jobs:
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d "{\"text\": \"❌ *배포 실패* — \`$FEATURE\` → \`main\` 처리 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"
+
+  release-after-design-approval:
+    name: Release (디자인 승인 직후)
+    if: github.event_name == 'workflow_dispatch'
+    needs: [design-approved-merge]
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: changesets-release-dispatch-${{ github.repository }}
+      cancel-in-progress: false
+
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      NPM_CONFIG_PROVENANCE: "true"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: pnpm을 설정하고 있어요.
+        uses: pnpm/action-setup@v4
+
+      - name: 노드를 설정하고 있어요.
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Ensure npm >= 11.5.1 for Trusted Publishing
+        run: npm i -g npm@^11.5.1
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: 패키지를 빌드하고 있어요.
+        run: pnpm build
+
+      - name: PR을 생성하거나 NPM에 배포하고 있어요.
+        uses: changesets/action@v1
+        with:
+          version: pnpm run version
+          publish: pnpm run release
+          commit: "ci(changesets): version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release:
     name: Release
