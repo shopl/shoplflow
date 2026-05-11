@@ -268,11 +268,9 @@ import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
 import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
-import IcProcessingXsmall from './IcProcessingXsmall';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcQuit from './IcQuit';
-import IcRactangleXsmall from './IcRactangleXsmall';
 import IcRatioMedium from './IcRatioMedium';
 import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
@@ -337,7 +335,6 @@ import IcVideo from './IcVideo';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
 import IcWaitingMedium from './IcWaitingMedium';
-import IcWebMedium from './IcWebMedium';
 import IcWhatsappLarge from './IcWhatsappLarge';
 import IcWhatsapp from './IcWhatsapp';
 import IcWifi from './IcWifi';
@@ -620,11 +617,9 @@ const icons = {
   preview: IcPreview,
   'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
-  'processing-xsmall': IcProcessingXsmall,
   push: IcPush,
   qrcode: IcQrcode,
   quit: IcQuit,
-  'ractangle-xsmall': IcRactangleXsmall,
   'ratio-medium': IcRatioMedium,
   'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
@@ -689,7 +684,6 @@ const icons = {
   'view-off': IcViewOff,
   'view-on': IcViewOn,
   'waiting-medium': IcWaitingMedium,
-  'web-medium': IcWebMedium,
   'whatsapp-large': IcWhatsappLarge,
   whatsapp: IcWhatsapp,
   wifi: IcWifi,
@@ -975,11 +969,9 @@ export {
   IcPreview as PreviewIcon,
   IcPriceMedium as PriceMediumIcon,
   IcProceeding as ProceedingIcon,
-  IcProcessingXsmall as ProcessingXsmallIcon,
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcQuit as QuitIcon,
-  IcRactangleXsmall as RactangleXsmallIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
@@ -1044,7 +1036,6 @@ export {
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
   IcWaitingMedium as WaitingMediumIcon,
-  IcWebMedium as WebMediumIcon,
   IcWhatsappLarge as WhatsappLargeIcon,
   IcWhatsapp as WhatsappIcon,
   IcWifi as WifiIcon,

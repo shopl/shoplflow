@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { isNullOrUndefined } from '@shoplflow/utils';
 import type { RemoveModalProps } from './ModalContext';
-import { ModalHandlerContext, ModalContext } from './ModalContext';
+import { ModalOutsideClickContext, ModalHandlerContext, ModalContext } from './ModalContext';
 
 interface ModalProviderProps {
   children?: ReactNode;
@@ -11,6 +11,30 @@ interface ModalProviderProps {
 
 const ModalProvider = ({ children }: ModalProviderProps) => {
   const [openedModals, setOpenedModals] = useState<ModalContext>([]);
+  const dismissStackRef = useRef<Array<() => void>>([]);
+
+  const registerOutsideClick = useCallback((fn: () => void) => {
+    dismissStackRef.current.push(fn);
+    return () => {
+      const idx = dismissStackRef.current.lastIndexOf(fn);
+      if (idx !== -1) {
+        dismissStackRef.current.splice(idx, 1);
+      }
+    };
+  }, []);
+
+  const requestOutsideClick = useCallback(() => {
+    const top = dismissStackRef.current[dismissStackRef.current.length - 1];
+    top?.();
+  }, []);
+
+  const dismissRegistry = useMemo(
+    () => ({
+      registerOutsideClick,
+      requestOutsideClick,
+    }),
+    [registerOutsideClick, requestOutsideClick],
+  );
 
   const addModal = (component: ReactNode, id?: string, zIndex?: number) => {
     setOpenedModals((modals) => {
@@ -66,15 +90,18 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
   const dispatch = useMemo(() => ({ addModal, removeModal }), []);
 
   useEffect(() => {
-    if (openedModals.length !== 1) {
-      return;
+    if (openedModals.length > 0) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
-
-    document.body.style.cssText = 'overflow:hidden';
-    return () => {
-      document.body.style.cssText = 'overflow:unset';
-    };
   }, [openedModals.length]);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   useEffect(() => {
     const closeAllModals = () => {
@@ -90,7 +117,9 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 
   return (
     <ModalContext.Provider value={openedModals}>
-      <ModalHandlerContext.Provider value={dispatch}>{children}</ModalHandlerContext.Provider>
+      <ModalOutsideClickContext.Provider value={dismissRegistry}>
+        <ModalHandlerContext.Provider value={dispatch}>{children}</ModalHandlerContext.Provider>
+      </ModalOutsideClickContext.Provider>
     </ModalContext.Provider>
   );
 };

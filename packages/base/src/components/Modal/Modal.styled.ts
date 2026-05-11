@@ -13,6 +13,7 @@ const MODAL_SIZE_L = 768;
 const MODAL_SIZE_XL = 1040;
 const MODAL_SIZE_XXL = 1280;
 const MODAL_SIZE_XXXL = 1600;
+const MODAL_TOP_BOTTOM_MARGIN = 64;
 
 const getModalWidthFromSize = (size: ModalContainerProps['sizeVar']) => {
   switch (size) {
@@ -73,19 +74,19 @@ const getFullScreenModal = () => {
 };
 
 const checkMaxHeight = (height: number, viewport: number) => {
-  const topBottomMargin = 64;
   if (height > 1200) {
-    return 1200 - topBottomMargin;
+    return 1200 - MODAL_TOP_BOTTOM_MARGIN;
   }
   if (height > viewport) {
-    return viewport - topBottomMargin;
+    return viewport - MODAL_TOP_BOTTOM_MARGIN;
   }
-  return height - topBottomMargin;
+  return height - MODAL_TOP_BOTTOM_MARGIN;
 };
 
 export const Container = styled.div<
   ModalContainerProps & {
     viewport: number;
+    $fillViewportHeight?: boolean;
   }
 >`
   ${({ hasChangeAnimation }) =>
@@ -104,9 +105,14 @@ export const Container = styled.div<
   box-shadow: ${boxShadowTokens.dropShadow};
   overflow: hidden;
   flex-grow: 1;
-  height: ${({ height, viewport }) => (height ? `${checkMaxHeight(height, viewport)}px` : 'initial')};
+  height: ${({ height, viewport, $fillViewportHeight }) => {
+    if ($fillViewportHeight) {
+      return `${viewport - MODAL_TOP_BOTTOM_MARGIN}px`;
+    }
+    return typeof height === 'number' ? `${checkMaxHeight(height, viewport)}px` : 'initial';
+  }};
   min-height: 180px;
-  max-height: 1200px;
+  max-height: ${({ $fillViewportHeight }) => ($fillViewportHeight ? 'none' : '1200px')};
 
   width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
   max-width: ${({ sizeVar }) => getModalWidthFromSize(sizeVar)}px;
