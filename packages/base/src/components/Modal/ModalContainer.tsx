@@ -16,7 +16,9 @@ const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: Moda
 
   const { height: windowHeight } = useViewportSizeObserver();
   const topBottomMargin = 64;
-  const heightWidthMargin = height ? height + topBottomMargin : undefined;
+  const fillViewportHeight = height === '100%' && rest.sizeVar !== 'FULL';
+  const heightWidthMargin =
+    typeof height === 'number' ? height + topBottomMargin : fillViewportHeight ? windowHeight : undefined;
 
   const childrenArray = React.Children.toArray(children) as ReactNode[];
 
@@ -61,6 +63,7 @@ const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: Moda
       isIncludeFooter: Boolean(findFooter),
       sizeVar: rest.sizeVar,
       height: heightWidthMargin,
+      fillViewportHeight,
     } as React.HTMLAttributes<HTMLElement> & ModalBodyProps);
   });
 
@@ -69,6 +72,7 @@ const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: Moda
       ref={ref}
       {...rest}
       height={heightWidthMargin}
+      $fillViewportHeight={fillViewportHeight}
       viewport={windowHeight}
       data-shoplflow={'Modal'}
       role={'dialog'}

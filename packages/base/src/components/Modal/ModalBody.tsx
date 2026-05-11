@@ -11,6 +11,7 @@ const ModalBody = ({
   isIncludeFooter = false,
   sizeVar,
   height: modalContainerHeight,
+  fillViewportHeight = false,
   padding,
 }: ModalBodyProps) => {
   const { height: windowHeight } = useViewportSizeObserver();
@@ -38,6 +39,9 @@ const ModalBody = ({
     if (sizeVar === 'FULL') {
       return windowHeight - headerFooterHeight - heightToDeduct;
     }
+    if (fillViewportHeight) {
+      return windowHeight - topBottomMargin - headerFooterHeight - heightToDeduct;
+    }
     if (modalContainerHeight) {
       if (modalContainerHeight <= 1200) {
         if (windowHeight < modalContainerHeight) {
@@ -56,6 +60,9 @@ const ModalBody = ({
     // 전체 화면일 경우에는 window height
     if (sizeVar === 'FULL') {
       return windowHeight;
+    }
+    if (fillViewportHeight) {
+      return windowHeight - topBottomMargin - headerFooterHeight;
     }
 
     // 지정된 높이가 있는 케이스
