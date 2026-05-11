@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.28
+
+### Patch Changes
+
+- [#798](https://github.com/shopl/shoplflow/pull/798) [`03b2a886c0cd5ca640d70be629cad07049466c7d`](https://github.com/shopl/shoplflow/commit/03b2a886c0cd5ca640d70be629cad07049466c7d) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Modal height 100% 추가 및 ux 개선
+
 ## 0.46.27
 
 ### Patch Changes
