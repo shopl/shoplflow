@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import { Container } from './Modal.styled';
 import type { ModalBodyProps, ModalContainerProps } from './Modal.types';
@@ -7,10 +7,13 @@ import { MODAL_FOOTER_KEY, MODAL_HEADER_KEY } from './Modal.types';
 
 import { useParentElementClick, noop } from '@shoplflow/utils';
 import { useViewportSizeObserver } from '../../hooks/useViewportSizeObserver';
+import { ModalOutsideClickContext } from './providers/ModalContext';
 import { ModalOptionContextProvider } from './providers/ModalOptionContextProvider';
 
-const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: ModalContainerProps) => {
+const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: ModalContainerProps): JSX.Element => {
   const ref = useParentElementClick<HTMLDivElement>(outsideClick);
+  const dismissCtx = useContext(ModalOutsideClickContext);
+
   const { height: windowHeight } = useViewportSizeObserver();
   const topBottomMargin = 64;
   const heightWidthMargin = height ? height + topBottomMargin : undefined;
@@ -39,6 +42,15 @@ const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: Moda
     }
   });
 
+  useEffect(() => {
+    if (!dismissCtx) {
+      return;
+    }
+    return dismissCtx.registerOutsideClick(() => {
+      outsideClick(null);
+    });
+  }, [dismissCtx, outsideClick]);
+
   const addPropInChildren = React.Children.map(childrenArray, (child: ReactNode) => {
     if (!React.isValidElement(child)) {
       return child;
@@ -53,7 +65,15 @@ const ModalContainer = ({ children, height, outsideClick = noop, ...rest }: Moda
   });
 
   return (
-    <Container ref={ref} {...rest} height={heightWidthMargin} viewport={windowHeight} data-shoplflow={'Modal'}>
+    <Container
+      ref={ref}
+      {...rest}
+      height={heightWidthMargin}
+      viewport={windowHeight}
+      data-shoplflow={'Modal'}
+      role={'dialog'}
+      aria-modal={true}
+    >
       <ModalOptionContextProvider>{addPropInChildren}</ModalOptionContextProvider>
     </Container>
   );
