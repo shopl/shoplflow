@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.29
+
+### Patch Changes
+
+- [#800](https://github.com/shopl/shoplflow/pull/800) [`b010853ed990eb658d0aa77f199bf2423616b071`](https://github.com/shopl/shoplflow/commit/b010853ed990eb658d0aa77f199bf2423616b071) Thanks [@velo-kim](https://github.com/velo-kim)! - Update SelectInputButton error status를 추가했어요
+
 ## 0.46.28
 
 ### Patch Changes
