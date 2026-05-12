@@ -20,9 +20,10 @@ Shoplflow is a React component library and design system built as a pnpm monorep
 
 ```bash
 # Development
-pnpm dev:stories              # Start Storybook for component development
-pnpm dev:docs                 # Start documentation site
-pnpm --filter base dev        # Run specific package in dev mode
+pnpm dev:stories                     # Run all Storybooks
+pnpm --filter base dev:stories       # base Storybook on :6007
+pnpm --filter templates dev:stories  # templates Storybook on :6008
+pnpm --filter base dev               # Run specific package in tsup watch mode
 
 # Building
 pnpm build                    # Build all packages (full dependency chain)
@@ -36,6 +37,10 @@ pnpm test                     # Run all tests
 pnpm format                   # Format with Prettier
 pnpm --filter utils test      # Test single package
 pnpm --filter base lint       # Lint single package
+
+# Running a single test (Vitest)
+pnpm --filter base test -- ComponentName    # Filter by file pattern
+pnpm --filter base test -- -t "test name"   # Filter by test name
 
 # Packages
 pnpm --filter <package> add <dep>    # Add dep to specific package
@@ -114,8 +119,8 @@ SVG files in `packages/{shopl,hada}-assets/src/{icons,illustrations}/assets/` ar
 ## Release Process
 
 1. `pnpm changeset` — document changes
-2. `pnpm version` — bump versions
-3. `pnpm release` — publish to npm
+2. `pnpm version` — runs `changeset version` and refreshes the lockfile
+3. `pnpm release` — runs `changeset publish` to npm
 
 `@shoplflow/extension` is excluded from the release pipeline.
 
@@ -125,3 +130,14 @@ SVG files in `packages/{shopl,hada}-assets/src/{icons,illustrations}/assets/` ar
 - Use `--filter` for package-specific operations
 - Pre-commit hooks enforce linting via Husky + lint-staged
 - ESLint uses the custom `@shoplflow/eslint-plugin` with base, react, and typescript rule sets
+
+## 하네스: Shoplflow 전체 범용
+
+**목표:** 모노레포 전반의 컴포넌트 생성·수정·스타일·테마·품질 검증·릴리즈 작업을 5명의 전문 에이전트 팀(pattern-analyst, component-builder, story-author, qa-guardian, release-keeper)으로 자동화한다.
+
+**트리거:** 컴포넌트/스타일/테마/토큰/스토리/품질/changeset 관련 작업 요청 시 `shoplflow-orchestrator` 스킬을 사용하라. 단순 질문(파일 위치, 코드 설명)은 직접 응답 가능.
+
+**변경 이력:**
+| 날짜 | 변경 내용 | 대상 | 사유 |
+|------|----------|------|------|
+| 2026-04-17 | 초기 구성 | 전체 하네스 (에이전트 5, 스킬 6) | - |

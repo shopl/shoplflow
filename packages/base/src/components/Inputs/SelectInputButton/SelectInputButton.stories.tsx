@@ -51,6 +51,11 @@ const meta = {
       description: '컴포넌트의 선택 상태를 설정합니다.',
       defaultValue: false,
     },
+    isError: {
+      control: { type: 'boolean' },
+      description: '컴포넌트의 에러 상태 여부를 설정합니다.',
+      defaultValue: false,
+    },
     placeholder: {
       control: { type: 'text' },
       description: '입력 필드의 placeholder를 설정합니다.',
@@ -137,6 +142,7 @@ Playground.args = {
   sizeVar: 'M',
   disabled: false,
   isSelected: false,
+  isError: false,
 };
 
 Playground.parameters = {
@@ -144,4 +150,59 @@ Playground.parameters = {
     type: 'figma',
     url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/Shopl-Flow?node-id=2566-9420&t=ADdPrJFiu8paA5bB-4',
   },
+};
+
+export const Error: StoryFn<SelectInputButtonProps> = (args) => {
+  const newArray: Array<{ title: string; subTitle: string; other: string }> = new Array(10)
+    .fill(0)
+    .map((item, index) => {
+      return {
+        title: '제목' + index,
+        subTitle: '서브 타이틀' + index,
+        other: '다른 데이터' + index,
+      };
+    });
+  const { selectedItem, handleToggleSelect } = useSelect('MULTI', newArray, {
+    key: 'title',
+  });
+  return (
+    <Stack width={'400px'}>
+      <ComponentStage>
+        <SelectInputButton
+          {...args}
+          value={selectedItem}
+          label={'title'}
+          rightSource={<Icon sizeVar={'XS'} iconSource={RightArrowXsmallIcon} color={'neutral350'} />}
+        />
+      </ComponentStage>
+
+      <Stack as={'ul'} width={'100%'}>
+        {newArray.map((item, index) => {
+          const isSelected = selectedItem.some((selected) => selected.title === item.title);
+          return (
+            <List
+              key={index}
+              isSelected={isSelected}
+              onClick={() => {
+                handleToggleSelect(item.title);
+              }}
+              leftSource={<Checkbox />}
+              rightSource={<Text whiteSpace={'nowrap'}>{item.other}</Text>}
+            >
+              <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />
+              <List.Text2Rows title={item.title} subTitle={item.subTitle} />
+            </List>
+          );
+        })}
+      </Stack>
+    </Stack>
+  );
+};
+
+Error.args = {
+  placeholder: '에러 상태입니다',
+  sizeVar: 'M',
+  disabled: false,
+  isSelected: false,
+  isError: true,
 };
