@@ -11,6 +11,7 @@ import { Text } from '../../Text';
 const SelectInputButton = ({
   disabled,
   isSelected,
+  isError = false,
   onMouseEnter,
   onMouseLeave,
   onClick,
@@ -60,6 +61,7 @@ const SelectInputButton = ({
       onClick={handleOnClick}
       isHovered={isHovered}
       isFocused={isSelected}
+      isError={isError}
       disabled={disabled}
       width={width}
       height={sizeVar === 'M' ? '40px' : '32px'}
