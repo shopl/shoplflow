@@ -19,13 +19,13 @@ export type TextCounterProps = {
 const TextCounter = ({ currentLength, maxLength, isError }: TextCounterProps) => {
   return (
     <Wrapper>
-      <Text typography='caption_400' color={isError ? 'red300' : 'neutral400'}>
+      <Text typography='caption_400' color={isError ? 'red300' : 'neutral400'} overflowWrap='normal'>
         {currentLength}
       </Text>
       <Text typography='caption_400' color='neutral350'>
         /
       </Text>
-      <Text typography='caption_400' color='neutral350'>
+      <Text typography='caption_400' color='neutral350' overflowWrap='normal'>
         {maxLength}
       </Text>
     </Wrapper>
