@@ -19,12 +19,14 @@ const Text = forwardRef(
       className,
       as,
       wordBreak = 'keep-all',
+      overflowWrap = 'anywhere',
       ...rest
     }: TextProps,
     ref: ComponentPropsWithRef<StringElementType>['ref'],
   ) => {
     return (
       <StyledText
+        overflowWrap={overflowWrap}
         ref={ref}
         whiteSpace={whiteSpace}
         className={className ? `${typography} ${className}` : typography}

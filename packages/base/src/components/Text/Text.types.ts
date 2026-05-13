@@ -21,6 +21,7 @@ export interface TextOptionProps {
   textDecorations?: CSSProperties['textDecoration'];
   opacity?: CSSProperties['opacity'];
   wordBreak?: CSSProperties['wordBreak'];
+  overflowWrap?: CSSProperties['overflowWrap'];
 }
 
 export interface TextProps

@@ -24,6 +24,7 @@ export const StyledText = styled.span<TextOptionProps>`
   text-align: ${({ textAlign }) => textAlign && textAlign};
   white-space: ${({ whiteSpace }) => whiteSpace && whiteSpace};
   text-overflow: ${({ textOverflow }) => textOverflow && textOverflow};
+  overflow-wrap: ${({ overflowWrap }) => overflowWrap && overflowWrap};
   ${({ textDecorations }) =>
     textDecorations &&
     css`
