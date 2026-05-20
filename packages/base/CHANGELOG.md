@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.33
+
+### Patch Changes
+
+- [#805](https://github.com/shopl/shoplflow/pull/805) [`ffe8ebb1198fdec737f481b4761a6af2521978bf`](https://github.com/shopl/shoplflow/commit/ffe8ebb1198fdec737f481b4761a6af2521978bf) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Checkbox·Radio·Switch 등 컨트롤 컴포넌트에 ARIA role 및 상태 속성 추가했어요
+
 ## 0.46.32
 
 ### Patch Changes
