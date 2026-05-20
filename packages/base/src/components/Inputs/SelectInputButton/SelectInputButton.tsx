@@ -81,7 +81,7 @@ const SelectInputButton = ({
 
         <Stack.Horizontal align={'center'} spacing={'spacing04'}>
           {value && value.length > 1 && (
-            <Text typography={'body1_400'} color={getTextColor(disabled)}>
+            <Text typography={'body1_400'} color={getTextColor(disabled)} overflowWrap='normal'>
               +{value.length - 1}
             </Text>
           )}
