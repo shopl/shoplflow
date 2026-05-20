@@ -52,6 +52,8 @@ export const Tab = ({
 
   return (
     <StyledTab
+      role='tab'
+      aria-selected={isActive}
       isActive={isActive}
       as={as}
       onClick={clickHandler}

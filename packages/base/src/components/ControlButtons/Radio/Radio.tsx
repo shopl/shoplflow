@@ -26,14 +26,16 @@ const Radio = ({ isSelected, defaultSelected, disabled, onClick, onMouseEnter, o
     toggleSelected();
   };
   return (
-    <Container
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      {...rest}
-      data-shoplflow={'Radio'}
-    >
-      <StyledRadio isSelected={selected} isHovered={isHovered} disabled={disabled}>
+    <Container onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} {...rest}>
+      <StyledRadio
+        isSelected={selected}
+        isHovered={isHovered}
+        role='radio'
+        aria-checked={selected}
+        aria-disabled={disabled}
+        data-shoplflow={'Radio'}
+        disabled={disabled}
+      >
         <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'>
           <circle cx='8' cy='8' r='5.5' fill='white' stroke='#3299FE' strokeWidth='5' />
         </svg>

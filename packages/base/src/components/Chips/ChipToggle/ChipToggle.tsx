@@ -40,6 +40,8 @@ const ChipToggle = ({
       onClick={handleClick}
       disabled={disabled}
       data-shoplflow={'ChipToggle'}
+      aria-checked={isToggled}
+      aria-disabled={disabled}
     >
       {leftSource}
       <Text typography={getLineTypographyBySizeVar(sizeVar)}>{text}</Text>

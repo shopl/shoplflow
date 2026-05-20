@@ -16,7 +16,7 @@ const List = ({ children, leftSource, rightSource, style, ...rest }: ListProps) 
   }
 
   return (
-    <StyledList data-shoplflow={'List'} style={style} {...rest}>
+    <StyledList data-shoplflow={'List'} role='listitem' style={style} {...rest}>
       {LeftSourceClone && LeftSourceClone}
       <Stack.Horizontal minHeight={'36px'} width={'100%'} spacing={'spacing08'} align={'center'}>
         {children}

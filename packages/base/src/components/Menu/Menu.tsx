@@ -36,6 +36,9 @@ const Menu = ({
       isSelected={selected}
       leftSource={leftSource}
       onClick={handleOnClick}
+      role='menuitem'
+      aria-checked={selected}
+      aria-disabled={disabled}
       {...rest}
       data-shoplflow={'Menu'}
     >
