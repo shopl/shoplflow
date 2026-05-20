@@ -23,6 +23,8 @@ const Switch = ({
     <SwitchContainer isDisabled={disabled} sizeVar={sizeVar}>
       <StyledSwitch
         type='checkbox'
+        role='switch'
+        aria-checked={isToggled}
         checked={isToggled}
         disabled={disabled}
         onChange={handleOnChange}

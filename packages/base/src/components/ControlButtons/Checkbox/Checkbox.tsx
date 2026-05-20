@@ -50,6 +50,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         disabled={disabled}
         type='button'
         data-shoplflow={'Checkbox'}
+        role='checkbox'
+        aria-checked={selected}
+        aria-disabled={disabled}
       >
         <StyledCheckHiddenInput type='checkbox' disabled={disabled} id={id} readOnly={readOnly} {...rest} ref={ref} />
         <StyledCheckbox
