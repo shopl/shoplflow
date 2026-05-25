@@ -15,7 +15,7 @@ import { Menu } from '../../../components/Menu';
 import { Popper } from '../../../components/Popper';
 import { Text } from '../../../components/Text';
 import { Stack } from '../../../components/Stack';
-import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
+import { DownArrowXsmallIcon } from '@shoplflow/shopl-assets';
 import { Icon } from '../../../components/Icon';
 import { shift } from '@floating-ui/core';
 
@@ -106,7 +106,7 @@ const SplitButton = ({
                 }}
               >
                 <Icon
-                  iconSource={DownArrowSolidXsmallIcon}
+                  iconSource={DownArrowXsmallIcon}
                   color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral600'}
                   sizeVar='XS'
                 />

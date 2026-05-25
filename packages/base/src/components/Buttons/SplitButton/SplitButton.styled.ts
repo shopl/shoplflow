@@ -18,8 +18,9 @@ const getStyleByStyleVar = (styleVar?: SplitButtonStyleVariantType, color?: Colo
       return css`
         border: 1px solid ${colorTokens.primary400};
         background-color: ${colorTokens.primary300};
-        :hover {
-          background-color: ${!disabled && colorTokens.primary400};
+        :hover:not(:disabled) {
+          background:
+            linear-gradient(${colorTokens.neutral400_5}, ${colorTokens.neutral400_5}), ${colorTokens.primary300};
         }
       `;
     case 'SECONDARY':
