@@ -111,7 +111,38 @@ Playground.args = {
 Playground.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/%5BShopl-Flow%5D-Shopl-%26-Hada-%EC%9B%B9-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B3%B5%ED%86%B5%ED%99%94?node-id=8717-4817',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=8723-6103&m=dev',
+  },
+};
+
+export const SmallWithLeftSource: StoryFn<SplitButtonProps> = (args) => {
+  const [selectedItem, setSelectedItem] = useState<'Shopl' | 'Hada'>('Shopl');
+
+  return (
+    <Stack>
+      <SplitButton {...args}>
+        <SplitButton.Menu isSelected={selectedItem === 'Shopl'} onClick={() => setSelectedItem('Shopl')}>
+          <Text>Shopl</Text>
+        </SplitButton.Menu>
+        <SplitButton.Menu isSelected={selectedItem === 'Hada'} onClick={() => setSelectedItem('Hada')}>
+          <Text>Hada</Text>
+        </SplitButton.Menu>
+      </SplitButton>
+    </Stack>
+  );
+};
+
+SmallWithLeftSource.args = {
+  styleVar: 'PRIMARY',
+  sizeVar: 'S',
+  leftSource: <div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />,
+  text: 'Label',
+};
+
+SmallWithLeftSource.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Shopl-Flow?node-id=8723-6103&m=dev',
   },
 };
 

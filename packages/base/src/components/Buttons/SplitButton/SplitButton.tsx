@@ -4,6 +4,8 @@ import {
   StyledPopoverContentWrapper,
   StyledArrowIcon,
   SplitButtonDivider,
+  SplitButtonContentArea,
+  SplitButtonArrowArea,
 } from './SplitButton.styled';
 import type { SplitButtonProps } from './SplitButton.types';
 import { SplitButtonContext, useSplitButtonContext } from './useSplitButton';
@@ -13,7 +15,7 @@ import { Menu } from '../../../components/Menu';
 import { Popper } from '../../../components/Popper';
 import { Text } from '../../../components/Text';
 import { Stack } from '../../../components/Stack';
-import { DownArrowSolidXsmallIcon } from '@shoplflow/shopl-assets';
+import { DownArrowXsmallIcon } from '@shoplflow/shopl-assets';
 import { Icon } from '../../../components/Icon';
 import { shift } from '@floating-ui/core';
 
@@ -78,34 +80,38 @@ const SplitButton = ({
               setIsOpen((prev) => !prev);
             }}
           >
-            <Stack.Horizontal spacing='spacing04' align='center'>
-              {leftSource}
-              <Text
-                lineClamp={lineClamp}
-                whiteSpace={'nowrap'}
-                wordBreak={'keep-all'}
-                color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
-                typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
-              >
-                {text}
-              </Text>
-              {rightSource}
-            </Stack.Horizontal>
+            <SplitButtonContentArea sizeVar={sizeVar}>
+              <Stack.Horizontal spacing='spacing04' align='center' width='100%'>
+                {leftSource}
+                <Text
+                  lineClamp={lineClamp}
+                  whiteSpace={'nowrap'}
+                  wordBreak={'keep-all'}
+                  color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral700'}
+                  typography={sizeVar === 'M' ? 'body1_400' : 'body2_400'}
+                >
+                  {text}
+                </Text>
+                {rightSource}
+              </Stack.Horizontal>
+            </SplitButtonContentArea>
             <SplitButtonDivider sizeVar={sizeVar} styleVar={styleVar} />
-            <StyledArrowIcon
-              animate={{
-                rotate: isOpen ? 180 : 0,
-              }}
-              transition={{
-                duration: 0.2,
-              }}
-            >
-              <Icon
-                iconSource={DownArrowSolidXsmallIcon}
-                color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral600'}
-                sizeVar='XS'
-              />
-            </StyledArrowIcon>
+            <SplitButtonArrowArea sizeVar={sizeVar}>
+              <StyledArrowIcon
+                animate={{
+                  rotate: isOpen ? 180 : 0,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+              >
+                <Icon
+                  iconSource={DownArrowXsmallIcon}
+                  color={styleVar === 'PRIMARY' ? 'neutral0' : 'neutral600'}
+                  sizeVar='XS'
+                />
+              </StyledArrowIcon>
+            </SplitButtonArrowArea>
           </StyledSplitButton>
         </Popper.Trigger>
         <Popper.Portal zIndex={floatingZIndex}>
