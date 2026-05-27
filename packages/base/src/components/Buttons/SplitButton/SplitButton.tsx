@@ -50,6 +50,7 @@ const SplitButton = ({
   sizeVar = 'M',
   lineClamp = 1,
   text,
+  popoverMenuStyle,
   ...rest
 }: SplitButtonProps) => {
   const selector = useRef(`shoplflow-${crypto.randomUUID()}-split-button`).current;
@@ -115,7 +116,7 @@ const SplitButton = ({
           </StyledSplitButton>
         </Popper.Trigger>
         <Popper.Portal zIndex={floatingZIndex}>
-          <StyledPopoverContentWrapper>{children}</StyledPopoverContentWrapper>
+          <StyledPopoverContentWrapper style={popoverMenuStyle}>{children}</StyledPopoverContentWrapper>
         </Popper.Portal>
       </Popper>
     </SplitButtonContext.Provider>

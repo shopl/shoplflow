@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.35
+
+### Patch Changes
+
+- [`bd85bfcb513038c2ab0e9776b3e9585b6283036d`](https://github.com/shopl/shoplflow/commit/bd85bfcb513038c2ab0e9776b3e9585b6283036d) Thanks [@ayaan0209](https://github.com/ayaan0209)! - SplitButton에 Popover 메뉴 영역 스타일을 커스터마이즈할 수 있는 `popoverMenuStyle` prop을 추가했습니다.
+
 ## 0.46.34
 
 ### Patch Changes

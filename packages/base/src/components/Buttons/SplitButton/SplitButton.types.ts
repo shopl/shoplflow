@@ -29,6 +29,8 @@ export interface SplitButtonProps
   floatingZIndex?: CSSProperties['zIndex'];
   lineClamp?: number;
   text: string;
+  /** Popover 메뉴(`StyledPopoverContentWrapper`)에 적용할 인라인 스타일 */
+  popoverMenuStyle?: CSSProperties;
 }
 export type SplitButtonOptionProps = SizeVariantProps<SplitButtonSizeVariantType> &
   StyleVariantProps<SplitButtonStyleVariantType> &

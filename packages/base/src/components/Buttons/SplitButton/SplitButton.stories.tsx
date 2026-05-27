@@ -71,6 +71,10 @@ const meta = {
       description: '버튼 내부의 콘텐츠를 지정한 줄 수만큼 제한합니다.',
       control: { type: 'number' },
     },
+    popoverMenuStyle: {
+      description: 'Popover 메뉴 영역에 적용할 인라인 스타일입니다. (예: minWidth)',
+      control: { type: 'object' },
+    },
   },
 } satisfies Meta<typeof SplitButton>;
 
