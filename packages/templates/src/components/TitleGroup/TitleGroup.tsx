@@ -69,7 +69,7 @@ const Header = ({
   return (
     <Stack.Horizontal align='center'>
       <Stack.Horizontal spacing='spacing04' align='center' justify='center'>
-        <Text color={color} typography={typography} wordBreak={'break-all'}>
+        <Text color={color} typography={typography} wordBreak={'break-all'} role='heading'>
           {title}
         </Text>
         {isRequired && <StyledRequired>*</StyledRequired>}

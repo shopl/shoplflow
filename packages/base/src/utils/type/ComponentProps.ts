@@ -1,4 +1,11 @@
-import type { ComponentPropsWithoutRef, CSSProperties, ElementType, ReactElement, ReactNode } from 'react';
+import type {
+  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  CSSProperties,
+  ElementType,
+  ReactElement,
+  ReactNode,
+} from 'react';
 import type React from 'react';
 import type { IconSource as ShoplIconSource } from '@shoplflow/shopl-assets';
 import type { IconSource as HadaIconSource } from '@shoplflow/hada-assets';
@@ -13,6 +20,25 @@ export type StringElementType = ElementType;
 export type HTMLPropsWithoutRef<T extends StringElementType> = ComponentPropsWithoutRef<T>;
 
 export type PolymorphicRef<T extends React.ElementType> = React.ComponentPropsWithRef<T>['ref'];
+
+/**
+ * Polymorphic 컴포넌트를 위한 범용 Props 타입입니다.
+ *
+ * @template C - HTML 엘리먼트 타입 (예: 'div', 'span', 'a')
+ * @template Props - 컴포넌트 고유 Props
+ * @template OmitKeys - 네이티브 props에서 추가로 제거할 키 (예: 'color')
+ *
+ * @example
+ * type TextProps<C extends ElementType = 'span'> =
+ *   PolymorphicComponentProps<C, TextOptionProps & ChildrenProps, 'color'>;
+ */
+export type PolymorphicComponentProps<
+  C extends ElementType,
+  Props extends object = Record<string, never>,
+  OmitKeys extends string = never,
+> = Props & {
+  as?: C;
+} & Omit<ComponentPropsWithRef<C>, keyof Props | 'as' | OmitKeys>;
 
 // ------------------------------ Boolean Props ------------------------------
 

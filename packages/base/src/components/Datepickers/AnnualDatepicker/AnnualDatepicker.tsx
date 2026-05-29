@@ -19,7 +19,7 @@ const AnnualDatepicker = ({
 
   return (
     <YearContainer data-shoplflow={'AnnualDatepicker'}>
-      <YearArea>
+      <YearArea role='grid' data-selected-single>
         {Years.map((year) => {
           const disabled = disabledYears?.includes(year);
 
@@ -28,7 +28,10 @@ const AnnualDatepicker = ({
               key={year}
               disabled={disabled}
               isSelected={selectedYear === year}
+              role='gridcell'
               aria-disabled={disabled}
+              aria-selected={selectedYear === year}
+              data-selected-single
               onClick={() => {
                 if (disabled) {
                   return;

@@ -31,8 +31,14 @@ const MonthStepper = ({
   });
 
   return (
-    <Header className={`calendarHeader ${className}`}>
-      <IconButton styleVar='GHOST' sizeVar='S' onClick={decreaseMonth} disabled={prevMonthButtonDisabled}>
+    <Header className={`calendarHeader ${className}`} data-component='month-stepper'>
+      <IconButton
+        styleVar='GHOST'
+        sizeVar='S'
+        onClick={decreaseMonth}
+        disabled={prevMonthButtonDisabled}
+        aria-disabled={prevMonthButtonDisabled}
+      >
         <Icon iconSource={LeftArrowIcon} sizeVar='XS' color={prevMonthButtonDisabled ? 'neutral200' : 'neutral700'} />
       </IconButton>
       <Month
@@ -74,7 +80,13 @@ const MonthStepper = ({
           </div>
         </DatePickerWrapper>
       )}
-      <IconButton styleVar='GHOST' sizeVar='S' onClick={increaseMonth} disabled={nextMonthButtonDisabled}>
+      <IconButton
+        styleVar='GHOST'
+        sizeVar='S'
+        onClick={increaseMonth}
+        disabled={nextMonthButtonDisabled}
+        aria-disabled={nextMonthButtonDisabled}
+      >
         <Icon iconSource={RightArrowIcon} sizeVar='XS' color={nextMonthButtonDisabled ? 'neutral200' : 'neutral700'} />
       </IconButton>
     </Header>

@@ -1,7 +1,7 @@
-import type { CSSProperties, HTMLAttributes } from 'react';
+import type { CSSProperties, ElementType } from 'react';
 
 import type { ColorTokens, TypographyTokens } from '../../styles';
-import type { ChildrenProps, RenderConfigProps } from '../../utils/type/ComponentProps';
+import type { ChildrenProps, PolymorphicComponentProps } from '../../utils/type/ComponentProps';
 
 export interface TextOptionProps {
   /**
@@ -24,5 +24,8 @@ export interface TextOptionProps {
   overflowWrap?: CSSProperties['overflowWrap'];
 }
 
-export interface TextProps
-  extends TextOptionProps, ChildrenProps, RenderConfigProps, Omit<HTMLAttributes<HTMLSpanElement>, 'color'> {}
+export type TextProps<C extends ElementType = 'span'> = PolymorphicComponentProps<
+  C,
+  TextOptionProps & ChildrenProps,
+  'color'
+>;

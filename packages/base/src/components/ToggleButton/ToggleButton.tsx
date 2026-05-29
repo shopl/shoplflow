@@ -56,6 +56,7 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
         type='button'
         aria-disabled={disabled}
         data-selected={selected}
+        data-id={id}
         onClick={() => {
           if (disabled) {
             return;

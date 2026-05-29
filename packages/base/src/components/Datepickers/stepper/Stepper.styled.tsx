@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { colorTokens, fontWeightTokens } from '../../../styles';
 
-export const Header = styled.div`
+export const Header = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;

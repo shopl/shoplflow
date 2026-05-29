@@ -23,7 +23,7 @@ export type YearSelectProps = {
 const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHeight, onClick }: YearSelectProps) => {
   const optionListRef = useRef<Array<null | HTMLLIElement>>([]);
   // NOTICE: 미사용, 추후 삭제
-  const parentRef = useRef<HTMLUListElement>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
   const simpleBarContentRef = useRef<GetSimpleBarCore<typeof SimpleBarReact>>(null);
 
   const [isAllRefMounted, setIsAllRefMounted] = useState<boolean>(false);
@@ -55,7 +55,7 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
   }, [isAllRefMounted, activeValue, maxHeight]);
 
   return (
-    <Container className={`${parentClassName} ${className}`}>
+    <Container className={`${parentClassName} ${className}`} data-component='year-select'>
       <OptionList ref={parentRef} maxHeight={maxHeight} style={{ height }} className={className}>
         <SimpleBarReact
           style={{
@@ -65,23 +65,25 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
           ref={simpleBarContentRef}
           className={className}
         >
-          {optionList?.map((option, index) => (
-            <OptionListItem
-              key={option.value}
-              onClick={(event) => {
-                event.stopPropagation();
-                onClick(option);
-              }}
-              isActive={activeValue === option.value}
-              ref={(el) => {
-                optionListRef.current[index] = el;
-                index + 1 === optionList.length && setIsAllRefMounted(true);
-              }}
-              className={className}
-            >
-              {option.label}
-            </OptionListItem>
-          ))}
+          <ul>
+            {optionList?.map((option, index) => (
+              <OptionListItem
+                key={option.value}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onClick(option);
+                }}
+                isActive={activeValue === option.value}
+                ref={(el) => {
+                  optionListRef.current[index] = el;
+                  index + 1 === optionList.length && setIsAllRefMounted(true);
+                }}
+                className={className}
+              >
+                {option.label}
+              </OptionListItem>
+            ))}
+          </ul>
         </SimpleBarReact>
       </OptionList>
     </Container>

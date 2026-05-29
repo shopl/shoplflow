@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const OptionList = styled.ul<{ maxHeight?: string }>`
+export const OptionList = styled.div<{ maxHeight?: string }>`
   height: fit-content;
 
   ${({ maxHeight }) => {
