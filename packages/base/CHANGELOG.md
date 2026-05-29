@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.36
+
+### Patch Changes
+
+- [#809](https://github.com/shopl/shoplflow/pull/809) [`e0f1e9015d302f87440ad2babd97fdb946a58f5b`](https://github.com/shopl/shoplflow/commit/e0f1e9015d302f87440ad2babd97fdb946a58f5b) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Text polymorphic 타입을 개선하고 Datepicker/Stepper/Dropdown에 ARIA 속성 추가했어요
+
 ## 0.46.35
 
 ### Patch Changes
