@@ -91,6 +91,7 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
         <StyledDropdownButton
           ref={ref}
           disabled={disabled}
+          aria-expanded={isOpen}
           {...rest}
           sizeVar={sizeVar}
           styleVar={styleVar}
