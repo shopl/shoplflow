@@ -17,6 +17,7 @@ const DayDatepicker = ({
   ...rest
 }: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
+  const isSingleSelect = calendarType.type !== 'range';
 
   /**
    * 범위 선택 캘린더
@@ -24,7 +25,11 @@ const DayDatepicker = ({
   if (calendarType.type === 'range') {
     return (
       <Wrapper data-shoplflow={'DayDatepicker'} className={className}>
-        <div className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}>
+        <div
+          className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}
+          role='grid'
+          data-selected-single={isSingleSelect}
+        >
           <DatePicker
             inline
             renderCustomHeader={(props) => (
@@ -63,7 +68,11 @@ const DayDatepicker = ({
   if (calendarType.type === 'multiple') {
     return (
       <Wrapper data-shoplflow={'DayDatepicker'} className={className}>
-        <div className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}>
+        <div
+          className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}
+          role='grid'
+          data-selected-single={isSingleSelect}
+        >
           <DatePicker
             inline
             renderCustomHeader={(props) => (
@@ -96,7 +105,11 @@ const DayDatepicker = ({
 
   return (
     <Wrapper data-shoplflow={'DayDatepicker'}>
-      <div className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}>
+      <div
+        className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}
+        role='grid'
+        data-selected-single={isSingleSelect}
+      >
         <DatePicker
           inline
           renderCustomHeader={(props) => (

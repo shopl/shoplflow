@@ -53,13 +53,14 @@ const YearStepper = ({
   );
 
   return (
-    <Header className={`calendarHeader ${className}`}>
+    <Header className={`calendarHeader ${className}`} data-component='year-stepper'>
       <IconButton
         styleVar='GHOST'
         sizeVar={sizeVar === 'S' ? 'XS' : 'S'}
         onClick={decreaseYear}
         disabled={prevYearButtonDisabled || date.getFullYear() === startYear}
         iconSizeVar={sizeVar === 'S' ? 'XS' : 'S'}
+        aria-disabled={prevYearButtonDisabled || date.getFullYear() === startYear}
       >
         <Icon
           iconSource={sizeVar === 'S' ? LeftArrowXsmallIcon : LeftArrowIcon}
@@ -74,6 +75,7 @@ const YearStepper = ({
               event.stopPropagation();
               setIsOpen((prev) => !prev);
             }}
+            as='button'
           >
             <Text typography={sizeVar === 'M' ? 'title1_700' : 'body1_700'}>{`${date.getFullYear()}`}</Text>
           </Month>
@@ -98,6 +100,7 @@ const YearStepper = ({
         sizeVar={sizeVar === 'S' ? 'XS' : 'S'}
         onClick={increaseYear}
         disabled={nextYearButtonDisabled || date.getFullYear() === endYear}
+        aria-disabled={nextYearButtonDisabled || date.getFullYear() === endYear}
         iconSizeVar={sizeVar === 'S' ? 'XS' : 'S'}
       >
         <Icon

@@ -101,7 +101,7 @@ const WeekDatepicker = ({
   };
 
   return (
-    <WeekContainer sizeVar={sizeVar}>
+    <WeekContainer data-shoplflow={'WeekDatepicker'} sizeVar={sizeVar}>
       <YearStepper
         sizeVar={sizeVar}
         date={currentDate}
@@ -121,7 +121,7 @@ const WeekDatepicker = ({
       />
 
       {/* 주차 그리드 */}
-      <WeekArea sizeVar={sizeVar}>
+      <WeekArea sizeVar={sizeVar} role='grid' data-selected-single={onlySingleWeek}>
         {Years.map((each, index) => {
           const currentYear = currentDate.getFullYear();
           const currentWeek = Number(each);
@@ -217,6 +217,13 @@ const WeekDatepicker = ({
                 }
                 clickWeek(Number(each), currentDate.getFullYear());
               }}
+              role='gridcell'
+              aria-disabled={disabled}
+              aria-selected={isStart || isEnd || inRange}
+              data-selected-single={onlySingleWeek}
+              data-range-start={isStart}
+              data-range-end={isEnd}
+              data-range-in={inRange}
             >
               <EachWeekDate sizeVar={sizeVar} inRange={inRange} isStart={isStart} isEnd={isEnd} disabled={disabled}>
                 W{each}

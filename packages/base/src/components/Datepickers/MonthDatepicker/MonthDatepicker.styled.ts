@@ -112,7 +112,7 @@ export const EachMonthArea = styled.div<MonthDatepickerStyleType & { isReady: bo
   ${(props) => getEachMonthAreaStyle(props)}
 `;
 
-export const EachMonthDate = styled.div<MonthDatepickerStyleType>`
+export const EachMonthDate = styled.button<MonthDatepickerStyleType>`
   width: 48px;
   height: 48px;
   text-align: center;

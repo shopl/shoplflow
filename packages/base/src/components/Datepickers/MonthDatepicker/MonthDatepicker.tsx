@@ -120,7 +120,7 @@ const MonthDatepicker = ({
           setCurrentDate(new Date(year, currentDate.getMonth(), currentDate.getDate()));
         }}
       />
-      <MonthArea>
+      <MonthArea role='grid' data-selected-single={onlySingleMonth}>
         {Months.map((month) => {
           const currentYear = currentDate.getFullYear();
 
@@ -212,6 +212,13 @@ const MonthDatepicker = ({
 
                 clickMonth(month, currentDate.getFullYear());
               }}
+              role='gridcell'
+              aria-disabled={disabled}
+              aria-selected={isStart || isEnd || inRange}
+              data-selected-single={onlySingleMonth}
+              data-range-start={isStart}
+              data-range-end={isEnd}
+              data-range-in={inRange}
             >
               <EachMonthDate inRange={inRange} isStart={isStart} isEnd={isEnd} disabled={disabled}>
                 {month}
