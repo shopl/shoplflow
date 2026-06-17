@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.46.37
+
+### Patch Changes
+
+- [#811](https://github.com/shopl/shoplflow/pull/811) [`fb4a51c9b789ac0f0ca6172623523808c4a097f8`](https://github.com/shopl/shoplflow/commit/fb4a51c9b789ac0f0ca6172623523808c4a097f8) Thanks [@ayaan0209](https://github.com/ayaan0209)! - SelectInputButton: 카운트 텍스트를 Tag 컴포넌트로 변경, 클리어 버튼 위치 조정
+
 ## 0.46.36
 
 ### Patch Changes
