@@ -9,11 +9,13 @@
  *   buildIcons()      <- packages/{shopl,hada}-assets .../generated    -> icons.generated.json
  *   buildComponents() <- packages/base/src/components (each *.types.ts)   -> components.generated.json
  *   buildStories()    <- packages/base/src/components (each *.stories.tsx) -> stories.generated.json
+ *   buildSetup()      <- base provider/package.json + setup.curated.json   -> setup.generated.json
  */
 const fs = require('fs');
 const path = require('path');
 const { buildComponents } = require('./extract-components.cjs');
 const { buildStories } = require('./extract-stories.cjs');
+const { buildSetup } = require('./extract-setup.cjs');
 
 const OUT_DIR = path.resolve(__dirname, '../src/data');
 
@@ -226,3 +228,6 @@ const c = buildComponentsMetadata();
 console.log(`✓ components: ${c.count} cards across ${c.groups} modules`);
 const s = buildStoriesMetadata();
 console.log(`✓ stories: ${s.exampleCount} examples across ${s.count} modules`);
+const setup = buildSetup();
+writeJson('setup.generated.json', setup);
+console.log(`✓ setup: provider ${setup.provider.name}, ${setup.environments.length} environments, instructions ✓`);

@@ -4,6 +4,7 @@ import catalog from './data/tokens.generated.json';
 import iconCatalog from './data/icons.generated.json';
 import componentCatalog from './data/components.generated.json';
 import storyCatalog from './data/stories.generated.json';
+import setup from './data/setup.generated.json';
 
 export type TokenDomain = 'shared' | 'shopl' | 'hada';
 
@@ -95,7 +96,9 @@ function summarize(t: TokenRecord) {
 }
 
 export function createServer(): McpServer {
-  const server = new McpServer({ name: '@shoplflow/mcp', version: '0.0.0' });
+  // `instructions` is surfaced by the client at connect time — an always-on preflight rule so the
+  // agent never skips the mandatory Provider/global-CSS setup or the Next.js client-only constraint.
+  const server = new McpServer({ name: '@shoplflow/mcp', version: '0.0.0' }, { instructions: setup.instructions });
 
   // Whole catalog as a resource, for clients that prefer reading over tool calls.
   server.registerResource(
@@ -351,6 +354,57 @@ export function createServer(): McpServer {
         title: mod.title,
         examples: mod.examples,
       });
+    },
+  );
+
+  server.registerTool(
+    'get_setup_guide',
+    {
+      title: 'Get shoplflow setup guide',
+      description:
+        'The prerequisite setup before using any @shoplflow/base component: required global-style import, ' +
+        'the mandatory ShoplflowProvider wrapper (with its domain prop), peer dependencies, and a ' +
+        'ready-to-paste snippet. Call this before scaffolding a project. For framework-specific constraints ' +
+        '(Next.js, Vite, …) call check_environment.',
+      inputSchema: {},
+    },
+    () =>
+      asText({
+        provider: setup.provider,
+        styles: setup.styles,
+        peerDependencies: setup.peerDependencies,
+        setupSteps: setup.setupSteps,
+        snippet: setup.snippet,
+      }),
+  );
+
+  server.registerTool(
+    'check_environment',
+    {
+      title: 'Check framework support',
+      description:
+        'Whether and how shoplflow works in a given framework (e.g. "Next.js App Router", "Vite", "Next Pages"). ' +
+        'Returns support status, constraints, and any workaround. shoplflow components are client-only, so SSR/RSC ' +
+        'frameworks have caveats. Omit `framework` to list every environment.',
+      inputSchema: {
+        framework: z.string().optional().describe('Target framework, e.g. "next app router", "vite", "next pages".'),
+      },
+    },
+    ({ framework }) => {
+      const q = (framework ?? '').toLowerCase().trim();
+      if (!q) return asText({ environments: setup.environments });
+      const terms = q.split(/\s+/).filter(Boolean);
+      const matches = setup.environments.filter((e) => {
+        const hay = e.framework.toLowerCase();
+        return terms.some((t) => hay.includes(t)) || hay.split(/[^a-z]+/).some((w) => w.length > 2 && q.includes(w));
+      });
+      return matches.length
+        ? asText({ framework, matches })
+        : asText({
+            framework,
+            note: 'No specific match; returning all environments.',
+            environments: setup.environments,
+          });
     },
   );
 

@@ -24,6 +24,7 @@ tokens.json    ─┐
 | 2 | Icon search (`search_icon`) | `*-assets` barrels | ✅ done |
 | 3 | Component API (`search_component`, `get_component_api`) | `*.types.ts` | ✅ done |
 | 4 | Usage examples (`get_usage_example`) | `*.stories.tsx` | ✅ done |
+| 5 | Setup & environment (`get_setup_guide`, `check_environment`, server `instructions`) | provider + `setup.curated.json` | ✅ done |
 
 ## Develop
 
@@ -77,3 +78,15 @@ composes props from the documented mixins in `utils/type/ComponentProps.ts`.
 - **`get_usage_example`** — real, copy-pasteable examples for a component, extracted from its stories
   (`args` + `render` JSX, with `play`/test code stripped). Accepts a module name (`Button`, `Modal`) or a
   component name from `get_component_api` (`ModalContainer` resolves to the `Modal` stories).
+
+**Setup & environment (Phase 5)**
+- Server **`instructions`** — an always-on preflight (surfaced at connect) so the agent never skips the
+  mandatory `ShoplflowProvider` + global-CSS setup, or the client-only / Next.js constraint.
+- **`get_setup_guide`** — required style import, the Provider wrapper + `domain` prop, peer deps, and a
+  ready-to-paste snippet (synthesized from the real provider/exports, so it can't reference a wrong import).
+- **`check_environment`** — per-framework support (Vite/CRA supported; Next.js Pages constrained; Next.js
+  App Router needs a `'use client'` boundary + Emotion registry), with workarounds.
+
+Auto facts (provider props, CSS exports, peer deps) come from `@shoplflow/base`; the curated guidance
+(setup steps, framework constraints, the `instructions` text) lives in **`setup.curated.json`** — the one
+file the team edits. Keep the `Next.js` entries in sync with the library's actual support stance.

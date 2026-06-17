@@ -1,0 +1,88 @@
+{
+  "source": [
+    "packages/base/package.json",
+    "ShoplflowProvider.tsx",
+    "Domain.ts",
+    "setup.curated.json"
+  ],
+  "provider": {
+    "name": "ShoplflowProvider",
+    "importFrom": "@shoplflow/base",
+    "clientOnly": true,
+    "clientReasons": [
+      "framer-motion (LazyMotion)",
+      "Modal/Popper portals",
+      "DOM theming hook (data-shoplflow)",
+      "Emotion CSS-in-JS"
+    ],
+    "props": [
+      {
+        "name": "domain",
+        "type": "DomainType",
+        "optional": true,
+        "default": "SHOPL",
+        "values": [
+          "SHOPL",
+          "HADA"
+        ]
+      }
+    ]
+  },
+  "styles": [
+    {
+      "specifier": "@shoplflow/base/styles",
+      "role": "design-token CSS vars + typography classes (required)"
+    },
+    {
+      "specifier": "@shoplflow/base/reset",
+      "role": "CSS reset (optional)"
+    }
+  ],
+  "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "setupSteps": [
+    "peer 의존성 설치: @shoplflow/base @emotion/react @emotion/styled react react-dom",
+    "앱 진입점에서 global 스타일 import: import '@shoplflow/base/styles' (선택: import '@shoplflow/base/reset')",
+    "앱 루트를 <ShoplflowProvider domain=\"SHOPL\" | \"HADA\"> 로 감싸기",
+    "ScrollArea를 쓰면 'simplebar-react/dist/simplebar.min.css'도 import",
+    "이후 @shoplflow/base 컴포넌트 사용 가능"
+  ],
+  "snippet": "import { ShoplflowProvider } from '@shoplflow/base';\nimport '@shoplflow/base/styles';\n\n<ShoplflowProvider domain=\"SHOPL\">\n  <App />\n</ShoplflowProvider>",
+  "environments": [
+    {
+      "framework": "Vite / CRA (SPA, CSR)",
+      "support": "supported",
+      "notes": [
+        "권장 환경.",
+        "진입점(main.tsx)에서 Provider로 감싸고 '@shoplflow/base/styles'를 import하면 끝. (test-env 참고)"
+      ]
+    },
+    {
+      "framework": "Next.js — Pages Router",
+      "support": "constrained",
+      "notes": [
+        "Provider가 client 전용이라 렌더는 되지만, Emotion SSR 설정이 없으면 초기 FOUC(스타일 깜빡임)가 생깁니다."
+      ],
+      "workaround": [
+        "_app.tsx 에서 앱을 <ShoplflowProvider>로 감싸기",
+        "_document.tsx 에 @emotion/server 의 extractCriticalToChunks 로 SSR 스타일 주입 설정"
+      ]
+    },
+    {
+      "framework": "Next.js — App Router (RSC)",
+      "support": "unsupported-without-workaround",
+      "reason": "ShoplflowProvider와 모든 컴포넌트가 client 전용입니다 (framer-motion · Modal/Popper 포털 · DOM 테마 훅 · Emotion). React Server Component에서 직접 렌더할 수 없습니다.",
+      "workaround": [
+        "Provider를 'use client' 파일로 감싼 별도 컴포넌트(예: Providers.tsx)로 만들고 app/layout.tsx에서 children을 감싸기",
+        "Emotion App Router 레지스트리(useServerInsertedHTML)를 구성해 SSR 스타일 주입",
+        "@shoplflow/base 를 쓰는 컴포넌트는 전부 'use client' 경계 안에 둘 것"
+      ],
+      "verify": "팀의 공식 지원 입장 확인 필요 — 현재 README에 미문서화. 위 워크어라운드는 client-only Provider 구조에서 추론한 일반 해법입니다."
+    }
+  ],
+  "instructions": "MANDATORY shoplflow setup before rendering ANY @shoplflow/base component: (1) at the app entry, import the global stylesheet — `import '@shoplflow/base/styles'`; (2) wrap the app tree in `<ShoplflowProvider domain=\"SHOPL\" | \"HADA\">`. These components are CLIENT-ONLY (Emotion CSS-in-JS + Modal/Popper portals + framer-motion). In Next.js App Router they CANNOT render inside React Server Components — they require a 'use client' boundary plus an Emotion registry. Before scaffolding setup or generating code for a specific framework, call `get_setup_guide` and `check_environment`. Peer deps: @emotion/react, @emotion/styled, react, react-dom."
+}

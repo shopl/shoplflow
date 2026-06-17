@@ -60,5 +60,16 @@ const usageCompound = await client.callTool({ name: 'get_usage_example', argumen
 const ucParsed = JSON.parse(usageCompound.content[0].text);
 console.log(`\nget_usage_example("ModalContainer") -> module "${ucParsed.group}": ${ucParsed.examples?.length} examples`);
 
+console.log(`\nserver instructions (preflight): ${(client.getInstructions() ?? '').slice(0, 90)}…`);
+
+const guide = await client.callTool({ name: 'get_setup_guide', arguments: {} });
+const guideParsed = JSON.parse(guide.content[0].text);
+console.log(`\nget_setup_guide: provider=${guideParsed.provider.name} clientOnly=${guideParsed.provider.clientOnly}`);
+console.log('  styles:', guideParsed.styles.map((s) => s.specifier).join(', '));
+
+const env = await client.callTool({ name: 'check_environment', arguments: { framework: 'next app router' } });
+const envParsed = JSON.parse(env.content[0].text);
+console.log(`\ncheck_environment("next app router"): ${envParsed.matches?.map((e) => e.framework + ' [' + e.support + ']').join('; ')}`);
+
 await client.close();
 console.log('\n✓ smoke test passed');
