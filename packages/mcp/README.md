@@ -22,7 +22,7 @@ tokens.json    ─┐
 |-------|---------|--------|--------|
 | 1 | Design tokens (`list_tokens`, `get_token`, `shoplflow://tokens`) | `tokens.json` | ✅ done |
 | 2 | Icon search (`search_icon`) | `*-assets` barrels | ✅ done |
-| 3 | Component API (`get_component_api`, `search_component`) | `*.types.ts` | planned |
+| 3 | Component API (`search_component`, `get_component_api`) | `*.types.ts` | ✅ done |
 | 4 | Usage examples (`get_usage_example`) | `*.stories.tsx` | planned |
 
 ## Develop
@@ -62,3 +62,13 @@ the served records carry `className` for those and `cssVar` for the rest.
 - **`search_icon`** — find icons by name or meaning; filter by `domain` (`shopl` | `hada`) and `limit`.
   Returns the raw name (`IcAdd`) and public alias (`AddIcon`), both importable from the brand asset
   package and usable as `<Icon iconSource={AddIcon} />`. Icon sets differ per brand.
+
+**Components (Phase 3)**
+- **`search_component`** — discover `@shoplflow/base` components by name, module, prop, or variant value;
+  filter by `group` (module) and `limit`. Compound components are listed per part (e.g. `ModalContainer`, `ModalHeader`).
+- **`get_component_api`** — full API for one component by exact name: props (with JSDoc + optionality),
+  exact variant values (`sizeVar`/`styleVar`/…), polymorphism (`as` + default element), and native-HTML-attr passthrough.
+- Resource **`shoplflow://components`** — compact index of every component.
+
+Component metadata is extracted from `*.types.ts` via ts-morph (build-time only), mirroring how the library
+composes props from the documented mixins in `utils/type/ComponentProps.ts`.

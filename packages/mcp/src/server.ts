@@ -2,6 +2,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
 import catalog from './data/tokens.generated.json';
 import iconCatalog from './data/icons.generated.json';
+import componentCatalog from './data/components.generated.json';
 
 export type TokenDomain = 'shared' | 'shopl' | 'hada';
 
@@ -23,9 +24,28 @@ export interface IconRecord {
   keywords: string[];
 }
 
+export interface ComponentProp {
+  name: string;
+  optional: boolean;
+  type: string;
+  description?: string;
+}
+
+export interface ComponentCard {
+  name: string;
+  group: string;
+  importFrom: string;
+  polymorphic: boolean;
+  defaultElement?: string;
+  nativeAttrs?: string | boolean;
+  variants: Array<{ prop: string; values: string[] }>;
+  props: ComponentProp[];
+}
+
 const tokens = catalog.tokens as TokenRecord[];
 const TOKEN_TYPES = [...new Set(tokens.map((t) => t.type))];
 const icons = iconCatalog.icons as IconRecord[];
+const components = componentCatalog.components as ComponentCard[];
 
 function asText(payload: unknown) {
   return { content: [{ type: 'text' as const, text: JSON.stringify(payload, null, 2) }] };
@@ -167,6 +187,117 @@ export function createServer(): McpServer {
           importFrom: icon.importFrom,
         })),
       });
+    },
+  );
+
+  // Compact index of every component, for "what components exist" reading.
+  server.registerResource(
+    'components',
+    'shoplflow://components',
+    {
+      title: 'shoplflow components',
+      description: 'Index of all @shoplflow/base components with their module, variants, and polymorphism.',
+      mimeType: 'application/json',
+    },
+    (uri) => ({
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: 'application/json',
+          text: JSON.stringify(
+            components.map((c) => ({
+              name: c.name,
+              group: c.group,
+              polymorphic: c.polymorphic,
+              variants: c.variants.map((v) => v.prop),
+            })),
+            null,
+            2,
+          ),
+        },
+      ],
+    }),
+  );
+
+  server.registerTool(
+    'search_component',
+    {
+      title: 'Search components',
+      description:
+        'Discover @shoplflow/base components by name, module, prop, or variant value. Returns summaries; ' +
+        'follow up with get_component_api for the full prop list. Compound components are listed per part ' +
+        '(e.g. ModalContainer, ModalHeader).',
+      inputSchema: {
+        query: z.string().describe('e.g. "button", "modal", "date", "styleVar", "loading".'),
+        group: z.string().optional().describe('Restrict to one module (the component folder, e.g. "Modal").'),
+        limit: z.number().int().positive().max(50).optional().describe('Max results (default 20).'),
+      },
+    },
+    ({ query, group, limit }) => {
+      const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      const scoreComponent = (c: ComponentCard): number => {
+        const name = c.name.toLowerCase();
+        const grp = c.group.toLowerCase();
+        const propNames = c.props.map((p) => p.name.toLowerCase());
+        const variantValues = c.variants.flatMap((v) => [
+          v.prop.toLowerCase(),
+          ...v.values.map((x) => x.toLowerCase()),
+        ]);
+        let total = 0;
+        for (const term of terms) {
+          let best = 0;
+          if (name === term) best = 100;
+          else if (name.includes(term)) best = 60;
+          else if (grp.includes(term)) best = 40;
+          else if (propNames.includes(term)) best = 30;
+          else if (variantValues.includes(term)) best = 20;
+          if (best === 0) return 0;
+          total += best;
+        }
+        return total;
+      };
+      const ranked = components
+        .filter((c) => !group || c.group.toLowerCase() === group.toLowerCase())
+        .map((c) => ({ c, score: scoreComponent(c) }))
+        .filter((x) => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, limit ?? 20);
+      return asText({
+        query,
+        count: ranked.length,
+        components: ranked.map(({ c }) => ({
+          name: c.name,
+          group: c.group,
+          polymorphic: c.polymorphic,
+          variants: c.variants.map((v) => ({ prop: v.prop, values: v.values })),
+          propCount: c.props.length,
+        })),
+      });
+    },
+  );
+
+  server.registerTool(
+    'get_component_api',
+    {
+      title: 'Get a component API',
+      description:
+        'Full API for a @shoplflow/base component by exact name (case-insensitive), e.g. "Button", "ModalContainer". ' +
+        'Returns props (with JSDoc + optionality), exact variant values, polymorphism (`as` + default element), and ' +
+        'whether it forwards native HTML attributes.',
+      inputSchema: {
+        name: z.string().describe('Exact component name, e.g. "Button" or "Tab".'),
+      },
+    },
+    ({ name }) => {
+      const card = components.find((c) => c.name.toLowerCase() === name.toLowerCase());
+      if (!card) {
+        const suggestions = components
+          .filter((c) => c.name.toLowerCase().includes(name.toLowerCase()))
+          .slice(0, 8)
+          .map((c) => c.name);
+        return asText({ found: false, name, suggestions });
+      }
+      return asText({ found: true, component: card });
     },
   );
 

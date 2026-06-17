@@ -5,13 +5,13 @@
  * source, normalizes it, and writes a sibling `src/data/*.generated.json`. Running this as a build
  * step (see `build:package`) makes drift between the served metadata and the code impossible.
  *
- *   buildTokens()  <- packages/base/src/styles/tokens.json        -> tokens.generated.json
- *   buildIcons()   <- packages/{shopl,hada}-assets .../generated  -> icons.generated.json
- *
- * Phase 3 (component APIs from *.types.ts) adds another builder here following the same shape.
+ *   buildTokens()     <- packages/base/src/styles/tokens.json        -> tokens.generated.json
+ *   buildIcons()      <- packages/{shopl,hada}-assets .../generated  -> icons.generated.json
+ *   buildComponents() <- packages/base/src/components (each *.types.ts) -> components.generated.json
  */
 const fs = require('fs');
 const path = require('path');
+const { buildComponents } = require('./extract-components.cjs');
 
 const OUT_DIR = path.resolve(__dirname, '../src/data');
 
@@ -170,6 +170,25 @@ function buildIcons() {
   return { count: icons.length, countByDomain };
 }
 
+/* ── Components ──────────────────────────────────────────────────────────────
+ * Delegated to extract-components.cjs (ts-morph). One API card per exported `*Props`
+ * type: props (with JSDoc), variant values, polymorphism, native-attr passthrough.
+ */
+function buildComponentsMetadata() {
+  const components = buildComponents();
+  const countByGroup = {};
+  for (const c of components) countByGroup[c.group] = (countByGroup[c.group] ?? 0) + 1;
+
+  writeJson('components.generated.json', {
+    source: 'packages/base/src/components/**/*.types.ts',
+    importFrom: '@shoplflow/base',
+    count: components.length,
+    withVariants: components.filter((c) => c.variants.length).length,
+    components,
+  });
+  return { count: components.length, groups: Object.keys(countByGroup).length };
+}
+
 const t = buildTokens();
 console.log(
   `✓ tokens: ${t.count} | type: ${Object.entries(t.countByType)
@@ -184,3 +203,5 @@ console.log(
     .map(([k, n]) => `${k} ${n}`)
     .join(', ')}`,
 );
+const c = buildComponentsMetadata();
+console.log(`✓ components: ${c.count} cards across ${c.groups} modules`);

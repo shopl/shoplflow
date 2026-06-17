@@ -39,5 +39,16 @@ console.log('  top:', JSON.stringify(iconParsed.icons[0]));
 const iconBrand = await client.callTool({ name: 'search_icon', arguments: { query: 'add', domain: 'hada', limit: 3 } });
 console.log('\nsearch_icon("add", hada, 3):', iconBrand.content[0].text.replace(/\s+/g, ' '));
 
+const compSearch = await client.callTool({ name: 'search_component', arguments: { query: 'button' } });
+const compParsed = JSON.parse(compSearch.content[0].text);
+console.log(`\nsearch_component("button"): count=${compParsed.count}`);
+console.log('  names:', compParsed.components.map((c) => c.name).join(', '));
+
+const compApi = await client.callTool({ name: 'get_component_api', arguments: { name: 'Button' } });
+const apiParsed = JSON.parse(compApi.content[0].text);
+const btn = apiParsed.component;
+console.log(`\nget_component_api("Button"): poly=${btn.polymorphic} as=${btn.defaultElement} props=${btn.props.length}`);
+console.log('  variants:', JSON.stringify(btn.variants));
+
 await client.close();
 console.log('\n✓ smoke test passed');
