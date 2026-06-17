@@ -1,0 +1,955 @@
+{
+  "source": "packages/base/src/components (each *.stories.tsx)",
+  "importFrom": "@shoplflow/base",
+  "count": 41,
+  "exampleCount": 142,
+  "modules": [
+    {
+      "name": "AnnualDatepicker",
+      "group": "AnnualDatepicker",
+      "title": "COMPONENTS/Datepickers/AnnualDatepicker",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack>\n      <AnnualDatepicker\n        {...args}\n        currentYear={selectedYear}\n        handleYearClick={(year) => {\n          setSelectedYear(year);\n        }}\n      />\n    </Stack>"
+        },
+        {
+          "story": "Start2020End2050",
+          "code": "<Stack>\n      <AnnualDatepicker\n        {...args}\n        currentYear={selectedYear}\n        startYear={2020}\n        endYear={2050}\n        handleYearClick={(year) => {\n          setSelectedYear(year);\n        }}\n      />\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Avatar",
+      "group": "Avatar",
+      "title": "COMPONENTS/Avatar",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Avatar {...componentProps} badge={showBadge ? <Icon iconSource={LeaderLargeIcon} /> : undefined} />"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "group": "Button",
+      "title": "COMPONENTS/Buttons/Button",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    styleVar: 'PRIMARY',\n    sizeVar: 'M',\n    children: 'Button',\n    disabled: false,\n  }"
+        },
+        {
+          "story": "Variants",
+          "code": "<div style={flexWrap}>\n      <Button {...args} styleVar='PRIMARY' title='PRIMARY'>\n        Primary\n      </Button>\n      <Button {...args} styleVar='SECONDARY' title='SECONDARY'>\n        Secondary\n      </Button>\n      <Button {...args} styleVar='GHOST' title='GHOST'>\n        Ghost\n      </Button>\n      <Button {...args} styleVar='SOLID' color='neutral300' title='SOLID'>\n        Solid\n      </Button>\n    </div>"
+        },
+        {
+          "story": "Sizes",
+          "code": "<div style={flexWrap}>\n      <Button {...args} sizeVar='XS' title='XS'>\n        XS\n      </Button>\n      <Button {...args} sizeVar='S' title='S'>\n        S\n      </Button>\n      <Button {...args} sizeVar='M' title='M'>\n        M\n      </Button>\n    </div>"
+        },
+        {
+          "story": "Loading",
+          "args": "{\n    disabled: false,\n    isLoading: true,\n  }",
+          "code": "<div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>\n      <section>\n        <h3 style={{ marginBottom: 12, fontSize: 14, fontWeight: 600 }}>사이즈별</h3>\n        <div style={flexWrap}>\n          <Button {...args} styleVar='PRIMARY' sizeVar='XS' isLoading title='XS' aria-label='Loading XS'>\n            Loading XS\n          </Button>\n          <Button {...args} styleVar='PRIMARY' sizeVar='S' isLoading title='S' aria-label='Loading S'>\n            Loading S\n          </Button>\n          <Button {...args} styleVar='PRIMARY' sizeVar='M' isLoading title='M' aria-label='Loading M'>\n            Loading M\n          </Button>\n        </div>\n      </section>\n      <section>\n        <h3 style={{ marginBottom: 12, fontSize: 14, fontWeight: 600 }}>Variants별</h3>\n        <div style={flexWrap}>\n          <Button {...args} styleVar='PRIMARY' sizeVar='M' isLoading title='PRIMARY' aria-label='Loading Primary'>\n            Loading Primary\n          </Button>\n          <Button {...args} styleVar='SECONDARY' sizeVar='M' isLoading title='SECONDARY' aria-label='Loading Secondary'>\n            Loading Secondary\n          </Button>\n          <Button {...args} styleVar='GHOST' sizeVar='M' isLoad…"
+        },
+        {
+          "story": "Disabled",
+          "args": "{\n    styleVar: 'PRIMARY',\n    sizeVar: 'M',\n    children: 'Disabled',\n    disabled: true,\n  }"
+        },
+        {
+          "story": "WithIcon",
+          "args": "{\n    styleVar: 'PRIMARY',\n    sizeVar: 'M',\n    children: 'Edit',\n    leftSource: <Icon sizeVar='S' iconSource={EditIcon} />,\n  }"
+        }
+      ]
+    },
+    {
+      "name": "Callout",
+      "group": "Callout",
+      "title": "COMPONENTS/Callout",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    styleVar: 'INFORMATION',\n    fillWidth: true,\n  }",
+          "code": "<Stack width='1000px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Icon iconSource={NoticeIcon} />\n          <Callout.Text>\n            사용 안 함으로 설정할 경우 기존 등록된 게시물을 읽을 수도, 새로운 게시물을 포스팅할 수도 없게 됩니다. (단,\n            기존 등록된 게시물이 삭제되지는 않습니다.) 사용 안 함으로 설정할 경우 기존 등록된 게시물을 읽을 수도, 새로운\n            게시물을 포스팅할 수도 없게 됩니다.\n          </Callout.Text>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Caution",
+          "args": "{\n    styleVar: 'CAUTION',\n    fillWidth: true,\n  }",
+          "code": "<Stack width='500px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Icon iconSource={AlertTriangleIcon} />\n          <Callout.Text>주의가 필요한 내용입니다. 변경 전에 입력 내용을 한 번 더 확인해주세요.</Callout.Text>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Alert",
+          "args": "{\n    styleVar: 'ALERT',\n  }",
+          "code": "<Stack width='500px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Icon iconSource={AlertIcon} />\n          <Callout.Text>\n            삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요. 삭제 시 기존의 모든 게시물이\n            삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.\n          </Callout.Text>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "WithoutIcon",
+          "args": "{\n    styleVar: 'INFORMATION',\n    fillWidth: false,\n  }",
+          "code": "<Stack width='500px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Text>삭제 시 기존의 모든 게시물이 삭제됩니다. 복구가 불가하니 신중하게 결정해주세요.</Callout.Text>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "BulletList",
+          "args": "{\n    styleVar: 'ALERT',\n    fillWidth: true,\n  }",
+          "code": "<Stack width='500px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Icon iconSource={AlertTriangleIcon} />\n          <Stack.Vertical spacing='spacing04'>\n            <Callout.Text>BulletList children은 Callout.Text 컴포넌트를 사용합니다.</Callout.Text>\n\n            <Callout.BulletList>\n              <Callout.Text>두 번째 불릿 항목입니다.</Callout.Text>\n            </Callout.BulletList>\n            <Callout.BulletList>\n              <Callout.Text>세 번째 불릿 항목입니다.</Callout.Text>\n            </Callout.BulletList>\n          </Stack.Vertical>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "group": "Checkbox",
+      "title": "COMPONENTS/ControlButtons/Checkbox",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    defaultSelected: false,\n    styleVar: 'PRIMARY',\n  }",
+          "code": "<WithStage>\n      <Checkbox {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "Primary",
+          "args": "{\n    styleVar: 'PRIMARY',\n    defaultSelected: false,\n  }",
+          "code": "<WithStage>\n      <Checkbox {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "Selected",
+          "args": "{\n    styleVar: 'PRIMARY',\n    defaultSelected: true,\n  }",
+          "code": "<WithStage>\n      <Checkbox {...args} />\n    </WithStage>"
+        }
+      ]
+    },
+    {
+      "name": "ChipButton",
+      "group": "ChipButton",
+      "title": "COMPONENTS/Chips/ChipButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    text: '샤플플로우',\n    disabled: false,\n    styleVar: 'LINE',\n    sizeVar: 'S',\n    radius: SELECT_RADIUS_DEFAULT,\n    selectedBackground: SELECT_COLOR_TOKEN_DEFAULT,\n    selectedBorderColor: SELECT_COLOR_TOKEN_DEFAULT,\n    showLeftSource: false,\n    showRightSource: false,\n    count: '',\n  } as Story['args']",
+          "code": "<WithStage>\n        <ChipButton\n          {...resolveChipButtonColorStoryArgs(rest)}\n          leftSource={showLeftSource ? <Icon iconSource={SearchIcon} sizeVar='S' /> : undefined}\n          rightSource={showRightSource ? <Icon iconSource={EditIcon} sizeVar='XS' /> : undefined}\n        />\n      </WithStage>"
+        },
+        {
+          "story": "Line",
+          "args": "{\n    text: 'LINE',\n    styleVar: 'LINE',\n    sizeVar: 'S',\n    disabled: false,\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />\n    </WithStage>"
+        },
+        {
+          "story": "SizeXS",
+          "args": "{\n    text: 'Size XS',\n    styleVar: 'LINE',\n    sizeVar: 'XS',\n    disabled: false,\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />\n    </WithStage>"
+        },
+        {
+          "story": "Disabled",
+          "args": "{\n    text: 'Disabled',\n    styleVar: 'LINE',\n    sizeVar: 'S',\n    disabled: true,\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />\n    </WithStage>"
+        },
+        {
+          "story": "Selected",
+          "args": "{\n    text: '선택됨',\n    styleVar: 'LINE',\n    sizeVar: 'S',\n    isSelected: true,\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />\n    </WithStage>"
+        },
+        {
+          "story": "SelectedXS",
+          "args": "{\n    text: '선택 XS',\n    styleVar: 'LINE',\n    sizeVar: 'XS',\n    isSelected: true,\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />\n    </WithStage>"
+        },
+        {
+          "story": "SelectedCustomColors",
+          "args": "{\n    text: '커스텀 선택',\n    styleVar: 'LINE',\n    sizeVar: 'S',\n    isSelected: true,\n    selectedBackground: 'ocean100',\n    selectedBorderColor: 'ocean300',\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)} />\n    </WithStage>"
+        },
+        {
+          "story": "WithCustomChildren",
+          "args": "{\n    styleVar: 'LINE',\n    sizeVar: 'S',\n    isSelected: false,\n  }",
+          "code": "<WithStage>\n      <ChipButton {...resolveChipButtonColorStoryArgs(args as ChipButtonStoryArgs)}>\n        <Text typography='body2_400'>커스텀 children</Text>\n      </ChipButton>\n    </WithStage>"
+        }
+      ]
+    },
+    {
+      "name": "ChipToggle",
+      "group": "ChipToggle",
+      "title": "COMPONENTS/Chips/ChipToggle",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    text: '샤플플로우',\n    defaultSelected: false,\n    radius: true,\n    disabled: false,\n    styleVar: 'SOLID',\n    sizeVar: 'S',\n  }",
+          "code": "<Stack>\n      <Stack width={'200px'}>\n        <ComponentStage>\n          <ChipToggle {...args} />\n        </ComponentStage>\n      </Stack>\n    </Stack>"
+        },
+        {
+          "story": "List",
+          "args": "{\n    text: '샤플플로우',\n    defaultSelected: false,\n    radius: false,\n  }",
+          "code": "<Stack>\n      <Stack.Horizontal width={'300px'}>\n        <ComponentStage>\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n        </ComponentStage>\n      </Stack.Horizontal>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "DayDatepicker",
+      "group": "DayDatepicker",
+      "title": "COMPONENTS/Datepickers/DayDatepicker",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width='400px'>\n      <Stack.Horizontal spacing='spacing08'>\n        <Button\n          onClick={() => {\n            setSizeVar('S');\n          }}\n        >\n          S 사이즈\n        </Button>\n        <Button\n          onClick={() => {\n            setSizeVar('M');\n          }}\n        >\n          M 사이즈\n        </Button>\n      </Stack.Horizontal>\n\n      <DayDatepicker\n        highlightDates={startDate ? [startDate] : undefined}\n        startDate={startDate || undefined}\n        endDate={endDate || undefined}\n        calendarType={{\n          type: 'range',\n          handleDayRangeChange(dates) {\n            if (Array.isArray(dates)) {\n              const [start, end] = dates;\n              setStartDate(start);\n              setEndDate(end);\n            } else {\n              setStartDate(dates);\n            }\n          },\n        }}\n        minDate={new Date('2024-01-01')}\n        maxDate={new Date('2029-01-01')}\n        sizeVar={sizeVar}\n        locale={ko}\n      />\n    </Stack>"
+        },
+        {
+          "story": "SmallSize",
+          "code": "<Stack width='400px'>\n      <Button\n        className='test'\n        onClick={() => {\n          setIsOpen((prev) => !prev);\n        }}\n      >\n        DatePicker를 보려면 클릭해주세요~\n      </Button>\n      {isOpen && (\n        <DayDatepicker\n          className='test'\n          highlightDates={startDate ? [startDate] : undefined}\n          startDate={startDate || undefined}\n          endDate={endDate || undefined}\n          calendarType={{\n            type: 'range',\n            handleDayRangeChange(dates) {\n              if (Array.isArray(dates)) {\n                const [start, end] = dates;\n                setStartDate(start);\n                setEndDate(end);\n              } else {\n                setStartDate(dates);\n              }\n            },\n          }}\n          sizeVar={'S'}\n          locale={ko}\n        />\n      )}\n    </Stack>"
+        },
+        {
+          "story": "Multiple",
+          "code": "<Stack width='400px'>\n      <DayDatepicker\n        calendarType={{\n          type: 'multiple',\n          handleMutlipleDaysChange(date) {\n            setSelectDates(date);\n          },\n        }}\n        selectedDates={selectDates || undefined}\n        sizeVar={'M'}\n        locale={ko}\n      />\n    </Stack>"
+        },
+        {
+          "story": "Range",
+          "code": "<Stack width='400px'>\n      <DayDatepicker\n        calendarType={{\n          type: 'range',\n          handleDayRangeChange(dates) {\n            if (Array.isArray(dates)) {\n              const [start, end] = dates;\n              setStartDate(start);\n              setEndDate(end);\n            } else {\n              setStartDate(dates);\n            }\n          },\n        }}\n        selected={startDate ?? null}\n        startDate={startDate || undefined}\n        endDate={endDate || undefined}\n        sizeVar={'M'}\n        locale={ko}\n      />\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Dropdown",
+      "group": "Dropdown",
+      "title": "COMPONENTS/Dropdown",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>\n      <ComponentStage justify={'start'}>\n        <Dropdown\n          {...args}\n          disabled={args.disabled}\n          option={args.option}\n          width={args.width ?? '100%'}\n          offset={args.offset}\n          trigger={\n            <Dropdown.Button\n              disabled={args.disabled}\n              sizeVar={args.sizeVar ?? 'M'}\n              styleVar={args.styleVar ?? 'NORMAL'}\n              isError={args.isError}\n              onClear={args.hasOnClear ? handleReset : undefined}\n              placeholder={'값이 없어서 보이는 placeholder'}\n              leftSource={args.showLeftSource ? <Icon iconSource={SearchIcon} sizeVar='S' /> : undefined}\n              rightSource={\n                args.showRightSource ? (\n                  <Tag styleVar='TINT' sizeVar='XS' background='neutral150'>\n                    +999\n                  </Tag>\n                ) : undefined\n              }\n              value={\n                selectedItem.length > 0 && (\n                  <Text\n                    typography='body1_400'\n                    color={args.disabled ? 'neutral350' : 'neutral700'}\n                 …"
+        },
+        {
+          "story": "SmallMedium",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <Dropdown\n          {...args}\n          width={args.width ?? '200px'}\n          option={args.option}\n          disabled={args.disabled}\n          trigger={\n            <Dropdown.Button\n              placeholder={'placeholder'}\n              sizeVar={args.sizeVar ?? 'S'}\n              styleVar={args.styleVar ?? 'NORMAL'}\n              isError={args.isError}\n              disabled={args.disabled}\n              value={\n                selectedItem && (\n                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>\n                    {selectedItem.label}\n                  </Text>\n                )\n              }\n            />\n          }\n          popper={\n            <DropdownMenuList\n              data={data}\n              isItemSelected={(item) => selectedItem?.value === item.value}\n              onItemClick={handleToggleSelect}\n            />\n          }\n        />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Large",
+          "code": "<StackContainer.Vertical width={'500px'} background='shopl100'>\n      <ComponentStage>\n        <Dropdown {...args} />\n      </ComponentStage>\n    </StackContainer.Vertical>"
+        },
+        {
+          "story": "WithClearButton",
+          "code": "<Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>\n      <ComponentStage justify={'start'}>\n        <Dropdown\n          {...args}\n          disabled={args.disabled}\n          option={args.option}\n          width={'300px'}\n          trigger={\n            <Dropdown.Button\n              disabled={args.disabled}\n              sizeVar={args.sizeVar ?? 'S'}\n              styleVar={args.styleVar ?? 'NORMAL'}\n              isError={args.isError}\n              placeholder={'옵션을 선택하세요'}\n              onClear={handleReset}\n              rightSource={\n                args.showRightSource ? (\n                  <Tag styleVar='TINT' sizeVar='XS' background='neutral150'>\n                    +999\n                  </Tag>\n                ) : undefined\n              }\n              value={\n                selectedItem && (\n                  <Text typography='body1_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>\n                    {selectedItem.label}\n                  </Text>\n                )\n              }\n            />\n          }\n          popper={\n            <DropdownMenuList\n              data={data}\n              isItemSelected={(item) => selected…"
+        },
+        {
+          "story": "XsNormal",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <Dropdown\n          {...args}\n          width={args.width ?? '240px'}\n          option={args.option}\n          disabled={args.disabled}\n          trigger={\n            <Dropdown.Button\n              placeholder={'Placeholder'}\n              sizeVar={'XS'}\n              styleVar={'NORMAL'}\n              isError={args.isError}\n              disabled={args.disabled}\n              value={\n                selectedItem && (\n                  <Text typography='caption_400' color={'neutral700'} textOverflow={'ellipsis'} lineClamp={1}>\n                    {selectedItem.label}\n                  </Text>\n                )\n              }\n            />\n          }\n          popper={\n            <DropdownMenuList\n              data={data}\n              isItemSelected={(item) => selectedItem?.value === item.value}\n              onItemClick={handleToggleSelect}\n            />\n          }\n        />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "SmallGhost",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <Dropdown\n          {...args}\n          width={args.width ?? '240px'}\n          option={args.option}\n          disabled={args.disabled}\n          trigger={\n            <Dropdown.Button\n              placeholder={'Label'}\n              sizeVar={'S'}\n              styleVar={'GHOST'}\n              isError={args.isError}\n              disabled={args.disabled}\n              value={\n                selectedItem && (\n                  <Text\n                    typography='body1_400'\n                    color={args.disabled ? 'neutral350' : 'neutral700'}\n                    textOverflow={'ellipsis'}\n                    lineClamp={1}\n                  >\n                    {selectedItem.label}\n                  </Text>\n                )\n              }\n            />\n          }\n          popper={\n            <DropdownMenuList\n              data={data}\n              isItemSelected={(item) => selectedItem?.value === item.value}\n              onItemClick={handleToggleSelect}\n            />\n          }\n        />\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "DropdownButton",
+      "group": "DropdownButton",
+      "title": "COMPONENTS/Buttons/DropdownButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack>\n      <DropdownButton {...args}>\n        <DropdownButton.Menu isSelected={selectedItem === 'Shopl'} onClick={() => setSelectedItem('Shopl')}>\n          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>\n        </DropdownButton.Menu>\n        <DropdownButton.Menu isSelected={selectedItem === 'Hada'} onClick={() => setSelectedItem('Hada')}>\n          <Text>Hada</Text>\n        </DropdownButton.Menu>\n      </DropdownButton>\n    </Stack>"
+        },
+        {
+          "story": "Disabled",
+          "code": "<Stack>\n    <DropdownButton {...args}>\n      <DropdownButton.Menu>\n        <Text>Shopl</Text>\n      </DropdownButton.Menu>\n      <DropdownButton.Menu>\n        <Text>Hada</Text>\n      </DropdownButton.Menu>\n    </DropdownButton>\n  </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "HelperText",
+      "group": "HelperText",
+      "title": "COMPONENTS/HelperText",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    type: 'NORMAL',\n    position: 'PRESET-TOP',\n    color: 'neutral700',\n    children: '입력한 내용을 확인해주세요.',\n  }"
+        },
+        {
+          "story": "Normal",
+          "args": "{\n    type: 'NORMAL',\n    color: 'neutral700',\n    children: 'NORMAL + PRESET-NONE 텍스트입니다.',\n  }"
+        },
+        {
+          "story": "Bullet",
+          "args": "{\n    type: 'BULLET',\n    color: 'neutral700',\n    children: '불릿 스타일의 헬퍼 텍스트입니다.',\n  }"
+        },
+        {
+          "story": "PositionTop",
+          "args": "{\n    type: 'NORMAL',\n    position: 'PRESET-TOP',\n    color: 'neutral700',\n    children: 'NORMAL + PRESET-TOP 텍스트입니다.',\n  }"
+        },
+        {
+          "story": "PositionBottom",
+          "args": "{\n    type: 'NORMAL',\n    position: 'PRESET-BOTTOM',\n    color: 'neutral700',\n    children: 'NORMAL + PRESET-BOTTOM 텍스트입니다.',\n  }"
+        },
+        {
+          "story": "ColorNeutral",
+          "args": "{\n    type: 'NORMAL',\n    color: 'neutral500',\n    children: 'NORMAL + neutral500 색상의 헬퍼 텍스트입니다.',\n  }"
+        },
+        {
+          "story": "ColorError",
+          "args": "{\n    type: 'NORMAL',\n    color: 'red300',\n    children: '에러 메시지용 빨간색 헬퍼 텍스트입니다.',\n  }"
+        }
+      ]
+    },
+    {
+      "name": "Icon",
+      "group": "Icon",
+      "title": "COMPONENTS/Icon",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack.Horizontal width={'100%'} flexWrap={'wrap'} spacing={'spacing20'}>\n      <IconStage>\n        <MockIcon dangerouslySetInnerHTML={dangerouslySetInnerHTML} color={args.color} sizeVar={args.sizeVar} />\n      </IconStage>\n      {(domain === 'SHOPL' ? assetFilter(ShoplAssets, 'Icon') : assetFilter(HadaAssets, 'Icon')).map((asset) => (\n        <Stack key={asset} align={'center'} spacing={'spacing08'} width={'100px'}>\n          <IconStage>\n            <Icon {...args} iconSource={Template(asset)} />\n          </IconStage>\n\n          <Text typography={'caption_400'} wordBreak={'break-all'}>\n            {asset}\n          </Text>\n        </Stack>\n      ))}\n    </Stack.Horizontal>"
+        }
+      ]
+    },
+    {
+      "name": "IconButton",
+      "group": "IconButton",
+      "title": "COMPONENTS/Buttons/IconButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    styleVar: 'SECONDARY',\n    sizeVar: 'M',\n    disabled: false,\n  }",
+          "code": "<IconButtonWithIcon {...args} />"
+        },
+        {
+          "story": "Primary",
+          "args": "{\n    styleVar: 'PRIMARY',\n    sizeVar: 'M',\n    color: 'primary400',\n    disabled: false,\n  }",
+          "code": "<IconButtonWithIcon {...args} />"
+        },
+        {
+          "story": "Secondary",
+          "args": "{\n    styleVar: 'SECONDARY',\n    sizeVar: 'M',\n    color: 'primary400',\n    disabled: false,\n  }",
+          "code": "<IconButtonWithIcon {...args} />"
+        },
+        {
+          "story": "Solid",
+          "args": "{\n    styleVar: 'SOLID',\n    sizeVar: 'M',\n    color: 'neutral150',\n    disabled: false,\n  }",
+          "code": "<Stack width='100px'>\n      <IconButtonWithIcon {...args} />\n    </Stack>"
+        },
+        {
+          "story": "Ghost",
+          "args": "{\n    styleVar: 'GHOST',\n    sizeVar: 'M',\n    disabled: false,\n  }",
+          "code": "<Stack width='100px'>\n      <IconButtonWithIcon {...args} />\n    </Stack>"
+        },
+        {
+          "story": "Loading",
+          "args": "{\n    styleVar: 'PRIMARY',\n    sizeVar: 'M',\n    isLoading: true,\n    disabled: false,\n  }",
+          "code": "<IconButtonWithIcon {...args} />"
+        },
+        {
+          "story": "Disabled",
+          "args": "{\n    styleVar: 'PRIMARY',\n    sizeVar: 'M',\n    disabled: true,\n  }",
+          "code": "<IconButtonWithIcon {...args} />"
+        }
+      ]
+    },
+    {
+      "name": "Input",
+      "group": "Input",
+      "title": "COMPONENTS/Inputs/Input",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <Input ref={inputRef} {...args} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Password",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <Input ref={inputRef} {...args} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Number",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <Input ref={inputRef} {...args} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Error",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <Input ref={inputRef} {...args} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "CheckValue",
+          "code": "<Stack width={'600px'} spacing={'spacing12'}>\n      <ComponentStage>\n        <Input maxLength={50} ref={inputRef} {...args} />\n      </ComponentStage>\n\n      <Stack.Horizontal align={'center'} spacing={'spacing12'}>\n        <Button\n          styleVar={'PRIMARY'}\n          onClick={() => {\n            setValue(inputRef.current?.value || '');\n          }}\n        >\n          값 가져오기\n        </Button>\n        <Text>{value}</Text>\n      </Stack.Horizontal>\n    </Stack>"
+        },
+        {
+          "story": "WithClearButton",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <Input ref={inputRef} {...inputProps} style={textAlign ? { textAlign } : inputProps.style} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "WithClearButtonAndRightSource",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <Input\n          ref={inputRef}\n          {...inputProps}\n          sizeVar={inputProps.sizeVar}\n          rightSource={\n            <Tag styleVar='TINT' sizeVar='XS' color='neutral300'>\n              <Text typography='caption_400' color='neutral700'>\n                KRW\n              </Text>\n            </Tag>\n          }\n          style={textAlign ? { textAlign } : inputProps.style}\n        />\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "InputButton",
+      "group": "InputButton",
+      "title": "COMPONENTS/Inputs/InputButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width={'400px'} height={'400px'} spacing={'spacing12'}>\n      <ComponentStage>\n        <InputButton\n          useClear={useClear}\n          value={value}\n          defaultValue={'기본값'}\n          {...args}\n          onChange={(value) => setValue(value)}\n        />\n      </ComponentStage>\n      <Text>아래 버튼을 눌러 값을 할당해주세요.</Text>\n      <Stack.Horizontal width={'100%'} justify={'space-between'}>\n        {valueArray.map((data) => (\n          <Button key={data} sizeVar={'S'} onClick={() => setValue(String(data))}>\n            {data}\n          </Button>\n        ))}\n      </Stack.Horizontal>\n      <Stack.Horizontal width={'100%'} spacing='spacing08'>\n        <Button styleVar='SECONDARY' sizeVar={'S'} onClick={() => setUseClear(true)}>\n          Clear 사용\n        </Button>\n        <Button styleVar='SECONDARY' sizeVar={'S'} onClick={() => setUseClear(false)}>\n          Clear 미사용\n        </Button>\n      </Stack.Horizontal>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "group": "List",
+      "title": "COMPONENTS/List",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack.Horizontal width={'800px'} height={'500px'} spacing={'spacing32'}>\n      <ComponentStage>\n        <Stack as={'ul'} width={'100%'}>\n          {newArray.map((item, index) => {\n            const isSelected = selectedItem.some((selected) => selected.title === item.title);\n            return (\n              <List\n                key={index}\n                {...args}\n                isSelected={isSelected}\n                onClick={() => {\n                  handleToggleSelect(item.title);\n                }}\n                leftSource={<Checkbox />}\n                rightSource={<Text whiteSpace={'nowrap'}>{item.other}</Text>}\n              >\n                <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />\n                <List.Text2Rows title={item.title} subTitle={item.subTitle} />\n              </List>\n            );\n          })}\n        </Stack>\n      </ComponentStage>\n      <Stack.Vertical width={'400px'} height={'100%'} justify={'start'} align={'start'} spacing={'spacing12'}>\n        <ComponentStage align={'start'} justify={'start'}>\n          <Stack height={'24px'}>\n            <Text typography={'body1_700'}>선택된 데이터</Text>\n        …"
+        },
+        {
+          "story": "With2Rows",
+          "args": "{\n    disabled: false,\n  }",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <List {...args} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>\n          <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />\n          <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />\n        </List>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "WithAllSource",
+          "args": "{\n    disabled: false,\n    style: {\n      padding: '8px 0px',\n    },\n  }",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <List {...args} leftSource={<Checkbox />} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>\n          <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />\n          <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />\n        </List>\n        <List {...args} leftSource={<Radio />} rightSource={<Text whiteSpace={'nowrap'}>서브 데이터</Text>}>\n          <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />\n          <List.Text2Rows title={'타이틀'} subTitle={'서브 타이틀'} />\n        </List>\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "group": "Menu",
+      "title": "COMPONENTS/Menu",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>\n      <ComponentStage>\n        <ScrollArea>\n          <Stack as={'ul'} width={'100%'}>\n            {newArray.map((item, index) => {\n              return (\n                <Menu {...args} onClick={() => handleToggleSelect(item.name)} key={index}>\n                  {item.name}\n                </Menu>\n              );\n            })}\n          </Stack>\n        </ScrollArea>\n      </ComponentStage>\n\n      <Stack.Vertical width={'400px'} height={'100%'} justify={'start'} align={'start'} spacing={'spacing12'}>\n        <ComponentStage align={'start'} justify={'start'}>\n          <Stack height={'24px'}>\n            <Text typography={'body1_700'}>선택된 데이터</Text>\n          </Stack>\n          <JSONScrollView items={selectedItem} />\n        </ComponentStage>\n      </Stack.Vertical>\n    </Stack.Horizontal>"
+        },
+        {
+          "story": "WithControls",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <Stack as={'ul'} width={'100%'}>\n          {newArray.map((item, index) => {\n            const isSelected = selectedItem.some((selectedItem) => selectedItem.name === item.name);\n            return (\n              <Menu\n                {...args}\n                isSelected={isSelected}\n                key={index}\n                onClick={() => handleToggleSelect(item.name)}\n                leftSource={<Stack width={'24px'} height={'24px'} background={'red200'} />}\n              >\n                {item.name}\n              </Menu>\n            );\n          })}\n        </Stack>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "WithCheckbox",
+          "code": "<Stack width={'500px'}>\n      <ComponentStage>\n        <Stack as={'ul'} width={'100%'}>\n          {newArray.map((item, index) => {\n            const isSelected = selectedItem.some((selectedItem) => selectedItem.name === item.name);\n            return (\n              <Menu\n                {...args}\n                isSelected={isSelected}\n                key={index}\n                onClick={() => handleToggleSelect(item.name)}\n                leftSource={<Checkbox />}\n              >\n                {item.name}\n              </Menu>\n            );\n          })}\n        </Stack>\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "MinusButton",
+      "group": "MinusButton",
+      "title": "COMPONENTS/ControlButtons/MinusButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<WithStage>\n      <MinusButton {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "Default",
+          "code": "<WithStage>\n      <MinusButton {...args} />\n    </WithStage>"
+        }
+      ]
+    },
+    {
+      "name": "ModalContainer",
+      "group": "Modal",
+      "title": "COMPONENTS/Modal",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<>\n      <Button onClick={() => addModal(<PrimaryComponent {...args} />)}>Modal 열기</Button>\n    </>"
+        },
+        {
+          "story": "AllComponents",
+          "code": "<ComponentStage>\n      <Button onClick={handleOpenModal}>모든 컴포넌트 요소 Modal 열기</Button>\n    </ComponentStage>"
+        },
+        {
+          "story": "Height100Percent",
+          "code": "<ComponentStage>\n        <Button\n          onClick={() =>\n            addModal(\n              <Modal.Container sizeVar={'L'} height={'100%'} outsideClick={removeModal}>\n                <Modal.Header>\n                  <Text typography={'title1_700'}>모달 헤더 영역</Text>\n                </Modal.Header>\n                <Modal.Body>\n                  <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>\n                </Modal.Body>\n                <Modal.Footer>\n                  <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>\n                  <Button styleVar={'SECONDARY'}>버튼</Button>\n                  <Button>버튼</Button>\n                </Modal.Footer>\n              </Modal.Container>,\n            )\n          }\n        >\n          Height100Percent Modal 열기\n        </Button>\n      </ComponentStage>"
+        },
+        {
+          "story": "FullScreen",
+          "code": "<ComponentStage>\n        <Button\n          onClick={() =>\n            addModal(\n              <Modal.Container sizeVar={'FULL'} outsideClick={removeModal}>\n                <Modal.Header>\n                  <Text typography={'title1_700'}>모달 헤더 영역</Text>\n                </Modal.Header>\n                <Modal.Body>\n                  <StackContainer height={'100%'} width={'100%'} background={'neutral200'}>\n                    <Stack.Vertical>{mockBoxs.map((box) => box)}</Stack.Vertical>\n                  </StackContainer>\n                </Modal.Body>\n                <Modal.Footer>\n                  <Text typography={'body1_400'}>버튼이 들어가는 자리에요</Text>\n                  <Button styleVar={'SECONDARY'}>버튼</Button>\n                  <Button>버튼</Button>\n                </Modal.Footer>\n              </Modal.Container>,\n            )\n          }\n        >\n          FullScreen Modal 열기\n        </Button>\n      </ComponentStage>"
+        }
+      ]
+    },
+    {
+      "name": "MonthDatepicker",
+      "group": "MonthDatepicker",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack spacing='spacing20'>\n      <div style={{ boxShadow: '0 10px 30px 0 rgba(51, 51, 51, 0.20)', borderRadius: '16px' }}>\n        <MonthDatepicker\n          key={args.onlySingleMonth ? 'single' : 'range'}\n          {...rest}\n          initStartDate={startDate}\n          initEndDate={endDate}\n          minDate={minDateValue}\n          maxDate={maxDateValue}\n          handleMonthClick={setSelectedDateInfo}\n        />\n      </div>\n\n      <Stack.Vertical width='100%'>\n        <Text>\n          selected start :\n          {selectedDateInfo?.startDate\n            ? `${selectedDateInfo?.startDate.getFullYear()}-${\n                Number(selectedDateInfo?.startDate.getMonth()) + 1\n              }-${selectedDateInfo?.startDate.getDate()}`\n            : ''}\n        </Text>\n        <Text>\n          selected end :\n          {selectedDateInfo?.endDate\n            ? `${selectedDateInfo?.endDate.getFullYear()}-${\n                Number(selectedDateInfo?.endDate.getMonth()) + 1\n              }-${selectedDateInfo?.endDate.getDate()}`\n            : ''}\n        </Text>\n        <Text>selected range :{selectedDateInfo?.selectedMonthRange}</Text>\n        <Text>size : {args.sizeVar}</Text>\n      </Stack…"
+        },
+        {
+          "story": "MinMax",
+          "code": "<Stack>\n      <MonthDatepicker\n        {...args}\n        handleMonthClick={setSelectedDateInfo}\n        minDate={new Date('2010-05-05')}\n        maxDate={new Date('2030-10-10')}\n      />\n      <Stack.Vertical width='100%'>\n        <Text>\n          selected start :\n          {selectedDateInfo?.startDate\n            ? `${selectedDateInfo.startDate.getFullYear()}-${\n                Number(selectedDateInfo.startDate.getMonth()) + 1\n              }-${selectedDateInfo.startDate.getDate()}`\n            : ''}\n        </Text>\n        <Text>\n          selected end :\n          {selectedDateInfo?.endDate\n            ? `${selectedDateInfo.endDate.getFullYear()}-${\n                Number(selectedDateInfo.endDate.getMonth()) + 1\n              }-${selectedDateInfo.endDate.getDate()}`\n            : ''}\n        </Text>\n        <Text>selected range :{selectedDateInfo?.selectedMonthRange}</Text>\n      </Stack.Vertical>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "NumberCombobox",
+      "group": "NumberCombobox",
+      "title": "COMPONENTS/Comboboxs/NumberCombobox",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack>\n      <NumberCombobox\n        {...args}\n        items={HOURS}\n        value={value}\n        onChange={(event) => {\n          setValue(event.target.value.replace(/\\D/g, ''));\n        }}\n        onSelect={(value) => {\n          setValue(value);\n          return;\n        }}\n      />\n    </Stack>"
+        },
+        {
+          "story": "Disabled",
+          "args": "{\n    disabled: true,\n  }",
+          "code": "<Stack>\n      <NumberCombobox {...args} items={HOURS} />\n    </Stack>"
+        },
+        {
+          "story": "Minutes",
+          "code": "<Stack>\n      <NumberCombobox\n        {...args}\n        value={value}\n        items={MINUTES}\n        isError={isError}\n        onChange={(event) => {\n          setValue(event.target.value);\n          if (!isError) {\n            return;\n          }\n          setIsError(false);\n        }}\n        maxLength={99}\n        onSelect={(value) => {\n          if (/^\\d*$/.test(value)) {\n            const numberValue = parseInt(value, 10);\n            if (numberValue <= 60) {\n              setValue(String(numberValue).padStart(2, '0'));\n              return;\n            }\n            setValue('');\n            setIsError(true);\n            alert('60 넘게 입력 불가!');\n          }\n        }}\n      />\n    </Stack>"
+        },
+        {
+          "story": "Just2Dropdown",
+          "code": "<Stack>\n      <NumberCombobox\n        {...args}\n        value={value}\n        items={['1', '2'].map((item) => ({ label: item, value: item }))}\n        isError={isError}\n        onChange={(event) => {\n          setValue(event.target.value);\n          if (!isError) {\n            return;\n          }\n          setIsError(false);\n        }}\n        maxLength={99}\n        onSelect={(value) => {\n          if (/^\\d*$/.test(value)) {\n            const numberValue = parseInt(value, 10);\n            if (numberValue <= 60) {\n              setValue(String(numberValue).padStart(2, '0'));\n              return;\n            }\n            setValue('');\n            setIsError(true);\n            alert('60 넘게 입력 불가!');\n          }\n        }}\n      />\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Pagination",
+      "group": "Pagination",
+      "title": "COMPONENTS/Pagination",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width='900px'>\n      <Pagination\n        {...args}\n        currentPage={currentPage}\n        previousPage={() => setCurrentPage((prev) => prev - 1)}\n        pageSize={pageSize}\n        pageCount={5}\n        nextPage={() => setCurrentPage((prev) => prev + 1)}\n        itemsTotalCount={itemsTotalCount}\n        gotoPage={(page) => setCurrentPage(page)}\n        leftSource={\n          <Button styleVar='SECONDARY' sizeVar='S'>\n            leftSource\n          </Button>\n        }\n        rightSource={\n          <PaginationSizeSelector\n            data={pageSizeList}\n            pageSize={pageSize}\n            setPageSize={(value) => {\n              setCurrentPage(0);\n              setPageSize(value);\n            }}\n          />\n        }\n      />\n    </Stack>"
+        },
+        {
+          "story": "LayoutVerification",
+          "args": "{\n    leftSource: 'wide',\n    rightSource: 'text',\n    sizeVar: 'S',\n  }",
+          "code": "<ShoplDomainForStory>\n        <Stack width='960px' spacing='spacing12'>\n          <Text typography='body2_400' color='neutral500'>\n            Controls의 leftSource / rightSource 프리셋으로 `Pagination`의 동일 prop에 넣을 예시를 바꿉니다. wide·텍스트·\n            Button만·복합(many) 등으로 가운데 정렬이 유지되는지 확인하세요. (dataset shopl 고정)\n          </Text>\n          <div\n            style={{\n              width: '100%',\n              padding: 12,\n              borderRadius: 8,\n              border: '1px dashed var(--neutral300)',\n              boxSizing: 'border-box',\n            }}\n          >\n            <Pagination\n              sizeVar={args.sizeVar}\n              currentPage={currentPage}\n              pageSize={pageSize}\n              pageCount={5}\n              itemsTotalCount={itemsTotalForLayoutStories}\n              previousPage={() => setCurrentPage((p) => Math.max(0, p - 1))}\n              nextPage={() => setCurrentPage((p) => p + 1)}\n              gotoPage={(page) => setCurrentPage(typeof page === 'function' ? page(currentPage) : page)}\n              leftSource={renderLeftSourcePreset(args.leftSource)}\n              rightSource={renderRightSourcePreset(args.rightSource)}\n            />\n          </div>\n  …"
+        }
+      ]
+    },
+    {
+      "name": "Popper",
+      "group": "Popper",
+      "title": "COMPONENTS/Popper",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack height={'400px'} width={'300px'} justify={'center'} align={'end'}>\n      <ComponentStage>\n        <Popper {...args}>\n          <Popper.Trigger isOpen={isOpen}>\n            <Button onClick={handleToggle}>Popper Playground</Button>\n          </Popper.Trigger>\n          <Popper.Portal>\n            <Modal.Container>\n              <Modal.Body>팝오버 안에 모달 넣기</Modal.Body>\n            </Modal.Container>\n          </Popper.Portal>\n        </Popper>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "AutoPlacement",
+          "code": "<Stack height={'2000px'} width={'600px'} justify={'center'} align={'end'}>\n      <ComponentStage>\n        <Popper {...args}>\n          <Popper.Trigger isOpen={isOpen}>\n            <Button onClick={handleToggle}>Popper Playground</Button>\n          </Popper.Trigger>\n          <Popper.Portal>\n            <Modal.Container>\n              <Modal.Body>팝오버 안에 모달 넣기</Modal.Body>\n            </Modal.Container>\n          </Popper.Portal>\n        </Popper>\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Radio",
+      "group": "Radio",
+      "title": "COMPONENTS/ControlButtons/Radio",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    isSelected: false,\n    defaultSelected: false,\n  }",
+          "code": "<WithStage>\n      <Radio {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "Unselected",
+          "args": "{\n    defaultSelected: false,\n  }",
+          "code": "<WithStage>\n      <Radio {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "Selected",
+          "args": "{\n    defaultSelected: true,\n  }",
+          "code": "<WithStage>\n      <Radio {...args} />\n    </WithStage>"
+        }
+      ]
+    },
+    {
+      "name": "ScrollArea",
+      "group": "ScrollArea",
+      "title": "COMPONENTS/ScrollArea",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    universal: false,\n    autoHide: false,\n  }",
+          "code": "<Stack height='600px' width='500px'>\n      <ComponentStage>\n        <ScrollArea {...args}>{scrollContent}</ScrollArea>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "WithAutoHide",
+          "args": "{\n    autoHide: true,\n  }",
+          "code": "<Stack height='400px' width='400px'>\n      <ComponentStage>\n        <ScrollArea {...args}>{scrollContent}</ScrollArea>\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "SearchBar as unknown as MemoizedSearchBarComponent",
+      "group": "SearchBar",
+      "title": "COMPONENTS/SearchBar",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args}>\n        <SearchBar.Category\n          dropdownWidth='136px'\n          dropdownItems={[\n            { label: '전체', value: 'all' },\n            { label: '상품', value: 'product' },\n            { label: '주문', value: 'order' },\n          ]}\n          selectedDropdownItem={selectedItem}\n          onDropdownSelect={handleDropdownSelect}\n          isSelected={true}\n        />\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          onSearch={handleSearch}\n          type={args.type}\n          placeholder='검색어를 입력하세요'\n          flexiblePlaceholder={args.flexiblePlaceholder}\n          maxLength={args.maxLength}\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "Default",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args}>\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='기본 검색바'\n          type='default'\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "RealTime",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args}>\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='실시간 검색'\n          type='real-time'\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "WithCategory",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args} useFlexibleWidth>\n        <SearchBar.Category\n          dropdownWidth='136px'\n          dropdownItems={[\n            { label: '전체', value: 'all' },\n            { label: '상품', value: 'product' },\n            { label: '주문', value: 'order' },\n          ]}\n          selectedDropdownItem={selectedItem}\n          onDropdownSelect={handleDropdownSelect}\n          isSelected={true}\n        />\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='카테고리 검색'\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "FlexibleWidth",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args} useFlexibleWidth width='500px'>\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='flexible width'\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "Disabled",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args}>\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='비활성화된 검색바'\n          disabled\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "WithMaxLength",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args}>\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='최대 10자까지 입력 가능'\n          maxLength={args.maxLength}\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        },
+        {
+          "story": "WithFlexiblePlaceholder",
+          "code": "<Stack width='500px'>\n      <SearchBar {...args} useFlexibleWidth>\n        <SearchBar.Input\n          value={searchValue}\n          onChange={(e) => setSearchValue(e.target.value)}\n          placeholder='기본 플레이스홀더'\n          flexiblePlaceholder='축약된 플레이스홀더'\n          debounceTime={args.debounceTime}\n        />\n      </SearchBar>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "SelectInputButton",
+      "group": "SelectInputButton",
+      "title": "COMPONENTS/Inputs/SelectInputButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width={'400px'}>\n      <ComponentStage>\n        <SelectInputButton\n          {...args}\n          value={selectedItem}\n          label={'title'}\n          rightSource={<Icon sizeVar={'XS'} iconSource={RightArrowXsmallIcon} color={'neutral350'} />}\n        />\n      </ComponentStage>\n\n      <Stack as={'ul'} width={'100%'}>\n        {newArray.map((item, index) => {\n          const isSelected = selectedItem.some((selected) => selected.title === item.title);\n          return (\n            <List\n              key={index}\n              isSelected={isSelected}\n              onClick={() => {\n                handleToggleSelect(item.title);\n              }}\n              leftSource={<Checkbox />}\n              rightSource={<Text whiteSpace={'nowrap'}>{item.other}</Text>}\n            >\n              <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />\n              <List.Text2Rows title={item.title} subTitle={item.subTitle} />\n            </List>\n          );\n        })}\n      </Stack>\n    </Stack>"
+        },
+        {
+          "story": "Error",
+          "code": "<Stack width={'400px'}>\n      <ComponentStage>\n        <SelectInputButton\n          {...args}\n          value={selectedItem}\n          label={'title'}\n          rightSource={<Icon sizeVar={'XS'} iconSource={RightArrowXsmallIcon} color={'neutral350'} />}\n        />\n      </ComponentStage>\n\n      <Stack as={'ul'} width={'100%'}>\n        {newArray.map((item, index) => {\n          const isSelected = selectedItem.some((selected) => selected.title === item.title);\n          return (\n            <List\n              key={index}\n              isSelected={isSelected}\n              onClick={() => {\n                handleToggleSelect(item.title);\n              }}\n              leftSource={<Checkbox />}\n              rightSource={<Text whiteSpace={'nowrap'}>{item.other}</Text>}\n            >\n              <Stack height={'32px'} width={'32px'} background={'neutral300'} radius={'borderRadius16'} />\n              <List.Text2Rows title={item.title} subTitle={item.subTitle} />\n            </List>\n          );\n        })}\n      </Stack>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Skeleton",
+      "group": "Skeleton",
+      "title": "COMPONENTS/Skeleton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    styleVar: 'rectangle',\n    width: '40px',\n    height: '40px',\n  }",
+          "code": "<WithStack>\n      <Skeleton {...args} />\n    </WithStack>"
+        },
+        {
+          "story": "Circle",
+          "args": "{\n    styleVar: 'circle',\n    width: '48px',\n    height: '48px',\n  }",
+          "code": "<WithStack>\n      <Skeleton {...args} />\n    </WithStack>"
+        },
+        {
+          "story": "Rectangle",
+          "args": "{\n    styleVar: 'rectangle',\n    width: '200px',\n    height: '24px',\n  }",
+          "code": "<WithStack>\n      <Skeleton {...args} />\n    </WithStack>"
+        }
+      ]
+    },
+    {
+      "name": "Slider",
+      "group": "Slider",
+      "title": "Components/Slider",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    min: 0,\n    max: 100,\n    step: 1,\n    range: { min: 20, max: 60 },\n    isDisabled: false,\n    selectedColor: 'shopl300',\n  }"
+        }
+      ]
+    },
+    {
+      "name": "SplitButton",
+      "group": "SplitButton",
+      "title": "COMPONENTS/Buttons/SplitButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack>\n      <SplitButton {...args}>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Shopl'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Shopl')}\n        >\n          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>\n        </SplitButton.Menu>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Hada'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Hada')}\n        >\n          <Text>Hada</Text>\n        </SplitButton.Menu>\n      </SplitButton>\n    </Stack>"
+        },
+        {
+          "story": "SmallWithLeftSource",
+          "code": "<Stack>\n      <SplitButton {...args}>\n        <SplitButton.Menu isSelected={selectedItem === 'Shopl'} onClick={() => setSelectedItem('Shopl')}>\n          <Text>Shopl</Text>\n        </SplitButton.Menu>\n        <SplitButton.Menu isSelected={selectedItem === 'Hada'} onClick={() => setSelectedItem('Hada')}>\n          <Text>Hada</Text>\n        </SplitButton.Menu>\n      </SplitButton>\n    </Stack>"
+        },
+        {
+          "story": "Primary",
+          "code": "<Stack>\n      <SplitButton {...args}>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Shopl'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Shopl')}\n        >\n          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>\n        </SplitButton.Menu>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Hada'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Hada')}\n        >\n          <Text>Hada</Text>\n        </SplitButton.Menu>\n      </SplitButton>\n    </Stack>"
+        },
+        {
+          "story": "Secondary",
+          "code": "<Stack>\n      <SplitButton\n        {...args}\n        styleVar='SECONDARY'\n        leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n      >\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Shopl'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Shopl')}\n        >\n          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>\n        </SplitButton.Menu>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Hada'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Hada')}\n        >\n          <Text>Hada</Text>\n        </SplitButton.Menu>\n      </SplitButton>\n    </Stack>"
+        },
+        {
+          "story": "WithLeftAndRightSource",
+          "code": "<Stack>\n      <SplitButton {...args} text={'Button'}>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Shopl'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Shopl')}\n        >\n          <Text>Shopl (그룹명이 좀 길어요 이럴땐 어떻게 보이려나요)</Text>\n        </SplitButton.Menu>\n        <SplitButton.Menu\n          isSelected={selectedItem === 'Hada'}\n          leftSource={<div style={{ width: '20px', height: '20px', backgroundColor: colorTokens.red100 }} />}\n          onClick={() => setSelectedItem('Hada')}\n        >\n          <Text>Hada</Text>\n        </SplitButton.Menu>\n      </SplitButton>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Stack",
+      "group": "Stack",
+      "title": "COMPONENTS/Stack",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Primary",
+          "code": "<ComponentStage>\n      <Stack {...args} width={'fit-content'} data-testid={TEST_ID}>\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n      </Stack>\n    </ComponentStage>"
+        },
+        {
+          "story": "Horizontal",
+          "code": "<ComponentStage>\n      <Stack.Horizontal {...args} width={'fit-content'}>\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n      </Stack.Horizontal>\n    </ComponentStage>"
+        },
+        {
+          "story": "Vertical",
+          "code": "<ComponentStage>\n      <Stack.Vertical {...args} width={'fit-content'}>\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n      </Stack.Vertical>\n    </ComponentStage>"
+        },
+        {
+          "story": "Motion",
+          "code": "<ComponentStage>\n      <MotionStack {...args} width={'fit-content'}>\n        <Box background={'primary100'} layoutId={'1'} />\n        <Box background={'primary100'} layoutId={'2'} />\n        <Box background={'primary100'} layoutId={'3'} />\n        <Box background={'primary100'} layoutId={'4'} />\n      </MotionStack>\n    </ComponentStage>"
+        }
+      ]
+    },
+    {
+      "name": "StackContainer",
+      "group": "StackContainer",
+      "title": "COMPONENTS/StackContainer",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Primary",
+          "code": "<ComponentStage>\n      <StackContainer {...args} width={'fit-content'} data-testid={TEST_ID}>\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n      </StackContainer>\n    </ComponentStage>"
+        },
+        {
+          "story": "Horizontal",
+          "code": "<ComponentStage>\n      <StackContainer.Horizontal {...args} width={'fit-content'}>\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n      </StackContainer.Horizontal>\n    </ComponentStage>"
+        },
+        {
+          "story": "Vertical",
+          "code": "<ComponentStage>\n      <StackContainer.Vertical {...args} width={'fit-content'}>\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n        <Box background={'primary100'} />\n      </StackContainer.Vertical>\n    </ComponentStage>"
+        },
+        {
+          "story": "Motion",
+          "code": "<ComponentStage>\n      <MotionStackContainer {...args} width={'fit-content'}>\n        <Box background={'primary100'} layoutId={'1'} />\n        <Box background={'primary100'} layoutId={'2'} />\n        <Box background={'primary100'} layoutId={'3'} />\n        <Box background={'primary100'} layoutId={'4'} />\n      </MotionStackContainer>\n    </ComponentStage>"
+        }
+      ]
+    },
+    {
+      "name": "Switch",
+      "group": "Switch",
+      "title": "COMPONENTS/Switch",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    sizeVar: 'M',\n    disabled: false,\n  }",
+          "code": "<WithStage>\n      <Switch {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "SmallSize",
+          "args": "{\n    sizeVar: 'S',\n    activeColor: 'neutral600',\n  }",
+          "code": "<WithStage>\n      <Switch {...args} />\n    </WithStage>"
+        },
+        {
+          "story": "Disabled",
+          "args": "{\n    sizeVar: 'M',\n    disabled: true,\n  }",
+          "code": "<WithStage>\n      <Switch {...args} />\n    </WithStage>"
+        }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "group": "Tabs",
+      "title": "COMPONENTS/Tabs",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>\n      <ComponentStage>\n        <div>active tab: {activeTab}</div>\n        <Tabs\n          {...args}\n          initialTab={activeTab}\n          onChange={(tab) => {\n            setActiveTab(tab);\n          }}\n        >\n          <Stack.Horizontal width='100%'>\n            <Tabs.Tab styleVar='NORMAL' activeColor='primary300' value={'a'} label={'label1'} />\n            <Tabs.Tab styleVar='NORMAL' activeColor='primary300' value={'b'} label={'label2'} />\n            <Tabs.Tab styleVar='NORMAL' activeColor='primary300' value={'c'} label={'label3'} />\n          </Stack.Horizontal>\n        </Tabs>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Level2",
+          "code": "<Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>\n      <ComponentStage>\n        <div>active tab: {activeTab}</div>\n        <Tabs {...args} initialTab={activeTab} onChange={setActiveTab}>\n          <Stack.Horizontal width='100%'>\n            <Tabs.Tab styleVar='NORMAL' sizeVar='M' value={'a'} label={'label1'} />\n            <Tabs.Tab styleVar='NORMAL' sizeVar='M' value={'b'} label={'label2'} />\n            <Tabs.Tab styleVar='NORMAL' sizeVar='M' value={'c'} label={'label3'} />\n          </Stack.Horizontal>\n        </Tabs>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Level3",
+          "code": "<Stack height={'400px'} width={'100%'} justify={'center'} align={'end'}>\n      <ComponentStage>\n        <div>active tab: {activeTab}</div>\n        <Tabs {...args} initialTab={activeTab} onChange={setActiveTab}>\n          <Stack.Horizontal width='100%' spacing={'spacing16'}>\n            <Tabs.Tab\n              styleVar='INFO'\n              value={'a'}\n              label={'Long'}\n              leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}\n              rightSource={rightSource}\n            />\n            <Tabs.Tab\n              styleVar='INFO'\n              value={'b'}\n              label={'label2'}\n              leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}\n              rightSource={rightSource}\n            />\n            <Tabs.Tab\n              styleVar='INFO'\n              value={'c'}\n              label={'label3'}\n              leftSource={<Icon iconSource={EditIcon} sizeVar='S' />}\n              rightSource={rightSource}\n            />\n          </Stack.Horizontal>\n        </Tabs>\n      </ComponentStage>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Tag",
+      "group": "Tag",
+      "title": "COMPONENTS/Tag",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    sizeVar: 'M',\n    styleVar: 'SOLID',\n    children: '태그에요',\n  }",
+          "code": "<Stack>\n      <Tag {...args} />\n    </Stack>"
+        },
+        {
+          "story": "Solid",
+          "args": "{\n    sizeVar: 'M',\n    styleVar: 'SOLID',\n    children: 'SOLID',\n  }",
+          "code": "<Stack>\n      <Tag {...args} />\n    </Stack>"
+        },
+        {
+          "story": "Tint",
+          "args": "{\n    sizeVar: 'M',\n    styleVar: 'TINT',\n    children: 'TINT',\n  }",
+          "code": "<Stack>\n      <Tag {...args} />\n    </Stack>"
+        },
+        {
+          "story": "Line",
+          "args": "{\n    sizeVar: 'M',\n    styleVar: 'LINE',\n    children: 'LINE',\n  }",
+          "code": "<Stack>\n      <Tag {...args} />\n    </Stack>"
+        },
+        {
+          "story": "SmallSize",
+          "args": "{\n    sizeVar: 'S',\n    styleVar: 'SOLID',\n    children: 'Small',\n  }",
+          "code": "<Stack>\n      <Tag {...args} />\n    </Stack>"
+        },
+        {
+          "story": "ExtraSmallSize",
+          "args": "{\n    sizeVar: 'XS',\n    styleVar: 'TINT',\n    children: 'XS',\n  }",
+          "code": "<Stack>\n      <Tag {...args} />\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "group": "Text",
+      "title": "COMPONENTS/Text",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "AllTexts",
+          "args": "{\n    children: 'The quick brown fox jumps over the lazy dog',\n  }",
+          "code": "<Stack.Vertical>\n      {allTypographyValues.map((typo, index) => (\n        <Stack.Vertical key={index}>\n          <Text typography={allTypographyKeys[index]} {...args}>\n            {args.children}\n          </Text>\n          <Text typography={'caption_400'}>{args.typography ?? allTypographyKeys[index]}</Text>\n        </Stack.Vertical>\n      ))}\n    </Stack.Vertical>"
+        }
+      ]
+    },
+    {
+      "name": "TextArea",
+      "group": "TextArea",
+      "title": "COMPONENTS/Inputs/TextArea",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    maxLength: 999,\n  }",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <TextArea placeholder={'TextArea에요'} {...args} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "Error",
+          "args": "{\n    maxLength: 999,\n    isError: true,\n  }",
+          "code": "<Stack width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <TextArea placeholder={'TextArea에요'} {...args} />\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "CheckValue",
+          "code": "<Stack width={'500px'} spacing={'spacing12'}>\n      <ComponentStage>\n        <TextArea ref={textAreaRef} placeholder={'TextArea에요'} {...args} />\n      </ComponentStage>\n\n      <Stack.Horizontal align={'center'} spacing={'spacing12'}>\n        <Button\n          styleVar={'PRIMARY'}\n          onClick={() => {\n            setValue(textAreaRef.current?.value || '');\n          }}\n        >\n          값 가져오기\n        </Button>\n        <Text>{value}</Text>\n      </Stack.Horizontal>\n    </Stack>"
+        },
+        {
+          "story": "WithCustomToolbar",
+          "args": "{\n    leftSource: <TextArea.MaxLength />,\n    rightSource: (\n      <Stack.Horizontal spacing={'spacing04'}>\n        <Button styleVar={'SECONDARY'} sizeVar='S'>\n          취소\n        </Button>\n        <Button sizeVar='S'>확인</Button>\n      </Stack.Horizontal>\n    ),\n  }",
+          "code": "<Stack.Horizontal width={'500px'} height={'300px'} justify={'center'}>\n      <ComponentStage>\n        <TextArea maxLength={100} placeholder={'Toolbar를 커스텀한 TextArea에요'} {...args} />\n      </ComponentStage>\n    </Stack.Horizontal>"
+        }
+      ]
+    },
+    {
+      "name": "ToggleButton",
+      "group": "ToggleButton",
+      "title": "COMPONENTS/ToggleButton",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack spacing='spacing16'>\n      <Text>선택된 된 값: {selectedValue}</Text>\n\n      <ToggleButton\n        {...componentProps}\n        selectedValue={selectedValue}\n        onChange={handleChange}\n        targetName='playground-group'\n      >\n        <ToggleButton.InnerRadio value='value1' label={firstItemLabel ?? 'Toggle1'} id='playground-1' />\n        <ToggleButton.InnerRadio value='value2' label='Toggle2' id='playground-2' />\n        <ToggleButton.InnerRadio value='value3' label='Toggle3' id='playground-3' />\n      </ToggleButton>\n    </Stack>"
+        },
+        {
+          "story": "Disabled",
+          "code": "<Stack>\n    <ToggleButton {...args} targetName='disabled-group'>\n      <ToggleButton.InnerRadio value='value1' label='Toggle1' id='disabled-1' />\n      <ToggleButton.InnerRadio value='value2' label='Toggle2' id='disabled-2' />\n      <ToggleButton.InnerRadio value='value3' label='Toggle3' id='disabled-3' />\n    </ToggleButton>\n  </Stack>"
+        },
+        {
+          "story": "ItemDisabled",
+          "code": "<Stack>\n      <ToggleButton {...args} selectedValue={selectedValue} onChange={handleChange} targetName='item-disabled-group'>\n        <ToggleButton.InnerRadio value='value1' label='Toggle1' id='item-disabled-1' />\n        <ToggleButton.InnerRadio value='value2' label='Toggle2' id='item-disabled-2' disabled />\n        <ToggleButton.InnerRadio value='value3' label='Toggle3' id='item-disabled-3' />\n      </ToggleButton>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "group": "Tooltip",
+      "title": "COMPONENTS/Tooltip",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "args": "{\n    trigger: <Text typography='body1_400'>호버 해보세요</Text>,\n    popper: (\n      <Tooltip.Content content='안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~안녕하세요~ 만나서 반갑습니다~' />\n    ),\n    placement: 'bottom-start',\n  }",
+          "code": "<Stack.Horizontal width={'700px'} height={'400px'} spacing={'spacing32'}>\n      <ComponentStage justify={'start'}>\n        <Tooltip trigger={trigger} popper={popper} {...args} />\n      </ComponentStage>\n    </Stack.Horizontal>"
+        }
+      ]
+    },
+    {
+      "name": "Tree",
+      "group": "Tree",
+      "title": "COMPONENTS/Tree",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width={'500px'} height={'500px'}>\n        <ComponentStage>\n          <ScrollArea>\n            <Tree>\n              <Tree.Item\n                leftSource={<Checkbox />}\n                label={'샤플앤컴퍼니'}\n                initialIsOpen\n                rightSource={\n                  <Tag\n                    styleVar={'TINT'}\n                    sizeVar={'XS'}\n                    color={'shopl300'}\n                    leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'shopl300'} />}\n                  >\n                    9\n                  </Tag>\n                }\n              >\n                <Tree.Item\n                  leftSource={<Checkbox />}\n                  label={\n                    '프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트프로덕트'\n                  }\n                  initialIsOpen\n                  rightSource={\n                    <Tag\n                      styleVar={'TINT'}\n                      sizeVar={'XS'}\n                      color={'green300'}\n                      leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'green300'} />}\n      …"
+        },
+        {
+          "story": "WithScrollArea",
+          "code": "<Stack width={'500px'} height={'300px'}>\n      <ComponentStage>\n        <ScrollArea>\n          <Tree>\n            <Tree.Item leftSource={<Checkbox />} label={'과일'}>\n              <Tree.Item leftSource={<Checkbox />} label={'사과'}>\n                <Tree.Item leftSource={<Checkbox />} label={'후지'} />\n                <Tree.Item leftSource={<Checkbox />} label={'청포도'} />\n              </Tree.Item>\n              <Tree.Item leftSource={<Checkbox />} label={'바나나'} />\n            </Tree.Item>\n            <Tree.Item\n              leftSource={<Checkbox />}\n              label={'서울시'}\n              rightSource={\n                <Tag\n                  styleVar={'TINT'}\n                  sizeVar={'XS'}\n                  color={'yellow300'}\n                  leftSource={<Icon iconSource={InfoEmployeeIcon} sizeVar={'XS'} color={'yellow300'} />}\n                >\n                  {서울시_구_목록.length}\n                </Tag>\n              }\n            >\n              {서울시_구_목록.map((item) => (\n                <Tree.Item leftSource={<Checkbox />} label={item} key={item} />\n              ))}\n            </Tree.Item>\n            <Tree.Item\n              leftSource={<Checkbox />}\n              label={'디자인…"
+        }
+      ]
+    },
+    {
+      "name": "WeekDatepicker",
+      "group": "WeekDatepicker",
+      "title": "COMPONENTS/Datepickers/WeekDatepicker",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack width='100%' justify='center' align='center' spacing='spacing08'>\n      <WeekDatepicker\n        {...args}\n        sizeVar={sizeVar}\n        initStartDate={new Date()}\n        handleWeekClick={(date) => {\n          setSelectedWeek(date);\n        }}\n      />\n\n      <Text style={{ textAlign: 'center' }}>선택된 날짜 정보: {JSON.stringify(selectedWeek)}</Text>\n\n      <Stack.Horizontal spacing='spacing08'>\n        <Button\n          onClick={() => {\n            setSizeVar('S');\n          }}\n        >\n          S 사이즈\n        </Button>\n        <Button\n          onClick={() => {\n            setSizeVar('M');\n          }}\n        >\n          M 사이즈\n        </Button>\n      </Stack.Horizontal>\n    </Stack>"
+        },
+        {
+          "story": "MinMaxWeek",
+          "code": "<Stack width='100%' justify='center' align='center' spacing='spacing08'>\n      <Stack.Vertical align='center' spacing='spacing08' width='100%'>\n        <Text>minDate: 1995-04-01</Text>\n        <Text>maxDate: 2026-05-05</Text>\n      </Stack.Vertical>\n      <WeekDatepicker\n        {...args}\n        sizeVar={sizeVar}\n        minDate={new Date('1995-04-01')}\n        maxDate={new Date('2026-05-05')}\n        initStartDate={new Date()}\n        handleWeekClick={(date) => {\n          setSelectedWeek(date);\n        }}\n      />\n      <Text>{JSON.stringify(selectedWeek)}</Text>\n      <Stack.Horizontal spacing='spacing08'>\n        <Button\n          onClick={() => {\n            setSizeVar('S');\n          }}\n        >\n          S 사이즈\n        </Button>\n        <Button\n          onClick={() => {\n            setSizeVar('M');\n          }}\n        >\n          M 사이즈\n        </Button>\n      </Stack.Horizontal>\n    </Stack>"
+        },
+        {
+          "story": "OnlySingle",
+          "code": "<Stack width='100%' justify='center' align='center' spacing='spacing08'>\n      <WeekDatepicker\n        {...args}\n        sizeVar={sizeVar}\n        initStartDate={new Date()}\n        onlySingleWeek\n        handleWeekClick={(date) => {\n          setSelectedWeek(date);\n        }}\n      />\n      <Stack.Vertical align='center' spacing='spacing08' width='100%'>\n        <Text>{JSON.stringify(selectedWeek)}</Text>\n      </Stack.Vertical>\n      <Stack.Horizontal spacing='spacing08'>\n        <Button\n          onClick={() => {\n            setSizeVar('S');\n          }}\n        >\n          S 사이즈\n        </Button>\n        <Button\n          onClick={() => {\n            setSizeVar('M');\n          }}\n        >\n          M 사이즈\n        </Button>\n      </Stack.Horizontal>\n    </Stack>"
+        }
+      ]
+    }
+  ]
+}

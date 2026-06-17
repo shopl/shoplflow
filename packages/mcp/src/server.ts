@@ -3,6 +3,7 @@ import { z } from 'zod';
 import catalog from './data/tokens.generated.json';
 import iconCatalog from './data/icons.generated.json';
 import componentCatalog from './data/components.generated.json';
+import storyCatalog from './data/stories.generated.json';
 
 export type TokenDomain = 'shared' | 'shopl' | 'hada';
 
@@ -42,10 +43,25 @@ export interface ComponentCard {
   props: ComponentProp[];
 }
 
+export interface UsageExample {
+  story: string;
+  args?: string;
+  code?: string;
+}
+
+export interface StoryModule {
+  name: string;
+  group: string;
+  title?: string;
+  importFrom: string;
+  examples: UsageExample[];
+}
+
 const tokens = catalog.tokens as TokenRecord[];
 const TOKEN_TYPES = [...new Set(tokens.map((t) => t.type))];
 const icons = iconCatalog.icons as IconRecord[];
 const components = componentCatalog.components as ComponentCard[];
+const storyModules = storyCatalog.modules as StoryModule[];
 
 function asText(payload: unknown) {
   return { content: [{ type: 'text' as const, text: JSON.stringify(payload, null, 2) }] };
@@ -298,6 +314,43 @@ export function createServer(): McpServer {
         return asText({ found: false, name, suggestions });
       }
       return asText({ found: true, component: card });
+    },
+  );
+
+  server.registerTool(
+    'get_usage_example',
+    {
+      title: 'Get component usage examples',
+      description:
+        'Real, copy-pasteable usage examples for a @shoplflow/base component, extracted from its stories ' +
+        '(args + JSX, with test/play code stripped). Accepts a module name (e.g. "Button", "Modal") or a ' +
+        'component name from get_component_api (e.g. "ModalContainer" resolves to the Modal stories).',
+      inputSchema: {
+        name: z.string().describe('Component or module name, e.g. "Button", "Tag", "Modal".'),
+      },
+    },
+    ({ name }) => {
+      const key = name.toLowerCase();
+      let mod = storyModules.find((m) => m.group.toLowerCase() === key || m.name.toLowerCase() === key);
+      if (!mod) {
+        // Fall back to the module that owns a matching component card (compound parts share a module).
+        const card = components.find((c) => c.name.toLowerCase() === key);
+        if (card) mod = storyModules.find((m) => m.group.toLowerCase() === card.group.toLowerCase());
+      }
+      if (!mod) {
+        const suggestions = storyModules
+          .filter((m) => m.group.toLowerCase().includes(key))
+          .slice(0, 8)
+          .map((m) => m.group);
+        return asText({ found: false, name, suggestions });
+      }
+      return asText({
+        found: true,
+        component: mod.name,
+        group: mod.group,
+        title: mod.title,
+        examples: mod.examples,
+      });
     },
   );
 

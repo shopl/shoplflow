@@ -23,7 +23,7 @@ tokens.json    ─┐
 | 1 | Design tokens (`list_tokens`, `get_token`, `shoplflow://tokens`) | `tokens.json` | ✅ done |
 | 2 | Icon search (`search_icon`) | `*-assets` barrels | ✅ done |
 | 3 | Component API (`search_component`, `get_component_api`) | `*.types.ts` | ✅ done |
-| 4 | Usage examples (`get_usage_example`) | `*.stories.tsx` | planned |
+| 4 | Usage examples (`get_usage_example`) | `*.stories.tsx` | ✅ done |
 
 ## Develop
 
@@ -72,3 +72,8 @@ the served records carry `className` for those and `cssVar` for the rest.
 
 Component metadata is extracted from `*.types.ts` via ts-morph (build-time only), mirroring how the library
 composes props from the documented mixins in `utils/type/ComponentProps.ts`.
+
+**Usage examples (Phase 4)**
+- **`get_usage_example`** — real, copy-pasteable examples for a component, extracted from its stories
+  (`args` + `render` JSX, with `play`/test code stripped). Accepts a module name (`Button`, `Modal`) or a
+  component name from `get_component_api` (`ModalContainer` resolves to the `Modal` stories).

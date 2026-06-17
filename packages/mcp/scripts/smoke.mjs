@@ -50,5 +50,15 @@ const btn = apiParsed.component;
 console.log(`\nget_component_api("Button"): poly=${btn.polymorphic} as=${btn.defaultElement} props=${btn.props.length}`);
 console.log('  variants:', JSON.stringify(btn.variants));
 
+const usage = await client.callTool({ name: 'get_usage_example', arguments: { name: 'Button' } });
+const usageParsed = JSON.parse(usage.content[0].text);
+console.log(`\nget_usage_example("Button"): ${usageParsed.examples.length} examples`);
+console.log('  stories:', usageParsed.examples.map((e) => e.story).join(', '));
+console.log('  first:', JSON.stringify(usageParsed.examples[0]).replace(/\s+/g, ' ').slice(0, 140));
+
+const usageCompound = await client.callTool({ name: 'get_usage_example', arguments: { name: 'ModalContainer' } });
+const ucParsed = JSON.parse(usageCompound.content[0].text);
+console.log(`\nget_usage_example("ModalContainer") -> module "${ucParsed.group}": ${ucParsed.examples?.length} examples`);
+
 await client.close();
 console.log('\n✓ smoke test passed');

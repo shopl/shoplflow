@@ -5,13 +5,15 @@
  * source, normalizes it, and writes a sibling `src/data/*.generated.json`. Running this as a build
  * step (see `build:package`) makes drift between the served metadata and the code impossible.
  *
- *   buildTokens()     <- packages/base/src/styles/tokens.json        -> tokens.generated.json
- *   buildIcons()      <- packages/{shopl,hada}-assets .../generated  -> icons.generated.json
- *   buildComponents() <- packages/base/src/components (each *.types.ts) -> components.generated.json
+ *   buildTokens()     <- packages/base/src/styles/tokens.json          -> tokens.generated.json
+ *   buildIcons()      <- packages/{shopl,hada}-assets .../generated    -> icons.generated.json
+ *   buildComponents() <- packages/base/src/components (each *.types.ts)   -> components.generated.json
+ *   buildStories()    <- packages/base/src/components (each *.stories.tsx) -> stories.generated.json
  */
 const fs = require('fs');
 const path = require('path');
 const { buildComponents } = require('./extract-components.cjs');
+const { buildStories } = require('./extract-stories.cjs');
 
 const OUT_DIR = path.resolve(__dirname, '../src/data');
 
@@ -189,6 +191,23 @@ function buildComponentsMetadata() {
   return { count: components.length, groups: Object.keys(countByGroup).length };
 }
 
+/* ── Usage examples ───────────────────────────────────────────────────────────
+ * Delegated to extract-stories.cjs (ts-morph). Per module: the `args` + `render` JSX of
+ * each story, with `play`/test code stripped — copy-pasteable real usage.
+ */
+function buildStoriesMetadata() {
+  const modules = buildStories();
+  const exampleCount = modules.reduce((n, m) => n + m.examples.length, 0);
+  writeJson('stories.generated.json', {
+    source: 'packages/base/src/components (each *.stories.tsx)',
+    importFrom: '@shoplflow/base',
+    count: modules.length,
+    exampleCount,
+    modules,
+  });
+  return { count: modules.length, exampleCount };
+}
+
 const t = buildTokens();
 console.log(
   `✓ tokens: ${t.count} | type: ${Object.entries(t.countByType)
@@ -205,3 +224,5 @@ console.log(
 );
 const c = buildComponentsMetadata();
 console.log(`✓ components: ${c.count} cards across ${c.groups} modules`);
+const s = buildStoriesMetadata();
+console.log(`✓ stories: ${s.exampleCount} examples across ${s.count} modules`);
