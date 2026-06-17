@@ -1,5 +1,12 @@
 # @shoplflow/templates
 
+## 0.2.39
+
+### Patch Changes
+
+- Updated dependencies [[`fb4a51c9b789ac0f0ca6172623523808c4a097f8`](https://github.com/shopl/shoplflow/commit/fb4a51c9b789ac0f0ca6172623523808c4a097f8)]:
+  - @shoplflow/base@0.46.37
+
 ## 0.2.38
 
 ### Patch Changes
