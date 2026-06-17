@@ -7,6 +7,7 @@ import { assetFunction } from '../../../styles/IconAssets';
 import { Stack } from '../../Stack';
 import { InputWrapper } from '../common/input.styled';
 import { Text } from '../../Text';
+import { Tag } from '../../Tag';
 
 const SelectInputButton = ({
   disabled,
@@ -79,17 +80,17 @@ const SelectInputButton = ({
           </Text>
         )}
 
-        <Stack.Horizontal align={'center'} spacing={'spacing04'}>
-          {value && value.length > 1 && (
-            <Text typography={'body1_400'} color={getTextColor(disabled)} overflowWrap='normal'>
-              +{value.length - 1}
-            </Text>
+        <Stack.Horizontal align={'center'}>
+          {value && value.length > 0 && Boolean(onClear) && isHovered && (
+            <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
+              <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
+            </IconButton>
           )}
-          <Stack.Horizontal align={'center'}>
-            {value && value.length > 0 && Boolean(onClear) && isHovered && (
-              <IconButton sizeVar={'S'} onClick={handleOnClear} styleVar={'GHOST'} disabled={disabled}>
-                <Icon iconSource={assetFunction('DeleteIcon')} color={'neutral350'} />
-              </IconButton>
+          <Stack.Horizontal align={'center'} spacing={'spacing04'}>
+            {value && value.length > 1 && (
+              <Tag styleVar='TINT' sizeVar='XS' background='neutral150'>
+                +{value.length - 1}
+              </Tag>
             )}
             {rightSource}
           </Stack.Horizontal>
