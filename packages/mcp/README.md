@@ -11,9 +11,9 @@ served by a thin stdio server. This makes drift structurally impossible — the 
 token or component that differs from what actually ships.
 
 ```
-tokens.json ─┐
-*.types.ts  ─┤ scripts/generate-metadata.cjs ─► src/data/*.generated.json ─► MCP server (stdio)
-*.stories   ─┘   (build step)                     (bundled into the bin)
+tokens.json    ─┐
+*-assets barrel ─┤ scripts/generate-metadata.cjs ─► src/data/*.generated.json ─► MCP server (stdio)
+*.types.ts     ─┘   (build step)                     (bundled into the bin)
 ```
 
 ## Roadmap
@@ -21,7 +21,7 @@ tokens.json ─┐
 | Phase | Surface | Source | Status |
 |-------|---------|--------|--------|
 | 1 | Design tokens (`list_tokens`, `get_token`, `shoplflow://tokens`) | `tokens.json` | ✅ done |
-| 2 | Icon search (`search_icon`) | `*-assets` | planned |
+| 2 | Icon search (`search_icon`) | `*-assets` barrels | ✅ done |
 | 3 | Component API (`get_component_api`, `search_component`) | `*.types.ts` | planned |
 | 4 | Usage examples (`get_usage_example`) | `*.stories.tsx` | planned |
 
@@ -48,11 +48,17 @@ Add to the client's MCP config (Claude Code shown):
 }
 ```
 
-## Tools (Phase 1)
+## Tools
 
+**Tokens (Phase 1)**
 - **`list_tokens`** — discover token names/values; filter by `domain` (`shared` | `shopl` | `hada`), `type`, or a `query` substring.
 - **`get_token`** — full record for one token by exact `name` (+ optional `domain`).
 - Resource **`shoplflow://tokens`** — the entire catalog as JSON.
 
 Typography tokens (e.g. `body1_700`) are applied via the `typography` prop / CSS class, not a CSS variable —
 the served records carry `className` for those and `cssVar` for the rest.
+
+**Icons (Phase 2)**
+- **`search_icon`** — find icons by name or meaning; filter by `domain` (`shopl` | `hada`) and `limit`.
+  Returns the raw name (`IcAdd`) and public alias (`AddIcon`), both importable from the brand asset
+  package and usable as `<Icon iconSource={AddIcon} />`. Icon sets differ per brand.

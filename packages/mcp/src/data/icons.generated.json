@@ -1,0 +1,4395 @@
+{
+  "source": [
+    "@shoplflow/shopl-assets",
+    "@shoplflow/hada-assets"
+  ],
+  "domains": [
+    "shopl",
+    "hada"
+  ],
+  "count": 451,
+  "countByDomain": {
+    "shopl": 347,
+    "hada": 104
+  },
+  "icons": [
+    {
+      "name": "IcAbnormalA",
+      "alias": "AbnormalAIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "a"
+      ]
+    },
+    {
+      "name": "IcAbnormalD",
+      "alias": "AbnormalDIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "d"
+      ]
+    },
+    {
+      "name": "IcAbnormalEarlyleave",
+      "alias": "AbnormalEarlyleaveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "earlyleave"
+      ]
+    },
+    {
+      "name": "IcAbnormalLate",
+      "alias": "AbnormalLateIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "late"
+      ]
+    },
+    {
+      "name": "IcAbnormalM",
+      "alias": "AbnormalMIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "m"
+      ]
+    },
+    {
+      "name": "IcAbnormalN",
+      "alias": "AbnormalNIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "n"
+      ]
+    },
+    {
+      "name": "IcAbnormalW",
+      "alias": "AbnormalWIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "abnormal",
+        "w"
+      ]
+    },
+    {
+      "name": "IcAddSection",
+      "alias": "AddSectionIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "add",
+        "section"
+      ]
+    },
+    {
+      "name": "IcAddXsmall",
+      "alias": "AddXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "add",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcAdd",
+      "alias": "AddIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "add"
+      ]
+    },
+    {
+      "name": "IcAdminLarge",
+      "alias": "AdminLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "admin",
+        "large"
+      ]
+    },
+    {
+      "name": "IcAiChatBot",
+      "alias": "AiChatBotIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "ai",
+        "chat",
+        "bot"
+      ]
+    },
+    {
+      "name": "IcAlbumXlarge",
+      "alias": "AlbumXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "album",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcAlertColored",
+      "alias": "AlertColoredIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "alert",
+        "colored"
+      ]
+    },
+    {
+      "name": "IcAlertLine",
+      "alias": "AlertLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "alert",
+        "line"
+      ]
+    },
+    {
+      "name": "IcAlertPopupXlarge",
+      "alias": "AlertPopupXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "alert",
+        "popup",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcAlertTriangle",
+      "alias": "AlertTriangleIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "alert",
+        "triangle"
+      ]
+    },
+    {
+      "name": "IcAlert",
+      "alias": "AlertIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "alert"
+      ]
+    },
+    {
+      "name": "IcAnnualMedium",
+      "alias": "AnnualMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "annual",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcApprovalMedium",
+      "alias": "ApprovalMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "approval",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcArticleMedium",
+      "alias": "ArticleMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "article",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcAsc",
+      "alias": "AscIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "asc"
+      ]
+    },
+    {
+      "name": "IcAttachment",
+      "alias": "AttachmentIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "attachment"
+      ]
+    },
+    {
+      "name": "IcAttendanceMedium",
+      "alias": "AttendanceMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "attendance",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcAutorityLine",
+      "alias": "AutorityLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "autority",
+        "line"
+      ]
+    },
+    {
+      "name": "IcAverage",
+      "alias": "AverageIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "average"
+      ]
+    },
+    {
+      "name": "IcBackMedium",
+      "alias": "BackMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "back",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBadgeAdminLarge",
+      "alias": "BadgeAdminLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "badge",
+        "admin",
+        "large"
+      ]
+    },
+    {
+      "name": "IcBadgeLeaderAppovalLarge",
+      "alias": "BadgeLeaderAppovalLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "badge",
+        "leader",
+        "appoval",
+        "large"
+      ]
+    },
+    {
+      "name": "IcBadgeLeaderLarge",
+      "alias": "BadgeLeaderLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "badge",
+        "leader",
+        "large"
+      ]
+    },
+    {
+      "name": "IcBankbook",
+      "alias": "BankbookIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "bankbook"
+      ]
+    },
+    {
+      "name": "IcBarcode",
+      "alias": "BarcodeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "barcode"
+      ]
+    },
+    {
+      "name": "IcBellMedium",
+      "alias": "BellMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "bell",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBmMedium",
+      "alias": "BmMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "bm",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBoardMedium",
+      "alias": "BoardMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "board",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBoardProfileXlarge",
+      "alias": "BoardProfileXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "board",
+        "profile",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcBoardProfile",
+      "alias": "BoardProfileIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "board",
+        "profile"
+      ]
+    },
+    {
+      "name": "IcBookMedium",
+      "alias": "BookMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "book",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBookmarkFilledMedium",
+      "alias": "BookmarkFilledMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "bookmark",
+        "filled",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBookmarkMedium",
+      "alias": "BookmarkMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "bookmark",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcBox",
+      "alias": "BoxIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "box"
+      ]
+    },
+    {
+      "name": "IcBriefcase",
+      "alias": "BriefcaseIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "briefcase"
+      ]
+    },
+    {
+      "name": "IcBuilding",
+      "alias": "BuildingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "building"
+      ]
+    },
+    {
+      "name": "IcByEmployeeMedium",
+      "alias": "ByEmployeeMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "by",
+        "employee",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcByPlaceOfWorkMedium",
+      "alias": "ByPlaceOfWorkMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "by",
+        "place",
+        "of",
+        "work",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcCake",
+      "alias": "CakeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "cake"
+      ]
+    },
+    {
+      "name": "IcCalendarLine",
+      "alias": "CalendarLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "calendar",
+        "line"
+      ]
+    },
+    {
+      "name": "IcCamera",
+      "alias": "CameraIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "camera"
+      ]
+    },
+    {
+      "name": "IcCart",
+      "alias": "CartIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "cart"
+      ]
+    },
+    {
+      "name": "IcCategory",
+      "alias": "CategoryIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "category"
+      ]
+    },
+    {
+      "name": "IcCautionXlarge",
+      "alias": "CautionXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "caution",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcChannel",
+      "alias": "ChannelIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "channel"
+      ]
+    },
+    {
+      "name": "IcChanneltalkMedium",
+      "alias": "ChanneltalkMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "channeltalk",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcChatActivityMedium",
+      "alias": "ChatActivityMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "chat",
+        "activity",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcChatLarge",
+      "alias": "ChatLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "chat",
+        "large"
+      ]
+    },
+    {
+      "name": "IcChattingMedium",
+      "alias": "ChattingMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "chatting",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcChattingSolidMedium",
+      "alias": "ChattingSolidMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "chatting",
+        "solid",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcCheckXlarge",
+      "alias": "CheckXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "check",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcCheckXsmall",
+      "alias": "CheckXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "check",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcCheck",
+      "alias": "CheckIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "check"
+      ]
+    },
+    {
+      "name": "IcCheckbox",
+      "alias": "CheckboxIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "checkbox"
+      ]
+    },
+    {
+      "name": "IcChecklist",
+      "alias": "ChecklistIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "checklist"
+      ]
+    },
+    {
+      "name": "IcCloseMedium",
+      "alias": "CloseMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "close",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcCloseSmall",
+      "alias": "CloseSmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "close",
+        "small"
+      ]
+    },
+    {
+      "name": "IcClose",
+      "alias": "CloseIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "close"
+      ]
+    },
+    {
+      "name": "IcClosingMedium",
+      "alias": "ClosingMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "closing",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcCloudMedium",
+      "alias": "CloudMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "cloud",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcCoffeeMedium",
+      "alias": "CoffeeMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "coffee",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcComment",
+      "alias": "CommentIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "comment"
+      ]
+    },
+    {
+      "name": "IcCompanyXlarge",
+      "alias": "CompanyXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "company",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcConfirmPopupXlarge",
+      "alias": "ConfirmPopupXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "confirm",
+        "popup",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcContrastPlus",
+      "alias": "ContrastPlusIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "contrast",
+        "plus"
+      ]
+    },
+    {
+      "name": "IcCopy",
+      "alias": "CopyIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "copy"
+      ]
+    },
+    {
+      "name": "IcCover",
+      "alias": "CoverIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "cover"
+      ]
+    },
+    {
+      "name": "IcCrown",
+      "alias": "CrownIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "crown"
+      ]
+    },
+    {
+      "name": "IcCustomDropdown",
+      "alias": "CustomDropdownIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "custom",
+        "dropdown"
+      ]
+    },
+    {
+      "name": "IcCustomText",
+      "alias": "CustomTextIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "custom",
+        "text"
+      ]
+    },
+    {
+      "name": "IcDayOff",
+      "alias": "DayOffIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "day",
+        "off"
+      ]
+    },
+    {
+      "name": "IcDeadline",
+      "alias": "DeadlineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "deadline"
+      ]
+    },
+    {
+      "name": "IcDeleteLine",
+      "alias": "DeleteLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "delete",
+        "line"
+      ]
+    },
+    {
+      "name": "IcDelete",
+      "alias": "DeleteIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "delete"
+      ]
+    },
+    {
+      "name": "IcDesc",
+      "alias": "DescIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "desc"
+      ]
+    },
+    {
+      "name": "IcDetailView",
+      "alias": "DetailViewIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "detail",
+        "view"
+      ]
+    },
+    {
+      "name": "IcDisplayMedium",
+      "alias": "DisplayMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "display",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcDocMedium",
+      "alias": "DocMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "doc",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcDocument",
+      "alias": "DocumentIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "document"
+      ]
+    },
+    {
+      "name": "IcDownArrowSolidXsmall",
+      "alias": "DownArrowSolidXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "down",
+        "arrow",
+        "solid",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcDownArrowXsmall",
+      "alias": "DownArrowXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "down",
+        "arrow",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcDownArrow",
+      "alias": "DownArrowIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "down",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcDownloadMedium",
+      "alias": "DownloadMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "download",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcDownload",
+      "alias": "DownloadIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "download"
+      ]
+    },
+    {
+      "name": "IcDraftsave",
+      "alias": "DraftsaveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "draftsave"
+      ]
+    },
+    {
+      "name": "IcDrag",
+      "alias": "DragIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "drag"
+      ]
+    },
+    {
+      "name": "IcDrawer",
+      "alias": "DrawerIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "drawer"
+      ]
+    },
+    {
+      "name": "IcDropdown",
+      "alias": "DropdownIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "dropdown"
+      ]
+    },
+    {
+      "name": "IcEditLarge",
+      "alias": "EditLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "edit",
+        "large"
+      ]
+    },
+    {
+      "name": "IcEditLine",
+      "alias": "EditLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "edit",
+        "line"
+      ]
+    },
+    {
+      "name": "IcEditSolid",
+      "alias": "EditSolidIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "edit",
+        "solid"
+      ]
+    },
+    {
+      "name": "IcEditXsmall",
+      "alias": "EditXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "edit",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcEdit",
+      "alias": "EditIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "edit"
+      ]
+    },
+    {
+      "name": "IcEmailXlarge",
+      "alias": "EmailXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "email",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcEmail",
+      "alias": "EmailIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "email"
+      ]
+    },
+    {
+      "name": "IcEmojiMedium",
+      "alias": "EmojiMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "emoji",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcEmojiPlusMedium",
+      "alias": "EmojiPlusMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "emoji",
+        "plus",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcEmployeeXsmall",
+      "alias": "EmployeeXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "employee",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcEndPage",
+      "alias": "EndPageIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "end",
+        "page"
+      ]
+    },
+    {
+      "name": "IcExcel",
+      "alias": "ExcelIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "excel"
+      ]
+    },
+    {
+      "name": "IcExclamationXlarge",
+      "alias": "ExclamationXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "exclamation",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcExitFullScreenMedium",
+      "alias": "ExitFullScreenMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "exit",
+        "full",
+        "screen",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcExpected",
+      "alias": "ExpectedIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "expected"
+      ]
+    },
+    {
+      "name": "IcExpenseMedium",
+      "alias": "ExpenseMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "expense",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcFeedView",
+      "alias": "FeedViewIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "feed",
+        "view"
+      ]
+    },
+    {
+      "name": "IcFilter",
+      "alias": "FilterIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "filter"
+      ]
+    },
+    {
+      "name": "IcFilterdeleteXsmall",
+      "alias": "FilterdeleteXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "filterdelete",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcFirstPage",
+      "alias": "FirstPageIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "first",
+        "page"
+      ]
+    },
+    {
+      "name": "IcFlexibleWorking",
+      "alias": "FlexibleWorkingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "flexible",
+        "working"
+      ]
+    },
+    {
+      "name": "IcFullScreenMedium",
+      "alias": "FullScreenMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "full",
+        "screen",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcFullscreen",
+      "alias": "FullscreenIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "fullscreen"
+      ]
+    },
+    {
+      "name": "IcFunnel",
+      "alias": "FunnelIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "funnel"
+      ]
+    },
+    {
+      "name": "IcGps",
+      "alias": "GpsIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gps"
+      ]
+    },
+    {
+      "name": "IcGrade1",
+      "alias": "Grade1Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade1"
+      ]
+    },
+    {
+      "name": "IcGrade2",
+      "alias": "Grade2Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade2"
+      ]
+    },
+    {
+      "name": "IcGrade31",
+      "alias": "Grade31Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade31"
+      ]
+    },
+    {
+      "name": "IcGrade32",
+      "alias": "Grade32Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade32"
+      ]
+    },
+    {
+      "name": "IcGrade3",
+      "alias": "Grade3Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade3"
+      ]
+    },
+    {
+      "name": "IcGrade41",
+      "alias": "Grade41Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade41"
+      ]
+    },
+    {
+      "name": "IcGrade42",
+      "alias": "Grade42Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade42"
+      ]
+    },
+    {
+      "name": "IcGrade4",
+      "alias": "Grade4Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade4"
+      ]
+    },
+    {
+      "name": "IcGrade51",
+      "alias": "Grade51Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade51"
+      ]
+    },
+    {
+      "name": "IcGrade52",
+      "alias": "Grade52Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade52"
+      ]
+    },
+    {
+      "name": "IcGrade5",
+      "alias": "Grade5Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade5"
+      ]
+    },
+    {
+      "name": "IcGradeBadge",
+      "alias": "GradeBadgeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "grade",
+        "badge"
+      ]
+    },
+    {
+      "name": "IcGradientAttendance",
+      "alias": "GradientAttendanceIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "attendance"
+      ]
+    },
+    {
+      "name": "IcGradientBoard",
+      "alias": "GradientBoardIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "board"
+      ]
+    },
+    {
+      "name": "IcGradientDisplay",
+      "alias": "GradientDisplayIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "display"
+      ]
+    },
+    {
+      "name": "IcGradientDoc",
+      "alias": "GradientDocIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "doc"
+      ]
+    },
+    {
+      "name": "IcGradientGps",
+      "alias": "GradientGpsIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "gps"
+      ]
+    },
+    {
+      "name": "IcGradientInventory",
+      "alias": "GradientInventoryIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "inventory"
+      ]
+    },
+    {
+      "name": "IcGradientJp",
+      "alias": "GradientJpIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "jp"
+      ]
+    },
+    {
+      "name": "IcGradientLeave",
+      "alias": "GradientLeaveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "leave"
+      ]
+    },
+    {
+      "name": "IcGradientMobile",
+      "alias": "GradientMobileIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "mobile"
+      ]
+    },
+    {
+      "name": "IcGradientNotice",
+      "alias": "GradientNoticeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "notice"
+      ]
+    },
+    {
+      "name": "IcGradientOvertime",
+      "alias": "GradientOvertimeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "overtime"
+      ]
+    },
+    {
+      "name": "IcGradientPrice",
+      "alias": "GradientPriceIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "price"
+      ]
+    },
+    {
+      "name": "IcGradientReport",
+      "alias": "GradientReportIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "report"
+      ]
+    },
+    {
+      "name": "IcGradientSales",
+      "alias": "GradientSalesIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "sales"
+      ]
+    },
+    {
+      "name": "IcGradientSchedule",
+      "alias": "GradientScheduleIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "schedule"
+      ]
+    },
+    {
+      "name": "IcGradientStaff",
+      "alias": "GradientStaffIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "staff"
+      ]
+    },
+    {
+      "name": "IcGradientTarget",
+      "alias": "GradientTargetIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "target"
+      ]
+    },
+    {
+      "name": "IcGradientTodo",
+      "alias": "GradientTodoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "todo"
+      ]
+    },
+    {
+      "name": "IcGradientWifi",
+      "alias": "GradientWifiIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "wifi"
+      ]
+    },
+    {
+      "name": "IcGradientWorkplace",
+      "alias": "GradientWorkplaceIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "gradient",
+        "workplace"
+      ]
+    },
+    {
+      "name": "IcGraph",
+      "alias": "GraphIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "graph"
+      ]
+    },
+    {
+      "name": "IcGroupLine",
+      "alias": "GroupLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "group",
+        "line"
+      ]
+    },
+    {
+      "name": "IcGroupMedium",
+      "alias": "GroupMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "group",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcGroupSolidMedium",
+      "alias": "GroupSolidMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "group",
+        "solid",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcHelpCenterMedium",
+      "alias": "HelpCenterMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "help",
+        "center",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcHelpLine",
+      "alias": "HelpLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "help",
+        "line"
+      ]
+    },
+    {
+      "name": "IcHelpMedium",
+      "alias": "HelpMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "help",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcHelp",
+      "alias": "HelpIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "help"
+      ]
+    },
+    {
+      "name": "IcHideMedium",
+      "alias": "HideMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "hide",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcHistory",
+      "alias": "HistoryIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "history"
+      ]
+    },
+    {
+      "name": "IcHomeMedium",
+      "alias": "HomeMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "home",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcHome",
+      "alias": "HomeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "home"
+      ]
+    },
+    {
+      "name": "IcIdCard",
+      "alias": "IdCardIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "id",
+        "card"
+      ]
+    },
+    {
+      "name": "IcImport",
+      "alias": "ImportIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "import"
+      ]
+    },
+    {
+      "name": "IcInactiveBell",
+      "alias": "InactiveBellIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "inactive",
+        "bell"
+      ]
+    },
+    {
+      "name": "IcIncentiveMedium",
+      "alias": "IncentiveMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "incentive",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcIncentive",
+      "alias": "IncentiveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "incentive"
+      ]
+    },
+    {
+      "name": "IcInfo1",
+      "alias": "Info1Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info1"
+      ]
+    },
+    {
+      "name": "IcInfoAlbum",
+      "alias": "InfoAlbumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "album"
+      ]
+    },
+    {
+      "name": "IcInfoApp",
+      "alias": "InfoAppIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "app"
+      ]
+    },
+    {
+      "name": "IcInfoBreaktime",
+      "alias": "InfoBreaktimeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "breaktime"
+      ]
+    },
+    {
+      "name": "IcInfoCity",
+      "alias": "InfoCityIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "city"
+      ]
+    },
+    {
+      "name": "IcInfoDate",
+      "alias": "InfoDateIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "date"
+      ]
+    },
+    {
+      "name": "IcInfoDaysoff",
+      "alias": "InfoDaysoffIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "daysoff"
+      ]
+    },
+    {
+      "name": "IcInfoDistributor",
+      "alias": "InfoDistributorIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "distributor"
+      ]
+    },
+    {
+      "name": "IcInfoDocs",
+      "alias": "InfoDocsIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "docs"
+      ]
+    },
+    {
+      "name": "IcInfoEmail",
+      "alias": "InfoEmailIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "email"
+      ]
+    },
+    {
+      "name": "IcInfoEmployee",
+      "alias": "InfoEmployeeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "employee"
+      ]
+    },
+    {
+      "name": "IcInfoEmployeeno",
+      "alias": "InfoEmployeenoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "employeeno"
+      ]
+    },
+    {
+      "name": "IcInfoGrade",
+      "alias": "InfoGradeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "grade"
+      ]
+    },
+    {
+      "name": "IcInfoGroup",
+      "alias": "InfoGroupIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "group"
+      ]
+    },
+    {
+      "name": "IcInfoLeader",
+      "alias": "InfoLeaderIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "leader"
+      ]
+    },
+    {
+      "name": "IcInfoLine",
+      "alias": "InfoLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "line"
+      ]
+    },
+    {
+      "name": "IcInfoLogin",
+      "alias": "InfoLoginIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "login"
+      ]
+    },
+    {
+      "name": "IcInfoOval",
+      "alias": "InfoOvalIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "oval"
+      ]
+    },
+    {
+      "name": "IcInfoPhoneCheck",
+      "alias": "InfoPhoneCheckIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "phone",
+        "check"
+      ]
+    },
+    {
+      "name": "IcInfoPhoneNoCheck",
+      "alias": "InfoPhoneNoCheckIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "phone",
+        "no",
+        "check"
+      ]
+    },
+    {
+      "name": "IcInfoPhone",
+      "alias": "InfoPhoneIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "phone"
+      ]
+    },
+    {
+      "name": "IcInfoPolicy",
+      "alias": "InfoPolicyIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "policy"
+      ]
+    },
+    {
+      "name": "IcInfoPosition",
+      "alias": "InfoPositionIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "position"
+      ]
+    },
+    {
+      "name": "IcInfoProperties",
+      "alias": "InfoPropertiesIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "properties"
+      ]
+    },
+    {
+      "name": "IcInfoPunch",
+      "alias": "InfoPunchIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "punch"
+      ]
+    },
+    {
+      "name": "IcInfoRadius",
+      "alias": "InfoRadiusIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "radius"
+      ]
+    },
+    {
+      "name": "IcInfoRegion",
+      "alias": "InfoRegionIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "region"
+      ]
+    },
+    {
+      "name": "IcInfoStarBadge",
+      "alias": "InfoStarBadgeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "star",
+        "badge"
+      ]
+    },
+    {
+      "name": "IcInfoState",
+      "alias": "InfoStateIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "state"
+      ]
+    },
+    {
+      "name": "IcInfoVisit",
+      "alias": "InfoVisitIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "visit"
+      ]
+    },
+    {
+      "name": "IcInfoWorking",
+      "alias": "InfoWorkingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "working"
+      ]
+    },
+    {
+      "name": "IcInfoWorkplace",
+      "alias": "InfoWorkplaceIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info",
+        "workplace"
+      ]
+    },
+    {
+      "name": "IcInfo",
+      "alias": "InfoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "info"
+      ]
+    },
+    {
+      "name": "IcInputLine",
+      "alias": "InputLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "input",
+        "line"
+      ]
+    },
+    {
+      "name": "IcInventoryMedium",
+      "alias": "InventoryMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "inventory",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcInvitation",
+      "alias": "InvitationIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "invitation"
+      ]
+    },
+    {
+      "name": "IcInviteBefore",
+      "alias": "InviteBeforeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "invite",
+        "before"
+      ]
+    },
+    {
+      "name": "IcInviteCompleted",
+      "alias": "InviteCompletedIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "invite",
+        "completed"
+      ]
+    },
+    {
+      "name": "IcIssue",
+      "alias": "IssueIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "issue"
+      ]
+    },
+    {
+      "name": "IcJpMedium",
+      "alias": "JpMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "jp",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcLanguageMedium",
+      "alias": "LanguageMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "language",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcLeaderAppovalLarge",
+      "alias": "LeaderAppovalLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "leader",
+        "appoval",
+        "large"
+      ]
+    },
+    {
+      "name": "IcLeaderLarge",
+      "alias": "LeaderLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "leader",
+        "large"
+      ]
+    },
+    {
+      "name": "IcLeaveMedium",
+      "alias": "LeaveMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "leave",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcLeave",
+      "alias": "LeaveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "leave"
+      ]
+    },
+    {
+      "name": "IcLeftArrowXsmall",
+      "alias": "LeftArrowXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "left",
+        "arrow",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcLeftArrow",
+      "alias": "LeftArrowIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "left",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcLink",
+      "alias": "LinkIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "link"
+      ]
+    },
+    {
+      "name": "IcListEdit",
+      "alias": "ListEditIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "list",
+        "edit"
+      ]
+    },
+    {
+      "name": "IcListMove",
+      "alias": "ListMoveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "list",
+        "move"
+      ]
+    },
+    {
+      "name": "IcListview",
+      "alias": "ListviewIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "listview"
+      ]
+    },
+    {
+      "name": "IcLocation",
+      "alias": "LocationIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "location"
+      ]
+    },
+    {
+      "name": "IcLockerXlarge",
+      "alias": "LockerXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "locker",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcMailbox",
+      "alias": "MailboxIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "mailbox"
+      ]
+    },
+    {
+      "name": "IcMapPin",
+      "alias": "MapPinIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "map",
+        "pin"
+      ]
+    },
+    {
+      "name": "IcMap",
+      "alias": "MapIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "map"
+      ]
+    },
+    {
+      "name": "IcMemberMedium",
+      "alias": "MemberMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "member",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcMemberSmall",
+      "alias": "MemberSmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "member",
+        "small"
+      ]
+    },
+    {
+      "name": "IcMemoLine",
+      "alias": "MemoLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "memo",
+        "line"
+      ]
+    },
+    {
+      "name": "IcMemo",
+      "alias": "MemoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "memo"
+      ]
+    },
+    {
+      "name": "IcMention",
+      "alias": "MentionIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "mention"
+      ]
+    },
+    {
+      "name": "IcMinusMedium",
+      "alias": "MinusMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "minus",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcMinus",
+      "alias": "MinusIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "minus"
+      ]
+    },
+    {
+      "name": "IcMobileLine",
+      "alias": "MobileLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "mobile",
+        "line"
+      ]
+    },
+    {
+      "name": "IcMoreSolid",
+      "alias": "MoreSolidIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "more",
+        "solid"
+      ]
+    },
+    {
+      "name": "IcMore",
+      "alias": "MoreIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "more"
+      ]
+    },
+    {
+      "name": "IcMother",
+      "alias": "MotherIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "mother"
+      ]
+    },
+    {
+      "name": "IcMove2",
+      "alias": "Move2Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "move2"
+      ]
+    },
+    {
+      "name": "IcMoveSolid",
+      "alias": "MoveSolidIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "move",
+        "solid"
+      ]
+    },
+    {
+      "name": "IcMove",
+      "alias": "MoveIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "move"
+      ]
+    },
+    {
+      "name": "IcMovie01",
+      "alias": "Movie01Icon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "movie01"
+      ]
+    },
+    {
+      "name": "IcMultipleChoice",
+      "alias": "MultipleChoiceIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "multiple",
+        "choice"
+      ]
+    },
+    {
+      "name": "IcNoGrade",
+      "alias": "NoGradeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "no",
+        "grade"
+      ]
+    },
+    {
+      "name": "IcNormal",
+      "alias": "NormalIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "normal"
+      ]
+    },
+    {
+      "name": "IcNoticeMedium",
+      "alias": "NoticeMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "notice",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcNoticeSolidMedium",
+      "alias": "NoticeSolidMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "notice",
+        "solid",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcNotice",
+      "alias": "NoticeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "notice"
+      ]
+    },
+    {
+      "name": "IcOff",
+      "alias": "OffIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "off"
+      ]
+    },
+    {
+      "name": "IcOn",
+      "alias": "OnIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "on"
+      ]
+    },
+    {
+      "name": "IcOnboardingAttendance",
+      "alias": "OnboardingAttendanceIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "onboarding",
+        "attendance"
+      ]
+    },
+    {
+      "name": "IcOnboardingBoth",
+      "alias": "OnboardingBothIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "onboarding",
+        "both"
+      ]
+    },
+    {
+      "name": "IcOnboardingSetting",
+      "alias": "OnboardingSettingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "onboarding",
+        "setting"
+      ]
+    },
+    {
+      "name": "IcOrganizationChart",
+      "alias": "OrganizationChartIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "organization",
+        "chart"
+      ]
+    },
+    {
+      "name": "IcOvertimeMedium",
+      "alias": "OvertimeMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "overtime",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcPasswordErrorXlarge",
+      "alias": "PasswordErrorXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "password",
+        "error",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcPaste",
+      "alias": "PasteIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "paste"
+      ]
+    },
+    {
+      "name": "IcPaymentMedium",
+      "alias": "PaymentMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "payment",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcPhoneLine",
+      "alias": "PhoneLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "phone",
+        "line"
+      ]
+    },
+    {
+      "name": "IcPhotoMedium",
+      "alias": "PhotoMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "photo",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcPhoto",
+      "alias": "PhotoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "photo"
+      ]
+    },
+    {
+      "name": "IcPinCheck",
+      "alias": "PinCheckIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "pin",
+        "check"
+      ]
+    },
+    {
+      "name": "IcPinXlarge",
+      "alias": "PinXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "pin",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcPin",
+      "alias": "PinIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "pin"
+      ]
+    },
+    {
+      "name": "IcPlayXlarge",
+      "alias": "PlayXlargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "play",
+        "xlarge"
+      ]
+    },
+    {
+      "name": "IcPlusMedium",
+      "alias": "PlusMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "plus",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcPodium",
+      "alias": "PodiumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "podium"
+      ]
+    },
+    {
+      "name": "IcPopup",
+      "alias": "PopupIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "popup"
+      ]
+    },
+    {
+      "name": "IcPreorderMedium",
+      "alias": "PreorderMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "preorder",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcPreview",
+      "alias": "PreviewIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "preview"
+      ]
+    },
+    {
+      "name": "IcPriceMedium",
+      "alias": "PriceMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "price",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcProceeding",
+      "alias": "ProceedingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "proceeding"
+      ]
+    },
+    {
+      "name": "IcPush",
+      "alias": "PushIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "push"
+      ]
+    },
+    {
+      "name": "IcQrcode",
+      "alias": "QrcodeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "qrcode"
+      ]
+    },
+    {
+      "name": "IcQuit",
+      "alias": "QuitIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "quit"
+      ]
+    },
+    {
+      "name": "IcRatioMedium",
+      "alias": "RatioMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "ratio",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcReadingGlassCheckLine",
+      "alias": "ReadingGlassCheckLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "reading",
+        "glass",
+        "check",
+        "line"
+      ]
+    },
+    {
+      "name": "IcReceiverMedium",
+      "alias": "ReceiverMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "receiver",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcRefresh",
+      "alias": "RefreshIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "refresh"
+      ]
+    },
+    {
+      "name": "IcRepeat",
+      "alias": "RepeatIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "repeat"
+      ]
+    },
+    {
+      "name": "IcReply",
+      "alias": "ReplyIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "reply"
+      ]
+    },
+    {
+      "name": "IcReportMedium",
+      "alias": "ReportMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "report",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcRequestDemo",
+      "alias": "RequestDemoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "request",
+        "demo"
+      ]
+    },
+    {
+      "name": "IcRequired",
+      "alias": "RequiredIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "required"
+      ]
+    },
+    {
+      "name": "IcResendPushMedium",
+      "alias": "ResendPushMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "resend",
+        "push",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcResendPush",
+      "alias": "ResendPushIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "resend",
+        "push"
+      ]
+    },
+    {
+      "name": "IcResume",
+      "alias": "ResumeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "resume"
+      ]
+    },
+    {
+      "name": "IcReturn",
+      "alias": "ReturnIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "return"
+      ]
+    },
+    {
+      "name": "IcRightArrowSolidXsmall",
+      "alias": "RightArrowSolidXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "right",
+        "arrow",
+        "solid",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcRightArrowXsmall",
+      "alias": "RightArrowXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "right",
+        "arrow",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcRightArrow",
+      "alias": "RightArrowIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "right",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcRocketMedium",
+      "alias": "RocketMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "rocket",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcSalary",
+      "alias": "SalaryIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "salary"
+      ]
+    },
+    {
+      "name": "IcSalesMedium",
+      "alias": "SalesMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sales",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcScan",
+      "alias": "ScanIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "scan"
+      ]
+    },
+    {
+      "name": "IcScheduleMedium",
+      "alias": "ScheduleMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "schedule",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcSchool",
+      "alias": "SchoolIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "school"
+      ]
+    },
+    {
+      "name": "IcSearch",
+      "alias": "SearchIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "search"
+      ]
+    },
+    {
+      "name": "IcSend",
+      "alias": "SendIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "send"
+      ]
+    },
+    {
+      "name": "IcSettingMedium",
+      "alias": "SettingMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "setting",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcSetting",
+      "alias": "SettingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "setting"
+      ]
+    },
+    {
+      "name": "IcShoplLauncher",
+      "alias": "ShoplLauncherIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "shopl",
+        "launcher"
+      ]
+    },
+    {
+      "name": "IcShortcutXsmall",
+      "alias": "ShortcutXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "shortcut",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcShowMedium",
+      "alias": "ShowMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "show",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcSign",
+      "alias": "SignIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sign"
+      ]
+    },
+    {
+      "name": "IcSignature",
+      "alias": "SignatureIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "signature"
+      ]
+    },
+    {
+      "name": "IcSolved",
+      "alias": "SolvedIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "solved"
+      ]
+    },
+    {
+      "name": "IcSortingAtoz",
+      "alias": "SortingAtozIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sorting",
+        "atoz"
+      ]
+    },
+    {
+      "name": "IcSortingEarly",
+      "alias": "SortingEarlyIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sorting",
+        "early"
+      ]
+    },
+    {
+      "name": "IcSortingLate",
+      "alias": "SortingLateIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sorting",
+        "late"
+      ]
+    },
+    {
+      "name": "IcSortingZtoa",
+      "alias": "SortingZtoaIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sorting",
+        "ztoa"
+      ]
+    },
+    {
+      "name": "IcStaggeredWorking",
+      "alias": "StaggeredWorkingIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "staggered",
+        "working"
+      ]
+    },
+    {
+      "name": "IcStamp",
+      "alias": "StampIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "stamp"
+      ]
+    },
+    {
+      "name": "IcStarLine",
+      "alias": "StarLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "star",
+        "line"
+      ]
+    },
+    {
+      "name": "IcStar",
+      "alias": "StarIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "star"
+      ]
+    },
+    {
+      "name": "IcSubtract",
+      "alias": "SubtractIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "subtract"
+      ]
+    },
+    {
+      "name": "IcSummeryView",
+      "alias": "SummeryViewIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "summery",
+        "view"
+      ]
+    },
+    {
+      "name": "IcSympathyMedium",
+      "alias": "SympathyMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sympathy",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcTable",
+      "alias": "TableIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "table"
+      ]
+    },
+    {
+      "name": "IcTack",
+      "alias": "TackIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "tack"
+      ]
+    },
+    {
+      "name": "IcTag",
+      "alias": "TagIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "tag"
+      ]
+    },
+    {
+      "name": "IcTargetMedium",
+      "alias": "TargetMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "target",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcText",
+      "alias": "TextIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "text"
+      ]
+    },
+    {
+      "name": "IcTimeLineLine",
+      "alias": "TimeLineLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "time",
+        "line"
+      ]
+    },
+    {
+      "name": "IcTodoMedium",
+      "alias": "TodoMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "todo",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcToggleMedium",
+      "alias": "ToggleMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "toggle",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcTrashLine",
+      "alias": "TrashLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "trash",
+        "line"
+      ]
+    },
+    {
+      "name": "IcTrash",
+      "alias": "TrashIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "trash"
+      ]
+    },
+    {
+      "name": "IcTruck",
+      "alias": "TruckIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "truck"
+      ]
+    },
+    {
+      "name": "IcUpArrowSolidXsmall",
+      "alias": "UpArrowSolidXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "up",
+        "arrow",
+        "solid",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcUpArrowXsmall",
+      "alias": "UpArrowXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "up",
+        "arrow",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcUpArrow",
+      "alias": "UpArrowIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "up",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcUserNameLine",
+      "alias": "UserNameLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "user",
+        "name",
+        "line"
+      ]
+    },
+    {
+      "name": "IcUserNumberLine",
+      "alias": "UserNumberLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "user",
+        "number",
+        "line"
+      ]
+    },
+    {
+      "name": "IcUserTagLine",
+      "alias": "UserTagLineIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "user",
+        "tag",
+        "line"
+      ]
+    },
+    {
+      "name": "IcVideo",
+      "alias": "VideoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "video"
+      ]
+    },
+    {
+      "name": "IcViewOff",
+      "alias": "ViewOffIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "view",
+        "off"
+      ]
+    },
+    {
+      "name": "IcViewOn",
+      "alias": "ViewOnIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "view",
+        "on"
+      ]
+    },
+    {
+      "name": "IcWaitingMedium",
+      "alias": "WaitingMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "waiting",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcWhatsappLarge",
+      "alias": "WhatsappLargeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "whatsapp",
+        "large"
+      ]
+    },
+    {
+      "name": "IcWhatsapp",
+      "alias": "WhatsappIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "whatsapp"
+      ]
+    },
+    {
+      "name": "IcWifi",
+      "alias": "WifiIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "wifi"
+      ]
+    },
+    {
+      "name": "IcWindowed",
+      "alias": "WindowedIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "windowed"
+      ]
+    },
+    {
+      "name": "IcWorkStatus",
+      "alias": "WorkStatusIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "work",
+        "status"
+      ]
+    },
+    {
+      "name": "IcWorkplaceMedium",
+      "alias": "WorkplaceMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "workplace",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcWorkplaceSmall",
+      "alias": "WorkplaceSmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "workplace",
+        "small"
+      ]
+    },
+    {
+      "name": "IcYesOrNo",
+      "alias": "YesOrNoIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "yes",
+        "or",
+        "no"
+      ]
+    },
+    {
+      "name": "IcZoomInMedium",
+      "alias": "ZoomInMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "zoom",
+        "in",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcZoomOutMedium",
+      "alias": "ZoomOutMediumIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "zoom",
+        "out",
+        "medium"
+      ]
+    },
+    {
+      "name": "Subtract",
+      "alias": "SubtractIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "subtract"
+      ]
+    },
+    {
+      "name": "IcAdd",
+      "alias": "AddIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "add"
+      ]
+    },
+    {
+      "name": "IcAdmin",
+      "alias": "AdminIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "admin"
+      ]
+    },
+    {
+      "name": "IcAlbum",
+      "alias": "AlbumIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "album"
+      ]
+    },
+    {
+      "name": "IcAlert",
+      "alias": "AlertIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "alert"
+      ]
+    },
+    {
+      "name": "IcBell",
+      "alias": "BellIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "bell"
+      ]
+    },
+    {
+      "name": "IcBuilding",
+      "alias": "BuildingIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "building"
+      ]
+    },
+    {
+      "name": "IcCalendar",
+      "alias": "CalendarIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "calendar"
+      ]
+    },
+    {
+      "name": "IcCamera",
+      "alias": "CameraIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "camera"
+      ]
+    },
+    {
+      "name": "IcCancel",
+      "alias": "CancelIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "cancel"
+      ]
+    },
+    {
+      "name": "IcCheckActive",
+      "alias": "CheckActiveIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "check",
+        "active"
+      ]
+    },
+    {
+      "name": "IcCheckDefault",
+      "alias": "CheckDefaultIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "check",
+        "default"
+      ]
+    },
+    {
+      "name": "IcCheck",
+      "alias": "CheckIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "check"
+      ]
+    },
+    {
+      "name": "IcCheckbox",
+      "alias": "CheckboxIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "checkbox"
+      ]
+    },
+    {
+      "name": "IcChecklist",
+      "alias": "ChecklistIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "checklist"
+      ]
+    },
+    {
+      "name": "IcCleaning",
+      "alias": "CleaningIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "cleaning"
+      ]
+    },
+    {
+      "name": "IcClose",
+      "alias": "CloseIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "close"
+      ]
+    },
+    {
+      "name": "IcCompleted",
+      "alias": "CompletedIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "completed"
+      ]
+    },
+    {
+      "name": "IcCopy",
+      "alias": "CopyIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "copy"
+      ]
+    },
+    {
+      "name": "IcCrew",
+      "alias": "CrewIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "crew"
+      ]
+    },
+    {
+      "name": "IcDelete",
+      "alias": "DeleteIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "delete"
+      ]
+    },
+    {
+      "name": "IcDownArrowSolid",
+      "alias": "DownArrowSolidIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "down",
+        "arrow",
+        "solid"
+      ]
+    },
+    {
+      "name": "IcDownArrow",
+      "alias": "DownArrowIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "down",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcDownload",
+      "alias": "DownloadIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "download"
+      ]
+    },
+    {
+      "name": "IcDrag",
+      "alias": "DragIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "drag"
+      ]
+    },
+    {
+      "name": "IcDrawer",
+      "alias": "DrawerIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "drawer"
+      ]
+    },
+    {
+      "name": "IcEdit",
+      "alias": "EditIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "edit"
+      ]
+    },
+    {
+      "name": "IcEmail",
+      "alias": "EmailIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "email"
+      ]
+    },
+    {
+      "name": "IcEmojiPencil",
+      "alias": "EmojiPencilIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "emoji",
+        "pencil"
+      ]
+    },
+    {
+      "name": "IcError",
+      "alias": "ErrorIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "error"
+      ]
+    },
+    {
+      "name": "IcExcel",
+      "alias": "ExcelIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "excel"
+      ]
+    },
+    {
+      "name": "IcFilter",
+      "alias": "FilterIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "filter"
+      ]
+    },
+    {
+      "name": "IcFinger",
+      "alias": "FingerIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "finger"
+      ]
+    },
+    {
+      "name": "IcFireFighting",
+      "alias": "FireFightingIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "fire",
+        "fighting"
+      ]
+    },
+    {
+      "name": "IcGradeBadge",
+      "alias": "GradeBadgeIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "grade",
+        "badge"
+      ]
+    },
+    {
+      "name": "IcHadaAssignees",
+      "alias": "HadaAssigneesIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "assignees"
+      ]
+    },
+    {
+      "name": "IcHadaAverage",
+      "alias": "HadaAverageIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "average"
+      ]
+    },
+    {
+      "name": "IcHadaCheckedFacility",
+      "alias": "HadaCheckedFacilityIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "checked",
+        "facility"
+      ]
+    },
+    {
+      "name": "IcHadaChecklist",
+      "alias": "HadaChecklistIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "checklist"
+      ]
+    },
+    {
+      "name": "IcHadaComplaint",
+      "alias": "HadaComplaintIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "complaint"
+      ]
+    },
+    {
+      "name": "IcHadaFacility",
+      "alias": "HadaFacilityIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "facility"
+      ]
+    },
+    {
+      "name": "IcHadaPending",
+      "alias": "HadaPendingIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "pending"
+      ]
+    },
+    {
+      "name": "IcHadaResolved",
+      "alias": "HadaResolvedIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "resolved"
+      ]
+    },
+    {
+      "name": "IcHadaScheduled",
+      "alias": "HadaScheduledIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "hada",
+        "scheduled"
+      ]
+    },
+    {
+      "name": "IcHelpCenter",
+      "alias": "HelpCenterIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "help",
+        "center"
+      ]
+    },
+    {
+      "name": "IcHelp",
+      "alias": "HelpIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "help"
+      ]
+    },
+    {
+      "name": "IcHome",
+      "alias": "HomeIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "home"
+      ]
+    },
+    {
+      "name": "IcInfoMedium",
+      "alias": "InfoMediumIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "info",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcInfo",
+      "alias": "InfoIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "info"
+      ]
+    },
+    {
+      "name": "IcIssue",
+      "alias": "IssueIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "issue"
+      ]
+    },
+    {
+      "name": "IcIssues",
+      "alias": "IssuesIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "issues"
+      ]
+    },
+    {
+      "name": "IcLanguage",
+      "alias": "LanguageIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "language"
+      ]
+    },
+    {
+      "name": "IcLeftArrow",
+      "alias": "LeftArrowIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "left",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcLink",
+      "alias": "LinkIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "link"
+      ]
+    },
+    {
+      "name": "IcListEdit",
+      "alias": "ListEditIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "list",
+        "edit"
+      ]
+    },
+    {
+      "name": "IcLogout",
+      "alias": "LogoutIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "logout"
+      ]
+    },
+    {
+      "name": "IcMemo",
+      "alias": "MemoIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "memo"
+      ]
+    },
+    {
+      "name": "IcMenu",
+      "alias": "MenuIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "menu"
+      ]
+    },
+    {
+      "name": "IcMobileview",
+      "alias": "MobileviewIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "mobileview"
+      ]
+    },
+    {
+      "name": "IcMore",
+      "alias": "MoreIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "more"
+      ]
+    },
+    {
+      "name": "IcNewBell",
+      "alias": "NewBellIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "new",
+        "bell"
+      ]
+    },
+    {
+      "name": "IcNewIssue",
+      "alias": "NewIssueIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "new",
+        "issue"
+      ]
+    },
+    {
+      "name": "IcNewReport",
+      "alias": "NewReportIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "new",
+        "report"
+      ]
+    },
+    {
+      "name": "IcNewTab",
+      "alias": "NewTabIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "new",
+        "tab"
+      ]
+    },
+    {
+      "name": "IcNext",
+      "alias": "NextIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "next"
+      ]
+    },
+    {
+      "name": "IcNoticeLine",
+      "alias": "NoticeLineIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "notice",
+        "line"
+      ]
+    },
+    {
+      "name": "IcNotice",
+      "alias": "NoticeIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "notice"
+      ]
+    },
+    {
+      "name": "IcOverview",
+      "alias": "OverviewIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "overview"
+      ]
+    },
+    {
+      "name": "IcPassword",
+      "alias": "PasswordIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "password"
+      ]
+    },
+    {
+      "name": "IcPhone",
+      "alias": "PhoneIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "phone"
+      ]
+    },
+    {
+      "name": "IcPlace",
+      "alias": "PlaceIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "place"
+      ]
+    },
+    {
+      "name": "IcPromotion",
+      "alias": "PromotionIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "promotion"
+      ]
+    },
+    {
+      "name": "IcQrcode",
+      "alias": "QrcodeIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "qrcode"
+      ]
+    },
+    {
+      "name": "IcRadio",
+      "alias": "RadioIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "radio"
+      ]
+    },
+    {
+      "name": "IcReadChecklist",
+      "alias": "ReadChecklistIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "read",
+        "checklist"
+      ]
+    },
+    {
+      "name": "IcReadIssue",
+      "alias": "ReadIssueIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "read",
+        "issue"
+      ]
+    },
+    {
+      "name": "IcReadReport",
+      "alias": "ReadReportIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "read",
+        "report"
+      ]
+    },
+    {
+      "name": "IcRefresh",
+      "alias": "RefreshIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "refresh"
+      ]
+    },
+    {
+      "name": "IcRemove",
+      "alias": "RemoveIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "remove"
+      ]
+    },
+    {
+      "name": "IcRightArrow",
+      "alias": "RightArrowIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "right",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcSearch",
+      "alias": "SearchIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "search"
+      ]
+    },
+    {
+      "name": "IcSection",
+      "alias": "SectionIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "section"
+      ]
+    },
+    {
+      "name": "IcSettingFill",
+      "alias": "SettingFillIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "setting",
+        "fill"
+      ]
+    },
+    {
+      "name": "IcSettingLarge",
+      "alias": "SettingLargeIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "setting",
+        "large"
+      ]
+    },
+    {
+      "name": "IcSetting",
+      "alias": "SettingIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "setting"
+      ]
+    },
+    {
+      "name": "IcSheet",
+      "alias": "SheetIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "sheet"
+      ]
+    },
+    {
+      "name": "IcSlider",
+      "alias": "SliderIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "slider"
+      ]
+    },
+    {
+      "name": "IcStatisticActive",
+      "alias": "StatisticActiveIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "statistic",
+        "active"
+      ]
+    },
+    {
+      "name": "IcStatisticDefault",
+      "alias": "StatisticDefaultIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "statistic",
+        "default"
+      ]
+    },
+    {
+      "name": "IcStatistics",
+      "alias": "StatisticsIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "statistics"
+      ]
+    },
+    {
+      "name": "IcText",
+      "alias": "TextIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "text"
+      ]
+    },
+    {
+      "name": "IcTime",
+      "alias": "TimeIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "time"
+      ]
+    },
+    {
+      "name": "IcTrash",
+      "alias": "TrashIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "trash"
+      ]
+    },
+    {
+      "name": "IcTutorialCompleted",
+      "alias": "TutorialCompletedIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "tutorial",
+        "completed"
+      ]
+    },
+    {
+      "name": "IcTutorial",
+      "alias": "TutorialIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "tutorial"
+      ]
+    },
+    {
+      "name": "IcUpArrowSolid",
+      "alias": "UpArrowSolidIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "up",
+        "arrow",
+        "solid"
+      ]
+    },
+    {
+      "name": "IcUpArrow",
+      "alias": "UpArrowIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "up",
+        "arrow"
+      ]
+    },
+    {
+      "name": "IcUser",
+      "alias": "UserIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "user"
+      ]
+    },
+    {
+      "name": "IcViewOff",
+      "alias": "ViewOffIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "view",
+        "off"
+      ]
+    },
+    {
+      "name": "IcViewOn",
+      "alias": "ViewOnIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "view",
+        "on"
+      ]
+    },
+    {
+      "name": "IcVocMedium",
+      "alias": "VocMediumIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "voc",
+        "medium"
+      ]
+    },
+    {
+      "name": "IcVoc",
+      "alias": "VocIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "voc"
+      ]
+    },
+    {
+      "name": "IcWorker",
+      "alias": "WorkerIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "worker"
+      ]
+    },
+    {
+      "name": "IcYesno",
+      "alias": "YesnoIcon",
+      "domain": "hada",
+      "importFrom": "@shoplflow/hada-assets",
+      "keywords": [
+        "yesno"
+      ]
+    }
+  ]
+}

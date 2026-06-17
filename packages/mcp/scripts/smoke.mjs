@@ -31,5 +31,13 @@ console.log('\nget_token(primary300):', prim.content[0].text.replace(/\s+/g, ' '
 const miss = await client.callTool({ name: 'get_token', arguments: { name: 'primaryX' } });
 console.log('\nget_token(primaryX) [miss w/ suggestions]:', miss.content[0].text.replace(/\s+/g, ' '));
 
+const iconHit = await client.callTool({ name: 'search_icon', arguments: { query: 'chat bot' } });
+const iconParsed = JSON.parse(iconHit.content[0].text);
+console.log(`\nsearch_icon("chat bot"): count=${iconParsed.count}`);
+console.log('  top:', JSON.stringify(iconParsed.icons[0]));
+
+const iconBrand = await client.callTool({ name: 'search_icon', arguments: { query: 'add', domain: 'hada', limit: 3 } });
+console.log('\nsearch_icon("add", hada, 3):', iconBrand.content[0].text.replace(/\s+/g, ' '));
+
 await client.close();
 console.log('\n✓ smoke test passed');

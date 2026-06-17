@@ -1,29 +1,35 @@
 /**
  * Generates the design-system metadata that the MCP server serves.
  *
- * Single source of truth: the same `tokens.json` (Tokens Studio export) that drives
- * `tokens.ts` + `global.css`. This generator mirrors the interpretation in
- * `packages/base/scripts/seperate-tokens.cjs` so the served metadata never drifts from
- * what actually ships:
+ * Single source of truth: the same files that build the shipped library. Each builder reads a
+ * source, normalizes it, and writes a sibling `src/data/*.generated.json`. Running this as a build
+ * step (see `build:package`) makes drift between the served metadata and the code impossible.
  *
- *   - `shoplflow` root .... shared tokens (palette, spacing, radius, fontWeight, shadow)
- *   - `shopl` / `hada` ..... per-brand tokens (typography classes + primary/semantic colors,
- *                            whose color values may alias the shared palette via `{group.name}`)
- *   - `$themes` / `$metadata` .... Tokens Studio bookkeeping, ignored
+ *   buildTokens()  <- packages/base/src/styles/tokens.json        -> tokens.generated.json
+ *   buildIcons()   <- packages/{shopl,hada}-assets .../generated  -> icons.generated.json
  *
- * Run as a build step (see `build:package`). Phase 2 (icons) and Phase 3 (component APIs)
- * add sibling `*.generated.json` files following the same read -> normalize -> write pattern.
+ * Phase 3 (component APIs from *.types.ts) adds another builder here following the same shape.
  */
 const fs = require('fs');
 const path = require('path');
 
-const TOKENS_JSON = path.resolve(__dirname, '../../base/src/styles/tokens.json');
 const OUT_DIR = path.resolve(__dirname, '../src/data');
-const OUT_FILE = path.join(OUT_DIR, 'tokens.generated.json');
 
+function writeJson(file, data) {
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  fs.writeFileSync(path.join(OUT_DIR, file), JSON.stringify(data, null, 2) + '\n');
+}
+
+/* ── Tokens ─────────────────────────────────────────────────────────────────
+ * tokens.json is a Tokens Studio export. We mirror packages/base/scripts/seperate-tokens.cjs:
+ *   - `shoplflow` root .... shared palette, spacing, radius, fontWeight, shadow
+ *   - `shopl` / `hada` ..... per-brand typography classes + primary/semantic colors
+ *                            (color values may alias the shared palette via `{group.name}`)
+ *   - `$themes` / `$metadata` .... ignored
+ */
+const TOKENS_JSON = path.resolve(__dirname, '../../base/src/styles/tokens.json');
 const BRANDS = ['shopl', 'hada'];
 
-/** A node is a token leaf when it carries both a `value` and a string `type`. */
 function isLeaf(node) {
   return node && typeof node === 'object' && 'value' in node && typeof node.type === 'string';
 }
@@ -32,7 +38,6 @@ function toKebabCase(str) {
   return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
 }
 
-/** Build a `{ tokenName -> hex }` lookup of literal shared colors, for resolving brand aliases. */
 function collectLiteralColors(node, out) {
   for (const [key, child] of Object.entries(node)) {
     if (isLeaf(child)) {
@@ -46,7 +51,6 @@ function collectLiteralColors(node, out) {
   return out;
 }
 
-/** Resolve a Tokens Studio alias like `{coolgray.coolgray300}` to its literal hex, if known. */
 function resolveColor(value, literalColors) {
   if (typeof value === 'string' && value.startsWith('{')) {
     const ref = value.replace(/^\{|\}$/g, '');
@@ -56,8 +60,7 @@ function resolveColor(value, literalColors) {
   return value;
 }
 
-/** Normalize one leaf into the served token record, adding type-specific usage hints. */
-function toRecord(name, leaf, domain, pathStr, literalColors) {
+function toTokenRecord(name, leaf, domain, pathStr, literalColors) {
   const base = { name, type: leaf.type, domain, path: pathStr, cssVar: null, className: null };
   switch (leaf.type) {
     case 'color':
@@ -69,15 +72,13 @@ function toRecord(name, leaf, domain, pathStr, literalColors) {
     case 'fontWeights':
       return { ...base, value: String(leaf.value), cssVar: `--font-weight-${name}` };
     case 'typography':
-      // Applied as a CSS class / the `typography` prop (e.g. <Text typography="body1_700" />).
+      // Applied via the `typography` prop / a CSS class (e.g. <Text typography="body1_700" />).
       return { ...base, value: leaf.value, className: `.${name}` };
     case 'boxShadow':
     case 'dropShadow': {
       const v = leaf.value;
       const display =
-        v && typeof v === 'object'
-          ? `${v.x}px ${v.y}px ${v.blur}px ${v.spread}px ${v.color}`.trim()
-          : String(v);
+        v && typeof v === 'object' ? `${v.x}px ${v.y}px ${v.blur}px ${v.spread}px ${v.color}`.trim() : String(v);
       return { ...base, value: display };
     }
     default:
@@ -85,53 +86,101 @@ function toRecord(name, leaf, domain, pathStr, literalColors) {
   }
 }
 
-/** Walk a root, emitting records. `skip` excludes nested keys (the brand subtrees under shoplflow). */
-function walk(node, domain, literalColors, acc, pathParts = [], skip = new Set()) {
+function walkTokens(node, domain, literalColors, acc, pathParts = [], skip = new Set()) {
   for (const [key, child] of Object.entries(node)) {
     if (pathParts.length === 0 && skip.has(key)) continue;
     const nextPath = [...pathParts, key];
     if (isLeaf(child)) {
-      acc.push(toRecord(key, child, domain, nextPath.join('.'), literalColors));
+      acc.push(toTokenRecord(key, child, domain, nextPath.join('.'), literalColors));
     } else if (child && typeof child === 'object') {
-      walk(child, domain, literalColors, acc, nextPath, skip);
+      walkTokens(child, domain, literalColors, acc, nextPath, skip);
     }
   }
 }
 
-const raw = JSON.parse(fs.readFileSync(TOKENS_JSON, 'utf8'));
-const literalColors = collectLiteralColors(raw.shoplflow ?? {}, {});
+function buildTokens() {
+  const raw = JSON.parse(fs.readFileSync(TOKENS_JSON, 'utf8'));
+  const literalColors = collectLiteralColors(raw.shoplflow ?? {}, {});
 
-const tokens = [];
-// Shared tokens: walk shoplflow, but skip the nested brand subtrees (the top-level roots are canonical).
-walk(raw.shoplflow ?? {}, 'shared', literalColors, tokens, [], new Set(BRANDS));
-// Brand tokens: typography + primary/semantic colors.
-for (const brand of BRANDS) {
-  if (raw[brand]) walk(raw[brand], brand, literalColors, tokens, [], new Set());
+  const tokens = [];
+  walkTokens(raw.shoplflow ?? {}, 'shared', literalColors, tokens, [], new Set(BRANDS));
+  for (const brand of BRANDS) {
+    if (raw[brand]) walkTokens(raw[brand], brand, literalColors, tokens, [], new Set());
+  }
+
+  const countByType = {};
+  const countByDomain = {};
+  for (const t of tokens) {
+    countByType[t.type] = (countByType[t.type] ?? 0) + 1;
+    countByDomain[t.domain] = (countByDomain[t.domain] ?? 0) + 1;
+  }
+
+  writeJson('tokens.generated.json', {
+    source: 'packages/base/src/styles/tokens.json',
+    domains: ['shared', ...BRANDS],
+    count: tokens.length,
+    countByType,
+    countByDomain,
+    tokens,
+  });
+  return { count: tokens.length, countByType, countByDomain };
 }
 
-const countByType = {};
-const countByDomain = {};
-for (const t of tokens) {
-  countByType[t.type] = (countByType[t.type] ?? 0) + 1;
-  countByDomain[t.domain] = (countByDomain[t.domain] ?? 0) + 1;
+/* ── Icons ──────────────────────────────────────────────────────────────────
+ * Each brand's `icons/generated/index.ts` barrel is the source of truth for public icon names.
+ * Its `export { IcFoo as FooIcon, ... }` block gives both the raw name and the public alias;
+ * both are importable, so we serve both and derive search keywords from the name.
+ */
+const ICON_SOURCES = [
+  { domain: 'shopl', barrel: '../../shopl-assets/src/icons/generated/index.ts', importFrom: '@shoplflow/shopl-assets' },
+  { domain: 'hada', barrel: '../../hada-assets/src/icons/generated/index.ts', importFrom: '@shoplflow/hada-assets' },
+];
+
+/** "IcAiChatBot" -> ["ai","chat","bot"]; "Subtract" -> ["subtract"]. Powers fuzzy icon search. */
+function keywordsFromName(name) {
+  const stripped = name.replace(/^Ic(?=[A-Z])/, '');
+  const spaced = stripped.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2');
+  return [...new Set(spaced.toLowerCase().split(/\s+/).filter(Boolean))];
 }
 
-const catalog = {
-  source: 'packages/base/src/styles/tokens.json',
-  domains: ['shared', ...BRANDS],
-  count: tokens.length,
-  countByType,
-  countByDomain,
-  tokens,
-};
+function buildIcons() {
+  const icons = [];
+  for (const { domain, barrel, importFrom } of ICON_SOURCES) {
+    const src = fs.readFileSync(path.resolve(__dirname, barrel), 'utf8');
+    const start = src.indexOf('export {');
+    const block = start >= 0 ? src.slice(start, src.indexOf('};', start)) : '';
+    const re = /(\w+)\s+as\s+(\w+)/g;
+    let m;
+    while ((m = re.exec(block))) {
+      const [, name, alias] = m;
+      icons.push({ name, alias, domain, importFrom, keywords: keywordsFromName(name) });
+    }
+  }
 
-fs.mkdirSync(OUT_DIR, { recursive: true });
-fs.writeFileSync(OUT_FILE, JSON.stringify(catalog, null, 2) + '\n');
+  const countByDomain = {};
+  for (const i of icons) countByDomain[i.domain] = (countByDomain[i.domain] ?? 0) + 1;
 
+  writeJson('icons.generated.json', {
+    source: ICON_SOURCES.map((s) => s.importFrom),
+    domains: ICON_SOURCES.map((s) => s.domain),
+    count: icons.length,
+    countByDomain,
+    icons,
+  });
+  return { count: icons.length, countByDomain };
+}
+
+const t = buildTokens();
 console.log(
-  `✓ tokens: ${tokens.length} | by type: ${Object.entries(countByType)
-    .map(([t, n]) => `${t} ${n}`)
-    .join(', ')} | by domain: ${Object.entries(countByDomain)
-    .map(([d, n]) => `${d} ${n}`)
-    .join(', ')} -> ${path.relative(process.cwd(), OUT_FILE)}`,
+  `✓ tokens: ${t.count} | type: ${Object.entries(t.countByType)
+    .map(([k, n]) => `${k} ${n}`)
+    .join(', ')} | domain: ${Object.entries(t.countByDomain)
+    .map(([k, n]) => `${k} ${n}`)
+    .join(', ')}`,
+);
+const i = buildIcons();
+console.log(
+  `✓ icons: ${i.count} | domain: ${Object.entries(i.countByDomain)
+    .map(([k, n]) => `${k} ${n}`)
+    .join(', ')}`,
 );
