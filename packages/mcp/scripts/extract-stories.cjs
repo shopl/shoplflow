@@ -10,24 +10,26 @@
  * Examples are keyed by the story file's module (folder basename), matching component-card `group`,
  * plus the `component` identifier from `meta` for cross-referencing.
  */
-const path = require('path');
-const { Project, Node } = require('ts-morph');
+const path = require("path");
+const { Project, Node } = require("ts-morph");
 
-const BASE_SRC = path.resolve(__dirname, '../../base/src');
+const BASE_SRC = path.resolve(__dirname, "../../base/src");
 const MAX_CODE_LEN = 1200;
 const MAX_ARGS_LEN = 600;
 const MAX_EXAMPLES = 8;
 
 function clip(text, max) {
   const t = text.trim();
-  return t.length > max ? t.slice(0, max - 1) + '…' : t;
+  return t.length > max ? t.slice(0, max - 1) + "…" : t;
 }
 
 /** Strip `satisfies T` / `as T` / parentheses wrappers to reach the real expression. */
 function unwrap(node) {
   while (
     node &&
-    (Node.isSatisfiesExpression(node) || Node.isAsExpression(node) || Node.isParenthesizedExpression(node))
+    (Node.isSatisfiesExpression(node) ||
+      Node.isAsExpression(node) ||
+      Node.isParenthesizedExpression(node))
   ) {
     node = node.getExpression();
   }
@@ -53,14 +55,15 @@ function readStory(name, initializer) {
 
   if (Node.isObjectLiteralExpression(init)) {
     const out = { story: name };
-    const argsProp = init.getProperty('args');
+    const argsProp = init.getProperty("args");
     if (argsProp && Node.isPropertyAssignment(argsProp)) {
       out.args = clip(argsProp.getInitializer().getText(), MAX_ARGS_LEN);
     }
-    const renderProp = init.getProperty('render');
+    const renderProp = init.getProperty("render");
     if (renderProp && Node.isPropertyAssignment(renderProp)) {
       const fn = unwrap(renderProp.getInitializer());
-      if (Node.isArrowFunction(fn) || Node.isFunctionExpression(fn)) out.code = readFunctionBody(fn);
+      if (Node.isArrowFunction(fn) || Node.isFunctionExpression(fn))
+        out.code = readFunctionBody(fn);
     }
     return out.args || out.code ? out : null;
   }
@@ -79,11 +82,14 @@ function readMeta(metaDecl) {
   if (!metaDecl) return result;
   const obj = unwrap(metaDecl.getInitializer());
   if (!obj || !Node.isObjectLiteralExpression(obj)) return result;
-  const title = obj.getProperty('title');
+  const title = obj.getProperty("title");
   if (title && Node.isPropertyAssignment(title)) {
-    result.title = title.getInitializer().getText().replace(/^['"`]|['"`]$/g, '');
+    result.title = title
+      .getInitializer()
+      .getText()
+      .replace(/^['"`]|['"`]$/g, "");
   }
-  const component = obj.getProperty('component');
+  const component = obj.getProperty("component");
   if (component && Node.isPropertyAssignment(component)) {
     result.component = component.getInitializer().getText();
   }
@@ -92,16 +98,20 @@ function readMeta(metaDecl) {
 
 function buildStories() {
   const project = new Project({ skipAddingFilesFromTsConfig: true });
-  const files = project.addSourceFilesAtPaths(path.join(BASE_SRC, 'components/**/*.stories.tsx'));
+  const files = project.addSourceFilesAtPaths(
+    path.join(BASE_SRC, "components/**/*.stories.tsx"),
+  );
 
   const modules = [];
   for (const file of files) {
-    const group = path.basename(file.getFilePath()).replace(/\.stories\.tsx$/, '');
-    const meta = readMeta(file.getVariableDeclaration('meta'));
+    const group = path
+      .basename(file.getFilePath())
+      .replace(/\.stories\.tsx$/, "");
+    const meta = readMeta(file.getVariableDeclaration("meta"));
 
     const examples = [];
     for (const decl of file.getVariableDeclarations()) {
-      if (!decl.isExported() || decl.getName() === 'meta') continue;
+      if (!decl.isExported() || decl.getName() === "meta") continue;
       if (examples.length >= MAX_EXAMPLES) break;
       try {
         const ex = readStory(decl.getName(), decl.getInitializer());
@@ -116,7 +126,7 @@ function buildStories() {
         name: meta.component ?? group,
         group,
         title: meta.title ?? undefined,
-        importFrom: '@shoplflow/base',
+        importFrom: "@shoplflow/base",
         examples,
       });
     }
