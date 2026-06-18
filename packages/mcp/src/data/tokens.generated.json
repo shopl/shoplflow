@@ -1,0 +1,1271 @@
+{
+  "source": "packages/base/src/styles/tokens.json",
+  "domains": [
+    "shared",
+    "shopl",
+    "hada"
+  ],
+  "count": 113,
+  "countByType": {
+    "color": 44,
+    "borderRadius": 6,
+    "fontWeights": 3,
+    "spacing": 13,
+    "boxShadow": 1,
+    "typography": 46
+  },
+  "countByDomain": {
+    "shared": 55,
+    "shopl": 29,
+    "hada": 29
+  },
+  "tokens": [
+    {
+      "name": "coolgray300",
+      "type": "color",
+      "domain": "shared",
+      "path": "coolgray.coolgray300",
+      "cssVar": "--coolgray300",
+      "className": null,
+      "value": "#8092aa"
+    },
+    {
+      "name": "coolgray200",
+      "type": "color",
+      "domain": "shared",
+      "path": "coolgray.coolgray200",
+      "cssVar": "--coolgray200",
+      "className": null,
+      "value": "#cdd6e4"
+    },
+    {
+      "name": "coolgray100",
+      "type": "color",
+      "domain": "shared",
+      "path": "coolgray.coolgray100",
+      "cssVar": "--coolgray100",
+      "className": null,
+      "value": "#dce3ee"
+    },
+    {
+      "name": "coolgray50",
+      "type": "color",
+      "domain": "shared",
+      "path": "coolgray.coolgray50",
+      "cssVar": "--coolgray50",
+      "className": null,
+      "value": "#f1f4f6"
+    },
+    {
+      "name": "navy400",
+      "type": "color",
+      "domain": "shared",
+      "path": "navy.navy400",
+      "cssVar": "--navy400",
+      "className": null,
+      "value": "#35485b"
+    },
+    {
+      "name": "navy300",
+      "type": "color",
+      "domain": "shared",
+      "path": "navy.navy300",
+      "cssVar": "--navy300",
+      "className": null,
+      "value": "#406588"
+    },
+    {
+      "name": "neutral0",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral0",
+      "cssVar": "--neutral0",
+      "className": null,
+      "value": "#ffffff"
+    },
+    {
+      "name": "neutral100",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral100",
+      "cssVar": "--neutral100",
+      "className": null,
+      "value": "#f9f9f9"
+    },
+    {
+      "name": "neutral150",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral150",
+      "cssVar": "--neutral150",
+      "className": null,
+      "value": "#f4f4f4"
+    },
+    {
+      "name": "neutral200",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral200",
+      "cssVar": "--neutral200",
+      "className": null,
+      "value": "#eaeaea"
+    },
+    {
+      "name": "neutral300",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral300",
+      "cssVar": "--neutral300",
+      "className": null,
+      "value": "#dddddd"
+    },
+    {
+      "name": "neutral350",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral350",
+      "cssVar": "--neutral350",
+      "className": null,
+      "value": "#cccccc"
+    },
+    {
+      "name": "neutral400",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral400",
+      "cssVar": "--neutral400",
+      "className": null,
+      "value": "#999999"
+    },
+    {
+      "name": "neutral500",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral500",
+      "cssVar": "--neutral500",
+      "className": null,
+      "value": "#777777"
+    },
+    {
+      "name": "neutral600",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral600",
+      "cssVar": "--neutral600",
+      "className": null,
+      "value": "#555555"
+    },
+    {
+      "name": "neutral700",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral700",
+      "cssVar": "--neutral700",
+      "className": null,
+      "value": "#333333"
+    },
+    {
+      "name": "neutral400_5",
+      "type": "color",
+      "domain": "shared",
+      "path": "neutral.neutral400_5",
+      "cssVar": "--neutral400_5",
+      "className": null,
+      "value": "#9999990d"
+    },
+    {
+      "name": "red300",
+      "type": "color",
+      "domain": "shared",
+      "path": "red.red300",
+      "cssVar": "--red300",
+      "className": null,
+      "value": "#ff6666"
+    },
+    {
+      "name": "red200",
+      "type": "color",
+      "domain": "shared",
+      "path": "red.red200",
+      "cssVar": "--red200",
+      "className": null,
+      "value": "#ff7979"
+    },
+    {
+      "name": "red100",
+      "type": "color",
+      "domain": "shared",
+      "path": "red.red100",
+      "cssVar": "--red100",
+      "className": null,
+      "value": "#f9ebeb"
+    },
+    {
+      "name": "ocean300",
+      "type": "color",
+      "domain": "shared",
+      "path": "ocean.ocean300",
+      "cssVar": "--ocean300",
+      "className": null,
+      "value": "#2f839f"
+    },
+    {
+      "name": "ocean200",
+      "type": "color",
+      "domain": "shared",
+      "path": "ocean.ocean200",
+      "cssVar": "--ocean200",
+      "className": null,
+      "value": "#3eb0b8"
+    },
+    {
+      "name": "ocean100",
+      "type": "color",
+      "domain": "shared",
+      "path": "ocean.ocean100",
+      "cssVar": "--ocean100",
+      "className": null,
+      "value": "#95d6d3"
+    },
+    {
+      "name": "purple400",
+      "type": "color",
+      "domain": "shared",
+      "path": "purple.purple400",
+      "cssVar": "--purple400",
+      "className": null,
+      "value": "#5c68c9"
+    },
+    {
+      "name": "purple300",
+      "type": "color",
+      "domain": "shared",
+      "path": "purple.purple300",
+      "cssVar": "--purple300",
+      "className": null,
+      "value": "#6979f8"
+    },
+    {
+      "name": "purple100",
+      "type": "color",
+      "domain": "shared",
+      "path": "purple.purple100",
+      "cssVar": "--purple100",
+      "className": null,
+      "value": "#eff1ff"
+    },
+    {
+      "name": "yellow300",
+      "type": "color",
+      "domain": "shared",
+      "path": "yellow.yellow300",
+      "cssVar": "--yellow300",
+      "className": null,
+      "value": "#ffbb00"
+    },
+    {
+      "name": "yellow200",
+      "type": "color",
+      "domain": "shared",
+      "path": "yellow.yellow200",
+      "cssVar": "--yellow200",
+      "className": null,
+      "value": "#ffda75"
+    },
+    {
+      "name": "yellow100",
+      "type": "color",
+      "domain": "shared",
+      "path": "yellow.yellow100",
+      "cssVar": "--yellow100",
+      "className": null,
+      "value": "#fff7dd"
+    },
+    {
+      "name": "green300",
+      "type": "color",
+      "domain": "shared",
+      "path": "green.green300",
+      "cssVar": "--green300",
+      "className": null,
+      "value": "#4dc9aa"
+    },
+    {
+      "name": "green200",
+      "type": "color",
+      "domain": "shared",
+      "path": "green.green200",
+      "cssVar": "--green200",
+      "className": null,
+      "value": "#77d5bb"
+    },
+    {
+      "name": "green100",
+      "type": "color",
+      "domain": "shared",
+      "path": "green.green100",
+      "cssVar": "--green100",
+      "className": null,
+      "value": "#d8f2eb"
+    },
+    {
+      "name": "borderRadius04",
+      "type": "borderRadius",
+      "domain": "shared",
+      "path": "borderRadius04",
+      "cssVar": "--border-radius04",
+      "className": null,
+      "value": "4px"
+    },
+    {
+      "name": "regular",
+      "type": "fontWeights",
+      "domain": "shared",
+      "path": "fontWeight.regular",
+      "cssVar": "--font-weight-regular",
+      "className": null,
+      "value": "500"
+    },
+    {
+      "name": "medium",
+      "type": "fontWeights",
+      "domain": "shared",
+      "path": "fontWeight.medium",
+      "cssVar": "--font-weight-medium",
+      "className": null,
+      "value": "600"
+    },
+    {
+      "name": "bold",
+      "type": "fontWeights",
+      "domain": "shared",
+      "path": "fontWeight.bold",
+      "cssVar": "--font-weight-bold",
+      "className": null,
+      "value": "700"
+    },
+    {
+      "name": "borderRadius06",
+      "type": "borderRadius",
+      "domain": "shared",
+      "path": "borderRadius06",
+      "cssVar": "--border-radius06",
+      "className": null,
+      "value": "6px"
+    },
+    {
+      "name": "borderRadius08",
+      "type": "borderRadius",
+      "domain": "shared",
+      "path": "borderRadius08",
+      "cssVar": "--border-radius08",
+      "className": null,
+      "value": "8px"
+    },
+    {
+      "name": "borderRadius12",
+      "type": "borderRadius",
+      "domain": "shared",
+      "path": "borderRadius12",
+      "cssVar": "--border-radius12",
+      "className": null,
+      "value": "12px"
+    },
+    {
+      "name": "borderRadius16",
+      "type": "borderRadius",
+      "domain": "shared",
+      "path": "borderRadius16",
+      "cssVar": "--border-radius16",
+      "className": null,
+      "value": "16px"
+    },
+    {
+      "name": "borderRadius20",
+      "type": "borderRadius",
+      "domain": "shared",
+      "path": "borderRadius20",
+      "cssVar": "--border-radius20",
+      "className": null,
+      "value": "20px"
+    },
+    {
+      "name": "spacing02",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing02",
+      "cssVar": "--spacing02",
+      "className": null,
+      "value": "2px"
+    },
+    {
+      "name": "spacing04",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing04",
+      "cssVar": "--spacing04",
+      "className": null,
+      "value": "4px"
+    },
+    {
+      "name": "spacing06",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing06",
+      "cssVar": "--spacing06",
+      "className": null,
+      "value": "6px"
+    },
+    {
+      "name": "spacing08",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing08",
+      "cssVar": "--spacing08",
+      "className": null,
+      "value": "8px"
+    },
+    {
+      "name": "spacing10",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing10",
+      "cssVar": "--spacing10",
+      "className": null,
+      "value": "10px"
+    },
+    {
+      "name": "spacing12",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing12",
+      "cssVar": "--spacing12",
+      "className": null,
+      "value": "12px"
+    },
+    {
+      "name": "spacing14",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing14",
+      "cssVar": "--spacing14",
+      "className": null,
+      "value": "14px"
+    },
+    {
+      "name": "spacing16",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing16",
+      "cssVar": "--spacing16",
+      "className": null,
+      "value": "16px"
+    },
+    {
+      "name": "spacing20",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing20",
+      "cssVar": "--spacing20",
+      "className": null,
+      "value": "20px"
+    },
+    {
+      "name": "spacing24",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing24",
+      "cssVar": "--spacing24",
+      "className": null,
+      "value": "24px"
+    },
+    {
+      "name": "spacing30",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing30",
+      "cssVar": "--spacing30",
+      "className": null,
+      "value": "30px"
+    },
+    {
+      "name": "spacing32",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing32",
+      "cssVar": "--spacing32",
+      "className": null,
+      "value": "32px"
+    },
+    {
+      "name": "spacing40",
+      "type": "spacing",
+      "domain": "shared",
+      "path": "spacing40",
+      "cssVar": "--spacing40",
+      "className": null,
+      "value": "40px"
+    },
+    {
+      "name": "dropShadow",
+      "type": "boxShadow",
+      "domain": "shared",
+      "path": "dropShadow",
+      "cssVar": null,
+      "className": null,
+      "value": "0px 8px 16px 0px rgba(0,0,0,0.12)"
+    },
+    {
+      "name": "heading1_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "heading1_700",
+      "cssVar": null,
+      "className": ".heading1_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "34",
+        "fontSize": "28"
+      }
+    },
+    {
+      "name": "heading1_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "heading1_400",
+      "cssVar": null,
+      "className": ".heading1_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "34",
+        "fontSize": "28"
+      }
+    },
+    {
+      "name": "heading2_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "heading2_700",
+      "cssVar": null,
+      "className": ".heading2_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "28",
+        "fontSize": "24"
+      }
+    },
+    {
+      "name": "heading2_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "heading2_400",
+      "cssVar": null,
+      "className": ".heading2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "28",
+        "fontSize": "24"
+      }
+    },
+    {
+      "name": "heading3_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "heading3_700",
+      "cssVar": null,
+      "className": ".heading3_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "24",
+        "fontSize": "20"
+      }
+    },
+    {
+      "name": "heading3_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "heading3_400",
+      "cssVar": null,
+      "className": ".heading3_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "24",
+        "fontSize": "20"
+      }
+    },
+    {
+      "name": "title1_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "title1_700",
+      "cssVar": null,
+      "className": ".title1_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "22",
+        "fontSize": "18"
+      }
+    },
+    {
+      "name": "title1_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "title1_400",
+      "cssVar": null,
+      "className": ".title1_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "22",
+        "fontSize": "18"
+      }
+    },
+    {
+      "name": "title2_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "title2_700",
+      "cssVar": null,
+      "className": ".title2_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "20",
+        "fontSize": "16"
+      }
+    },
+    {
+      "name": "title2_500",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "title2_500",
+      "cssVar": null,
+      "className": ".title2_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "20",
+        "fontSize": "16"
+      }
+    },
+    {
+      "name": "title2_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "title2_400",
+      "cssVar": null,
+      "className": ".title2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "20",
+        "fontSize": "16"
+      }
+    },
+    {
+      "name": "body1_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body1_700",
+      "cssVar": null,
+      "className": ".body1_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "18",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "body1_500",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body1_500",
+      "cssVar": null,
+      "className": ".body1_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "18",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "body1_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body1_400",
+      "cssVar": null,
+      "className": ".body1_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "18",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "body2_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body2_700",
+      "cssVar": null,
+      "className": ".body2_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "16",
+        "fontSize": "13"
+      }
+    },
+    {
+      "name": "body2_500",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body2_500",
+      "cssVar": null,
+      "className": ".body2_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "16",
+        "fontSize": "13"
+      }
+    },
+    {
+      "name": "body2_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body2_400",
+      "cssVar": null,
+      "className": ".body2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "16",
+        "fontSize": "13"
+      }
+    },
+    {
+      "name": "body3_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body3_400",
+      "cssVar": null,
+      "className": ".body3_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "16",
+        "fontSize": "12"
+      }
+    },
+    {
+      "name": "body3_500",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "body3_500",
+      "cssVar": null,
+      "className": ".body3_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "16",
+        "fontSize": "12"
+      }
+    },
+    {
+      "name": "caption_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "caption_700",
+      "cssVar": null,
+      "className": ".caption_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "16",
+        "fontSize": "12"
+      }
+    },
+    {
+      "name": "caption_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "caption_400",
+      "cssVar": null,
+      "className": ".caption_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "16",
+        "fontSize": "12"
+      }
+    },
+    {
+      "name": "paragraph1",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "paragraph1",
+      "cssVar": null,
+      "className": ".paragraph1",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "22",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "paragraph2",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "paragraph2",
+      "cssVar": null,
+      "className": ".paragraph2",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "20",
+        "fontSize": "13"
+      }
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "domain": "shopl",
+      "path": "background",
+      "cssVar": "--background",
+      "className": null,
+      "value": "#f6f6f6"
+    },
+    {
+      "name": "primary100",
+      "type": "color",
+      "domain": "shopl",
+      "path": "primary100",
+      "cssVar": "--primary100",
+      "className": null,
+      "value": "#eaf5ff"
+    },
+    {
+      "name": "primary150",
+      "type": "color",
+      "domain": "shopl",
+      "path": "primary150",
+      "cssVar": "--primary150",
+      "className": null,
+      "value": "#d6e9fb"
+    },
+    {
+      "name": "primary200",
+      "type": "color",
+      "domain": "shopl",
+      "path": "primary200",
+      "cssVar": "--primary200",
+      "className": null,
+      "value": "#84c2fc"
+    },
+    {
+      "name": "primary300",
+      "type": "color",
+      "domain": "shopl",
+      "path": "primary300",
+      "cssVar": "--primary300",
+      "className": null,
+      "value": "#3299fe"
+    },
+    {
+      "name": "primary400",
+      "type": "color",
+      "domain": "shopl",
+      "path": "primary400",
+      "cssVar": "--primary400",
+      "className": null,
+      "value": "#2d89e4"
+    },
+    {
+      "name": "heading1_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "heading1_700",
+      "cssVar": null,
+      "className": ".heading1_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "38",
+        "fontSize": "32"
+      }
+    },
+    {
+      "name": "heading1_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "heading1_400",
+      "cssVar": null,
+      "className": ".heading1_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "38",
+        "fontSize": "32"
+      }
+    },
+    {
+      "name": "heading2_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "heading2_700",
+      "cssVar": null,
+      "className": ".heading2_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "28",
+        "fontSize": "24"
+      }
+    },
+    {
+      "name": "heading2_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "heading2_400",
+      "cssVar": null,
+      "className": ".heading2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "28",
+        "fontSize": "24"
+      }
+    },
+    {
+      "name": "heading3_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "heading3_700",
+      "cssVar": null,
+      "className": ".heading3_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "26",
+        "fontSize": "22"
+      }
+    },
+    {
+      "name": "heading3_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "heading3_400",
+      "cssVar": null,
+      "className": ".heading3_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "26",
+        "fontSize": "22"
+      }
+    },
+    {
+      "name": "title1_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "title1_700",
+      "cssVar": null,
+      "className": ".title1_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "24",
+        "fontSize": "20"
+      }
+    },
+    {
+      "name": "title1_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "title1_400",
+      "cssVar": null,
+      "className": ".title1_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "24",
+        "fontSize": "20"
+      }
+    },
+    {
+      "name": "title2_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "title2_700",
+      "cssVar": null,
+      "className": ".title2_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "22",
+        "fontSize": "18"
+      }
+    },
+    {
+      "name": "title2_500",
+      "type": "typography",
+      "domain": "hada",
+      "path": "title2_500",
+      "cssVar": null,
+      "className": ".title2_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "22",
+        "fontSize": "18"
+      }
+    },
+    {
+      "name": "title2_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "title2_400",
+      "cssVar": null,
+      "className": ".title2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "22",
+        "fontSize": "18"
+      }
+    },
+    {
+      "name": "body1_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body1_700",
+      "cssVar": null,
+      "className": ".body1_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "22",
+        "fontSize": "16"
+      }
+    },
+    {
+      "name": "body1_500",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body1_500",
+      "cssVar": null,
+      "className": ".body1_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "22",
+        "fontSize": "16"
+      }
+    },
+    {
+      "name": "body1_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body1_400",
+      "cssVar": null,
+      "className": ".body1_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "22",
+        "fontSize": "16"
+      }
+    },
+    {
+      "name": "body2_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body2_700",
+      "cssVar": null,
+      "className": ".body2_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "18",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "body2_500",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body2_500",
+      "cssVar": null,
+      "className": ".body2_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "18",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "body2_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body2_400",
+      "cssVar": null,
+      "className": ".body2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "18",
+        "fontSize": "14"
+      }
+    },
+    {
+      "name": "body3_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body3_400",
+      "cssVar": null,
+      "className": ".body3_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "18",
+        "fontSize": "13"
+      }
+    },
+    {
+      "name": "body3_500",
+      "type": "typography",
+      "domain": "hada",
+      "path": "body3_500",
+      "cssVar": null,
+      "className": ".body3_500",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.medium}",
+        "lineHeight": "18",
+        "fontSize": "13"
+      }
+    },
+    {
+      "name": "caption_700",
+      "type": "typography",
+      "domain": "hada",
+      "path": "caption_700",
+      "cssVar": null,
+      "className": ".caption_700",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.bold}",
+        "lineHeight": "16",
+        "fontSize": "12"
+      }
+    },
+    {
+      "name": "caption_400",
+      "type": "typography",
+      "domain": "hada",
+      "path": "caption_400",
+      "cssVar": null,
+      "className": ".caption_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "lineHeight": "16",
+        "fontSize": "12"
+      }
+    },
+    {
+      "name": "background",
+      "type": "color",
+      "domain": "hada",
+      "path": "background",
+      "cssVar": "--background",
+      "className": null,
+      "value": "#f7f9fd"
+    },
+    {
+      "name": "primary100",
+      "type": "color",
+      "domain": "hada",
+      "path": "primary100",
+      "cssVar": "--primary100",
+      "className": null,
+      "value": "#d9f4ed"
+    },
+    {
+      "name": "primary150",
+      "type": "color",
+      "domain": "hada",
+      "path": "primary150",
+      "cssVar": "--primary150",
+      "className": null,
+      "value": "#c1e7dd"
+    },
+    {
+      "name": "primary200",
+      "type": "color",
+      "domain": "hada",
+      "path": "primary200",
+      "cssVar": "--primary200",
+      "className": null,
+      "value": "#61cbb5"
+    },
+    {
+      "name": "primary300",
+      "type": "color",
+      "domain": "hada",
+      "path": "primary300",
+      "cssVar": "--primary300",
+      "className": null,
+      "value": "#02b585"
+    },
+    {
+      "name": "primary400",
+      "type": "color",
+      "domain": "hada",
+      "path": "primary400",
+      "cssVar": "--primary400",
+      "className": null,
+      "value": "#05a77b"
+    },
+    {
+      "name": "paragraph1",
+      "type": "typography",
+      "domain": "hada",
+      "path": "paragraph1",
+      "cssVar": null,
+      "className": ".paragraph1",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "fontSize": "16",
+        "lineHeight": "24"
+      }
+    },
+    {
+      "name": "paragraph2",
+      "type": "typography",
+      "domain": "hada",
+      "path": "paragraph2",
+      "cssVar": null,
+      "className": ".paragraph2",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "fontSize": "14",
+        "lineHeight": "22"
+      }
+    }
+  ]
+}

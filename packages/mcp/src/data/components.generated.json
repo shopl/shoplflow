@@ -1,0 +1,3136 @@
+{
+  "source": "packages/base/src/components/**/*.types.ts",
+  "importFrom": "@shoplflow/base",
+  "count": 63,
+  "withVariants": 19,
+  "components": [
+    {
+      "name": "AnnualDatepicker",
+      "group": "AnnualDatepicker",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "currentYear",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "disabledYears",
+          "optional": true,
+          "type": "number[]",
+          "description": "선택 불가 연도"
+        },
+        {
+          "name": "endYear",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "handleYearClick",
+          "optional": false,
+          "type": "(year: number) => void"
+        },
+        {
+          "name": "startYear",
+          "optional": true,
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "Avatar",
+      "group": "Avatar",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XS",
+            "S",
+            "M",
+            "ML",
+            "L",
+            "XL"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "badge",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "아바타 우측 하단에 배지를 표시합니다."
+        },
+        {
+          "name": "fallbackUrl",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "BackDrop",
+      "group": "BackDrop",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "zIndex",
+          "optional": true,
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "group": "Button",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": true,
+      "defaultElement": "button",
+      "nativeAttrs": "button",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M",
+            "XS"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "PRIMARY",
+            "SECONDARY",
+            "SOLID",
+            "GHOST"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isLoading",
+          "optional": true,
+          "type": "boolean",
+          "description": "로딩 여부를 설정합니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "lineClamp",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "typography",
+          "optional": true,
+          "type": "TypographyTokens"
+        }
+      ]
+    },
+    {
+      "name": "Callout",
+      "group": "Callout",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [
+        {
+          "prop": "styleVar",
+          "values": [
+            "INFORMATION",
+            "CAUTION",
+            "ALERT"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "fillWidth",
+          "optional": true,
+          "type": "boolean",
+          "description": "Callout 컴포넌트의 너비를 100%로 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "CalloutIcon",
+      "group": "Callout",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "iconSource",
+          "optional": true,
+          "type": "ShoplIconSource | HadaIconSource",
+          "description": "Icon을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "group": "Checkbox",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLInputElement",
+      "variants": [
+        {
+          "prop": "styleVar",
+          "values": [
+            "PRIMARY",
+            "LINE"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "defaultSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "초기 선택 값을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ChipButton",
+      "group": "ChipButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLButtonElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "XS"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "LINE"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "background",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "배경의 색상을 설정합니다."
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "내부 컨텐츠를 직접 렌더링합니다. 설정 시 `text`보다 우선합니다."
+        },
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "count",
+          "optional": true,
+          "type": "string | number",
+          "description": "칩 버튼에 표시할 카운트 수입니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "radius",
+          "optional": true,
+          "type": "BorderRadiusTokens",
+          "description": "Radius를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "selectedBackground",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "선택 상태에서 기본 배경 대신 사용할 토큰입니다."
+        },
+        {
+          "name": "selectedBorderColor",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "선택 상태에서 기본 테두리 색 대신 사용할 토큰입니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "text",
+          "optional": true,
+          "type": "string",
+          "description": "텍스트를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ChipToggle",
+      "group": "ChipToggle",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLButtonElement",
+      "variants": [
+        {
+          "prop": "styleVar",
+          "values": [
+            "SOLID"
+          ]
+        },
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "XS"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "defaultSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "초기 선택 값을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "radius",
+          "optional": true,
+          "type": "boolean",
+          "description": "Radius를 토글할 수 있는 옵션입니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "text",
+          "optional": true,
+          "type": "string",
+          "description": "텍스트를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "DayDatepicker",
+      "group": "DayDatepicker",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "calendarType",
+          "optional": false,
+          "type": "DayCalendarType",
+          "description": "캘린더 타입"
+        },
+        {
+          "name": "locale",
+          "optional": true,
+          "type": "Locale"
+        },
+        {
+          "name": "maxDate",
+          "optional": true,
+          "type": "Date"
+        },
+        {
+          "name": "minDate",
+          "optional": true,
+          "type": "Date"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "DayDatepickerHeaderCustom",
+      "group": "DayDatepicker",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "className",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "locale",
+          "optional": true,
+          "type": "Locale"
+        },
+        {
+          "name": "maxDate",
+          "optional": true,
+          "type": "Date"
+        },
+        {
+          "name": "minDate",
+          "optional": true,
+          "type": "Date"
+        }
+      ]
+    },
+    {
+      "name": "Dropdown",
+      "group": "Dropdown",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "isOpen",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 `isOpen`을 제어할 수 있습니다."
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": "OffsetOptions"
+        },
+        {
+          "name": "option",
+          "optional": true,
+          "type": "DropdownOptionVariantType",
+          "description": "드롭다운이 어떻게 닫힐 수 있는지 옵션을 설정합니다. CLICK: 화면을 클릭하면 닫힙니다. OUTSIDE_CLICK: 컨텐츠 영역 외부를 클릭하면 닫힙니다. NONE: 클릭으로 닫히지 않습니다."
+        },
+        {
+          "name": "placement",
+          "optional": true,
+          "type": "Placement"
+        },
+        {
+          "name": "popper",
+          "optional": true,
+          "type": "ReactNode"
+        },
+        {
+          "name": "trigger",
+          "optional": true,
+          "type": "ReactNode"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "CSSProperties['width']"
+        }
+      ]
+    },
+    {
+      "name": "DropdownButton",
+      "group": "DropdownButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "PRIMARY",
+            "SECONDARY"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "floatingZIndex",
+          "optional": true,
+          "type": "CSSProperties['zIndex']"
+        },
+        {
+          "name": "placement",
+          "optional": true,
+          "type": "Placement"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "text",
+          "optional": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "DropdownContent",
+      "group": "Dropdown",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "type",
+          "optional": true,
+          "type": "'FILL' | 'FIXED'",
+          "description": "컨텐츠가 부모 `width`를 따라갈지, 고정될지 결정합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string",
+          "description": "컨텐츠의 `width`를 설정합니다. type이 `FILL`일 경우 무시됩니다."
+        }
+      ]
+    },
+    {
+      "name": "DropdownTriggerButton",
+      "group": "Dropdown",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLButtonElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XS",
+            "S",
+            "M",
+            "L"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "NORMAL",
+            "GHOST"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "onClear",
+          "optional": true,
+          "type": "() => void"
+        },
+        {
+          "name": "onClick",
+          "optional": true,
+          "type": "(event: MouseEvent<HTMLElement>) => void"
+        },
+        {
+          "name": "placeholder",
+          "optional": true,
+          "type": "string",
+          "description": "placeholder를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": "ReactNode"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string",
+          "description": "width를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "HelperText",
+      "group": "HelperText",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "text",
+          "optional": true,
+          "type": "string",
+          "description": "텍스트를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "Icon",
+      "group": "Icon",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "SVGSVGElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "iconSource",
+          "optional": true,
+          "type": "ShoplIconSource | HadaIconSource",
+          "description": "Icon을 설정합니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "IconButton",
+      "group": "IconButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": true,
+      "defaultElement": "button",
+      "nativeAttrs": "button",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XS",
+            "S",
+            "M"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "PRIMARY",
+            "SECONDARY",
+            "SOLID",
+            "GHOST"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "iconSizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "아이콘의 크기를 설정합니다."
+        },
+        {
+          "name": "isLoading",
+          "optional": true,
+          "type": "boolean",
+          "description": "로딩 여부를 설정합니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "Input",
+      "group": "Input",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLInputElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "borderRadius",
+          "optional": true,
+          "type": "BorderRadiusTokens"
+        },
+        {
+          "name": "customNumberInputHeight",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "gap",
+          "optional": true,
+          "type": "CSSStyleDeclaration['gap']"
+        },
+        {
+          "name": "initIsFocused",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean",
+          "description": "에러 여부를 설정합니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "maxLength",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "minWidth",
+          "optional": true,
+          "type": "string",
+          "description": "최소 넓이를 지정"
+        },
+        {
+          "name": "onClear",
+          "optional": true,
+          "type": "() => void"
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "InputButton",
+      "group": "InputButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLInputElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "defaultValue",
+          "optional": true,
+          "type": "string | number | readonly string[]",
+          "description": "초기값을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean",
+          "description": "error 여부"
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "onChange",
+          "optional": true,
+          "type": "(value?: string) => void",
+          "description": "Input의 value가 변경될 경우 호출되는 함수입니다."
+        },
+        {
+          "name": "onClear",
+          "optional": true,
+          "type": "(e: MouseEvent<HTMLButtonElement>) => void",
+          "description": "값이 삭제될 때 실행할 함수입니다."
+        },
+        {
+          "name": "onClick",
+          "optional": true,
+          "type": "(e: MouseEvent<HTMLDivElement>) => void"
+        },
+        {
+          "name": "placeholder",
+          "optional": true,
+          "type": "string",
+          "description": "Input의 placeholder를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "useClear",
+          "optional": true,
+          "type": "boolean",
+          "description": "Clear 아이콘의 노출 유무를 설정합니다."
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": "string | number | readonly string[]",
+          "description": "Input의 value를 설정합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "List",
+      "group": "List",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLLIElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactNode를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ListContent2Columns",
+      "group": "List",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ListText2Rows",
+      "group": "List",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "subTitle",
+          "optional": true,
+          "type": "ReactNode"
+        },
+        {
+          "name": "title",
+          "optional": false,
+          "type": "ReactNode"
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "group": "Menu",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLLIElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XS",
+            "S",
+            "M"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "defaultSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "초기 선택 값을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "MinusBox",
+      "group": "MinusButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLButtonElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens"
+        },
+        {
+          "name": "onClick",
+          "optional": true,
+          "type": "(event: MouseEvent<HTMLButtonElement>) => void"
+        }
+      ]
+    },
+    {
+      "name": "ModalBody",
+      "group": "Modal",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "fillViewportHeight",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "isIncludeFooter",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "isIncludeHeader",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "padding",
+          "optional": true,
+          "type": "CSSProperties['padding']"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "ModalSizeType"
+        }
+      ]
+    },
+    {
+      "name": "ModalBottom",
+      "group": "Modal",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ModalContainer",
+      "group": "Modal",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XXS",
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL",
+            "XXXL",
+            "FULL"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "React.ReactNode | React.ReactNode[]"
+        },
+        {
+          "name": "hasChangeAnimation",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "number | '100%'",
+          "description": "모달의 높이를 설정합니다. - number: px 기준 높이 - '100%': 뷰포트 높이에서 상하 여백(64px)을 제외한 높이 (sizeVar='FULL'에서는 적용되지 않습니다.)"
+        },
+        {
+          "name": "outsideClick",
+          "optional": true,
+          "type": "(args?: any) => void",
+          "description": "모달 컨테이너 바깥(백드롭 등)을 클릭했을 때 실행됩니다. Escape 키를 눌렀을 때도 같은 함수가 호출됩니다. 모달이 여러 겹이면 Escape는 스택 최상단(가장 최근에 연) 모달에만 적용됩니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ModalFooter",
+      "group": "Modal",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "padding",
+          "optional": true,
+          "type": "CSSProperties['padding']"
+        }
+      ]
+    },
+    {
+      "name": "ModalHeader",
+      "group": "Modal",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ModalTop",
+      "group": "Modal",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "MonthDatepicker",
+      "group": "MonthDatepicker",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "handleMonthClick",
+          "optional": false,
+          "type": "(dateInfo: MonthClickDateInfo) => void"
+        },
+        {
+          "name": "initEndDate",
+          "optional": true,
+          "type": "Date",
+          "description": "선택된 마지막 날짜"
+        },
+        {
+          "name": "initStartDate",
+          "optional": true,
+          "type": "Date",
+          "description": "선택된 시작 날짜"
+        },
+        {
+          "name": "maxDate",
+          "optional": true,
+          "type": "Date",
+          "description": "최대 선택 가능 날짜"
+        },
+        {
+          "name": "minDate",
+          "optional": true,
+          "type": "Date",
+          "description": "최소 선택 가능 날짜"
+        },
+        {
+          "name": "onlySingleMonth",
+          "optional": true,
+          "type": "boolean",
+          "description": "하나의 월만 선택 여부"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "'S' | 'M'",
+          "description": "사이즈 - 기본값: M"
+        }
+      ]
+    },
+    {
+      "name": "NumberCombobox",
+      "group": "NumberCombobox",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLInputElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "floatingZIndex",
+          "optional": true,
+          "type": "CSSProperties['zIndex']"
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean",
+          "description": "에러 여부"
+        },
+        {
+          "name": "items",
+          "optional": false,
+          "type": "Array<{ label: string; value: string }>"
+        },
+        {
+          "name": "onSelect",
+          "optional": true,
+          "type": "(value: string | number | readonly string[]) => void"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Pagination",
+      "group": "Pagination",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "currentPage",
+          "optional": false,
+          "type": "number",
+          "description": "선택된 페이지"
+        },
+        {
+          "name": "gotoPage",
+          "optional": false,
+          "type": "(updater: ((pageIndex: number) => number) | number) => void"
+        },
+        {
+          "name": "itemsTotalCount",
+          "optional": false,
+          "type": "number",
+          "description": "테이블 아이템 총 갯수"
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "nextPage",
+          "optional": false,
+          "type": "() => void"
+        },
+        {
+          "name": "pageCount",
+          "optional": true,
+          "type": "number",
+          "description": "라인에 보여지는 최대 페이지 갯수"
+        },
+        {
+          "name": "pageSize",
+          "optional": false,
+          "type": "string",
+          "description": "페이지에 보여질 아이템(List) 갯수"
+        },
+        {
+          "name": "previousPage",
+          "optional": false,
+          "type": "() => void"
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "'S' | 'XS'",
+          "description": "페이지네이션 크기"
+        },
+        {
+          "name": "totalCount",
+          "optional": true,
+          "type": "number",
+          "description": "내부 로직을 사용하지 않고, 외부에서 totalCount를 받을 수 있습니다"
+        }
+      ]
+    },
+    {
+      "name": "PaginationSizeSelector",
+      "group": "Pagination",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "data",
+          "optional": false,
+          "type": "Array<{ label: string; value: string }>"
+        },
+        {
+          "name": "pageSize",
+          "optional": true,
+          "type": "string",
+          "description": "페이지에 보여질 아이템(List) 갯수"
+        },
+        {
+          "name": "setPageSize",
+          "optional": false,
+          "type": "(value: string) => void"
+        }
+      ]
+    },
+    {
+      "name": "Popper",
+      "group": "Popper",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "autoPlacement",
+          "optional": true,
+          "type": "AutoPlacementOptions",
+          "description": "화면 뷰에 따라 자동으로 위치를 조정할 수 있습니다. floating ui의 autoPlacement 미들웨어를 사용합니다. Ref: https://floating-ui.com/docs/autoplacement"
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "middlewares",
+          "optional": true,
+          "type": "Array<Middleware | null | undefined | false>",
+          "description": "floating ui의 middleware를 넣을 수 있습니다. Ref: https://floating-ui.com/docs/useFloating#middleware"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": "OffsetOptions",
+          "description": "popper의 offset을 설정합니다. Ref: https://floating-ui.com/docs/offset#offset"
+        },
+        {
+          "name": "onOpenChange",
+          "optional": true,
+          "type": "(open: boolean) => void",
+          "description": "open 상태 변경 감지 이벤트입니다."
+        },
+        {
+          "name": "open",
+          "optional": true,
+          "type": "boolean",
+          "description": "tooltip open 상태 onOpenChange와 함께 사용해야 합니다!"
+        },
+        {
+          "name": "placement",
+          "optional": true,
+          "type": "Placement",
+          "description": "popper의 위치를 지정할 수 있습니다. Ref: https://floating-ui.com/docs/arrow#placement"
+        },
+        {
+          "name": "strategy",
+          "optional": true,
+          "type": "'absolute' | 'fixed'",
+          "description": "popper의 속성을 결정할 수 있습니다."
+        }
+      ]
+    },
+    {
+      "name": "PopperPortal",
+      "group": "Popper",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "animation",
+          "optional": true,
+          "type": "{ initial: Record<string, unknown>; animate: Record<string, unknown>; exit: Rec…",
+          "description": "animation을 넣을 수 있습니다. framer-motion의 animation을 사용합니다."
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "zIndex",
+          "optional": true,
+          "type": "CSSProperties['zIndex']"
+        }
+      ]
+    },
+    {
+      "name": "PopperTrigger",
+      "group": "Popper",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "CSSProperties['height']"
+        },
+        {
+          "name": "isOpen",
+          "optional": true,
+          "type": "boolean",
+          "description": "popper가 열려있는지 여부를 결정합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "CSSProperties['width']"
+        }
+      ]
+    },
+    {
+      "name": "Radio",
+      "group": "Radio",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLButtonElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "defaultSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "초기 선택 값을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        }
+      ]
+    },
+    {
+      "name": "ScrollArea",
+      "group": "ScrollArea",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "autoHeight",
+          "optional": true,
+          "type": "boolean",
+          "description": "자동 높이 모드 활성화. (기본값: true)"
+        },
+        {
+          "name": "autoHeightMax",
+          "optional": true,
+          "type": "number | string",
+          "description": "자동 높이 모드의 최대 높이 설정 (기본값: 200)"
+        },
+        {
+          "name": "autoHeightMin",
+          "optional": true,
+          "type": "number | string",
+          "description": "자동 높이 모드의 최소 높이 설정 (기본값: 0)"
+        },
+        {
+          "name": "autoHide",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "autoHideDuration",
+          "optional": true,
+          "type": "number",
+          "description": "숨김 지속 시간(ms). (기본값: 200)"
+        },
+        {
+          "name": "autoHideTimeout",
+          "optional": true,
+          "type": "number",
+          "description": "숨김 지연 시간(ms). (기본값: 1000)"
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "hideTracksWhenNotNeeded",
+          "optional": true,
+          "type": "boolean",
+          "description": "컨테이너가 오버플로되지 않을 때 트랙을 숨깁니다"
+        },
+        {
+          "name": "id",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "onScroll",
+          "optional": true,
+          "type": "React.UIEventHandler<any>",
+          "description": "(Function) 스크롤 이벤트 핸들러"
+        },
+        {
+          "name": "onScrollFrame",
+          "optional": true,
+          "type": "(values: positionValues) => void",
+          "description": "(Function) 애니메이션 프레임 내에서 실행됩니다."
+        },
+        {
+          "name": "onScrollStart",
+          "optional": true,
+          "type": "() => void",
+          "description": "스크롤이 시작될 때 호출됩니다."
+        },
+        {
+          "name": "onScrollStop",
+          "optional": true,
+          "type": "() => void",
+          "description": "스크롤이 멈출 때 호출됩니다."
+        },
+        {
+          "name": "onUpdate",
+          "optional": true,
+          "type": "(values: positionValues) => void",
+          "description": "컴포넌트가 업데이트될 때마다 호출됩니다. 애니메이션 프레임 내에서 실행됩니다."
+        },
+        {
+          "name": "renderThumbHorizontal",
+          "optional": true,
+          "type": "React.ComponentType<any>",
+          "description": "수평 스크롤 바 요소"
+        },
+        {
+          "name": "renderThumbVertical",
+          "optional": true,
+          "type": "React.ComponentType<any>",
+          "description": "수직 스크롤 바 요소"
+        },
+        {
+          "name": "renderTrackHorizontal",
+          "optional": true,
+          "type": "React.ComponentType<any>",
+          "description": "수평 트랙 요소"
+        },
+        {
+          "name": "renderTrackVertical",
+          "optional": true,
+          "type": "React.ComponentType<any>",
+          "description": "수직 트랙 요소"
+        },
+        {
+          "name": "renderView",
+          "optional": true,
+          "type": "React.ComponentType<any>",
+          "description": "콘텐츠가 렌더링될 요소"
+        },
+        {
+          "name": "style",
+          "optional": true,
+          "type": "React.CSSProperties"
+        },
+        {
+          "name": "tagName",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "thumbMinSize",
+          "optional": true,
+          "type": "number",
+          "description": "최소 스크롤 바 크기를 px 단위로 설정합니다. (기본값: 30)"
+        },
+        {
+          "name": "thumbSize",
+          "optional": true,
+          "type": "number",
+          "description": "스크롤 바의 고정 크기를 px 단위로 설정합니다."
+        },
+        {
+          "name": "universal",
+          "optional": true,
+          "type": "boolean",
+          "description": "범용 렌더링 활성화 (기본값: false)"
+        }
+      ]
+    },
+    {
+      "name": "SearchBar",
+      "group": "SearchBar",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "React.ReactNode",
+          "description": "자식 요소"
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "string",
+          "description": "검색바 높이"
+        },
+        {
+          "name": "useFlexibleWidth",
+          "optional": true,
+          "type": "boolean",
+          "description": "유연한 너비 사용 여부"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string",
+          "description": "검색바 너비"
+        }
+      ]
+    },
+    {
+      "name": "SearchBarBase",
+      "group": "SearchBar",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "React.ReactNode",
+          "description": "자식 요소"
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "string",
+          "description": "검색바 높이"
+        },
+        {
+          "name": "useFlexibleWidth",
+          "optional": true,
+          "type": "boolean",
+          "description": "유연한 너비 사용 여부"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string",
+          "description": "검색바 너비"
+        }
+      ]
+    },
+    {
+      "name": "SearchBarCategory",
+      "group": "SearchBar",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "dropdownItems",
+          "optional": true,
+          "type": "DropdownItem[]",
+          "description": "카테고리 드롭다운 아이템 목록"
+        },
+        {
+          "name": "dropdownWidth",
+          "optional": true,
+          "type": "string",
+          "description": "카테고리 드롭다운 너비"
+        },
+        {
+          "name": "isSelected",
+          "optional": false,
+          "type": "boolean",
+          "description": "선택 상태"
+        },
+        {
+          "name": "onDropdownSelect",
+          "optional": true,
+          "type": "(item: DropdownItem) => void",
+          "description": "카테고리 선택 핸들러"
+        },
+        {
+          "name": "selectedDropdownItem",
+          "optional": true,
+          "type": "DropdownItem",
+          "description": "선택된 카테고리 아이템"
+        }
+      ]
+    },
+    {
+      "name": "SearchBarInput",
+      "group": "SearchBar",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "debounceTime",
+          "optional": true,
+          "type": "number",
+          "description": "디바운스 시간 (ms)"
+        },
+        {
+          "name": "defaultValue",
+          "optional": true,
+          "type": "string | number | readonly string[]",
+          "description": "검색바 기본값"
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부"
+        },
+        {
+          "name": "flexiblePlaceholder",
+          "optional": true,
+          "type": "string",
+          "description": "너비 변경 시 플레이스홀더 텍스트"
+        },
+        {
+          "name": "icon",
+          "optional": true,
+          "type": "React.ReactNode",
+          "description": "검색 아이콘"
+        },
+        {
+          "name": "maxLength",
+          "optional": true,
+          "type": "number",
+          "description": "최대 길이"
+        },
+        {
+          "name": "onChange",
+          "optional": true,
+          "type": "(event: ChangeEvent<HTMLInputElement>) => void",
+          "description": "검색어 변경 핸들러"
+        },
+        {
+          "name": "onClear",
+          "optional": true,
+          "type": "() => void",
+          "description": "검색어 초기화 핸들러"
+        },
+        {
+          "name": "onSearch",
+          "optional": true,
+          "type": "(value: string) => void",
+          "description": "검색 핸들러"
+        },
+        {
+          "name": "placeholder",
+          "optional": true,
+          "type": "string",
+          "description": "플레이스홀더 텍스트"
+        },
+        {
+          "name": "type",
+          "optional": true,
+          "type": "SearchType",
+          "description": "검색 타입"
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": "string | number | readonly string[]",
+          "description": "검색바 값"
+        }
+      ]
+    },
+    {
+      "name": "SelectInputButton",
+      "group": "SelectInputButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLLabelElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean",
+          "description": "error 여부"
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "label",
+          "optional": true,
+          "type": "string",
+          "description": "받은 value 중 label로 보여줄 값을 받습니다."
+        },
+        {
+          "name": "onClear",
+          "optional": true,
+          "type": "(e: MouseEvent<HTMLButtonElement>) => void",
+          "description": "값이 삭제될 때 실행할 함수입니다."
+        },
+        {
+          "name": "onClick",
+          "optional": true,
+          "type": "(e: MouseEvent<HTMLLabelElement>) => void",
+          "description": "Input의 value가 변경될 경우 호출되는 함수입니다."
+        },
+        {
+          "name": "placeholder",
+          "optional": true,
+          "type": "string",
+          "description": "Input의 placeholder를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": "Array<Record<string, any>>",
+          "description": "선택한 값을 받습니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Skeleton",
+      "group": "Skeleton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "height",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "'circle' | 'rectangle'"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Slider",
+      "group": "Slider",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "handleRange",
+          "optional": true,
+          "type": "(range: { min: number; max: number }) => void",
+          "description": "선택 범위가 변경될 때 실행할 함수"
+        },
+        {
+          "name": "isDisabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부"
+        },
+        {
+          "name": "max",
+          "optional": false,
+          "type": "number",
+          "description": "선택 가능한 최대값"
+        },
+        {
+          "name": "min",
+          "optional": false,
+          "type": "number",
+          "description": "선택 가능한 최소값"
+        },
+        {
+          "name": "range",
+          "optional": true,
+          "type": "{ min: number; max: number }",
+          "description": "초기 선택 범위"
+        },
+        {
+          "name": "selectedColor",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "선택된 범위에 적용될 색상"
+        },
+        {
+          "name": "step",
+          "optional": true,
+          "type": "number",
+          "description": "증분 단위"
+        }
+      ]
+    },
+    {
+      "name": "SplitButton",
+      "group": "SplitButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "'button'",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "PRIMARY",
+            "SECONDARY"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "floatingZIndex",
+          "optional": true,
+          "type": "CSSProperties['zIndex']"
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "lineClamp",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "placement",
+          "optional": true,
+          "type": "Placement"
+        },
+        {
+          "name": "popoverMenuStyle",
+          "optional": true,
+          "type": "CSSProperties",
+          "description": "Popover 메뉴(`StyledPopoverContentWrapper`)에 적용할 인라인 스타일"
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "text",
+          "optional": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Stack",
+      "group": "Stack",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "align",
+          "optional": true,
+          "type": "CSSProperties['alignItems']",
+          "description": "요소들의 align-items 값"
+        },
+        {
+          "name": "background",
+          "optional": true,
+          "type": "ColorTokens"
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "direction",
+          "optional": true,
+          "type": "CSSProperties['flexDirection']",
+          "description": "요소들의 flex-direction 값 (값: row, column)"
+        },
+        {
+          "name": "flex",
+          "optional": true,
+          "type": "CSSProperties['flex']",
+          "description": "flex 설정"
+        },
+        {
+          "name": "flexWrap",
+          "optional": true,
+          "type": "CSSProperties['flexWrap']",
+          "description": "flex-wrap 설정"
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "CSSProperties['height']",
+          "description": "height 설정"
+        },
+        {
+          "name": "justify",
+          "optional": true,
+          "type": "CSSProperties['justifyContent']",
+          "description": "요소들의 justify-content 값"
+        },
+        {
+          "name": "maxHeight",
+          "optional": true,
+          "type": "CSSProperties['maxHeight']"
+        },
+        {
+          "name": "maxWidth",
+          "optional": true,
+          "type": "CSSProperties['maxWidth']"
+        },
+        {
+          "name": "minHeight",
+          "optional": true,
+          "type": "CSSProperties['minHeight']"
+        },
+        {
+          "name": "minWidth",
+          "optional": true,
+          "type": "CSSProperties['minWidth']"
+        },
+        {
+          "name": "radius",
+          "optional": true,
+          "type": "BorderRadiusTokens"
+        },
+        {
+          "name": "spacing",
+          "optional": true,
+          "type": "SpacingTokens",
+          "description": "요소들 사이의 간격"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "CSSProperties['width']",
+          "description": "width 설정"
+        }
+      ]
+    },
+    {
+      "name": "StackContainer",
+      "group": "StackContainer",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "align",
+          "optional": true,
+          "type": "CSSProperties['alignItems']",
+          "description": "요소들의 align-items 값"
+        },
+        {
+          "name": "background",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "background 설정"
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "direction",
+          "optional": true,
+          "type": "CSSProperties['flexDirection']",
+          "description": "요소들의 flex-direction 값 (값: row, column)"
+        },
+        {
+          "name": "flex",
+          "optional": true,
+          "type": "CSSProperties['flex']",
+          "description": "flex 설정"
+        },
+        {
+          "name": "flexWrap",
+          "optional": true,
+          "type": "CSSProperties['flexWrap']",
+          "description": "flex-wrap 설정"
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "CSSProperties['height']",
+          "description": "height 설정"
+        },
+        {
+          "name": "justify",
+          "optional": true,
+          "type": "CSSProperties['justifyContent']",
+          "description": "요소들의 justify-content 값"
+        },
+        {
+          "name": "margin",
+          "optional": true,
+          "type": "CSSProperties['margin']"
+        },
+        {
+          "name": "maxHeight",
+          "optional": true,
+          "type": "CSSProperties['maxHeight']"
+        },
+        {
+          "name": "maxWidth",
+          "optional": true,
+          "type": "CSSProperties['maxWidth']"
+        },
+        {
+          "name": "minHeight",
+          "optional": true,
+          "type": "CSSProperties['minHeight']"
+        },
+        {
+          "name": "minWidth",
+          "optional": true,
+          "type": "CSSProperties['minWidth']"
+        },
+        {
+          "name": "padding",
+          "optional": true,
+          "type": "CSSProperties['padding']",
+          "description": "padding, margin 설정"
+        },
+        {
+          "name": "radius",
+          "optional": true,
+          "type": "BorderRadiusTokens",
+          "description": "border-radius 설정"
+        },
+        {
+          "name": "spacing",
+          "optional": true,
+          "type": "SpacingTokens",
+          "description": "요소들 사이의 간격"
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "CSSProperties['width']",
+          "description": "width 설정"
+        }
+      ]
+    },
+    {
+      "name": "Switch",
+      "group": "Switch",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLInputElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "activeColor",
+          "optional": false,
+          "type": "ColorTokens"
+        },
+        {
+          "name": "defaultSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "초기 선택 값을 설정합니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "isSelected",
+          "optional": true,
+          "type": "boolean",
+          "description": "외부에서 선택 여부를 설정합니다. 내부에서 컨트롤할 수 없습니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "Tab",
+      "group": "Tabs",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": true,
+      "nativeAttrs": "HTMLElement",
+      "variants": [
+        {
+          "prop": "styleVar",
+          "values": [
+            "NORMAL",
+            "INFO"
+          ]
+        },
+        {
+          "prop": "sizeVar",
+          "values": [
+            "M",
+            "L"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "activeColor",
+          "optional": true,
+          "type": "ColorTokens"
+        },
+        {
+          "name": "clickable",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "label",
+          "optional": false,
+          "type": "string"
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactNode를 설정합니다."
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        },
+        {
+          "name": "value",
+          "optional": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "group": "Tabs",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "initialTab",
+          "optional": false,
+          "type": "string",
+          "description": "처음에 선택될 탭을 설정합니다."
+        },
+        {
+          "name": "onChange",
+          "optional": false,
+          "type": "(tab: string) => void",
+          "description": "Tab은 Controlled Component입니다. onChange를 꼭 넘겨주세요"
+        }
+      ]
+    },
+    {
+      "name": "Tag",
+      "group": "Tag",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "XS",
+            "S",
+            "M"
+          ]
+        },
+        {
+          "prop": "styleVar",
+          "values": [
+            "SOLID",
+            "TINT",
+            "LINE"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "background",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "배경의 색상을 설정합니다."
+        },
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "텍스트 혹은 아이콘의 색상을 설정합니다. styleVar이 있는 경우 메인색상을 설정합니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "radius",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "styleVar",
+          "optional": true,
+          "type": "Style",
+          "description": "컴포넌트의 스타일을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "group": "Text",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": true,
+      "defaultElement": "span",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "color",
+          "optional": true,
+          "type": "ColorTokens"
+        },
+        {
+          "name": "display",
+          "optional": true,
+          "type": "CSSProperties['display']"
+        },
+        {
+          "name": "lineClamp",
+          "optional": true,
+          "type": "number",
+          "description": "텍스트를 몇 줄까지 보여줄지를 설정합니다."
+        },
+        {
+          "name": "opacity",
+          "optional": true,
+          "type": "CSSProperties['opacity']"
+        },
+        {
+          "name": "overflowWrap",
+          "optional": true,
+          "type": "CSSProperties['overflowWrap']"
+        },
+        {
+          "name": "textAlign",
+          "optional": true,
+          "type": "CSSProperties['textAlign']"
+        },
+        {
+          "name": "textDecorations",
+          "optional": true,
+          "type": "CSSProperties['textDecoration']"
+        },
+        {
+          "name": "textOverflow",
+          "optional": true,
+          "type": "CSSProperties['textOverflow']"
+        },
+        {
+          "name": "typography",
+          "optional": true,
+          "type": "TypographyTokens",
+          "description": "타이포그레피를 설정합니다."
+        },
+        {
+          "name": "whiteSpace",
+          "optional": true,
+          "type": "CSSProperties['whiteSpace']"
+        },
+        {
+          "name": "wordBreak",
+          "optional": true,
+          "type": "CSSProperties['wordBreak']"
+        }
+      ]
+    },
+    {
+      "name": "TextArea",
+      "group": "TextArea",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "'textarea'",
+      "variants": [],
+      "props": [
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "focusedBorderColor",
+          "optional": true,
+          "type": "ColorTokens",
+          "description": "focused 상태일 때의 border-color를 설정합니다."
+        },
+        {
+          "name": "height",
+          "optional": true,
+          "type": "string",
+          "description": "TextArea의 높이를 설정합니다."
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean",
+          "description": "에러 여부를 설정합니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "TextArea Toolbar의 왼쪽 요소를 설정합니다."
+        },
+        {
+          "name": "maxLength",
+          "optional": true,
+          "type": "number",
+          "description": "maxLength를 설정합니다."
+        },
+        {
+          "name": "minHeight",
+          "optional": true,
+          "type": "string",
+          "description": "TextArea의 최소 높이를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "TextArea Toolbar의 오른쪽 요소를 설정합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "string",
+          "description": "TextArea의 너비를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "ToggleButton",
+      "group": "ToggleButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "fixedWidth",
+          "optional": false,
+          "type": "number"
+        },
+        {
+          "name": "onChange",
+          "optional": true,
+          "type": "React.ChangeEventHandler<HTMLInputElement>"
+        },
+        {
+          "name": "selectedValue",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "ToggleButtonSizeVariantType"
+        },
+        {
+          "name": "targetName",
+          "optional": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ToggleButtonInnerRadio",
+      "group": "ToggleButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLInputElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean"
+        },
+        {
+          "name": "label",
+          "optional": false,
+          "type": "string"
+        },
+        {
+          "name": "selected",
+          "optional": true,
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "Tooltip",
+      "group": "Tooltip",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "popper",
+          "optional": false,
+          "type": "React.ReactNode"
+        },
+        {
+          "name": "portalRef",
+          "optional": true,
+          "type": "Ref<HTMLDivElement>"
+        },
+        {
+          "name": "trigger",
+          "optional": false,
+          "type": "React.ReactNode"
+        },
+        {
+          "name": "triggerRef",
+          "optional": true,
+          "type": "Ref<HTMLDivElement>"
+        },
+        {
+          "name": "triggerWidth",
+          "optional": true,
+          "type": "CSSProperties['width']"
+        }
+      ]
+    },
+    {
+      "name": "TooltipContent",
+      "group": "Tooltip",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "content",
+          "optional": false,
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Tree",
+      "group": "Tree",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "TreeItem",
+      "group": "Tree",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        },
+        {
+          "name": "depth",
+          "optional": true,
+          "type": "number",
+          "description": "트리의 깊이를 설정합니다. 자동으로 설정되는 값이므로 별도로 설정하지 않아도 됩니다. 재귀로 Tree를 구현할 경우 사용해주세요."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "트리 영역의 click event 비활성화 여부를 설정합니다. leftsource의 click event는 별도 설정이 필요합니다."
+        },
+        {
+          "name": "initialIsOpen",
+          "optional": true,
+          "type": "boolean",
+          "description": "초기 값을 설정합니다."
+        },
+        {
+          "name": "isOpen",
+          "optional": true,
+          "type": "boolean",
+          "description": "트리아이템을 직접 조작할 때 사용합니다."
+        },
+        {
+          "name": "label",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "내부에 들어갈 요소를 설정합니다."
+        },
+        {
+          "name": "leftSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 왼쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSource",
+          "optional": true,
+          "type": "ReactElement",
+          "description": "텍스트를 기준으로 오른쪽에 위치할 ReactElement를 설정합니다."
+        },
+        {
+          "name": "rightSourceStyle",
+          "optional": true,
+          "type": "CSSProperties"
+        }
+      ]
+    },
+    {
+      "name": "WeekDatepicker",
+      "group": "WeekDatepicker",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": [
+        {
+          "name": "handleWeekClick",
+          "optional": false,
+          "type": "(dateInfo: WeekClickDateInfo) => void"
+        },
+        {
+          "name": "initEndDate",
+          "optional": true,
+          "type": "Date",
+          "description": "선택된 마지막 날짜"
+        },
+        {
+          "name": "initStartDate",
+          "optional": true,
+          "type": "Date",
+          "description": "선택된 시작 날짜"
+        },
+        {
+          "name": "maxDate",
+          "optional": true,
+          "type": "Date",
+          "description": "최대 선택 가능 날짜"
+        },
+        {
+          "name": "minDate",
+          "optional": true,
+          "type": "Date",
+          "description": "최소 선택 가능 날짜"
+        },
+        {
+          "name": "onlySingleWeek",
+          "optional": true,
+          "type": "boolean",
+          "description": "하나의 주만 선택 여부"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "'S' | 'M'",
+          "description": "사이즈 - 기본값: M"
+        }
+      ]
+    }
+  ]
+}
