@@ -2,6 +2,16 @@
   "name": "@shoplflow/mcp",
   "version": "0.0.0",
   "description": "Model Context Protocol server exposing the shoplflow design system (tokens, components, icons) to AI coding agents.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "design-system",
+    "shoplflow",
+    "ai",
+    "claude",
+    "cursor",
+    "codegen"
+  ],
   "license": "Apache-2.0",
   "type": "module",
   "bin": {
@@ -11,6 +21,12 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "generate:metadata": "node scripts/generate-metadata.cjs",
     "build:package": "pnpm generate:metadata && rm -rf dist/ && tsup",
@@ -23,6 +39,9 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@shoplflow/base": "workspace:*",
+    "@shoplflow/hada-assets": "workspace:*",
+    "@shoplflow/shopl-assets": "workspace:*",
     "@types/node": "^22.0.0",
     "ts-morph": "^24.0.0",
     "tsup": "7.2.0",
