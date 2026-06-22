@@ -29,3 +29,4 @@ export * from './Skeleton';
 export * from './Slider';
 export * from './SearchBar';
 export * from './HelperText';
+export * from './Divider';

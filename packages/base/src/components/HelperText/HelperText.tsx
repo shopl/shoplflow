@@ -28,6 +28,11 @@ const BulletHelperText = ({ color = 'neutral700', children, ...rest }: HelperTex
 const NormalHelperText = ({ color, position, children, ...rest }: HelperTextProps) => {
   const getPositionStyle = useCallback(() => {
     switch (position) {
+      case 'PRESET-NONE':
+        return {
+          marginTop: '0px',
+          marginBottom: '0px',
+        };
       case 'PRESET-TOP':
         return {
           marginTop: '8px',
