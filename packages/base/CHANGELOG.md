@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.47.0
+
+### Minor Changes
+
+- [#815](https://github.com/shopl/shoplflow/pull/815) [`bb38f1674ee7983a2046aa6f86ff3b68ff284a4c`](https://github.com/shopl/shoplflow/commit/bb38f1674ee7983a2046aa6f86ff3b68ff284a4c) Thanks [@velo-kim](https://github.com/velo-kim)! - Divider: 콘텐츠를 구분하는 Divider 컴포넌트 추가. direction(row/column), color, length, thickness, isFull props를 지원하며, 기존 dashboard의 Divider와 동일한 API로 호환됩니다. (isFull=true 시 direction 방향으로 부모 가용 영역을 채움 - align-self: stretch)
+
 ## 0.46.37
 
 ### Patch Changes
