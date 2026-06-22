@@ -5,6 +5,7 @@ import IcAbnormalLate from './IcAbnormalLate';
 import IcAbnormalM from './IcAbnormalM';
 import IcAbnormalN from './IcAbnormalN';
 import IcAbnormalW from './IcAbnormalW';
+import IcAddCircle from './IcAddCircle';
 import IcAddSection from './IcAddSection';
 import IcAddXsmall from './IcAddXsmall';
 import IcAdd from './IcAdd';
@@ -38,7 +39,9 @@ import IcBoardProfile from './IcBoardProfile';
 import IcBookMedium from './IcBookMedium';
 import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
+import IcBookmark from './IcBookmark';
 import IcBox from './IcBox';
+import IcBrand from './IcBrand';
 import IcBriefcase from './IcBriefcase';
 import IcBuilding from './IcBuilding';
 import IcByEmployeeMedium from './IcByEmployeeMedium';
@@ -90,9 +93,12 @@ import IcDownArrow from './IcDownArrow';
 import IcDownloadMedium from './IcDownloadMedium';
 import IcDownload from './IcDownload';
 import IcDraftsave from './IcDraftsave';
+import IcDragHorizontal from './IcDragHorizontal';
+import IcDragVertical from './IcDragVertical';
 import IcDrag from './IcDrag';
 import IcDrawer from './IcDrawer';
 import IcDropdown from './IcDropdown';
+import IcDuration from './IcDuration';
 import IcEditLarge from './IcEditLarge';
 import IcEditLine from './IcEditLine';
 import IcEditSolid from './IcEditSolid';
@@ -151,6 +157,7 @@ import IcGradientTodo from './IcGradientTodo';
 import IcGradientWifi from './IcGradientWifi';
 import IcGradientWorkplace from './IcGradientWorkplace';
 import IcGraph from './IcGraph';
+import IcGrid from './IcGrid';
 import IcGroupLine from './IcGroupLine';
 import IcGroupMedium from './IcGroupMedium';
 import IcGroupSolidMedium from './IcGroupSolidMedium';
@@ -238,6 +245,7 @@ import IcMove2 from './IcMove2';
 import IcMoveSolid from './IcMoveSolid';
 import IcMove from './IcMove';
 import IcMovie01 from './IcMovie01';
+import IcMultiText from './IcMultiText';
 import IcMultipleChoice from './IcMultipleChoice';
 import IcNoGrade from './IcNoGrade';
 import IcNormal from './IcNormal';
@@ -254,6 +262,7 @@ import IcOvertimeMedium from './IcOvertimeMedium';
 import IcPasswordErrorXlarge from './IcPasswordErrorXlarge';
 import IcPaste from './IcPaste';
 import IcPaymentMedium from './IcPaymentMedium';
+import IcPeriod from './IcPeriod';
 import IcPhoneLine from './IcPhoneLine';
 import IcPhotoMedium from './IcPhotoMedium';
 import IcPhoto from './IcPhoto';
@@ -268,9 +277,11 @@ import IcPreorderMedium from './IcPreorderMedium';
 import IcPreview from './IcPreview';
 import IcPriceMedium from './IcPriceMedium';
 import IcProceeding from './IcProceeding';
+import IcProcessingXsmall from './IcProcessingXsmall';
 import IcPush from './IcPush';
 import IcQrcode from './IcQrcode';
 import IcQuit from './IcQuit';
+import IcRactangleXsmall from './IcRactangleXsmall';
 import IcRatioMedium from './IcRatioMedium';
 import IcReadingGlassCheckLine from './IcReadingGlassCheckLine';
 import IcReceiverMedium from './IcReceiverMedium';
@@ -294,6 +305,7 @@ import IcScan from './IcScan';
 import IcScheduleMedium from './IcScheduleMedium';
 import IcSchool from './IcSchool';
 import IcSearch from './IcSearch';
+import IcSection from './IcSection';
 import IcSend from './IcSend';
 import IcSettingMedium from './IcSettingMedium';
 import IcSetting from './IcSetting';
@@ -302,6 +314,7 @@ import IcShortcutXsmall from './IcShortcutXsmall';
 import IcShowMedium from './IcShowMedium';
 import IcSign from './IcSign';
 import IcSignature from './IcSignature';
+import IcSingleText from './IcSingleText';
 import IcSolved from './IcSolved';
 import IcSortingAtoz from './IcSortingAtoz';
 import IcSortingEarly from './IcSortingEarly';
@@ -320,6 +333,8 @@ import IcTag from './IcTag';
 import IcTargetMedium from './IcTargetMedium';
 import IcText from './IcText';
 import IcTimeLineLine from './IcTimeLineLine';
+import IcTime from './IcTime';
+import IcTitle from './IcTitle';
 import IcTodoMedium from './IcTodoMedium';
 import IcToggleMedium from './IcToggleMedium';
 import IcTrashLine from './IcTrashLine';
@@ -335,6 +350,7 @@ import IcVideo from './IcVideo';
 import IcViewOff from './IcViewOff';
 import IcViewOn from './IcViewOn';
 import IcWaitingMedium from './IcWaitingMedium';
+import IcWebMedium from './IcWebMedium';
 import IcWhatsappLarge from './IcWhatsappLarge';
 import IcWhatsapp from './IcWhatsapp';
 import IcWifi from './IcWifi';
@@ -354,6 +370,7 @@ const icons = {
   'abnormal-m': IcAbnormalM,
   'abnormal-n': IcAbnormalN,
   'abnormal-w': IcAbnormalW,
+  'add-circle': IcAddCircle,
   'add-section': IcAddSection,
   'add-xsmall': IcAddXsmall,
   add: IcAdd,
@@ -387,7 +404,9 @@ const icons = {
   'book-medium': IcBookMedium,
   'bookmark-filled-medium': IcBookmarkFilledMedium,
   'bookmark-medium': IcBookmarkMedium,
+  bookmark: IcBookmark,
   box: IcBox,
+  brand: IcBrand,
   briefcase: IcBriefcase,
   building: IcBuilding,
   'by-employee-medium': IcByEmployeeMedium,
@@ -439,9 +458,12 @@ const icons = {
   'download-medium': IcDownloadMedium,
   download: IcDownload,
   draftsave: IcDraftsave,
+  'drag-horizontal': IcDragHorizontal,
+  'drag-vertical': IcDragVertical,
   drag: IcDrag,
   drawer: IcDrawer,
   dropdown: IcDropdown,
+  duration: IcDuration,
   'edit-large': IcEditLarge,
   'edit-line': IcEditLine,
   'edit-solid': IcEditSolid,
@@ -500,6 +522,7 @@ const icons = {
   'gradient-wifi': IcGradientWifi,
   'gradient-workplace': IcGradientWorkplace,
   graph: IcGraph,
+  grid: IcGrid,
   'group-line': IcGroupLine,
   'group-medium': IcGroupMedium,
   'group-solid-medium': IcGroupSolidMedium,
@@ -587,6 +610,7 @@ const icons = {
   'move-solid': IcMoveSolid,
   move: IcMove,
   'movie-01': IcMovie01,
+  'multi-text': IcMultiText,
   'multiple-choice': IcMultipleChoice,
   'no-grade': IcNoGrade,
   normal: IcNormal,
@@ -603,6 +627,7 @@ const icons = {
   'password-error-xlarge': IcPasswordErrorXlarge,
   paste: IcPaste,
   'payment-medium': IcPaymentMedium,
+  period: IcPeriod,
   'phone-line': IcPhoneLine,
   'photo-medium': IcPhotoMedium,
   photo: IcPhoto,
@@ -617,9 +642,11 @@ const icons = {
   preview: IcPreview,
   'price-medium': IcPriceMedium,
   proceeding: IcProceeding,
+  'processing-xsmall': IcProcessingXsmall,
   push: IcPush,
   qrcode: IcQrcode,
   quit: IcQuit,
+  'ractangle-xsmall': IcRactangleXsmall,
   'ratio-medium': IcRatioMedium,
   'reading-glass-check-line': IcReadingGlassCheckLine,
   'receiver-medium': IcReceiverMedium,
@@ -643,6 +670,7 @@ const icons = {
   'schedule-medium': IcScheduleMedium,
   school: IcSchool,
   search: IcSearch,
+  section: IcSection,
   send: IcSend,
   'setting-medium': IcSettingMedium,
   setting: IcSetting,
@@ -651,6 +679,7 @@ const icons = {
   'show-medium': IcShowMedium,
   sign: IcSign,
   signature: IcSignature,
+  'single-text': IcSingleText,
   solved: IcSolved,
   'sorting-atoz': IcSortingAtoz,
   'sorting-early': IcSortingEarly,
@@ -669,6 +698,8 @@ const icons = {
   'target-medium': IcTargetMedium,
   text: IcText,
   'time-line-line': IcTimeLineLine,
+  time: IcTime,
+  title: IcTitle,
   'todo-medium': IcTodoMedium,
   'toggle-medium': IcToggleMedium,
   'trash-line': IcTrashLine,
@@ -684,6 +715,7 @@ const icons = {
   'view-off': IcViewOff,
   'view-on': IcViewOn,
   'waiting-medium': IcWaitingMedium,
+  'web-medium': IcWebMedium,
   'whatsapp-large': IcWhatsappLarge,
   whatsapp: IcWhatsapp,
   wifi: IcWifi,
@@ -706,6 +738,7 @@ export {
   IcAbnormalM as AbnormalMIcon,
   IcAbnormalN as AbnormalNIcon,
   IcAbnormalW as AbnormalWIcon,
+  IcAddCircle as AddCircleIcon,
   IcAddSection as AddSectionIcon,
   IcAddXsmall as AddXsmallIcon,
   IcAdd as AddIcon,
@@ -739,7 +772,9 @@ export {
   IcBookMedium as BookMediumIcon,
   IcBookmarkFilledMedium as BookmarkFilledMediumIcon,
   IcBookmarkMedium as BookmarkMediumIcon,
+  IcBookmark as BookmarkIcon,
   IcBox as BoxIcon,
+  IcBrand as BrandIcon,
   IcBriefcase as BriefcaseIcon,
   IcBuilding as BuildingIcon,
   IcByEmployeeMedium as ByEmployeeMediumIcon,
@@ -791,9 +826,12 @@ export {
   IcDownloadMedium as DownloadMediumIcon,
   IcDownload as DownloadIcon,
   IcDraftsave as DraftsaveIcon,
+  IcDragHorizontal as DragHorizontalIcon,
+  IcDragVertical as DragVerticalIcon,
   IcDrag as DragIcon,
   IcDrawer as DrawerIcon,
   IcDropdown as DropdownIcon,
+  IcDuration as DurationIcon,
   IcEditLarge as EditLargeIcon,
   IcEditLine as EditLineIcon,
   IcEditSolid as EditSolidIcon,
@@ -852,6 +890,7 @@ export {
   IcGradientWifi as GradientWifiIcon,
   IcGradientWorkplace as GradientWorkplaceIcon,
   IcGraph as GraphIcon,
+  IcGrid as GridIcon,
   IcGroupLine as GroupLineIcon,
   IcGroupMedium as GroupMediumIcon,
   IcGroupSolidMedium as GroupSolidMediumIcon,
@@ -939,6 +978,7 @@ export {
   IcMoveSolid as MoveSolidIcon,
   IcMove as MoveIcon,
   IcMovie01 as Movie01Icon,
+  IcMultiText as MultiTextIcon,
   IcMultipleChoice as MultipleChoiceIcon,
   IcNoGrade as NoGradeIcon,
   IcNormal as NormalIcon,
@@ -955,6 +995,7 @@ export {
   IcPasswordErrorXlarge as PasswordErrorXlargeIcon,
   IcPaste as PasteIcon,
   IcPaymentMedium as PaymentMediumIcon,
+  IcPeriod as PeriodIcon,
   IcPhoneLine as PhoneLineIcon,
   IcPhotoMedium as PhotoMediumIcon,
   IcPhoto as PhotoIcon,
@@ -969,9 +1010,11 @@ export {
   IcPreview as PreviewIcon,
   IcPriceMedium as PriceMediumIcon,
   IcProceeding as ProceedingIcon,
+  IcProcessingXsmall as ProcessingXsmallIcon,
   IcPush as PushIcon,
   IcQrcode as QrcodeIcon,
   IcQuit as QuitIcon,
+  IcRactangleXsmall as RactangleXsmallIcon,
   IcRatioMedium as RatioMediumIcon,
   IcReadingGlassCheckLine as ReadingGlassCheckLineIcon,
   IcReceiverMedium as ReceiverMediumIcon,
@@ -995,6 +1038,7 @@ export {
   IcScheduleMedium as ScheduleMediumIcon,
   IcSchool as SchoolIcon,
   IcSearch as SearchIcon,
+  IcSection as SectionIcon,
   IcSend as SendIcon,
   IcSettingMedium as SettingMediumIcon,
   IcSetting as SettingIcon,
@@ -1003,6 +1047,7 @@ export {
   IcShowMedium as ShowMediumIcon,
   IcSign as SignIcon,
   IcSignature as SignatureIcon,
+  IcSingleText as SingleTextIcon,
   IcSolved as SolvedIcon,
   IcSortingAtoz as SortingAtozIcon,
   IcSortingEarly as SortingEarlyIcon,
@@ -1021,6 +1066,8 @@ export {
   IcTargetMedium as TargetMediumIcon,
   IcText as TextIcon,
   IcTimeLineLine as TimeLineLineIcon,
+  IcTime as TimeIcon,
+  IcTitle as TitleIcon,
   IcTodoMedium as TodoMediumIcon,
   IcToggleMedium as ToggleMediumIcon,
   IcTrashLine as TrashLineIcon,
@@ -1036,6 +1083,7 @@ export {
   IcViewOff as ViewOffIcon,
   IcViewOn as ViewOnIcon,
   IcWaitingMedium as WaitingMediumIcon,
+  IcWebMedium as WebMediumIcon,
   IcWhatsappLarge as WhatsappLargeIcon,
   IcWhatsapp as WhatsappIcon,
   IcWifi as WifiIcon,
