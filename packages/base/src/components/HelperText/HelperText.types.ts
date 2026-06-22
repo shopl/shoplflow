@@ -9,7 +9,7 @@ type BaseHelperTextProps = {
 };
 
 type PositionProps = {
-  position?: 'PRESET-TOP' | 'PRESET-BOTTOM';
+  position?: 'PRESET-TOP' | 'PRESET-BOTTOM' | 'PRESET-NONE';
 };
 
 export type NormalHelperTextOptionProps = BaseHelperTextProps &
