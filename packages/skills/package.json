@@ -1,0 +1,39 @@
+{
+  "name": "@shoplflow/skills",
+  "version": "0.0.0",
+  "description": "Downloadable AI-agent skills for consuming the @shoplflow design system. Installs into Claude Code, Codex, or Cursor.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "shoplflow-skills": "./install.mjs"
+  },
+  "files": [
+    "install.mjs",
+    "skills",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "shoplflow",
+    "design-system",
+    "skills",
+    "claude-code",
+    "codex",
+    "cursor",
+    "agent-skills"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopl/shoplflow",
+    "directory": "packages/skills"
+  },
+  "bugs": {
+    "url": "https://github.com/shopl/shoplflow/issues"
+  },
+  "homepage": "https://github.com/shopl/shoplflow#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}
