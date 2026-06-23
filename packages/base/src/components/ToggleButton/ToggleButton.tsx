@@ -11,6 +11,8 @@ import { ToggleButtonContext, useToggleButton } from './useToggleButton';
 
 const ToggleButton = ({
   fixedWidth,
+  fullWidth = false,
+  buttonLineClamp,
   children,
   targetName,
   onChange,
@@ -20,8 +22,10 @@ const ToggleButton = ({
   ...rest
 }: ToggleButtonProps) => {
   return (
-    <ToggleButtonContext.Provider value={{ fixedWidth, targetName, onChange, selectedValue, sizeVar, disabled }}>
-      <StyledToggleButton data-shoplflow={'ToggleButton'} aria-disabled={disabled} {...rest}>
+    <ToggleButtonContext.Provider
+      value={{ fixedWidth, fullWidth, buttonLineClamp, targetName, onChange, selectedValue, sizeVar, disabled }}
+    >
+      <StyledToggleButton data-shoplflow={'ToggleButton'} fullWidth={fullWidth} aria-disabled={disabled} {...rest}>
         {children}
       </StyledToggleButton>
     </ToggleButtonContext.Provider>
@@ -30,7 +34,16 @@ const ToggleButton = ({
 
 const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProps>(
   ({ label, disabled: itemDisabled, value, id, ...rest }, ref) => {
-    const { fixedWidth, onChange, targetName, selectedValue, sizeVar, disabled: groupDisabled } = useToggleButton();
+    const {
+      fixedWidth,
+      fullWidth,
+      buttonLineClamp,
+      onChange,
+      targetName,
+      selectedValue,
+      sizeVar,
+      disabled: groupDisabled,
+    } = useToggleButton();
 
     const disabled = groupDisabled || itemDisabled;
 
@@ -52,6 +65,7 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
     return (
       <StyledToggleInner
         width={fixedWidth}
+        fullWidth={fullWidth}
         sizeVar={sizeVar}
         type='button'
         aria-disabled={disabled}
@@ -66,7 +80,6 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
       >
         <StyledToggleInnerInput
           checked={selected}
-          width={fixedWidth}
           disabled={disabled}
           aria-disabled={disabled}
           value={value}
@@ -78,10 +91,12 @@ const ToggleInnerRadio = forwardRef<HTMLInputElement, ToggleButtonInnerRadioProp
           onChange={onChange}
         />
 
-        <StyledToggleInnerLabel ref={labelRef} htmlFor={id}>
+        <StyledToggleInnerLabel ref={labelRef} htmlFor={id} lineClamp={buttonLineClamp}>
           <Text
             color={getLabelColor({ selected, disabled: Boolean(disabled) })}
             wordBreak='break-all'
+            lineClamp={buttonLineClamp}
+            textAlign={buttonLineClamp ? 'center' : undefined}
             typography={selected ? 'body2_500' : 'body2_400'}
           >
             {label}

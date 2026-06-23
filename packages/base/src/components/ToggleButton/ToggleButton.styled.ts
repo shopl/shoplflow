@@ -23,16 +23,24 @@ const getLabelStyleBySizeVar = (sizeVar: ToggleButtonSizeVariantType) => {
   }
 };
 
-export const StyledToggleButton = styled.div`
+export const StyledToggleButton = styled.div<{
+  fullWidth?: boolean;
+}>`
   display: flex;
   padding: ${spacingTokens.spacing04};
   align-items: stretch;
   background-color: ${colorTokens.neutral150};
   border-radius: ${borderRadiusTokens.borderRadius06};
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+    `}
 `;
 
 export const StyledToggleInner = styled.button<{
-  width: number;
+  width?: number;
+  fullWidth?: boolean;
   sizeVar: ToggleButtonSizeVariantType;
 }>`
   width: fit-content;
@@ -41,11 +49,19 @@ export const StyledToggleInner = styled.button<{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: ${({ width }) => `${width}px`};
+  min-width: ${({ width }) => (width !== undefined ? `${width}px` : undefined)};
   padding: 0 12px;
   border-radius: 6px;
   background-color: transparent;
   ${({ sizeVar }) => getLabelStyleBySizeVar(sizeVar)}
+
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      flex: 1;
+      width: auto;
+      min-width: 0;
+    `}
 
   &[data-selected='true'] {
     cursor: default;
@@ -68,11 +84,22 @@ export const StyledToggleInner = styled.button<{
   }
 `;
 
-export const StyledToggleInnerLabel = styled.label`
+export const StyledToggleInnerLabel = styled.label<{
+  lineClamp?: number;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  ${({ lineClamp }) =>
+    lineClamp &&
+    css`
+      min-width: 0;
+
+      & > * {
+        min-width: 0;
+      }
+    `}
 `;
 
 export const StyledToggleInnerInput = styled.input`
