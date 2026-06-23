@@ -30,6 +30,15 @@ const Button = forwardRef(
       return sizeVar === 'M' ? 'body1_400' : 'body2_400';
     };
 
+    // 로딩 스피너를 텍스트 줄높이에 맞춰, 로딩 노출 시에도 버튼 높이가 유지되도록 합니다.
+    const getSpinnerSize = () => {
+      if (sizeVar === 'XS') {
+        return 16;
+      }
+
+      return 24;
+    };
+
     return (
       <StyledButton
         styleVar={styleVar}
@@ -44,7 +53,10 @@ const Button = forwardRef(
       >
         {leftSource}
         {isLoading ? (
-          <LoadingSpinner color={styleVar === 'SECONDARY' || styleVar === 'GHOST' ? 'neutral500' : 'neutral0'} />
+          <LoadingSpinner
+            size={getSpinnerSize()}
+            color={styleVar === 'SECONDARY' || styleVar === 'GHOST' ? 'neutral500' : 'neutral0'}
+          />
         ) : (
           <Text
             lineClamp={lineClamp}

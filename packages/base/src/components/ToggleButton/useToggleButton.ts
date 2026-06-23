@@ -2,7 +2,9 @@ import { createContext, useContext, type ChangeEventHandler } from 'react';
 import type { ToggleButtonSizeVariantType } from './ToggleButton.types';
 
 export type ToggleButtonContextType = {
-  fixedWidth: number;
+  fixedWidth?: number;
+  fullWidth?: boolean;
+  buttonLineClamp?: number;
   targetName: string;
   sizeVar: ToggleButtonSizeVariantType;
   disabled: boolean;

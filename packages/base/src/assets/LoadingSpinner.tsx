@@ -3,11 +3,16 @@ import { colorTokens } from '../styles';
 
 interface LoadingSpinnerProps {
   color?: ColorTokens;
+  /**
+   * 스피너의 가로·세로 크기(px)입니다.
+   * @default 24
+   */
+  size?: number;
 }
 
-const LoadingSpinner = ({ color = 'neutral0' }: LoadingSpinnerProps) => {
+const LoadingSpinner = ({ color = 'neutral0', size = 24 }: LoadingSpinnerProps) => {
   return (
-    <svg width='24' height='24' stroke={colorTokens[color]} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+    <svg width={size} height={size} stroke={colorTokens[color]} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
       <style>
         {`
           .spinner { transform-origin: center; animation: spinner_rotation 2s linear infinite; }
