@@ -12,6 +12,7 @@ Works with **Claude Code**, **OpenAI Codex**, and **Cursor** — the installer w
 | `shoplflow-components` | `Button`, `Text`, `Stack`, `Icon`, overlays; `styleVar`/`sizeVar`; polymorphic `as` |
 | `shoplflow-theming` | `colorTokens`/`spacingTokens`/`typographyTokens`…; token KEY vs VALUE; `getDomain()` |
 | `shoplflow-icons-utils` | `@shoplflow/shopl-assets` / `hada-assets` icons + `@shoplflow/utils` hooks |
+| `shoplflow-skills-update` | Check whether the installed skills are the latest version and update them |
 
 The source of truth is `skills/<name>/SKILL.md` (the SKILL.md open standard). Claude Code and Cursor read this format natively, so the files are copied verbatim; for Codex the installer wires them into `AGENTS.md`.
 
@@ -51,7 +52,7 @@ Flags: `--agent claude|codex|cursor|all` · `--scope project|global` · `--dir <
 
 ## Updating / uninstalling
 
-- **Update**: re-run the installer. Claude/Cursor skill folders are overwritten; the Codex `AGENTS.md` block is replaced in place.
+- **Update**: re-run `npx @shoplflow/skills@latest --agent <…>` (pin `@latest` to skip the npx cache). Files are overwritten in place, the installer records the version in `shoplflow-skills.lock.json`, and for Cursor it auto-removes superseded `.cursor/rules/*.mdc` from pre-`0.2.0` installs. The bundled `shoplflow-skills-update` skill lets your agent compare that lock against `npm view @shoplflow/skills version` and update when behind. Skills are vendored, so they never auto-update — re-run to refresh.
 - **Uninstall**: delete the `<name>` skill folders under `.claude/skills/` / `.cursor/skills/` (or the `.cursor/rules/*.mdc` files if you used `--legacy-cursor-rules`), and for Codex remove the managed block from `AGENTS.md` plus `.codex/skills/shoplflow/`.
 
 ## Notes
