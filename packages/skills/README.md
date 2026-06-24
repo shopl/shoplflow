@@ -13,7 +13,7 @@ Works with **Claude Code**, **OpenAI Codex**, and **Cursor** — the installer w
 | `shoplflow-theming` | `colorTokens`/`spacingTokens`/`typographyTokens`…; token KEY vs VALUE; `getDomain()` |
 | `shoplflow-icons-utils` | `@shoplflow/shopl-assets` / `hada-assets` icons + `@shoplflow/utils` hooks |
 
-The source of truth is `skills/<name>/SKILL.md` (Claude SKILL.md format). The installer transforms these for the other agents.
+The source of truth is `skills/<name>/SKILL.md` (the SKILL.md open standard). Claude Code and Cursor read this format natively, so the files are copied verbatim; for Codex the installer wires them into `AGENTS.md`.
 
 ## Install
 
@@ -33,7 +33,7 @@ npx @shoplflow/skills --agent all                  # claude + codex + cursor
 npx @shoplflow/skills --list                       # preview the skills
 ```
 
-Flags: `--agent claude|codex|cursor|all` · `--scope project|global` · `--dir <path>` · `--yes` · `--list`
+Flags: `--agent claude|codex|cursor|all` · `--scope project|global` · `--dir <path>` · `--legacy-cursor-rules` · `--yes` · `--list`
 
 > Prefer not to use `npx`? Copy this package folder and run `node install.mjs` with the same flags.
 
@@ -42,17 +42,17 @@ Flags: `--agent claude|codex|cursor|all` · `--scope project|global` · `--dir <
 | Agent | Project scope | Global scope |
 |-------|---------------|--------------|
 | **Claude Code** | `./.claude/skills/<name>/SKILL.md` | `~/.claude/skills/<name>/SKILL.md` |
-| **Cursor** | `./.cursor/rules/<name>.mdc` | `~/.cursor/rules/<name>.mdc` |
+| **Cursor** | `./.cursor/skills/<name>/SKILL.md` | `~/.cursor/skills/<name>/SKILL.md` |
 | **Codex** | `./AGENTS.md` (managed block) + `./.codex/skills/shoplflow/*.md` | `~/.codex/AGENTS.md` + `~/.codex/skills/shoplflow/*.md` |
 
 - **Claude**: skills are auto-discovered; the agent loads one when a task matches its description.
-- **Cursor**: rules are written as *Agent Requested* (`alwaysApply: false`) — Cursor pulls them in by description. Project scope (`.cursor/rules`) is the reliable path.
+- **Cursor**: installed as native [Agent Skills](https://cursor.com/docs/skills) under `.cursor/skills/` (the same SKILL.md standard as Claude) — Cursor loads them by description on relevant tasks. Pass `--legacy-cursor-rules` to instead emit `.cursor/rules/*.mdc` (*Agent Requested* rules) for Cursor versions predating Agent Skills.
 - **Codex**: `AGENTS.md` gets a managed block (between `<!-- shoplflow-skills:start -->` / `:end -->`) pointing at the skill files, so Codex reads the right guide on demand. Re-running replaces the block in place — safe and idempotent; your other `AGENTS.md` content is preserved.
 
 ## Updating / uninstalling
 
-- **Update**: re-run the installer. Claude/Cursor files are overwritten; the Codex `AGENTS.md` block is replaced in place.
-- **Uninstall**: delete the `<name>` skill folders / `.mdc` files, and for Codex remove the managed block from `AGENTS.md` plus `.codex/skills/shoplflow/`.
+- **Update**: re-run the installer. Claude/Cursor skill folders are overwritten; the Codex `AGENTS.md` block is replaced in place.
+- **Uninstall**: delete the `<name>` skill folders under `.claude/skills/` / `.cursor/skills/` (or the `.cursor/rules/*.mdc` files if you used `--legacy-cursor-rules`), and for Codex remove the managed block from `AGENTS.md` plus `.codex/skills/shoplflow/`.
 
 ## Notes
 
