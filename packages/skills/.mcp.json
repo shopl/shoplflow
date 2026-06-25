@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "shoplflow": {
+      "command": "npx",
+      "args": ["-y", "@shoplflow/mcp"],
+      "env": {}
+    }
+  }
+}

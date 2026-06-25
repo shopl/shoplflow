@@ -1,0 +1,21 @@
+{
+  "name": "shoplflow-marketplace",
+  "interface": {
+    "displayName": "Shoplflow"
+  },
+  "plugins": [
+    {
+      "name": "shoplflow",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/shopl/shoplflow.git",
+        "path": "./packages/skills",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
