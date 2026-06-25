@@ -1,0 +1,15 @@
+{
+  "name": "shoplflow-marketplace",
+  "owner": {
+    "name": "Shoplflow",
+    "url": "https://github.com/shopl/shoplflow"
+  },
+  "description": "Shoplflow design-system plugins: agent skills + MCP server for consumers of the @shoplflow/* packages.",
+  "plugins": [
+    {
+      "name": "shoplflow",
+      "source": "./packages/skills",
+      "description": "Shoplflow design-system agent skills + MCP server for developers consuming the @shoplflow/* packages."
+    }
+  ]
+}
