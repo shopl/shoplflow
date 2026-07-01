@@ -37,6 +37,7 @@ import IcBoardMedium from './IcBoardMedium';
 import IcBoardProfileXlarge from './IcBoardProfileXlarge';
 import IcBoardProfile from './IcBoardProfile';
 import IcBookMedium from './IcBookMedium';
+import IcBookmarkFill from './IcBookmarkFill';
 import IcBookmarkFilledMedium from './IcBookmarkFilledMedium';
 import IcBookmarkMedium from './IcBookmarkMedium';
 import IcBookmark from './IcBookmark';
@@ -206,6 +207,7 @@ import IcInfoState from './IcInfoState';
 import IcInfoVisit from './IcInfoVisit';
 import IcInfoWorking from './IcInfoWorking';
 import IcInfoWorkplace from './IcInfoWorkplace';
+import IcInfoXsmall from './IcInfoXsmall';
 import IcInfo from './IcInfo';
 import IcInputLine from './IcInputLine';
 import IcInventoryMedium from './IcInventoryMedium';
@@ -402,6 +404,7 @@ const icons = {
   'board-profile-xlarge': IcBoardProfileXlarge,
   'board-profile': IcBoardProfile,
   'book-medium': IcBookMedium,
+  'bookmark-fill': IcBookmarkFill,
   'bookmark-filled-medium': IcBookmarkFilledMedium,
   'bookmark-medium': IcBookmarkMedium,
   bookmark: IcBookmark,
@@ -571,6 +574,7 @@ const icons = {
   'info-visit': IcInfoVisit,
   'info-working': IcInfoWorking,
   'info-workplace': IcInfoWorkplace,
+  'info-xsmall': IcInfoXsmall,
   info: IcInfo,
   'input-line': IcInputLine,
   'inventory-medium': IcInventoryMedium,
@@ -770,6 +774,7 @@ export {
   IcBoardProfileXlarge as BoardProfileXlargeIcon,
   IcBoardProfile as BoardProfileIcon,
   IcBookMedium as BookMediumIcon,
+  IcBookmarkFill as BookmarkFillIcon,
   IcBookmarkFilledMedium as BookmarkFilledMediumIcon,
   IcBookmarkMedium as BookmarkMediumIcon,
   IcBookmark as BookmarkIcon,
@@ -939,6 +944,7 @@ export {
   IcInfoVisit as InfoVisitIcon,
   IcInfoWorking as InfoWorkingIcon,
   IcInfoWorkplace as InfoWorkplaceIcon,
+  IcInfoXsmall as InfoXsmallIcon,
   IcInfo as InfoIcon,
   IcInputLine as InputLineIcon,
   IcInventoryMedium as InventoryMediumIcon,
