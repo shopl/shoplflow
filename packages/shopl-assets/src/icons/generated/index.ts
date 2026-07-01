@@ -207,6 +207,7 @@ import IcInfoState from './IcInfoState';
 import IcInfoVisit from './IcInfoVisit';
 import IcInfoWorking from './IcInfoWorking';
 import IcInfoWorkplace from './IcInfoWorkplace';
+import IcInfoXsmall from './IcInfoXsmall';
 import IcInfo from './IcInfo';
 import IcInputLine from './IcInputLine';
 import IcInventoryMedium from './IcInventoryMedium';
@@ -573,6 +574,7 @@ const icons = {
   'info-visit': IcInfoVisit,
   'info-working': IcInfoWorking,
   'info-workplace': IcInfoWorkplace,
+  'info-xsmall': IcInfoXsmall,
   info: IcInfo,
   'input-line': IcInputLine,
   'inventory-medium': IcInventoryMedium,
@@ -942,6 +944,7 @@ export {
   IcInfoVisit as InfoVisitIcon,
   IcInfoWorking as InfoWorkingIcon,
   IcInfoWorkplace as InfoWorkplaceIcon,
+  IcInfoXsmall as InfoXsmallIcon,
   IcInfo as InfoIcon,
   IcInputLine as InputLineIcon,
   IcInventoryMedium as InventoryMediumIcon,
