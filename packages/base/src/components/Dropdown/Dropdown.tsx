@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { flip, shift } from '@floating-ui/core';
 import { StyledDropdown } from './Dropdown.styled';
 import { Popper } from '../Popper';
 import type { DropdownProps } from './Dropdown.types';
@@ -40,14 +41,9 @@ const Dropdown = ({
       <DropdownContext.Provider value={{ ...size, isOpen, setIsOpen, option }}>
         <Popper
           offset={offset}
-          placement={placement}
-          autoPlacement={
-            placement
-              ? undefined
-              : {
-                  allowedPlacements: ['bottom-start', 'top-start'],
-                }
-          }
+          placement={placement ?? 'bottom-start'}
+          strategy='fixed'
+          middlewares={placement ? undefined : [flip({ fallbackPlacements: ['top-start'] }), shift({ padding: 5 })]}
         >
           <Popper.Trigger ref={setTriggerRef} isOpen={isOpen} width={width}>
             {trigger}
