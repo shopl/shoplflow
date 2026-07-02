@@ -4,7 +4,7 @@ import { Text } from '../Text';
 import { Menu } from '../Menu';
 import type { PaginationSizeSelectorProps } from './Pagination.types';
 
-const PaginationSizeSelector = ({ data, pageSize, setPageSize }: PaginationSizeSelectorProps) => {
+const PaginationSizeSelector = ({ data, pageSize, setPageSize, middlewares }: PaginationSizeSelectorProps) => {
   const { selectedItem, handleToggleSelect } = useSelect('SINGLE', data, {
     key: 'value',
   });
@@ -22,6 +22,7 @@ const PaginationSizeSelector = ({ data, pageSize, setPageSize }: PaginationSizeS
     <Dropdown
       option={'CLICK'}
       width={'66px'}
+      middlewares={middlewares}
       trigger={
         <Dropdown.Button
           placeholder={String(pageSize)}

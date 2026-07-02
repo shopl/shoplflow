@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { flip, shift } from '@floating-ui/core';
 import { StyledDropdown } from './Dropdown.styled';
 import { Popper } from '../Popper';
 import type { DropdownProps } from './Dropdown.types';
@@ -15,6 +14,8 @@ const Dropdown = ({
   width = '100%',
   offset = 4,
   placement,
+  middlewares,
+  strategy = 'fixed',
 }: DropdownProps) => {
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -39,12 +40,7 @@ const Dropdown = ({
   return (
     <StyledDropdown data-shoplflow={'Dropdown'} width={width}>
       <DropdownContext.Provider value={{ ...size, isOpen, setIsOpen, option }}>
-        <Popper
-          offset={offset}
-          placement={placement ?? 'bottom-start'}
-          strategy='fixed'
-          middlewares={placement ? undefined : [flip({ fallbackPlacements: ['top-start'] }), shift({ padding: 5 })]}
-        >
+        <Popper offset={offset} placement={placement ?? 'bottom-start'} middlewares={middlewares} strategy={strategy}>
           <Popper.Trigger ref={setTriggerRef} isOpen={isOpen} width={width}>
             {trigger}
           </Popper.Trigger>
