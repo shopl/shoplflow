@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from 'react';
+import type { Middleware } from '@floating-ui/react-dom';
 import type { LeftAndRightNodeProps } from '../../utils/type/ComponentProps';
 
 export interface PaginationProps extends PaginationOptionProps, HTMLAttributes<HTMLDivElement> {}
@@ -47,4 +48,5 @@ export interface PaginationSizeSelectorProps {
    */
   pageSize?: string;
   setPageSize: (value: string) => void;
+  middlewares?: Array<Middleware | null | undefined | false>;
 }

@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.48.2
+
+### Patch Changes
+
+- [#827](https://github.com/shopl/shoplflow/pull/827) [`82d77de0902f92d13165e96de5b8a7113b375238`](https://github.com/shopl/shoplflow/commit/82d77de0902f92d13165e96de5b8a7113b375238) Thanks [@github-actions](https://github.com/apps/github-actions)! - Dropdown과 Pagination SizeSelector에 floating-ui middlewares 설정을 외부에서 주입할 수 있도록 확장합니다.
+
 ## 0.48.1
 
 ### Patch Changes

@@ -7,7 +7,8 @@ import type {
   StyleVariantProps,
 } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
-import type { OffsetOptions, Placement } from '@floating-ui/core';
+import type { Middleware } from '@floating-ui/react-dom';
+import type { OffsetOptions, Placement, Strategy } from '@floating-ui/core';
 
 export const DropdownOptionVariants = {
   CLICK: 'CLICK',
@@ -38,6 +39,13 @@ export interface DropdownOptionProps {
   disabled?: boolean;
   placement?: Placement;
   offset?: OffsetOptions;
+  /**
+   * floating ui의 middleware를 설정합니다.
+   *
+   * Ref: https://floating-ui.com/docs/useFloating#middleware
+   */
+  middlewares?: Array<Middleware | null | undefined | false>;
+  strategy?: Strategy;
 }
 
 export interface DropdownContentProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {
