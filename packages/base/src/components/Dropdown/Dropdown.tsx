@@ -14,6 +14,8 @@ const Dropdown = ({
   width = '100%',
   offset = 4,
   placement,
+  middlewares,
+  strategy = 'fixed',
 }: DropdownProps) => {
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -38,17 +40,7 @@ const Dropdown = ({
   return (
     <StyledDropdown data-shoplflow={'Dropdown'} width={width}>
       <DropdownContext.Provider value={{ ...size, isOpen, setIsOpen, option }}>
-        <Popper
-          offset={offset}
-          placement={placement}
-          autoPlacement={
-            placement
-              ? undefined
-              : {
-                  allowedPlacements: ['bottom-start', 'top-start'],
-                }
-          }
-        >
+        <Popper offset={offset} placement={placement ?? 'bottom-start'} middlewares={middlewares} strategy={strategy}>
           <Popper.Trigger ref={setTriggerRef} isOpen={isOpen} width={width}>
             {trigger}
           </Popper.Trigger>
