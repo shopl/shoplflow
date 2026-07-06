@@ -1,3 +1,8 @@
+import ImgDownloadExcelEmployee from './ImgDownloadExcelEmployee';
+import ImgDownloadExcelNormal from './ImgDownloadExcelNormal';
+import ImgDownloadPdf from './ImgDownloadPdf';
+import ImgDownloadPpt from './ImgDownloadPpt';
+import ImgDownloadZip from './ImgDownloadZip';
 import ImgSettingAttendance from './ImgSettingAttendance';
 import ImgSettingBoard from './ImgSettingBoard';
 import ImgSettingChat from './ImgSettingChat';
@@ -18,6 +23,11 @@ import ImgUpgradePro from './ImgUpgradePro';
 import ImgUpgradeStandard from './ImgUpgradeStandard';
 
 const illustrations = {
+  'download-excel-employee': ImgDownloadExcelEmployee,
+  'download-excel-normal': ImgDownloadExcelNormal,
+  'download-pdf': ImgDownloadPdf,
+  'download-ppt': ImgDownloadPpt,
+  'download-zip': ImgDownloadZip,
   'setting-attendance': ImgSettingAttendance,
   'setting-board': ImgSettingBoard,
   'setting-chat': ImgSettingChat,
@@ -41,6 +51,11 @@ const illustrations = {
 export type IllustrationNames = keyof typeof illustrations;
 
 export {
+  ImgDownloadExcelEmployee as DownloadExcelEmployeeIllustration,
+  ImgDownloadExcelNormal as DownloadExcelNormalIllustration,
+  ImgDownloadPdf as DownloadPdfIllustration,
+  ImgDownloadPpt as DownloadPptIllustration,
+  ImgDownloadZip as DownloadZipIllustration,
   ImgSettingAttendance as SettingAttendanceIllustration,
   ImgSettingBoard as SettingBoardIllustration,
   ImgSettingChat as SettingChatIllustration,
