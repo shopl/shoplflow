@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.46
+
+### Patch Changes
+
+- [#830](https://github.com/shopl/shoplflow/pull/830) [`8464a1e6d77889121c1b250a5a2b50bf194d8ed2`](https://github.com/shopl/shoplflow/commit/8464a1e6d77889121c1b250a5a2b50bf194d8ed2) Thanks [@velo-kim](https://github.com/velo-kim)! - update(shopl-assets): illustrations svg 추가
+
 ## 0.12.45
 
 ### Patch Changes
