@@ -1,11 +1,12 @@
+import { TableBadge, TableButton } from '../TableElement';
+
 import { Table as BaseTable } from './Table';
+import { TableColumnVisibility } from './TableColumnVisibility';
+import { TableEmpty } from './TableEmpty';
+import { TableFilterBar } from './TableFilterBar';
+import { TableMain } from './TableMain';
 import { TablePagination } from './TablePagination';
 import { TableToolbar } from './TableToolbar';
-import { TableMain } from './TableMain';
-import { TableEmpty } from './TableEmpty';
-import { TableColumnVisibility } from './TableColumnVisibility';
-import { TableFilterBar } from './TableFilterBar';
-import { TableBadge, TableButton } from '../TableElement';
 
 type TableComponentType = typeof BaseTable & {
   Toolbar: typeof TableToolbar;
@@ -30,3 +31,4 @@ const TableComponent = Object.assign(BaseTable, {
 }) as TableComponentType;
 
 export { TableComponent as Table };
+export type { TableFilterBarRef } from './TableFilterBar';

@@ -1,6 +1,11 @@
 import type { Column } from '@tanstack/react-table';
 import type { CSSProperties } from 'react';
 
+export { getColumnActiveHoverDataAttribute } from './getColumnActiveHoverDataAttribute';
+export { getTableHeadSortModel } from './getTableHeadSortModel';
+export type { TableHeadSortModel } from './getTableHeadSortModel';
+export { DEFAULT_TABLE_BODY_ROW_HEIGHT_PX, resolveBodyRowStyle } from './resolveBodyRowStyle';
+
 export const getCommonPinningStyles = (column: Column<any>): CSSProperties => {
   const isPinned = column.getIsPinned();
 

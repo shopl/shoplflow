@@ -33,9 +33,7 @@ export const TableToolbar = ({
 
   // TableFilterBar와 연결되어 있는 검색 이벤트 핸들러
   const onSearch = (value: string) => {
-    if (!filterAccessor) {
-      return null;
-    }
+    if (!filterAccessor) return null;
 
     setFilterValue(value);
     table.getColumn(filterAccessor)?.setFilterValue(value);
