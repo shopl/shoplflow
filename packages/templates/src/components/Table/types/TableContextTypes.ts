@@ -1,6 +1,8 @@
 import type { Table } from '@tanstack/react-table';
 import type { Dispatch, RefObject, SetStateAction } from 'react';
 
+import type { OutsideFilter } from './TableTypes';
+
 export type TableContextType<T extends object> = {
   table: Table<T>;
   headerRef: RefObject<HTMLDivElement>;
@@ -15,4 +17,8 @@ export type TableContextType<T extends object> = {
   columnResizing?: boolean;
   filterValue: string;
   setFilterValue: Dispatch<SetStateAction<string>>;
+  outsideFilters?: OutsideFilter[];
+  hasFooter?: boolean;
+  isLoading?: boolean;
+  isVirtualTableLayout?: boolean;
 };

@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.2.47
+
+### Patch Changes
+
+- [`7b3cc46c1111ccf9eb05b76ebf530b55e4e80204`](https://github.com/shopl/shoplflow/commit/7b3cc46c1111ccf9eb05b76ebf530b55e4e80204) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Table 가상 스크롤·드래그 정렬·반응형 레이아웃 및 필터/정렬 UX를 개선합니다.
+
 ## 0.2.46
 
 ### Patch Changes

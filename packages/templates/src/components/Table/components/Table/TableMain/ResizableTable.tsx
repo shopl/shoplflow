@@ -1,4 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+import type { Cell, Row } from '@tanstack/react-table';
+import { flexRender } from '@tanstack/react-table';
+import type { VirtualItem } from '@tanstack/react-virtual';
 import React, { useCallback } from 'react';
+
+import { ScrollArea } from '@shoplflow/base';
+
+import { useTable } from '../../../context';
+import { getColumnActiveHoverDataAttribute, getCommonPinningStyles, getTableHeadSortModel } from '../../../utils';
 import {
   BodyTableContainer,
   HeaderTableContainer,
@@ -10,12 +19,6 @@ import {
   TableRow,
 } from '../Table.styled';
 import TableHeadCell from '../TableHeadCell';
-import { getCommonPinningStyles } from '../../../utils';
-import type { Cell, Row } from '@tanstack/react-table';
-import { flexRender } from '@tanstack/react-table';
-import { useTable } from '../../../context';
-import type { VirtualItem } from '@tanstack/react-virtual';
-import { ScrollArea } from '@shoplflow/base';
 
 type TableStateProps = {
   displayedRows: Array<{ row: Row<any>; virtualRow?: VirtualItem }> | Array<{ row: Array<Cell<any, unknown>> }>;
@@ -28,6 +31,8 @@ type TableStateProps = {
   stickyHeaderTopPosition: number;
   maxHeight?: string;
   emptyRowCount?: number;
+  headerRowStyle?: React.CSSProperties | ((rowIndex: number, row: any) => React.CSSProperties);
+  bodyRowStyle?: React.CSSProperties | ((rowIndex: number, row: any) => React.CSSProperties);
 };
 
 export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) => {
@@ -43,51 +48,61 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
     stickyHeaderTopPosition,
     maxHeight = '100%',
     emptyRowCount = 8,
+    headerRowStyle,
+    bodyRowStyle,
   } = tableState;
 
   // 스크롤 동기화 이벤트 핸들러(테이블 바디와 테이블 헤더 스크롤 동기화)
   const handleScroll = useCallback(() => {
-    if (headerRef.current && bodyRef.current && tableScrollRef.current) {
-      const scrollLeft = bodyRef.current.scrollLeft;
-      headerRef.current.scrollLeft = scrollLeft;
-      tableScrollRef.current.scrollLeft = scrollLeft;
+    if (!bodyRef.current) return;
+
+    const bodyScrollLeft = bodyRef.current.scrollLeft;
+
+    if (headerRef.current) {
+      headerRef.current.scrollLeft = bodyScrollLeft;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    if (tableScrollRef.current) {
+      tableScrollRef.current.scrollLeft = bodyScrollLeft;
+    }
+  }, [bodyRef, headerRef, tableScrollRef]);
 
   // 동적 리사이징을 위한 컬럼 사이즈 변수 계산
   const columnSizeVars = React.useMemo(() => {
     const headers = table.getFlatHeaders();
-    const colSizes: { [key: string]: number | string } = {}; // string 타입도 허용
+    const colSizes: Record<string, number | string> = {};
     const visibleHeaders = headers.filter((header) => header.column.getIsVisible());
 
-    // 마지막 컬럼 찾기 (최상위 레벨에서의 마지막 컬럼)
-    const lastLeafColumns = table.getLeafHeaders();
-    const lastColumnId = lastLeafColumns[lastLeafColumns.length - 1]?.id;
+    // 마지막 컬럼 찾기
+    // const lastLeafColumns = table.getLeafHeaders();
+    // const lastColumnId = lastLeafColumns[lastLeafColumns.length - 1]?.id;
 
     visibleHeaders.forEach((header) => {
       const currentSize = header.column.getSize();
       const defaultSize = header.column.columnDef.size;
       const maxSize = header.column.columnDef.maxSize;
-      const isLastColumn = header.id === lastColumnId;
+      // const isLastColumn = header.id === lastColumnId;
+      const isPinned = header.column.getIsPinned();
+      const canResize = header.column.getCanResize();
 
       let size;
-      if (isLastColumn) {
-        // 마지막 컬럼은 남은 공간을 모두 차지하도록 설정
-        size = 'auto'; // 또는 "1fr"
+      // 고정되지 않은 마지막 컬럼만 auto
+      // if(isLastColumn && !isPinned)
+
+      // 고정되지 않은 마지막 컬럼 + 리사이즈 가능한 경우만 auto
+      if (!isPinned && canResize) {
+        size = 'auto';
       } else if (currentSize !== undefined) {
-        // 리사이징된 크기 사용
         size = currentSize;
       } else if (typeof defaultSize === 'number') {
-        // 기본 크기가 숫자인 경우
         size = defaultSize;
       } else {
-        // 자동 너비인 경우 기본값 200px
         size = 200;
       }
 
       // maxSize 제한 적용 (마지막 컬럼 제외)
-      if (!isLastColumn && maxSize && typeof size === 'number' && size > maxSize) {
+      // if(!isLastColumn && maxSize && typeof size === 'number' && size > maxSize)
+      if (maxSize && typeof size === 'number' && size > maxSize) {
         size = maxSize;
       }
 
@@ -96,8 +111,14 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
     });
 
     return colSizes;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- column sizing state drives derived layout vars
   }, [table.getState().columnSizingInfo, table.getState().columnSizing]);
+
+  // 전체 테이블 너비 계산 (고정 컬럼 포함)
+  const totalTableWidth = React.useMemo(() => {
+    return table.getLeftTotalSize() + table.getCenterTotalSize() + table.getRightTotalSize();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- column sizing/pinning state drives derived width
+  }, [table.getState().columnSizingInfo, table.getState().columnSizing, table.getState().columnPinning]);
 
   // 리사이징 가능한 셀 스타일 생성
   const getResizableCellStyle = (column, isHeader = false) => {
@@ -105,7 +126,7 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
     const baseStyle = {
       ...getCommonPinningStyles(column),
       ...(isHeader ? column.columnDef.meta?.headerProps?.style : column.columnDef.meta?.cellProps?.style),
-    } as React.CSSProperties;
+    };
 
     const colId = column.id;
     const headerId = isHeader ? colId : null; // 헤더일 경우만 headerId 사용
@@ -113,13 +134,28 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
     const maxSize = column.columnDef.maxSize;
     const sizeKey = isHeader ? `--header-${headerId}-size` : `--col-${colId}-size`;
     const size = columnSizeVars[sizeKey];
-    const isLastColumn = column.columnDef.meta?.isLastColumn;
+    // const isLastColumn = column.columnDef.meta?.isLastColumn;
+    const canResize = column.getCanResize();
+    const isPinned = column.getIsPinned();
+
+    // 리사이즈 불가능한 컬럼은 말줄임표 적용
+    // 단, pinned 컬럼은 셀 shadow(::after)가 td 밖으로 나가야 해서 overflow hidden을 피한다.
+    const ellipsisStyle =
+      !canResize && !isPinned
+        ? {
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+          }
+        : {};
 
     return {
       ...baseStyle,
       ...(size === 'auto' ? { width: 'auto', flex: '1 1 auto' } : { width: size ? `${size}px` : 'auto' }),
       minWidth: `${minSize}px`,
-      maxWidth: isLastColumn ? 'none' : `${maxSize || 'none'}`,
+      // maxWidth: isLastColumn && canResize ? 'none' : `${maxSize || 'none'}`,
+      maxWidth: canResize ? 'none' : `${maxSize || 'none'}`,
+      ...ellipsisStyle,
     };
   };
 
@@ -133,59 +169,88 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
       >
         <table
           style={{
-            width: `${table.getCenterTotalSize()}px`,
+            width: `${totalTableWidth}px`,
             minWidth: '100%',
             tableLayout: 'fixed',
           }}
         >
           <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  const isPinned = header.column.getIsPinned();
-                  const isLastLeftPinned = isPinned === 'left' && header.column.getIsLastColumn('left');
-                  const isFirstRightPinned = isPinned === 'right' && header.column.getIsFirstColumn('right');
+            {table.getHeaderGroups().map((headerGroup, i) => {
+              const rowStyle = typeof headerRowStyle === 'function' ? headerRowStyle(i, headerGroup) : headerRowStyle;
+              return (
+                <TableRow key={headerGroup.id} style={rowStyle}>
+                  {headerGroup.headers.map((header) => {
+                    const isPinned = header.column.getIsPinned();
+                    /**
+                     * 멀티 헤더(depth 0/1)에서는 header.column.getIsLastColumn('left')가 false로 떨어질 수 있어
+                     * leaf 헤더 기준으로 마지막 pinned 경계를 계산한다.
+                     */
+                    const leafHeaders = header.getLeafHeaders();
+                    const hasLastLeftPinnedLeaf = leafHeaders.some(
+                      (leaf) => leaf.column.getIsPinned() === 'left' && leaf.column.getIsLastColumn('left'),
+                    );
+                    const hasFirstRightPinnedLeaf = leafHeaders.some(
+                      (leaf) => leaf.column.getIsPinned() === 'right' && leaf.column.getIsFirstColumn('right'),
+                    );
 
-                  const columnRelativeDepth = header.depth - header.column.depth;
+                    const isLastLeftPinned =
+                      (isPinned === 'left' && header.column.getIsLastColumn('left')) || hasLastLeftPinnedLeaf;
+                    const isFirstRightPinned =
+                      (isPinned === 'right' && header.column.getIsFirstColumn('right')) || hasFirstRightPinnedLeaf;
 
-                  if (!header.isPlaceholder && columnRelativeDepth > 1 && header.id === header.column.id) {
-                    return null;
-                  }
+                    const columnRelativeDepth = header.depth - header.column.depth;
 
-                  let rowSpan = 1;
-                  if (header.isPlaceholder) {
-                    const leafs = header.getLeafHeaders();
-                    rowSpan = leafs[leafs.length - 1].depth - header.depth;
-                  }
+                    if (!header.isPlaceholder && columnRelativeDepth > 1 && header.id === header.column.id) {
+                      return null;
+                    }
 
-                  return (
-                    <TableHead
-                      data-last-left-pinned={isLastLeftPinned}
-                      data-first-right-pinned={isFirstRightPinned}
-                      data-pinned={isPinned}
-                      key={header.id}
-                      style={getResizableCellStyle(header.column, true)}
-                      colSpan={header.colSpan}
-                      rowSpan={rowSpan}
-                    >
-                      <TableHeadCell header={header} />
+                    let rowSpan = 1;
+                    if (header.isPlaceholder) {
+                      const leafs = header.getLeafHeaders();
+                      rowSpan = leafs[leafs.length - 1].depth - header.depth;
+                    }
 
-                      {/* 리사이징 핸들러 */}
-                      {header.column.getCanResize() && (
-                        <TableResizer
-                          {...{
-                            onDoubleClick: () => header.column.resetSize(),
-                            onMouseDown: header.getResizeHandler(),
-                            onTouchStart: header.getResizeHandler(),
-                            className: `resizer ${header.column.getIsResizing() ? 'isResizing' : ''}`,
-                          }}
-                        />
-                      )}
-                    </TableHead>
-                  );
-                })}
-              </TableRow>
-            ))}
+                    return (
+                      <TableHead
+                        data-last-left-pinned={isLastLeftPinned}
+                        data-first-right-pinned={isFirstRightPinned}
+                        data-pinned={isPinned}
+                        key={header.id}
+                        style={{
+                          ...getResizableCellStyle(header.column, true),
+                          ...(rowStyle && {
+                            backgroundColor: rowStyle.backgroundColor,
+                            height: rowStyle.height,
+                            maxHeight: rowStyle.maxHeight,
+                            minHeight: rowStyle.minHeight,
+                          }),
+                        }}
+                        colSpan={header.colSpan}
+                        rowSpan={rowSpan}
+                        sortable={getTableHeadSortModel(header).showSortMenu}
+                        filterable={header.column.getCanFilter()}
+                        data-sortable={getTableHeadSortModel(header).showSortMenu}
+                        data-filterable={header.column.getCanFilter()}
+                      >
+                        <TableHeadCell header={header} />
+
+                        {/* 리사이징 핸들러 */}
+                        {header.column.getCanResize() && (
+                          <TableResizer
+                            {...{
+                              onDoubleClick: () => header.column.resetSize(),
+                              onMouseDown: header.getResizeHandler(),
+                              onTouchStart: header.getResizeHandler(),
+                              className: `resizer ${header.column.getIsResizing() ? 'isResizing' : ''}`,
+                            }}
+                          />
+                        )}
+                      </TableHead>
+                    );
+                  })}
+                </TableRow>
+              );
+            })}
           </TableHeader>
         </table>
       </HeaderTableContainer>
@@ -193,7 +258,7 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
         <BodyTableContainer hasPagination={hasPagination} onScroll={handleScroll} ref={bodyRef}>
           <table
             style={{
-              width: `${table.getCenterTotalSize()}px`,
+              width: `${totalTableWidth}px`,
               minWidth: '100%',
               tableLayout: 'fixed',
             }}
@@ -223,18 +288,17 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
                     const isVirtual = 'virtualRow' in rowObj && rowObj.virtualRow;
                     const row = rowObj.row;
                     const cells = typeof row.getVisibleCells === 'function' ? row.getVisibleCells() : row;
+                    const rowStyle = typeof bodyRowStyle === 'function' ? bodyRowStyle(i, row.original) : bodyRowStyle;
+                    const cellBackgroundColor = rowStyle?.backgroundColor;
                     return (
                       <TableRow
                         data-index={isVirtual ? rowObj.virtualRow.index : i}
                         key={typeof row.id !== 'undefined' ? row.id : i}
                         onClick={() => {
-                          if (typeof row.getVisibleCells === 'function') {
-                            onClickRow?.(row.original);
-                          } else if (Array.isArray(row) && row.length > 0 && row[0].row?.original) {
-                            onClickRow?.(row[0].row.original);
-                          }
+                          onClickRow?.(row.original);
                         }}
                         className={onClickRow !== undefined ? 'clickable' : ''}
+                        style={rowStyle}
                       >
                         {cells.map((cell) => {
                           const isPinned = cell.column.getIsPinned();
@@ -246,8 +310,19 @@ export const ResizableTable = ({ tableState }: { tableState: TableStateProps }) 
                               key={cell.id}
                               data-last-left-pinned={isLastLeftPinned}
                               data-first-right-pinned={isFirstRightPinned}
-                              data-no-hover={cell.column.columnDef.meta?.activeHover ? 'true' : undefined}
-                              style={getResizableCellStyle(cell.column)}
+                              data-no-hover={getColumnActiveHoverDataAttribute(
+                                cell.column.columnDef.meta?.activeHover,
+                                cell.row.original,
+                              )}
+                              data-has-custom-style={
+                                cell.column.columnDef.meta?.cellProps?.style?.backgroundColor ? 'true' : undefined
+                              }
+                              style={{
+                                ...getResizableCellStyle(cell.column),
+                                ...(cellBackgroundColor && {
+                                  backgroundColor: cellBackgroundColor,
+                                }),
+                              }}
                             >
                               {flexRender(cell.column.columnDef.cell, cell.getContext()) as React.ReactNode}
                             </TableCell>

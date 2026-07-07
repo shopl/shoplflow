@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 import type { Table } from '@tanstack/react-table';
+
 import { Checkbox, Stack, Text } from '@shoplflow/base';
+
 import { useTable } from '../../context';
 
 export const TableColumnVisibility = () => {
@@ -9,7 +11,8 @@ export const TableColumnVisibility = () => {
   const getColumnHeader = (column: any) => {
     const header = column.columnDef.header;
     if (typeof header === 'function') {
-      const headerContent = header();
+      // header 함수에 필요한 매개변수들을 전달
+      const headerContent = header({ table, column, header: column.columnDef.header });
       if (typeof headerContent === 'string') {
         return headerContent;
       }

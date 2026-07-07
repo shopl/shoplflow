@@ -1,17 +1,13 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
+
 import { useTable } from '../../../context';
 import type { TableMainProps } from '../../../types';
-import type { VirtualItem, VirtualizerOptions } from '@tanstack/react-virtual';
-import { observeWindowOffset, useWindowVirtualizer } from '@tanstack/react-virtual';
 import { TableRootContainer } from '../Table.styled';
 import { TableEmpty } from '../TableEmpty';
+
 import { FixedTable } from './FixedTable';
 import { ResizableTable } from './ResizableTable';
-import type { Row } from '@tanstack/react-table';
-
-type DisplayedRowType<T = any> =
-  | { row: Row<T>; virtualRow: VirtualItem } // 가상화 사용시
-  | { row: Row<T> };
+import { VirtualTable } from './VirtualTable';
 
 /**
  * 테이블의 메인 렌더링을 처리하는 컴포넌트
@@ -25,55 +21,27 @@ type DisplayedRowType<T = any> =
  * @param {number} [props.emptyRowCount=8] - 빈 행 수
  * @returns {JSX.Element} 렌더링된 테이블 컴포넌트
  */
-export const TableMain = ({
-  fixedColumns = [],
-  useVirtualization = false,
-  isSticky = true,
-  stickyHeaderTopPosition = 120,
-  children,
-  maxHeight,
-  emptyRowCount = 8,
-}: TableMainProps) => {
+export const TableMain = (props: TableMainProps) => {
+  const {
+    fixedColumns = [],
+    useVirtualization = false,
+    isSticky = true,
+    stickyHeaderTopPosition = 120,
+    children,
+    maxHeight,
+    emptyRowCount = 8,
+    enableDragDrop = false,
+    dragColWidth = 40,
+    onRowReorder,
+    footerRowProps,
+    headerRowStyle,
+    bodyRowStyle,
+    containerStyle,
+  } = props;
   const { table, hasToolbar, hasFilterBar, columnResizing } = useTable();
   const { rows } = table.getRowModel();
 
-  const scrollToFn: VirtualizerOptions<any, any>['scrollToFn'] = useCallback((offset) => {
-    window.scrollTo({
-      top: offset - 120,
-      behavior: 'smooth',
-    });
-  }, []);
-
-  // useWindowVirtualizer
-  // 윈도우 스크롤을 기준으로 가상화 처리
-  const rowVirtualizer = useWindowVirtualizer({
-    estimateSize: () => 60, // 각 행의 높이를 60px로 예측
-    count: rows.length,
-    overscan: 10, // 실제 보이는 영역 외에 추가로 렌더링할 아이템 수
-    isScrollingResetDelay: 100, // 스크롤이 멈추고 100ms 후에 스크롤 상태 초기화
-    observeElementOffset: (instance, cb) =>
-      observeWindowOffset(instance, (offset, isScrolling) => cb(offset - 120, isScrolling)),
-    scrollToFn,
-  });
-
-  const { getVirtualItems: virtualRows } = rowVirtualizer;
-
-  const displayedRows = useVirtualization
-    ? virtualRows().map((virtualRow) => ({ row: rows[virtualRow.index], virtualRow }))
-    : rows.map((row) => ({ row }));
-
-  const hasVirtualRow = (item: DisplayedRowType): item is { row: Row<any>; virtualRow: VirtualItem } => {
-    return 'virtualRow' in item;
-  };
-
-  const paddingTop =
-    displayedRows.length > 0 && hasVirtualRow(displayedRows[0]) ? displayedRows[0].virtualRow.start : 0;
-
-  const lastRow = displayedRows[displayedRows.length - 1];
-  const paddingBottom =
-    displayedRows.length > 0 && lastRow && hasVirtualRow(lastRow)
-      ? rowVirtualizer.getTotalSize() - lastRow.virtualRow.end
-      : 0;
+  const shouldFixDragHandle = enableDragDrop && fixedColumns.some((fc) => fc.index === 0 && fc.position === 'left');
 
   useEffect(() => {
     const pinningState: {
@@ -84,7 +52,13 @@ export const TableMain = ({
       right: [],
     };
     fixedColumns.forEach(({ index, position }) => {
-      const column = table.getAllColumns()[index];
+      // enableDragDrop이 true이고 index: 0이면 dragHandle을 의미하므로 실제 컬럼은 고정하지 않음
+      if (enableDragDrop && index === 0) {
+        return;
+      }
+      // enableDragDrop이 true일 때는 index: 1이 첫 번째 실제 컬럼(인덱스 0)을 의미하므로 -1
+      const actualIndex = enableDragDrop ? index - 1 : index;
+      const column = table.getAllLeafColumns()[actualIndex];
       if (column?.id) {
         pinningState[position].push(column.id);
       }
@@ -96,20 +70,18 @@ export const TableMain = ({
 
   const isEmpty = rows.length === 0;
 
-  // Empty 설정
   let emptyElement;
-
   React.Children.forEach(children, (child) => {
     if (React.isValidElement(child) && child.type === TableEmpty) {
       emptyElement = child;
     }
   });
 
-  // 공통 테이블 상태와 속성을 모아서 전달
+  const nonVirtualizedRows = rows.map((row) => ({ row, ...row }));
   const tableState = {
-    displayedRows,
-    paddingTop,
-    paddingBottom,
+    displayedRows: nonVirtualizedRows,
+    paddingTop: 0,
+    paddingBottom: 0,
     isEmpty,
     emptyElement,
     children,
@@ -118,11 +90,31 @@ export const TableMain = ({
     isSticky,
     stickyHeaderTopPosition,
     emptyRowCount,
+    enableDragDrop,
+    dragColWidth,
+    shouldFixDragHandle,
+    onRowReorder,
+    footerRowProps,
+    headerRowStyle,
+    bodyRowStyle,
   };
 
   return (
-    <TableRootContainer hasFilterBar={hasFilterBar} hasToolbar={hasToolbar}>
-      {columnResizing ? <ResizableTable tableState={tableState} /> : <FixedTable tableState={tableState} />}
+    <TableRootContainer hasFilterBar={hasFilterBar} hasToolbar={hasToolbar} style={containerStyle}>
+      {useVirtualization ? (
+        <VirtualTable maxHeight={maxHeight} bodyRowStyle={bodyRowStyle} />
+      ) : // <VirtualizedContent
+      //   {...props}
+      //   rows={rows}
+      //   emptyElement={emptyElement}
+      //   isEmpty={isEmpty}
+      //   enableDragDrop={enableDragDrop}
+      // />
+      columnResizing ? (
+        <ResizableTable tableState={tableState} />
+      ) : (
+        <FixedTable tableState={tableState} />
+      )}
     </TableRootContainer>
   );
 };
