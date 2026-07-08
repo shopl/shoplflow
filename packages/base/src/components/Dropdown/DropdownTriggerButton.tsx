@@ -128,7 +128,12 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
             transition={{
               duration: 0.2,
             }}
-            style={{ cursor: disabled ? 'not-allowed' : 'pointer' }}
+            style={{
+              cursor: disabled ? 'not-allowed' : 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
             <Icon iconSource={DownArrowSolidXsmallIcon} color={getChevronColor()} sizeVar='XS' />
           </motion.div>
