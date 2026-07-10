@@ -2,9 +2,14 @@ import { useEffect, useState } from 'react';
 import { StyledDropdown } from './Dropdown.styled';
 import { Popper } from '../Popper';
 import type { DropdownProps } from './Dropdown.types';
+import type { AutoPlacementOptions } from '@floating-ui/react';
 import { DropdownContext } from './useDropdown';
 import { DropdownTriggerButton } from './DropdownTriggerButton';
 import { DropdownContent } from './DropdownContent';
+
+const DEFAULT_AUTO_PLACEMENT: AutoPlacementOptions = {
+  allowedPlacements: ['bottom-start', 'top-start'],
+};
 
 const Dropdown = ({
   isOpen: initialIsOpen = false,
@@ -14,6 +19,7 @@ const Dropdown = ({
   width = '100%',
   offset = 4,
   placement,
+  autoPlacement: initialAutoPlacement,
   middlewares,
   strategy = 'fixed',
 }: DropdownProps) => {
@@ -37,10 +43,21 @@ const Dropdown = ({
     setIsOpen(initialIsOpen);
   }, [initialIsOpen]);
 
+  const shouldUseAutoPlacement = placement === undefined && middlewares === undefined;
+  const resolvedAutoPlacement = shouldUseAutoPlacement
+    ? { ...DEFAULT_AUTO_PLACEMENT, ...initialAutoPlacement }
+    : undefined;
+
   return (
     <StyledDropdown data-shoplflow={'Dropdown'} width={width}>
       <DropdownContext.Provider value={{ ...size, isOpen, setIsOpen, option }}>
-        <Popper offset={offset} placement={placement ?? 'bottom-start'} middlewares={middlewares} strategy={strategy}>
+        <Popper
+          offset={offset}
+          placement={placement}
+          strategy={strategy}
+          autoPlacement={resolvedAutoPlacement}
+          middlewares={middlewares}
+        >
           <Popper.Trigger ref={setTriggerRef} isOpen={isOpen} width={width}>
             {trigger}
           </Popper.Trigger>

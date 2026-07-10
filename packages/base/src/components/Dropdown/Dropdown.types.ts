@@ -8,6 +8,7 @@ import type {
 } from '../../utils/type/ComponentProps';
 import type { $Values } from '@shoplflow/utils';
 import type { Middleware } from '@floating-ui/react-dom';
+import type { AutoPlacementOptions } from '@floating-ui/react';
 import type { OffsetOptions, Placement, Strategy } from '@floating-ui/core';
 
 export const DropdownOptionVariants = {
@@ -40,7 +41,15 @@ export interface DropdownOptionProps {
   placement?: Placement;
   offset?: OffsetOptions;
   /**
+   * 화면 뷰에 따라 자동으로 위치를 조정합니다.
+   * `placement` 또는 `middlewares`가 지정되면 무시됩니다.
+   *
+   * Ref: https://floating-ui.com/docs/autoplacement
+   */
+  autoPlacement?: AutoPlacementOptions;
+  /**
    * floating ui의 middleware를 설정합니다.
+   * 지정 시 기본 `autoPlacement`는 적용되지 않습니다.
    *
    * Ref: https://floating-ui.com/docs/useFloating#middleware
    */

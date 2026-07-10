@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.48.6
+
+### Patch Changes
+
+- [`5ee30c2572476ef45a51723e53d4373963123f3a`](https://github.com/shopl/shoplflow/commit/5ee30c2572476ef45a51723e53d4373963123f3a) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Dropdown 기본 autoPlacement 동작을 복원하고 middlewares 주입 시에는 커스텀 배치를 사용하도록 수정합니다.
+
 ## 0.48.5
 
 ### Patch Changes
