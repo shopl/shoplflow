@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.48.5
+
+### Patch Changes
+
+- [#833](https://github.com/shopl/shoplflow/pull/833) [`0b0f89c8ee078062421d50b72a2d9a410f2e4d17`](https://github.com/shopl/shoplflow/commit/0b0f89c8ee078062421d50b72a2d9a410f2e4d17) Thanks [@velo-kim](https://github.com/velo-kim)! - update(base): dropdown-trigger-button style 조정
+
 ## 0.48.4
 
 ### Patch Changes
