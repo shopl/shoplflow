@@ -22,7 +22,7 @@ const PaginationSizeSelector = ({ data, pageSize, setPageSize, middlewares }: Pa
     <Dropdown
       option={'CLICK'}
       width={'66px'}
-      middlewares={middlewares}
+      {...(middlewares ? { middlewares } : {})}
       trigger={
         <Dropdown.Button
           placeholder={String(pageSize)}
