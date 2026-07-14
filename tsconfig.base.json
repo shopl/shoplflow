@@ -3,7 +3,12 @@
     /* 기본 옵션
      * ------------------------------------------------------------------------------------------------------------------------------------------------ */
     // "incremental": true,                   /* 증분 컴파일 활성화 */
-    "baseUrl": ".",
+    // TypeScript 6 마이그레이션: baseUrl / moduleResolution=node10 은 TS 7 제거 대상이라 여기서 정리했다.
+    //  - baseUrl: 라이브러리 패키지는 paths 미사용 + non-relative import 도 없어 제거해도 안전.
+    //  - moduleResolution: 번들 라이브러리이므로 node → bundler 로 현대화.
+    // 남은 target=es5 는 배포 번들의 ES5 다운레벨(구형 브라우저 지원)에 영향을 주므로 의도적으로 유지하며,
+    // 이 옵션만 TS 6 deprecation 에러가 나기 때문에 ignoreDeprecations 로 억제한다. (ES5 지원 중단 시 함께 제거)
+    "ignoreDeprecations": "6.0",
     "target": "es5",
     /* ECMAScript 목표 버전 설정: 'ES3'(기본), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
     "module": "esnext",
@@ -60,8 +65,8 @@
 
     /* 모듈 분석 옵션
      * ------------------------------------------------------------------------------------------------------------------------------------------------ */
-    "moduleResolution": "node",
-    /* 모듈 분석 방법 설정: 'node' (Node.js) 또는 'classic' (TypeScript pre-1.6). */
+    "moduleResolution": "bundler",
+    /* 모듈 분석 방법 설정: 번들러(tsup/esbuild)로 빌드하므로 'bundler'. (구 'node'=node10 은 TS 7 제거 대상) */
     // "baseUrl": "./",                       /* 절대 경로 모듈이 아닌, 모듈이 기본적으로 위치한 디렉토리 설정 (예: './modules-name') */
     // "paths": {},                           /* 'baseUrl'을 기준으로 상대 위치로 가져오기를 다시 매핑하는 항목 설정 */
     // "rootDirs": [],                        /* 런타임 시 프로젝트 구조를 나타내는 로트 디렉토리 목록 */

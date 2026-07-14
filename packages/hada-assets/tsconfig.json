@@ -9,10 +9,10 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    // TS6: node(node10) → bundler 로 현대화, baseUrl 제거(paths 미사용)
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": false,
-    "baseUrl": ".",
     "noFallthroughCasesInSwitch": true,
     "jsxImportSource": "@emotion/react",
     "declaration": true,
