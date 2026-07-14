@@ -47,7 +47,7 @@
     "lint-staged": "13.2.3",
     "prettier": "^3.0.0",
     "turbo": "^2.8.10",
-    "typescript": "^5.9.0",
+    "typescript": "catalog:",
     "typescript-eslint": "^8.18.0",
     "vitest": "^1.2.2"
   },
@@ -58,9 +58,11 @@
   },
   "packageManager": "pnpm@10.29.3",
   "pnpm": {
+    "comment:typescript-override": "TypeScript 6 마이그레이션: 이 override 로 transitive 의존성(@figma/code-connect, commitlint 등)까지 catalog 의 단일 TS 버전으로 강제한다. 버전은 pnpm-workspace.yaml 의 catalog 한 곳에서만 관리.",
     "overrides": {
       "playwright-core": "1.58.2",
-      "playwright": "1.58.2"
+      "playwright": "1.58.2",
+      "typescript": "catalog:"
     }
   },
   "dependencies": {

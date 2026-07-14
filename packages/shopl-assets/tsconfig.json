@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "module": "commonjs",
+    // TS6: baseUrl 제거. moduleResolution 을 bundler 로 올리며 module 도 esnext 로 변경(bundler 는 commonjs 와 병행 불가).
+    // 출력 포맷(CJS/ESM)은 tsup 이 결정하므로 배포 번들에는 영향 없음.
+    "module": "esnext",
     "allowJs": false,
     "skipLibCheck": true,
     "noImplicitAny": false,
@@ -12,7 +13,7 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,

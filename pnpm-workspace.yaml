@@ -3,6 +3,10 @@ packages:
   - '!**/test/**'
   - test-env
 
+catalog:
+  # 워크스페이스 전체에서 단일 TypeScript 버전을 강제한다. 버전 변경은 이 항목만 수정.
+  typescript: 6.0.3
+
 ignoredBuiltDependencies:
   - '@swc/core'
   - core-js-pure

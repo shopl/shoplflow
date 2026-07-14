@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    // TS6: baseUrl 제거 (paths 미사용 · non-relative import 없음)
     "module": "esnext",
     "target": "es6",
     "allowJs": false,
