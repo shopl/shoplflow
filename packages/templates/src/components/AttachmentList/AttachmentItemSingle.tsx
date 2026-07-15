@@ -29,7 +29,7 @@ const AttachmentItemSingle: React.FC<AttachmentItemSingleProps> = ({ item, onCli
         {item.extension && (
           <>
             <StyledSeparator />
-            <Text typography='body2_400' color='neutral400'>
+            <Text typography='body2_400' color='neutral400' whiteSpace='nowrap'>
               {item.extension}
             </Text>
           </>
