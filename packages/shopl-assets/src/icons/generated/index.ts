@@ -120,7 +120,9 @@ import IcFeedView from './IcFeedView';
 import IcFilter from './IcFilter';
 import IcFilterdeleteXsmall from './IcFilterdeleteXsmall';
 import IcFirstPage from './IcFirstPage';
+import IcFlexibleWorkingHoursSystem from './IcFlexibleWorkingHoursSystem';
 import IcFlexibleWorking from './IcFlexibleWorking';
+import IcFlexitime from './IcFlexitime';
 import IcFullScreenMedium from './IcFullScreenMedium';
 import IcFullscreen from './IcFullscreen';
 import IcFunnel from './IcFunnel';
@@ -487,7 +489,9 @@ const icons = {
   filter: IcFilter,
   'filterdelete-xsmall': IcFilterdeleteXsmall,
   'first-page': IcFirstPage,
+  'flexible-working-hours-system': IcFlexibleWorkingHoursSystem,
   'flexible-working': IcFlexibleWorking,
+  flexitime: IcFlexitime,
   'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
   funnel: IcFunnel,
@@ -857,7 +861,9 @@ export {
   IcFilter as FilterIcon,
   IcFilterdeleteXsmall as FilterdeleteXsmallIcon,
   IcFirstPage as FirstPageIcon,
+  IcFlexibleWorkingHoursSystem as FlexibleWorkingHoursSystemIcon,
   IcFlexibleWorking as FlexibleWorkingIcon,
+  IcFlexitime as FlexitimeIcon,
   IcFullScreenMedium as FullScreenMediumIcon,
   IcFullscreen as FullscreenIcon,
   IcFunnel as FunnelIcon,
