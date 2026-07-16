@@ -1,5 +1,11 @@
 # @shoplflow/templates
 
+## 0.2.51
+
+### Patch Changes
+
+- [`43834a80408e93f9c22417ec90ca31f99442d58f`](https://github.com/shopl/shoplflow/commit/43834a80408e93f9c22417ec90ca31f99442d58f) Thanks [@ayaan0209](https://github.com/ayaan0209)! - AttachmentItemSingle 확장자 텍스트에 whiteSpace nowrap 적용
+
 ## 0.2.50
 
 ### Patch Changes
