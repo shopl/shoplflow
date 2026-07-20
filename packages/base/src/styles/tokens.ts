@@ -175,6 +175,7 @@ const caption_700 = '.caption_700';
 const caption_400 = '.caption_400';
 const paragraph1 = '.paragraph1';
 const paragraph2 = '.paragraph2';
+const caption2_700 = '.caption2_700';
 export const typographyTokens = {
  heading1_700,
  heading1_400,
@@ -199,4 +200,5 @@ export const typographyTokens = {
  caption_400,
  paragraph1,
  paragraph2,
+ caption2_700,
 };
