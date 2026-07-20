@@ -357,4 +357,9 @@
     line-height: 20px;
     font-size: 13px;
   }
+  .caption2_700 {
+    font-weight: var(--font-weight-bold);
+    line-height: 15px;
+    font-size: 10px;
+  }
 }
