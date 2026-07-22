@@ -271,6 +271,7 @@ import IcPhoneLine from './IcPhoneLine';
 import IcPhotoMedium from './IcPhotoMedium';
 import IcPhoto from './IcPhoto';
 import IcPinCheck from './IcPinCheck';
+import IcPinCluster from './IcPinCluster';
 import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
@@ -347,6 +348,7 @@ import IcTruck from './IcTruck';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
+import IcUploadXsmall from './IcUploadXsmall';
 import IcUserNameLine from './IcUserNameLine';
 import IcUserNumberLine from './IcUserNumberLine';
 import IcUserTagLine from './IcUserTagLine';
@@ -640,6 +642,7 @@ const icons = {
   'photo-medium': IcPhotoMedium,
   photo: IcPhoto,
   'pin-check': IcPinCheck,
+  'pin-cluster': IcPinCluster,
   'pin-xlarge': IcPinXlarge,
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
@@ -716,6 +719,7 @@ const icons = {
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
+  'upload-xsmall': IcUploadXsmall,
   'user-name-line': IcUserNameLine,
   'user-number-line': IcUserNumberLine,
   'user-tag-line': IcUserTagLine,
@@ -1012,6 +1016,7 @@ export {
   IcPhotoMedium as PhotoMediumIcon,
   IcPhoto as PhotoIcon,
   IcPinCheck as PinCheckIcon,
+  IcPinCluster as PinClusterIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
@@ -1088,6 +1093,7 @@ export {
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
+  IcUploadXsmall as UploadXsmallIcon,
   IcUserNameLine as UserNameLineIcon,
   IcUserNumberLine as UserNumberLineIcon,
   IcUserTagLine as UserTagLineIcon,
