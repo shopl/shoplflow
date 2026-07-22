@@ -271,6 +271,7 @@ import IcPhoneLine from './IcPhoneLine';
 import IcPhotoMedium from './IcPhotoMedium';
 import IcPhoto from './IcPhoto';
 import IcPinCheck from './IcPinCheck';
+import IcPinCluster from './IcPinCluster';
 import IcPinXlarge from './IcPinXlarge';
 import IcPin from './IcPin';
 import IcPlayXlarge from './IcPlayXlarge';
@@ -640,6 +641,7 @@ const icons = {
   'photo-medium': IcPhotoMedium,
   photo: IcPhoto,
   'pin-check': IcPinCheck,
+  'pin-cluster': IcPinCluster,
   'pin-xlarge': IcPinXlarge,
   pin: IcPin,
   'play-xlarge': IcPlayXlarge,
@@ -1012,6 +1014,7 @@ export {
   IcPhotoMedium as PhotoMediumIcon,
   IcPhoto as PhotoIcon,
   IcPinCheck as PinCheckIcon,
+  IcPinCluster as PinClusterIcon,
   IcPinXlarge as PinXlargeIcon,
   IcPin as PinIcon,
   IcPlayXlarge as PlayXlargeIcon,
