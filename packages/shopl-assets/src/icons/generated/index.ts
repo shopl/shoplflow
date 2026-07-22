@@ -347,6 +347,7 @@ import IcTruck from './IcTruck';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
+import IcUploadXsmall from './IcUploadXsmall';
 import IcUserNameLine from './IcUserNameLine';
 import IcUserNumberLine from './IcUserNumberLine';
 import IcUserTagLine from './IcUserTagLine';
@@ -716,6 +717,7 @@ const icons = {
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
+  'upload-xsmall': IcUploadXsmall,
   'user-name-line': IcUserNameLine,
   'user-number-line': IcUserNumberLine,
   'user-tag-line': IcUserTagLine,
@@ -1088,6 +1090,7 @@ export {
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,
+  IcUploadXsmall as UploadXsmallIcon,
   IcUserNameLine as UserNameLineIcon,
   IcUserNumberLine as UserNumberLineIcon,
   IcUserTagLine as UserTagLineIcon,
