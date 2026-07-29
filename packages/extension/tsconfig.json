@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "noEmit": true,
-    "baseUrl": ".",
     "allowJs": false,
     "target": "esnext",
     "module": "esnext",
@@ -18,9 +17,9 @@
     "typeRoots": ["./src", "node_modules/@types"],
     "paths": {
       "@root/*": ["./*"],
-      "@src/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@pages/*": ["src/pages/*"],
+      "@src/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@pages/*": ["./src/pages/*"],
       "virtual:reload-on-update-in-background-script": ["./src/global.d.ts"],
       "virtual:reload-on-update-in-view": ["./src/global.d.ts"]
     }
