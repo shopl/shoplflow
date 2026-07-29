@@ -45,11 +45,22 @@ const YearSelect = ({ optionList, className, parentClassName, activeValue, maxHe
 
     const selectedOptionIndex = optionList.findIndex((option) => option?.value === activeValue);
 
-    const heightPerOption = optionListRef.current[selectedOptionIndex]?.offsetHeight ?? 0;
-    const parentHeight = optionListRef.current[selectedOptionIndex]?.closest('ul')?.clientHeight ?? 0;
+    if (selectedOptionIndex < 0) {
+      return;
+    }
 
-    if (heightPerOption * (selectedOptionIndex + 1) >= parentHeight) {
-      simpleBarContentRef.current?.getScrollElement()?.scrollTo({ top: heightPerOption * selectedOptionIndex });
+    const scrollElement = simpleBarContentRef.current?.getScrollElement();
+    const heightPerOption = optionListRef.current[selectedOptionIndex]?.offsetHeight ?? 0;
+    // NOTICE: 노출 영역의 높이는 실제 스크롤 컨테이너(SimpleBar viewport) 기준으로 측정해야 합니다.
+    // 내부 마크업(ul 등)은 콘텐츠 전체 높이를 가지므로 기준으로 삼으면 스크롤 조건이 성립하지 않습니다.
+    const visibleHeight = scrollElement?.clientHeight ?? 0;
+
+    if (!scrollElement || !heightPerOption || !visibleHeight) {
+      return;
+    }
+
+    if (heightPerOption * (selectedOptionIndex + 1) > visibleHeight) {
+      scrollElement.scrollTo({ top: heightPerOption * selectedOptionIndex });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAllRefMounted, activeValue, maxHeight]);
