@@ -1,5 +1,11 @@
 # @shoplflow/skills
 
+## 0.2.1
+
+### Patch Changes
+
+- [#825](https://github.com/shopl/shoplflow/pull/825) [`7be087839bafada0c33e8ec092b16d337f1926eb`](https://github.com/shopl/shoplflow/commit/7be087839bafada0c33e8ec092b16d337f1926eb) Thanks [@velo-kim](https://github.com/velo-kim)! - Add plugin distribution alongside the npx installer. Consumers on Claude Code, Cursor, or Codex can now install the Shoplflow skills **and** the `@shoplflow/mcp` server in one step via a plugin (host marketplaces under `.claude-plugin/`, `.cursor-plugin/`, `.agents/plugins/`, all pointing at `packages/skills`). The `npx @shoplflow/skills` installer is unchanged and remains the skills-only fallback. README documents both paths.
+
 ## 0.2.0
 
 ### Minor Changes
