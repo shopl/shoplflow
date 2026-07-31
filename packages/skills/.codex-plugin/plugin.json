@@ -1,0 +1,21 @@
+{
+  "name": "shoplflow",
+  "version": "0.1.0",
+  "description": "Shoplflow design-system agent skills + MCP server for developers consuming the @shoplflow/* packages.",
+  "author": {
+    "name": "Shoplflow",
+    "url": "https://github.com/shopl/shoplflow"
+  },
+  "homepage": "https://github.com/shopl/shoplflow/tree/main/packages/skills",
+  "repository": "https://github.com/shopl/shoplflow",
+  "license": "Apache-2.0",
+  "keywords": [
+    "design-system",
+    "shoplflow",
+    "react",
+    "components",
+    "design-tokens"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
