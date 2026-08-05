@@ -5,18 +5,18 @@
     "shopl",
     "hada"
   ],
-  "count": 113,
+  "count": 114,
   "countByType": {
     "color": 44,
     "borderRadius": 6,
     "fontWeights": 3,
     "spacing": 13,
     "boxShadow": 1,
-    "typography": 46
+    "typography": 47
   },
   "countByDomain": {
     "shared": 55,
-    "shopl": 29,
+    "shopl": 30,
     "hada": 29
   },
   "tokens": [
@@ -890,6 +890,20 @@
       "cssVar": "--primary400",
       "className": null,
       "value": "#2d89e4"
+    },
+    {
+      "name": "caption2_700",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "caption2_700",
+      "cssVar": null,
+      "className": ".caption2_700",
+      "value": {
+        "fontWeight": "{fontWeight.bold}",
+        "fontSize": "10",
+        "lineHeight": "15",
+        "fontFamily": "Pretendard"
+      }
     },
     {
       "name": "heading1_700",
