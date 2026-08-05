@@ -36,6 +36,37 @@ jobs:
       - name: 전체패키지를 빌드하고 있어요.
         run: pnpm build
 
+      # base 릴리즈 → mcp 재배포 연동은 package.json·turbo.json·.changeset/config.json에
+      # 흩어진 설정들이 맞물려 만들어집니다. 하나가 빠져도 빌드는 통과하고 조용히 재배포만
+      # 멈추므로, 불변식을 실행 가능한 검사로 고정합니다. (packages/mcp/아키텍쳐.md 6절)
+      - name: MCP 릴리즈 배선을 검증하고 있어요.
+        run: pnpm --filter @shoplflow/mcp check:wiring
+
+      # 커밋된 src/data/*.json이 base 소스와 일치하는지 확인합니다.
+      # 배포물 자체는 build:package가 매번 재생성하므로 항상 최신이지만, 커밋본이 밀리면
+      # "생성물을 커밋해서 PR diff로 변경 영향을 리뷰한다"는 설계 의도가 무너집니다.
+      #
+      # 앞선 `pnpm build`에 의존하지 않고 generate:metadata를 명시적으로 다시 실행합니다.
+      # turbo가 build:package를 캐시 히트시키면 스크립트가 아예 실행되지 않아(outputs가
+      # dist/**뿐이라 src/data는 복원 대상도 아님) diff가 비어 보이는 위양성이 생깁니다.
+      # 단, 아이콘 배럴(assets의 build:icons 산출물)이 필요하므로 `pnpm build` 뒤에 둡니다.
+      - name: MCP 메타데이터 최신 여부를 확인하고 있어요.
+        run: |
+          pnpm --filter @shoplflow/mcp generate:metadata
+          # HEAD와 직접 비교 — 스테이징 여부와 무관하게 "커밋된 것"과 대조합니다.
+          if ! git diff --quiet HEAD -- packages/mcp/src/data/; then
+            echo "::error::커밋된 MCP 메타데이터가 base 소스와 어긋나 있어요. 아래 명령으로 재생성 후 커밋해주세요:"
+            echo "::error::  pnpm --filter @shoplflow/mcp generate:metadata && git add packages/mcp/src/data"
+            echo ""
+            echo "--- 변경된 파일 ---"
+            git diff --stat HEAD -- packages/mcp/src/data/
+            echo ""
+            echo "--- 상세 diff (앞부분 200줄) ---"
+            git diff HEAD -- packages/mcp/src/data/ | head -200
+            exit 1
+          fi
+          echo "✓ 커밋된 MCP 메타데이터가 base 소스와 일치해요."
+
       - name: 테스트 Status와 Color를 설정하고 있어요.
         id: set_status_and_color
         if: always()

@@ -1,8 +1,8 @@
 {
   "source": "packages/base/src/components (each *.stories.tsx)",
   "importFrom": "@shoplflow/base",
-  "count": 41,
-  "exampleCount": 142,
+  "count": 42,
+  "exampleCount": 149,
   "modules": [
     {
       "name": "AnnualDatepicker",
@@ -208,6 +208,36 @@
         {
           "story": "Range",
           "code": "<Stack width='400px'>\n      <DayDatepicker\n        calendarType={{\n          type: 'range',\n          handleDayRangeChange(dates) {\n            if (Array.isArray(dates)) {\n              const [start, end] = dates;\n              setStartDate(start);\n              setEndDate(end);\n            } else {\n              setStartDate(dates);\n            }\n          },\n        }}\n        selected={startDate ?? null}\n        startDate={startDate || undefined}\n        endDate={endDate || undefined}\n        sizeVar={'M'}\n        locale={ko}\n      />\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Divider",
+      "group": "Divider",
+      "title": "COMPONENTS/Divider",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<ComponentStage>\n      {args.direction === 'column' ? (\n        <Stack.Horizontal height={'80px'} align={'stretch'} width={'fit-content'}>\n          <Text>왼쪽</Text>\n          <Divider {...args} data-testid={TEST_ID} />\n          <Text>오른쪽</Text>\n        </Stack.Horizontal>\n      ) : (\n        <Stack.Vertical width={'240px'} spacing={'spacing12'}>\n          <Text>위쪽</Text>\n          <Divider {...args} data-testid={TEST_ID} />\n          <Text>아래쪽</Text>\n        </Stack.Vertical>\n      )}\n    </ComponentStage>"
+        },
+        {
+          "story": "Row",
+          "args": "{ direction: 'row' }",
+          "code": "<ComponentStage>\n      <Stack.Vertical width={'240px'} spacing={'spacing12'}>\n        <Text>위쪽 콘텐츠</Text>\n        <Divider {...args} />\n        <Text>아래쪽 콘텐츠</Text>\n      </Stack.Vertical>\n    </ComponentStage>"
+        },
+        {
+          "story": "Column",
+          "args": "{ direction: 'column', length: '14px' }",
+          "code": "<ComponentStage>\n      <Stack.Horizontal align={'center'} spacing={'spacing12'} width={'fit-content'}>\n        <Text>왼쪽</Text>\n        <Divider {...args} />\n        <Text>가운데</Text>\n        <Divider {...args} />\n        <Text>오른쪽</Text>\n      </Stack.Horizontal>\n    </ComponentStage>"
+        },
+        {
+          "story": "IsFull",
+          "code": "<ComponentStage>\n      <Stack.Horizontal width={'320px'} height={'120px'} spacing={'spacing24'} align={'stretch'}>\n        <Stack.Vertical flex={'1'} spacing={'spacing12'} justify={'center'}>\n          <Text>위쪽 콘텐츠</Text>\n          <Divider direction={'row'} isFull />\n          <Text>아래쪽 콘텐츠</Text>\n        </Stack.Vertical>\n        <Divider direction={'column'} isFull />\n        <Stack.Vertical flex={'1'} justify={'center'}>\n          <Text>세로 구분선이 부모 높이를 가득 채웁니다.</Text>\n        </Stack.Vertical>\n      </Stack.Horizontal>\n    </ComponentStage>"
+        },
+        {
+          "story": "Colors",
+          "code": "<ComponentStage>\n      <Stack.Vertical width={'240px'} spacing={'spacing16'}>\n        <Divider color={colorTokens.neutral200} />\n        <Divider color={colorTokens.neutral300} />\n        <Divider color={colorTokens.primary300} thickness={'2px'} />\n        <Divider color={colorTokens.red300} thickness={'2px'} />\n      </Stack.Vertical>\n    </ComponentStage>"
         }
       ]
     },
@@ -899,6 +929,14 @@
         {
           "story": "ItemDisabled",
           "code": "<Stack>\n      <ToggleButton {...args} selectedValue={selectedValue} onChange={handleChange} targetName='item-disabled-group'>\n        <ToggleButton.InnerRadio value='value1' label='Toggle1' id='item-disabled-1' />\n        <ToggleButton.InnerRadio value='value2' label='Toggle2' id='item-disabled-2' disabled />\n        <ToggleButton.InnerRadio value='value3' label='Toggle3' id='item-disabled-3' />\n      </ToggleButton>\n    </Stack>"
+        },
+        {
+          "story": "FullWidth",
+          "code": "<Stack spacing='spacing16'>\n      <Text>fullWidth=true: 부모 너비를 100% 채우고 각 아이템이 동일 비율(flex:1)로 분배됩니다.</Text>\n\n      {/* 부모 너비를 제한해 100% 채움을 시각적으로 확인하기 위한 컨테이너 */}\n      <div style={{ width: 480, border: '1px dashed #ccc' }}>\n        <ToggleButton\n          {...args}\n          fullWidth\n          selectedValue={selectedValue}\n          onChange={handleChange}\n          targetName='full-width-group'\n        >\n          <ToggleButton.InnerRadio value='value1' label='Toggle1Toggle1Toggle1Toggle1' id='full-width-1' />\n          <ToggleButton.InnerRadio value='value2' label='Toggle2 Toggle2Toggle2Toggle2' id='full-width-2' />\n          <ToggleButton.InnerRadio value='value3' label='Toggle3' id='full-width-3' />\n        </ToggleButton>\n      </div>\n    </Stack>"
+        },
+        {
+          "story": "ButtonLineClamp",
+          "code": "<Stack spacing='spacing16'>\n      <Text>\n        buttonLineClamp: 라벨이 길어도 지정한 줄 수까지만 표시하고 말줄임(…) 처리합니다. (fullWidth와 함께 사용)\n      </Text>\n\n      <div style={{ width: 360, border: '1px dashed #ccc' }}>\n        <ToggleButton\n          {...args}\n          fullWidth\n          selectedValue={selectedValue}\n          onChange={handleChange}\n          targetName='line-clamp-group'\n        >\n          <ToggleButton.InnerRadio\n            value='value1'\n            label='아주 긴 라벨 텍스트 예시 첫번째 항목입니다'\n            id='line-clamp-1'\n          />\n          <ToggleButton.InnerRadio value='value2' label='두번째 항목도 라벨이 꽤 길어요' id='line-clamp-2' />\n          <ToggleButton.InnerRadio value='value3' label='짧은' id='line-clamp-3' />\n        </ToggleButton>\n      </div>\n    </Stack>"
         }
       ]
     },

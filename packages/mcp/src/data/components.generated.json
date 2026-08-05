@@ -1,7 +1,7 @@
 {
   "source": "packages/base/src/components/**/*.types.ts",
   "importFrom": "@shoplflow/base",
-  "count": 63,
+  "count": 65,
   "withVariants": 19,
   "components": [
     {
@@ -554,12 +554,58 @@
       ]
     },
     {
+      "name": "Divider",
+      "group": "Divider",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": true,
+      "nativeAttrs": "'div'",
+      "variants": [],
+      "props": [
+        {
+          "name": "color",
+          "optional": true,
+          "type": "CSSProperties['color']",
+          "description": "구분선의 색상을 설정합니다. CSS color 값을 그대로 사용합니다. (예: `colorTokens.neutral200`, `'#EAEAEA'`)"
+        },
+        {
+          "name": "direction",
+          "optional": true,
+          "type": "DividerDirection",
+          "description": "구분선의 방향을 설정합니다. (값: row, column)"
+        },
+        {
+          "name": "isFull",
+          "optional": true,
+          "type": "boolean",
+          "description": "true이면 direction 방향(length 축)으로 부모의 가용 영역을 가득 채웁니다. (`align-self: stretch` + length 축을 `auto`로 설정) 부모 padding 안쪽(content 영역)을 채우며, 부모 높이가 불확정이거나 `align-items`가 stretch가 아니어도 안정적으로 늘어납니다. 부모가 flex 컨테이너일 때 가장 잘 동작하며, `length`보다 우선합니다."
+        },
+        {
+          "name": "length",
+          "optional": true,
+          "type": "CSSProperties['width']",
+          "description": "구분선이 뻗어나가는 길이를 설정합니다. (direction이 row면 width, column이면 height에 적용)"
+        },
+        {
+          "name": "thickness",
+          "optional": true,
+          "type": "CSSProperties['width']",
+          "description": "구분선의 두께를 설정합니다. (direction이 row면 height, column이면 width에 적용)"
+        }
+      ]
+    },
+    {
       "name": "Dropdown",
       "group": "Dropdown",
       "importFrom": "@shoplflow/base",
       "polymorphic": false,
       "variants": [],
       "props": [
+        {
+          "name": "autoPlacement",
+          "optional": true,
+          "type": "AutoPlacementOptions",
+          "description": "화면 뷰에 따라 자동으로 위치를 조정합니다. `placement` 또는 `middlewares`가 지정되면 무시됩니다. Ref: https://floating-ui.com/docs/autoplacement"
+        },
         {
           "name": "disabled",
           "optional": true,
@@ -570,6 +616,12 @@
           "optional": true,
           "type": "boolean",
           "description": "외부에서 `isOpen`을 제어할 수 있습니다."
+        },
+        {
+          "name": "middlewares",
+          "optional": true,
+          "type": "Array<Middleware | null | undefined | false>",
+          "description": "floating ui의 middleware를 설정합니다. 지정 시 기본 `autoPlacement`는 적용되지 않습니다. Ref: https://floating-ui.com/docs/useFloating#middleware"
         },
         {
           "name": "offset",
@@ -591,6 +643,11 @@
           "name": "popper",
           "optional": true,
           "type": "ReactNode"
+        },
+        {
+          "name": "strategy",
+          "optional": true,
+          "type": "Strategy"
         },
         {
           "name": "trigger",
@@ -1598,6 +1655,11 @@
           "name": "data",
           "optional": false,
           "type": "Array<{ label: string; value: string }>"
+        },
+        {
+          "name": "middlewares",
+          "optional": true,
+          "type": "Array<Middleware | null | undefined | false>"
         },
         {
           "name": "pageSize",
@@ -2900,14 +2962,15 @@
       "variants": [],
       "props": [
         {
+          "name": "buttonLineClamp",
+          "optional": true,
+          "type": "number",
+          "description": "값이 있으면 각 InnerRadio의 라벨 텍스트를 해당 줄 수로 제한(line-clamp)하고, 넘치는 텍스트는 말줄임(…)으로 처리합니다. 너비가 제약되는 `fullWidth` 모드에서 가장 잘 동작합니다."
+        },
+        {
           "name": "disabled",
           "optional": true,
           "type": "boolean"
-        },
-        {
-          "name": "fixedWidth",
-          "optional": false,
-          "type": "number"
         },
         {
           "name": "onChange",
@@ -2955,6 +3018,14 @@
           "type": "boolean"
         }
       ]
+    },
+    {
+      "name": "ToggleButtonWidth",
+      "group": "ToggleButton",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [],
+      "props": []
     },
     {
       "name": "Tooltip",

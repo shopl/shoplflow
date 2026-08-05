@@ -3,6 +3,7 @@
   "globalDependencies": [
     "**/.env.*local"
   ],
+  "//": "tasks.build:package — `turbo run build` also runs build:package in packages that define ONLY it and no `build` script (turbo expands the task graph across every package). @shoplflow/mcp depends on this: it has no `build` script, yet CI's `pnpm build` must run its build:package (regenerate design-system metadata + bundle) before `changeset publish`. `^build:package` is also what orders mcp after base/assets — mcp declares those as workspace devDependencies purely for that ordering and for changesets' dependent version bump. Verify with `pnpm --filter @shoplflow/mcp check:wiring`; rationale in packages/mcp/아키텍쳐.md section 6.",
   "tasks": {
     "build:illustrations": {
       "cache": false

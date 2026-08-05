@@ -27,17 +27,35 @@
   "publishConfig": {
     "access": "public"
   },
+  "//scripts": [
+    "build:package MUST keep `generate:metadata &&` at the front. It is what guarantees the",
+    "published bundle can never carry stale design-system metadata — there is no build path",
+    "that skips extraction. Verified by `check:wiring`."
+  ],
   "scripts": {
     "generate:metadata": "node scripts/generate-metadata.cjs",
     "build:package": "pnpm generate:metadata && rm -rf dist/ && tsup",
     "dev": "pnpm generate:metadata && tsup --watch",
     "start": "node dist/index.js",
+    "check:wiring": "node scripts/check-release-wiring.cjs",
     "type-check": "tsc --noEmit || true"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
     "zod": "^3.23.8"
   },
+  "//devDependencies": [
+    "DO NOT REMOVE the three @shoplflow/* workspace deps below just because nothing imports them.",
+    "They are not runtime deps — they are the wire that couples this package to a base release:",
+    "  1. turbo reads them to order `build:package` after base/assets have built.",
+    "  2. changesets reads them to treat mcp as a dependent of base, so a base version bump",
+    "     patch-bumps mcp too (.changeset/config.json -> updateInternalDependents: always).",
+    "     That is the ONLY reason a base-only change republishes mcp with fresh metadata.",
+    "Removing them breaks NOTHING visibly: extraction still works (scripts read ../../base/src",
+    "by relative path), the build still passes — but mcp silently stops being republished and",
+    "consumers keep receiving stale metadata forever. Guarded by `pnpm check:wiring`.",
+    "See 아키텍쳐.md section 6."
+  ],
   "devDependencies": {
     "@shoplflow/base": "workspace:*",
     "@shoplflow/hada-assets": "workspace:*",

@@ -5,6 +5,17 @@
  * source, normalizes it, and writes a sibling `src/data/*.generated.json`. Running this as a build
  * step (see `build:package`) makes drift between the served metadata and the code impossible.
  *
+ * IMPORTANT — these paths point at monorepo WORKSPACE SOURCES (`../../base/src/...`), not at
+ * node_modules. That is deliberate: a change to base is picked up by the very next build, with no
+ * intermediate publish. The flip side is that this package is coupled to base's directory layout
+ * and file conventions; see 아키텍쳐.md §9 "깨지기 쉬운 지점" for the assumptions that, if broken,
+ * make a builder silently emit less data instead of failing.
+ *
+ * The generated JSON is COMMITTED. `build:package` regenerates it anyway, so the published bundle
+ * is always fresh — committing it is what makes the effect of a base change reviewable in a PR
+ * diff. CI enforces that the committed copy is current (build-test.yml → "MCP 메타데이터 최신 여부").
+ * After changing base, run `pnpm --filter @shoplflow/mcp generate:metadata` and commit the result.
+ *
  *   buildTokens()     <- packages/base/src/styles/tokens.json          -> tokens.generated.json
  *   buildIcons()      <- packages/{shopl,hada}-assets .../generated    -> icons.generated.json
  *   buildComponents() <- packages/base/src/components (each *.types.ts)   -> components.generated.json
