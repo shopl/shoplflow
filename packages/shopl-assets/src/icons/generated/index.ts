@@ -17,6 +17,9 @@ import IcAlertLine from './IcAlertLine';
 import IcAlertPopupXlarge from './IcAlertPopupXlarge';
 import IcAlertTriangle from './IcAlertTriangle';
 import IcAlert from './IcAlert';
+import IcAlignCenter from './IcAlignCenter';
+import IcAlignLeft from './IcAlignLeft';
+import IcAlignRight from './IcAlignRight';
 import IcAnnualMedium from './IcAnnualMedium';
 import IcApprovalMedium from './IcApprovalMedium';
 import IcArticleMedium from './IcArticleMedium';
@@ -99,6 +102,7 @@ import IcDragVertical from './IcDragVertical';
 import IcDrag from './IcDrag';
 import IcDrawer from './IcDrawer';
 import IcDropdown from './IcDropdown';
+import IcDuplicate from './IcDuplicate';
 import IcDuration from './IcDuration';
 import IcEditLarge from './IcEditLarge';
 import IcEditLine from './IcEditLine';
@@ -388,6 +392,9 @@ const icons = {
   'alert-popup-xlarge': IcAlertPopupXlarge,
   'alert-triangle': IcAlertTriangle,
   alert: IcAlert,
+  'align-center': IcAlignCenter,
+  'align-left': IcAlignLeft,
+  'align-right': IcAlignRight,
   'annual-medium': IcAnnualMedium,
   'approval-medium': IcApprovalMedium,
   'article-medium': IcArticleMedium,
@@ -470,6 +477,7 @@ const icons = {
   drag: IcDrag,
   drawer: IcDrawer,
   dropdown: IcDropdown,
+  duplicate: IcDuplicate,
   duration: IcDuration,
   'edit-large': IcEditLarge,
   'edit-line': IcEditLine,
@@ -762,6 +770,9 @@ export {
   IcAlertPopupXlarge as AlertPopupXlargeIcon,
   IcAlertTriangle as AlertTriangleIcon,
   IcAlert as AlertIcon,
+  IcAlignCenter as AlignCenterIcon,
+  IcAlignLeft as AlignLeftIcon,
+  IcAlignRight as AlignRightIcon,
   IcAnnualMedium as AnnualMediumIcon,
   IcApprovalMedium as ApprovalMediumIcon,
   IcArticleMedium as ArticleMediumIcon,
@@ -844,6 +855,7 @@ export {
   IcDrag as DragIcon,
   IcDrawer as DrawerIcon,
   IcDropdown as DropdownIcon,
+  IcDuplicate as DuplicateIcon,
   IcDuration as DurationIcon,
   IcEditLarge as EditLargeIcon,
   IcEditLine as EditLineIcon,
