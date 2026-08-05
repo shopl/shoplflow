@@ -1,6 +1,6 @@
 {
   "name": "@shoplflow/skills",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Downloadable AI-agent skills for consuming the @shoplflow design system. Installs into Claude Code, Codex, or Cursor.",
   "license": "Apache-2.0",
   "type": "module",
