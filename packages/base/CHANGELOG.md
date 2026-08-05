@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.48.13
+
+### Patch Changes
+
+- [`da04e49f5b985b2a4bc32f5d86e14dfc9c0e0daa`](https://github.com/shopl/shoplflow/commit/da04e49f5b985b2a4bc32f5d86e14dfc9c0e0daa) Thanks [@ayaan0209](https://github.com/ayaan0209)! - DayDatepicker 요일 텍스트 색상을 neutral400으로 수정
+
 ## 0.48.12
 
 ### Patch Changes
