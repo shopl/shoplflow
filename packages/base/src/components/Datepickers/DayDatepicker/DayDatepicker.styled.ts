@@ -340,7 +340,7 @@ export const StyledDayDatepicker = styled.div`
     &__day-name {
       width: 40px;
       margin: 0 10px 0 0;
-      color: ${colorTokens.navy300};
+      color: ${colorTokens.neutral400};
       font-size: 13px;
       font-weight: 500;
       line-height: 1rem;
