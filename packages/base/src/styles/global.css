@@ -362,4 +362,9 @@
     line-height: 15px;
     font-size: 10px;
   }
+  .caption2_400 {
+    font-weight: var(--font-weight-regular);
+    line-height: 15px;
+    font-size: 10px;
+  }
 }
