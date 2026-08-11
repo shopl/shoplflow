@@ -1,5 +1,11 @@
 # @shoplflow/shopl-assets
 
+## 0.12.51
+
+### Patch Changes
+
+- [#853](https://github.com/shopl/shoplflow/pull/853) [`39e11200607430baff81c77e8bc524694812a687`](https://github.com/shopl/shoplflow/commit/39e11200607430baff81c77e8bc524694812a687) Thanks [@Casper-Choi](https://github.com/Casper-Choi)! - caption2_400 토큰 추가
+
 ## 0.12.50
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @shoplflow/base
 
+## 0.48.14
+
+### Patch Changes
+
+- [#853](https://github.com/shopl/shoplflow/pull/853) [`39e11200607430baff81c77e8bc524694812a687`](https://github.com/shopl/shoplflow/commit/39e11200607430baff81c77e8bc524694812a687) Thanks [@Casper-Choi](https://github.com/Casper-Choi)! - caption2_400 토큰 추가
+
+- Updated dependencies [[`39e11200607430baff81c77e8bc524694812a687`](https://github.com/shopl/shoplflow/commit/39e11200607430baff81c77e8bc524694812a687)]:
+  - @shoplflow/shopl-assets@0.12.51
+  - @shoplflow/hada-assets@0.1.12
+
 ## 0.48.13
 
 ### Patch Changes
