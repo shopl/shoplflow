@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.48.15
+
+### Patch Changes
+
+- [#855](https://github.com/shopl/shoplflow/pull/855) [`b7c717aab6eaa630934fde31abca074bccfef7fe`](https://github.com/shopl/shoplflow/commit/b7c717aab6eaa630934fde31abca074bccfef7fe) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Dropdown Button 색상 neutral700으로 변경
+
 ## 0.48.14
 
 ### Patch Changes
