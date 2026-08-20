@@ -65,9 +65,8 @@ export const DropdownTriggerButton = forwardRef<HTMLButtonElement, DropdownTrigg
     };
 
     const getChevronColor = () => {
-      if (styleVar === 'GHOST') return disabled ? 'neutral350' : 'neutral600';
-      if (sizeVar === 'L') return 'neutral700';
-      return 'neutral350';
+      if (styleVar === 'GHOST') return disabled ? 'neutral350' : 'neutral700';
+      return 'neutral700';
     };
 
     const LeftSourceClone = leftSource ? cloneElement(leftSource, { ...leftSource.props, disabled }) : leftSource;
