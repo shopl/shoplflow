@@ -137,7 +137,11 @@ const Combobox = forwardRef<HTMLDivElement, ComboboxProps>(
               ) : null}
               <StyledTrigger aria-label='목록 열기'>
                 <ChevronWrapper>
-                  <Icon iconSource={DownArrowSolidXsmallIcon} sizeVar='XS' color='neutral400' />
+                  <Icon
+                    iconSource={DownArrowSolidXsmallIcon}
+                    sizeVar='XS'
+                    color={disabled ? 'neutral400' : 'neutral700'}
+                  />
                 </ChevronWrapper>
               </StyledTrigger>
             </StyledInputGroup>
