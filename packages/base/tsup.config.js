@@ -8,6 +8,6 @@ export default defineConfig({
   clean: true,
   format: ['esm', 'cjs'],
   dts: true,
-  external: ['react'],
+  external: ['react', 'react-dom', '@base-ui/react'],
   css: true,
 });
