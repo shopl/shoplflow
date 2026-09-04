@@ -97,7 +97,7 @@ export const CounterSlot = styled('div', {
 export const StyledTrigger = styled(BaseCombobox.Trigger)`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-shrink: 0;
   width: 22px;
   height: 100%;
