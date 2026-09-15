@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.49.0
+
+### Minor Changes
+
+- [#858](https://github.com/shopl/shoplflow/pull/858) [`ee7838d59fd5e87ec8c8e1623be11ead51037c8b`](https://github.com/shopl/shoplflow/commit/ee7838d59fd5e87ec8c8e1623be11ead51037c8b) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - Combobox 컴포넌트 추가
+
 ## 0.48.16
 
 ### Patch Changes
