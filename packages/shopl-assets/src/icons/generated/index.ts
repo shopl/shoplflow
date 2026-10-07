@@ -128,6 +128,7 @@ import IcFirstPage from './IcFirstPage';
 import IcFlexibleWorkingHoursSystem from './IcFlexibleWorkingHoursSystem';
 import IcFlexibleWorking from './IcFlexibleWorking';
 import IcFlexitime from './IcFlexitime';
+import IcForward from './IcForward';
 import IcFullScreenMedium from './IcFullScreenMedium';
 import IcFullscreen from './IcFullscreen';
 import IcFunnel from './IcFunnel';
@@ -326,6 +327,9 @@ import IcSign from './IcSign';
 import IcSignature from './IcSignature';
 import IcSingleText from './IcSingleText';
 import IcSolved from './IcSolved';
+import IcSortAscendingXsmall from './IcSortAscendingXsmall';
+import IcSortDefaultXsmall from './IcSortDefaultXsmall';
+import IcSortDescendingXsmall from './IcSortDescendingXsmall';
 import IcSortingAtoz from './IcSortingAtoz';
 import IcSortingEarly from './IcSortingEarly';
 import IcSortingLate from './IcSortingLate';
@@ -504,6 +508,7 @@ const icons = {
   'flexible-working-hours-system': IcFlexibleWorkingHoursSystem,
   'flexible-working': IcFlexibleWorking,
   flexitime: IcFlexitime,
+  forward: IcForward,
   'full-screen-medium': IcFullScreenMedium,
   fullscreen: IcFullscreen,
   funnel: IcFunnel,
@@ -702,6 +707,9 @@ const icons = {
   signature: IcSignature,
   'single-text': IcSingleText,
   solved: IcSolved,
+  'sort-ascending-xsmall': IcSortAscendingXsmall,
+  'sort-default-xsmall': IcSortDefaultXsmall,
+  'sort-descending-xsmall': IcSortDescendingXsmall,
   'sorting-atoz': IcSortingAtoz,
   'sorting-early': IcSortingEarly,
   'sorting-late': IcSortingLate,
@@ -883,6 +891,7 @@ export {
   IcFlexibleWorkingHoursSystem as FlexibleWorkingHoursSystemIcon,
   IcFlexibleWorking as FlexibleWorkingIcon,
   IcFlexitime as FlexitimeIcon,
+  IcForward as ForwardIcon,
   IcFullScreenMedium as FullScreenMediumIcon,
   IcFullscreen as FullscreenIcon,
   IcFunnel as FunnelIcon,
@@ -1081,6 +1090,9 @@ export {
   IcSignature as SignatureIcon,
   IcSingleText as SingleTextIcon,
   IcSolved as SolvedIcon,
+  IcSortAscendingXsmall as SortAscendingXsmallIcon,
+  IcSortDefaultXsmall as SortDefaultXsmallIcon,
+  IcSortDescendingXsmall as SortDescendingXsmallIcon,
   IcSortingAtoz as SortingAtozIcon,
   IcSortingEarly as SortingEarlyIcon,
   IcSortingLate as SortingLateIcon,
