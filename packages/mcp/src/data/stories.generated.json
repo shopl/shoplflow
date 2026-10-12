@@ -1,8 +1,8 @@
 {
   "source": "packages/base/src/components (each *.stories.tsx)",
   "importFrom": "@shoplflow/base",
-  "count": 42,
-  "exampleCount": 149,
+  "count": 43,
+  "exampleCount": 155,
   "modules": [
     {
       "name": "AnnualDatepicker",
@@ -184,6 +184,38 @@
           "story": "List",
           "args": "{\n    text: '샤플플로우',\n    defaultSelected: false,\n    radius: false,\n  }",
           "code": "<Stack>\n      <Stack.Horizontal width={'300px'}>\n        <ComponentStage>\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n          <ChipToggle {...args} />\n        </ComponentStage>\n      </Stack.Horizontal>\n    </Stack>"
+        }
+      ]
+    },
+    {
+      "name": "Combobox",
+      "group": "Combobox",
+      "title": "COMPONENTS/Comboboxs/Combobox",
+      "importFrom": "@shoplflow/base",
+      "examples": [
+        {
+          "story": "Playground",
+          "code": "<Stack>\n      <Combobox\n        {...componentProps}\n        items={resolvedItems}\n        value={value}\n        onChange={handleChange}\n        tag={showTag ? <Text typography='caption_700'>단위</Text> : tag}\n      />\n    </Stack>"
+        },
+        {
+          "story": "Disabled",
+          "code": "<Stack>\n    <Combobox {...args} items={TEXT_ITEMS} value='Option A' disabled />\n  </Stack>"
+        },
+        {
+          "story": "Error",
+          "code": "<Stack>\n    <Combobox {...args} items={TEXT_ITEMS} value='Option A' isError />\n  </Stack>"
+        },
+        {
+          "story": "TextAlign",
+          "code": "<Stack.Horizontal spacing='spacing12'>\n    <Combobox {...args} items={TEXT_ITEMS} value='Option A' textAlign='left' />\n    <Combobox {...args} items={TEXT_ITEMS} value='Option A' textAlign='right' />\n  </Stack.Horizontal>"
+        },
+        {
+          "story": "Numeric",
+          "code": "<Stack>\n      <Combobox\n        {...args}\n        items={NUMBER_ITEMS}\n        inputMode='numeric'\n        value={value}\n        onChange={setValue}\n        onSelect={setValue}\n      />\n    </Stack>"
+        },
+        {
+          "story": "WithTag",
+          "code": "<Stack.Horizontal spacing='spacing12'>\n      <Combobox\n        {...args}\n        items={NUMBER_ITEMS}\n        inputMode='numeric'\n        value={hours}\n        onChange={setHours}\n        onSelect={setHours}\n        tag={<Text typography='caption_700'>시간</Text>}\n      />\n      <Combobox\n        {...args}\n        items={NUMBER_ITEMS}\n        inputMode='numeric'\n        value={minutes}\n        onChange={setMinutes}\n        onSelect={setMinutes}\n        tag={<Text typography='caption_700'>분</Text>}\n      />\n    </Stack.Horizontal>"
         }
       ]
     },

@@ -5,18 +5,18 @@
     "shopl",
     "hada"
   ],
-  "count": 114,
+  "count": 115,
   "countByType": {
     "color": 44,
     "borderRadius": 6,
     "fontWeights": 3,
     "spacing": 13,
     "boxShadow": 1,
-    "typography": 47
+    "typography": 48
   },
   "countByDomain": {
     "shared": 55,
-    "shopl": 30,
+    "shopl": 31,
     "hada": 29
   },
   "tokens": [
@@ -903,6 +903,20 @@
         "fontSize": "10",
         "lineHeight": "15",
         "fontFamily": "Pretendard"
+      }
+    },
+    {
+      "name": "caption2_400",
+      "type": "typography",
+      "domain": "shopl",
+      "path": "caption2_400",
+      "cssVar": null,
+      "className": ".caption2_400",
+      "value": {
+        "fontFamily": "Pretendard",
+        "fontWeight": "{fontWeight.regular}",
+        "fontSize": "10",
+        "lineHeight": "15"
       }
     },
     {
