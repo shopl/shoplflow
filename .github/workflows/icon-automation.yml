@@ -49,6 +49,12 @@ jobs:
           pnpm run build:illustrations
           pnpm run lint:illustrations
 
+      # 아이콘이 바뀌면 커밋된 MCP 메타데이터(packages/mcp/src/data)도 함께 갱신해야 합니다.
+      # 빠뜨리면 build-test.yml의 "MCP 메타데이터 최신 여부" 검사가 이후 PR(Version Packages 등)에서 실패합니다.
+      # 아이콘 배럴(build:icons 산출물)을 읽으므로 반드시 위 단계 뒤에 둡니다.
+      - name: MCP 메타데이터를 재생성하고 있어요.
+        run: pnpm --filter @shoplflow/mcp generate:metadata
+
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
