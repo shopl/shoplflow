@@ -1,18 +1,19 @@
 /**
- * Guards the three invariants that make "a @shoplflow/base release also republishes
+ * Guards the invariants that make "a @shoplflow/base release also republishes
  * @shoplflow/mcp with fresh metadata" true.
  *
  * That behaviour is not declared anywhere as a single rule — it emerges from separate settings in
- * package.json, turbo.json and .changeset/config.json. Each can be removed by a well-meaning
+ * package.json, turbo.json and the release scripts. Each can be removed by a well-meaning
  * cleanup without breaking a build, so the failure mode is silent: extraction keeps working, CI
  * stays green, and consumers quietly keep receiving stale metadata. This script turns those
  * implicit couplings into an executable, failing check.
  *
- *   1. workspace devDeps  — changesets needs them to bump mcp as a dependent of base,
- *                           and turbo needs them to order the builds
+ *   1. workspace devDeps  — turbo needs them to order the builds
  *   2. build:package chain — `generate:metadata &&` must run before the bundler
  *   3. turbo scheduling    — `turbo run build` must actually schedule mcp#build:package,
  *                            even though mcp has no `build` script
+ *   4. release changeset   — the root `version` script must run `ensure:changeset` before
+ *                            `changeset version`, and it must add an mcp patch for a base release
  *
  * Run: pnpm --filter @shoplflow/mcp check:wiring
  */
@@ -25,11 +26,10 @@ const REPO_ROOT = path.resolve(PKG_DIR, "../..");
 const PKG_NAME = "@shoplflow/mcp";
 
 // The workspace packages whose sources the extractors read (see generate-metadata.cjs).
-const REQUIRED_WORKSPACE_DEPS = [
-  "@shoplflow/base",
-  "@shoplflow/shopl-assets",
-  "@shoplflow/hada-assets",
-];
+const {
+  SOURCE_PACKAGES: REQUIRED_WORKSPACE_DEPS,
+  planMcpChangeset,
+} = require("./ensure-release-changeset.cjs");
 
 const failures = [];
 const notes = [];
@@ -41,8 +41,9 @@ function fail(title, detail) {
 const readJson = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 
 /* ── 1. workspace devDependencies ────────────────────────────────────────────
- * Nothing imports these at runtime, which is exactly why they get deleted. They are the only
- * signal changesets has that mcp must be version-bumped when base is.
+ * Nothing imports these at runtime, which is exactly why they get deleted. They are what makes
+ * turbo build base/assets (and their icon barrels) before mcp extracts from them.
+ * Note: they do NOT make changesets bump mcp — that is check 4's job.
  */
 function checkWorkspaceDeps(pkg) {
   const declared = { ...pkg.dependencies, ...pkg.devDependencies };
@@ -51,10 +52,8 @@ function checkWorkspaceDeps(pkg) {
     fail(
       `${PKG_NAME} is missing workspace dependencies: ${missing.join(", ")}`,
       [
-        "These are NOT unused. Without them:",
-        "  · changesets stops treating mcp as a dependent of base, so a base release no longer",
-        "    patch-bumps mcp — mcp is never republished and consumers keep stale metadata.",
-        "  · turbo loses the ordering that builds base/assets before mcp#build:package.",
+        "These are NOT unused. Without them turbo loses the ordering that builds base/assets",
+        "before mcp#build:package, so the extractors can read stale icon barrels.",
         "Nothing will error; the breakage is silent. Restore them as `workspace:*` devDependencies.",
       ].join("\n"),
     );
@@ -136,12 +135,53 @@ function checkTurboSchedule() {
   }
 }
 
+/* ── 4. release changeset ─────────────────────────────────────────────────────
+ * changesets resolves a devDependency-only dependent to `none`, so nothing in changesets itself
+ * bumps mcp for a base release. ensure-release-changeset.cjs does, but only if the root `version`
+ * script (what both CI release paths run) calls it before `changeset version` consumes the queue.
+ */
+function checkReleaseChangeset(pkg) {
+  const script = pkg.scripts?.["ensure:changeset"] ?? "";
+  if (!script.includes("ensure-release-changeset.cjs")) {
+    fail(
+      "`ensure:changeset` script is missing",
+      `  expected: "ensure:changeset": "node scripts/ensure-release-changeset.cjs"\n  current: ${script || "(missing)"}`,
+    );
+  }
+
+  const rootVersion =
+    readJson(path.join(REPO_ROOT, "package.json")).scripts?.version ?? "";
+  if (!/ensure:changeset\b[\s\S]*\bchangeset version\b/.test(rootVersion)) {
+    fail(
+      "root `version` script does not run `ensure:changeset` before `changeset version`",
+      [
+        `  current: ${rootVersion || "(missing)"}`,
+        "  expected it to start with: pnpm --filter @shoplflow/mcp ensure:changeset && pnpm changeset version …",
+        "Without this a base release never adds an mcp changeset, so mcp is never republished.",
+      ].join("\n"),
+    );
+  }
+
+  const base = REQUIRED_WORKSPACE_DEPS[0];
+  const plan = planMcpChangeset({
+    changesets: [{ id: "probe", releases: [{ name: base, type: "patch" }] }],
+    releases: [{ name: base, type: "patch", newVersion: "0.0.1" }],
+  });
+  if (!plan.content || !plan.content.includes(`"${PKG_NAME}": patch`)) {
+    fail(
+      `ensure-release-changeset.cjs no longer adds an ${PKG_NAME} patch for a ${base} release`,
+      `  got: ${JSON.stringify(plan)}`,
+    );
+  }
+}
+
 /* ── run ─────────────────────────────────────────────────────────────────── */
 const pkg = readJson(path.join(PKG_DIR, "package.json"));
 
 checkWorkspaceDeps(pkg);
 checkBuildChain(pkg);
 checkTurboSchedule();
+checkReleaseChangeset(pkg);
 
 for (const n of notes) console.warn(`! ${n}`);
 
@@ -161,5 +201,5 @@ if (failures.length) {
 }
 
 console.log(
-  `✓ ${PKG_NAME} release wiring intact (workspace deps · build:package chain · turbo scheduling)`,
+  `✓ ${PKG_NAME} release wiring intact (workspace deps · build:package chain · turbo scheduling · release changeset)`,
 );

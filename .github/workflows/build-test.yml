@@ -36,7 +36,7 @@ jobs:
       - name: 전체패키지를 빌드하고 있어요.
         run: pnpm build
 
-      # base 릴리즈 → mcp 재배포 연동은 package.json·turbo.json·.changeset/config.json에
+      # base 릴리즈 → mcp 재배포 연동은 package.json·turbo.json·릴리즈 스크립트에
       # 흩어진 설정들이 맞물려 만들어집니다. 하나가 빠져도 빌드는 통과하고 조용히 재배포만
       # 멈추므로, 불변식을 실행 가능한 검사로 고정합니다. (packages/mcp/아키텍쳐.md 6절)
       - name: MCP 릴리즈 배선을 검증하고 있어요.

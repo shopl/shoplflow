@@ -579,16 +579,24 @@ the "review the effect of a base change in the PR diff" benefit disappears.
 
 A `@shoplflow/base` release automatically republishes this package with freshly extracted metadata. That
 behaviour isn't declared in one place — it emerges from settings spread across `package.json`,
-`turbo.json`, and `.changeset/config.json`:
+`turbo.json`, and the release scripts:
 
-| Piece                                                        | Removing it…                                                     |
-| ------------------------------------------------------------ | ---------------------------------------------------------------- |
-| `@shoplflow/{base,shopl-assets,hada-assets}` in devDeps      | stops changesets from bumping mcp → **mcp is never republished** |
-| `generate:metadata &&` in `build:package`                    | allows a build path that bundles previously generated JSON       |
-| turbo scheduling `mcp#build:package` under `turbo run build` | means CI's `pnpm build` never produces `dist/` before publish    |
+| Piece                                                        | Removing it…                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| `@shoplflow/{base,shopl-assets,hada-assets}` in devDeps      | loses turbo's build ordering → extraction can read stale icon barrels     |
+| `generate:metadata &&` in `build:package`                    | allows a build path that bundles previously generated JSON                |
+| turbo scheduling `mcp#build:package` under `turbo run build` | means CI's `pnpm build` never produces `dist/` before publish             |
+| `ensure:changeset` at the front of the root `version` script | base releases stop adding an mcp changeset → **mcp is never republished** |
+
+Changesets will **not** bump mcp on its own: a package that depends on base only through
+`devDependencies` resolves to `none`, even with `updateInternalDependents: "always"`. So the root
+`version` script runs `pnpm --filter @shoplflow/mcp ensure:changeset` first, which adds an
+`"@shoplflow/mcp": patch` changeset whenever a pending changeset releases base or an asset package and
+none mentions mcp yet. The coupling is one-way — an mcp-only change never forces a base release. To skip
+it for one release, list `"@shoplflow/mcp": none` in any pending changeset.
 
 Each removal keeps the build green — the failure is silent, and consumers just keep receiving stale
-metadata. `check:wiring` asserts all three and runs on every PR. Details in
+metadata. `check:wiring` asserts all four and runs on every PR. Details in
 [아키텍쳐.md §6](./아키텍쳐.md).
 
 ### Editing the setup guidance
