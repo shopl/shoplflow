@@ -18,7 +18,7 @@
     "refresh:node_modules": "pnpm run clear:node_modules && pnpm i",
     "refresh:pnpm": "rm -rf .pnpm-store && pnpm refresh:node_modules",
     "changeset": "changeset",
-    "version": "pnpm changeset version && pnpm install --lockfile-only",
+    "version": "pnpm --filter @shoplflow/mcp ensure:changeset && pnpm changeset version && pnpm install --lockfile-only",
     "release": "pnpm changeset publish",
     "prepare": "husky install",
     "clear:branch": "scripts/delete-remote-branches.sh",
