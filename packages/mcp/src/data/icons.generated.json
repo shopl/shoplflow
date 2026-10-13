@@ -7,9 +7,9 @@
     "shopl",
     "hada"
   ],
-  "count": 473,
+  "count": 483,
   "countByDomain": {
-    "shopl": 369,
+    "shopl": 379,
     "hada": 104
   },
   "icons": [
@@ -201,6 +201,36 @@
       "importFrom": "@shoplflow/shopl-assets",
       "keywords": [
         "alert"
+      ]
+    },
+    {
+      "name": "IcAlignCenter",
+      "alias": "AlignCenterIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "align",
+        "center"
+      ]
+    },
+    {
+      "name": "IcAlignLeft",
+      "alias": "AlignLeftIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "align",
+        "left"
+      ]
+    },
+    {
+      "name": "IcAlignRight",
+      "alias": "AlignRightIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "align",
+        "right"
       ]
     },
     {
@@ -767,6 +797,16 @@
       ]
     },
     {
+      "name": "IcCopyXsmall",
+      "alias": "CopyXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "copy",
+        "xsmall"
+      ]
+    },
+    {
       "name": "IcCopy",
       "alias": "CopyIcon",
       "domain": "shopl",
@@ -1008,6 +1048,15 @@
       ]
     },
     {
+      "name": "IcDuplicate",
+      "alias": "DuplicateIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "duplicate"
+      ]
+    },
+    {
       "name": "IcDuration",
       "alias": "DurationIcon",
       "domain": "shopl",
@@ -1243,6 +1292,15 @@
       "importFrom": "@shoplflow/shopl-assets",
       "keywords": [
         "flexitime"
+      ]
+    },
+    {
+      "name": "IcForward",
+      "alias": "ForwardIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "forward"
       ]
     },
     {
@@ -3173,6 +3231,39 @@
       ]
     },
     {
+      "name": "IcSortAscendingXsmall",
+      "alias": "SortAscendingXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sort",
+        "ascending",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcSortDefaultXsmall",
+      "alias": "SortDefaultXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sort",
+        "default",
+        "xsmall"
+      ]
+    },
+    {
+      "name": "IcSortDescendingXsmall",
+      "alias": "SortDescendingXsmallIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sort",
+        "descending",
+        "xsmall"
+      ]
+    },
+    {
       "name": "IcSortingAtoz",
       "alias": "SortingAtozIcon",
       "domain": "shopl",
@@ -3210,6 +3301,15 @@
       "keywords": [
         "sorting",
         "ztoa"
+      ]
+    },
+    {
+      "name": "IcSparkles",
+      "alias": "SparklesIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sparkles"
       ]
     },
     {

@@ -1,8 +1,8 @@
 {
   "source": "packages/base/src/components/**/*.types.ts",
   "importFrom": "@shoplflow/base",
-  "count": 65,
-  "withVariants": 19,
+  "count": 66,
+  "withVariants": 20,
   "components": [
     {
       "name": "AnnualDatepicker",
@@ -477,6 +477,121 @@
           "optional": true,
           "type": "string",
           "description": "텍스트를 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "Combobox",
+      "group": "Combobox",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "variants": [
+        {
+          "prop": "sizeVar",
+          "values": [
+            "S",
+            "M"
+          ]
+        }
+      ],
+      "props": [
+        {
+          "name": "'aria-label'",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "className",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "defaultValue",
+          "optional": true,
+          "type": "string",
+          "description": "비제어 모드의 초기값입니다."
+        },
+        {
+          "name": "disabled",
+          "optional": true,
+          "type": "boolean",
+          "description": "비활성화 여부를 설정합니다."
+        },
+        {
+          "name": "floatingZIndex",
+          "optional": true,
+          "type": "CSSProperties['zIndex']",
+          "description": "팝오버 z-index입니다."
+        },
+        {
+          "name": "inputMode",
+          "optional": true,
+          "type": "ComboboxInputModeType",
+          "description": "입력 모드입니다. `numeric`이면 숫자만 입력됩니다."
+        },
+        {
+          "name": "isError",
+          "optional": true,
+          "type": "boolean",
+          "description": "에러 여부를 설정합니다."
+        },
+        {
+          "name": "items",
+          "optional": false,
+          "type": "ComboboxItem[]",
+          "description": "드롭다운에 표시할 항목입니다."
+        },
+        {
+          "name": "maxLength",
+          "optional": true,
+          "type": "number"
+        },
+        {
+          "name": "onChange",
+          "optional": true,
+          "type": "(value: string) => void",
+          "description": "입력값이 바뀔 때 호출됩니다."
+        },
+        {
+          "name": "onSelect",
+          "optional": true,
+          "type": "(value: string) => void",
+          "description": "목록에서 선택하면 item.value가 전달됩니다. Enter로 확정하면 현재 입력값이 전달됩니다."
+        },
+        {
+          "name": "placeholder",
+          "optional": true,
+          "type": "string"
+        },
+        {
+          "name": "sizeVar",
+          "optional": true,
+          "type": "Size",
+          "description": "컴포넌트의 크기를 설정합니다."
+        },
+        {
+          "name": "tag",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "필드 바깥 오른쪽에 붙는 선택적 태그/단위 영역입니다."
+        },
+        {
+          "name": "textAlign",
+          "optional": true,
+          "type": "ComboboxTextAlignType",
+          "description": "입력 텍스트 정렬입니다."
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": "string",
+          "description": "입력값입니다. 전달하면 제어 컴포넌트로 동작합니다."
+        },
+        {
+          "name": "width",
+          "optional": true,
+          "type": "CSSProperties['width']",
+          "description": "필드 너비입니다. 태그 영역은 포함하지 않습니다."
         }
       ]
     },
