@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.49.4
+
+### Patch Changes
+
+- [#868](https://github.com/shopl/shoplflow/pull/868) [`0b4384fc3e6ff9243b21eb9abe73fc90ab179e16`](https://github.com/shopl/shoplflow/commit/0b4384fc3e6ff9243b21eb9abe73fc90ab179e16) Thanks [@velo-kim](https://github.com/velo-kim)! - Button XS 사이즈 높이를 24px로 수정 (상하 패딩 4px → 0 으로 변경, 기존에는 26px로 렌더링됨)
+
 ## 0.49.3
 
 ### Patch Changes
