@@ -75,7 +75,7 @@ const getStyleBySizeVar = (sizeVar?: ButtonSizeVariantType) => {
     case 'XS':
       return css`
         gap: 2px;
-        padding: 4px 6px;
+        padding: 0 6px;
         min-height: 24px;
       `;
     default:

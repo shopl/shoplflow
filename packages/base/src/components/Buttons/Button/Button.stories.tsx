@@ -11,6 +11,11 @@ const FIGMA_URL = 'https://www.figma.com/design/KBxc4vIDtpSu2JlE4tKYIx/--26--Sho
 /** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
 const BUTTON_CHANGELOG: ComponentChangelogEntry[] = [
   {
+    version: '2.2',
+    date: '2026-11-12',
+    changes: ['xs size button 높이를 24로 수정 (상하 패딩 제거)'],
+  },
+  {
     version: '2.1',
     date: '2026-03-10',
     changes: ['small size button 좌우 패딩을 10으로 수정'],
@@ -232,6 +237,20 @@ export const Sizes: Story = {
       await Promise.resolve();
     });
 
+    await step('렌더링 높이 확인 (M: 40px, S: 32px, XS: 24px)', async () => {
+      const { xs, s, m } = getButtons();
+      const expectRenderedHeight = (el: HTMLElement, size: string, expected: number) => {
+        const height = el.getBoundingClientRect().height;
+        if (height !== expected) {
+          throw new Error(`Sizes: ${size} 렌더링 높이 ${expected}px 여야 합니다. (실제: ${height}px)`);
+        }
+      };
+      expectRenderedHeight(xs, 'XS', 24);
+      expectRenderedHeight(s, 'S', 32);
+      expectRenderedHeight(m, 'M', 40);
+      await Promise.resolve();
+    });
+
     await step('Gap 확인 (M: 4px, S: 2px, XS: 2px)', async () => {
       const { xs, s, m } = getButtons();
       const expectGap = (el: HTMLElement, size: string, expected: string) => {
@@ -260,7 +279,7 @@ export const Sizes: Story = {
       await Promise.resolve();
     });
 
-    await step('Padding 확인 (M: 0 12px, S: 0 12px, XS: 4px 6px)', async () => {
+    await step('Padding 확인 (M: 0 12px, S: 0 10px, XS: 0 6px)', async () => {
       const { xs, s, m } = getButtons();
       const checkPadding = (
         el: HTMLElement,
@@ -281,8 +300,8 @@ export const Sizes: Story = {
           );
         }
       };
-      checkPadding(xs, 'XS', 4, 6, 4, 6); // 4px 6px
-      checkPadding(s, 'S', 0, 12, 0, 12); // 0 12px
+      checkPadding(xs, 'XS', 0, 6, 0, 6); // 0 6px
+      checkPadding(s, 'S', 0, 10, 0, 10); // 0 10px
       checkPadding(m, 'M', 0, 12, 0, 12); // 0 12px
       await Promise.resolve();
     });
