@@ -1,5 +1,13 @@
 # @shoplflow/mcp
 
+## 0.1.5
+
+### Patch Changes
+
+- `@shoplflow/base@0.49.3` 기준으로 디자인 시스템 메타데이터(토큰·컴포넌트·아이콘·사용 예제)를 재생성해 재배포합니다.
+  - 반영된 패키지: `@shoplflow/shopl-assets`
+  - base 릴리즈 시 자동 생성되는 changeset입니다 (`packages/mcp/scripts/ensure-release-changeset.cjs`).
+
 ## 0.1.4
 
 ### Patch Changes
