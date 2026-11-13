@@ -8,6 +8,14 @@ import { buildComponentDocsMarkdown, getLatestComponentVersion, type ComponentCh
 
 /** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
 const COMPONENT_CHANGELOG: ComponentChangelogEntry[] = [
+  {
+    version: '2.2',
+    date: '2026-11-13',
+    changes: [
+      'Callout.Body·Callout.Content 영역 추가 (간격 6px / 4px)',
+      'Callout.TextButton 추가 (body2_700, hover 시 밑줄)',
+    ],
+  },
   { version: '1.0', date: '2026-04-22', changes: ['Storybook Docs에 버전·Changelog 섹션 추가'] },
 ];
 
@@ -137,6 +145,32 @@ export const BulletList: Story = {
               <Callout.Text>세 번째 불릿 항목입니다.</Callout.Text>
             </Callout.BulletList>
           </Stack.Vertical>
+        </Callout>
+      </ComponentStage>
+    </Stack>
+  ),
+};
+
+export const WithTextButton: Story = {
+  args: {
+    styleVar: 'INFORMATION',
+    fillWidth: true,
+  },
+  render: (args) => (
+    <Stack width='500px'>
+      <ComponentStage>
+        <Callout {...args}>
+          <Callout.Icon iconSource={NoticeIcon} />
+          <Callout.Body>
+            <Callout.Content>
+              <Callout.Text>Title</Callout.Text>
+              <Callout.BulletList>
+                <Callout.Text>Description</Callout.Text>
+              </Callout.BulletList>
+              <Callout.Text>Description</Callout.Text>
+            </Callout.Content>
+            <Callout.TextButton onClick={() => alert('TextButton 클릭')}>TextButton</Callout.TextButton>
+          </Callout.Body>
         </Callout>
       </ComponentStage>
     </Stack>

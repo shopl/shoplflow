@@ -1,7 +1,7 @@
 {
   "source": "packages/base/src/components/**/*.types.ts",
   "importFrom": "@shoplflow/base",
-  "count": 66,
+  "count": 69,
   "withVariants": 20,
   "components": [
     {
@@ -216,6 +216,38 @@
       ]
     },
     {
+      "name": "CalloutBody",
+      "group": "Callout",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "CalloutContent",
+      "group": "Callout",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLDivElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
+        }
+      ]
+    },
+    {
       "name": "CalloutIcon",
       "group": "Callout",
       "importFrom": "@shoplflow/base",
@@ -233,6 +265,22 @@
           "optional": true,
           "type": "ShoplIconSource | HadaIconSource",
           "description": "Icon을 설정합니다."
+        }
+      ]
+    },
+    {
+      "name": "CalloutTextButton",
+      "group": "Callout",
+      "importFrom": "@shoplflow/base",
+      "polymorphic": false,
+      "nativeAttrs": "HTMLButtonElement",
+      "variants": [],
+      "props": [
+        {
+          "name": "children",
+          "optional": true,
+          "type": "Children",
+          "description": "컴포넌트 내부에 들어갈 children을 설정합니다."
         }
       ]
     },
