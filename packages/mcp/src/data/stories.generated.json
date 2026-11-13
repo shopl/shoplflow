@@ -2,7 +2,7 @@
   "source": "packages/base/src/components (each *.stories.tsx)",
   "importFrom": "@shoplflow/base",
   "count": 43,
-  "exampleCount": 155,
+  "exampleCount": 156,
   "modules": [
     {
       "name": "AnnualDatepicker",
@@ -95,6 +95,11 @@
           "story": "BulletList",
           "args": "{\n    styleVar: 'ALERT',\n    fillWidth: true,\n  }",
           "code": "<Stack width='500px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Icon iconSource={AlertTriangleIcon} />\n          <Stack.Vertical spacing='spacing04'>\n            <Callout.Text>BulletList children은 Callout.Text 컴포넌트를 사용합니다.</Callout.Text>\n\n            <Callout.BulletList>\n              <Callout.Text>두 번째 불릿 항목입니다.</Callout.Text>\n            </Callout.BulletList>\n            <Callout.BulletList>\n              <Callout.Text>세 번째 불릿 항목입니다.</Callout.Text>\n            </Callout.BulletList>\n          </Stack.Vertical>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
+        },
+        {
+          "story": "WithTextButton",
+          "args": "{\n    styleVar: 'INFORMATION',\n    fillWidth: true,\n  }",
+          "code": "<Stack width='500px'>\n      <ComponentStage>\n        <Callout {...args}>\n          <Callout.Icon iconSource={NoticeIcon} />\n          <Callout.Body>\n            <Callout.Content>\n              <Callout.Text>Title</Callout.Text>\n              <Callout.BulletList>\n                <Callout.Text>Description</Callout.Text>\n              </Callout.BulletList>\n              <Callout.Text>Description</Callout.Text>\n            </Callout.Content>\n            <Callout.TextButton onClick={() => alert('TextButton 클릭')}>TextButton</Callout.TextButton>\n          </Callout.Body>\n        </Callout>\n      </ComponentStage>\n    </Stack>"
         }
       ]
     },

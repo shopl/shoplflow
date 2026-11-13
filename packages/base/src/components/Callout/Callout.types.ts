@@ -5,7 +5,7 @@ import type {
   IconSourceProps,
   StyleVariantProps,
 } from '../../utils/type/ComponentProps';
-import type { HTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, HTMLAttributes } from 'react';
 
 export const CalloutTypes = {
   INFORMATION: 'INFORMATION',
@@ -25,3 +25,9 @@ export interface CalloutOptionProps {
 }
 
 export interface CalloutIconProps extends IconSourceProps, ColorTokenProps {}
+
+export interface CalloutBodyProps extends ChildrenProps, HTMLAttributes<HTMLDivElement> {}
+
+export interface CalloutContentProps extends ChildrenProps, HTMLAttributes<HTMLDivElement> {}
+
+export interface CalloutTextButtonProps extends ChildrenProps, ButtonHTMLAttributes<HTMLButtonElement> {}
