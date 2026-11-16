@@ -334,6 +334,7 @@ import IcSortingAtoz from './IcSortingAtoz';
 import IcSortingEarly from './IcSortingEarly';
 import IcSortingLate from './IcSortingLate';
 import IcSortingZtoa from './IcSortingZtoa';
+import IcSparklesSolid from './IcSparklesSolid';
 import IcSparkles from './IcSparkles';
 import IcStaggeredWorking from './IcStaggeredWorking';
 import IcStamp from './IcStamp';
@@ -715,6 +716,7 @@ const icons = {
   'sorting-early': IcSortingEarly,
   'sorting-late': IcSortingLate,
   'sorting-ztoa': IcSortingZtoa,
+  'sparkles-solid': IcSparklesSolid,
   sparkles: IcSparkles,
   'staggered-working': IcStaggeredWorking,
   stamp: IcStamp,
@@ -1099,6 +1101,7 @@ export {
   IcSortingEarly as SortingEarlyIcon,
   IcSortingLate as SortingLateIcon,
   IcSortingZtoa as SortingZtoaIcon,
+  IcSparklesSolid as SparklesSolidIcon,
   IcSparkles as SparklesIcon,
   IcStaggeredWorking as StaggeredWorkingIcon,
   IcStamp as StampIcon,
