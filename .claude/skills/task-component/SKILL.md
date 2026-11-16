@@ -314,6 +314,7 @@ kill %1                                                    # 서버 종료
    - 스크립트는 임시 worktree에서 기준 빌드를 올리고 끝나면 지운다. 기준 빌드에만 `--auto-accept-changes`를 쓴다.
 
    - **변경이 있으면 업로드가 성공해도 exit 1로 끝난다** (`Found N visual changes`). `Build N completed`와 `View your Storybook at`이 나오면 성공이다.
+   - **터미널의 `Found N visual changes` 숫자는 무시한다.** 이 프로젝트는 크로매틱 UI Tests가 꺼져 있어서(`Tests: Disabled`) 매 빌드 전체 스토리 수(예: 157)가 찍힌다. 디자이너가 보는 건 **UI Review의 `Changeset` 숫자**다 (main과 비교해 바뀐 스토리만). 2026-11 SHF-161: 터미널 157 / Changeset 1. 확인 위치: 리뷰 URL에 `&view=changes`를 붙이거나 리뷰 화면 `Changeset` 탭. QA 요청 전에 Changeset 목록이 이번에 바꾼 컴포넌트뿐인지 본다.
    - 출력의 `View your Storybook at https://...` 주소를 meta `chromatic.storybook_url`에 기록한다.
    - 리뷰 주소는 `https://www.chromatic.com/review?appId=69afad58aa7c90fbf3c141ee&number=<PR번호>&type=linked` → meta `chromatic.review_url`.
    - PR에 `UI Review` commit status가 붙는지 확인한다 (`gh api repos/shopl/shoplflow/commits/<sha>/status`). 안 붙으면 크로매틱–GitHub 연결 문제이므로 사용자에게 알린다 (자동 배포가 동작하지 않는다).
