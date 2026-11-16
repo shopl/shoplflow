@@ -49,14 +49,44 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
 1. 티켓 설명, `[Design]` 하위 티켓, Figma 링크에서 스펙을 정리한다. Figma MCP가 있으면 해당 노드를 읽는다.
 2. 컴포넌트의 현재 구현을 읽는다: `*.types.ts`, `*.styled.ts(x)`, `*.tsx`, `*.stories.tsx`, 그리고 **`*.figma.tsx`(Code Connect)가 있으면 그것도** 읽는다. Figma 속성(property) 이름과 코드 prop이 어떻게 연결돼 있는지 확인한다.
 3. 비슷한 컴포넌트의 기존 패턴을 따른다 (`sizeVar`/`styleVar` 상수 객체, `getStyleBySizeVar` 같은 helper, 토큰 사용).
-4. 아래 형식으로 **변경 계획을 사용자에게 보여 주고 승인받는다.**
+4. **실제 사용처를 먼저 본다.** shoplflow는 npm에 공개 배포되는 라이브러리이고, 실제로는 `shopl-web-workspace`가 쓴다 (`@shoplflow/base`를 import하는 파일 2,700개 이상, 2026-11 기준). 새 버전으로 올렸을 때 **사용처에서 에러가 나거나 화면이 바뀌면 안 된다.**
+   - 로컬 경로: 기본 `~/shopl-web-workspace` (없으면 사용자에게 경로를 묻고 meta에 기록). **읽기만 한다.**
+   - 이번 컴포넌트를 어떻게 쓰고 있는지 찾는다:
+
+     ```bash
+     cd ~/shopl-web-workspace
+     git grep -n -E "<Callout[ .>/]|Callout\.[A-Z]" -- apps packages 2>/dev/null | head -50   # 컴포넌트 이름으로
+     git grep -n -E "<Callout[^>]*styleVar=" -- apps packages 2>/dev/null | head -20          # 바꾸려는 prop을 어떻게 넘기는지
+     ```
+
+     (`2>/dev/null`: 샌드박스가 `.env` 접근을 막아서 나오는 경고를 숨긴다. 결과에는 영향 없음)
+     예: Callout은 2026-11 기준 600줄에서 쓰이고 `styleVar`는 ALERT 54 · INFORMATION 54 · CAUTION 16곳 → 기존 Callout 여백을 직접 바꾸면 이 화면이 모두 바뀐다.
+
+   - 확인할 것: 바꾸려는 prop·기본값에 기대는 코드가 있는지, 하위 컴포넌트를 어떤 조합으로 쓰는지, `className`·`css`로 내부 구조(자식 요소 순서, `& > svg` 같은 선택자)에 기대는 코드가 있는지.
+   - 사용처 수와 대표 파일 몇 개를 계획에 적는다 (디자이너가 확인할 실제 화면이 된다).
+5. **호환되게 설계한다 (기본 원칙).** 기존 코드는 아무것도 안 바꿔도 지금과 똑같이 동작하고 똑같이 보여야 한다.
+
+   | 하고 싶은 것 | 이렇게 한다 | 하지 않는다 |
+   |-------------|------------|------------|
+   | 새 모양·기능 추가 | **새 prop·새 variant 값·새 하위 컴포넌트**로 추가 (선택 prop, 기본값은 지금 동작) | 기존 prop의 의미를 바꾸기 |
+   | 기존 레이아웃 변경 (Figma가 간격·구조를 바꿈) | 새 구조를 **옵트인**으로 (예: Callout v2.2는 기존 Callout은 그대로 두고 `Callout.Body`/`Callout.Content`를 새로 추가) | 기존 styled 컴포넌트의 `gap`·`padding`·자식 구조를 직접 수정 |
+   | prop 이름 변경 | 새 이름 추가 + 옛 이름도 계속 받음 (`/** @deprecated */` 표시) | 옛 이름 삭제 |
+   | 값 제거 | deprecated 표시만, 동작 유지 | variant 값·prop 삭제 |
+   | 기본값 변경 | 새 variant로 제공하고 기본값은 유지 | 기본값 바꾸기 |
+   | 필수 입력 추가 | 선택 prop + 기본값 | 필수 prop 추가 |
+
+   - Figma 스펙이 **기존 모습 자체를 바꾸라는 것**이면(예: 모든 Callout의 여백 변경), 호환 방법과 함께 "기존 사용처 N곳의 화면이 바뀝니다"를 사용자에게 보여 주고 **명시적으로 승인받는다.** 승인 없이 기존 화면을 바꾸지 않는다.
+   - 호환이 불가능한 변경(breaking)은 티켓이 요구하고 사용자가 승인한 경우에만 한다. 이때 changeset `major`를 추천하고, 사용처를 고치는 방법(이전 → 이후 코드)을 계획에 쓴다.
+6. 아래 형식으로 **변경 계획을 사용자에게 보여 주고 승인받는다.**
 
    ```
    컴포넌트: Tag (1.0 → 1.1)
    변경:
    - TagSizeVariants에 XXS 추가
    - XXS: height 16px, padding 0 4px, typography caption_400
-   영향: 기존 XS/S/M 변경 없음 (기존 prop·기본값·스타일을 바꾸면 여기에 적는다. "없음"이면 ④에서 검사로 확인)
+   사용처: shopl-web-workspace 247개 파일 (예: apps/shopl-dashboard/.../XxxModal.tsx)
+   호환성: 추가만 — 새 variant 값. 기존 XS/S/M·기본값·스타일 그대로 → 기존 사용처 변경 없음
+           (기존 prop·기본값·스타일·구조를 바꾸면 무엇을, 왜, 사용처 몇 곳의 화면이 바뀌는지 적는다)
    Code Connect: Tag.figma.tsx의 size enum에 XXS 추가 (파일 없으면 "없음")
    문서: 없음 (packages/skills에 Tag size 목록이 없음. 있으면 "shoplflow-components의 … 갱신")
    changelog: "XXS 사이즈 추가"
@@ -64,7 +94,7 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
    ```
 
    Figma에 없는 값(높이·여백 등)은 지어내지 않고 질문한다.
-5. 승인되면 `stage: build`
+7. 승인되면 `stage: build`. ③에서는 **승인된 호환성 범위를 벗어나는 수정을 하지 않는다** (구현 중에 기존 스타일·기본값을 바꿔야 할 것 같으면 멈추고 다시 승인받는다).
 
 ## ③ build — 구현
 
@@ -144,9 +174,9 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
 bash .claude/skills/task-component/scripts/check-api-changes.sh   # 기존 사용법이 깨지는지 (generate:metadata 다음에)
 ```
 
-### 기존 사용법·에러 가능성 검사
+### 기존 사용법·에러 가능성 검사 (② 호환성 계획대로 됐는지 확인)
 
-통과/실패만 보는 위 검사와 별개로, **이미 이 컴포넌트를 쓰는 코드가 깨지거나 다르게 보이지 않는지** 확인한다. 결과는 ⑤ PR 본문의 "사용법 변경" 칸과 changeset 종류 질문에 그대로 쓴다.
+호환성은 ②에서 **설계로 지키고**, 여기서는 구현이 그 계획을 벗어나지 않았는지 **확인만** 한다. 계획이 "추가만"인데 아래에서 깨짐·주의가 나오면 구현 실수다 → ③으로 돌아가 고친다 (계획을 바꾸려면 다시 승인받는다). 결과는 ⑤ PR 본문의 "사용법 변경" 칸에 그대로 쓴다.
 
 1. **공개 API 비교** — `check-api-changes.sh`가 `components.generated.json`을 main과 비교한다.
 
@@ -165,7 +195,7 @@ bash .claude/skills/task-component/scripts/check-api-changes.sh   # 기존 사�
    - **동작 변화**: 이벤트 핸들러 호출 시점, 포커스·키보드, `ref` 전달(`forwardRef` 유지), 제어/비제어 동작
    - **잘못된 HTML·런타임 경고**: `<button>` 안에 `<button>`, `<p>` 안에 `<div>` 같은 중첩. 버튼은 `type="button"` (폼 안에서 submit 방지). 스토리북 콘솔에 React 경고가 없는지 본다
    - **두 브랜드**: 위 Shopl / Hada 확인
-4. **저장소 밖 사용처 (선택)** — 깨짐이 있거나 동작이 바뀌면, 사용자 확인 후 사내 저장소에서 사용처를 찾아 영향 범위를 알려 준다. 조회만 한다.
+4. **사용처 재확인** — ②에서 찾은 shopl-web-workspace 사용처 중, 이번에 바꾼 부분(새 prop 외의 수정이 있다면 그 부분)에 닿는 코드가 없는지 diff를 보며 다시 확인한다. 로컬 clone이 없거나 다른 사내 저장소도 봐야 하면 사용자 확인 후 조회만 한다.
 
    ```bash
    gh search code --owner shopl "<컴포넌트>" --language tsx --limit 30 --json repository,path

@@ -144,6 +144,7 @@ SHF 티켓(예: `[shoplflow] Tag v1.1`) 작업은 `task-workflow` 스킬로 시�
 - 필요한 것: Atlassian(Jira) MCP 로그인, `gh auth login`. 외부 서버·API 토큰 설정 없음.
 - 컴포넌트 버전은 티켓 제목의 버전을 따르고, 각 컴포넌트 `*.stories.tsx`의 changelog 배열 맨 앞에 기록한다 (패키지 버전인 changeset과 별개).
 - changeset 종류(major / minor / patch)는 추측하지 않고 매번 사용자에게 확인한다.
+- shoplflow는 npm 공개 라이브러리이고 실제 사용처는 `shopl-web-workspace`다. 코드를 바꾸기 **전에** 사용처를 확인하고, 기존 코드가 그대로 동작·표시되도록 **추가(옵트인) 방식으로 설계**한다. 기존 prop·기본값·스타일을 바꾸는 변경은 사용자 승인 없이 하지 않는다.
 - 스킬 파일은 `.claude/skills/task-*`만 git에 공유된다 (`.gitignore` 예외).
 
 ## 하네스: Shoplflow 전체 범용
