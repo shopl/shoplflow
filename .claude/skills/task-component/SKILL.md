@@ -203,7 +203,7 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
    - `[QA]`에 댓글 (없으면 상위 티켓):
 
      ```
-     디자인 QA 요청
+     @디자이너  디자인 QA 요청
      이번에 바뀐 컴포넌트: <컴포넌트> (<현재> → <목표>)
      스토리북: <storybook_url>
      Chromatic 리뷰: <review_url>
@@ -213,7 +213,25 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
      승인 후에는 배포가 끝날 때까지 이 브랜치에 push하지 않아요.
      ```
 
-   이미 QA 댓글이 있으면(재요청) 새로 달지 않고 그 댓글을 수정한다 (`addOrEditJiraIssueComment`에 기존 comment id).
+   **디자이너 멘션** — 댓글만 달면 디자이너가 Jira를 열어 봐야 알 수 있다. 멘션해서 알림이 가게 한다.
+   - 누구: `[QA]` 티켓 담당자 → 없으면 `[Design]` 티켓 담당자 → 없으면 상위 티켓 보고자. 이미 조회한 티켓의 `assignee.accountId`를 쓴다.
+   - 대상이 지금 사용자 본인이면 멘션하지 않는다.
+   - 누구를 멘션할지 사용자에게 보여 주고 확인받는다 (다른 사람에게 알림이 간다).
+   - 멘션은 마크다운으로 안 들어간다. `addOrEditJiraIssueComment`에 `contentFormat: "html"`로 보내고, 멘션은 아래 형식만 쓴다. accountId는 조회한 값만 쓰고 지어내지 않는다 (모르면 멘션 없이 이름만 적는다).
+
+     ```html
+     <p><span data-type="mention" data-user-id="<accountId>">@<이름></span> 디자인 QA 요청</p>
+     <ul>
+       <li>이번에 바뀐 컴포넌트: Callout (1.0 → 2.2)</li>
+       <li>스토리북: <a href="<storybook_url>"><storybook_url></a></li>
+       <li>Chromatic 리뷰: <a href="<review_url>"><review_url></a></li>
+       <li>PR: <a href="<PR 링크>"><PR 링크></a></li>
+     </ul>
+     <p>크로매틱 변경 이미지는 Hada 기준이에요. Shopl은 스토리북 오른쪽 아래 버튼으로 바꿔서 확인해 주세요.</p>
+     <p>확인 후 Chromatic 리뷰 화면 오른쪽 위 <code>Review now</code> → <code>Approve review yourself</code>를 눌러 주세요. 승인되면 자동으로 배포돼요.</p>
+     ```
+
+   이미 QA 댓글이 있으면(재요청) 새로 달지 않고 그 댓글을 수정한다 (`addOrEditJiraIssueComment`에 기존 comment id). 수정은 알림이 안 갈 수 있으니, 재요청이면 짧은 멘션 댓글("@디자이너 수정해서 다시 올렸어요")을 하나 더 단다.
 
 5. **QA 요청 전에** `gh pr checks <번호>`로 필수 CI(`build-test`, `check`)가 통과했는지 확인한다. 실패하면 원인을 고쳐 다시 push하고, 크로매틱도 다시 올린 뒤 QA를 요청한다 (UI Review는 PR 최신 커밋 기준). 승인 뒤에 CI가 막히는 E3을 줄인다.
 6. meta: `pr_url`, `stage: approve`
