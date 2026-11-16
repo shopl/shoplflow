@@ -152,6 +152,10 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
 - **changeset 존재 확인**: `.changeset/`에 README 외 `.md`가 있는지
 - **Code Connect 확인**: `*.figma.tsx`를 바꿨으면 `figma:parse`가 오류 없이 끝나야 한다. Figma 반영(`figma:publish`)은 Figma 토큰이 필요해서 배포 후 사람이 한다 → meta `decisions`에 "figma publish 필요"를 남기고 `task-release`가 안내한다.
 - 시각 확인이 필요하면 `pnpm --filter @shoplflow/base dev:stories` (포트 6007)로 띄우고 사용자에게 확인을 요청한다.
+- **Shopl / Hada 두 브랜드 모두 확인한다.** 타이포그래피·색 토큰이 브랜드마다 다르다 (예: `body2_700`은 Shopl 13px/16px, Hada 14px/18px).
+  - 스토리북은 저장된 값이 없으면 **Hada가 기본**이다 (`.storybook/useStoryDomain.ts`). 오른쪽 아래 `HADA`/`SHOPL` 버튼으로 바꾸거나, 브라우저로 잴 때는 `document.documentElement.setAttribute('data-shoplflow','shopl')`로 바꾼다.
+  - Figma 값은 보통 Shopl 기준이다. Figma와 숫자를 비교할 때 브랜드를 맞춘다.
+  - 결과를 "Shopl: …, Hada: …"로 나눠서 사용자에게 보고한다.
 
 통과하면 `stage: pr`
 
@@ -191,6 +195,7 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
    - 그래도 리뷰 화면이 **"Complete setup to review"**에서 멈추고 변경이 전체 스토리 수만큼 나오면, 이 브랜치의 이전 빌드(기준 없이 올린 것)가 기준으로 잡힌 것이다. `ensure-chromatic-baseline.sh` 후 `pnpm chromatic:base --force-rebuild`로 다시 올린다.
    - `--auto-accept-changes`는 **기준 빌드에만** 쓴다. PR 브랜치에 쓰면 디자이너 확인 없이 변경이 승인된다.
    - main을 브랜치에 머지(rebase)해서 갈라진 시점이 바뀌었으면 기준 확인부터 다시 한다.
+   - **크로매틱 스냅샷은 Hada 화면만 찍힌다** (스토리북 기본 브랜드가 Hada). Shopl 쪽 변경은 크로매틱 비교에 안 잡히므로 ④에서 직접 확인한 결과를 QA 댓글에 적는다.
    - 기준 빌드와 렌더링 차이(폰트 로딩 등)로 바뀌지 않은 컴포넌트가 변경으로 잡힐 수 있다. QA 요청 댓글에 "이번에 바뀐 컴포넌트: <이름>"을 적어 디자이너가 구분할 수 있게 한다.
 4. **Jira (MCP)** — 사용자 확인 후
    - 상위 티켓 + `[DEV]` → **검토 중**
@@ -203,6 +208,7 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
      스토리북: <storybook_url>
      Chromatic 리뷰: <review_url>
      PR: <PR 링크>
+     크로매틱 변경 이미지는 Hada 기준이에요. Shopl은 스토리북 링크에서 오른쪽 아래 버튼으로 바꿔서 확인해 주세요.
      확인 후 Chromatic 리뷰 화면 오른쪽 위 `Review now` → `Approve review yourself`를 눌러 주세요. 승인되면 자동으로 배포돼요.
      승인 후에는 배포가 끝날 때까지 이 브랜치에 push하지 않아요.
      ```
