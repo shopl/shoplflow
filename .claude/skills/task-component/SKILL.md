@@ -56,7 +56,7 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
    변경:
    - TagSizeVariants에 XXS 추가
    - XXS: height 16px, padding 0 4px, typography caption_400
-   영향: 기존 XS/S/M 변경 없음
+   영향: 기존 XS/S/M 변경 없음 (기존 prop·기본값·스타일을 바꾸면 여기에 적는다. "없음"이면 ④에서 검사로 확인)
    Code Connect: Tag.figma.tsx의 size enum에 XXS 추가 (파일 없으면 "없음")
    문서: 없음 (packages/skills에 Tag size 목록이 없음. 있으면 "shoplflow-components의 … 갱신")
    changelog: "XXS 사이즈 추가"
@@ -141,7 +141,35 @@ pnpm --filter @shoplflow/base type-check
 pnpm --filter @shoplflow/base exec vitest run   # `test -- --run`은 watch로 빠지므로 쓰지 않는다
 pnpm --filter @shoplflow/mcp generate:metadata   # MCP 메타데이터 재생성
 pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때만. 토큰 없이 로컬에서 문법·매핑 검사
+bash .claude/skills/task-component/scripts/check-api-changes.sh   # 기존 사용법이 깨지는지 (generate:metadata 다음에)
 ```
+
+### 기존 사용법·에러 가능성 검사
+
+통과/실패만 보는 위 검사와 별개로, **이미 이 컴포넌트를 쓰는 코드가 깨지거나 다르게 보이지 않는지** 확인한다. 결과는 ⑤ PR 본문의 "사용법 변경" 칸과 changeset 종류 질문에 그대로 쓴다.
+
+1. **공개 API 비교** — `check-api-changes.sh`가 `components.generated.json`을 main과 비교한다.
+
+   | 결과 | 의미 | 할 일 |
+   |------|------|-------|
+   | ✘ 깨질 수 있음 | 컴포넌트·prop 삭제, 선택→필수, 타입 변경, variant 값 삭제, 기본 HTML 속성 변경 | **멈추고 사용자에게 보고.** 티켓 의도인지 확인. 의도면 changeset `major`를 추천하고(종류는 사용자가 정함), changelog `changes`에 "주의: …"를 적고, PR 본문에 바꾸는 방법을 쓴다. 의도가 아니면 ③으로 돌아가 호환되게 고친다 (prop 유지·deprecated 표시 등) |
+   | ! 주의 | 필수 prop 추가 | 기존 코드가 타입 에러가 난다. 기본값을 줘서 선택 prop으로 바꿀 수 있는지 먼저 검토 |
+   | ✔ 추가만 | 새 컴포넌트·선택 prop·variant 값 추가 | 진행 |
+
+2. **모노레포 안 사용처** — 스크립트가 바뀐 컴포넌트를 쓰는 `packages/base`·`packages/templates` 파일을 보여 준다. 있으면:
+   - 그 패키지 type-check도 돌린다: `pnpm --filter @shoplflow/templates type-check` (base만 돌리면 templates 깨짐을 못 잡는다)
+   - 그 파일의 스토리를 스토리북에서 열어 보거나 크로매틱 변경 목록에 있는지 본다.
+3. **스크립트가 못 잡는 것 (코드 diff를 읽고 직접 확인)**
+   - **기본값 변경**: `styleVar = 'INFORMATION'` 같은 기본값, `defaultProps`, 내부 상태 초기값이 바뀌었는가
+   - **기존 화면 변화**: 기존 styled 컴포넌트의 `gap`·`padding`·`display` 등을 바꿨는가. 크로매틱 변경 목록에 **이번에 새로 만든 스토리가 아닌 기존 스토리**가 있으면 기존 화면이 바뀐 것이다 → 의도인지 사용자에게 확인
+   - **동작 변화**: 이벤트 핸들러 호출 시점, 포커스·키보드, `ref` 전달(`forwardRef` 유지), 제어/비제어 동작
+   - **잘못된 HTML·런타임 경고**: `<button>` 안에 `<button>`, `<p>` 안에 `<div>` 같은 중첩. 버튼은 `type="button"` (폼 안에서 submit 방지). 스토리북 콘솔에 React 경고가 없는지 본다
+   - **두 브랜드**: 위 Shopl / Hada 확인
+4. **저장소 밖 사용처 (선택)** — 깨짐이 있거나 동작이 바뀌면, 사용자 확인 후 사내 저장소에서 사용처를 찾아 영향 범위를 알려 준다. 조회만 한다.
+
+   ```bash
+   gh search code --owner shopl "<컴포넌트>" --language tsx --limit 30 --json repository,path
+   ```
 
 - eslint는 폴더 전체로 돌리지 않는다. 기존 파일(예: `*.figma.tsx`)의 오래된 error가 섞이고, `--fix`가 관계없는 파일까지 고친다.
 - `pnpm build:assets` 후 `packages/*-assets/src/**/generated/index.ts`가 바뀌면 `git restore`로 되돌린다 (정렬만 바뀐 생성물).
@@ -174,7 +202,7 @@ pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때�
    gh pr create --base main --title "<커밋 제목>" --body-file <본문 파일>
    ```
 
-   PR 본문에 넣을 것: 티켓 링크, Figma 링크, 변경 요약, 컴포넌트 버전(`1.0 → 1.1`), changeset 종류, 검사 결과.
+   PR 본문에 넣을 것: 티켓 링크, Figma 링크, 변경 요약, 컴포넌트 버전(`1.0 → 1.1`), changeset 종류, 검사 결과, **사용법 변경** (`check-api-changes.sh` 결과 요약. 깨짐이 있으면 바꾸는 방법까지).
 3. **크로매틱 업로드** — PR을 만든 **뒤에** 실행한다 (열린 PR이 있어야 Chromatic UI Review가 생긴다).
 
    **먼저 비교 기준(baseline)을 확인한다.** 크로매틱은 "내 브랜치가 갈라져 나온 main 커밋"의 빌드와 비교해서 바뀐 스토리만 보여 준다. 그 커밋에 기준 빌드가 없으면 모든 스토리가 변경으로 나오고 Approve가 안 된다. main이 바뀔 때마다 올리지 않고, 여기서 필요할 때만 올린다.
