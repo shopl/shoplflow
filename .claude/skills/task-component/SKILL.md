@@ -314,6 +314,7 @@ kill %1                                                    # 서버 종료
    - 스크립트는 임시 worktree에서 기준 빌드를 올리고 끝나면 지운다. 기준 빌드에만 `--auto-accept-changes`를 쓴다.
 
    - **변경이 있으면 업로드가 성공해도 exit 1로 끝난다** (`Found N visual changes`). `Build N completed`와 `View your Storybook at`이 나오면 성공이다.
+   - **터미널의 `Found N visual changes` 숫자는 무시한다.** 이 프로젝트는 크로매틱 UI Tests가 꺼져 있어서(`Tests: Disabled`) 매 빌드 전체 스토리 수(예: 157)가 찍힌다. 디자이너가 보는 건 **UI Review의 `Changeset` 숫자**다 (main과 비교해 바뀐 스토리만). 2026-11 SHF-161: 터미널 157 / Changeset 1. 확인 위치: 리뷰 URL에 `&view=changes`를 붙이거나 리뷰 화면 `Changeset` 탭. QA 요청 전에 Changeset 목록이 이번에 바꾼 컴포넌트뿐인지 본다.
    - 출력의 `View your Storybook at https://...` 주소를 meta `chromatic.storybook_url`에 기록한다.
    - 리뷰 주소는 `https://www.chromatic.com/review?appId=69afad58aa7c90fbf3c141ee&number=<PR번호>&type=linked` → meta `chromatic.review_url`.
    - PR에 `UI Review` commit status가 붙는지 확인한다 (`gh api repos/shopl/shoplflow/commits/<sha>/status`). 안 붙으면 크로매틱–GitHub 연결 문제이므로 사용자에게 알린다 (자동 배포가 동작하지 않는다).
@@ -337,6 +338,9 @@ kill %1                                                    # 서버 종료
      확인 후 Chromatic 리뷰 화면 오른쪽 위 `Review now` → `Approve review yourself`를 눌러 주세요. 승인되면 자동으로 배포돼요.
      승인 후에는 배포가 끝날 때까지 이 브랜치에 push하지 않아요.
      ```
+
+   **승인 전에 확인:** 크로매틱 업로드 직후 PR의 `UI Review`가 "Go review the new and updated UI"(승인 대기)인지 본다. 이 PR을 예전에 누가 승인했으면, 화면이 같을 때 업로드하자마자 "Approved"가 될 수 있다. 그 승인은 자동 배포되지 않는다 (E8). 그때는 QA 요청 대신 사용자에게 알리고 `task-release`의 직접 배포 경로로 간다.
+   - **승인 전에 main을 따라잡는다.** main보다 많이 뒤처졌으면 QA 요청 전에 rebase → 크로매틱 업로드. 승인 뒤 rebase는 E8로 멈춘다.
 
    **디자이너 멘션** — 댓글만 달면 디자이너가 Jira를 열어 봐야 알 수 있다. 멘션해서 알림이 가게 한다.
    - 누구: `[QA]` 티켓 담당자 → 없으면 `[Design]` 티켓 담당자 → 없으면 상위 티켓 보고자. 이미 조회한 티켓의 `assignee.accountId`를 쓴다.
@@ -373,7 +377,7 @@ kill %1                                                    # 서버 종료
 | E1 디자이너 수정 요청 | ③ build | 수정 → ④ verify → push → 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
 | E2 UI Review 없음 | ⑤-3 크로매틱 | `ensure-chromatic-baseline.sh` → `pnpm chromatic:base` → PR에 `UI Review` 상태 확인. 그래도 없으면 사용자에게 알리고 `task-release` 직접 배포 경로 안내 |
 | E3 changeset 없음 / 필수 CI 실패 | ③ build | 고침 → ④ verify → push → 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
-| E4 승인 후 커밋 추가 | ⑤-3 크로매틱 | 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
+| E4 승인 후 커밋 추가 | ⑤-3 크로매틱 | 크로매틱 재업로드 → PR의 `UI Review` 확인. "Go review"(승인 대기)면 QA 댓글 갱신 (재승인 요청). 바로 "Approved"가 되면 화면이 같아 승인이 이어 붙은 것 → 자동 배포는 E8로 멈추니 `task-release` 직접 배포 경로로 넘김 |
 | E7 배포 후 수정 | ① intake | 티켓 키로 새 브랜치 `feature/<KEY>-fix` (origin/main 기준) → 새 PR. **컴포넌트 버전은 그 티켓 제목의 버전**을 따른다: 새 티켓(예: `Callout v2.3`)이면 새 항목, 같은 티켓이면 같은 버전 항목에 `changes` 추가. **changeset 종류는 사용자에게 묻는다.** Jira가 이미 완료면 다시 열지 사용자에게 확인 |
 
 - PR 댓글에 ⛔ "배포를 시작하지 않았어요"가 달려 있으면 거기 적힌 이유로 위 표에서 고른다.

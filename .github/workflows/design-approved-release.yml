@@ -5,7 +5,8 @@ name: Design Approved Release
 #   1) 그 커밋의 열린 PR(feature/<티켓키> → main)을 찾고
 #   2) 배포 전 확인 (CI 통과, changeset 존재)
 #   3) changesets-workflow.yml을 workflow_dispatch(branch, sha)로 실행 (승인 커밋 확인 → 머지 → npm 배포)
-#   막히면 PR에 이유와 돌아갈 단계를 댓글로 남긴다 (E3·E4, 예외 정의는 task-workflow skill)
+#   막히면 PR에 이유와 돌아갈 단계를 댓글로 남긴다 (E3·E4·E8, 예외 정의는 task-workflow skill)
+#   사람이 그 커밋을 보고 승인했을 때만 배포한다 (크로매틱이 자동으로 이어 붙인 승인은 E8로 멈춤)
 #
 # 이 workflow는 토큰·Secrets를 추가로 쓰지 않는다 (GitHub 기본 GITHUB_TOKEN만 사용).
 # 크로매틱 업로드, Jira 상태 변경·완료 처리는 로컬 Claude skill(task-component / task-release)이 한다.
@@ -77,6 +78,17 @@ jobs:
             echo "::error::승인된 커밋이 PR 최신 커밋이 아니에요. (승인 $SHA / 최신 $HEAD)"
             echo "kind=stale" >> "$GITHUB_OUTPUT"
             echo "reason=승인 후 커밋이 추가됐어요. (승인 ${SHA::7} / 최신 ${HEAD::7})" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          # E8: 크로매틱은 새 커밋의 화면이 이미 승인한 것과 같으면 승인을 자동으로 이어 붙인다
+          #     (승인 후 rebase·화면에 안 보이는 코드 수정도 "Approved"가 된다).
+          #     사람이 이 커밋을 보고 승인했으면 승인 전에 "Go review …" 대기 상태가 찍힌다. 없으면 배포하지 않는다.
+          REVIEWED=$(gh api "repos/${{ github.repository }}/commits/$SHA/statuses?per_page=100" \
+            --jq '[.[] | select(.context == "UI Review" and .state == "pending" and ((.description // "") | startswith("Go review")))] | length')
+          if [ "$REVIEWED" = "0" ]; then
+            echo "::error::이 커밋은 사람이 승인하지 않았어요. 크로매틱이 이전 승인을 자동으로 이어 붙였어요."
+            echo "kind=carried" >> "$GITHUB_OUTPUT"
+            echo "reason=이 커밋(${SHA::7})은 화면이 이전에 승인한 것과 같아서 크로매틱이 승인을 자동으로 이어 붙였어요. 승인 뒤 바뀐 코드(rebase·화면에 안 보이는 수정)를 아무도 확인하지 않았어요." >> "$GITHUB_OUTPUT"
             exit 1
           fi
 
@@ -161,6 +173,7 @@ jobs:
         run: |
           case "$KIND" in
             stale)      NEXT="크로매틱에 다시 올리고(\`pnpm chromatic:base\`) 다시 승인받아 주세요. 승인되면 자동으로 배포돼요." ;;
+            carried)    NEXT="승인 뒤 바뀐 내용을 확인해 주세요. 화면 변화가 없는 수정이 맞으면 직접 배포해 주세요: \`gh workflow run changesets-workflow.yml --ref main -f branch=$BRANCH -f sha=$SHA\` (화면을 바꿔야 하는 수정이었다면 크로매틱 재업로드 후 다시 승인받아 주세요)" ;;
             changeset)  NEXT="changeset을 추가해서 push → 크로매틱 재업로드 → 다시 승인받아 주세요." ;;
             ci_fail)    NEXT="실패한 체크를 고쳐서 push → 크로매틱 재업로드 → 다시 승인받아 주세요." ;;
             ci_timeout) NEXT="코드는 그대로 두면 돼요. CI가 끝난 뒤 직접 배포해 주세요: \`gh workflow run changesets-workflow.yml --ref main -f branch=$BRANCH -f sha=$SHA\` (승인은 다시 받을 필요 없어요)" ;;

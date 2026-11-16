@@ -98,6 +98,20 @@ if [ "$HEAD" != "$SHA" ]; then
 fi
 ok "PR 최신 커밋과 일치"
 
+# E8: 크로매틱은 화면이 이전 승인과 같으면 새 커밋에도 승인을 자동으로 이어 붙인다.
+#     사람이 이 커밋을 보고 승인했으면 승인 전에 "Go review …" 대기 상태가 있다.
+CARRIED=""
+REVIEWED=$(gh api "repos/$REPO/commits/$SHA/statuses?per_page=100" \
+  --jq '[.[] | select(.context == "UI Review" and .state == "pending" and ((.description // "") | startswith("Go review")))] | length')
+if [ "$REVIEWED" = "0" ]; then
+  CARRIED=1
+  fail "이 커밋은 사람이 승인하지 않았어요 — 크로매틱이 이전 승인을 자동으로 이어 붙였어요 (E8)"
+  echo "     workflow는 여기서 멈추고 PR에 ⛔ 댓글을 남겨요."
+  echo "     승인 뒤 바뀐 내용을 확인하고, 화면 변화가 없는 게 맞으면 --execute 로 직접 배포할 수 있어요."
+else
+  ok "사람이 이 커밋을 보고 승인함 (Go review → Approved)"
+fi
+
 # ── 2) 배포 전 확인 ────────────────────────────────────────────
 step "2) 배포 전 확인"
 BLOCK=""
@@ -151,11 +165,19 @@ if [ -z "$APPROVED" ]; then
 fi
 echo "  실행할 명령: ${CMD[*]}"
 if [ "$EXECUTE" != "--execute" ]; then
+  if [ -n "$CARRIED" ]; then
+    warn "드라이런 — 실제 workflow는 E8(이어 붙은 승인)로 멈춰요. 바뀐 내용 확인 후 --execute 로 직접 배포."
+    exit 1
+  fi
   ok "드라이런 — 실제로는 실행하지 않았어요. (실행하려면 --execute)"
   exit 0
 fi
 
 echo
+if [ -n "$CARRIED" ]; then
+  echo "  ⚠ 이 커밋은 디자이너가 직접 보고 승인한 커밋이 아니에요. 승인 뒤 바뀐 내용을 확인했는지 다시 봐 주세요."
+  echo "     PR 커밋: gh pr view $NUMBER -R $REPO --json commits --jq '.commits[] | .oid[:7] + \" \" + .messageHeadline'"
+fi
 echo "  ⚠ $BRANCH 를 main에 머지하고 npm에 배포해요. 되돌리기 어려워요."
 read -r -p "  진행하려면 'deploy' 입력: " ANSWER
 if [ "$ANSWER" != "deploy" ]; then
