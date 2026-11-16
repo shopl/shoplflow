@@ -81,9 +81,11 @@ gh pr list --state all --search "<KEY>" --json number,state,headRefName,url
 
 ## 예외 상황 (E1~E8)
 
-정상 흐름: `티켓 읽기 → 코드·검사 → PR·크로매틱·QA 요청 → 디자이너 리뷰 → 승인 → 배포 전 확인 → 승인 SHA 확인 → 머지·npm 배포 → 결과 확인·Jira 완료`
+정상 흐름: `티켓 읽기 → 코드·검사 → PR·크로매틱·QA 요청 → 디자이너 리뷰 → 승인 → 배포 전 확인(사람 승인 여부, changeset, CI) → 승인 SHA 확인 → 머지·npm 배포 → 결과 확인·Jira 완료`
 
-**공통 규칙: 코드가 바뀌어 새 커밋이 생기면 이전 승인은 무효다.** 다시 크로매틱에 올리고 다시 승인받는다.
+**공통 규칙: 코드가 바뀌어 새 커밋이 생기면 이전 승인은 무효로 본다.** 다시 크로매틱에 올리고 다시 확인받는다.
+
+**크로매틱 승인은 커밋이 바뀌어도 자동으로 이어 붙을 수 있다.** 새 커밋의 화면이 이미 승인한 것과 같으면 크로매틱이 사람 확인 없이 `UI Review`를 "Approved by <이전 승인자>"로 바꾼다 (승인 후 rebase, 화면에 안 보이는 코드 수정). 2026-11 SHF-161에서 확인했다. 그래서 배포 workflow는 **그 커밋에 "Go review …" 대기 상태가 있었는지**(= 사람이 그 커밋을 보고 승인했는지)를 보고, 없으면 배포하지 않는다 (E8).
 
 | # | 상황 | 어떻게 알게 되나 | 돌아갈 단계 | 할 일 | skill |
 |---|------|-----------------|-------------|-------|-------|
@@ -91,13 +93,14 @@ gh pr list --state all --search "<KEY>" --json number,state,headRefName,url
 | E2 | UI Review 체크 없음 | PR에 `UI Review` 없음, 승인 버튼 없음 | **PR·크로매틱** | 기준 빌드 확인 → 크로매틱 업로드. 그래도 없으면 연결 문제 → 직접 배포 | task-component |
 | E3 | 배포 전 확인 실패 (changeset 없음, 필수 CI 실패) | PR에 ⛔ 댓글 (승인 감지 workflow) | **코드·검사** | 고쳐서 push → 재업로드 → 재승인 | task-component |
 | E3' | 필수 CI가 30분 안에 안 끝남 / CI가 안 돎 | PR에 ⛔ 댓글 | **머지·npm 배포** | 코드 그대로. CI 끝난 뒤 `check-approval.sh <PR> --execute` (재승인 불필요) | task-release |
-| E4 | 승인 후 커밋 추가 | PR에 ⛔ 댓글, 또는 배포 workflow "승인된 커밋인지 확인" 실패 | **PR·크로매틱** | 크로매틱 재업로드 → 재승인 | task-component |
+| E4 | 승인 후 커밋 추가 | PR에 ⛔ 댓글, 또는 배포 workflow "승인된 커밋인지 확인" 실패 | **PR·크로매틱** | 크로매틱 재업로드. 화면이 바뀌었으면 승인 대기로 돌아감 → 재승인. 화면이 같으면 승인이 자동으로 이어 붙음 → E8 | task-component |
 | E5 | 배포 중 push | 배포 workflow push 충돌 / `--match-head-commit` 머지 거부, Slack·PR 실패 알림 | 배포 끝난 뒤 판단 | 머지 안 됐으면 E4처럼, 머지됐으면 E7처럼 | task-release |
 | E6 | 배포 실패 | Slack ❌ + PR 실패 댓글 | 머지 전: **코드·검사** / 머지 후: **머지·npm 배포** | 머지 전이면 고쳐서 재승인. 머지 후면 npm 버전 확인 후 workflow 재실행. Jira는 검토 중 유지 | task-release |
 | E7 | 배포 후 수정 필요 | 사용자 요청 | **처음부터 (새 PR)** | `feature/<KEY>-fix` 새 브랜치 → 새 PR. 컴포넌트 버전은 티켓 제목 버전, changeset 종류는 사용자에게 확인 | task-component |
-| E8 | 승인 후 화면과 무관한 작은 수정 | 사용자 요청 | **머지·npm 배포** | 수정 push 후, 디자이너가 이전 커밋을 승인한 걸 사용자에게 확인받고 `check-approval.sh <PR> --execute` | task-release |
+| E8 | 승인이 자동으로 이어 붙음 (승인 후 rebase, 화면과 무관한 수정) | PR에 ⛔ 댓글 "사람이 승인하지 않았어요", `check-approval.sh`의 E8 경고 | **머지·npm 배포** | 승인 뒤 바뀐 커밋을 사용자에게 보여 주고 "화면 영향 없음"을 확인받은 뒤 `check-approval.sh <PR> --execute`. 화면이 바뀌어야 하는 수정이었으면 E1처럼 재승인 | task-release |
 
-- **승인 후에는 배포가 끝날 때까지 그 브랜치에 push하지 않는다.** (E4·E5 예방. 배포 workflow가 승인 커밋을 다시 확인하지만, 섞이면 배포가 실패로 끝난다)
+- **승인 후에는 배포가 끝날 때까지 그 브랜치에 push·rebase하지 않는다.** (E4·E5·E8 예방. main보다 뒤처져도 rebase 없이 배포된다 — 머지 커밋으로 합쳐진다)
+- 승인을 받기 **전에** main을 따라잡아야 하면 그때 rebase하고 크로매틱에 올린다. 승인 뒤 rebase는 E8로 멈춘다.
 - 직접 배포(`--execute`)는 항상 사용자 확인 후, 사용자가 직접 실행하게 안내한다.
 
 ## Non-goals

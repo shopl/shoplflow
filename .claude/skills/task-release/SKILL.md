@@ -23,7 +23,7 @@ design-approved-release.yml → changesets-workflow.yml → 머지 → npm 배�
 티켓 키로 상태를 복원한다. meta.yaml이 없어도 동작해야 한다 (다른 사람이 만든 PR일 수 있음).
 하위 티켓 키를 받았으면 상위 에픽 키로 진행한다.
 
-PR이 열려 있으면 먼저 승인 확인 스크립트를 돌린다. workflow와 같은 규칙으로 UI Review 승인, PR, changeset, 필수 CI(`build-test`, `check`)를 확인하고 배포 명령만 출력한다 (드라이런).
+PR이 열려 있으면 먼저 승인 확인 스크립트를 돌린다. workflow와 같은 규칙으로 UI Review 승인, 사람이 그 커밋을 승인했는지(E8), PR, changeset, 필수 CI(`build-test`, `check`)를 확인하고 배포 명령만 출력한다 (드라이런).
 
 ```bash
 chmod +x .claude/skills/task-release/scripts/check-approval.sh   # 처음 한 번
@@ -45,7 +45,7 @@ gh run list --workflow=changesets-workflow.yml --event=workflow_dispatch --limit
 | PR open, `UI Review` pending | 디자이너 승인 대기 | 안내하고 종료. 승인 위치: 리뷰 화면 오른쪽 위 `Review now` → `Approve review yourself` (로그인 필요) |
 | PR open, `UI Review` success, release run 없음 | `design-approved-release.yml`이 main에 아직 없거나 동작 안 함 | ④ 직접 배포 (스크립트에 `--execute`) |
 | PR open, `UI Review` success, release run 진행 중 | 배포 중 | `gh run watch <id> --exit-status`를 백그라운드로 기다린 뒤 ② |
-| PR open, `UI Review` success, release run 실패 | 배포 전 확인에서 막힘. PR에 ⛔ 댓글이 있다 | 댓글의 이유로 판단: CI 30분 초과·CI 안 돎(E3') → CI 끝난 뒤 ④ 직접 배포 / changeset·CI 실패(E3)·승인 후 커밋(E4) → `task-component`로 넘김 |
+| PR open, `UI Review` success, release run 실패 | 배포 전 확인에서 막힘. PR에 ⛔ 댓글이 있다 | 댓글의 이유로 판단: CI 30분 초과·CI 안 돎(E3') → CI 끝난 뒤 ④ 직접 배포 / "사람이 승인하지 않았어요"(E8, 승인이 자동으로 이어 붙음) → ④ 직접 배포 / changeset·CI 실패(E3)·승인 후 커밋(E4) → `task-component`로 넘김 |
 | PR open, changesets-workflow 실패 (머지 전) | 승인 커밋 불일치(E4·E5) 또는 빌드 실패(E6) | 로그(`gh run view <id> --log-failed`)로 판단. E4·E5 → `task-component`(재업로드·재승인), E6 → 고친 뒤 재승인 |
 | PR open, `UI Review` 체크 자체가 없음 | 크로매틱 업로드 안 됨 또는 연결 문제 (E2) | `task-component`의 크로매틱 단계로. 그래도 없으면 ④ 직접 배포를 제안 |
 
@@ -122,7 +122,7 @@ gh run list --workflow=changesets-workflow.yml --event=workflow_dispatch --limit
 |------|------|------|
 | E2 | 크로매틱 연결 문제로 `UI Review`가 안 붙음 | 디자이너가 스토리북에서 확인하고 OK했다는 걸 사용자에게 확인 |
 | E3' | 필수 CI가 30분 넘게 걸렸거나 안 돌았음 | CI가 통과한 뒤 실행. 승인은 그대로 유효 |
-| E8 | 승인 후 화면과 무관한 작은 수정을 push | 새 커밋은 크로매틱 승인이 없다. 무엇을 바꿨는지 보여 주고 "디자인 영향 없음"을 사용자에게 확인받은 뒤 실행 |
+| E8 | 승인이 자동으로 이어 붙음 (승인 후 rebase, 화면과 무관한 수정) | 크로매틱은 "Approved"라고 표시하지만 사람이 이 커밋을 보지 않았다. 디자이너가 마지막으로 직접 승인한 커밋 이후 바뀐 커밋·파일을 보여 주고 "화면 영향 없음"을 사용자에게 확인받은 뒤 실행 |
 | — | `design-approved-release.yml`이 main에 아직 없음 | 승인 확인 후 실행 |
 
 1. 확인: `check-approval.sh <PR번호>`가 "드라이런" 까지 통과, stories changelog 첫 버전 == 티켓 버전

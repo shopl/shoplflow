@@ -338,6 +338,9 @@ kill %1                                                    # 서버 종료
      승인 후에는 배포가 끝날 때까지 이 브랜치에 push하지 않아요.
      ```
 
+   **승인 전에 확인:** 크로매틱 업로드 직후 PR의 `UI Review`가 "Go review the new and updated UI"(승인 대기)인지 본다. 이 PR을 예전에 누가 승인했으면, 화면이 같을 때 업로드하자마자 "Approved"가 될 수 있다. 그 승인은 자동 배포되지 않는다 (E8). 그때는 QA 요청 대신 사용자에게 알리고 `task-release`의 직접 배포 경로로 간다.
+   - **승인 전에 main을 따라잡는다.** main보다 많이 뒤처졌으면 QA 요청 전에 rebase → 크로매틱 업로드. 승인 뒤 rebase는 E8로 멈춘다.
+
    **디자이너 멘션** — 댓글만 달면 디자이너가 Jira를 열어 봐야 알 수 있다. 멘션해서 알림이 가게 한다.
    - 누구: `[QA]` 티켓 담당자 → 없으면 `[Design]` 티켓 담당자 → 없으면 상위 티켓 보고자. 이미 조회한 티켓의 `assignee.accountId`를 쓴다.
    - 대상이 지금 사용자 본인이면 멘션하지 않는다.
@@ -373,7 +376,7 @@ kill %1                                                    # 서버 종료
 | E1 디자이너 수정 요청 | ③ build | 수정 → ④ verify → push → 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
 | E2 UI Review 없음 | ⑤-3 크로매틱 | `ensure-chromatic-baseline.sh` → `pnpm chromatic:base` → PR에 `UI Review` 상태 확인. 그래도 없으면 사용자에게 알리고 `task-release` 직접 배포 경로 안내 |
 | E3 changeset 없음 / 필수 CI 실패 | ③ build | 고침 → ④ verify → push → 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
-| E4 승인 후 커밋 추가 | ⑤-3 크로매틱 | 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
+| E4 승인 후 커밋 추가 | ⑤-3 크로매틱 | 크로매틱 재업로드 → PR의 `UI Review` 확인. "Go review"(승인 대기)면 QA 댓글 갱신 (재승인 요청). 바로 "Approved"가 되면 화면이 같아 승인이 이어 붙은 것 → 자동 배포는 E8로 멈추니 `task-release` 직접 배포 경로로 넘김 |
 | E7 배포 후 수정 | ① intake | 티켓 키로 새 브랜치 `feature/<KEY>-fix` (origin/main 기준) → 새 PR. **컴포넌트 버전은 그 티켓 제목의 버전**을 따른다: 새 티켓(예: `Callout v2.3`)이면 새 항목, 같은 티켓이면 같은 버전 항목에 `changes` 추가. **changeset 종류는 사용자에게 묻는다.** Jira가 이미 완료면 다시 열지 사용자에게 확인 |
 
 - PR 댓글에 ⛔ "배포를 시작하지 않았어요"가 달려 있으면 거기 적힌 이유로 위 표에서 고른다.
