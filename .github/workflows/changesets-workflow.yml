@@ -3,12 +3,17 @@ name: Changesets Workflow
 # 1) push(main, packages·changeset 변경): 버전/배포(release) — npm Trusted Publisher(OIDC) 사용
 # 2) workflow_dispatch(inputs.branch): 디자인 승인 배포 — feature에서 version → PR 머지 → 이후 main push로 1)이 배포
 # Slack 배포 버튼 → Worker가 이 워크플로를 dispatch (파일명: changesets-workflow.yml)
+# Chromatic UI Review 승인 → design-approved-release.yml이 branch + sha로 dispatch
 on:
   workflow_dispatch:
     inputs:
       branch:
         description: "main에 머지할 브랜치명"
         required: true
+        type: string
+      sha:
+        description: "승인된 커밋 SHA (선택). 있으면 브랜치 최신 커밋과 같을 때만 배포"
+        required: false
         type: string
   push:
     paths:
@@ -61,6 +66,19 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ inputs.branch }}
+
+      # 승인 후 커밋이 추가됐으면 승인 안 된 코드가 배포되지 않도록 멈춘다 (sha 없이 dispatch하면 건너뜀)
+      - name: 승인된 커밋인지 확인
+        if: inputs.sha != ''
+        env:
+          APPROVED_SHA: ${{ inputs.sha }}
+        run: |
+          HEAD_SHA=$(git rev-parse HEAD)
+          if [ "$HEAD_SHA" != "$APPROVED_SHA" ]; then
+            echo "::error::승인 후 커밋이 추가됐어요. (승인 $APPROVED_SHA / 최신 $HEAD_SHA) 다시 승인받아야 해요."
+            exit 1
+          fi
+          echo "승인된 커밋과 일치: $HEAD_SHA"
 
       - name: main을 feature 브랜치에 머지 (충돌 방지)
         run: |
@@ -122,7 +140,8 @@ jobs:
               --body "디자인 검수 완료 후 자동 생성된 PR입니다.")
             PR_NUMBER=$(echo "$PR_URL" | grep -o '[0-9]*$')
           fi
-          gh pr merge "$PR_NUMBER" --merge --admin
+          # 이 workflow가 마지막으로 push한 커밋일 때만 머지 (그 사이 다른 push가 섞이면 거부)
+          gh pr merge "$PR_NUMBER" --merge --admin --match-head-commit "$(git rev-parse HEAD)"
 
       - name: 머지 완료 Slack 알림
         if: success()
@@ -134,11 +153,16 @@ jobs:
 
       - name: 실패 시 Slack 알림
         if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           FEATURE="${{ inputs.branch }}"
           curl -s -X POST "${{ secrets.SLACK_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d "{\"text\": \"❌ *배포 실패* — \`$FEATURE\` → \`main\` 처리 중 오류가 발생했습니다. GitHub Actions 로그를 확인해주세요.\"}"
+          # PR에도 실패를 남긴다 (PR이 없거나 댓글이 실패해도 무시)
+          gh pr comment "$FEATURE" -R "${{ github.repository }}" \
+            --body "❌ 배포 실패 — 실행 로그: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
 
   release-after-design-approval:
     name: Release (디자인 승인 직후)
