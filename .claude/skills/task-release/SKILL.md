@@ -83,7 +83,14 @@ gh run list --workflow=changesets-workflow.yml --event=workflow_dispatch --limit
    PR: <PR 링크>
    ```
 
-5. meta: `release.result: success`, `release.published`, `stage: done`
+5. **Code Connect 반영 안내** — 이번 PR에서 `*.figma.tsx`가 바뀌었으면 (`gh pr diff <번호> --name-only | grep '\.figma\.tsx$'`) 사용자에게 Figma 반영을 안내한다. Figma 토큰이 필요해서 Claude가 대신 실행하지 않는다.
+
+   ```bash
+   # main 최신으로 받은 뒤, Figma 개인 토큰(FIGMA_ACCESS_TOKEN)이 있는 사람이 실행
+   pnpm --filter @shoplflow/base figma:publish
+   ```
+
+6. meta: `release.result: success`, `release.published`, `stage: done`
 
 ### 실패
 

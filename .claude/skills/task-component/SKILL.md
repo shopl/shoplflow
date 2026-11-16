@@ -47,7 +47,7 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
 ## ② spec — 바꿀 내용 확정
 
 1. 티켓 설명, `[Design]` 하위 티켓, Figma 링크에서 스펙을 정리한다. Figma MCP가 있으면 해당 노드를 읽는다.
-2. 컴포넌트의 현재 구현을 읽는다: `*.types.ts`, `*.styled.ts(x)`, `*.tsx`, `*.stories.tsx`.
+2. 컴포넌트의 현재 구현을 읽는다: `*.types.ts`, `*.styled.ts(x)`, `*.tsx`, `*.stories.tsx`, 그리고 **`*.figma.tsx`(Code Connect)가 있으면 그것도** 읽는다. Figma 속성(property) 이름과 코드 prop이 어떻게 연결돼 있는지 확인한다.
 3. 비슷한 컴포넌트의 기존 패턴을 따른다 (`sizeVar`/`styleVar` 상수 객체, `getStyleBySizeVar` 같은 helper, 토큰 사용).
 4. 아래 형식으로 **변경 계획을 사용자에게 보여 주고 승인받는다.**
 
@@ -57,6 +57,7 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
    - TagSizeVariants에 XXS 추가
    - XXS: height 16px, padding 0 4px, typography caption_400
    영향: 기존 XS/S/M 변경 없음
+   Code Connect: Tag.figma.tsx의 size enum에 XXS 추가 (파일 없으면 "없음")
    changelog: "XXS 사이즈 추가"
    changeset: @shoplflow/base ? (major / minor / patch — 사용자에게 확인)
    ```
@@ -90,6 +91,10 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
 2. 코드 수정 — 프로젝트 규칙(CLAUDE.md의 Component Patterns)을 따른다.
    - `*.types.ts` 변형 상수, `*.styled.ts(x)` 스타일, 필요 시 `*.tsx`
    - `*.stories.tsx`: 새 변형을 보여 주는 스토리·argTypes 추가 ([STORIES_CONVENTION.md](../../../packages/base/.storybook/STORIES_CONVENTION.md))
+   - **`*.figma.tsx` (Code Connect)** — 파일이 있고 사용법이 바뀌면(새 prop·변형·하위 컴포넌트) 같이 고친다. 디자이너·개발자가 Figma Dev Mode에서 보는 코드 예시가 이 파일이다.
+     - Figma 속성 이름은 지어내지 않는다. Figma MCP `get_metadata` / `get_design_context`로 컴포넌트 속성(variant·boolean·text) 이름을 확인해서 `figma.enum` / `figma.boolean` / `figma.string`에 쓴다.
+     - 새 하위 컴포넌트(예: `Callout.TextButton`)는 `example`에 실제 쓰는 모양대로 넣는다.
+     - 파일이 없는 컴포넌트면 새로 만들지 않는다 (필요하면 따로 제안).
 3. **컴포넌트 changelog** — stories 파일의 changelog 배열 **맨 앞**에 추가
 
    ```ts
@@ -121,6 +126,7 @@ pnpm exec eslint $(git diff --name-only origin/main -- '*.ts' '*.tsx')   # 바�
 pnpm --filter @shoplflow/base type-check
 pnpm --filter @shoplflow/base exec vitest run   # `test -- --run`은 watch로 빠지므로 쓰지 않는다
 pnpm --filter @shoplflow/mcp generate:metadata   # MCP 메타데이터 재생성
+pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때만. 토큰 없이 로컬에서 문법·매핑 검사
 ```
 
 - eslint는 폴더 전체로 돌리지 않는다. 기존 파일(예: `*.figma.tsx`)의 오래된 error가 섞이고, `--fix`가 관계없는 파일까지 고친다.
@@ -130,6 +136,7 @@ pnpm --filter @shoplflow/mcp generate:metadata   # MCP 메타데이터 재생성
 - `packages/mcp/src/data/`가 바뀌면 **같이 커밋**한다. 안 하면 CI(`build-test.yml`)가 실패한다.
 - **changelog 버전 확인**: stories 파일 changelog 첫 항목의 `version` == meta `target_version`
 - **changeset 존재 확인**: `.changeset/`에 README 외 `.md`가 있는지
+- **Code Connect 확인**: `*.figma.tsx`를 바꿨으면 `figma:parse`가 오류 없이 끝나야 한다. Figma 반영(`figma:publish`)은 Figma 토큰이 필요해서 배포 후 사람이 한다 → meta `decisions`에 "figma publish 필요"를 남기고 `task-release`가 안내한다.
 - 시각 확인이 필요하면 `pnpm --filter @shoplflow/base dev:stories` (포트 6007)로 띄우고 사용자에게 확인을 요청한다.
 
 통과하면 `stage: pr`
