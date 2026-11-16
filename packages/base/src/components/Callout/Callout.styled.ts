@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { borderRadiusTokens, colorTokens } from '../../styles';
+import { borderRadiusTokens, colorTokens, spacingTokens } from '../../styles';
 import { css } from '@emotion/react';
 import type { CalloutProps } from './Callout.types';
 
@@ -58,4 +58,33 @@ export const StyledCalloutIcon = styled.svg`
 `;
 export const TextWrapper = styled.div`
   padding: 2px 0;
+`;
+
+export const StyledCalloutBody = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: ${spacingTokens.spacing06};
+`;
+
+export const StyledCalloutContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: ${spacingTokens.spacing04};
+`;
+
+export const StyledCalloutTextButton = styled.button`
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: start;
+  &:hover [data-shoplflow='Text'] {
+    text-decoration: underline;
+  }
 `;
