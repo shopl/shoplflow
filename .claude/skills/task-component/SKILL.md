@@ -58,6 +58,7 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
    - XXS: height 16px, padding 0 4px, typography caption_400
    영향: 기존 XS/S/M 변경 없음
    Code Connect: Tag.figma.tsx의 size enum에 XXS 추가 (파일 없으면 "없음")
+   문서: 없음 (packages/skills에 Tag size 목록이 없음. 있으면 "shoplflow-components의 … 갱신")
    changelog: "XXS 사이즈 추가"
    changeset: @shoplflow/base ? (major / minor / patch — 사용자에게 확인)
    ```
@@ -95,6 +96,19 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
      - Figma 속성 이름은 지어내지 않는다. Figma MCP `get_metadata` / `get_design_context`로 컴포넌트 속성(variant·boolean·text) 이름을 확인해서 `figma.enum` / `figma.boolean` / `figma.string`에 쓴다.
      - 새 하위 컴포넌트(예: `Callout.TextButton`)는 `example`에 실제 쓰는 모양대로 넣는다.
      - 파일이 없는 컴포넌트면 새로 만들지 않는다 (필요하면 따로 제안).
+   - **사람이 쓰는 문서 (자동 생성 안 됨)** — `packages/mcp/src/data/*.generated.json`은 ④에서 자동 생성되지만, 아래는 사람이 직접 고쳐야 해서 놓치기 쉽다. 기준은 [packages/skills/아키텍쳐.md](../../../packages/skills/아키텍쳐.md) 10절 "라이브러리 변경 시 스킬 검증이 필요한 지점" 표다.
+
+     | 이번 변경 | 확인할 파일 |
+     |-----------|-------------|
+     | variant 값 추가·삭제 (`styleVar`, `sizeVar`) | `packages/skills/skills/shoplflow-components/SKILL.md` (값 목록) |
+     | 타이포그래피 토큰 추가·삭제 | `shoplflow-components` · `shoplflow-theming` |
+     | 신규 컴포넌트 export | `shoplflow-components` 하단 카탈로그 |
+     | 새 하위 컴포넌트·사용 패턴 (예: `Callout.Body`) | `shoplflow-components`에 해당 컴포넌트 설명이 있으면 갱신 |
+     | `@shoplflow/utils` 훅 추가 | `shoplflow-icons-utils` |
+     | peer deps · CSS export 경로 · Provider 사용법 | `shoplflow-setup`, `packages/mcp/setup.curated.json` |
+
+     - 해당 파일에 이번 컴포넌트나 값이 언급돼 있는지 `grep`으로 먼저 찾는다. 없으면 고치지 않는다.
+     - 고칠 게 있으면 ② spec 계획에 "문서: …"로 넣어 승인받고, `@shoplflow/skills` changeset을 추가할지 사용자에게 묻는다 (skills 패키지는 base와 버전이 연동되지 않는다).
 3. **컴포넌트 changelog** — stories 파일의 changelog 배열 **맨 앞**에 추가
 
    ```ts
