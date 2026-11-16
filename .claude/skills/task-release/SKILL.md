@@ -57,15 +57,26 @@ gh run list --workflow=changesets-workflow.yml --event=workflow_dispatch --limit
   gh run view <run_id> --json jobs --jq '.jobs[] | {name, conclusion}'
   ```
 
-- **npm 배포 확인** — main의 패키지 버전과 npm 최신 버전이 같은지 본다.
+- **npm 배포 확인 — 버전이 올라간 패키지 전부**
+  base만 보면 안 된다. `pnpm version`이 base 배포 시 `@shoplflow/mcp` changeset을 자동으로 추가하고(`packages/mcp/scripts/ensure-release-changeset.cjs`), base에 의존하는 `@shoplflow/templates` 등도 같이 올라갈 수 있다. 버전 범프 커밋에서 바뀐 `package.json`을 모두 찾아 npm과 비교한다.
 
   ```bash
   git fetch origin main
-  git show origin/main:packages/base/package.json | grep '"version"'
-  npm view @shoplflow/base version
+  # 이 PR 안의 버전 범프 커밋 (배포 workflow가 브랜치에 만든 커밋)
+  VCOMMIT=$(gh pr view <PR번호> --json commits \
+    --jq '[.commits[] | select(.messageHeadline | test("version packages"))][-1].oid')
+  for f in $(git show --name-only --format= "$VCOMMIT" | grep -E '^packages/[^/]+/package\.json$'); do
+    NAME=$(git show "$VCOMMIT:$f" | jq -r .name)
+    VER=$(git show "$VCOMMIT:$f" | jq -r .version)   # 범프 커밋 기준 (그 뒤 다른 배포가 있어도 안 섞임)
+    NPM=$(npm view "$NAME@$VER" version 2>/dev/null || echo "없음")
+    echo "$NAME  배포 버전=$VER  npm=$NPM"
+  done
   ```
 
-  changeset이 다른 패키지도 올렸다면 그 패키지도 확인한다.
+  - `VCOMMIT`이 비면 버전 범프가 안 된 것이다 (changeset 없음 등) → 실패로 보고 원인을 확인한다.
+  - 모든 줄이 `배포 버전=X npm=X`이면 배포 완료다. `npm=없음`이 있으면 그 패키지는 아직 안 올라간 것이다 (몇 분 늦게 보일 수 있으니 잠시 뒤 한 번 더 확인).
+  - 확인한 목록을 meta `release.published`와 Jira 완료 댓글에 그대로 쓴다 (예: `@shoplflow/base@0.49.5`, `@shoplflow/mcp@0.1.7`).
+  - `@shoplflow/extension`은 배포 대상이 아니다 (CLAUDE.md).
 - main push로 `Release` job이 한 번 더 돌 수 있다. 같은 버전이 이미 배포돼 있으면 그 job이 실패해도 배포는 된 것이다. 판단 기준은 npm 버전이다.
 
 ## ③ Jira 정리 (MCP)
@@ -78,7 +89,7 @@ gh run list --workflow=changesets-workflow.yml --event=workflow_dispatch --limit
 4. 상위 티켓에 댓글:
 
    ```
-   배포 완료: @shoplflow/base@0.49.0
+   배포 완료: @shoplflow/base@0.49.0, @shoplflow/mcp@0.1.7
    컴포넌트 버전: Tag 1.1
    PR: <PR 링크>
    ```
