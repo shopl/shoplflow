@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.49.5
+
+### Patch Changes
+
+- [#871](https://github.com/shopl/shoplflow/pull/871) [`3cd0901acde8ad59f978b9a2defbd97b0d73e4c9`](https://github.com/shopl/shoplflow/commit/3cd0901acde8ad59f978b9a2defbd97b0d73e4c9) Thanks [@ayaan0209](https://github.com/ayaan0209)! - Callout v2.2: Callout.Body·Callout.Content·Callout.TextButton 추가 (SHF-161)
+
 ## 0.49.4
 
 ### Patch Changes
