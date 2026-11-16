@@ -1,0 +1,175 @@
+name: Design Approved Release
+
+# task-workflow 자동화 ②
+# 디자이너가 Chromatic UI Review에서 Approve → "UI Review" 체크가 success가 되면
+#   1) 그 커밋의 열린 PR(feature/<티켓키> → main)을 찾고
+#   2) 배포 전 확인 (CI 통과, changeset 존재)
+#   3) changesets-workflow.yml을 workflow_dispatch(branch, sha)로 실행 (승인 커밋 확인 → 머지 → npm 배포)
+#   막히면 PR에 이유와 돌아갈 단계를 댓글로 남긴다 (E3·E4, 예외 정의는 task-workflow skill)
+#
+# 이 workflow는 토큰·Secrets를 추가로 쓰지 않는다 (GitHub 기본 GITHUB_TOKEN만 사용).
+# 크로매틱 업로드, Jira 상태 변경·완료 처리는 로컬 Claude skill(task-component / task-release)이 한다.
+#
+# 주의: status / check_run 이벤트는 기본 브랜치(main)에 있는 workflow 파일로만 실행된다.
+on:
+  status:
+  check_run:
+    types: [completed]
+
+concurrency:
+  group: design-approved-release-${{ github.event.sha || github.event.check_run.head_sha }}
+  cancel-in-progress: false
+
+jobs:
+  dispatch-release:
+    name: 디자인 승인 → 배포 실행
+    if: >-
+      (github.event_name == 'status' &&
+        github.event.context == 'UI Review' &&
+        github.event.state == 'success') ||
+      (github.event_name == 'check_run' &&
+        github.event.check_run.name == 'UI Review' &&
+        github.event.check_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # 막혔을 때 PR 댓글
+      checks: read
+      statuses: read
+      actions: write # changesets-workflow.yml dispatch
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SHA: ${{ github.event.sha || github.event.check_run.head_sha }}
+
+    steps:
+      - name: 코드를 체크아웃하고 있어요. (gh pr 명령용)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          sparse-checkout: .github
+
+      - name: 승인된 PR을 찾고 있어요.
+        id: pr
+        run: |
+          PR_JSON=$(gh api "repos/${{ github.repository }}/commits/$SHA/pulls" \
+            --jq '[.[] | select(.state == "open" and .base.ref == "main" and .head.repo.full_name == "${{ github.repository }}")][0] // empty')
+          if [ -z "$PR_JSON" ]; then
+            echo "커밋 $SHA 에 열린 main 대상 PR이 없어 건너뜁니다."
+            exit 0
+          fi
+          NUMBER=$(echo "$PR_JSON" | jq -r .number)
+          BRANCH=$(echo "$PR_JSON" | jq -r .head.ref)
+          HEAD=$(echo "$PR_JSON" | jq -r .head.sha)
+          KEY=$(echo "$BRANCH" | grep -oE '[A-Z][A-Z0-9]+-[0-9]+' | head -1 || true)
+          if [[ "$BRANCH" != feature/* || -z "$KEY" ]]; then
+            echo "feature/<티켓키> 브랜치가 아니라 건너뜁니다: $BRANCH"
+            exit 0
+          fi
+          echo "PR #$NUMBER ($BRANCH, $KEY)"
+          {
+            echo "number=$NUMBER"
+            echo "branch=$BRANCH"
+            echo "key=$KEY"
+            echo "url=$(echo "$PR_JSON" | jq -r .html_url)"
+          } >> "$GITHUB_OUTPUT"
+          # E4: 승인 후 커밋이 추가됐으면 배포하지 않고 PR에 알린다
+          if [ "$HEAD" != "$SHA" ]; then
+            echo "::error::승인된 커밋이 PR 최신 커밋이 아니에요. (승인 $SHA / 최신 $HEAD)"
+            echo "kind=stale" >> "$GITHUB_OUTPUT"
+            echo "reason=승인 후 커밋이 추가됐어요. (승인 ${SHA::7} / 최신 ${HEAD::7})" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+      - name: 배포 전 확인을 하고 있어요.
+        id: check
+        if: steps.pr.outputs.number != ''
+        env:
+          NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          FAIL=""
+          KIND=""
+
+          # 1) changeset 존재 (없으면 버전이 안 올라가서 배포가 안 된다)
+          FILES=$(gh pr diff "$NUMBER" --name-only)
+          if ! echo "$FILES" | grep -E '^\.changeset/.+\.md$' | grep -vq '^\.changeset/README\.md$'; then
+            FAIL="changeset(.changeset/*.md)이 PR에 없어요."
+            KIND=changeset
+          fi
+
+          # 2) CI 체크 — 배포를 막는 건 BLOCKING_CHECKS만 (main에 필수 체크 설정이 없고,
+          #    jest-test는 main에서도 실패 중이라 막으면 모든 배포가 멈춘다). 나머지는 경고만.
+          #    진행 중이면 끝날 때까지 최대 30분 기다린 뒤 판단.
+          BLOCKING_CHECKS='["build-test","check"]'
+          if [ -z "$FAIL" ]; then
+            for i in $(seq 1 60); do
+              # gh pr checks는 실패·진행 중이면 0이 아닌 코드로 끝나므로 || true
+              CHECKS=$(gh pr checks "$NUMBER" --json name,bucket \
+                --jq '[.[] | select(.name != "UI Review" and .name != "디자인 승인 → 배포 실행")]' 2>/dev/null || true)
+              [ -z "$CHECKS" ] && CHECKS='[]'
+              PENDING=$(echo "$CHECKS" | jq --argjson b "$BLOCKING_CHECKS" '[.[] | select(.bucket == "pending" and (.name as $n | $b | index($n)))] | length')
+              [ "$PENDING" = "0" ] && break
+              echo "필수 체크 $PENDING 개 진행 중, 30초 후 다시 확인 ($i/60)"
+              sleep 30
+            done
+            BAD=$(echo "$CHECKS" | jq -r --argjson b "$BLOCKING_CHECKS" \
+              '[.[] | select(.bucket != "pass" and .bucket != "skipping" and .bucket != "pending" and (.name as $n | $b | index($n))) | .name] | join(", ")')
+            STILL_PENDING=$(echo "$CHECKS" | jq -r --argjson b "$BLOCKING_CHECKS" \
+              '[.[] | select(.bucket == "pending" and (.name as $n | $b | index($n))) | .name] | join(", ")')
+            MISSING=$(echo "$CHECKS" | jq -r --argjson b "$BLOCKING_CHECKS" \
+              '[$b[] as $n | select([.[].name] | index($n) | not) | $n] | join(", ")')
+            OTHER_BAD=$(echo "$CHECKS" | jq -r --argjson b "$BLOCKING_CHECKS" \
+              '[.[] | select((.bucket == "fail" or .bucket == "cancel") and (.name as $n | $b | index($n) | not)) | .name] | join(", ")')
+            [ -n "$OTHER_BAD" ] && echo "::warning::배포를 막지 않는 체크가 실패했어요: $OTHER_BAD"
+            if [ -n "$BAD" ]; then
+              FAIL="필수 CI 체크가 통과하지 않았어요: $BAD"
+              KIND=ci_fail
+            elif [ -n "$STILL_PENDING" ]; then
+              FAIL="필수 CI 체크가 30분 안에 끝나지 않았어요: $STILL_PENDING"
+              KIND=ci_timeout
+            elif [ -n "$MISSING" ]; then
+              FAIL="필수 CI 체크가 PR에 없어요: $MISSING"
+              KIND=ci_missing
+            fi
+          fi
+
+          if [ -n "$FAIL" ]; then
+            echo "::error::$FAIL"
+            echo "reason=$FAIL" >> "$GITHUB_OUTPUT"
+            echo "kind=$KIND" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          echo "확인 통과"
+
+      - name: 배포를 실행하고 있어요.
+        if: steps.pr.outputs.number != ''
+        env:
+          BRANCH: ${{ steps.pr.outputs.branch }}
+        run: |
+          # sha를 같이 넘겨서, 배포 workflow가 체크아웃한 브랜치가 승인된 커밋인지 한 번 더 확인하게 한다
+          gh workflow run changesets-workflow.yml --ref main -f branch="$BRANCH" -f sha="$SHA"
+          echo "changesets-workflow.yml 실행 요청: $BRANCH @ $SHA"
+
+      # 막힌 이유와 돌아갈 단계를 PR에 남긴다. 디자이너·개발자가 Actions 로그를 안 봐도 알 수 있게.
+      - name: 막힌 이유를 PR에 남기고 있어요.
+        if: failure() && steps.pr.outputs.number != ''
+        env:
+          NUMBER: ${{ steps.pr.outputs.number }}
+          BRANCH: ${{ steps.pr.outputs.branch }}
+          KIND: ${{ steps.pr.outputs.kind || steps.check.outputs.kind }}
+          REASON: ${{ steps.pr.outputs.reason || steps.check.outputs.reason }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          case "$KIND" in
+            stale)      NEXT="크로매틱에 다시 올리고(\`pnpm chromatic:base\`) 다시 승인받아 주세요. 승인되면 자동으로 배포돼요." ;;
+            changeset)  NEXT="changeset을 추가해서 push → 크로매틱 재업로드 → 다시 승인받아 주세요." ;;
+            ci_fail)    NEXT="실패한 체크를 고쳐서 push → 크로매틱 재업로드 → 다시 승인받아 주세요." ;;
+            ci_timeout) NEXT="코드는 그대로 두면 돼요. CI가 끝난 뒤 직접 배포해 주세요: \`gh workflow run changesets-workflow.yml --ref main -f branch=$BRANCH -f sha=$SHA\` (승인은 다시 받을 필요 없어요)" ;;
+            ci_missing) NEXT="CI가 이 커밋에서 돌지 않았어요. Actions에서 CI를 다시 실행하고 통과하면 직접 배포해 주세요: \`gh workflow run changesets-workflow.yml --ref main -f branch=$BRANCH -f sha=$SHA\`" ;;
+            *)          NEXT="실행 로그를 확인해 주세요." ;;
+          esac
+          BODY=$(printf '%s\n\n%s\n\n%s\n\n%s' \
+            "⛔ **디자인 승인은 됐지만 배포를 시작하지 않았어요.**" \
+            "- 이유: ${REASON:-workflow 오류}" \
+            "- 다음 할 일: $NEXT" \
+            "실행 로그: $RUN_URL")
+          gh pr comment "$NUMBER" -R "${{ github.repository }}" --body "$BODY" || true
