@@ -87,6 +87,8 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
    사용처: shopl-web-workspace 247개 파일 (예: apps/shopl-dashboard/.../XxxModal.tsx)
    호환성: 추가만 — 새 variant 값. 기존 XS/S/M·기본값·스타일 그대로 → 기존 사용처 변경 없음
            (기존 prop·기본값·스타일·구조를 바꾸면 무엇을, 왜, 사용처 몇 곳의 화면이 바뀌는지 적는다)
+   테스트: 없음 — 모양만 추가 (새 스토리가 렌더링 테스트가 됨)
+           (동작이 생기거나 바뀌면: "있음 — TextButton 클릭 시 onClick 호출, 폼 제출 안 함"처럼 무엇을 검사할지)
    Code Connect: Tag.figma.tsx의 size enum에 XXS 추가 (파일 없으면 "없음")
    문서: 없음 (packages/skills에 Tag size 목록이 없음. 있으면 "shoplflow-components의 … 갱신")
    changelog: "XXS 사이즈 추가"
@@ -122,6 +124,45 @@ description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 �
 2. 코드 수정 — 프로젝트 규칙(CLAUDE.md의 Component Patterns)을 따른다.
    - `*.types.ts` 변형 상수, `*.styled.ts(x)` 스타일, 필요 시 `*.tsx`
    - `*.stories.tsx`: 새 변형을 보여 주는 스토리·argTypes 추가 ([STORIES_CONVENTION.md](../../../packages/base/.storybook/STORIES_CONVENTION.md))
+   - **동작 테스트 (`play`) — 동작이 생기거나 바뀔 때만 쓴다.**
+     크로매틱은 정지 화면이라 동작(클릭·열림/닫힘·키보드·값 계산)을 못 보고, API 검사는 타입만 본다. 동작은 다른 검사가 하나도 없어서 디자이너 승인 → 자동 배포로 그대로 나간다. 그래서 이 부분만 테스트로 지킨다.
+
+     | 이번 변경 | 테스트 코드 |
+     |-----------|-------------|
+     | 모양만 (사이즈·여백·색·새 variant 스타일) | **쓰지 않는다.** 새 variant를 보여 주는 스토리만 추가 (test-runner가 렌더링을 자동 검사) |
+     | 동작이 생기거나 바뀜 (이벤트 호출, 열림/닫힘, 선택, 키보드, 포커스, 값 계산, 폼 제출 여부) | 그 스토리에 **`play` 함수로 바뀐 동작만** 검사 |
+
+     작성 규칙:
+     - **동작만 검사한다. 스타일(`getComputedStyle`, px, 색)은 검사하지 않는다** — 크로매틱이 보고, 디자인이 바뀔 때마다 깨진다. (기존 Button 스토리의 스타일 검사는 따라 하지 않는다)
+     - 요소는 역할·이름으로 찾는다 (`canvas.getByRole('button', { name: '…' })`). 클래스·DOM 순서에 기대지 않는다.
+     - 콜백은 `fn()`으로 만들어 호출 여부를 `expect`로 확인한다.
+     - 팝업처럼 캔버스 밖에 렌더링되는 요소는 `within(canvasElement.ownerDocument.body)`로 찾는다.
+     - 테스트를 위해 새 스토리를 만들기보다, 그 동작을 보여 주는 기존·신규 스토리에 붙인다.
+
+     ```tsx
+     import { expect, fn } from 'storybook/test';
+
+     export const WithTextButton: Story = {
+       // 스토리 전용 args(onTextButtonClick, onSubmit)는 컴포넌트 props에 없어서 타입 단언이 필요할 수 있다
+       args: { styleVar: 'INFORMATION', onTextButtonClick: fn(), onSubmit: fn((e) => e.preventDefault()) } as never,
+       render: (args) => (
+         <form onSubmit={args.onSubmit}>
+           <Callout {...args}>
+             <Callout.Body>
+               <Callout.Content><Callout.Text>Title</Callout.Text></Callout.Content>
+               <Callout.TextButton onClick={args.onTextButtonClick}>TextButton</Callout.TextButton>
+             </Callout.Body>
+           </Callout>
+         </form>
+       ),
+       play: async ({ canvas, userEvent, args }) => {
+         await userEvent.click(canvas.getByRole('button', { name: 'TextButton' }));
+         await expect(args.onTextButtonClick).toHaveBeenCalledTimes(1);
+         await expect(args.onSubmit).not.toHaveBeenCalled(); // type="button"이라 폼 제출 안 함
+       },
+     };
+     ```
+
    - **`*.figma.tsx` (Code Connect)** — 파일이 있고 사용법이 바뀌면(새 prop·변형·하위 컴포넌트) 같이 고친다. 디자이너·개발자가 Figma Dev Mode에서 보는 코드 예시가 이 파일이다.
      - Figma 속성 이름은 지어내지 않는다. Figma MCP `get_metadata` / `get_design_context`로 컴포넌트 속성(variant·boolean·text) 이름을 확인해서 `figma.enum` / `figma.boolean` / `figma.string`에 쓴다.
      - 새 하위 컴포넌트(예: `Callout.TextButton`)는 `example`에 실제 쓰는 모양대로 넣는다.
@@ -173,6 +214,32 @@ pnpm --filter @shoplflow/mcp generate:metadata   # MCP 메타데이터 재생성
 pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때만. 토큰 없이 로컬에서 문법·매핑 검사
 bash .claude/skills/task-component/scripts/check-api-changes.sh   # 기존 사용법이 깨지는지 (generate:metadata 다음에)
 ```
+
+### 스토리 테스트 (모든 스토리가 에러 없이 그려지는지 + `play` 동작 검사)
+
+스토리를 바꿨거나 `play`를 썼으면 돌린다. 모든 스토리를 실제 브라우저로 열어서 렌더링 에러가 없는지 보고, `play`가 있는 스토리는 그 동작까지 검사한다 (2026-11 main 기준 43개 파일·156개, 약 15초 + 빌드 1~2분).
+
+```bash
+cd packages/base
+pnpm run build:storybook                                   # storybook-static/ 생성
+python3 -m http.server 6017 -d storybook-static >/dev/null 2>&1 &   # 6007(dev)과 겹치지 않게
+./node_modules/.bin/test-storybook --url http://localhost:6017 --maxWorkers=4
+kill %1                                                    # 서버 종료
+```
+
+- `pnpm test-storybook` 스크립트는 쓰지 않는다. `PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers`로 되어 있어 기본 위치(`~/Library/Caches/ms-playwright`)에 받은 브라우저를 못 찾는다.
+- **처음 한 번 브라우저가 필요하다.** `Executable doesn't exist at …chromium_headless_shell-<번호>`가 나오면 사용자에게 다운로드(약 90MB)를 확인받고 `pnpm exec playwright install chromium-headless-shell`. 설치가 압축 풀기에서 멈추면(폴더가 몇 MB에서 안 늘어남) 받은 zip(`$TMPDIR/playwright-download-*/…zip`)을 `ditto -x -k <zip> ~/Library/Caches/ms-playwright/chromium_headless_shell-<번호>`로 직접 푼다.
+- worktree 안에서는 node_modules가 지워져 있을 수 있다 (아래 "주의"). 그때는 복구 후 실행한다.
+- 결과 판단:
+
+  | 결과 | 의미 | 할 일 |
+  |------|------|-------|
+  | 이번에 쓴 `play` 실패 | 구현이 의도대로 동작 안 함 | ③으로 돌아가 고친다 |
+  | **기존 스토리·기존 `play` 실패** | 기존 동작이 바뀌었다 = 사용처가 깨질 수 있다 | **멈추고 사용자에게 보고.** 테스트를 고쳐서 통과시키지 않는다. ② 호환성 계획을 다시 본다 |
+  | 렌더링 에러 (`play` 없는 스토리) | 새 스토리나 바꾼 코드가 런타임 에러 | ③으로 돌아가 고친다 |
+  | 전부 통과 | | 진행. 개수를 ⑤ PR 본문 "테스트"에 쓴다 |
+
+- main에서도 실패하는 스토리가 있으면 이번 작업의 실패로 보지 않는다 (아래 "테스트는 main 기준과 비교한다").
 
 ### 기존 사용법·에러 가능성 검사 (② 호환성 계획대로 됐는지 확인)
 
@@ -232,7 +299,7 @@ bash .claude/skills/task-component/scripts/check-api-changes.sh   # 기존 사�
    gh pr create --base main --title "<커밋 제목>" --body-file <본문 파일>
    ```
 
-   PR 본문에 넣을 것: 티켓 링크, Figma 링크, 변경 요약, 컴포넌트 버전(`1.0 → 1.1`), changeset 종류, 검사 결과, **사용법 변경** (`check-api-changes.sh` 결과 요약. 깨짐이 있으면 바꾸는 방법까지).
+   PR 본문에 넣을 것: 티켓 링크, Figma 링크, 변경 요약, 컴포넌트 버전(`1.0 → 1.1`), changeset 종류, 검사 결과, **사용법 변경** (`check-api-changes.sh` 결과 요약. 깨짐이 있으면 바꾸는 방법까지), **테스트** (추가한 `play`가 무엇을 검사하는지 한 줄, 또는 "없음 — 모양만 추가". 스토리 테스트 통과 개수).
 3. **크로매틱 업로드** — PR을 만든 **뒤에** 실행한다 (열린 PR이 있어야 Chromatic UI Review가 생긴다).
 
    **먼저 비교 기준(baseline)을 확인한다.** 크로매틱은 "내 브랜치가 갈라져 나온 main 커밋"의 빌드와 비교해서 바뀐 스토리만 보여 준다. 그 커밋에 기준 빌드가 없으면 모든 스토리가 변경으로 나오고 Approve가 안 된다. main이 바뀔 때마다 올리지 않고, 여기서 필요할 때만 올린다.
