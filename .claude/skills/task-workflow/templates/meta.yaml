@@ -1,0 +1,33 @@
+ticket: SHF-000
+summary: "" # 예: "[shoplflow] Tag v1.1"
+url: "https://shoplworks.atlassian.net/browse/SHF-000"
+owner: "" # 워크플로우 담당자 (사용자 확인값)
+stage: intake # intake | spec | build | verify | pr | approve | release | done
+created_at: ""
+updated_at: ""
+
+component:
+  name: "" # 코드 기준 이름 (예: Tag)
+  path: "" # 예: packages/base/src/components/Tag
+  stories: "" # 예: packages/base/src/components/Tag/Tag.stories.tsx
+  changelog_var: COMPONENT_CHANGELOG # Button만 BUTTON_CHANGELOG
+  current_version: "" # 작업 전 changelog 최신 버전
+  target_version: "" # 티켓 제목의 버전
+
+figma: "" # 티켓 '디자인' 필드 또는 설명의 링크
+children: [] # 하위 티켓 [{key, summary, status}]
+
+branch: "" # feature/SHF-000
+worktree: null # 예: .claude/worktrees/SHF-000
+pr_url: null
+
+chromatic:
+  storybook_url: null # pnpm chromatic:base 출력
+  review_url: null # https://www.chromatic.com/review?appId=...&number=<PR번호>&type=linked
+
+release:
+  run_id: null # changesets-workflow 실행 ID
+  result: null # success | failure
+  published: [] # 예: ["@shoplflow/base@0.49.0"]
+
+decisions: [] # [{at, stage, note}]

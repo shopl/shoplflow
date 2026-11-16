@@ -66,6 +66,15 @@ docs/pages/utils/**/_meta.json
 
 CLAUDE.md
 .cursor
-.claude
+.claude/*
+# 팀 공용 task-workflow skill만 공유 (나머지 .claude는 개인 설정)
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/task-workflow/
+!.claude/skills/task-component/
+!.claude/skills/task-release/
+
+# task-workflow 로컬 진행 기록
+tasks/
 
 local-env

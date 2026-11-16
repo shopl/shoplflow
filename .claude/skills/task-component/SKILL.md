@@ -1,0 +1,388 @@
+---
+name: task-component
+description: SHF 티켓(예: "[shoplflow] Tag v1.1")을 받아 컴포넌트를 추가·수정하고 PR까지 올린다. 티켓 제목에서 컴포넌트와 버전을 읽고, 코드·스토리·컴포넌트 changelog 버전·MCP 메타데이터·changeset을 함께 갱신한 뒤 Jira를 진행 중 → 검토 중으로 옮긴다. Use when shoplflow 컴포넌트 추가/수정 티켓 작업, "SHF-123 작업해줘", 또는 task-workflow가 intake~pr 단계로 넘겼을 때.
+---
+
+# Task Component (intake → PR)
+
+```
+① intake → ② spec → ③ build → ④ verify → ⑤ pr
+```
+
+각 단계가 끝나면 `tasks/<KEY>/meta.yaml`의 `stage`, `updated_at`을 갱신한다 (허브: `task-workflow`).
+
+---
+
+## ① intake — 티켓 읽기
+
+1. Atlassian MCP로 티켓을 조회한다 (이슈 조회 도구, 예: `getJiraIssue`).
+   - 제목, 설명, 상태, 담당자, **`디자인` 필드(Figma 링크)**, 댓글
+   - **하위 티켓 키(예: `[DEV] Callout v2.2`)를 받았으면 `parent`의 에픽으로 올라가서** 에픽 키를 기준(`<KEY>`)으로 진행한다. 받은 키는 meta `decisions`에 남긴다.
+2. 하위 티켓을 조회한다 (JQL `parent = <KEY>`). 보통 `[Design]`, `[DEV]`, `[QA]` 세 개다.
+3. **제목에서 컴포넌트와 버전을 추출한다.**
+   - 형식: `[shoplflow] <컴포넌트> v<버전>` (머리말이 `[ui kit]` 등으로 다를 수 있음)
+   - 정규식 예: `^\[[^\]]+\]\s*(.+?)\s+v(\d+(?:\.\d+)*)\s*$`
+   - 형식이 맞지 않으면(버그 티켓 등) **컴포넌트와 목표 버전을 사용자에게 묻는다.** 추측하지 않는다.
+4. **컴포넌트 폴더 찾기** — `packages/base/src/components/**/<Name>/<Name>.stories.tsx`
+   - 대소문자·공백·하이픈을 무시하고 비교한다 (`helperText` → `HelperText`, `Select Button` → `SelectButton`).
+   - 후보가 없거나 여러 개면 목록을 보여 주고 **사용자에게 고르게 한다**.
+     (예: `ComboBox` → `Comboboxs/Combobox` / `Comboboxs/NumberCombobox`)
+5. **현재 버전 읽기** — stories 파일의 changelog 배열 첫 항목 `version`.
+   - 변수명은 대부분 `COMPONENT_CHANGELOG`, **Button만 `BUTTON_CHANGELOG`**. 이름 대신 `ComponentChangelogEntry[]` 타입으로 찾는다.
+6. **버전 비교** (major.minor 숫자 비교)
+
+   | 경우 | 처리 |
+   |------|------|
+   | 목표 > 현재 | 정상. 진행 |
+   | 목표 == 현재 | 이미 반영됐거나 같은 티켓의 추가 수정(E7)이다. 새 항목을 만들지 않고 해당 버전 항목의 `changes`에 추가할지 사용자에게 확인 |
+   | 목표 < 현재 | **멈추고** 사용자에게 확인 (티켓 제목 오타 가능성) |
+
+   현재 changelog가 `1.0` 한 항목뿐이고 날짜가 2026-04-22면 문서용으로 일괄 넣은 값이다. 실제 버전과 다를 수 있으니 목표 버전과 차이가 크면 그대로 기록할지 사용자에게 확인한다.
+
+7. 담당자(owner)를 사용자에게 확인한다. 기본값은 현재 사용자.
+8. **작업 위치 확인** — 현재 폴더에서 브랜치를 만들지, worktree로 분리할지 묻는다.
+9. 사용자 확인 후 Jira: 상위 티켓 + `[DEV]` 하위 티켓을 **진행 중**으로 옮긴다. `transitionJiraIssue`에 `transitionName: "진행 중"`을 넘기면 된다 (SHF는 전환 이름 = 상태 이름). 이미 그 상태면 건너뛴다.
+10. meta.yaml에 `component`, `figma`, `children`, `owner` 기록 → `stage: spec`
+
+## ② spec — 바꿀 내용 확정
+
+1. 티켓 설명, `[Design]` 하위 티켓, Figma 링크에서 스펙을 정리한다. Figma MCP가 있으면 해당 노드를 읽는다.
+2. 컴포넌트의 현재 구현을 읽는다: `*.types.ts`, `*.styled.ts(x)`, `*.tsx`, `*.stories.tsx`, 그리고 **`*.figma.tsx`(Code Connect)가 있으면 그것도** 읽는다. Figma 속성(property) 이름과 코드 prop이 어떻게 연결돼 있는지 확인한다.
+3. 비슷한 컴포넌트의 기존 패턴을 따른다 (`sizeVar`/`styleVar` 상수 객체, `getStyleBySizeVar` 같은 helper, 토큰 사용).
+4. **실제 사용처를 먼저 본다.** shoplflow는 npm에 공개 배포되는 라이브러리이고, 실제로는 `shopl-web-workspace`가 쓴다 (`@shoplflow/base`를 import하는 파일 2,700개 이상, 2026-11 기준). 새 버전으로 올렸을 때 **사용처에서 에러가 나거나 화면이 바뀌면 안 된다.**
+   - 로컬 경로: 기본 `~/shopl-web-workspace` (없으면 사용자에게 경로를 묻고 meta에 기록). **읽기만 한다.**
+   - 이번 컴포넌트를 어떻게 쓰고 있는지 찾는다:
+
+     ```bash
+     cd ~/shopl-web-workspace
+     git grep -n -E "<Callout[ .>/]|Callout\.[A-Z]" -- apps packages 2>/dev/null | head -50   # 컴포넌트 이름으로
+     git grep -n -E "<Callout[^>]*styleVar=" -- apps packages 2>/dev/null | head -20          # 바꾸려는 prop을 어떻게 넘기는지
+     ```
+
+     (`2>/dev/null`: 샌드박스가 `.env` 접근을 막아서 나오는 경고를 숨긴다. 결과에는 영향 없음)
+     예: Callout은 2026-11 기준 600줄에서 쓰이고 `styleVar`는 ALERT 54 · INFORMATION 54 · CAUTION 16곳 → 기존 Callout 여백을 직접 바꾸면 이 화면이 모두 바뀐다.
+
+   - 확인할 것: 바꾸려는 prop·기본값에 기대는 코드가 있는지, 하위 컴포넌트를 어떤 조합으로 쓰는지, `className`·`css`로 내부 구조(자식 요소 순서, `& > svg` 같은 선택자)에 기대는 코드가 있는지.
+   - 사용처 수와 대표 파일 몇 개를 계획에 적는다 (디자이너가 확인할 실제 화면이 된다).
+5. **호환되게 설계한다 (기본 원칙).** 기존 코드는 아무것도 안 바꿔도 지금과 똑같이 동작하고 똑같이 보여야 한다.
+
+   | 하고 싶은 것 | 이렇게 한다 | 하지 않는다 |
+   |-------------|------------|------------|
+   | 새 모양·기능 추가 | **새 prop·새 variant 값·새 하위 컴포넌트**로 추가 (선택 prop, 기본값은 지금 동작) | 기존 prop의 의미를 바꾸기 |
+   | 기존 레이아웃 변경 (Figma가 간격·구조를 바꿈) | 새 구조를 **옵트인**으로 (예: Callout v2.2는 기존 Callout은 그대로 두고 `Callout.Body`/`Callout.Content`를 새로 추가) | 기존 styled 컴포넌트의 `gap`·`padding`·자식 구조를 직접 수정 |
+   | prop 이름 변경 | 새 이름 추가 + 옛 이름도 계속 받음 (`/** @deprecated */` 표시) | 옛 이름 삭제 |
+   | 값 제거 | deprecated 표시만, 동작 유지 | variant 값·prop 삭제 |
+   | 기본값 변경 | 새 variant로 제공하고 기본값은 유지 | 기본값 바꾸기 |
+   | 필수 입력 추가 | 선택 prop + 기본값 | 필수 prop 추가 |
+
+   - Figma 스펙이 **기존 모습 자체를 바꾸라는 것**이면(예: 모든 Callout의 여백 변경), 호환 방법과 함께 "기존 사용처 N곳의 화면이 바뀝니다"를 사용자에게 보여 주고 **명시적으로 승인받는다.** 승인 없이 기존 화면을 바꾸지 않는다.
+   - 호환이 불가능한 변경(breaking)은 티켓이 요구하고 사용자가 승인한 경우에만 한다. 이때 changeset `major`를 추천하고, 사용처를 고치는 방법(이전 → 이후 코드)을 계획에 쓴다.
+6. 아래 형식으로 **변경 계획을 사용자에게 보여 주고 승인받는다.**
+
+   ```
+   컴포넌트: Tag (1.0 → 1.1)
+   변경:
+   - TagSizeVariants에 XXS 추가
+   - XXS: height 16px, padding 0 4px, typography caption_400
+   사용처: shopl-web-workspace 247개 파일 (예: apps/shopl-dashboard/.../XxxModal.tsx)
+   호환성: 추가만 — 새 variant 값. 기존 XS/S/M·기본값·스타일 그대로 → 기존 사용처 변경 없음
+           (기존 prop·기본값·스타일·구조를 바꾸면 무엇을, 왜, 사용처 몇 곳의 화면이 바뀌는지 적는다)
+   테스트: 없음 — 모양만 추가 (새 스토리가 렌더링 테스트가 됨)
+           (동작이 생기거나 바뀌면: "있음 — TextButton 클릭 시 onClick 호출, 폼 제출 안 함"처럼 무엇을 검사할지)
+   Code Connect: Tag.figma.tsx의 size enum에 XXS 추가 (파일 없으면 "없음")
+   문서: 없음 (packages/skills에 Tag size 목록이 없음. 있으면 "shoplflow-components의 … 갱신")
+   changelog: "XXS 사이즈 추가"
+   changeset: @shoplflow/base ? (major / minor / patch — 사용자에게 확인)
+   ```
+
+   Figma에 없는 값(높이·여백 등)은 지어내지 않고 질문한다.
+7. 승인되면 `stage: build`. ③에서는 **승인된 호환성 범위를 벗어나는 수정을 하지 않는다** (구현 중에 기존 스타일·기본값을 바꿔야 할 것 같으면 멈추고 다시 승인받는다).
+
+## ③ build — 구현
+
+1. 브랜치 생성 (meta에 이미 있으면 그 브랜치로 이동)
+
+   ```bash
+   git fetch origin main
+   git switch -c feature/<KEY> origin/main
+   ```
+
+   husky `post-checkout` 훅이 fetch/pull/`pnpm refresh:node_modules`를 실행하므로 시간이 걸릴 수 있다.
+   (파일 하나만 되돌리는 `git checkout -- <file>`도 이 훅을 탄다. 되돌릴 땐 `git restore <file>`을 쓴다.)
+
+   **worktree로 분리할 때**
+
+   ```bash
+   git fetch origin main
+   git branch feature/<KEY> origin/main
+   HUSKY=0 git worktree add .claude/worktrees/<KEY> feature/<KEY>
+   cd .claude/worktrees/<KEY> && pnpm install --frozen-lockfile --prefer-offline
+   ```
+
+   - 샌드박스에서는 `.mcp.json` 쓰기가 막혀 worktree 생성이 실패한다 → 샌드박스 밖에서 실행.
+   - 새 worktree에는 아이콘 생성 파일이 없어 type-check가 실패한다 → ④ 전에 `pnpm build:assets`.
+2. 코드 수정 — 프로젝트 규칙(CLAUDE.md의 Component Patterns)을 따른다.
+   - `*.types.ts` 변형 상수, `*.styled.ts(x)` 스타일, 필요 시 `*.tsx`
+   - `*.stories.tsx`: 새 변형을 보여 주는 스토리·argTypes 추가 ([STORIES_CONVENTION.md](../../../packages/base/.storybook/STORIES_CONVENTION.md))
+   - **동작 테스트 (`play`) — 동작이 생기거나 바뀔 때만 쓴다.**
+     크로매틱은 정지 화면이라 동작(클릭·열림/닫힘·키보드·값 계산)을 못 보고, API 검사는 타입만 본다. 동작은 다른 검사가 하나도 없어서 디자이너 승인 → 자동 배포로 그대로 나간다. 그래서 이 부분만 테스트로 지킨다.
+
+     | 이번 변경 | 테스트 코드 |
+     |-----------|-------------|
+     | 모양만 (사이즈·여백·색·새 variant 스타일) | **쓰지 않는다.** 새 variant를 보여 주는 스토리만 추가 (test-runner가 렌더링을 자동 검사) |
+     | 동작이 생기거나 바뀜 (이벤트 호출, 열림/닫힘, 선택, 키보드, 포커스, 값 계산, 폼 제출 여부) | 그 스토리에 **`play` 함수로 바뀐 동작만** 검사 |
+
+     작성 규칙:
+     - **동작만 검사한다. 스타일(`getComputedStyle`, px, 색)은 검사하지 않는다** — 크로매틱이 보고, 디자인이 바뀔 때마다 깨진다. (기존 Button 스토리의 스타일 검사는 따라 하지 않는다)
+     - 요소는 역할·이름으로 찾는다 (`canvas.getByRole('button', { name: '…' })`). 클래스·DOM 순서에 기대지 않는다.
+     - 콜백은 `fn()`으로 만들어 호출 여부를 `expect`로 확인한다.
+     - 팝업처럼 캔버스 밖에 렌더링되는 요소는 `within(canvasElement.ownerDocument.body)`로 찾는다.
+     - 테스트를 위해 새 스토리를 만들기보다, 그 동작을 보여 주는 기존·신규 스토리에 붙인다.
+
+     ```tsx
+     import { expect, fn } from 'storybook/test';
+
+     export const WithTextButton: Story = {
+       // 스토리 전용 args(onTextButtonClick, onSubmit)는 컴포넌트 props에 없어서 타입 단언이 필요할 수 있다
+       args: { styleVar: 'INFORMATION', onTextButtonClick: fn(), onSubmit: fn((e) => e.preventDefault()) } as never,
+       render: (args) => (
+         <form onSubmit={args.onSubmit}>
+           <Callout {...args}>
+             <Callout.Body>
+               <Callout.Content><Callout.Text>Title</Callout.Text></Callout.Content>
+               <Callout.TextButton onClick={args.onTextButtonClick}>TextButton</Callout.TextButton>
+             </Callout.Body>
+           </Callout>
+         </form>
+       ),
+       play: async ({ canvas, userEvent, args }) => {
+         await userEvent.click(canvas.getByRole('button', { name: 'TextButton' }));
+         await expect(args.onTextButtonClick).toHaveBeenCalledTimes(1);
+         await expect(args.onSubmit).not.toHaveBeenCalled(); // type="button"이라 폼 제출 안 함
+       },
+     };
+     ```
+
+   - **`*.figma.tsx` (Code Connect)** — 파일이 있고 사용법이 바뀌면(새 prop·변형·하위 컴포넌트) 같이 고친다. 디자이너·개발자가 Figma Dev Mode에서 보는 코드 예시가 이 파일이다.
+     - Figma 속성 이름은 지어내지 않는다. Figma MCP `get_metadata` / `get_design_context`로 컴포넌트 속성(variant·boolean·text) 이름을 확인해서 `figma.enum` / `figma.boolean` / `figma.string`에 쓴다.
+     - 새 하위 컴포넌트(예: `Callout.TextButton`)는 `example`에 실제 쓰는 모양대로 넣는다.
+     - 파일이 없는 컴포넌트면 새로 만들지 않는다 (필요하면 따로 제안).
+   - **사람이 쓰는 문서 (자동 생성 안 됨)** — `packages/mcp/src/data/*.generated.json`은 ④에서 자동 생성되지만, 아래는 사람이 직접 고쳐야 해서 놓치기 쉽다. 기준은 [packages/skills/아키텍쳐.md](../../../packages/skills/아키텍쳐.md) 10절 "라이브러리 변경 시 스킬 검증이 필요한 지점" 표다.
+
+     | 이번 변경 | 확인할 파일 |
+     |-----------|-------------|
+     | variant 값 추가·삭제 (`styleVar`, `sizeVar`) | `packages/skills/skills/shoplflow-components/SKILL.md` (값 목록) |
+     | 타이포그래피 토큰 추가·삭제 | `shoplflow-components` · `shoplflow-theming` |
+     | 신규 컴포넌트 export | `shoplflow-components` 하단 카탈로그 |
+     | 새 하위 컴포넌트·사용 패턴 (예: `Callout.Body`) | `shoplflow-components`에 해당 컴포넌트 설명이 있으면 갱신 |
+     | `@shoplflow/utils` 훅 추가 | `shoplflow-icons-utils` |
+     | peer deps · CSS export 경로 · Provider 사용법 | `shoplflow-setup`, `packages/mcp/setup.curated.json` |
+
+     - 해당 파일에 이번 컴포넌트나 값이 언급돼 있는지 `grep`으로 먼저 찾는다. 없으면 고치지 않는다.
+     - 고칠 게 있으면 ② spec 계획에 "문서: …"로 넣어 승인받고, `@shoplflow/skills` changeset을 추가할지 사용자에게 묻는다 (skills 패키지는 base와 버전이 연동되지 않는다).
+3. **컴포넌트 changelog** — stories 파일의 changelog 배열 **맨 앞**에 추가
+
+   ```ts
+   { version: '1.1', date: 'YYYY-MM-DD', changes: ['XXS 사이즈 추가'] },
+   ```
+
+   - `version`은 티켓 제목의 버전, `date`는 오늘
+   - `changes`는 ②에서 승인받은 문구
+4. **changeset** — `.changeset/<kebab-case>.md`
+
+   ```md
+   ---
+   '@shoplflow/base': minor
+   ---
+
+   Tag XXS 사이즈 추가 (SHF-123)
+   ```
+
+   - **changeset 종류(major / minor / patch)는 항상 사용자에게 묻는다.** 추측해서 정하지 않는다. 물을 때 참고로 추천은 붙인다 (예: 새 prop·변형 → minor, 스타일·버그 수정 → patch, 기존 API 깨짐 → major). ② spec에서 계획을 승인받을 때 같이 물어도 된다.
+   - **컴포넌트 버전(changelog)과 패키지 버전(changeset)은 별개**다. 컴포넌트 버전은 **항상 Jira 티켓 제목의 버전**을 따르고, changeset은 사용자가 정한 종류를 쓴다.
+5. `stage: verify`
+
+## ④ verify — 검사
+
+모두 통과해야 다음으로 간다. 실패하면 ③으로 돌아가 고친다.
+
+```bash
+pnpm exec eslint $(git diff --name-only origin/main -- '*.ts' '*.tsx')   # 바뀐 파일만 (error 0이면 통과)
+pnpm --filter @shoplflow/base type-check
+pnpm --filter @shoplflow/base exec vitest run   # `test -- --run`은 watch로 빠지므로 쓰지 않는다
+pnpm --filter @shoplflow/mcp generate:metadata   # MCP 메타데이터 재생성
+pnpm --filter @shoplflow/base figma:parse        # *.figma.tsx를 바꿨을 때만. 토큰 없이 로컬에서 문법·매핑 검사
+bash .claude/skills/task-component/scripts/check-api-changes.sh   # 기존 사용법이 깨지는지 (generate:metadata 다음에)
+```
+
+### 스토리 테스트 (모든 스토리가 에러 없이 그려지는지 + `play` 동작 검사)
+
+스토리를 바꿨거나 `play`를 썼으면 돌린다. 모든 스토리를 실제 브라우저로 열어서 렌더링 에러가 없는지 보고, `play`가 있는 스토리는 그 동작까지 검사한다 (2026-11 main 기준 43개 파일·156개, 약 15초 + 빌드 1~2분).
+
+```bash
+cd packages/base
+pnpm run build:storybook                                   # storybook-static/ 생성
+python3 -m http.server 6017 -d storybook-static >/dev/null 2>&1 &   # 6007(dev)과 겹치지 않게
+./node_modules/.bin/test-storybook --url http://localhost:6017 --maxWorkers=4
+kill %1                                                    # 서버 종료
+```
+
+- `pnpm test-storybook` 스크립트는 쓰지 않는다. `PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers`로 되어 있어 기본 위치(`~/Library/Caches/ms-playwright`)에 받은 브라우저를 못 찾는다.
+- **처음 한 번 브라우저가 필요하다.** `Executable doesn't exist at …chromium_headless_shell-<번호>`가 나오면 사용자에게 다운로드(약 90MB)를 확인받고 `pnpm exec playwright install chromium-headless-shell`. 설치가 압축 풀기에서 멈추면(폴더가 몇 MB에서 안 늘어남) 받은 zip(`$TMPDIR/playwright-download-*/…zip`)을 `ditto -x -k <zip> ~/Library/Caches/ms-playwright/chromium_headless_shell-<번호>`로 직접 푼다.
+- worktree 안에서는 node_modules가 지워져 있을 수 있다 (아래 "주의"). 그때는 복구 후 실행한다.
+- 결과 판단:
+
+  | 결과 | 의미 | 할 일 |
+  |------|------|-------|
+  | 이번에 쓴 `play` 실패 | 구현이 의도대로 동작 안 함 | ③으로 돌아가 고친다 |
+  | **기존 스토리·기존 `play` 실패** | 기존 동작이 바뀌었다 = 사용처가 깨질 수 있다 | **멈추고 사용자에게 보고.** 테스트를 고쳐서 통과시키지 않는다. ② 호환성 계획을 다시 본다 |
+  | 렌더링 에러 (`play` 없는 스토리) | 새 스토리나 바꾼 코드가 런타임 에러 | ③으로 돌아가 고친다 |
+  | 전부 통과 | | 진행. 개수를 ⑤ PR 본문 "테스트"에 쓴다 |
+
+- main에서도 실패하는 스토리가 있으면 이번 작업의 실패로 보지 않는다 (아래 "테스트는 main 기준과 비교한다").
+
+### 기존 사용법·에러 가능성 검사 (② 호환성 계획대로 됐는지 확인)
+
+호환성은 ②에서 **설계로 지키고**, 여기서는 구현이 그 계획을 벗어나지 않았는지 **확인만** 한다. 계획이 "추가만"인데 아래에서 깨짐·주의가 나오면 구현 실수다 → ③으로 돌아가 고친다 (계획을 바꾸려면 다시 승인받는다). 결과는 ⑤ PR 본문의 "사용법 변경" 칸에 그대로 쓴다.
+
+1. **공개 API 비교** — `check-api-changes.sh`가 `components.generated.json`을 main과 비교한다.
+
+   | 결과 | 의미 | 할 일 |
+   |------|------|-------|
+   | ✘ 깨질 수 있음 | 컴포넌트·prop 삭제, 선택→필수, 타입 변경, variant 값 삭제, 기본 HTML 속성 변경 | **멈추고 사용자에게 보고.** 티켓 의도인지 확인. 의도면 changeset `major`를 추천하고(종류는 사용자가 정함), changelog `changes`에 "주의: …"를 적고, PR 본문에 바꾸는 방법을 쓴다. 의도가 아니면 ③으로 돌아가 호환되게 고친다 (prop 유지·deprecated 표시 등) |
+   | ! 주의 | 필수 prop 추가 | 기존 코드가 타입 에러가 난다. 기본값을 줘서 선택 prop으로 바꿀 수 있는지 먼저 검토 |
+   | ✔ 추가만 | 새 컴포넌트·선택 prop·variant 값 추가 | 진행 |
+
+2. **모노레포 안 사용처** — 스크립트가 바뀐 컴포넌트를 쓰는 `packages/base`·`packages/templates` 파일을 보여 준다. 있으면:
+   - 그 패키지 type-check도 돌린다: `pnpm --filter @shoplflow/templates type-check` (base만 돌리면 templates 깨짐을 못 잡는다)
+   - 그 파일의 스토리를 스토리북에서 열어 보거나 크로매틱 변경 목록에 있는지 본다.
+3. **스크립트가 못 잡는 것 (코드 diff를 읽고 직접 확인)**
+   - **기본값 변경**: `styleVar = 'INFORMATION'` 같은 기본값, `defaultProps`, 내부 상태 초기값이 바뀌었는가
+   - **기존 화면 변화**: 기존 styled 컴포넌트의 `gap`·`padding`·`display` 등을 바꿨는가. 크로매틱 변경 목록에 **이번에 새로 만든 스토리가 아닌 기존 스토리**가 있으면 기존 화면이 바뀐 것이다 → 의도인지 사용자에게 확인
+   - **동작 변화**: 이벤트 핸들러 호출 시점, 포커스·키보드, `ref` 전달(`forwardRef` 유지), 제어/비제어 동작
+   - **잘못된 HTML·런타임 경고**: `<button>` 안에 `<button>`, `<p>` 안에 `<div>` 같은 중첩. 버튼은 `type="button"` (폼 안에서 submit 방지). 스토리북 콘솔에 React 경고가 없는지 본다
+   - **두 브랜드**: 위 Shopl / Hada 확인
+4. **사용처 재확인** — ②에서 찾은 shopl-web-workspace 사용처 중, 이번에 바꾼 부분(새 prop 외의 수정이 있다면 그 부분)에 닿는 코드가 없는지 diff를 보며 다시 확인한다. 로컬 clone이 없거나 다른 사내 저장소도 봐야 하면 사용자 확인 후 조회만 한다.
+
+   ```bash
+   gh search code --owner shopl "<컴포넌트>" --language tsx --limit 30 --json repository,path
+   ```
+
+- eslint는 폴더 전체로 돌리지 않는다. 기존 파일(예: `*.figma.tsx`)의 오래된 error가 섞이고, `--fix`가 관계없는 파일까지 고친다.
+- `pnpm build:assets` 후 `packages/*-assets/src/**/generated/index.ts`가 바뀌면 `git restore`로 되돌린다 (정렬만 바뀐 생성물).
+- **테스트는 main 기준과 비교한다.** main에서도 실패하는 테스트(예: 2026-11 기준 `scripts/__tests__/seperate_tokens.test.ts`)는 이번 작업의 실패로 보지 않는다. 새로 생긴 실패만 막는다. 기존 실패는 사용자에게 알리기만 한다.
+- `generate:metadata`가 아이콘 배럴이 없다며 실패하면 `pnpm build:assets` 후 다시 실행한다.
+- `packages/mcp/src/data/`가 바뀌면 **같이 커밋**한다. 안 하면 CI(`build-test.yml`)가 실패한다.
+- **changelog 버전 확인**: stories 파일 changelog 첫 항목의 `version` == meta `target_version`
+- **changeset 존재 확인**: `.changeset/`에 README 외 `.md`가 있는지
+- **Code Connect 확인**: `*.figma.tsx`를 바꿨으면 `figma:parse`가 오류 없이 끝나야 한다. Figma 반영(`figma:publish`)은 Figma 토큰이 필요해서 배포 후 사람이 한다 → meta `decisions`에 "figma publish 필요"를 남기고 `task-release`가 안내한다.
+- 시각 확인이 필요하면 `pnpm --filter @shoplflow/base dev:stories` (포트 6007)로 띄우고 사용자에게 확인을 요청한다.
+- **Shopl / Hada 두 브랜드 모두 확인한다.** 타이포그래피·색 토큰이 브랜드마다 다르다 (예: `body2_700`은 Shopl 13px/16px, Hada 14px/18px).
+  - 스토리북은 저장된 값이 없으면 **Hada가 기본**이다 (`.storybook/useStoryDomain.ts`). 오른쪽 아래 `HADA`/`SHOPL` 버튼으로 바꾸거나, 브라우저로 잴 때는 `document.documentElement.setAttribute('data-shoplflow','shopl')`로 바꾼다.
+  - Figma 값은 보통 Shopl 기준이다. Figma와 숫자를 비교할 때 브랜드를 맞춘다.
+  - 결과를 "Shopl: …, Hada: …"로 나눠서 사용자에게 보고한다.
+
+통과하면 `stage: pr`
+
+## ⑤ pr — PR 생성 + 디자인 QA 요청
+
+1. 커밋 — 메시지 형식은 기존 이력을 따른다.
+
+   ```
+   feat(base): Tag XXS 사이즈 추가 (SHF-123)
+   ```
+
+2. 사용자 확인 후 push + PR 생성
+
+   ```bash
+   git push -u origin feature/<KEY>
+   gh pr create --base main --title "<커밋 제목>" --body-file <본문 파일>
+   ```
+
+   PR 본문에 넣을 것: 티켓 링크, Figma 링크, 변경 요약, 컴포넌트 버전(`1.0 → 1.1`), changeset 종류, 검사 결과, **사용법 변경** (`check-api-changes.sh` 결과 요약. 깨짐이 있으면 바꾸는 방법까지), **테스트** (추가한 `play`가 무엇을 검사하는지 한 줄, 또는 "없음 — 모양만 추가". 스토리 테스트 통과 개수).
+3. **크로매틱 업로드** — PR을 만든 **뒤에** 실행한다 (열린 PR이 있어야 Chromatic UI Review가 생긴다).
+
+   **먼저 비교 기준(baseline)을 확인한다.** 크로매틱은 "내 브랜치가 갈라져 나온 main 커밋"의 빌드와 비교해서 바뀐 스토리만 보여 준다. 그 커밋에 기준 빌드가 없으면 모든 스토리가 변경으로 나오고 Approve가 안 된다. main이 바뀔 때마다 올리지 않고, 여기서 필요할 때만 올린다.
+
+   ```bash
+   bash .claude/skills/task-component/scripts/ensure-chromatic-baseline.sh   # 있으면 바로 끝, 없으면 기준 빌드 업로드(3~5분)
+   pnpm chromatic:base
+   ```
+
+   - 기준 확인은 GitHub commit status `Storybook Publish`로 한다 (크로매틱이 빌드한 커밋에 남긴다).
+   - 확인만 하려면 `--check` (없으면 exit 3).
+   - 스크립트는 임시 worktree에서 기준 빌드를 올리고 끝나면 지운다. 기준 빌드에만 `--auto-accept-changes`를 쓴다.
+
+   - **변경이 있으면 업로드가 성공해도 exit 1로 끝난다** (`Found N visual changes`). `Build N completed`와 `View your Storybook at`이 나오면 성공이다.
+   - 출력의 `View your Storybook at https://...` 주소를 meta `chromatic.storybook_url`에 기록한다.
+   - 리뷰 주소는 `https://www.chromatic.com/review?appId=69afad58aa7c90fbf3c141ee&number=<PR번호>&type=linked` → meta `chromatic.review_url`.
+   - PR에 `UI Review` commit status가 붙는지 확인한다 (`gh api repos/shopl/shoplflow/commits/<sha>/status`). 안 붙으면 크로매틱–GitHub 연결 문제이므로 사용자에게 알린다 (자동 배포가 동작하지 않는다).
+   - 그래도 리뷰 화면이 **"Complete setup to review"**에서 멈추고 변경이 전체 스토리 수만큼 나오면, 이 브랜치의 이전 빌드(기준 없이 올린 것)가 기준으로 잡힌 것이다. `ensure-chromatic-baseline.sh` 후 `pnpm chromatic:base --force-rebuild`로 다시 올린다.
+   - `--auto-accept-changes`는 **기준 빌드에만** 쓴다. PR 브랜치에 쓰면 디자이너 확인 없이 변경이 승인된다.
+   - main을 브랜치에 머지(rebase)해서 갈라진 시점이 바뀌었으면 기준 확인부터 다시 한다.
+   - **크로매틱 스냅샷은 Hada 화면만 찍힌다** (스토리북 기본 브랜드가 Hada). Shopl 쪽 변경은 크로매틱 비교에 안 잡히므로 ④에서 직접 확인한 결과를 QA 댓글에 적는다.
+   - 기준 빌드와 렌더링 차이(폰트 로딩 등)로 바뀌지 않은 컴포넌트가 변경으로 잡힐 수 있다. QA 요청 댓글에 "이번에 바뀐 컴포넌트: <이름>"을 적어 디자이너가 구분할 수 있게 한다.
+4. **Jira (MCP)** — 사용자 확인 후
+   - 상위 티켓 + `[DEV]` → **검토 중**
+   - `[QA]` → **진행 중**
+   - `[QA]`에 댓글 (없으면 상위 티켓):
+
+     ```
+     @디자이너  디자인 QA 요청
+     이번에 바뀐 컴포넌트: <컴포넌트> (<현재> → <목표>)
+     스토리북: <storybook_url>
+     Chromatic 리뷰: <review_url>
+     PR: <PR 링크>
+     크로매틱 변경 이미지는 Hada 기준이에요. Shopl은 스토리북 링크에서 오른쪽 아래 버튼으로 바꿔서 확인해 주세요.
+     확인 후 Chromatic 리뷰 화면 오른쪽 위 `Review now` → `Approve review yourself`를 눌러 주세요. 승인되면 자동으로 배포돼요.
+     승인 후에는 배포가 끝날 때까지 이 브랜치에 push하지 않아요.
+     ```
+
+   **디자이너 멘션** — 댓글만 달면 디자이너가 Jira를 열어 봐야 알 수 있다. 멘션해서 알림이 가게 한다.
+   - 누구: `[QA]` 티켓 담당자 → 없으면 `[Design]` 티켓 담당자 → 없으면 상위 티켓 보고자. 이미 조회한 티켓의 `assignee.accountId`를 쓴다.
+   - 대상이 지금 사용자 본인이면 멘션하지 않는다.
+   - 누구를 멘션할지 사용자에게 보여 주고 확인받는다 (다른 사람에게 알림이 간다).
+   - 멘션은 마크다운으로 안 들어간다. `addOrEditJiraIssueComment`에 `contentFormat: "html"`로 보내고, 멘션은 아래 형식만 쓴다. accountId는 조회한 값만 쓰고 지어내지 않는다 (모르면 멘션 없이 이름만 적는다).
+
+     ```html
+     <p><span data-type="mention" data-user-id="<accountId>">@<이름></span> 디자인 QA 요청</p>
+     <ul>
+       <li>이번에 바뀐 컴포넌트: Callout (1.0 → 2.2)</li>
+       <li>스토리북: <a href="<storybook_url>"><storybook_url></a></li>
+       <li>Chromatic 리뷰: <a href="<review_url>"><review_url></a></li>
+       <li>PR: <a href="<PR 링크>"><PR 링크></a></li>
+     </ul>
+     <p>크로매틱 변경 이미지는 Hada 기준이에요. Shopl은 스토리북 오른쪽 아래 버튼으로 바꿔서 확인해 주세요.</p>
+     <p>확인 후 Chromatic 리뷰 화면 오른쪽 위 <code>Review now</code> → <code>Approve review yourself</code>를 눌러 주세요. 승인되면 자동으로 배포돼요.</p>
+     ```
+
+   이미 QA 댓글이 있으면(재요청) 새로 달지 않고 그 댓글을 수정한다 (`addOrEditJiraIssueComment`에 기존 comment id). 수정은 알림이 안 갈 수 있으니, 재요청이면 짧은 멘션 댓글("@디자이너 수정해서 다시 올렸어요")을 하나 더 단다.
+
+5. **QA 요청 전에** `gh pr checks <번호>`로 필수 CI(`build-test`, `check`)가 통과했는지 확인한다. 실패하면 원인을 고쳐 다시 push하고, 크로매틱도 다시 올린 뒤 QA를 요청한다 (UI Review는 PR 최신 커밋 기준). 승인 뒤에 CI가 막히는 E3을 줄인다.
+6. meta: `pr_url`, `stage: approve`
+7. 사용자에게 안내하고 종료한다.
+
+   > PR과 디자인 QA 요청을 올렸어요. 디자이너가 Chromatic에서 Approve하면 자동으로 배포돼요. 배포가 끝나면 `/task-release <KEY>`로 결과 확인과 Jira 완료 처리를 하면 돼요.
+
+## 다시 돌아오는 경우 (예외 E1·E2·E3·E4·E7)
+
+예외 정의와 판단 기준은 `task-workflow`의 "예외 상황" 표를 따른다. 이 skill이 맡는 것:
+
+| 예외 | 시작 단계 | 순서 |
+|------|----------|------|
+| E1 디자이너 수정 요청 | ③ build | 수정 → ④ verify → push → 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
+| E2 UI Review 없음 | ⑤-3 크로매틱 | `ensure-chromatic-baseline.sh` → `pnpm chromatic:base` → PR에 `UI Review` 상태 확인. 그래도 없으면 사용자에게 알리고 `task-release` 직접 배포 경로 안내 |
+| E3 changeset 없음 / 필수 CI 실패 | ③ build | 고침 → ④ verify → push → 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
+| E4 승인 후 커밋 추가 | ⑤-3 크로매틱 | 크로매틱 재업로드 → QA 댓글 갱신 (재승인 요청) |
+| E7 배포 후 수정 | ① intake | 티켓 키로 새 브랜치 `feature/<KEY>-fix` (origin/main 기준) → 새 PR. **컴포넌트 버전은 그 티켓 제목의 버전**을 따른다: 새 티켓(예: `Callout v2.3`)이면 새 항목, 같은 티켓이면 같은 버전 항목에 `changes` 추가. **changeset 종류는 사용자에게 묻는다.** Jira가 이미 완료면 다시 열지 사용자에게 확인 |
+
+- PR 댓글에 ⛔ "배포를 시작하지 않았어요"가 달려 있으면 거기 적힌 이유로 위 표에서 고른다.
+- 재승인 요청 시 QA 댓글에 "무엇이 바뀌었는지"를 한 줄 적는다 (디자이너가 처음부터 다시 보지 않게).
+
+## 주의
+
+- 티켓에 없는 변경(리팩터링, 다른 컴포넌트 수정)은 하지 않는다. 필요해 보이면 따로 제안한다.
+- 여러 컴포넌트를 함께 바꾸는 티켓이면 컴포넌트마다 changelog를 각각 올린다.
+- `packages/shopl-assets/src/icons/generated/index.ts` 같은 생성 파일이 의도치 않게 바뀌면 커밋에서 뺀다.
+- 메인 폴더에서 husky `post-checkout` 훅(`refresh:node_modules`)이 돌면 `.claude/worktrees/*/node_modules`까지 지워진다. worktree에서 명령이 `spawn ENOENT` / `node_modules missing`으로 실패하면 그 worktree에서 `pnpm install --frozen-lockfile --prefer-offline && pnpm build:assets`를 다시 한다.
+- Claude Code 샌드박스에서는 `git commit`(pre-commit 훅이 pnpm 설정을 읽음), `git push`, `gh`(인증서 오류), `pnpm chromatic:base`가 실패한다. 실패하면 샌드박스 밖에서 다시 실행한다.

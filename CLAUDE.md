@@ -131,6 +131,22 @@ SVG files in `packages/{shopl,hada}-assets/src/{icons,illustrations}/assets/` ar
 - Pre-commit hooks enforce linting via Husky + lint-staged
 - ESLint uses the custom `@shoplflow/eslint-plugin` with base, react, and typescript rule sets
 
+## Task Workflow (Jira 티켓 단위)
+
+SHF 티켓(예: `[shoplflow] Tag v1.1`) 작업은 `task-workflow` 스킬로 시작한다. 티켓 키가 있는 컴포넌트 작업에서는 아래 하네스보다 우선한다.
+
+| 스킬 | 범위 |
+|------|------|
+| `task-workflow` | 허브. `tasks/<KEY>/meta.yaml`(gitignore, 로컬 기록)로 단계 확인 후 라우팅 |
+| `task-component` | 티켓 읽기 → 코드·스토리·컴포넌트 changelog 버전·MCP 메타데이터·changeset → PR, Jira 진행 중 → 검토 중 |
+| `task-release` | Chromatic 승인 → 자동 배포(`design-approved-release.yml`) 결과 확인 → Jira 완료. 자동 배포가 안 됐을 때만 `gh`로 직접 배포 |
+
+- 필요한 것: Atlassian(Jira) MCP 로그인, `gh auth login`. 외부 서버·API 토큰 설정 없음.
+- 컴포넌트 버전은 티켓 제목의 버전을 따르고, 각 컴포넌트 `*.stories.tsx`의 changelog 배열 맨 앞에 기록한다 (패키지 버전인 changeset과 별개).
+- changeset 종류(major / minor / patch)는 추측하지 않고 매번 사용자에게 확인한다.
+- shoplflow는 npm 공개 라이브러리이고 실제 사용처는 `shopl-web-workspace`다. 코드를 바꾸기 **전에** 사용처를 확인하고, 기존 코드가 그대로 동작·표시되도록 **추가(옵트인) 방식으로 설계**한다. 기존 prop·기본값·스타일을 바꾸는 변경은 사용자 승인 없이 하지 않는다.
+- 스킬 파일은 `.claude/skills/task-*`만 git에 공유된다 (`.gitignore` 예외).
+
 ## 하네스: Shoplflow 전체 범용
 
 **목표:** 모노레포 전반의 컴포넌트 생성·수정·스타일·테마·품질 검증·릴리즈 작업을 5명의 전문 에이전트 팀(pattern-analyst, component-builder, story-author, qa-guardian, release-keeper)으로 자동화한다.
