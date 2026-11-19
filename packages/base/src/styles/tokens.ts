@@ -48,6 +48,7 @@ const ocean100 = 'var(--ocean100)';
 const purple400 = 'var(--purple400)';
 const purple300 = 'var(--purple300)';
 const purple100 = 'var(--purple100)';
+const yellow400 = 'var(--yellow400)';
 const yellow300 = 'var(--yellow300)';
 const yellow200 = 'var(--yellow200)';
 const yellow100 = 'var(--yellow100)';
@@ -97,6 +98,7 @@ export const colorTokens = {
  purple400,
  purple300,
  purple100,
+ yellow400,
  yellow300,
  yellow200,
  yellow100,
