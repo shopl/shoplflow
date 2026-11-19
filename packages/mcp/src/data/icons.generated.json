@@ -7,9 +7,9 @@
     "shopl",
     "hada"
   ],
-  "count": 483,
+  "count": 484,
   "countByDomain": {
-    "shopl": 379,
+    "shopl": 380,
     "hada": 104
   },
   "icons": [
@@ -3301,6 +3301,16 @@
       "keywords": [
         "sorting",
         "ztoa"
+      ]
+    },
+    {
+      "name": "IcSparklesSolid",
+      "alias": "SparklesSolidIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "sparkles",
+        "solid"
       ]
     },
     {
