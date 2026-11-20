@@ -236,15 +236,18 @@ import IcListEdit from './IcListEdit';
 import IcListMove from './IcListMove';
 import IcListview from './IcListview';
 import IcLocation from './IcLocation';
+import IcLock from './IcLock';
 import IcLockerXlarge from './IcLockerXlarge';
 import IcMailbox from './IcMailbox';
 import IcMapPin from './IcMapPin';
 import IcMap from './IcMap';
+import IcMaximize from './IcMaximize';
 import IcMemberMedium from './IcMemberMedium';
 import IcMemberSmall from './IcMemberSmall';
 import IcMemoLine from './IcMemoLine';
 import IcMemo from './IcMemo';
 import IcMention from './IcMention';
+import IcMinimize from './IcMinimize';
 import IcMinusMedium from './IcMinusMedium';
 import IcMinus from './IcMinus';
 import IcMobileLine from './IcMobileLine';
@@ -356,6 +359,7 @@ import IcToggleMedium from './IcToggleMedium';
 import IcTrashLine from './IcTrashLine';
 import IcTrash from './IcTrash';
 import IcTruck from './IcTruck';
+import IcUnlock from './IcUnlock';
 import IcUpArrowSolidXsmall from './IcUpArrowSolidXsmall';
 import IcUpArrowXsmall from './IcUpArrowXsmall';
 import IcUpArrow from './IcUpArrow';
@@ -618,15 +622,18 @@ const icons = {
   'list-move': IcListMove,
   listview: IcListview,
   location: IcLocation,
+  lock: IcLock,
   'locker-xlarge': IcLockerXlarge,
   mailbox: IcMailbox,
   'map-pin': IcMapPin,
   map: IcMap,
+  maximize: IcMaximize,
   'member-medium': IcMemberMedium,
   'member-small': IcMemberSmall,
   'memo-line': IcMemoLine,
   memo: IcMemo,
   mention: IcMention,
+  minimize: IcMinimize,
   'minus-medium': IcMinusMedium,
   minus: IcMinus,
   'mobile-line': IcMobileLine,
@@ -738,6 +745,7 @@ const icons = {
   'trash-line': IcTrashLine,
   trash: IcTrash,
   truck: IcTruck,
+  unlock: IcUnlock,
   'up-arrow-solid-xsmall': IcUpArrowSolidXsmall,
   'up-arrow-xsmall': IcUpArrowXsmall,
   'up-arrow': IcUpArrow,
@@ -1003,15 +1011,18 @@ export {
   IcListMove as ListMoveIcon,
   IcListview as ListviewIcon,
   IcLocation as LocationIcon,
+  IcLock as LockIcon,
   IcLockerXlarge as LockerXlargeIcon,
   IcMailbox as MailboxIcon,
   IcMapPin as MapPinIcon,
   IcMap as MapIcon,
+  IcMaximize as MaximizeIcon,
   IcMemberMedium as MemberMediumIcon,
   IcMemberSmall as MemberSmallIcon,
   IcMemoLine as MemoLineIcon,
   IcMemo as MemoIcon,
   IcMention as MentionIcon,
+  IcMinimize as MinimizeIcon,
   IcMinusMedium as MinusMediumIcon,
   IcMinus as MinusIcon,
   IcMobileLine as MobileLineIcon,
@@ -1123,6 +1134,7 @@ export {
   IcTrashLine as TrashLineIcon,
   IcTrash as TrashIcon,
   IcTruck as TruckIcon,
+  IcUnlock as UnlockIcon,
   IcUpArrowSolidXsmall as UpArrowSolidXsmallIcon,
   IcUpArrowXsmall as UpArrowXsmallIcon,
   IcUpArrow as UpArrowIcon,

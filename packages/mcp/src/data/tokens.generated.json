@@ -5,9 +5,9 @@
     "shopl",
     "hada"
   ],
-  "count": 115,
+  "count": 116,
   "countByType": {
-    "color": 44,
+    "color": 45,
     "borderRadius": 6,
     "fontWeights": 3,
     "spacing": 13,
@@ -15,7 +15,7 @@
     "typography": 48
   },
   "countByDomain": {
-    "shared": 55,
+    "shared": 56,
     "shopl": 31,
     "hada": 29
   },
@@ -253,6 +253,15 @@
       "cssVar": "--purple100",
       "className": null,
       "value": "#eff1ff"
+    },
+    {
+      "name": "yellow400",
+      "type": "color",
+      "domain": "shared",
+      "path": "yellow.yellow400",
+      "cssVar": "--yellow400",
+      "className": null,
+      "value": "#faa200"
     },
     {
       "name": "yellow300",
