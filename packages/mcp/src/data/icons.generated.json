@@ -7,9 +7,9 @@
     "shopl",
     "hada"
   ],
-  "count": 484,
+  "count": 488,
   "countByDomain": {
-    "shopl": 380,
+    "shopl": 384,
     "hada": 104
   },
   "icons": [
@@ -2354,6 +2354,15 @@
       ]
     },
     {
+      "name": "IcLock",
+      "alias": "LockIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "lock"
+      ]
+    },
+    {
       "name": "IcLockerXlarge",
       "alias": "LockerXlargeIcon",
       "domain": "shopl",
@@ -2389,6 +2398,15 @@
       "importFrom": "@shoplflow/shopl-assets",
       "keywords": [
         "map"
+      ]
+    },
+    {
+      "name": "IcMaximize",
+      "alias": "MaximizeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "maximize"
       ]
     },
     {
@@ -2437,6 +2455,15 @@
       "importFrom": "@shoplflow/shopl-assets",
       "keywords": [
         "mention"
+      ]
+    },
+    {
+      "name": "IcMinimize",
+      "alias": "MinimizeIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "minimize"
       ]
     },
     {
@@ -3509,6 +3536,15 @@
       "importFrom": "@shoplflow/shopl-assets",
       "keywords": [
         "truck"
+      ]
+    },
+    {
+      "name": "IcUnlock",
+      "alias": "UnlockIcon",
+      "domain": "shopl",
+      "importFrom": "@shoplflow/shopl-assets",
+      "keywords": [
+        "unlock"
       ]
     },
     {
