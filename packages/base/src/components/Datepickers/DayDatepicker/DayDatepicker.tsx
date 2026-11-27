@@ -1,4 +1,8 @@
-import { SmallStyledDayDatepickerWrapper, StyledDayDatepicker } from './DayDatepicker.styled';
+import {
+  SmallStyledDayDatepickerWrapper,
+  StyledDayDatepicker,
+  StyledDayDatepickerBottomSource,
+} from './DayDatepicker.styled';
 import type { DayDatepickerProps } from './DayDatepicker.types';
 import DatePicker from 'react-datepicker';
 
@@ -14,17 +18,36 @@ const DayDatepicker = ({
   locale,
   fixedHeight = true,
   className,
+  bottomSource,
   ...rest
 }: DayDatepickerProps) => {
   const Wrapper = sizeVar === 'S' ? SmallStyledDayDatepickerWrapper : StyledDayDatepicker;
   const isSingleSelect = calendarType.type !== 'range';
+  // 하단 영역은 react-datepicker children 칸에 넣어 달력 흰 배경·안쪽 여백 안에 놓는다 (칸 모양은 data-bottom-source 로 바꿈)
+  const hasBottomSource = bottomSource !== undefined && bottomSource !== null && bottomSource !== false;
+  const calendarChildren = hasBottomSource ? (
+    <>
+      {children}
+      <StyledDayDatepickerBottomSource>{bottomSource}</StyledDayDatepickerBottomSource>
+    </>
+  ) : (
+    children
+  );
 
   /**
    * 범위 선택 캘린더
    */
   if (calendarType.type === 'range') {
+    // 끝 날짜를 고르기 전 첫 선택일은 react-datepicker 가 selecting-range-start 만 붙여 색이 없다 → highlighted 로 칠한다
+    const { startDate, endDate, highlightDates } = rest;
+    const rangeHighlightDates = startDate && !endDate ? [...(highlightDates ?? []), startDate] : highlightDates;
+
     return (
-      <Wrapper data-shoplflow={'DayDatepicker'} className={className}>
+      <Wrapper
+        data-shoplflow={'DayDatepicker'}
+        className={className}
+        data-bottom-source={hasBottomSource ? '' : undefined}
+      >
         <div
           className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}
           role='grid'
@@ -47,6 +70,7 @@ const DayDatepicker = ({
             }}
             className={className}
             {...rest}
+            highlightDates={rangeHighlightDates}
             minDate={minDate}
             maxDate={maxDate}
             selectsRange
@@ -55,7 +79,7 @@ const DayDatepicker = ({
             onChange={calendarType.handleDayRangeChange}
             fixedHeight={fixedHeight}
           >
-            {children}
+            {calendarChildren}
           </DatePicker>
         </div>
       </Wrapper>
@@ -67,7 +91,11 @@ const DayDatepicker = ({
    */
   if (calendarType.type === 'multiple') {
     return (
-      <Wrapper data-shoplflow={'DayDatepicker'} className={className}>
+      <Wrapper
+        data-shoplflow={'DayDatepicker'}
+        className={className}
+        data-bottom-source={hasBottomSource ? '' : undefined}
+      >
         <div
           className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}
           role='grid'
@@ -96,7 +124,7 @@ const DayDatepicker = ({
             onChange={calendarType.handleMutlipleDaysChange}
             fixedHeight={fixedHeight}
           >
-            {children}
+            {calendarChildren}
           </DatePicker>
         </div>
       </Wrapper>
@@ -104,7 +132,7 @@ const DayDatepicker = ({
   }
 
   return (
-    <Wrapper data-shoplflow={'DayDatepicker'}>
+    <Wrapper data-shoplflow={'DayDatepicker'} data-bottom-source={hasBottomSource ? '' : undefined}>
       <div
         className={`${'dayDatepickerArea'}${className ? ` ${className}` : ''}`}
         role='grid'
@@ -132,7 +160,7 @@ const DayDatepicker = ({
           onChange={calendarType.handleDayChange}
           fixedHeight={fixedHeight}
         >
-          {children}
+          {calendarChildren}
         </DatePicker>
       </div>
     </Wrapper>
