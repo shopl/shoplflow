@@ -19,6 +19,15 @@ import {
 
 /** 컴포넌트별 변경 이력 (최신이 위). 스토리 Docs에 표시됩니다. */
 const COMPONENT_CHANGELOG: ComponentChangelogEntry[] = [
+  {
+    version: '1.1',
+    date: '2026-11-27',
+    changes: [
+      'S 사이즈 헤더: IconButton XS · xsmall 화살표(12px) · 월 두 자리(2027.01)',
+      '하단 영역 bottomSource(ReactNode) prop 추가 — 날짜 칸 아래 8px',
+      'range 에서 끝 날짜를 고르기 전 첫 선택일을 highlighted 로 표시',
+    ],
+  },
   { version: '1.0', date: '2026-04-22', changes: ['Storybook Docs에 버전·Changelog 섹션 추가'] },
 ];
 

@@ -2,7 +2,7 @@
   "source": "packages/base/src/components (each *.stories.tsx)",
   "importFrom": "@shoplflow/base",
   "count": 43,
-  "exampleCount": 156,
+  "exampleCount": 158,
   "modules": [
     {
       "name": "AnnualDatepicker",
@@ -237,6 +237,14 @@
         {
           "story": "SmallSize",
           "code": "<Stack width='400px'>\n      <Button\n        className='test'\n        onClick={() => {\n          setIsOpen((prev) => !prev);\n        }}\n      >\n        DatePicker를 보려면 클릭해주세요~\n      </Button>\n      {isOpen && (\n        <DayDatepicker\n          className='test'\n          highlightDates={startDate ? [startDate] : undefined}\n          startDate={startDate || undefined}\n          endDate={endDate || undefined}\n          calendarType={{\n            type: 'range',\n            handleDayRangeChange(dates) {\n              if (Array.isArray(dates)) {\n                const [start, end] = dates;\n                setStartDate(start);\n                setEndDate(end);\n              } else {\n                setStartDate(dates);\n              }\n            },\n          }}\n          sizeVar={'S'}\n          locale={ko}\n        />\n      )}\n    </Stack>"
+        },
+        {
+          "story": "WithBottomSource",
+          "code": "<Stack width='280px' style={{ boxShadow: '0 10px 30px 0 rgba(51, 51, 51, 0.2)', borderRadius: '8px' }}>\n      <DayDatepicker\n        startDate={startDate || undefined}\n        endDate={endDate || undefined}\n        calendarType={{\n          type: 'range',\n          handleDayRangeChange([start, end]) {\n            setStartDate(start);\n            setEndDate(end);\n          },\n        }}\n        sizeVar={'S'}\n        locale={ko}\n        bottomSource={maxRangeNotice}\n      />\n    </Stack>"
+        },
+        {
+          "story": "WithBottomSourceMaxRange",
+          "code": "<Stack width='280px' style={{ boxShadow: '0 10px 30px 0 rgba(51, 51, 51, 0.2)', borderRadius: '8px' }}>\n      <DayDatepicker\n        startDate={startDate || undefined}\n        endDate={endDate || undefined}\n        minDate={anchorDate ? subDays(anchorDate, MAX_RANGE_DAYS - 1) : undefined}\n        maxDate={anchorDate ? addDays(anchorDate, MAX_RANGE_DAYS - 1) : undefined}\n        calendarType={{\n          type: 'range',\n          handleDayRangeChange([start, end]) {\n            // react-datepicker 는 시작일보다 앞 날짜를 누르면 시작일을 바꾸므로 [앞 날짜, 첫 선택일] 로 바꿔 준다\n            if (anchorDate && start && !end && isBefore(start, anchorDate)) {\n              setStartDate(start);\n              setEndDate(anchorDate);\n              return;\n            }\n            setStartDate(start);\n            setEndDate(end);\n          },\n        }}\n        sizeVar={'S'}\n        locale={ko}\n        bottomSource={maxRangeNotice}\n      />\n    </Stack>"
         },
         {
           "story": "Multiple",

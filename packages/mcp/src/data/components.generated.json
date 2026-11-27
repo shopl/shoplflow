@@ -659,6 +659,12 @@
       ],
       "props": [
         {
+          "name": "bottomSource",
+          "optional": true,
+          "type": "ReactNode",
+          "description": "달력 하단(날짜 칸 아래)에 넣을 내용 — 예: 최대 선택 기간 안내. 날짜 칸과 8px 간격을 두고 달력 안쪽 여백 안에 전체 폭으로 놓인다. 내용·스타일은 사용하는 쪽에서 정한다"
+        },
+        {
           "name": "calendarType",
           "optional": false,
           "type": "DayCalendarType",
