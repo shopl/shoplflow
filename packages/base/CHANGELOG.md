@@ -1,5 +1,11 @@
 # @shoplflow/base
 
+## 0.49.9
+
+### Patch Changes
+
+- [#882](https://github.com/shopl/shoplflow/pull/882) [`22fe566ab68189138ab33a72e9e3917ec80da567`](https://github.com/shopl/shoplflow/commit/22fe566ab68189138ab33a72e9e3917ec80da567) Thanks [@Eunseo-jo](https://github.com/Eunseo-jo)! - DayDatepicker: S 사이즈 헤더 디자인 반영(IconButton XS · xsmall 화살표 · 월 두 자리), 하단 영역 bottomSource prop 추가, range 에서 끝 날짜 전 첫 선택일 표시
+
 ## 0.49.8
 
 ### Patch Changes
