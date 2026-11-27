@@ -1,11 +1,33 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { colorTokens, fontWeightTokens } from '../../../styles';
+
+/**
+ * bottomSource 가 있을 때만(data-bottom-source) — react-datepicker 가 children 을 담는 칸(기본 13.8rem · 달력 옆)을
+ * 날짜 칸 아래 전체 폭으로 바꾼다. bottomSource 없이 children 만 쓰는 곳은 그대로 둔다
+ */
+const bottomSourceContainerStyle = css`
+  &[data-bottom-source] .dayDatepickerArea .react-datepicker__children-container {
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+/** 달력 하단 영역 — 날짜 칸과 8px 간격, 달력 안쪽 여백 안 전체 폭 (Figma 디지털 로스터링 3845:16686 date S) */
+export const StyledDayDatepickerBottomSource = styled.div`
+  width: 100%;
+  padding-top: 8px;
+  box-sizing: border-box;
+`;
 
 export const SmallStyledDayDatepickerWrapper = styled.div`
   display: flex;
   width: 280px;
   height: 100%;
   flex-direction: column;
+  ${bottomSourceContainerStyle};
 
   & .dayDatepickerArea .react-datepicker {
     width: 100%;
@@ -255,6 +277,7 @@ export const StyledDayDatepicker = styled.div`
   width: 100%;
   height: 100%;
   flex-direction: column;
+  ${bottomSourceContainerStyle};
 
   & .dayDatepickerArea .react-datepicker {
     width: 100%;
